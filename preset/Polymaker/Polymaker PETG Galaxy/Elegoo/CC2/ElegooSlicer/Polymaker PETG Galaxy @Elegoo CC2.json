@@ -1,0 +1,138 @@
+{
+    "type": "filament",
+    "name": "Polymaker PETG Galaxy @Elegoo CC2",
+    "from": "User",
+    "instantiation": "true",
+    "cool_plate_temp": [
+        "60"
+    ],
+    "eng_plate_temp": [
+        "0"
+    ],
+    "hot_plate_temp": [
+        "80"
+    ],
+    "textured_plate_temp": [
+        "80"
+    ],
+    "cool_plate_temp_initial_layer": [
+        "60"
+    ],
+    "eng_plate_temp_initial_layer": [
+        "0"
+    ],
+    "hot_plate_temp_initial_layer": [
+        "80"
+    ],
+    "textured_plate_temp_initial_layer": [
+        "80"
+    ],
+    "overhang_fan_threshold": [
+        "95%"
+    ],
+    "overhang_fan_speed": [
+        "100"
+    ],
+    "slow_down_for_layer_cooling": [
+        "1"
+    ],
+    "close_fan_the_first_x_layers": [
+        "3"
+    ],
+    "filament_end_gcode": [
+        "; filament end gcode \n"
+    ],
+    "filament_flow_ratio": [
+        "0.87"
+    ],
+    "reduce_fan_stop_start_freq": [
+        "1"
+    ],
+    "fan_cooling_layer_time": [
+        "16"
+    ],
+    "filament_cost": [
+        "30"
+    ],
+    "filament_density": [
+        "1.3"
+    ],
+    "filament_diameter": [
+        "1.75"
+    ],
+    "filament_max_volumetric_speed": [
+        "11"
+    ],
+    "filament_minimal_purge_on_wipe_tower": [
+        "15"
+    ],
+    "filament_settings_id": [
+        "Polymaker PETG Galaxy @Elegoo CC2"
+    ],
+    "filament_soluble": [
+        "0"
+    ],
+    "filament_type": [
+        "PETG"
+    ],
+    "filament_vendor": [
+        "Polymaker"
+    ],
+    "bed_type": [
+        "Cool Plate"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "260"
+    ],
+    "full_fan_speed_layer": [
+        "0"
+    ],
+    "fan_max_speed": [
+        "40"
+    ],
+    "fan_min_speed": [
+        "30"
+    ],
+    "slow_down_min_speed": [
+        "10"
+    ],
+    "slow_down_layer_time": [
+        "6"
+    ],
+    "filament_start_gcode": [
+        "; Filament gcode\n"
+    ],
+    "nozzle_temperature": [
+        "260"
+    ],
+    "temperature_vitrification": [
+        "75"
+    ],
+    "filament_id": "OGFG99",
+    "nozzle_temperature_range_high": [
+        "260"
+    ],
+    "nozzle_temperature_range_low": [
+        "240"
+    ],
+    "supertack_plate_temp": [
+        "70"
+    ],
+    "supertack_plate_temp_initial_layer": [
+        "70"
+    ],
+    "renamed_from": "My Generic PETG",
+    "setting_id": "OGFSA04",
+    "compatible_printers": [
+        "Elegoo Centauri Carbon 2 0.4 nozzle"
+    ],
+    "enable_pressure_advance": [
+        "1"
+    ],
+    "is_custom_defined": "0",
+    "pressure_advance": [
+        "0.05"
+    ],
+    "version": "1.3.0.11",
+    "idle_temperature": 0
+}
