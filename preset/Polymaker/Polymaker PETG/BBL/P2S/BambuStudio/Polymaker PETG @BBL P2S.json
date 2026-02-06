@@ -1,0 +1,162 @@
+{
+    "type": "filament",
+    "name": "Polymaker PETG @BBL P2S",
+    "from": "User",
+    "instantiation": "true",
+    "cool_plate_temp": [
+        "0"
+    ],
+    "eng_plate_temp": [
+        "70"
+    ],
+    "hot_plate_temp": [
+        "70"
+    ],
+    "textured_plate_temp": [
+        "70"
+    ],
+    "cool_plate_temp_initial_layer": [
+        "0"
+    ],
+    "eng_plate_temp_initial_layer": [
+        "70"
+    ],
+    "hot_plate_temp_initial_layer": [
+        "70"
+    ],
+    "textured_plate_temp_initial_layer": [
+        "70"
+    ],
+    "overhang_fan_threshold": [
+        "10%"
+    ],
+    "overhang_fan_speed": [
+        "90"
+    ],
+    "slow_down_for_layer_cooling": [
+        "1"
+    ],
+    "close_fan_the_first_x_layers": [
+        "3"
+    ],
+    "filament_end_gcode": [
+        "; filament end gcode \n"
+    ],
+    "filament_flow_ratio": [
+        "0.95"
+    ],
+    "reduce_fan_stop_start_freq": [
+        "1"
+    ],
+    "fan_cooling_layer_time": [
+        "30"
+    ],
+    "filament_cost": [
+        "0"
+    ],
+    "filament_density": [
+        "1.3"
+    ],
+    "filament_diameter": [
+        "1.75"
+    ],
+    "filament_is_support": [
+        "0"
+    ],
+    "filament_max_volumetric_speed": [
+        "16",
+        "nil"
+    ],
+    "filament_minimal_purge_on_wipe_tower": [
+        "15"
+    ],
+    "filament_retraction_length": [
+        "0.8",
+        "nil"
+    ],
+    "filament_settings_id": [
+        "Polymaker PETG @BBL P2S"
+    ],
+    "filament_soluble": [
+        "0"
+    ],
+    "filament_type": [
+        "PETG"
+    ],
+    "filament_vendor": [
+        "Polymaker"
+    ],
+    "bed_type": [
+        "Cool Plate"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "250",
+        "nil"
+    ],
+    "full_fan_speed_layer": [
+        "0"
+    ],
+    "fan_max_speed": [
+        "90"
+    ],
+    "fan_min_speed": [
+        "40"
+    ],
+    "required_nozzle_HRC": [
+        "3"
+    ],
+    "slow_down_min_speed": [
+        "20"
+    ],
+    "slow_down_layer_time": [
+        "12"
+    ],
+    "filament_start_gcode": [
+        "; filament start gcode\n"
+    ],
+    "nozzle_temperature": [
+        "250",
+        "nil"
+    ],
+    "temperature_vitrification": [
+        "75"
+    ],
+    "nozzle_temperature_range_low": [
+        "240"
+    ],
+    "nozzle_temperature_range_high": [
+        "260"
+    ],
+    "filament_id": "GFG99",
+    "setting_id": "GFSG99_09",
+    "first_x_layer_fan_speed": [
+        "0"
+    ],
+    "filament_ramming_travel_time": [
+        "0",
+        "0"
+    ],
+    "include": [
+        "fdm_filament_template_direct_dual"
+    ],
+    "long_retractions_when_ec": [
+        "0",
+        "0"
+    ],
+    "retraction_distances_when_ec": [
+        "0",
+        "0"
+    ],
+    "compatible_printers": [
+        "Bambu Lab P2S 0.4 nozzle"
+    ],
+    "additional_cooling_fan_speed": [
+        "70"
+    ],
+    "filament_extruder_variant": [
+        "Direct Drive Standard",
+        "Direct Drive High Flow"
+    ],
+    "version": "2.4.0.8",
+    "idle_temperature": 0
+}
