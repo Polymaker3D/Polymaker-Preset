@@ -2,11 +2,9 @@
 
 Official print presets for Polymaker 3D printing filaments, optimized for use with BambuStudio, OrcaSlicer, ElegooSlicer, and other compatible slicers.
 
-## 🌐 Online Download
+## 🌐 Download
 
 **Visit our download page:** [https://polymaker3d.github.io/Polymaker-Preset/](https://polymaker3d.github.io/Polymaker-Preset/)
-
-Use the filters to select your material, brand, model, and slicer, then click a preset—the JSON file will be saved to your device (no cross-origin issues; works for all users).
 
 ## 📦 Manual Installation
 
@@ -24,40 +22,6 @@ Use the filters to select your material, brand, model, and slicer, then click a 
 2. Open ElegooSlicer.
 3. Go to **Settings** → **Filament** → **Import**.
 4. Select the downloaded JSON file.
-
-### PrusaSlicer
-
-1. Download the preset JSON file.
-2. Open PrusaSlicer.
-3. Navigate to: **Configuration** → **Configuration Wizard** → **Custom**.
-4. Or manually copy files to:
-   - **Windows**: `C:\Users\[username]\AppData\Roaming\PrusaSlicer\`
-   - **macOS**: `~/Library/Application Support/PrusaSlicer/`
-   - **Linux**: `~/.config/PrusaSlicer/`
-
-## 📋 Supported Materials
-
-This repository includes presets for:
-
-- **Fiberon Series**: PA12-CF10, PA6-CF20, PA6-GF25, PA612-CF15, PET-CF17, PETG-ESD, PETG-rCF08
-- **Panchroma Series**: PLA, PLA Celestial, PLA Galaxy, PLA Glow, PLA Luminous, PLA Marble, PLA Matte, PLA Metallic, PLA Neon, PLA Satin, PLA Silk, PLA Starlight, PLA Translucent, PLA UV Shift, CoPE
-- **PolyLite Series**: PLA, PLA Galaxy, PLA Glow, PLA Luminous, PLA Neon, PLA Pro, PLA Pro Metallic, PLA Starlight, PLA Translucent, PETG, PETG Translucent, CosPLA
-- **PolyTerra Series**: PLA, PLA Marble, PLA+
-- **Polymaker Series**: PLA, PLA Pro, PLA Pro Metallic, PETG, PETG Galaxy, HT-PLA, HT-PLA-GF
-
-## 🖨️ Supported Printers
-
-- **BBL**: A1, A1M, H2D, H2S, P1P, P1S, P2S, X1
-- **Anycubic**: Kobra S1
-- **Elegoo**: CC2
-- **Snapmaker**: U1
-
-## 🔧 Supported Slicers
-
-- BambuStudio
-- OrcaSlicer / Orcaslicer
-- ElegooSlicer
-- PrusaSlicer (compatible)
 
 ## 📁 Repository Structure
 
@@ -84,7 +48,7 @@ Polymaker-Preset/
 Presets are updated regularly based on:
 
 - Polymaker material specifications
-- Community feedback
+- Community feedback （after validataion）
 - Testing with various printer models
 
 The repository is synchronized with our internal preset management system. Check the `index.json` file for the latest update timestamp.
@@ -113,7 +77,7 @@ The repository is synchronized with our internal preset management system. Check
 
 ## 🤝 Contributing
 
-This repository is maintained by the Polymaker team. For issues or suggestions, please contact us through official channels.
+This repository is maintained by the Polymaker team. For issues or suggestions, create a issus or contact us through official channels.
 
 ## 📄 License
 
