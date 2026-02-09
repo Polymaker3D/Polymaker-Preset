@@ -1,0 +1,47 @@
+name: Auto update index.json in PR
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - "preset/**/*.json"
+      - "preset/**"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: auto-index-json-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  update-index:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Generate index.json
+        run: node scripts/generate-index-json.mjs
+
+      - name: Commit changes (if any)
+        run: |
+          if git diff --quiet -- index.json; then
+            echo "index.json unchanged."
+            exit 0
+          fi
+
+          git config user.name "polymaker-bot"
+          git config user.email "polymaker-bot@users.noreply.github.com"
+          git add index.json
+          git commit -m "chore: auto-update index.json"
+          git push
