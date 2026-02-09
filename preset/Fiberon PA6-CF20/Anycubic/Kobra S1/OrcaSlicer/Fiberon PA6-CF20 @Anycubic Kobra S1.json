@@ -1,0 +1,131 @@
+{
+    "type": "filament",
+    "name": "Fiberon PA6-CF20 @Anycubic Kobra S1",
+    "from": "User",
+    "instantiation": "true",
+    "cool_plate_temp": [
+        "0"
+    ],
+    "eng_plate_temp": [
+        "40"
+    ],
+    "hot_plate_temp": [
+        "40"
+    ],
+    "textured_plate_temp": [
+        "40"
+    ],
+    "cool_plate_temp_initial_layer": [
+        "0"
+    ],
+    "eng_plate_temp_initial_layer": [
+        "40"
+    ],
+    "hot_plate_temp_initial_layer": [
+        "40"
+    ],
+    "textured_plate_temp_initial_layer": [
+        "40"
+    ],
+    "overhang_fan_threshold": [
+        "95%"
+    ],
+    "overhang_fan_speed": [
+        "100"
+    ],
+    "slow_down_for_layer_cooling": [
+        "1"
+    ],
+    "close_fan_the_first_x_layers": [
+        "3"
+    ],
+    "filament_end_gcode": [
+        "; filament end gcode \n"
+    ],
+    "filament_flow_ratio": [
+        "1.03"
+    ],
+    "reduce_fan_stop_start_freq": [
+        "1"
+    ],
+    "fan_cooling_layer_time": [
+        "30"
+    ],
+    "filament_cost": [
+        "79.98"
+    ],
+    "filament_density": [
+        "1.17"
+    ],
+    "filament_diameter": [
+        "1.75"
+    ],
+    "filament_max_volumetric_speed": [
+        "7.5"
+    ],
+    "filament_minimal_purge_on_wipe_tower": [
+        "15"
+    ],
+    "filament_retraction_length": [
+        "1.0"
+    ],
+    "filament_z_hop": [
+        "0.0"
+    ],
+    "filament_settings_id": [
+        "Fiberon PA6-CF20 @Anycubic Kobra S1"
+    ],
+    "filament_soluble": [
+        "0"
+    ],
+    "filament_type": [
+        "PA6-CF"
+    ],
+    "filament_vendor": [
+        "Polymaker"
+    ],
+    "bed_type": [
+        "Cool Plate"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "300"
+    ],
+    "full_fan_speed_layer": [
+        "0"
+    ],
+    "fan_max_speed": [
+        "30"
+    ],
+    "fan_min_speed": [
+        "0"
+    ],
+    "slow_down_min_speed": [
+        "10"
+    ],
+    "slow_down_layer_time": [
+        "6"
+    ],
+    "filament_start_gcode": [
+        "; Filament gcode\n"
+    ],
+    "nozzle_temperature": [
+        "300"
+    ],
+    "temperature_vitrification": [
+        "74"
+    ],
+    "nozzle_temperature_range_low": [
+        "280"
+    ],
+    "nozzle_temperature_range_high": [
+        "300"
+    ],
+    "filament_id": "GFL50",
+    "setting_id": "OGFSL50_00",
+    "compatible_printers": [
+        "Anycubic Kobra S1 0.4 nozzle"
+    ],
+    "is_custom_defined": "0",
+    "version": "2.3.1.10",
+    "idle_temperature": 0
+}

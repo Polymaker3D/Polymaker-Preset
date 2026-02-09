@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Polymaker Print Presets</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg-gradient"></div>
+  <div class="page">
+    <header class="hero">
+      <div class="hero-main">
+        <h1 class="hero-title">
+          <span class="brand-name">Polymaker</span>
+          <span class="preset-text">Print Presets</span>
+        </h1>
+        <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Toggle theme">
+          <span class="theme-toggle-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+      <p class="hero-desc">Select material, brand, model, and slicer to download preset files</p>
+    </header>
+
+    <section class="card filters-card">
+      <div class="filters">
+        <div class="filter-group">
+          <label class="filter-label">Material</label>
+          <div class="dropdown" data-filter="material">
+            <button class="dropdown-toggle" type="button">
+              <span class="dropdown-label">All</span>
+              <span class="dropdown-arrow" aria-hidden="true"></span>
+            </button>
+            <div class="dropdown-menu"></div>
+          </div>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label">Brand</label>
+          <div class="dropdown" data-filter="brand">
+            <button class="dropdown-toggle" type="button">
+              <span class="dropdown-label">All</span>
+              <span class="dropdown-arrow" aria-hidden="true"></span>
+            </button>
+            <div class="dropdown-menu"></div>
+          </div>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label">Model</label>
+          <div class="dropdown" data-filter="model">
+            <button class="dropdown-toggle" type="button">
+              <span class="dropdown-label">All</span>
+              <span class="dropdown-arrow" aria-hidden="true"></span>
+            </button>
+            <div class="dropdown-menu"></div>
+          </div>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label">Slicer</label>
+          <div class="dropdown" data-filter="slicer">
+            <button class="dropdown-toggle" type="button">
+              <span class="dropdown-label">All</span>
+              <span class="dropdown-arrow" aria-hidden="true"></span>
+            </button>
+            <div class="dropdown-menu"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card list-card">
+      <div class="list-header">
+        <h2 class="list-title">Presets</h2>
+        <p id="status" class="list-count">Loading…</p>
+      </div>
+      <div class="table-wrap">
+        <table class="preset-table">
+          <thead>
+            <tr>
+              <th>Material</th>
+              <th>Brand</th>
+              <th>Model</th>
+              <th>Slicer</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>Installation instructions available in the <a href="https://github.com/Polymaker3D/Polymaker-Preset#readme" target="_blank" rel="noopener noreferrer">README</a></p>
+    </footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

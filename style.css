@@ -1,0 +1,561 @@
+/* Polymaker 基色 #50BFCA 为主：深色主题 + 青绿渐变 */
+:root {
+  --bg-dark: #0d0d12;
+  --bg-card: rgba(255, 255, 255, 0.05);
+  --bg-card-hover: rgba(255, 255, 255, 0.08);
+  --border: rgba(255, 255, 255, 0.1);
+  --text: #e4e4e7;
+  --text-muted: #a1a1aa;
+  --accent: #50BFCA;
+  --accent-light: #6DD4DE;
+  --gradient-start: #3BA8B2;
+  --gradient-end: #50BFCA;
+  --radius: 12px;
+  --radius-lg: 16px;
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --transition: 0.2s ease;
+}
+
+/* Wiki 内嵌主题：以 #E8F6F9 与 #FFF 的浅色渐变为主，贴近 Polymaker Wiki 配色 */
+body.theme-wiki {
+  --bg-dark: #E8F6F9;
+  --bg-card: rgba(255, 255, 255, 0.96);
+  --bg-card-hover: rgba(232, 246, 249, 1);
+  --border: rgba(15, 23, 42, 0.08);
+  --text: #111827;
+  --text-muted: #6B7280;
+  --shadow: 0 8px 28px rgba(148, 163, 184, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  color: var(--text);
+  background: var(--bg-dark);
+  line-height: 1.6;
+}
+
+.bg-gradient {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(80, 191, 202, 0.22), transparent),
+              radial-gradient(ellipse 60% 40% at 100% 50%, rgba(80, 191, 202, 0.12), transparent),
+              radial-gradient(ellipse 60% 40% at 0% 80%, rgba(80, 191, 202, 0.1), transparent);
+  pointer-events: none;
+  z-index: 0;
+}
+
+body.theme-wiki .bg-gradient {
+  background: linear-gradient(180deg, #E8F6F9 0%, #FFFFFF 55%, #E8F6F9 100%);
+  opacity: 1;
+}
+
+.page {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem 0.5rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Hero */
+.hero {
+  text-align: left;
+  margin-bottom: 0.5rem;
+  padding: 0.25rem 0;
+  flex-shrink: 0;
+}
+
+.hero-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.hero-title {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 700;
+  margin: 0 0 0.25rem;
+  letter-spacing: -0.02em;
+}
+
+.brand-name {
+  color: var(--accent);
+}
+
+.preset-text {
+  color: #fff;
+}
+
+body.theme-wiki .preset-text {
+  color: var(--accent);
+}
+
+.hero-desc {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* 主题切换按钮 */
+.theme-toggle-btn {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.3rem 0.55rem;
+  background: rgba(0, 0, 0, 0.4);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color var(--transition), background var(--transition), box-shadow var(--transition), transform var(--transition);
+}
+
+.theme-toggle-btn:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.6);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.theme-toggle-btn:focus-visible {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(80, 191, 202, 0.35);
+}
+
+.theme-toggle-icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, #ffffff, #e5e7eb 30%, transparent 60%),
+              conic-gradient(from 140deg, rgba(80, 191, 202, 0.9), rgba(59, 168, 178, 0.6), rgba(15, 23, 42, 1));
+  box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.6);
+}
+
+body.theme-wiki .theme-toggle-icon {
+  background: radial-gradient(circle at 30% 30%, #ffffff, #f3f4f6 25%, transparent 55%),
+              conic-gradient(from 200deg, rgba(148, 163, 184, 0.9), rgba(59, 130, 246, 0.85), rgba(232, 246, 249, 1));
+}
+
+body.theme-wiki .theme-toggle-btn {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(148, 163, 184, 0.5);
+}
+
+body.theme-wiki .theme-toggle-btn:hover {
+  border-color: rgba(59, 130, 246, 0.6);
+  background: #ffffff;
+  box-shadow: 0 6px 20px rgba(148, 163, 184, 0.45);
+}
+
+/* Cards */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow);
+  transition: background-color var(--transition), border-color var(--transition), box-shadow var(--transition);
+  flex-shrink: 0;
+}
+
+.filters-card {
+  padding: 0.6rem 1rem;
+  position: relative;
+  z-index: 3;
+}
+
+.list-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+  padding: 0.75rem 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.card:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+/* Filters */
+.list-card .list-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+body.theme-wiki .list-card .list-title {
+  color: var(--accent);
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.6rem;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.filter-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+/* 自定义下拉组件 */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.75rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--text);
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: border-color var(--transition), background var(--transition), box-shadow var(--transition), transform var(--transition);
+}
+
+body.theme-wiki .dropdown-toggle {
+  background: rgba(255, 255, 255, 0.96);
+  border-color: rgba(15, 23, 42, 0.1);
+  color: var(--text);
+}
+
+body.theme-wiki .dropdown-toggle:hover {
+  border-color: rgba(59, 130, 246, 0.5);
+  background: #ffffff;
+}
+
+.dropdown-toggle:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.55);
+}
+
+.dropdown-toggle:focus-visible {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(80, 191, 202, 0.25);
+}
+
+.dropdown-arrow {
+  /* 使用 SVG 箭头图标，方便统一调色与大小 */
+  width: 1.2rem;
+  height: 1.2rem;
+  flex-shrink: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  /* 下箭头 SVG，颜色为 text-muted */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23a1a1aa' d='M3 4l3 4 3-4z'/%3E%3C/svg%3E");
+}
+
+.dropdown-menu {
+  position: absolute;
+  inset-inline: 0;
+  margin-top: 0.3rem;
+  /* 使用不透明深色背景，避免透出下方表格文字 */
+  background: #050509;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+  max-height: 260px;
+  overflow: auto;
+  padding: 0.25rem 0;
+  backdrop-filter: blur(14px);
+  opacity: 0;
+  transform: translateY(-4px);
+  pointer-events: none;
+  transition: opacity var(--transition), transform var(--transition);
+  z-index: 40;
+}
+
+body.theme-wiki .dropdown-menu {
+  background: #ffffff;
+  border-color: rgba(148, 163, 184, 0.5);
+  box-shadow: 0 14px 40px rgba(148, 163, 184, 0.5);
+}
+
+.dropdown.is-open .dropdown-menu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dropdown-option {
+  padding: 0.45rem 0.85rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+}
+
+.dropdown-option:hover {
+  background: var(--bg-card-hover);
+  color: #fff;
+}
+
+.dropdown-option.is-active {
+  background: rgba(80, 191, 202, 0.2);
+  color: #fff;
+}
+
+body.theme-wiki .dropdown-option {
+  color: var(--text-muted);
+}
+
+body.theme-wiki .dropdown-option:hover {
+  background: rgba(232, 246, 249, 1);
+  color: #111827;
+}
+
+body.theme-wiki .dropdown-option.is-active {
+  background: rgba(80, 191, 202, 0.36);
+  color: #111827;
+}
+
+/* 下拉面板滚动条样式，和列表表格保持一致风格 */
+.dropdown-menu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dropdown-menu::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: var(--radius);
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb {
+  background: rgba(80, 191, 202, 0.55);
+  border-radius: 999px;
+}
+
+body.theme-wiki .dropdown-menu::-webkit-scrollbar-track {
+  background: rgba(226, 232, 240, 0.9);
+}
+
+body.theme-wiki .dropdown-menu::-webkit-scrollbar-thumb {
+  background: rgba(80, 191, 202, 0.6);
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb:hover {
+  background: rgba(80, 191, 202, 0.8);
+}
+
+/* List card */
+.list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  flex-shrink: 0;
+}
+
+.list-count {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.table-wrap::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.table-wrap::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius);
+}
+
+.table-wrap::-webkit-scrollbar-thumb {
+  background: rgba(80, 191, 202, 0.4);
+  border-radius: 4px;
+}
+
+.table-wrap::-webkit-scrollbar-thumb:hover {
+  background: rgba(80, 191, 202, 0.6);
+}
+
+.preset-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.preset-table th {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  /* 深色主题下使用深色背景，避免与内容重叠产生“穿透感” */
+  background: #050509;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  transition: background-color var(--transition), color var(--transition), border-color var(--transition);
+}
+
+/* Wiki 主题下的表头：使用 #00787C 品牌青色，并将文字改为白色以提升对比度 */
+body.theme-wiki .preset-table th {
+  background: #00787C;
+  color: #ffffff;
+}
+
+.preset-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+  transition: background-color var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.preset-table tbody tr {
+  transition: background var(--transition);
+}
+
+.preset-table tbody tr:hover {
+  background: var(--bg-card-hover);
+}
+
+.preset-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.preset-table a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--accent-light);
+  background: linear-gradient(135deg, rgba(59, 168, 178, 0.2), rgba(80, 191, 202, 0.2));
+  border: 1px solid rgba(80, 191, 202, 0.4);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color var(--transition), color var(--transition), border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+}
+
+body.theme-wiki .preset-table a {
+  color: #0f172a;
+  /* 默认状态：参考图中透明度，略高一点保证可读性 */
+  background: rgba(80, 191, 202, 0.28);
+  border-color: rgba(80, 191, 202, 0.55);
+}
+
+.preset-table a:hover {
+  color: #fff;
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  border-color: transparent;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(80, 191, 202, 0.35);
+}
+
+body.theme-wiki .preset-table a:hover {
+  background: rgba(80, 191, 202, 0.5);
+  border-color: rgba(80, 191, 202, 0.8);
+  box-shadow: 0 4px 14px rgba(80, 191, 202, 0.45);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 0.4rem 0 0;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.footer a {
+  font-weight: 500;
+  color: var(--accent-light);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.footer a:hover {
+  color: var(--gradient-end);
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .page {
+    padding: 0.5rem 1rem 0.4rem;
+  }
+  .hero {
+    margin-bottom: 0.4rem;
+    padding: 0.15rem 0;
+  }
+  .hero-title {
+    font-size: clamp(1.25rem, 4vw, 1.75rem);
+  }
+  .hero-desc {
+    font-size: 0.85rem;
+  }
+  .card {
+    padding: 0.6rem 0.85rem;
+    margin-bottom: 0.4rem;
+  }
+  .filters-card {
+    padding: 0.5rem 0.85rem;
+  }
+  .list-card {
+    padding: 0.6rem 0.85rem;
+  }
+  .filters {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+  .preset-table th,
+  .preset-table td {
+    padding: 0.5rem 0.65rem;
+    font-size: 0.8rem;
+  }
+  .footer {
+    padding: 0.3rem 0 0;
+    font-size: 0.7rem;
+  }
+}
