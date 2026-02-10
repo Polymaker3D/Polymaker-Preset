@@ -507,6 +507,13 @@ body.theme-wiki .dropdown-menu::-webkit-scrollbar-thumb {
   flex-shrink: 0;
 }
 
+.list-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
 .list-count {
   font-size: 0.75rem;
   color: var(--text-muted);
@@ -550,16 +557,22 @@ body.theme-wiki .dropdown-menu::-webkit-scrollbar-thumb {
 
 .preset-table th:nth-child(1),
 .preset-table td:nth-child(1) {
-  width: 35%;
+  width: 40px;
+  text-align: center;
 }
 
 .preset-table th:nth-child(2),
 .preset-table td:nth-child(2) {
-  width: 45%;
+  width: 32%;
 }
 
 .preset-table th:nth-child(3),
 .preset-table td:nth-child(3) {
+  width: 40%;
+}
+
+.preset-table th:nth-child(4),
+.preset-table td:nth-child(4) {
   width: 20%;
 }
 
@@ -631,6 +644,19 @@ body.theme-wiki .preset-table th {
   background: rgba(255, 255, 255, 0.02);
 }
 
+.folder-row .folder-checkbox-label {
+  cursor: pointer;
+}
+
+.folder-row .folder-checkbox-label:hover .checkbox-custom {
+  border-color: var(--accent);
+}
+
+/* Prevent text selection on folder row for better UX */
+.folder-row td:nth-child(2) {
+  user-select: none;
+}
+
 .folder-row:hover {
   background: var(--bg-card-hover);
 }
@@ -663,14 +689,25 @@ body.theme-wiki .preset-table th {
   display: table-row;
 }
 
-.child-row td:first-child {
-  padding-left: 1.5rem;
+.child-row td:nth-child(2) {
   color: var(--text-muted);
 }
 
 .folder-hint {
   color: var(--text-muted);
   font-size: 0.7rem;
+}
+
+.folder-count {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 400;
+  margin-left: 0.25rem;
+}
+
+.child-material {
+  color: var(--text-muted);
+  padding-left: 1.5rem;
 }
 
 .preset-table .preset-row-dropdown .dropdown-menu {
@@ -719,6 +756,149 @@ body.theme-wiki .child-row {
 
 body.theme-wiki .folder-row {
   background: rgba(255, 255, 255, 0.5);
+}
+
+/* Checkbox styles */
+.checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  width: 18px;
+  height: 18px;
+}
+
+.checkbox-input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  width: 0;
+  height: 0;
+}
+
+.checkbox-custom {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--text-muted);
+  border-radius: 4px;
+  background: transparent;
+  transition: all var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkbox-custom::after {
+  content: '';
+  width: 5px;
+  height: 9px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg) translate(-1px, -1px);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.checkbox-input:checked + .checkbox-custom {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.checkbox-input:checked + .checkbox-custom::after {
+  opacity: 1;
+}
+
+.checkbox-input:focus-visible + .checkbox-custom {
+  box-shadow: 0 0 0 2px rgba(80, 191, 202, 0.35);
+}
+
+.checkbox-label:hover .checkbox-custom {
+  border-color: var(--accent);
+}
+
+body.theme-wiki .checkbox-custom {
+  border-color: rgba(107, 114, 128, 0.6);
+}
+
+body.theme-wiki .checkbox-input:checked + .checkbox-custom {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+body.theme-wiki .checkbox-label:hover .checkbox-custom {
+  border-color: var(--accent);
+}
+
+/* Indeterminate state (Dash) - for folder checkboxes */
+.checkbox-input:indeterminate + .checkbox-custom::after,
+.checkbox-input[data-indeterminate="true"] + .checkbox-custom::after {
+  content: '';
+  width: 10px;
+  height: 2px;
+  border: none;
+  background-color: #fff;
+  transform: none;
+  opacity: 1;
+}
+
+.checkbox-input:indeterminate + .checkbox-custom,
+.checkbox-input[data-indeterminate="true"] + .checkbox-custom {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+/* Wiki theme support for indeterminate state */
+body.theme-wiki .checkbox-input:indeterminate + .checkbox-custom,
+body.theme-wiki .checkbox-input[data-indeterminate="true"] + .checkbox-custom {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+/* Download selected button */
+.btn-download-selected {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #fff;
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all var(--transition);
+  box-shadow: 0 2px 8px rgba(80, 191, 202, 0.3);
+}
+
+.btn-download-selected:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(80, 191, 202, 0.45);
+}
+
+.btn-download-selected:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-download-selected svg {
+  flex-shrink: 0;
+}
+
+body.theme-wiki .btn-download-selected {
+  background: linear-gradient(135deg, #3BA8B2, #50BFCA);
+  box-shadow: 0 2px 8px rgba(80, 191, 202, 0.25);
+}
+
+body.theme-wiki .btn-download-selected:hover:not(:disabled) {
+  box-shadow: 0 4px 14px rgba(80, 191, 202, 0.4);
+}
+
+body.theme-wiki .btn-download-selected:disabled {
+  background: rgba(148, 163, 184, 0.3);
 }
 
 /* Footer */

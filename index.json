@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updatedAt": "2026-02-06T07:25:14.947Z",
+  "updatedAt": "2026-02-10T08:44:22.241Z",
   "materials": [
     "Fiberon PA12-CF10",
     "Fiberon PA6-CF20",
@@ -69,8 +69,7 @@
   "slicers": [
     "BambuStudio",
     "ElegooSlicer",
-    "OrcaSlicer",
-    "Orcaslicer"
+    "OrcaSlicer"
   ],
   "presets": [
     {
@@ -93,8 +92,8 @@
       "material": "Fiberon PA12-CF10",
       "brand": "BBL",
       "model": "X1",
-      "slicer": "Orcaslicer",
-      "path": "preset/Fiberon PA12-CF10/BBL/X1/Orcaslicer/Fiberon PA12-CF10 @BBL X1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Fiberon PA12-CF10/BBL/X1/OrcaSlicer/Fiberon PA12-CF10 @BBL X1.json",
       "filename": "Fiberon PA12-CF10 @BBL X1.json"
     },
     {
@@ -125,8 +124,8 @@
       "material": "Fiberon PA6-CF20",
       "brand": "BBL",
       "model": "X1",
-      "slicer": "Orcaslicer",
-      "path": "preset/Fiberon PA6-CF20/BBL/X1/Orcaslicer/Fiberon PA6-CF20 @BBL X1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Fiberon PA6-CF20/BBL/X1/OrcaSlicer/Fiberon PA6-CF20 @BBL X1.json",
       "filename": "Fiberon PA6-CF20 @BBL X1.json"
     },
     {
@@ -149,8 +148,8 @@
       "material": "Fiberon PA6-GF25",
       "brand": "BBL",
       "model": "X1",
-      "slicer": "Orcaslicer",
-      "path": "preset/Fiberon PA6-GF25/BBL/X1/Orcaslicer/Fiberon PA6-GF25 @BBL X1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Fiberon PA6-GF25/BBL/X1/OrcaSlicer/Fiberon PA6-GF25 @BBL X1.json",
       "filename": "Fiberon PA6-GF25 @BBL X1.json"
     },
     {
@@ -173,8 +172,8 @@
       "material": "Fiberon PA612-CF15",
       "brand": "BBL",
       "model": "X1",
-      "slicer": "Orcaslicer",
-      "path": "preset/Fiberon PA612-CF15/BBL/X1/Orcaslicer/Fiberon PA612-CF15 @BBL X1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Fiberon PA612-CF15/BBL/X1/OrcaSlicer/Fiberon PA612-CF15 @BBL X1.json",
       "filename": "Fiberon PA612-CF15 @BBL X1.json"
     },
     {
@@ -197,8 +196,8 @@
       "material": "Fiberon PET-CF17",
       "brand": "BBL",
       "model": "X1",
-      "slicer": "Orcaslicer",
-      "path": "preset/Fiberon PET-CF17/BBL/X1/Orcaslicer/Fiberon PET-CF17 @BBL X1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Fiberon PET-CF17/BBL/X1/OrcaSlicer/Fiberon PET-CF17 @BBL X1.json",
       "filename": "Fiberon PET-CF17 @BBL X1.json"
     },
     {
@@ -221,8 +220,8 @@
       "material": "Fiberon PETG-ESD",
       "brand": "BBL",
       "model": "X1",
-      "slicer": "Orcaslicer",
-      "path": "preset/Fiberon PETG-ESD/BBL/X1/Orcaslicer/Fiberon PETG-ESD @BBL X1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Fiberon PETG-ESD/BBL/X1/OrcaSlicer/Fiberon PETG-ESD @BBL X1.json",
       "filename": "Fiberon PETG-ESD @BBL X1.json"
     },
     {
@@ -245,8 +244,8 @@
       "material": "Fiberon PETG-rCF08",
       "brand": "BBL",
       "model": "X1",
-      "slicer": "Orcaslicer",
-      "path": "preset/Fiberon PETG-rCF08/BBL/X1/Orcaslicer/Fiberon PETG-rCF08 @BBL X1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Fiberon PETG-rCF08/BBL/X1/OrcaSlicer/Fiberon PETG-rCF08 @BBL X1.json",
       "filename": "Fiberon PETG-rCF08 @BBL X1.json"
     },
     {
@@ -261,8 +260,8 @@
       "material": "Panchroma CoPE",
       "brand": "BBL",
       "model": "A1",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma CoPE/BBL/A1/Orcaslicer/Panchroma CoPE @BBL A1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma CoPE/BBL/A1/OrcaSlicer/Panchroma CoPE @BBL A1.json",
       "filename": "Panchroma CoPE @BBL A1.json"
     },
     {
@@ -277,8 +276,8 @@
       "material": "Panchroma CoPE",
       "brand": "BBL",
       "model": "A1M",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma CoPE/BBL/A1M/Orcaslicer/Panchroma CoPE @BBL A1M.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma CoPE/BBL/A1M/OrcaSlicer/Panchroma CoPE @BBL A1M.json",
       "filename": "Panchroma CoPE @BBL A1M.json"
     },
     {
@@ -301,8 +300,8 @@
       "material": "Panchroma CoPE",
       "brand": "BBL",
       "model": "P1P",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma CoPE/BBL/P1P/Orcaslicer/Panchroma CoPE @BBL P1P.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma CoPE/BBL/P1P/OrcaSlicer/Panchroma CoPE @BBL P1P.json",
       "filename": "Panchroma CoPE @BBL P1P.json"
     },
     {
@@ -325,8 +324,8 @@
       "material": "Panchroma CoPE",
       "brand": "BBL",
       "model": "X1",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma CoPE/BBL/X1/Orcaslicer/Panchroma CoPE @BBL X1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma CoPE/BBL/X1/OrcaSlicer/Panchroma CoPE @BBL X1.json",
       "filename": "Panchroma CoPE @BBL X1.json"
     },
     {
@@ -357,8 +356,8 @@
       "material": "Panchroma PLA",
       "brand": "BBL",
       "model": "A1",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA/BBL/A1/Orcaslicer/Panchroma PLA @BBL A1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA/BBL/A1/OrcaSlicer/Panchroma PLA @BBL A1.json",
       "filename": "Panchroma PLA @BBL A1.json"
     },
     {
@@ -373,8 +372,8 @@
       "material": "Panchroma PLA",
       "brand": "BBL",
       "model": "A1M",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA/BBL/A1M/Orcaslicer/Panchroma PLA @BBL A1M.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA/BBL/A1M/OrcaSlicer/Panchroma PLA @BBL A1M.json",
       "filename": "Panchroma PLA @BBL A1M.json"
     },
     {
@@ -405,8 +404,8 @@
       "material": "Panchroma PLA",
       "brand": "BBL",
       "model": "P1P",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA/BBL/P1P/Orcaslicer/Panchroma PLA @BBL P1P.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA/BBL/P1P/OrcaSlicer/Panchroma PLA @BBL P1P.json",
       "filename": "Panchroma PLA @BBL P1P.json"
     },
     {
@@ -437,8 +436,8 @@
       "material": "Panchroma PLA",
       "brand": "BBL",
       "model": "X1",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA/BBL/X1/Orcaslicer/Panchroma PLA @BBL X1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA/BBL/X1/OrcaSlicer/Panchroma PLA @BBL X1.json",
       "filename": "Panchroma PLA @BBL X1.json"
     },
     {
@@ -477,8 +476,8 @@
       "material": "Panchroma PLA Celestial",
       "brand": "BBL",
       "model": "A1",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Celestial/BBL/A1/Orcaslicer/Panchroma PLA Celestial @BBL A1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Celestial/BBL/A1/OrcaSlicer/Panchroma PLA Celestial @BBL A1.json",
       "filename": "Panchroma PLA Celestial @BBL A1.json"
     },
     {
@@ -493,8 +492,8 @@
       "material": "Panchroma PLA Celestial",
       "brand": "BBL",
       "model": "A1M",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Celestial/BBL/A1M/Orcaslicer/Panchroma PLA Celestial @BBL A1M.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Celestial/BBL/A1M/OrcaSlicer/Panchroma PLA Celestial @BBL A1M.json",
       "filename": "Panchroma PLA Celestial @BBL A1M.json"
     },
     {
@@ -525,8 +524,8 @@
       "material": "Panchroma PLA Celestial",
       "brand": "BBL",
       "model": "P1P",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Celestial/BBL/P1P/Orcaslicer/Panchroma PLA Celestial @BBL P1P.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Celestial/BBL/P1P/OrcaSlicer/Panchroma PLA Celestial @BBL P1P.json",
       "filename": "Panchroma PLA Celestial @BBL P1P.json"
     },
     {
@@ -549,8 +548,8 @@
       "material": "Panchroma PLA Celestial",
       "brand": "BBL",
       "model": "X1",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Celestial/BBL/X1/Orcaslicer/Panchroma PLA Celestial @BBL X1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Celestial/BBL/X1/OrcaSlicer/Panchroma PLA Celestial @BBL X1.json",
       "filename": "Panchroma PLA Celestial @BBL X1.json"
     },
     {
@@ -581,8 +580,8 @@
       "material": "Panchroma PLA Galaxy",
       "brand": "BBL",
       "model": "A1",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Galaxy/BBL/A1/Orcaslicer/Panchroma PLA Galaxy @BBL A1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Galaxy/BBL/A1/OrcaSlicer/Panchroma PLA Galaxy @BBL A1.json",
       "filename": "Panchroma PLA Galaxy @BBL A1.json"
     },
     {
@@ -597,8 +596,8 @@
       "material": "Panchroma PLA Galaxy",
       "brand": "BBL",
       "model": "A1M",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Galaxy/BBL/A1M/Orcaslicer/Panchroma PLA Galaxy @BBL A1M.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Galaxy/BBL/A1M/OrcaSlicer/Panchroma PLA Galaxy @BBL A1M.json",
       "filename": "Panchroma PLA Galaxy @BBL A1M.json"
     },
     {
@@ -629,8 +628,8 @@
       "material": "Panchroma PLA Galaxy",
       "brand": "BBL",
       "model": "P1P",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Galaxy/BBL/P1P/Orcaslicer/Panchroma PLA Galaxy @BBL P1P.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Galaxy/BBL/P1P/OrcaSlicer/Panchroma PLA Galaxy @BBL P1P.json",
       "filename": "Panchroma PLA Galaxy @BBL P1P.json"
     },
     {
@@ -653,8 +652,8 @@
       "material": "Panchroma PLA Galaxy",
       "brand": "BBL",
       "model": "X1",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Galaxy/BBL/X1/Orcaslicer/Panchroma PLA Galaxy @BBL X1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Galaxy/BBL/X1/OrcaSlicer/Panchroma PLA Galaxy @BBL X1.json",
       "filename": "Panchroma PLA Galaxy @BBL X1.json"
     },
     {
@@ -685,8 +684,8 @@
       "material": "Panchroma PLA Glow",
       "brand": "BBL",
       "model": "A1",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Glow/BBL/A1/Orcaslicer/Panchroma PLA Glow @BBL A1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Glow/BBL/A1/OrcaSlicer/Panchroma PLA Glow @BBL A1.json",
       "filename": "Panchroma PLA Glow @BBL A1.json"
     },
     {
@@ -701,8 +700,8 @@
       "material": "Panchroma PLA Glow",
       "brand": "BBL",
       "model": "A1M",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Glow/BBL/A1M/Orcaslicer/Panchroma PLA Glow @BBL A1M.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Glow/BBL/A1M/OrcaSlicer/Panchroma PLA Glow @BBL A1M.json",
       "filename": "Panchroma PLA Glow @BBL A1M.json"
     },
     {
@@ -733,8 +732,8 @@
       "material": "Panchroma PLA Glow",
       "brand": "BBL",
       "model": "P1P",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Glow/BBL/P1P/Orcaslicer/Panchroma PLA Glow @BBL P1P.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Glow/BBL/P1P/OrcaSlicer/Panchroma PLA Glow @BBL P1P.json",
       "filename": "Panchroma PLA Glow @BBL P1P.json"
     },
     {
@@ -757,8 +756,8 @@
       "material": "Panchroma PLA Glow",
       "brand": "BBL",
       "model": "X1",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Glow/BBL/X1/Orcaslicer/Panchroma PLA Glow @BBL X1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Glow/BBL/X1/OrcaSlicer/Panchroma PLA Glow @BBL X1.json",
       "filename": "Panchroma PLA Glow @BBL X1.json"
     },
     {
@@ -789,8 +788,8 @@
       "material": "Panchroma PLA Luminous",
       "brand": "BBL",
       "model": "A1",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Luminous/BBL/A1/Orcaslicer/Panchroma PLA Luminous @BBL A1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Luminous/BBL/A1/OrcaSlicer/Panchroma PLA Luminous @BBL A1.json",
       "filename": "Panchroma PLA Luminous @BBL A1.json"
     },
     {
@@ -805,8 +804,8 @@
       "material": "Panchroma PLA Luminous",
       "brand": "BBL",
       "model": "A1M",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Luminous/BBL/A1M/Orcaslicer/Panchroma PLA Luminous @BBL A1M.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Luminous/BBL/A1M/OrcaSlicer/Panchroma PLA Luminous @BBL A1M.json",
       "filename": "Panchroma PLA Luminous @BBL A1M.json"
     },
     {
@@ -837,8 +836,8 @@
       "material": "Panchroma PLA Luminous",
       "brand": "BBL",
       "model": "P1P",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Luminous/BBL/P1P/Orcaslicer/Panchroma PLA Luminous @BBL P1P.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Luminous/BBL/P1P/OrcaSlicer/Panchroma PLA Luminous @BBL P1P.json",
       "filename": "Panchroma PLA Luminous @BBL P1P.json"
     },
     {
@@ -861,8 +860,8 @@
       "material": "Panchroma PLA Luminous",
       "brand": "BBL",
       "model": "X1",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Luminous/BBL/X1/Orcaslicer/Panchroma PLA Luminous @BBL X1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Luminous/BBL/X1/OrcaSlicer/Panchroma PLA Luminous @BBL X1.json",
       "filename": "Panchroma PLA Luminous @BBL X1.json"
     },
     {
@@ -893,8 +892,8 @@
       "material": "Panchroma PLA Marble",
       "brand": "BBL",
       "model": "A1",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Marble/BBL/A1/Orcaslicer/Panchroma PLA Marble @BBL A1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Marble/BBL/A1/OrcaSlicer/Panchroma PLA Marble @BBL A1.json",
       "filename": "Panchroma PLA Marble @BBL A1.json"
     },
     {
@@ -909,8 +908,8 @@
       "material": "Panchroma PLA Marble",
       "brand": "BBL",
       "model": "A1M",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Marble/BBL/A1M/Orcaslicer/Panchroma PLA Marble @BBL A1M.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Marble/BBL/A1M/OrcaSlicer/Panchroma PLA Marble @BBL A1M.json",
       "filename": "Panchroma PLA Marble @BBL A1M.json"
     },
     {
@@ -925,8 +924,8 @@
       "material": "Panchroma PLA Marble",
       "brand": "BBL",
       "model": "P1P",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Marble/BBL/P1P/Orcaslicer/Panchroma PLA Marble @BBL P1P.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Marble/BBL/P1P/OrcaSlicer/Panchroma PLA Marble @BBL P1P.json",
       "filename": "Panchroma PLA Marble @BBL P1P.json"
     },
     {
@@ -949,8 +948,8 @@
       "material": "Panchroma PLA Marble",
       "brand": "BBL",
       "model": "X1",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Marble/BBL/X1/Orcaslicer/Panchroma PLA Marble @BBL X1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Marble/BBL/X1/OrcaSlicer/Panchroma PLA Marble @BBL X1.json",
       "filename": "Panchroma PLA Marble @BBL X1.json"
     },
     {
@@ -981,8 +980,8 @@
       "material": "Panchroma PLA Matte",
       "brand": "BBL",
       "model": "A1",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Matte/BBL/A1/Orcaslicer/Panchroma PLA Matte @BBL A1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Matte/BBL/A1/OrcaSlicer/Panchroma PLA Matte @BBL A1.json",
       "filename": "Panchroma PLA Matte @BBL A1.json"
     },
     {
@@ -997,8 +996,8 @@
       "material": "Panchroma PLA Matte",
       "brand": "BBL",
       "model": "A1M",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Matte/BBL/A1M/Orcaslicer/Panchroma PLA Matte @BBL A1M.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Matte/BBL/A1M/OrcaSlicer/Panchroma PLA Matte @BBL A1M.json",
       "filename": "Panchroma PLA Matte @BBL A1M.json"
     },
     {
@@ -1013,8 +1012,8 @@
       "material": "Panchroma PLA Matte",
       "brand": "BBL",
       "model": "P1P",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Matte/BBL/P1P/Orcaslicer/Panchroma PLA Matte @BBL P1P.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Matte/BBL/P1P/OrcaSlicer/Panchroma PLA Matte @BBL P1P.json",
       "filename": "Panchroma PLA Matte @BBL P1P.json"
     },
     {
@@ -1037,8 +1036,8 @@
       "material": "Panchroma PLA Matte",
       "brand": "BBL",
       "model": "X1",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Matte/BBL/X1/Orcaslicer/Panchroma PLA Matte @BBL X1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Matte/BBL/X1/OrcaSlicer/Panchroma PLA Matte @BBL X1.json",
       "filename": "Panchroma PLA Matte @BBL X1.json"
     },
     {
@@ -1069,8 +1068,8 @@
       "material": "Panchroma PLA Metallic",
       "brand": "BBL",
       "model": "A1",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Metallic/BBL/A1/Orcaslicer/Panchroma PLA Metallic @BBL A1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Metallic/BBL/A1/OrcaSlicer/Panchroma PLA Metallic @BBL A1.json",
       "filename": "Panchroma PLA Metallic @BBL A1.json"
     },
     {
@@ -1085,8 +1084,8 @@
       "material": "Panchroma PLA Metallic",
       "brand": "BBL",
       "model": "A1M",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Metallic/BBL/A1M/Orcaslicer/Panchroma PLA Metallic @BBL A1M.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Metallic/BBL/A1M/OrcaSlicer/Panchroma PLA Metallic @BBL A1M.json",
       "filename": "Panchroma PLA Metallic @BBL A1M.json"
     },
     {
@@ -1117,8 +1116,8 @@
       "material": "Panchroma PLA Metallic",
       "brand": "BBL",
       "model": "P1P",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Metallic/BBL/P1P/Orcaslicer/Panchroma PLA Metallic @BBL P1P.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Metallic/BBL/P1P/OrcaSlicer/Panchroma PLA Metallic @BBL P1P.json",
       "filename": "Panchroma PLA Metallic @BBL P1P.json"
     },
     {
@@ -1141,8 +1140,8 @@
       "material": "Panchroma PLA Metallic",
       "brand": "BBL",
       "model": "X1",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Metallic/BBL/X1/Orcaslicer/Panchroma PLA Metallic @BBL X1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Metallic/BBL/X1/OrcaSlicer/Panchroma PLA Metallic @BBL X1.json",
       "filename": "Panchroma PLA Metallic @BBL X1.json"
     },
     {
@@ -1173,8 +1172,8 @@
       "material": "Panchroma PLA Neon",
       "brand": "BBL",
       "model": "A1",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Neon/BBL/A1/Orcaslicer/Panchroma PLA Neon @BBL A1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Neon/BBL/A1/OrcaSlicer/Panchroma PLA Neon @BBL A1.json",
       "filename": "Panchroma PLA Neon @BBL A1.json"
     },
     {
@@ -1189,8 +1188,8 @@
       "material": "Panchroma PLA Neon",
       "brand": "BBL",
       "model": "A1M",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Neon/BBL/A1M/Orcaslicer/Panchroma PLA Neon @BBL A1M.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Neon/BBL/A1M/OrcaSlicer/Panchroma PLA Neon @BBL A1M.json",
       "filename": "Panchroma PLA Neon @BBL A1M.json"
     },
     {
@@ -1221,8 +1220,8 @@
       "material": "Panchroma PLA Neon",
       "brand": "BBL",
       "model": "P1P",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Neon/BBL/P1P/Orcaslicer/Panchroma PLA Neon @BBL P1P.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Neon/BBL/P1P/OrcaSlicer/Panchroma PLA Neon @BBL P1P.json",
       "filename": "Panchroma PLA Neon @BBL P1P.json"
     },
     {
@@ -1245,8 +1244,8 @@
       "material": "Panchroma PLA Neon",
       "brand": "BBL",
       "model": "X1",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Neon/BBL/X1/Orcaslicer/Panchroma PLA Neon @BBL X1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Neon/BBL/X1/OrcaSlicer/Panchroma PLA Neon @BBL X1.json",
       "filename": "Panchroma PLA Neon @BBL X1.json"
     },
     {
@@ -1277,8 +1276,8 @@
       "material": "Panchroma PLA Satin",
       "brand": "BBL",
       "model": "A1",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Satin/BBL/A1/Orcaslicer/Panchroma PLA Satin @BBL A1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Satin/BBL/A1/OrcaSlicer/Panchroma PLA Satin @BBL A1.json",
       "filename": "Panchroma PLA Satin @BBL A1.json"
     },
     {
@@ -1293,8 +1292,8 @@
       "material": "Panchroma PLA Satin",
       "brand": "BBL",
       "model": "A1M",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Satin/BBL/A1M/Orcaslicer/Panchroma PLA Satin @BBL A1M.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Satin/BBL/A1M/OrcaSlicer/Panchroma PLA Satin @BBL A1M.json",
       "filename": "Panchroma PLA Satin @BBL A1M.json"
     },
     {
@@ -1309,8 +1308,8 @@
       "material": "Panchroma PLA Satin",
       "brand": "BBL",
       "model": "P1P",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Satin/BBL/P1P/Orcaslicer/Panchroma PLA Satin @BBL P1P.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Satin/BBL/P1P/OrcaSlicer/Panchroma PLA Satin @BBL P1P.json",
       "filename": "Panchroma PLA Satin @BBL P1P.json"
     },
     {
@@ -1333,8 +1332,8 @@
       "material": "Panchroma PLA Satin",
       "brand": "BBL",
       "model": "X1",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Satin/BBL/X1/Orcaslicer/Panchroma PLA Satin @BBL X1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Satin/BBL/X1/OrcaSlicer/Panchroma PLA Satin @BBL X1.json",
       "filename": "Panchroma PLA Satin @BBL X1.json"
     },
     {
@@ -1365,8 +1364,8 @@
       "material": "Panchroma PLA Silk",
       "brand": "BBL",
       "model": "A1",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Silk/BBL/A1/Orcaslicer/Panchroma PLA Silk @BBL A1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Silk/BBL/A1/OrcaSlicer/Panchroma PLA Silk @BBL A1.json",
       "filename": "Panchroma PLA Silk @BBL A1.json"
     },
     {
@@ -1381,8 +1380,8 @@
       "material": "Panchroma PLA Silk",
       "brand": "BBL",
       "model": "A1M",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Silk/BBL/A1M/Orcaslicer/Panchroma PLA Silk @BBL A1M.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Silk/BBL/A1M/OrcaSlicer/Panchroma PLA Silk @BBL A1M.json",
       "filename": "Panchroma PLA Silk @BBL A1M.json"
     },
     {
@@ -1405,8 +1404,8 @@
       "material": "Panchroma PLA Silk",
       "brand": "BBL",
       "model": "P1P",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Silk/BBL/P1P/Orcaslicer/Panchroma PLA Silk @BBL P1P.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Silk/BBL/P1P/OrcaSlicer/Panchroma PLA Silk @BBL P1P.json",
       "filename": "Panchroma PLA Silk @BBL P1P.json"
     },
     {
@@ -1429,8 +1428,8 @@
       "material": "Panchroma PLA Silk",
       "brand": "BBL",
       "model": "X1",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Silk/BBL/X1/Orcaslicer/Panchroma PLA Silk @BBL X1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Silk/BBL/X1/OrcaSlicer/Panchroma PLA Silk @BBL X1.json",
       "filename": "Panchroma PLA Silk @BBL X1.json"
     },
     {
@@ -1461,8 +1460,8 @@
       "material": "Panchroma PLA Starlight",
       "brand": "BBL",
       "model": "A1",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Starlight/BBL/A1/Orcaslicer/Panchroma PLA Starlight @BBL A1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Starlight/BBL/A1/OrcaSlicer/Panchroma PLA Starlight @BBL A1.json",
       "filename": "Panchroma PLA Starlight @BBL A1.json"
     },
     {
@@ -1477,8 +1476,8 @@
       "material": "Panchroma PLA Starlight",
       "brand": "BBL",
       "model": "A1M",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Starlight/BBL/A1M/Orcaslicer/Panchroma PLA Starlight @BBL A1M.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Starlight/BBL/A1M/OrcaSlicer/Panchroma PLA Starlight @BBL A1M.json",
       "filename": "Panchroma PLA Starlight @BBL A1M.json"
     },
     {
@@ -1509,8 +1508,8 @@
       "material": "Panchroma PLA Starlight",
       "brand": "BBL",
       "model": "P1P",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Starlight/BBL/P1P/Orcaslicer/Panchroma PLA Starlight @BBL P1P.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Starlight/BBL/P1P/OrcaSlicer/Panchroma PLA Starlight @BBL P1P.json",
       "filename": "Panchroma PLA Starlight @BBL P1P.json"
     },
     {
@@ -1533,8 +1532,8 @@
       "material": "Panchroma PLA Starlight",
       "brand": "BBL",
       "model": "X1",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Starlight/BBL/X1/Orcaslicer/Panchroma PLA Starlight @BBL X1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Starlight/BBL/X1/OrcaSlicer/Panchroma PLA Starlight @BBL X1.json",
       "filename": "Panchroma PLA Starlight @BBL X1.json"
     },
     {
@@ -1565,8 +1564,8 @@
       "material": "Panchroma PLA Translucent",
       "brand": "BBL",
       "model": "A1",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Translucent/BBL/A1/Orcaslicer/Panchroma PLA Translucent @BBL A1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Translucent/BBL/A1/OrcaSlicer/Panchroma PLA Translucent @BBL A1.json",
       "filename": "Panchroma PLA Translucent @BBL A1.json"
     },
     {
@@ -1581,8 +1580,8 @@
       "material": "Panchroma PLA Translucent",
       "brand": "BBL",
       "model": "A1M",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Translucent/BBL/A1M/Orcaslicer/Panchroma PLA Translucent @BBL A1M.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Translucent/BBL/A1M/OrcaSlicer/Panchroma PLA Translucent @BBL A1M.json",
       "filename": "Panchroma PLA Translucent @BBL A1M.json"
     },
     {
@@ -1613,8 +1612,8 @@
       "material": "Panchroma PLA Translucent",
       "brand": "BBL",
       "model": "P1P",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Translucent/BBL/P1P/Orcaslicer/Panchroma PLA Translucent @BBL P1P.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Translucent/BBL/P1P/OrcaSlicer/Panchroma PLA Translucent @BBL P1P.json",
       "filename": "Panchroma PLA Translucent @BBL P1P.json"
     },
     {
@@ -1637,8 +1636,8 @@
       "material": "Panchroma PLA Translucent",
       "brand": "BBL",
       "model": "X1",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA Translucent/BBL/X1/Orcaslicer/Panchroma PLA Translucent @BBL X1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Translucent/BBL/X1/OrcaSlicer/Panchroma PLA Translucent @BBL X1.json",
       "filename": "Panchroma PLA Translucent @BBL X1.json"
     },
     {
@@ -1669,8 +1668,8 @@
       "material": "Panchroma PLA UV Shift",
       "brand": "BBL",
       "model": "A1",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA UV Shift/BBL/A1/Orcaslicer/Panchroma PLA UV Shift @BBL A1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA UV Shift/BBL/A1/OrcaSlicer/Panchroma PLA UV Shift @BBL A1.json",
       "filename": "Panchroma PLA UV Shift @BBL A1.json"
     },
     {
@@ -1685,8 +1684,8 @@
       "material": "Panchroma PLA UV Shift",
       "brand": "BBL",
       "model": "A1M",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA UV Shift/BBL/A1M/Orcaslicer/Panchroma PLA UV Shift @BBL A1M.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA UV Shift/BBL/A1M/OrcaSlicer/Panchroma PLA UV Shift @BBL A1M.json",
       "filename": "Panchroma PLA UV Shift @BBL A1M.json"
     },
     {
@@ -1717,8 +1716,8 @@
       "material": "Panchroma PLA UV Shift",
       "brand": "BBL",
       "model": "P1P",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA UV Shift/BBL/P1P/Orcaslicer/Panchroma PLA UV Shift @BBL P1P.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA UV Shift/BBL/P1P/OrcaSlicer/Panchroma PLA UV Shift @BBL P1P.json",
       "filename": "Panchroma PLA UV Shift @BBL P1P.json"
     },
     {
@@ -1741,8 +1740,8 @@
       "material": "Panchroma PLA UV Shift",
       "brand": "BBL",
       "model": "X1",
-      "slicer": "Orcaslicer",
-      "path": "preset/Panchroma PLA UV Shift/BBL/X1/Orcaslicer/Panchroma PLA UV Shift @BBL X1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA UV Shift/BBL/X1/OrcaSlicer/Panchroma PLA UV Shift @BBL X1.json",
       "filename": "Panchroma PLA UV Shift @BBL X1.json"
     },
     {
@@ -1813,8 +1812,8 @@
       "material": "PolyLite PLA",
       "brand": "BBL",
       "model": "A1",
-      "slicer": "Orcaslicer",
-      "path": "preset/PolyLite PLA/BBL/A1/Orcaslicer/PolyLite PLA @BBL A1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyLite PLA/BBL/A1/OrcaSlicer/PolyLite PLA @BBL A1.json",
       "filename": "PolyLite PLA @BBL A1.json"
     },
     {
@@ -1829,8 +1828,8 @@
       "material": "PolyLite PLA",
       "brand": "BBL",
       "model": "A1M",
-      "slicer": "Orcaslicer",
-      "path": "preset/PolyLite PLA/BBL/A1M/Orcaslicer/PolyLite PLA @BBL A1M.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyLite PLA/BBL/A1M/OrcaSlicer/PolyLite PLA @BBL A1M.json",
       "filename": "PolyLite PLA @BBL A1M.json"
     },
     {
@@ -1861,8 +1860,8 @@
       "material": "PolyLite PLA",
       "brand": "BBL",
       "model": "P1P",
-      "slicer": "Orcaslicer",
-      "path": "preset/PolyLite PLA/BBL/P1P/Orcaslicer/PolyLite PLA @BBL P1P.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyLite PLA/BBL/P1P/OrcaSlicer/PolyLite PLA @BBL P1P.json",
       "filename": "PolyLite PLA @BBL P1P.json"
     },
     {
@@ -1885,8 +1884,8 @@
       "material": "PolyLite PLA",
       "brand": "BBL",
       "model": "X1",
-      "slicer": "Orcaslicer",
-      "path": "preset/PolyLite PLA/BBL/X1/Orcaslicer/PolyLite PLA @BBL X1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyLite PLA/BBL/X1/OrcaSlicer/PolyLite PLA @BBL X1.json",
       "filename": "PolyLite PLA @BBL X1.json"
     },
     {
@@ -1917,8 +1916,8 @@
       "material": "PolyLite PLA Galaxy",
       "brand": "BBL",
       "model": "A1",
-      "slicer": "Orcaslicer",
-      "path": "preset/PolyLite PLA Galaxy/BBL/A1/Orcaslicer/PolyLite PLA Galaxy @BBL A1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyLite PLA Galaxy/BBL/A1/OrcaSlicer/PolyLite PLA Galaxy @BBL A1.json",
       "filename": "PolyLite PLA Galaxy @BBL A1.json"
     },
     {
@@ -1933,8 +1932,8 @@
       "material": "PolyLite PLA Galaxy",
       "brand": "BBL",
       "model": "A1M",
-      "slicer": "Orcaslicer",
-      "path": "preset/PolyLite PLA Galaxy/BBL/A1M/Orcaslicer/PolyLite PLA Galaxy @BBL A1M.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyLite PLA Galaxy/BBL/A1M/OrcaSlicer/PolyLite PLA Galaxy @BBL A1M.json",
       "filename": "PolyLite PLA Galaxy @BBL A1M.json"
     },
     {
@@ -1965,8 +1964,8 @@
       "material": "PolyLite PLA Galaxy",
       "brand": "BBL",
       "model": "P1P",
-      "slicer": "Orcaslicer",
-      "path": "preset/PolyLite PLA Galaxy/BBL/P1P/Orcaslicer/PolyLite PLA Galaxy @BBL P1P.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyLite PLA Galaxy/BBL/P1P/OrcaSlicer/PolyLite PLA Galaxy @BBL P1P.json",
       "filename": "PolyLite PLA Galaxy @BBL P1P.json"
     },
     {
@@ -1989,8 +1988,8 @@
       "material": "PolyLite PLA Galaxy",
       "brand": "BBL",
       "model": "X1",
-      "slicer": "Orcaslicer",
-      "path": "preset/PolyLite PLA Galaxy/BBL/X1/Orcaslicer/PolyLite PLA Galaxy @BBL X1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyLite PLA Galaxy/BBL/X1/OrcaSlicer/PolyLite PLA Galaxy @BBL X1.json",
       "filename": "PolyLite PLA Galaxy @BBL X1.json"
     },
     {
@@ -2021,8 +2020,8 @@
       "material": "PolyLite PLA Glow",
       "brand": "BBL",
       "model": "A1",
-      "slicer": "Orcaslicer",
-      "path": "preset/PolyLite PLA Glow/BBL/A1/Orcaslicer/PolyLite PLA Glow @BBL A1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyLite PLA Glow/BBL/A1/OrcaSlicer/PolyLite PLA Glow @BBL A1.json",
       "filename": "PolyLite PLA Glow @BBL A1.json"
     },
     {
@@ -2037,8 +2036,8 @@
       "material": "PolyLite PLA Glow",
       "brand": "BBL",
       "model": "A1M",
-      "slicer": "Orcaslicer",
-      "path": "preset/PolyLite PLA Glow/BBL/A1M/Orcaslicer/PolyLite PLA Glow @BBL A1M.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyLite PLA Glow/BBL/A1M/OrcaSlicer/PolyLite PLA Glow @BBL A1M.json",
       "filename": "PolyLite PLA Glow @BBL A1M.json"
     },
     {
@@ -2069,8 +2068,8 @@
       "material": "PolyLite PLA Glow",
       "brand": "BBL",
       "model": "P1P",
-      "slicer": "Orcaslicer",
-      "path": "preset/PolyLite PLA Glow/BBL/P1P/Orcaslicer/PolyLite PLA Glow @BBL P1P.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyLite PLA Glow/BBL/P1P/OrcaSlicer/PolyLite PLA Glow @BBL P1P.json",
       "filename": "PolyLite PLA Glow @BBL P1P.json"
     },
     {
@@ -2093,8 +2092,8 @@
       "material": "PolyLite PLA Glow",
       "brand": "BBL",
       "model": "X1",
-      "slicer": "Orcaslicer",
-      "path": "preset/PolyLite PLA Glow/BBL/X1/Orcaslicer/PolyLite PLA Glow @BBL X1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyLite PLA Glow/BBL/X1/OrcaSlicer/PolyLite PLA Glow @BBL X1.json",
       "filename": "PolyLite PLA Glow @BBL X1.json"
     },
     {
@@ -2125,8 +2124,8 @@
       "material": "PolyLite PLA Luminous",
       "brand": "BBL",
       "model": "A1",
-      "slicer": "Orcaslicer",
-      "path": "preset/PolyLite PLA Luminous/BBL/A1/Orcaslicer/PolyLite PLA Luminous @BBL A1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyLite PLA Luminous/BBL/A1/OrcaSlicer/PolyLite PLA Luminous @BBL A1.json",
       "filename": "PolyLite PLA Luminous @BBL A1.json"
     },
     {
@@ -2141,8 +2140,8 @@
       "material": "PolyLite PLA Luminous",
       "brand": "BBL",
       "model": "A1M",
-      "slicer": "Orcaslicer",
-      "path": "preset/PolyLite PLA Luminous/BBL/A1M/Orcaslicer/PolyLite PLA Luminous @BBL A1M.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyLite PLA Luminous/BBL/A1M/OrcaSlicer/PolyLite PLA Luminous @BBL A1M.json",
       "filename": "PolyLite PLA Luminous @BBL A1M.json"
     },
     {
@@ -2173,8 +2172,8 @@
       "material": "PolyLite PLA Luminous",
       "brand": "BBL",
       "model": "P1P",
-      "slicer": "Orcaslicer",
-      "path": "preset/PolyLite PLA Luminous/BBL/P1P/Orcaslicer/PolyLite PLA Luminous @BBL P1P.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyLite PLA Luminous/BBL/P1P/OrcaSlicer/PolyLite PLA Luminous @BBL P1P.json",
       "filename": "PolyLite PLA Luminous @BBL P1P.json"
     },
     {
@@ -2197,8 +2196,8 @@
       "material": "PolyLite PLA Luminous",
       "brand": "BBL",
       "model": "X1",
-      "slicer": "Orcaslicer",
-      "path": "preset/PolyLite PLA Luminous/BBL/X1/Orcaslicer/PolyLite PLA Luminous @BBL X1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyLite PLA Luminous/BBL/X1/OrcaSlicer/PolyLite PLA Luminous @BBL X1.json",
       "filename": "PolyLite PLA Luminous @BBL X1.json"
     },
     {
@@ -2229,8 +2228,8 @@
       "material": "PolyLite PLA Neon",
       "brand": "BBL",
       "model": "A1",
-      "slicer": "Orcaslicer",
-      "path": "preset/PolyLite PLA Neon/BBL/A1/Orcaslicer/PolyLite PLA Neon @BBL A1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyLite PLA Neon/BBL/A1/OrcaSlicer/PolyLite PLA Neon @BBL A1.json",
       "filename": "PolyLite PLA Neon @BBL A1.json"
     },
     {
@@ -2245,8 +2244,8 @@
       "material": "PolyLite PLA Neon",
       "brand": "BBL",
       "model": "A1M",
-      "slicer": "Orcaslicer",
-      "path": "preset/PolyLite PLA Neon/BBL/A1M/Orcaslicer/PolyLite PLA Neon @BBL A1M.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyLite PLA Neon/BBL/A1M/OrcaSlicer/PolyLite PLA Neon @BBL A1M.json",
       "filename": "PolyLite PLA Neon @BBL A1M.json"
     },
     {
@@ -2277,8 +2276,8 @@
       "material": "PolyLite PLA Neon",
       "brand": "BBL",
       "model": "P1P",
-      "slicer": "Orcaslicer",
-      "path": "preset/PolyLite PLA Neon/BBL/P1P/Orcaslicer/PolyLite PLA Neon @BBL P1P.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyLite PLA Neon/BBL/P1P/OrcaSlicer/PolyLite PLA Neon @BBL P1P.json",
       "filename": "PolyLite PLA Neon @BBL P1P.json"
     },
     {
@@ -2301,8 +2300,8 @@
       "material": "PolyLite PLA Neon",
       "brand": "BBL",
       "model": "X1",
-      "slicer": "Orcaslicer",
-      "path": "preset/PolyLite PLA Neon/BBL/X1/Orcaslicer/PolyLite PLA Neon @BBL X1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyLite PLA Neon/BBL/X1/OrcaSlicer/PolyLite PLA Neon @BBL X1.json",
       "filename": "PolyLite PLA Neon @BBL X1.json"
     },
     {
@@ -2381,8 +2380,8 @@
       "material": "PolyLite PLA Starlight",
       "brand": "BBL",
       "model": "A1",
-      "slicer": "Orcaslicer",
-      "path": "preset/PolyLite PLA Starlight/BBL/A1/Orcaslicer/PolyLite PLA Starlight @BBL A1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyLite PLA Starlight/BBL/A1/OrcaSlicer/PolyLite PLA Starlight @BBL A1.json",
       "filename": "PolyLite PLA Starlight @BBL A1.json"
     },
     {
@@ -2397,8 +2396,8 @@
       "material": "PolyLite PLA Starlight",
       "brand": "BBL",
       "model": "A1M",
-      "slicer": "Orcaslicer",
-      "path": "preset/PolyLite PLA Starlight/BBL/A1M/Orcaslicer/PolyLite PLA Starlight @BBL A1M.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyLite PLA Starlight/BBL/A1M/OrcaSlicer/PolyLite PLA Starlight @BBL A1M.json",
       "filename": "PolyLite PLA Starlight @BBL A1M.json"
     },
     {
@@ -2429,8 +2428,8 @@
       "material": "PolyLite PLA Starlight",
       "brand": "BBL",
       "model": "P1P",
-      "slicer": "Orcaslicer",
-      "path": "preset/PolyLite PLA Starlight/BBL/P1P/Orcaslicer/PolyLite PLA Starlight @BBL P1P.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyLite PLA Starlight/BBL/P1P/OrcaSlicer/PolyLite PLA Starlight @BBL P1P.json",
       "filename": "PolyLite PLA Starlight @BBL P1P.json"
     },
     {
@@ -2453,8 +2452,8 @@
       "material": "PolyLite PLA Starlight",
       "brand": "BBL",
       "model": "X1",
-      "slicer": "Orcaslicer",
-      "path": "preset/PolyLite PLA Starlight/BBL/X1/Orcaslicer/PolyLite PLA Starlight @BBL X1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyLite PLA Starlight/BBL/X1/OrcaSlicer/PolyLite PLA Starlight @BBL X1.json",
       "filename": "PolyLite PLA Starlight @BBL X1.json"
     },
     {
@@ -2485,8 +2484,8 @@
       "material": "PolyLite PLA Translucent",
       "brand": "BBL",
       "model": "A1",
-      "slicer": "Orcaslicer",
-      "path": "preset/PolyLite PLA Translucent/BBL/A1/Orcaslicer/PolyLite PLA Translucent @BBL A1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyLite PLA Translucent/BBL/A1/OrcaSlicer/PolyLite PLA Translucent @BBL A1.json",
       "filename": "PolyLite PLA Translucent @BBL A1.json"
     },
     {
@@ -2501,8 +2500,8 @@
       "material": "PolyLite PLA Translucent",
       "brand": "BBL",
       "model": "A1M",
-      "slicer": "Orcaslicer",
-      "path": "preset/PolyLite PLA Translucent/BBL/A1M/Orcaslicer/PolyLite PLA Translucent @BBL A1M.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyLite PLA Translucent/BBL/A1M/OrcaSlicer/PolyLite PLA Translucent @BBL A1M.json",
       "filename": "PolyLite PLA Translucent @BBL A1M.json"
     },
     {
@@ -2533,8 +2532,8 @@
       "material": "PolyLite PLA Translucent",
       "brand": "BBL",
       "model": "P1P",
-      "slicer": "Orcaslicer",
-      "path": "preset/PolyLite PLA Translucent/BBL/P1P/Orcaslicer/PolyLite PLA Translucent @BBL P1P.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyLite PLA Translucent/BBL/P1P/OrcaSlicer/PolyLite PLA Translucent @BBL P1P.json",
       "filename": "PolyLite PLA Translucent @BBL P1P.json"
     },
     {
@@ -2557,8 +2556,8 @@
       "material": "PolyLite PLA Translucent",
       "brand": "BBL",
       "model": "X1",
-      "slicer": "Orcaslicer",
-      "path": "preset/PolyLite PLA Translucent/BBL/X1/Orcaslicer/PolyLite PLA Translucent @BBL X1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyLite PLA Translucent/BBL/X1/OrcaSlicer/PolyLite PLA Translucent @BBL X1.json",
       "filename": "PolyLite PLA Translucent @BBL X1.json"
     },
     {
@@ -2589,8 +2588,8 @@
       "material": "PolyTerra PLA",
       "brand": "BBL",
       "model": "A1",
-      "slicer": "Orcaslicer",
-      "path": "preset/PolyTerra PLA/BBL/A1/Orcaslicer/PolyTerra PLA @BBL A1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyTerra PLA/BBL/A1/OrcaSlicer/PolyTerra PLA @BBL A1.json",
       "filename": "PolyTerra PLA @BBL A1.json"
     },
     {
@@ -2605,8 +2604,8 @@
       "material": "PolyTerra PLA",
       "brand": "BBL",
       "model": "A1M",
-      "slicer": "Orcaslicer",
-      "path": "preset/PolyTerra PLA/BBL/A1M/Orcaslicer/PolyTerra PLA @BBL A1M.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyTerra PLA/BBL/A1M/OrcaSlicer/PolyTerra PLA @BBL A1M.json",
       "filename": "PolyTerra PLA @BBL A1M.json"
     },
     {
@@ -2621,8 +2620,8 @@
       "material": "PolyTerra PLA",
       "brand": "BBL",
       "model": "P1P",
-      "slicer": "Orcaslicer",
-      "path": "preset/PolyTerra PLA/BBL/P1P/Orcaslicer/PolyTerra PLA @BBL P1P.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyTerra PLA/BBL/P1P/OrcaSlicer/PolyTerra PLA @BBL P1P.json",
       "filename": "PolyTerra PLA @BBL P1P.json"
     },
     {
@@ -2645,8 +2644,8 @@
       "material": "PolyTerra PLA",
       "brand": "BBL",
       "model": "X1",
-      "slicer": "Orcaslicer",
-      "path": "preset/PolyTerra PLA/BBL/X1/Orcaslicer/PolyTerra PLA @BBL X1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyTerra PLA/BBL/X1/OrcaSlicer/PolyTerra PLA @BBL X1.json",
       "filename": "PolyTerra PLA @BBL X1.json"
     },
     {
@@ -2677,8 +2676,8 @@
       "material": "PolyTerra PLA Marble",
       "brand": "BBL",
       "model": "A1",
-      "slicer": "Orcaslicer",
-      "path": "preset/PolyTerra PLA Marble/BBL/A1/Orcaslicer/PolyTerra PLA Marble @BBL A1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyTerra PLA Marble/BBL/A1/OrcaSlicer/PolyTerra PLA Marble @BBL A1.json",
       "filename": "PolyTerra PLA Marble @BBL A1.json"
     },
     {
@@ -2693,8 +2692,8 @@
       "material": "PolyTerra PLA Marble",
       "brand": "BBL",
       "model": "A1M",
-      "slicer": "Orcaslicer",
-      "path": "preset/PolyTerra PLA Marble/BBL/A1M/Orcaslicer/PolyTerra PLA Marble @BBL A1M.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyTerra PLA Marble/BBL/A1M/OrcaSlicer/PolyTerra PLA Marble @BBL A1M.json",
       "filename": "PolyTerra PLA Marble @BBL A1M.json"
     },
     {
@@ -2709,8 +2708,8 @@
       "material": "PolyTerra PLA Marble",
       "brand": "BBL",
       "model": "P1P",
-      "slicer": "Orcaslicer",
-      "path": "preset/PolyTerra PLA Marble/BBL/P1P/Orcaslicer/PolyTerra PLA Marble @BBL P1P.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyTerra PLA Marble/BBL/P1P/OrcaSlicer/PolyTerra PLA Marble @BBL P1P.json",
       "filename": "PolyTerra PLA Marble @BBL P1P.json"
     },
     {
@@ -2733,8 +2732,8 @@
       "material": "PolyTerra PLA Marble",
       "brand": "BBL",
       "model": "X1",
-      "slicer": "Orcaslicer",
-      "path": "preset/PolyTerra PLA Marble/BBL/X1/Orcaslicer/PolyTerra PLA Marble @BBL X1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyTerra PLA Marble/BBL/X1/OrcaSlicer/PolyTerra PLA Marble @BBL X1.json",
       "filename": "PolyTerra PLA Marble @BBL X1.json"
     },
     {
@@ -2765,8 +2764,8 @@
       "material": "PolyTerra PLA+",
       "brand": "BBL",
       "model": "A1",
-      "slicer": "Orcaslicer",
-      "path": "preset/PolyTerra PLA+/BBL/A1/Orcaslicer/PolyTerra PLA+ @BBL A1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyTerra PLA+/BBL/A1/OrcaSlicer/PolyTerra PLA+ @BBL A1.json",
       "filename": "PolyTerra PLA+ @BBL A1.json"
     },
     {
@@ -2781,8 +2780,8 @@
       "material": "PolyTerra PLA+",
       "brand": "BBL",
       "model": "A1M",
-      "slicer": "Orcaslicer",
-      "path": "preset/PolyTerra PLA+/BBL/A1M/Orcaslicer/PolyTerra PLA+ @BBL A1M.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyTerra PLA+/BBL/A1M/OrcaSlicer/PolyTerra PLA+ @BBL A1M.json",
       "filename": "PolyTerra PLA+ @BBL A1M.json"
     },
     {
@@ -2797,8 +2796,8 @@
       "material": "PolyTerra PLA+",
       "brand": "BBL",
       "model": "P1P",
-      "slicer": "Orcaslicer",
-      "path": "preset/PolyTerra PLA+/BBL/P1P/Orcaslicer/PolyTerra PLA+ @BBL P1P.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyTerra PLA+/BBL/P1P/OrcaSlicer/PolyTerra PLA+ @BBL P1P.json",
       "filename": "PolyTerra PLA+ @BBL P1P.json"
     },
     {
@@ -2821,8 +2820,8 @@
       "material": "PolyTerra PLA+",
       "brand": "BBL",
       "model": "X1",
-      "slicer": "Orcaslicer",
-      "path": "preset/PolyTerra PLA+/BBL/X1/Orcaslicer/PolyTerra PLA+ @BBL X1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyTerra PLA+/BBL/X1/OrcaSlicer/PolyTerra PLA+ @BBL X1.json",
       "filename": "PolyTerra PLA+ @BBL X1.json"
     },
     {

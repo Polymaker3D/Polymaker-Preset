@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Polymaker Print Presets</title>
+  <title>Polymaker Filament Preset</title>
   <link rel="icon" type="image/x-icon" href="./favicon.ico">
   <link rel="icon" type="image/svg+xml" href="./favicon.svg">
   <link rel="apple-touch-icon" href="./favicon.ico">
@@ -89,13 +89,29 @@
 
     <section class="card list-card is-hidden" id="list-card">
       <div class="list-header">
-        <h2 class="list-title">Presets</h2>
-        <p id="status" class="list-count">Loading…</p>
+        <div class="list-header-left">
+          <h2 class="list-title">Presets</h2>
+          <p id="status" class="list-count">Loading…</p>
+        </div>
+        <button id="download-selected-btn" class="btn-download-selected" type="button" disabled>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          Download Selected (<span id="selected-count">0</span>)
+        </button>
       </div>
       <div class="table-wrap">
         <table class="preset-table">
           <thead>
             <tr>
+              <th class="th-checkbox">
+                <label class="checkbox-label">
+                  <input type="checkbox" id="select-all-checkbox" class="checkbox-input">
+                  <span class="checkbox-custom"></span>
+                </label>
+              </th>
               <th>Material</th>
               <th>Filament Preset</th>
               <th>Download Action</th>

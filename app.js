@@ -74,6 +74,9 @@ function init() {
   var slicerCard = document.getElementById('slicer-card');
   var filtersCard = document.getElementById('filters-card');
   var listCard = document.getElementById('list-card');
+  var selectAllCheckbox = document.getElementById('select-all-checkbox');
+  var downloadSelectedBtn = document.getElementById('download-selected-btn');
+  var selectedCountSpan = document.getElementById('selected-count');
   var filterState = {
     series: '',
     material: '',
@@ -81,6 +84,9 @@ function init() {
     model: '',
     slicer: ''
   };
+
+  // Track selected presets
+  var selectedPresets = {};
 
   // Material series for filtering: Panchroma / Polymaker / Fiberon / PolyTerra / PolyLite
   var MATERIAL_SERIES = ['Panchroma', 'Polymaker', 'Fiberon', 'PolyTerra', 'PolyLite'];
@@ -111,7 +117,7 @@ function init() {
       // Normalize slicers list
       var normalizedSlicers = [];
       var seenSlicers = {};
-      slicers.forEach(function(s) {
+      slicers.forEach(function (s) {
         var normalized = normalizeSlicerName(s);
         if (!seenSlicers[normalized]) {
           seenSlicers[normalized] = true;
@@ -121,14 +127,18 @@ function init() {
       slicers = normalizedSlicers;
 
       // Normalize slicer names in presets
-      presets.forEach(function(p) {
+      presets.forEach(function (p) {
         p.slicer = normalizeSlicerName(p.slicer);
       });
 
       function escapeHtml(s) {
-        var div = document.createElement('div');
-        div.textContent = s;
-        return div.innerHTML;
+        if (s === null || s === undefined) return '';
+        return String(s)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#39;');
       }
 
       // Check if slicer is selected
@@ -309,6 +319,240 @@ function init() {
         updateDropdownOptions('slicer', slicerList);
       }
 
+      // Update the selected count display and button state
+      function updateSelectedCount() {
+        var count = Object.keys(selectedPresets).length;
+        if (selectedCountSpan) selectedCountSpan.textContent = count;
+        if (downloadSelectedBtn) downloadSelectedBtn.disabled = count === 0;
+      }
+
+      // Generate checkbox HTML
+      function getCheckboxHtml(presetId, isChecked) {
+        var checkedAttr = isChecked ? ' checked' : '';
+        return '<label class="checkbox-label preset-checkbox" data-preset-id="' + escapeHtml(presetId) + '">' +
+          '<input type="checkbox" class="checkbox-input preset-checkbox-input"' + checkedAttr + '>' +
+          '<span class="checkbox-custom"></span>' +
+          '</label>';
+      }
+
+      // Download multiple presets as ZIP
+      function downloadSelectedPresets() {
+        var presetIds = Object.keys(selectedPresets);
+        if (presetIds.length === 0) return;
+
+        var zip = new JSZip();
+        var folder = zip.folder('polymaker-presets');
+        var promises = [];
+
+        presetIds.forEach(function (presetId) {
+          var preset = selectedPresets[presetId];
+          var promise = fetch(preset.url, { mode: 'cors' })
+            .then(function (r) { return r.blob(); })
+            .then(function (blob) {
+              folder.file(preset.filename, blob);
+            });
+          promises.push(promise);
+        });
+
+        Promise.all(promises).then(function () {
+          zip.generateAsync({ type: 'blob' }).then(function (content) {
+            var objectUrl = URL.createObjectURL(content);
+            var a = document.createElement('a');
+            a.href = objectUrl;
+            a.download = 'polymaker-presets-' + presetIds.length + '.zip';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(objectUrl);
+          });
+        });
+      }
+
+      // Handle checkbox change
+      function handleCheckboxChange(e) {
+        var checkbox = e.target;
+        if (!checkbox) return;
+
+        // Handle folder checkbox
+        if (checkbox.classList.contains('folder-checkbox-input')) {
+          handleFolderCheckboxChange(checkbox);
+          return;
+        }
+
+        // Handle preset checkbox
+        if (!checkbox.classList.contains('preset-checkbox-input')) return;
+
+        var label = checkbox.closest('.preset-checkbox');
+        if (!label) return;
+        var presetId = label.getAttribute('data-preset-id');
+        var presetData = label.getAttribute('data-preset-data');
+
+        if (checkbox.checked) {
+          try {
+            selectedPresets[presetId] = JSON.parse(presetData);
+          } catch (err) {
+            // ignore parse error
+          }
+        } else {
+          delete selectedPresets[presetId];
+        }
+
+        updateSelectedCount();
+
+        // Update folder checkbox state for this preset's folder
+        var parentFolder = checkbox.closest('tr.child-row');
+        if (parentFolder) {
+          var folderId = parentFolder.getAttribute('data-parent-folder');
+          updateFolderCheckboxState(folderId);
+        }
+
+        // Update select all checkbox state
+        updateSelectAllCheckboxState();
+      }
+
+      // Handle folder checkbox change (select/deselect all children)
+      function handleFolderCheckboxChange(checkbox) {
+        var label = checkbox.closest('.folder-checkbox-label');
+        if (!label) return;
+        var folderId = label.getAttribute('data-folder-id');
+        var isChecked = checkbox.checked;
+
+        // Find all child checkboxes for this folder
+        var childRows = tbody.querySelectorAll('tr[data-parent-folder="' + folderId + '"]');
+        for (var i = 0; i < childRows.length; i++) {
+          var childCheckbox = childRows[i].querySelector('.preset-checkbox-input');
+          if (!childCheckbox) continue;
+
+          var childLabel = childCheckbox.closest('.preset-checkbox');
+          if (!childLabel) continue;
+
+          var presetId = childLabel.getAttribute('data-preset-id');
+          var presetData = childLabel.getAttribute('data-preset-data');
+
+          childCheckbox.checked = isChecked;
+
+          if (isChecked) {
+            try {
+              selectedPresets[presetId] = JSON.parse(presetData);
+            } catch (err) {
+              // ignore parse error
+            }
+          } else {
+            delete selectedPresets[presetId];
+          }
+        }
+
+        // Remove indeterminate state
+        checkbox.indeterminate = false;
+        checkbox.removeAttribute('data-indeterminate');
+
+        updateSelectedCount();
+        updateSelectAllCheckboxState();
+      }
+
+      // Update folder checkbox state based on its children
+      function updateFolderCheckboxState(folderId) {
+        var folderRow = tbody.querySelector('tr[data-folder-id="' + folderId + '"]');
+        if (!folderRow) return;
+
+        var folderCheckbox = folderRow.querySelector('.folder-checkbox-input');
+        if (!folderCheckbox) return;
+
+        var childRows = tbody.querySelectorAll('tr[data-parent-folder="' + folderId + '"]');
+        var checkedCount = 0;
+
+        for (var i = 0; i < childRows.length; i++) {
+          var childCheckbox = childRows[i].querySelector('.preset-checkbox-input');
+          if (childCheckbox && childCheckbox.checked) {
+            checkedCount++;
+          }
+        }
+
+        if (checkedCount === 0) {
+          folderCheckbox.checked = false;
+          folderCheckbox.indeterminate = false;
+          folderCheckbox.removeAttribute('data-indeterminate');
+        } else if (checkedCount === childRows.length) {
+          folderCheckbox.checked = true;
+          folderCheckbox.indeterminate = false;
+          folderCheckbox.removeAttribute('data-indeterminate');
+        } else {
+          folderCheckbox.checked = false;
+          folderCheckbox.indeterminate = true;
+          folderCheckbox.setAttribute('data-indeterminate', 'true');
+        }
+      }
+
+      // Update select all checkbox state
+      function updateSelectAllCheckboxState() {
+        if (!selectAllCheckbox) return;
+
+        var allCheckboxes = tbody.querySelectorAll('.preset-checkbox-input');
+        var checkedCount = tbody.querySelectorAll('.preset-checkbox-input:checked').length;
+        var totalCount = allCheckboxes.length;
+
+        if (checkedCount === 0) {
+          selectAllCheckbox.checked = false;
+          selectAllCheckbox.indeterminate = false;
+        } else if (checkedCount === totalCount) {
+          selectAllCheckbox.checked = true;
+          selectAllCheckbox.indeterminate = false;
+        } else {
+          selectAllCheckbox.checked = false;
+          selectAllCheckbox.indeterminate = true;
+        }
+      }
+
+      // Handle select all checkbox
+      function handleSelectAllChange() {
+        var isChecked = selectAllCheckbox.checked;
+        var checkboxes = tbody.querySelectorAll('.preset-checkbox-input');
+
+        for (var i = 0; i < checkboxes.length; i++) {
+          var cb = checkboxes[i];
+          var label = cb.closest('.preset-checkbox');
+          if (!label) continue;
+          var presetId = label.getAttribute('data-preset-id');
+          var presetData = label.getAttribute('data-preset-data');
+
+          cb.checked = isChecked;
+
+          if (isChecked) {
+            try {
+              selectedPresets[presetId] = JSON.parse(presetData);
+            } catch (e) {
+              // ignore parse error
+            }
+          } else {
+            delete selectedPresets[presetId];
+          }
+        }
+
+        var folderCheckboxes = tbody.querySelectorAll('.folder-checkbox-input');
+        for (var j = 0; j < folderCheckboxes.length; j++) {
+          var fc = folderCheckboxes[j];
+          fc.checked = isChecked;
+          fc.indeterminate = false;
+          fc.removeAttribute('data-indeterminate');
+        }
+
+        updateSelectedCount();
+        selectAllCheckbox.indeterminate = false;
+      }
+
+      // Attach checkbox event listeners
+      if (tbody) {
+        tbody.addEventListener('change', handleCheckboxChange);
+      }
+
+      if (selectAllCheckbox) {
+        selectAllCheckbox.addEventListener('change', handleSelectAllChange);
+      }
+
+      if (downloadSelectedBtn) {
+        downloadSelectedBtn.addEventListener('click', downloadSelectedPresets);
+      }
+
       function render() {
         // Update visibility based on slicer selection
         updateVisibility();
@@ -317,6 +561,12 @@ function init() {
         if (!isSlicerSelected()) {
           if (status) status.textContent = '';
           if (tbody) tbody.innerHTML = '';
+          selectedPresets = {};
+          updateSelectedCount();
+          if (selectAllCheckbox) {
+            selectAllCheckbox.checked = false;
+            selectAllCheckbox.indeterminate = false;
+          }
           return;
         }
 
@@ -362,10 +612,23 @@ function init() {
           var folderId = 'folder-' + folderIdCounter++;
 
           if (list.length > 1) {
-            // Folder row (parent) - expandable
+            // Folder row (parent) - expandable with checkbox
+            var folderCheckboxId = 'folder-cb-' + folderId;
+            // Check if all children are selected
+            var allChildrenSelected = list.every(function (p) {
+              var pid = p.path || (p.material + '-' + p.brand + '-' + p.model + '-' + p.slicer);
+              return !!selectedPresets[pid];
+            });
+            var someChildrenSelected = list.some(function (p) {
+              var pid = p.path || (p.material + '-' + p.brand + '-' + p.model + '-' + p.slicer);
+              return !!selectedPresets[pid];
+            });
+            var folderChecked = allChildrenSelected ? ' checked' : '';
+            var folderIndeterminate = (!allChildrenSelected && someChildrenSelected) ? ' data-indeterminate="true"' : '';
+
             rowsHtml.push('<tr class="folder-row" data-folder-id="' + folderId + '">' +
-              '<td>' + folderIconSvg + escapeHtml(mat) + '</td>' +
-              '<td>' + list.length + ' presets</td>' +
+              '<td><label class="checkbox-label folder-checkbox-label" data-folder-id="' + folderId + '"><input type="checkbox" class="checkbox-input folder-checkbox-input"' + folderChecked + folderIndeterminate + '><span class="checkbox-custom"></span></label></td>' +
+              '<td colspan="2">' + folderIconSvg + escapeHtml(mat) + ' <span class="folder-count">(' + list.length + ' presets)</span></td>' +
               '<td class="td-actions"><span class="folder-hint">Click to expand</span></td>' +
               '</tr>');
 
@@ -374,8 +637,13 @@ function init() {
               var url = p.path ? (base + encodeURI(p.path)) : '#';
               var filename = displayFilename(p.filename, p.slicer);
               var presetLabel = (p.brand || '') + ' ' + (p.model || '') + ' ' + (p.slicer || '');
+              var presetId = p.path || (p.material + '-' + p.brand + '-' + p.model + '-' + p.slicer);
+              var isChecked = selectedPresets[presetId] ? ' checked' : '';
+              var presetData = JSON.stringify({ url: url, filename: filename });
+              var checkboxHtml = '<label class="checkbox-label preset-checkbox" data-preset-id="' + escapeHtml(presetId) + '" data-preset-data="' + escapeHtml(presetData) + '"><input type="checkbox" class="checkbox-input preset-checkbox-input"' + isChecked + '><span class="checkbox-custom"></span></label>';
               rowsHtml.push('<tr class="child-row" data-parent-folder="' + folderId + '">' +
-                '<td>' + escapeHtml(mat) + '</td>' +
+                '<td>' + checkboxHtml + '</td>' +
+                '<td class="child-material">' + escapeHtml(mat) + '</td>' +
                 '<td>' + escapeHtml(presetLabel.trim()) + '</td>' +
                 '<td class="td-actions"><a href="' + url + '" class="btn-download" data-download-url="' + escapeHtml(url) + '" data-download-filename="' + escapeHtml(filename) + '" role="button" title="Download as JSON file">JSON</a></td>' +
                 '</tr>');
@@ -385,7 +653,12 @@ function init() {
             var url0 = first.path ? (base + encodeURI(first.path)) : '#';
             var filename0 = displayFilename(first.filename, first.slicer);
             var presetLabel = (first.brand || '') + ' ' + (first.model || '') + ' ' + (first.slicer || '');
+            var presetId0 = first.path || (first.material + '-' + first.brand + '-' + first.model + '-' + first.slicer);
+            var isChecked0 = selectedPresets[presetId0] ? ' checked' : '';
+            var presetData0 = JSON.stringify({ url: url0, filename: filename0 });
+            var checkboxHtml0 = '<label class="checkbox-label preset-checkbox" data-preset-id="' + escapeHtml(presetId0) + '" data-preset-data="' + escapeHtml(presetData0) + '"><input type="checkbox" class="checkbox-input preset-checkbox-input"' + isChecked0 + '><span class="checkbox-custom"></span></label>';
             rowsHtml.push('<tr>' +
+              '<td>' + checkboxHtml0 + '</td>' +
               '<td>' + escapeHtml(mat) + '</td>' +
               '<td>' + escapeHtml(presetLabel.trim()) + '</td>' +
               '<td class="td-actions"><a href="' + url0 + '" class="btn-download" data-download-url="' + escapeHtml(url0) + '" data-download-filename="' + escapeHtml(filename0) + '" role="button" title="Download as JSON file">JSON</a></td>' +
@@ -400,10 +673,13 @@ function init() {
         for (var i = 0; i < folderRows.length; i++) {
           (function (folderRow) {
             folderRow.addEventListener('click', function (e) {
-              // Don't toggle if clicking on a button/link
+              // Don't toggle if clicking on a button/link/checkbox
               var target = e.target;
               while (target && target !== folderRow) {
                 if (target.tagName === 'A' || target.tagName === 'BUTTON') return;
+                if (target.tagName === 'INPUT' && target.type === 'checkbox') return;
+                if (target.classList && target.classList.contains('checkbox-label')) return;
+                if (target.classList && target.classList.contains('checkbox-custom')) return;
                 target = target.parentElement;
               }
 
@@ -428,6 +704,18 @@ function init() {
             });
           })(folderRows[i]);
         }
+
+        // Update folder checkbox states after rendering
+        for (var k = 0; k < folderRows.length; k++) {
+          var fRow = folderRows[k];
+          var fCheckbox = fRow.querySelector('.folder-checkbox-input');
+          if (fCheckbox && fCheckbox.getAttribute('data-indeterminate') === 'true') {
+            fCheckbox.indeterminate = true;
+          }
+        }
+
+        // Update select all checkbox state after rendering
+        updateSelectAllCheckboxState();
 
         if (status) status.textContent = totalPresets + ' presets in ' + Object.keys(groups).length + ' materials.';
       }
