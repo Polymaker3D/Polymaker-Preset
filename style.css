@@ -10,10 +10,10 @@
   --accent-light: #6DD4DE;
   --gradient-start: #3BA8B2;
   --gradient-end: #50BFCA;
-  --radius: 12px;
-  --radius-lg: 16px;
-  --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
-  --transition: 0.2s ease;
+  --radius: 8px;
+  --radius-lg: 12px;
+  --shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+  --transition: 0.15s ease;
 }
 
 /* Wiki embed theme: light gradient #E8F6F9 to #FFF, aligned with Polymaker Wiki palette */
@@ -38,7 +38,7 @@ body {
   overflow: hidden;
   color: var(--text);
   background: var(--bg-dark);
-  line-height: 1.6;
+  line-height: 1.4;
 }
 
 .bg-gradient {
@@ -59,9 +59,9 @@ body.theme-wiki .bg-gradient {
 .page {
   position: relative;
   z-index: 1;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0.75rem 1.5rem 0.5rem;
+  padding: 0.5rem 1rem 0.25rem;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -71,8 +71,8 @@ body.theme-wiki .bg-gradient {
 /* Hero */
 .hero {
   text-align: left;
-  margin-bottom: 0.5rem;
-  padding: 0.25rem 0;
+  margin-bottom: 0.35rem;
+  padding: 0.15rem 0;
   flex-shrink: 0;
   overflow: visible;
 }
@@ -81,7 +81,7 @@ body.theme-wiki .bg-gradient {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 0.75rem;
+  gap: 0.5rem;
   overflow: visible;
 }
 
@@ -95,10 +95,10 @@ body.theme-wiki .bg-gradient {
 }
 
 .hero-title {
-  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-size: clamp(1.25rem, 3vw, 1.6rem);
   font-weight: 700;
-  margin: 0 0 0.25rem;
-  letter-spacing: -0.02em;
+  margin: 0 0 0.15rem;
+  letter-spacing: -0.01em;
 }
 
 .brand-name {
@@ -115,7 +115,7 @@ body.theme-wiki .preset-text {
 
 .hero-desc {
   color: var(--text-muted);
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   margin: 0;
 }
 
@@ -124,7 +124,7 @@ body.theme-wiki .preset-text {
   position: relative;
   border: 1px solid var(--border);
   border-radius: 999px;
-  padding: 0.3rem 0.55rem;
+  padding: 0.25rem 0.45rem;
   background: rgba(0, 0, 0, 0.4);
   display: inline-flex;
   align-items: center;
@@ -149,8 +149,8 @@ body.theme-wiki .preset-text {
 }
 
 .help-icon {
-  width: 1.1rem;
-  height: 1.1rem;
+  width: 1rem;
+  height: 1rem;
   color: var(--text-muted);
   transition: color var(--transition);
 }
@@ -185,7 +185,7 @@ body.theme-wiki .help-icon-btn:hover .help-icon {
   position: relative;
   border: 1px solid var(--border);
   border-radius: 999px;
-  padding: 0.3rem 0.55rem;
+  padding: 0.25rem 0.45rem;
   background: rgba(0, 0, 0, 0.4);
   display: inline-flex;
   align-items: center;
@@ -208,8 +208,8 @@ body.theme-wiki .help-icon-btn:hover .help-icon {
 }
 
 .theme-toggle-icon {
-  width: 1.1rem;
-  height: 1.1rem;
+  width: 1rem;
+  height: 1rem;
   border-radius: 999px;
   background: radial-gradient(circle at 30% 30%, #ffffff, #e5e7eb 30%, transparent 60%),
               conic-gradient(from 140deg, rgba(80, 191, 202, 0.9), rgba(59, 168, 178, 0.6), rgba(15, 23, 42, 1));
@@ -237,18 +237,67 @@ body.theme-wiki .theme-toggle-btn:hover {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 0.75rem 1rem;
-  margin-bottom: 0.5rem;
-  backdrop-filter: blur(12px);
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.35rem;
+  backdrop-filter: blur(10px);
   box-shadow: var(--shadow);
   transition: background-color var(--transition), border-color var(--transition), box-shadow var(--transition);
   flex-shrink: 0;
 }
 
 .filters-card {
-  padding: 0.6rem 1rem;
+  padding: 0.45rem 0.75rem;
   position: relative;
   z-index: 3;
+}
+
+/* Slicer card - primary selector */
+.slicer-card {
+  padding: 0.6rem 0.75rem;
+  position: relative;
+  z-index: 10;
+  border-color: rgba(80, 191, 202, 0.3);
+}
+
+.slicer-card:hover {
+  border-color: rgba(80, 191, 202, 0.5);
+}
+
+.slicer-filter {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.slicer-filter-group {
+  min-width: 200px;
+  max-width: 320px;
+  width: 100%;
+}
+
+.slicer-filter-group .filter-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.slicer-filter-group .dropdown-toggle {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  background: rgba(80, 191, 202, 0.1);
+  border-color: rgba(80, 191, 202, 0.3);
+}
+
+.slicer-filter-group .dropdown-toggle:hover {
+  background: rgba(80, 191, 202, 0.15);
+  border-color: rgba(80, 191, 202, 0.5);
+}
+
+/* Utility class for hiding elements */
+.is-hidden {
+  display: none !important;
 }
 
 .list-card {
@@ -257,7 +306,7 @@ body.theme-wiki .theme-toggle-btn:hover {
   flex-direction: column;
   min-height: 0;
   overflow: hidden;
-  padding: 0.75rem 1rem;
+  padding: 0.5rem 0.75rem;
   position: relative;
   z-index: 1;
 }
@@ -269,12 +318,12 @@ body.theme-wiki .theme-toggle-btn:hover {
 
 /* Filters */
 .list-card .list-title {
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   font-weight: 600;
   color: var(--text-muted);
   margin: 0;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
 }
 
 body.theme-wiki .list-card .list-title {
@@ -283,20 +332,22 @@ body.theme-wiki .list-card .list-title {
 
 .filters {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 0.6rem;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.4rem;
 }
 
 .filter-group {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0.15rem;
 }
 
 .filter-label {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-weight: 500;
   color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 
 /* Custom dropdown component */
@@ -309,9 +360,9 @@ body.theme-wiki .list-card .list-title {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.6rem 0.75rem;
+  padding: 0.4rem 0.6rem;
   font-family: inherit;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: var(--text);
   background: rgba(0, 0, 0, 0.4);
   border: 1px solid var(--border);
@@ -344,8 +395,8 @@ body.theme-wiki .dropdown-toggle:hover {
 
 .dropdown-arrow {
   /* SVG arrow for consistent color and size */
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 1rem;
+  height: 1rem;
   flex-shrink: 0;
   background-repeat: no-repeat;
   background-position: center;
@@ -357,18 +408,18 @@ body.theme-wiki .dropdown-toggle:hover {
 .dropdown-menu {
   position: absolute;
   inset-inline: 0;
-  margin-top: 0.3rem;
+  margin-top: 0.2rem;
   /* Opaque dark background so table content does not show through */
   background: #050509;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius);
   border: 1px solid var(--border);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
-  max-height: 260px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
+  max-height: 220px;
   overflow: auto;
-  padding: 0.25rem 0;
-  backdrop-filter: blur(14px);
+  padding: 0.15rem 0;
+  backdrop-filter: blur(12px);
   opacity: 0;
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   pointer-events: none;
   transition: opacity var(--transition), transform var(--transition);
   z-index: 40;
@@ -387,8 +438,8 @@ body.theme-wiki .dropdown-menu {
 }
 
 .dropdown-option {
-  padding: 0.45rem 0.85rem;
-  font-size: 0.9rem;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
   cursor: pointer;
   transition: background var(--transition), color var(--transition);
@@ -420,7 +471,7 @@ body.theme-wiki .dropdown-option.is-active {
 
 /* Dropdown panel scrollbar, consistent with list/table style */
 .dropdown-menu::-webkit-scrollbar {
-  width: 6px;
+  width: 5px;
 }
 
 .dropdown-menu::-webkit-scrollbar-track {
@@ -451,13 +502,13 @@ body.theme-wiki .dropdown-menu::-webkit-scrollbar-thumb {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
+  gap: 0.35rem;
+  margin-bottom: 0.35rem;
   flex-shrink: 0;
 }
 
 .list-count {
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   color: var(--text-muted);
   margin: 0;
 }
@@ -467,13 +518,13 @@ body.theme-wiki .dropdown-menu::-webkit-scrollbar-thumb {
   overflow-y: auto;
   flex: 1;
   min-height: 0;
-  border-radius: var(--radius);
+  border-radius: calc(var(--radius) - 2px);
   border: 1px solid var(--border);
 }
 
 .table-wrap::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 
 .table-wrap::-webkit-scrollbar-track {
@@ -493,7 +544,23 @@ body.theme-wiki .dropdown-menu::-webkit-scrollbar-thumb {
 .preset-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  table-layout: fixed;
+}
+
+.preset-table th:nth-child(1),
+.preset-table td:nth-child(1) {
+  width: 35%;
+}
+
+.preset-table th:nth-child(2),
+.preset-table td:nth-child(2) {
+  width: 45%;
+}
+
+.preset-table th:nth-child(3),
+.preset-table td:nth-child(3) {
+  width: 20%;
 }
 
 .preset-table th {
@@ -532,10 +599,13 @@ body.theme-wiki .preset-table th {
 }
 
 .preset-table td {
-  padding: 0.75rem 1rem;
+  padding: 0.45rem 0.65rem;
   border-bottom: 1px solid var(--border);
   vertical-align: middle;
   transition: background-color var(--transition), color var(--transition), border-color var(--transition);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .preset-table tbody tr {
@@ -552,7 +622,55 @@ body.theme-wiki .preset-table th {
 
 /* Row preset dropdown: same custom dropdown as filters, shares .dropdown styles in dark/Wiki themes */
 .preset-table .preset-row-dropdown {
-  max-width: 280px;
+  max-width: 220px;
+}
+
+/* Folder/expandable row styles */
+.folder-row {
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.folder-row:hover {
+  background: var(--bg-card-hover);
+}
+
+.folder-row .folder-icon {
+  width: 14px;
+  height: 14px;
+  margin-right: 0.35rem;
+  vertical-align: -2px;
+  transition: transform 0.2s ease;
+  color: var(--accent);
+  display: inline-block;
+}
+
+.folder-row.expanded .folder-icon {
+  transform: rotate(90deg);
+}
+
+.folder-row td:first-child {
+  font-weight: 500;
+  vertical-align: middle;
+}
+
+.child-row {
+  display: none;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.child-row.expanded {
+  display: table-row;
+}
+
+.child-row td:first-child {
+  padding-left: 1.5rem;
+  color: var(--text-muted);
+}
+
+.folder-hint {
+  color: var(--text-muted);
+  font-size: 0.7rem;
 }
 
 .preset-table .preset-row-dropdown .dropdown-menu {
@@ -562,14 +680,14 @@ body.theme-wiki .preset-table th {
 .preset-table a {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  padding: 0.4rem 0.85rem;
-  font-size: 0.85rem;
+  gap: 0.25rem;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.75rem;
   font-weight: 500;
   color: var(--accent-light);
   background: linear-gradient(135deg, rgba(59, 168, 178, 0.2), rgba(80, 191, 202, 0.2));
   border: 1px solid rgba(80, 191, 202, 0.4);
-  border-radius: 8px;
+  border-radius: 6px;
   text-decoration: none;
   transition: background-color var(--transition), color var(--transition), border-color var(--transition), box-shadow var(--transition), transform var(--transition);
 }
@@ -595,11 +713,19 @@ body.theme-wiki .preset-table a:hover {
   box-shadow: 0 4px 14px rgba(80, 191, 202, 0.45);
 }
 
+body.theme-wiki .child-row {
+  background: rgba(148, 163, 184, 0.08);
+}
+
+body.theme-wiki .folder-row {
+  background: rgba(255, 255, 255, 0.5);
+}
+
 /* Footer */
 .footer {
   text-align: center;
-  padding: 0.4rem 0 0;
-  font-size: 0.75rem;
+  padding: 0.25rem 0 0;
+  font-size: 0.7rem;
   color: var(--text-muted);
   flex-shrink: 0;
 }
@@ -626,7 +752,7 @@ body.theme-wiki .preset-table a:hover {
   justify-content: center;
   opacity: 0;
   pointer-events: none;
-  transition: opacity var(--transition);
+  transition: opacity 0.2s ease;
 }
 
 .modal.is-open {
@@ -644,18 +770,18 @@ body.theme-wiki .preset-table a:hover {
 .modal-content {
   position: relative;
   z-index: 1;
-  width: 90%;
-  max-width: 600px;
-  max-height: 85vh;
+  width: 92%;
+  max-width: 560px;
+  max-height: 88vh;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.45);
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  transform: scale(0.95) translateY(10px);
-  transition: transform var(--transition);
+  transform: scale(0.97) translateY(8px);
+  transition: transform 0.2s ease;
 }
 
 .modal.is-open .modal-content {
@@ -672,13 +798,13 @@ body.theme-wiki .modal-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.25rem 1.5rem;
+  padding: 0.85rem 1rem;
   border-bottom: 1px solid var(--border);
   flex-shrink: 0;
 }
 
 .modal-title {
-  font-size: 1.25rem;
+  font-size: 1.05rem;
   font-weight: 600;
   margin: 0;
   color: var(--text);
@@ -707,13 +833,13 @@ body.theme-wiki .modal-title {
 }
 
 .modal-body {
-  padding: 1.5rem;
+  padding: 1rem;
   overflow-y: auto;
   flex: 1;
 }
 
 .modal-body::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 .modal-body::-webkit-scrollbar-track {
@@ -739,7 +865,7 @@ body.theme-wiki .modal-body::-webkit-scrollbar-thumb {
 }
 
 .install-section {
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem;
 }
 
 .install-section:last-child {
@@ -747,9 +873,9 @@ body.theme-wiki .modal-body::-webkit-scrollbar-thumb {
 }
 
 .install-section-title {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.5rem;
   color: var(--accent);
 }
 
@@ -759,13 +885,13 @@ body.theme-wiki .install-section-title {
 
 .install-steps {
   margin: 0;
-  padding-left: 1.5rem;
+  padding-left: 1.25rem;
   color: var(--text);
-  line-height: 1.7;
+  line-height: 1.5;
 }
 
 .install-steps li {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.4rem;
 }
 
 .install-steps li:last-child {
@@ -773,15 +899,15 @@ body.theme-wiki .install-section-title {
 }
 
 .install-steps ul {
-  margin: 0.5rem 0 0 1.25rem;
-  padding-left: 1rem;
+  margin: 0.35rem 0 0 1rem;
+  padding-left: 0.75rem;
 }
 
 .install-steps code {
   background: rgba(0, 0, 0, 0.3);
-  padding: 0.15rem 0.4rem;
-  border-radius: 4px;
-  font-size: 0.9em;
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+  font-size: 0.85em;
   font-family: 'Courier New', monospace;
   color: var(--accent-light);
 }
@@ -819,59 +945,72 @@ body.theme-wiki .install-steps strong {
 /* Responsive */
 @media (max-width: 640px) {
   .page {
-    padding: 0.5rem 1rem 0.4rem;
+    padding: 0.35rem 0.75rem 0.2rem;
   }
   .hero {
-    margin-bottom: 0.4rem;
-    padding: 0.15rem 0;
+    margin-bottom: 0.25rem;
+    padding: 0.1rem 0;
   }
   .hero-title {
-    font-size: clamp(1.25rem, 4vw, 1.75rem);
+    font-size: clamp(1.1rem, 3.5vw, 1.4rem);
   }
   .hero-desc {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
   }
   .card {
-    padding: 0.6rem 0.85rem;
-    margin-bottom: 0.4rem;
+    padding: 0.4rem 0.6rem;
+    margin-bottom: 0.25rem;
   }
   .filters-card {
-    padding: 0.5rem 0.85rem;
+    padding: 0.35rem 0.6rem;
+  }
+  .slicer-card {
+    padding: 0.5rem 0.6rem;
+  }
+  .slicer-filter-group {
+    min-width: 180px;
+  }
+  .slicer-filter-group .filter-label {
+    font-size: 0.7rem;
+  }
+  .slicer-filter-group .dropdown-toggle {
+    padding: 0.45rem 0.6rem;
+    font-size: 0.85rem;
   }
   .list-card {
-    padding: 0.6rem 0.85rem;
+    padding: 0.4rem 0.6rem;
   }
   .filters {
     grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
+    gap: 0.3rem;
   }
   .preset-table th,
   .preset-table td {
-    padding: 0.5rem 0.65rem;
-    font-size: 0.8rem;
+    padding: 0.4rem 0.5rem;
+    font-size: 0.75rem;
   }
   .footer {
-    padding: 0.3rem 0 0;
-    font-size: 0.7rem;
+    padding: 0.2rem 0 0;
+    font-size: 0.65rem;
   }
   .modal-content {
-    width: 95%;
-    max-height: 90vh;
+    width: 96%;
+    max-height: 92vh;
   }
   .modal-header {
-    padding: 1rem 1.25rem;
+    padding: 0.75rem 0.85rem;
   }
   .modal-title {
-    font-size: 1.1rem;
-  }
-  .modal-body {
-    padding: 1.25rem;
-  }
-  .install-section-title {
     font-size: 1rem;
   }
-  .install-steps {
-    padding-left: 1.25rem;
+  .modal-body {
+    padding: 0.85rem;
+  }
+  .install-section-title {
     font-size: 0.9rem;
+  }
+  .install-steps {
+    padding-left: 1.1rem;
+    font-size: 0.85rem;
   }
 }

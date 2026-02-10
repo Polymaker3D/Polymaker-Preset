@@ -34,24 +34,29 @@
           </button>
         </div>
       </div>
-      <p class="hero-desc">Select Series, Material, Printer Brand, Printer Model, and Slicer to download preset files</p>
+      <p class="hero-desc">Select your slicer to view and download Polymaker preset files</p>
     </header>
 
-    <section class="card filters-card">
-      <div class="filters">
-        <div class="filter-group">
-          <label class="filter-label">Series</label>
-          <div class="dropdown" data-filter="series">
+    <section class="card slicer-card" id="slicer-card">
+      <div class="slicer-filter">
+        <div class="filter-group slicer-filter-group">
+          <label class="filter-label">Select Your Slicer</label>
+          <div class="dropdown" data-filter="slicer">
             <button class="dropdown-toggle" type="button">
-              <span class="dropdown-label">All</span>
+              <span class="dropdown-label">Select Slicer</span>
               <span class="dropdown-arrow" aria-hidden="true"></span>
             </button>
             <div class="dropdown-menu"></div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="card filters-card is-hidden" id="filters-card">
+      <div class="filters">
         <div class="filter-group">
-          <label class="filter-label">Material</label>
-          <div class="dropdown" data-filter="material">
+          <label class="filter-label">Series</label>
+          <div class="dropdown" data-filter="series">
             <button class="dropdown-toggle" type="button">
               <span class="dropdown-label">All</span>
               <span class="dropdown-arrow" aria-hidden="true"></span>
@@ -79,20 +84,10 @@
             <div class="dropdown-menu"></div>
           </div>
         </div>
-        <div class="filter-group">
-          <label class="filter-label">Slicer</label>
-          <div class="dropdown" data-filter="slicer">
-            <button class="dropdown-toggle" type="button">
-              <span class="dropdown-label">All</span>
-              <span class="dropdown-arrow" aria-hidden="true"></span>
-            </button>
-            <div class="dropdown-menu"></div>
-          </div>
-        </div>
       </div>
     </section>
 
-    <section class="card list-card">
+    <section class="card list-card is-hidden" id="list-card">
       <div class="list-header">
         <h2 class="list-title">Presets</h2>
         <p id="status" class="list-count">Loading…</p>

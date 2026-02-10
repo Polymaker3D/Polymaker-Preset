@@ -21,12 +21,23 @@ function applyTheme(theme) {
 function initTheme() {
   var initial = 'dark';
   try {
+    // Check if window and localStorage are available (SSR/strict environments)
+    if (typeof window !== 'undefined' && 'localStorage' in window) {
+      // safe to proceed
+    } else {
+      return; // fallback to default
+    }
     var params = new URLSearchParams(window.location.search || '');
     var fromUrl = params.get('theme');
     if (fromUrl === 'wiki' || fromUrl === 'dark') {
       initial = fromUrl;
     } else {
-      var stored = window.localStorage ? window.localStorage.getItem(THEME_STORAGE_KEY) : null;
+      var stored = null;
+      try {
+        stored = window.localStorage.getItem(THEME_STORAGE_KEY);
+      } catch (e) {
+        console.warn('LocalStorage access denied:', e);
+      }
       if (stored === 'wiki' || stored === 'dark') {
         initial = stored;
       }
@@ -44,7 +55,11 @@ function initTheme() {
       applyTheme(next);
       try {
         if (window.localStorage) {
-          window.localStorage.setItem(THEME_STORAGE_KEY, next);
+          try {
+            window.localStorage.setItem(THEME_STORAGE_KEY, next);
+          } catch (e) {
+            console.warn('LocalStorage setItem failed:', e);
+          }
         }
       } catch (e) {
         // ignore
@@ -56,6 +71,9 @@ function initTheme() {
 function init() {
   var tbody = document.getElementById('tbody');
   var status = document.getElementById('status');
+  var slicerCard = document.getElementById('slicer-card');
+  var filtersCard = document.getElementById('filters-card');
+  var listCard = document.getElementById('list-card');
   var filterState = {
     series: '',
     material: '',
@@ -70,7 +88,12 @@ function init() {
   initTheme();
 
   fetch(INDEX_JSON_URL)
-    .then(function (r) { return r.json(); })
+    .then(function (r) {
+      if (!r.ok) {
+        throw new Error('Network response was not ok: ' + r.statusText);
+      }
+      return r.json();
+    })
     .then(function (data) {
       var materials = data.materials || [];
       var brands = data.brands || [];
@@ -78,30 +101,80 @@ function init() {
       var slicers = data.slicers || [];
       var presets = data.presets || [];
 
+      // Normalize slicer names: combine 'Orcaslicer' and 'OrcaSlicer' into 'OrcaSlicer'
+      function normalizeSlicerName(slicer) {
+        if (!slicer) return slicer;
+        if (slicer.toLowerCase() === 'orcaslicer') return 'OrcaSlicer';
+        return slicer;
+      }
+
+      // Normalize slicers list
+      var normalizedSlicers = [];
+      var seenSlicers = {};
+      slicers.forEach(function(s) {
+        var normalized = normalizeSlicerName(s);
+        if (!seenSlicers[normalized]) {
+          seenSlicers[normalized] = true;
+          normalizedSlicers.push(normalized);
+        }
+      });
+      slicers = normalizedSlicers;
+
+      // Normalize slicer names in presets
+      presets.forEach(function(p) {
+        p.slicer = normalizeSlicerName(p.slicer);
+      });
+
       function escapeHtml(s) {
         var div = document.createElement('div');
         div.textContent = s;
         return div.innerHTML;
       }
 
-      function setupDropdown(name, list) {
+      // Check if slicer is selected
+      function isSlicerSelected() {
+        return !!filterState.slicer;
+      }
+
+      // Show/hide cards based on slicer selection
+      function updateVisibility() {
+        if (isSlicerSelected()) {
+          if (filtersCard) filtersCard.classList.remove('is-hidden');
+          if (listCard) listCard.classList.remove('is-hidden');
+        } else {
+          if (filtersCard) filtersCard.classList.add('is-hidden');
+          if (listCard) listCard.classList.add('is-hidden');
+        }
+      }
+
+      // Show/hide list card based on slicer selection
+      function updateListVisibility() {
+        if (isSlicerSelected()) {
+          if (listCard) listCard.classList.remove('is-hidden');
+        } else {
+          if (listCard) listCard.classList.add('is-hidden');
+        }
+      }
+
+      function setupDropdown(name, list, isSlicer) {
         var dropdown = document.querySelector('.dropdown[data-filter="' + name + '"]');
         if (!dropdown) return;
         var toggle = dropdown.querySelector('.dropdown-toggle');
         var labelEl = dropdown.querySelector('.dropdown-label');
         var menu = dropdown.querySelector('.dropdown-menu');
+        var defaultLabel = isSlicer ? 'Select Slicer' : ('All ' + (name === 'series' ? 'Series' : name === 'brand' ? 'Brands' : 'Models'));
 
         function renderOptions(options) {
-          var html = [
-            '<div class="dropdown-option is-active" data-value="">All</div>'
-          ].concat(options.map(function (x) {
-            return '<div class="dropdown-option" data-value="' + escapeHtml(x) + '">' +
-              escapeHtml(x) +
-              '</div>';
-          }));
-          menu.innerHTML = html.join('');
-          filterState[name] = '';
-          if (labelEl) labelEl.textContent = 'All';
+          var html = '';
+          if (!isSlicer) {
+            html += '<div class="dropdown-option' + (filterState[name] ? '' : ' is-active') + '" data-value="">All</div>';
+          }
+          html += options.map(function (x) {
+            var active = x === filterState[name] ? ' is-active' : '';
+            return '<div class="dropdown-option' + active + '" data-value="' + escapeHtml(x) + '">' + escapeHtml(x) + '</div>';
+          }).join('');
+          menu.innerHTML = html;
+          if (labelEl) labelEl.textContent = filterState[name] || defaultLabel;
         }
 
         renderOptions(list || []);
@@ -126,8 +199,14 @@ function init() {
           if (prevActive) prevActive.classList.remove('is-active');
           option.classList.add('is-active');
 
-          if (labelEl) labelEl.textContent = text || 'All';
+          if (labelEl) labelEl.textContent = text || defaultLabel;
           dropdown.classList.remove('is-open');
+
+          // Update visibility when slicer changes
+          if (isSlicer) {
+            updateVisibility();
+          }
+
           render();
         });
       }
@@ -145,23 +224,32 @@ function init() {
         }
       });
 
-      setupDropdown('series', MATERIAL_SERIES);
-      setupDropdown('material', materials);
-      setupDropdown('brand', brands);
-      setupDropdown('model', models);
-      setupDropdown('slicer', slicers);
+      setupDropdown('slicer', slicers, true);
+
+      // Update filter state slicer to normalized value if needed
+      if (filterState.slicer) {
+        filterState.slicer = normalizeSlicerName(filterState.slicer);
+      }
+      setupDropdown('series', MATERIAL_SERIES, false);
+      setupDropdown('brand', brands, false);
+      setupDropdown('model', models, false);
+
+      // Material filter removed - filtering by series only
+
+      // Initial visibility check
+      updateVisibility();
 
       /** Return presets matching current filters except the given dimension (for building "has result" option lists). */
       function getMatchingPresets(exceptFilter) {
         return presets.filter(function (p) {
           if (exceptFilter !== 'series' && filterState.series && (p.material || '').indexOf(filterState.series + ' ') !== 0) return false;
-          if (exceptFilter !== 'material' && filterState.material && p.material !== filterState.material) return false;
           if (exceptFilter !== 'brand' && filterState.brand && p.brand !== filterState.brand) return false;
           if (exceptFilter !== 'model' && filterState.model && p.model !== filterState.model) return false;
           if (exceptFilter !== 'slicer' && filterState.slicer && p.slicer !== filterState.slicer) return false;
           return true;
         });
       }
+      // Note: material filter has been removed, only series filtering is used
 
       function updateDropdownOptions(name, list) {
         var current = filterState[name];
@@ -189,16 +277,6 @@ function init() {
           return matchSeries.some(function (p) { return (p.material || '').indexOf(s + ' ') === 0; });
         });
         updateDropdownOptions('series', seriesList);
-
-        var matchMaterial = getMatchingPresets('material');
-        var materialList = [];
-        var seenMat = {};
-        matchMaterial.forEach(function (p) {
-          var m = p.material || '';
-          if (!seenMat[m]) { seenMat[m] = true; materialList.push(m); }
-        });
-        materialList.sort();
-        updateDropdownOptions('material', materialList);
 
         var matchBrand = getMatchingPresets('brand');
         var brandList = [];
@@ -232,15 +310,23 @@ function init() {
       }
 
       function render() {
+        // Update visibility based on slicer selection
+        updateVisibility();
+
+        // Don't render table if slicer not selected
+        if (!isSlicerSelected()) {
+          if (status) status.textContent = '';
+          if (tbody) tbody.innerHTML = '';
+          return;
+        }
+
         updateAllFilterOptions();
         var series = filterState.series;
-        var material = filterState.material;
         var brand = filterState.brand;
         var model = filterState.model;
         var slicer = filterState.slicer;
         var filtered = presets.filter(function (p) {
           if (series && (p.material || '').indexOf(series + ' ') !== 0) return false;
-          if (material && p.material !== material) return false;
           if (brand && p.brand !== brand) return false;
           if (model && p.model !== model) return false;
           if (slicer && p.slicer !== slicer) return false;
@@ -258,125 +344,95 @@ function init() {
         var base = (typeof RAW_BASE === 'string' && RAW_BASE !== null) ? RAW_BASE : (RAW_BASE || '');
         var rowsHtml = [];
         var totalPresets = 0;
+        var folderIdCounter = 0;
         function displayFilename(filename, slicer) {
           var fn = filename || 'preset.json';
           var ext = fn.replace(/^.*\./, '') || 'json';
           var baseName = fn.replace(/\.[^.]+$/, '') || 'preset';
           return slicer ? (baseName + ' - ' + slicer + '.' + ext) : fn;
         }
+
+        // Chevron right SVG icon
+        var folderIconSvg = '<svg class="folder-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>';
+
         for (var mat in groups) {
           var list = groups[mat];
           totalPresets += list.length;
           var first = list[0];
-          var url0 = first.path ? (base + encodeURI(first.path)) : '#';
-          var filename0 = displayFilename(first.filename, first.slicer);
-          var zipName0 = (filename0.replace(/\.[^.]+$/, '') || 'preset') + '.zip';
+          var folderId = 'folder-' + folderIdCounter++;
 
           if (list.length > 1) {
-            var firstLabel = (first.brand || '') + ' ' + (first.model || '') + ' ' + (first.slicer || '');
-            firstLabel = firstLabel.trim();
-            var optionsHtml = list.map(function (p, i) {
-              var label = (p.brand || '') + ' ' + (p.model || '') + ' ' + (p.slicer || '');
-              label = label.trim();
-              var activeClass = i === 0 ? ' is-active' : '';
-              var optFilename = displayFilename(p.filename, p.slicer);
-              return '<div class="dropdown-option' + activeClass + '" data-path="' + escapeHtml(p.path || '') + '" data-filename="' + escapeHtml(optFilename) + '" data-slicer="' + escapeHtml(p.slicer || '') + '">' + escapeHtml(label) + '</div>';
-            }).join('');
-            rowsHtml.push('<tr>' +
-              '<td>' + escapeHtml(mat) + '</td>' +
-              '<td><div class="dropdown preset-row-dropdown"><button class="dropdown-toggle" type="button" aria-label="Choose preset"><span class="dropdown-label">' + escapeHtml(firstLabel) + '</span><span class="dropdown-arrow" aria-hidden="true"></span></button><div class="dropdown-menu">' + optionsHtml + '</div></div></td>' +
-              '<td class="td-actions"><a href="' + url0 + '" class="btn-download" data-download-url="' + escapeHtml(url0) + '" data-download-filename="' + escapeHtml(filename0) + '" role="button" title="Download as JSON file">JSON</a> <a href="#" class="btn-download-zip-row" data-download-url="' + escapeHtml(url0) + '" data-download-filename="' + escapeHtml(filename0) + '" data-download-zipname="' + escapeHtml(zipName0) + '" role="button" title="Download as ZIP file">ZIP</a></td>' +
+            // Folder row (parent) - expandable
+            rowsHtml.push('<tr class="folder-row" data-folder-id="' + folderId + '">' +
+              '<td>' + folderIconSvg + escapeHtml(mat) + '</td>' +
+              '<td>' + list.length + ' presets</td>' +
+              '<td class="td-actions"><span class="folder-hint">Click to expand</span></td>' +
               '</tr>');
+
+            // Child rows for each preset
+            list.forEach(function (p) {
+              var url = p.path ? (base + encodeURI(p.path)) : '#';
+              var filename = displayFilename(p.filename, p.slicer);
+              var presetLabel = (p.brand || '') + ' ' + (p.model || '') + ' ' + (p.slicer || '');
+              rowsHtml.push('<tr class="child-row" data-parent-folder="' + folderId + '">' +
+                '<td>' + escapeHtml(mat) + '</td>' +
+                '<td>' + escapeHtml(presetLabel.trim()) + '</td>' +
+                '<td class="td-actions"><a href="' + url + '" class="btn-download" data-download-url="' + escapeHtml(url) + '" data-download-filename="' + escapeHtml(filename) + '" role="button" title="Download as JSON file">JSON</a></td>' +
+                '</tr>');
+            });
           } else {
+            // Single preset - no folder needed
+            var url0 = first.path ? (base + encodeURI(first.path)) : '#';
+            var filename0 = displayFilename(first.filename, first.slicer);
             var presetLabel = (first.brand || '') + ' ' + (first.model || '') + ' ' + (first.slicer || '');
             rowsHtml.push('<tr>' +
               '<td>' + escapeHtml(mat) + '</td>' +
               '<td>' + escapeHtml(presetLabel.trim()) + '</td>' +
-              '<td class="td-actions"><a href="' + url0 + '" class="btn-download" data-download-url="' + escapeHtml(url0) + '" data-download-filename="' + escapeHtml(filename0) + '" role="button" title="Download as JSON file">JSON</a> <a href="#" class="btn-download-zip-row" data-download-url="' + escapeHtml(url0) + '" data-download-filename="' + escapeHtml(filename0) + '" data-download-zipname="' + escapeHtml(zipName0) + '" role="button" title="Download as ZIP file">ZIP</a></td>' +
+              '<td class="td-actions"><a href="' + url0 + '" class="btn-download" data-download-url="' + escapeHtml(url0) + '" data-download-filename="' + escapeHtml(filename0) + '" role="button" title="Download as JSON file">JSON</a></td>' +
               '</tr>');
           }
         }
 
         tbody.innerHTML = rowsHtml.join('');
 
-        status.textContent = totalPresets + ' presets in ' + Object.keys(groups).length + ' materials.';
+        // Add click handlers for folder rows
+        var folderRows = tbody.querySelectorAll('tr.folder-row');
+        for (var i = 0; i < folderRows.length; i++) {
+          (function (folderRow) {
+            folderRow.addEventListener('click', function (e) {
+              // Don't toggle if clicking on a button/link
+              var target = e.target;
+              while (target && target !== folderRow) {
+                if (target.tagName === 'A' || target.tagName === 'BUTTON') return;
+                target = target.parentElement;
+              }
+
+              var folderId = folderRow.getAttribute('data-folder-id');
+              var isExpanded = folderRow.classList.contains('expanded');
+
+              if (isExpanded) {
+                // Collapse
+                folderRow.classList.remove('expanded');
+                var childRows = tbody.querySelectorAll('tr[data-parent-folder="' + folderId + '"]');
+                for (var j = 0; j < childRows.length; j++) {
+                  childRows[j].classList.remove('expanded');
+                }
+              } else {
+                // Expand
+                folderRow.classList.add('expanded');
+                var childRows = tbody.querySelectorAll('tr[data-parent-folder="' + folderId + '"]');
+                for (var j = 0; j < childRows.length; j++) {
+                  childRows[j].classList.add('expanded');
+                }
+              }
+            });
+          })(folderRows[i]);
+        }
+
+        if (status) status.textContent = totalPresets + ' presets in ' + Object.keys(groups).length + ' materials.';
       }
 
       tbody.addEventListener('click', function (e) {
-        // Row preset dropdown: on option click, select and update JSON + ZIP links, then close
-        var rowOpt = e.target.closest('.preset-row-dropdown .dropdown-option');
-        if (rowOpt) {
-          e.preventDefault();
-          var path = rowOpt.getAttribute('data-path') || '';
-          var filename = rowOpt.getAttribute('data-filename') || 'preset.json';
-          var row = rowOpt.closest('tr');
-          var dropdown = rowOpt.closest('.preset-row-dropdown');
-          var labelEl = dropdown.querySelector('.dropdown-label');
-          if (labelEl) labelEl.textContent = rowOpt.textContent;
-          dropdown.querySelectorAll('.dropdown-option').forEach(function (o) { o.classList.remove('is-active'); });
-          rowOpt.classList.add('is-active');
-          var u = (typeof RAW_BASE === 'string' && RAW_BASE !== null) ? RAW_BASE : (RAW_BASE || '');
-          var fullUrl = path ? (u + encodeURI(path)) : '#';
-          var zipName = (filename.replace(/\.[^.]+$/, '') || 'preset') + '.zip';
-          var jsonBtn = row ? row.querySelector('a.btn-download') : null;
-          var zipBtn = row ? row.querySelector('a.btn-download-zip-row') : null;
-          if (jsonBtn) {
-            jsonBtn.setAttribute('data-download-url', fullUrl);
-            jsonBtn.setAttribute('data-download-filename', filename);
-            jsonBtn.setAttribute('href', fullUrl);
-            jsonBtn.setAttribute('title', 'Download as JSON file');
-          }
-          if (zipBtn) {
-            zipBtn.setAttribute('data-download-url', fullUrl);
-            zipBtn.setAttribute('data-download-filename', filename);
-            zipBtn.setAttribute('data-download-zipname', zipName);
-            zipBtn.setAttribute('title', 'Download as ZIP file');
-          }
-          dropdown.classList.remove('is-open');
-          return;
-        }
-        // Row preset dropdown: on toggle click, close others and toggle this one
-        var rowToggle = e.target.closest('.preset-row-dropdown .dropdown-toggle');
-        if (rowToggle) {
-          e.preventDefault();
-          closeAllDropdowns();
-          var dd = rowToggle.closest('.preset-row-dropdown');
-          dd.classList.toggle('is-open');
-          return;
-        }
-        // Download as ZIP (one preset per row)
-        var zipLink = e.target.closest('a.btn-download-zip-row');
-        if (zipLink && typeof JSZip !== 'undefined') {
-          e.preventDefault();
-          var url = zipLink.getAttribute('data-download-url');
-          var filename = zipLink.getAttribute('data-download-filename') || 'preset.json';
-          var zipName = zipLink.getAttribute('data-download-zipname') || 'preset.zip';
-          if (!url || url === '#') return;
-          zipLink.setAttribute('aria-busy', 'true');
-          fetch(url, { mode: 'cors' })
-            .then(function (r) { return r.blob(); })
-            .then(function (blob) {
-              var zip = new JSZip();
-              zip.file(filename, blob);
-              return zip.generateAsync({ type: 'blob' });
-            })
-            .then(function (zipBlob) {
-              var a = document.createElement('a');
-              a.href = URL.createObjectURL(zipBlob);
-              a.download = zipName;
-              document.body.appendChild(a);
-              a.click();
-              document.body.removeChild(a);
-              URL.revokeObjectURL(a.href);
-            })
-            .catch(function (err) {
-              window.open(url, '_blank', 'noopener');
-            })
-            .then(function () {
-              zipLink.removeAttribute('aria-busy');
-            });
-          return;
-        }
         // Download as JSON (single file)
         var link = e.target.closest('a.btn-download');
         if (!link) return;
@@ -440,7 +496,7 @@ function initModal() {
   }
 
   // Close on Escape key
-  document.addEventListener('keydown', function(e) {
+  document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && modal.classList.contains('is-open')) {
       closeModal();
     }
