@@ -117,7 +117,7 @@ function init() {
       // Normalize slicers list
       var normalizedSlicers = [];
       var seenSlicers = {};
-      slicers.forEach(function (s) {
+      slicers.forEach(function(s) {
         var normalized = normalizeSlicerName(s);
         if (!seenSlicers[normalized]) {
           seenSlicers[normalized] = true;
@@ -127,7 +127,7 @@ function init() {
       slicers = normalizedSlicers;
 
       // Normalize slicer names in presets
-      presets.forEach(function (p) {
+      presets.forEach(function(p) {
         p.slicer = normalizeSlicerName(p.slicer);
       });
 
@@ -340,16 +340,36 @@ function init() {
         var presetIds = Object.keys(selectedPresets);
         if (presetIds.length === 0) return;
 
+        // Show loading state
+        if (downloadSelectedBtn) {
+          downloadSelectedBtn.disabled = true;
+          downloadSelectedBtn.textContent = 'Loading...';
+        }
+
         var zip = new JSZip();
         var folder = zip.folder('polymaker-presets');
         var promises = [];
 
         presetIds.forEach(function (presetId) {
           var preset = selectedPresets[presetId];
+          // Validate URL before fetch
+          if (!preset.url || preset.url === '#') {
+            console.warn('Invalid URL for preset:', presetId);
+            return;
+          }
           var promise = fetch(preset.url, { mode: 'cors' })
-            .then(function (r) { return r.blob(); })
+            .then(function (r) {
+              if (!r.ok) {
+                throw new Error('Failed to fetch ' + preset.filename + ': ' + r.statusText);
+              }
+              return r.blob();
+            })
             .then(function (blob) {
               folder.file(preset.filename, blob);
+            })
+            .catch(function (err) {
+              console.warn('Error downloading preset:', presetId, err);
+              // Continue with other downloads, don't fail entire batch
             });
           promises.push(promise);
         });
@@ -363,8 +383,24 @@ function init() {
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
-            URL.revokeObjectURL(objectUrl);
+            // Delay revoking object URL to ensure download starts
+            setTimeout(function () {
+              URL.revokeObjectURL(objectUrl);
+            }, 1000);
+
+            // Reset button state
+            if (downloadSelectedBtn) {
+              downloadSelectedBtn.disabled = false;
+              downloadSelectedBtn.textContent = 'Download Selected';
+            }
           });
+        }).catch(function (err) {
+          console.error('Error generating ZIP:', err);
+          // Reset button state on error
+          if (downloadSelectedBtn) {
+            downloadSelectedBtn.disabled = false;
+            downloadSelectedBtn.textContent = 'Download Selected';
+          }
         });
       }
 
@@ -391,7 +427,7 @@ function init() {
           try {
             selectedPresets[presetId] = JSON.parse(presetData);
           } catch (err) {
-            // ignore parse error
+            console.warn('Failed to parse preset data:', err);
           }
         } else {
           delete selectedPresets[presetId];
@@ -432,11 +468,11 @@ function init() {
           childCheckbox.checked = isChecked;
 
           if (isChecked) {
-            try {
-              selectedPresets[presetId] = JSON.parse(presetData);
-            } catch (err) {
-              // ignore parse error
-            }
+          try {
+            selectedPresets[presetId] = JSON.parse(presetData);
+          } catch (err) {
+            console.warn('Failed to parse preset data:', err);
+          }
           } else {
             delete selectedPresets[presetId];
           }
@@ -518,11 +554,11 @@ function init() {
           cb.checked = isChecked;
 
           if (isChecked) {
-            try {
-              selectedPresets[presetId] = JSON.parse(presetData);
-            } catch (e) {
-              // ignore parse error
-            }
+          try {
+            selectedPresets[presetId] = JSON.parse(presetData);
+          } catch (e) {
+            console.warn('Failed to parse preset data:', e);
+          }
           } else {
             delete selectedPresets[presetId];
           }
@@ -595,6 +631,7 @@ function init() {
         var rowsHtml = [];
         var totalPresets = 0;
         var folderIdCounter = 0;
+        var FOLDER_ID_PREFIX = 'folder-';
         function displayFilename(filename, slicer) {
           var fn = filename || 'preset.json';
           var ext = fn.replace(/^.*\./, '') || 'json';
@@ -609,11 +646,11 @@ function init() {
           var list = groups[mat];
           totalPresets += list.length;
           var first = list[0];
-          var folderId = 'folder-' + folderIdCounter++;
+          var folderId = FOLDER_ID_PREFIX + folderIdCounter++;
 
           if (list.length > 1) {
             // Folder row (parent) - expandable with checkbox
-            var folderCheckboxId = 'folder-cb-' + folderId;
+
             // Check if all children are selected
             var allChildrenSelected = list.every(function (p) {
               var pid = p.path || (p.material + '-' + p.brand + '-' + p.model + '-' + p.slicer);

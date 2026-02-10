@@ -4,7 +4,7 @@ Official print presets for Polymaker 3D printing filaments, optimized for use wi
 
 ## 🌐 Download Presets
 
-**Visit our download page:** [https://jingxi-polymaker.github.io/Polymaker-Preset/](hhttps://jingxi-polymaker.github.io/Polymaker-Preset/)
+**Visit our download page:** [https://jingxi-polymaker.github.io/Polymaker-Preset/](https://jingxi-polymaker.github.io/Polymaker-Preset/)
 
 ## 📦 Manual Installation
 
