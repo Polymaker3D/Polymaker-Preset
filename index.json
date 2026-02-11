@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updatedAt": "2026-02-11T07:18:02.801Z",
+  "updatedAt": "2026-02-11T07:28:24.578Z",
   "materials": [
     "Fiberon PA12-CF10",
     "Fiberon PA6-CF20",
@@ -469,8 +469,8 @@
       "material": "Panchroma PLA Celestial",
       "brand": "Snapmaker",
       "model": "U1",
-      "slicer": "BambuStudio",
-      "path": "preset/Panchroma PLA Celestial/Snapmaker/U1/BambuStudio/Panchroma PLA Celestial @Snapmaker U1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Celestial/Snapmaker/U1/OrcaSlicer/Panchroma PLA Celestial @Snapmaker U1.json",
       "filename": "Panchroma PLA Celestial @Snapmaker U1.json"
     },
     {
@@ -573,8 +573,8 @@
       "material": "Panchroma PLA Galaxy",
       "brand": "Snapmaker",
       "model": "U1",
-      "slicer": "BambuStudio",
-      "path": "preset/Panchroma PLA Galaxy/Snapmaker/U1/BambuStudio/Panchroma PLA Galaxy @Snapmaker U1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Galaxy/Snapmaker/U1/OrcaSlicer/Panchroma PLA Galaxy @Snapmaker U1.json",
       "filename": "Panchroma PLA Galaxy @Snapmaker U1.json"
     },
     {
@@ -677,8 +677,8 @@
       "material": "Panchroma PLA Glow",
       "brand": "Snapmaker",
       "model": "U1",
-      "slicer": "BambuStudio",
-      "path": "preset/Panchroma PLA Glow/Snapmaker/U1/BambuStudio/Panchroma PLA Glow @Snapmaker U1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Glow/Snapmaker/U1/OrcaSlicer/Panchroma PLA Glow @Snapmaker U1.json",
       "filename": "Panchroma PLA Glow @Snapmaker U1.json"
     },
     {
@@ -781,8 +781,8 @@
       "material": "Panchroma PLA Luminous",
       "brand": "Snapmaker",
       "model": "U1",
-      "slicer": "BambuStudio",
-      "path": "preset/Panchroma PLA Luminous/Snapmaker/U1/BambuStudio/Panchroma PLA Luminous @Snapmaker U1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Luminous/Snapmaker/U1/OrcaSlicer/Panchroma PLA Luminous @Snapmaker U1.json",
       "filename": "Panchroma PLA Luminous @Snapmaker U1.json"
     },
     {
@@ -1061,8 +1061,8 @@
       "material": "Panchroma PLA Metallic",
       "brand": "Snapmaker",
       "model": "U1",
-      "slicer": "BambuStudio",
-      "path": "preset/Panchroma PLA Metallic/Snapmaker/U1/BambuStudio/Panchroma PLA Metallic @Snapmaker U1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Metallic/Snapmaker/U1/OrcaSlicer/Panchroma PLA Metallic @Snapmaker U1.json",
       "filename": "Panchroma PLA Metallic @Snapmaker U1.json"
     },
     {
@@ -1165,8 +1165,8 @@
       "material": "Panchroma PLA Neon",
       "brand": "Snapmaker",
       "model": "U1",
-      "slicer": "BambuStudio",
-      "path": "preset/Panchroma PLA Neon/Snapmaker/U1/BambuStudio/Panchroma PLA Neon @Snapmaker U1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Neon/Snapmaker/U1/OrcaSlicer/Panchroma PLA Neon @Snapmaker U1.json",
       "filename": "Panchroma PLA Neon @Snapmaker U1.json"
     },
     {
@@ -1461,8 +1461,8 @@
       "material": "Panchroma PLA Starlight",
       "brand": "Snapmaker",
       "model": "U1",
-      "slicer": "BambuStudio",
-      "path": "preset/Panchroma PLA Starlight/Snapmaker/U1/BambuStudio/Panchroma PLA Starlight @Snapmaker U1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Starlight/Snapmaker/U1/OrcaSlicer/Panchroma PLA Starlight @Snapmaker U1.json",
       "filename": "Panchroma PLA Starlight @Snapmaker U1.json"
     },
     {
@@ -1565,8 +1565,8 @@
       "material": "Panchroma PLA Translucent",
       "brand": "Snapmaker",
       "model": "U1",
-      "slicer": "BambuStudio",
-      "path": "preset/Panchroma PLA Translucent/Snapmaker/U1/BambuStudio/Panchroma PLA Translucent @Snapmaker U1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA Translucent/Snapmaker/U1/OrcaSlicer/Panchroma PLA Translucent @Snapmaker U1.json",
       "filename": "Panchroma PLA Translucent @Snapmaker U1.json"
     },
     {
@@ -1669,8 +1669,8 @@
       "material": "Panchroma PLA UV Shift",
       "brand": "Snapmaker",
       "model": "U1",
-      "slicer": "BambuStudio",
-      "path": "preset/Panchroma PLA UV Shift/Snapmaker/U1/BambuStudio/Panchroma PLA UV Shift @Snapmaker U1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Panchroma PLA UV Shift/Snapmaker/U1/OrcaSlicer/Panchroma PLA UV Shift @Snapmaker U1.json",
       "filename": "Panchroma PLA UV Shift @Snapmaker U1.json"
     },
     {
@@ -1885,8 +1885,8 @@
       "material": "PolyLite PLA",
       "brand": "Snapmaker",
       "model": "U1",
-      "slicer": "BambuStudio",
-      "path": "preset/PolyLite PLA/Snapmaker/U1/BambuStudio/PolyLite PLA @Snapmaker U1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyLite PLA/Snapmaker/U1/OrcaSlicer/PolyLite PLA @Snapmaker U1.json",
       "filename": "PolyLite PLA @Snapmaker U1.json"
     },
     {
@@ -1989,8 +1989,8 @@
       "material": "PolyLite PLA Galaxy",
       "brand": "Snapmaker",
       "model": "U1",
-      "slicer": "BambuStudio",
-      "path": "preset/PolyLite PLA Galaxy/Snapmaker/U1/BambuStudio/PolyLite PLA Galaxy @Snapmaker U1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyLite PLA Galaxy/Snapmaker/U1/OrcaSlicer/PolyLite PLA Galaxy @Snapmaker U1.json",
       "filename": "PolyLite PLA Galaxy @Snapmaker U1.json"
     },
     {
@@ -2093,8 +2093,8 @@
       "material": "PolyLite PLA Glow",
       "brand": "Snapmaker",
       "model": "U1",
-      "slicer": "BambuStudio",
-      "path": "preset/PolyLite PLA Glow/Snapmaker/U1/BambuStudio/PolyLite PLA Glow @Snapmaker U1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyLite PLA Glow/Snapmaker/U1/OrcaSlicer/PolyLite PLA Glow @Snapmaker U1.json",
       "filename": "PolyLite PLA Glow @Snapmaker U1.json"
     },
     {
@@ -2197,8 +2197,8 @@
       "material": "PolyLite PLA Luminous",
       "brand": "Snapmaker",
       "model": "U1",
-      "slicer": "BambuStudio",
-      "path": "preset/PolyLite PLA Luminous/Snapmaker/U1/BambuStudio/PolyLite PLA Luminous @Snapmaker U1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyLite PLA Luminous/Snapmaker/U1/OrcaSlicer/PolyLite PLA Luminous @Snapmaker U1.json",
       "filename": "PolyLite PLA Luminous @Snapmaker U1.json"
     },
     {
@@ -2301,8 +2301,8 @@
       "material": "PolyLite PLA Neon",
       "brand": "Snapmaker",
       "model": "U1",
-      "slicer": "BambuStudio",
-      "path": "preset/PolyLite PLA Neon/Snapmaker/U1/BambuStudio/PolyLite PLA Neon @Snapmaker U1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyLite PLA Neon/Snapmaker/U1/OrcaSlicer/PolyLite PLA Neon @Snapmaker U1.json",
       "filename": "PolyLite PLA Neon @Snapmaker U1.json"
     },
     {
@@ -2469,8 +2469,8 @@
       "material": "PolyLite PLA Starlight",
       "brand": "Snapmaker",
       "model": "U1",
-      "slicer": "BambuStudio",
-      "path": "preset/PolyLite PLA Starlight/Snapmaker/U1/BambuStudio/PolyLite PLA Starlight @Snapmaker U1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyLite PLA Starlight/Snapmaker/U1/OrcaSlicer/PolyLite PLA Starlight @Snapmaker U1.json",
       "filename": "PolyLite PLA Starlight @Snapmaker U1.json"
     },
     {
@@ -2573,8 +2573,8 @@
       "material": "PolyLite PLA Translucent",
       "brand": "Snapmaker",
       "model": "U1",
-      "slicer": "BambuStudio",
-      "path": "preset/PolyLite PLA Translucent/Snapmaker/U1/BambuStudio/PolyLite PLA Translucent @Snapmaker U1.json",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyLite PLA Translucent/Snapmaker/U1/OrcaSlicer/PolyLite PLA Translucent @Snapmaker U1.json",
       "filename": "PolyLite PLA Translucent @Snapmaker U1.json"
     },
     {
