@@ -8,12 +8,22 @@ Official print presets for Polymaker 3D printing filaments, optimized for use wi
 
 ## 📦 Manual Installation
 
-### BambuStudio / OrcaSlicer / ElegooSlicer
+### Bambu Studio
 
-1. Download the preset JSON file from the [download page](https://polymaker3d.github.io/Polymaker-Preset/) or from this repository's `preset/` folder.
-2. Open your slicer (BambuStudio, OrcaSlicer, or ElegooSlicer).
-3. Navigate to: **File** → **Import** → **Import Configs**.
-4. The preset will appear in your filament/process dropdown.
+1. Download the preset JSON file (or single-file ZIP) from the [download page](https://polymaker3d.github.io/Polymaker-Preset/).
+2. Open Bambu Studio.
+3. Go to **File** → **Import** → **Import Preset...**.
+4. Select a JSON or ZIP file.
+5. Click on a material in the project consumables list, select the imported custom preset, and the preset will appear in the preset list.
+
+### OrcaSlicer / ElegooSlicer
+
+1. Download the preset as **JSON** or **single-file ZIP** from the [download page](https://polymaker3d.github.io/Polymaker-Preset/).
+2. Open OrcaSlicer or ElegooSlicer.
+3. Go to **File** → **Import**:
+   - For a **JSON** file: choose **Import Configs...** (OrcaSlicer) or **Import Preset...** (ElegooSlicer), then select the JSON file.
+   - For a **ZIP** file: choose **Import Zip Archive...** (or the equivalent, e.g. “Import Zip Archive…” in ElegooSlicer), then select the ZIP file (no need to unzip).
+4. The preset will appear in your preset list.
 
 ## 📁 Repository Structure
 
