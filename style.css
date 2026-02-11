@@ -819,6 +819,7 @@ body.theme-wiki .folder-row {
 
 body.theme-wiki .checkbox-custom {
   border-color: rgba(107, 114, 128, 0.6);
+  background: #fff;
 }
 
 body.theme-wiki .checkbox-input:checked + .checkbox-custom {
