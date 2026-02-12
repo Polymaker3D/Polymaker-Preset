@@ -1,4 +1,4 @@
-# Polymaker Filament Preset
+# Polymaker Filament Presets
 
 Official print presets for Polymaker 3D printing filaments, optimized for use with BambuStudio, OrcaSlicer, ElegooSlicer, and other compatible slicers.
 

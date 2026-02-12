@@ -1,10 +1,10 @@
-# AGENTS.md - Polymaker Filament Preset
+# AGENTS.md - Polymaker Filament Presets
 
-This document provides essential information for AI coding agents working on the Polymaker Filament Preset repository.
+This document provides essential information for AI coding agents working on the Polymaker Filament Presets repository.
 
 ## Project Overview
 
-**Polymaker Filament Preset** is a GitHub Pages-hosted web application that provides official 3D printing filament presets for Polymaker products. The presets are optimized for use with BambuStudio, OrcaSlicer, ElegooSlicer, and other compatible 3D printing slicers.
+**Polymaker Filament Presets** is a GitHub Pages-hosted web application that provides official 3D printing filament presets for Polymaker products. The presets are optimized for use with BambuStudio, OrcaSlicer, ElegooSlicer, and other compatible 3D printing slicers.
 
 **Live Site**: https://polymaker3d.github.io/Polymaker-Preset/
 
