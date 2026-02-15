@@ -76,13 +76,6 @@ Presets are updated regularly based on:
 
 **Last Updated**: Check the `index.json` file for the latest update timestamp (`updatedAt` field).
 
-## 📝 Usage Notes
-
-- These presets are starting points. You may need to fine-tune settings based on your specific printer, nozzle size, and environmental conditions.
-- Always run a temperature tower when trying a new material.
-- Adjust retraction settings based on your printer's configuration.
-- Clean the nozzle between material changes.
-
 ## 🔗 Links
 
 - **Download Page**: [https://polymaker3d.github.io/Polymaker-Preset/](https://polymaker3d.github.io/Polymaker-Preset/)
