@@ -6,6 +6,8 @@ Official print presets for Polymaker 3D printing filaments, optimized for use wi
 
 **Visit our download page:** [https://polymaker3d.github.io/Polymaker-Preset/](https://polymaker3d.github.io/Polymaker-Preset/)
 
+> **Tip:** GitHub Pages supports custom domains. We recommend binding a memorable subdomain (e.g. **presets.polymaker.com**) for easier access. See [CUSTOM_DOMAIN.md](CUSTOM_DOMAIN.md) for setup steps.
+
 ## 📦 Manual Installation
 
 ### Bambu Studio
@@ -78,6 +80,14 @@ Presets are updated regularly based on:
 
 ## 🔗 Links
 
-- **Download Page**: [https://polymaker3d.github.io/Polymaker-Preset/](https://polymaker3d.github.io/Polymaker-Preset/)
-- **Polymaker Website**: [https://polymaker.com](https://polymaker.com)
+- **Download Page**: [https://polymaker3d.github.io/Polymaker-Preset/](https://polymaker3d.github.io/Polymaker-Preset/) (custom domain e.g. **presets.polymaker.com** — see [CUSTOM_DOMAIN.md](CUSTOM_DOMAIN.md))
+- **Polymaker Official Website**: [https://polymaker.com/](https://polymaker.com/)
+- **Polymaker Wiki**: [https://wiki.polymaker.com/](https://wiki.polymaker.com/)
+- **Polymaker Store**: [https://shop.polymaker.com/](https://shop.polymaker.com/)
 - **GitHub Repository**: [https://github.com/Polymaker3D/Polymaker-Preset](https://github.com/Polymaker3D/Polymaker-Preset)
+
+## 📱 Social Accounts
+
+- **YouTube**: [https://www.youtube.com/@Polymaker](https://www.youtube.com/@Polymaker)
+- **Instagram**: [https://www.instagram.com/polymaker_3d](https://www.instagram.com/polymaker_3d)
+- **Facebook**: [https://www.facebook.com/Polymaker.3D](https://www.facebook.com/Polymaker.3D)

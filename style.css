@@ -34,8 +34,8 @@ body.theme-wiki {
 body {
   font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   margin: 0;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
+  overflow-y: auto;
   color: var(--text);
   background: var(--bg-dark);
   line-height: 1.4;
@@ -62,10 +62,9 @@ body.theme-wiki .bg-gradient {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0.5rem 1rem 0.25rem;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
 }
 
 /* Hero */
@@ -99,6 +98,17 @@ body.theme-wiki .bg-gradient {
   font-weight: 700;
   margin: 0 0 0.15rem;
   letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.hero-logo {
+  height: 1.75em;
+  width: auto;
+  vertical-align: middle;
+  flex-shrink: 0;
 }
 
 .brand-name {
@@ -293,6 +303,7 @@ body.theme-wiki .theme-toggle-btn:hover {
   display: flex;
   flex-direction: column;
   min-height: 0;
+  max-height: 60vh;
   overflow: hidden;
   padding: 0.5rem 0.75rem;
   position: relative;
@@ -897,11 +908,158 @@ body.theme-wiki .btn-download-selected:disabled {
 
 /* Footer */
 .footer {
-  text-align: center;
-  padding: 0.25rem 0 0;
+  padding: 1.5rem 0 0;
   font-size: 0.7rem;
   color: var(--text-muted);
   flex-shrink: 0;
+}
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-col {
+  padding: 1rem 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.footer-col-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin: 0 0 0.6rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.footer-label {
+  color: #fff;
+  font-weight: 500;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-link-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.footer-link-item:hover {
+  color: var(--accent-light);
+  text-decoration: none;
+}
+
+.footer-link-url {
+  font-size: 0.65rem;
+  word-break: break-all;
+  text-align: left;
+  color: var(--accent-light);
+}
+
+.footer-link-item:hover .footer-link-url {
+  color: var(--gradient-end);
+}
+
+.footer-social-list {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.75rem;
+}
+
+.footer-social-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.footer-social-item:hover {
+  color: var(--accent-light);
+  text-decoration: none;
+}
+
+.footer-social-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+  color: #fff;
+}
+
+.footer-social-item:hover .footer-social-icon {
+  color: #fff;
+}
+
+.footer-social-url {
+  font-size: 0.65rem;
+  word-break: break-all;
+  text-align: left;
+  color: var(--accent-light);
+}
+
+.footer-social-item:hover .footer-social-url {
+  color: var(--gradient-end);
+}
+
+.footer-readme {
+  margin: 0.5rem 0 0;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+body.theme-wiki .footer-label {
+  color: #1a1a2e;
+}
+
+body.theme-wiki .footer-col {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 120, 124, 0.35);
+}
+
+body.theme-wiki .footer-link-item .footer-link-url {
+  color: #00787C;
+}
+
+body.theme-wiki .footer-link-item:hover .footer-link-url {
+  color: #005a5e;
+}
+
+body.theme-wiki .footer-col-title {
+  color: #1a1a2e;
+}
+
+body.theme-wiki .footer-social-icon {
+  color: #00787C;
+}
+
+body.theme-wiki .footer-social-item:hover .footer-social-icon {
+  color: #00787C;
+}
+
+body.theme-wiki .footer-social-url {
+  color: #00787C;
+}
+
+body.theme-wiki .footer-social-item:hover .footer-social-url {
+  color: #005a5e;
 }
 
 .footer a {
@@ -914,6 +1072,17 @@ body.theme-wiki .btn-download-selected:disabled {
 .footer a:hover {
   color: var(--gradient-end);
   text-decoration: underline;
+}
+
+.footer-social-item:hover .footer-social-url,
+.footer-link-item:hover .footer-link-url {
+  text-decoration: none;
+}
+
+@media (max-width: 560px) {
+  .footer-columns {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Modal */
