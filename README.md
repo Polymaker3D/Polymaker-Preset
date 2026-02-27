@@ -6,8 +6,6 @@ Official print presets for Polymaker 3D printing filaments, optimized for use wi
 
 **Visit our download page:** [https://polymaker3d.github.io/Polymaker-Preset/](https://polymaker3d.github.io/Polymaker-Preset/)
 
-> **Tip:** GitHub Pages supports custom domains. We recommend binding a memorable subdomain (e.g. **presets.polymaker.com**) for easier access. See [CUSTOM_DOMAIN.md](CUSTOM_DOMAIN.md) for setup steps.
-
 ## 📦 Manual Installation
 
 ### Bambu Studio
