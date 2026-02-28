@@ -1,6 +1,7 @@
 name: Auto update index.json in PR
 
 on:
+  workflow_dispatch:
   pull_request:
     types: [opened, synchronize, reopened]
     paths:
