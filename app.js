@@ -849,6 +849,30 @@ function initModal() {
   });
 }
 
+// Accordion functionality for Known Issues
+function initAccordion() {
+  var accordionHeaders = document.querySelectorAll('.accordion-header');
+
+  accordionHeaders.forEach(function (header) {
+    header.addEventListener('click', function () {
+      var item = header.parentElement;
+      var isCollapsed = item.classList.contains('is-collapsed');
+      var icon = header.querySelector('.accordion-icon');
+
+      if (isCollapsed) {
+        item.classList.remove('is-collapsed');
+        header.setAttribute('aria-expanded', 'true');
+        icon.textContent = '▼';
+      } else {
+        item.classList.add('is-collapsed');
+        header.setAttribute('aria-expanded', 'false');
+        icon.textContent = '▼';
+      }
+    });
+  });
+}
+
 // Tooltip positioning to prevent clipping
 init();
 initModal();
+initAccordion();

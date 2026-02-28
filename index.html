@@ -33,21 +33,6 @@
       <p class="hero-desc">Select your slicer to view and download Polymaker preset files</p>
     </header>
 
-    <section class="card warning-card" id="warning-card">
-      <div class="warning-header">
-        <span class="warning-icon">⚠️</span>
-        <h2 class="warning-title">P2S Overheating Issue - Temporary Fix Applied</h2>
-      </div>
-      <div class="warning-content">
-        <p><strong>Issue:</strong> P2S printer may overheat when printing materials with vitrification temperature > 50°C due to starting G-code issues.</p>
-        <p><strong>Solution:</strong> We have implemented a temporary fix by adding cooling G-code commands to P2S presets with vitrification temperature > 50°C. This is a temporary workaround until Bambu Lab fixes this issue.</p>
-        <p class="warning-links">
-          <a href="https://github.com/bambulab/BambuStudio/issues/8801" target="_blank" rel="noopener noreferrer">View BambuStudio Issue #8801 →</a>
-        </p>
-        <p class="warning-credits">Thanks to alexbreinig and capsel22 for identifying this issue.</p>
-      </div>
-    </section>
-
     <section class="card slicer-card" id="slicer-card">
       <div class="slicer-filter">
         <div class="filter-group slicer-filter-group">
@@ -171,8 +156,31 @@
           </div>
         </div>
       </div>
-      <p class="footer-readme">For more information, see <a href="https://github.com/Polymaker3D/Polymaker-Preset#readme" target="_blank" rel="noopener noreferrer">README</a></p>
     </footer>
+
+    <section class="known-issues-section">
+      <h2 class="known-issues-title">Known Issues</h2>
+      <div class="accordion">
+        <div class="accordion-item is-collapsed">
+          <button class="accordion-header" type="button" aria-expanded="false">
+            <span class="accordion-title">P2S Overheating Issue - Temporary Fix Applied</span>
+            <span class="accordion-icon" aria-hidden="true">▼</span>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-body">
+              <p><strong>Issue:</strong> P2S printer may overheat when printing materials with vitrification temperature &gt; 50°C due to starting G-code issues.</p>
+              <p><strong>Solution:</strong> We have implemented a temporary fix by adding cooling G-code commands to P2S presets with vitrification temperature &gt; 50°C. This is a temporary workaround until Bambu Lab fixes this issue.</p>
+              <p class="accordion-links">
+                <a href="https://github.com/bambulab/BambuStudio/issues/8801" target="_blank" rel="noopener noreferrer">View BambuStudio Issue #8801 →</a>
+              </p>
+              <p class="accordion-credits">Thanks to alexbreinig and capsel22 for identifying this issue.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <p class="footer-readme">For more information, see <a href="https://github.com/Polymaker3D/Polymaker-Preset#readme" target="_blank" rel="noopener noreferrer">README</a></p>
   </div>
 
   <!-- Manual Installation Modal -->
