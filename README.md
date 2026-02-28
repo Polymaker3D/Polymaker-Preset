@@ -4,13 +4,13 @@ Official print presets for Polymaker 3D printing filaments, optimized for use wi
 
 ## 🌐 Download Presets
 
-**Visit our download page:** [https://polymaker3d.github.io/Polymaker-Preset/](https://polymaker3d.github.io/Polymaker-Preset/)
+**Visit our download page:** [https://presets.polymaker.com](https://presets.polymaker.com) 
 
 ## 📦 Manual Installation
 
 ### Bambu Studio
 
-1. Download the preset JSON file (or single-file ZIP) from the [download page](https://polymaker3d.github.io/Polymaker-Preset/).
+1. Download the preset JSON file (or single-file ZIP) from the [download page](https://presets.polymaker.com).
 2. Open Bambu Studio.
 3. Go to **File** → **Import** → **Import Preset...**.
 4. Select a JSON or ZIP file.
@@ -18,7 +18,7 @@ Official print presets for Polymaker 3D printing filaments, optimized for use wi
 
 ### OrcaSlicer / ElegooSlicer
 
-1. Download the preset as **JSON** or **single-file ZIP** from the [download page](https://polymaker3d.github.io/Polymaker-Preset/).
+1. Download the preset as **JSON** or **single-file ZIP** from the [download page](https://presets.polymaker.com).
 2. Open OrcaSlicer or ElegooSlicer.
 3. Go to **File** → **Import**:
    - For a **JSON** file: choose **Import Configs...** (OrcaSlicer) or **Import Preset...** (ElegooSlicer), then select the JSON file.
@@ -78,7 +78,7 @@ Presets are updated regularly based on:
 
 ## 🔗 Links
 
-- **Download Page**: [https://polymaker3d.github.io/Polymaker-Preset/](https://polymaker3d.github.io/Polymaker-Preset/) (custom domain e.g. **presets.polymaker.com** — see [CUSTOM_DOMAIN.md](CUSTOM_DOMAIN.md))
+- **Download Page**: [https://presets.polymaker.com](https://presets.polymaker.com) 
 - **Polymaker Official Website**: [https://polymaker.com/](https://polymaker.com/)
 - **Polymaker Wiki**: [https://wiki.polymaker.com/](https://wiki.polymaker.com/)
 - **Polymaker Store**: [https://shop.polymaker.com/](https://shop.polymaker.com/)
