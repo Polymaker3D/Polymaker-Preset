@@ -2,6 +2,29 @@
 
 Official print presets for Polymaker 3D printing filaments, optimized for use with BambuStudio, OrcaSlicer, ElegooSlicer, and other compatible slicers.
 
+## ⚠️ Known Issues
+
+### P2S Overheating Issue (Temporary Fix)
+
+**Issue**: P2S printer overheating when printing materials with vitrification temperature > 50°C due to starting G-code issues.
+
+**Solution**: We have implemented a temporary fix by adding cooling G-code commands to the `filament_start_gcode` for all P2S presets with vitrification temperature > 50°C:
+
+```gcode
+M145 P0 ; set airduct mode to cooling mode for cooling
+M106 P2 S255 ; turn on auxiliary fan for cooling
+M106 P3 S127 ; turn on chamber fan for cooling
+M1002 gcode_claim_action : 29
+M191 S0 ; wait for chamber temp
+M106 P2 S102 ; turn on chamber cooling fan
+M106 P10 S0 ; turn off left aux fan
+M142 P6 R30 S40 U0.3 V0.8 ; set PETG exhaust chamber autocooling
+```
+
+This is a temporary workaround. We will remove this change after Bambu Lab fixes this issue.
+
+**Acknowledgements**: Thanks to alexbreinig for pointing out this issue and capsel22 for reporting it in the BambuStudio issues. For more details, see: https://github.com/bambulab/BambuStudio/issues/8801
+
 ## 🌐 Download Presets
 
 **Visit our download page:** [https://presets.polymaker.com](https://presets.polymaker.com) 
