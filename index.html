@@ -119,6 +119,28 @@
       </div>
     </section>
 
+    <section class="known-issues-section">
+      <h2 class="known-issues-title">Known Issues</h2>
+      <div class="accordion">
+        <div class="accordion-item is-collapsed">
+          <button class="accordion-header" type="button" aria-expanded="false">
+            <span class="accordion-title">P2S Overheating Issue - Temporary Fix Applied</span>
+            <span class="accordion-icon" aria-hidden="true">▼</span>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-body">
+              <p><strong>Issue:</strong> P2S printer may overheat when printing materials with vitrification temperature &gt; 50°C due to starting G-code issues.</p>
+              <p><strong>Solution:</strong> We have implemented a temporary fix by adding cooling G-code commands to P2S presets with vitrification temperature &gt; 50°C. This is a temporary workaround until Bambu Lab fixes this issue.</p>
+              <p class="accordion-links">
+                <a href="https://github.com/bambulab/BambuStudio/issues/8801" target="_blank" rel="noopener noreferrer">View BambuStudio Issue #8801 →</a>
+              </p>
+              <p class="accordion-credits">Thanks to alexbreinig and capsel22 for identifying this issue.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <footer class="footer">
       <div class="footer-columns">
         <div class="footer-col footer-col-links">

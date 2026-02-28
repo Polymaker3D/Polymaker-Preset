@@ -261,6 +261,78 @@ body.theme-wiki .theme-toggle-btn:hover {
   border-color: rgba(80, 191, 202, 0.5);
 }
 
+/* Warning card */
+.warning-card {
+  padding: 0.75rem 1rem;
+  border-color: rgba(234, 179, 8, 0.4);
+  background: rgba(234, 179, 8, 0.08);
+}
+
+.warning-card:hover {
+  border-color: rgba(234, 179, 8, 0.6);
+}
+
+body.theme-wiki .warning-card {
+  background: rgba(234, 179, 8, 0.12);
+  border-color: rgba(234, 179, 8, 0.3);
+}
+
+.warning-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.warning-icon {
+  font-size: 1.25rem;
+}
+
+.warning-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #eab308;
+  margin: 0;
+}
+
+body.theme-wiki .warning-title {
+  color: #a16207;
+}
+
+.warning-content {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.warning-content p {
+  margin: 0 0 0.5rem 0;
+}
+
+.warning-content p:last-child {
+  margin-bottom: 0;
+}
+
+.warning-links {
+  margin-top: 0.5rem;
+}
+
+.warning-links a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.warning-links a:hover {
+  text-decoration: underline;
+}
+
+.warning-credits {
+  font-size: 0.75rem;
+  font-style: italic;
+  opacity: 0.8;
+}
+
 .slicer-filter {
   display: flex;
   justify-content: flex-start;
@@ -912,6 +984,7 @@ body.theme-wiki .btn-download-selected:disabled {
   font-size: 0.7rem;
   color: var(--text-muted);
   flex-shrink: 0;
+  border-top: 1px solid var(--border);
 }
 
 .footer-columns {
@@ -1019,10 +1092,12 @@ body.theme-wiki .btn-download-selected:disabled {
 }
 
 .footer-readme {
-  margin: 0.5rem 0 0;
-  padding-top: 0.75rem;
+  margin: 0;
+  padding: 0.75rem 0;
   border-top: 1px solid var(--border);
   text-align: center;
+  font-size: 0.7rem;
+  color: var(--text-muted);
 }
 
 body.theme-wiki .footer-label {
@@ -1356,4 +1431,136 @@ body.theme-wiki .install-steps strong {
     padding-left: 1.1rem;
     font-size: 0.85rem;
   }
+}
+
+/* Known Issues Section */
+.known-issues-section {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(10px);
+}
+
+.known-issues-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 0.75rem 0;
+}
+
+/* Accordion */
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.accordion-item {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color var(--transition);
+}
+
+.accordion-item:hover {
+  border-color: rgba(234, 179, 8, 0.4);
+}
+
+body.theme-wiki .accordion-item:hover {
+  border-color: rgba(234, 179, 8, 0.3);
+}
+
+.accordion-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0.75rem;
+  background: rgba(234, 179, 8, 0.06);
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text);
+  text-align: left;
+  transition: background-color var(--transition);
+}
+
+.accordion-header:hover {
+  background: rgba(234, 179, 8, 0.1);
+}
+
+body.theme-wiki .accordion-header {
+  background: rgba(234, 179, 8, 0.08);
+}
+
+body.theme-wiki .accordion-header:hover {
+  background: rgba(234, 179, 8, 0.12);
+}
+
+.accordion-title {
+  flex: 1;
+}
+
+.accordion-icon {
+  font-size: 0.75rem;
+  transition: transform 0.2s ease;
+  margin-left: 0.5rem;
+}
+
+.accordion-item.is-collapsed .accordion-icon {
+  transform: rotate(-90deg);
+}
+
+.accordion-content {
+  max-height: 500px;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.accordion-item.is-collapsed .accordion-content {
+  max-height: 0;
+}
+
+.accordion-body {
+  padding: 0.75rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.accordion-item.is-collapsed .accordion-body {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.accordion-body p {
+  margin: 0 0 0.5rem 0;
+}
+
+.accordion-body p:last-child {
+  margin-bottom: 0;
+}
+
+.accordion-links {
+  margin-top: 0.5rem;
+}
+
+.accordion-links a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.accordion-links a:hover {
+  text-decoration: underline;
+}
+
+.accordion-credits {
+  font-size: 0.75rem;
+  font-style: italic;
+  opacity: 0.8;
 }
