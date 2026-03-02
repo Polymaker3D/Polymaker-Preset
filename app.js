@@ -620,8 +620,30 @@ function init() {
         var slicer = filterState.slicer;
         var filtered = presets.filter(function (p) {
           if (series && !materialMatchesSeries(p.material, series)) return false;
-          if (brand && p.brand !== brand) return false;
-          if (model && p.model !== model) return false;
+          if (brand) {
+              var brandMatches = p.brand === brand;
+              if (!brandMatches && p.compatiblePrinters && p.compatiblePrinters.length > 0) {
+                  for (var i = 0; i < p.compatiblePrinters.length; i++) {
+                      if (p.compatiblePrinters[i].brand === brand) {
+                          brandMatches = true;
+                          break;
+                      }
+                  }
+              }
+              if (!brandMatches) return false;
+          }
+          if (model) {
+              var modelMatches = p.model === model;
+              if (!modelMatches && p.compatiblePrinters && p.compatiblePrinters.length > 0) {
+                  for (var j = 0; j < p.compatiblePrinters.length; j++) {
+                      if (p.compatiblePrinters[j].model === model) {
+                          modelMatches = true;
+                          break;
+                      }
+                  }
+              }
+              if (!modelMatches) return false;
+          }
           if (slicer && p.slicer !== slicer) return false;
           return true;
         });
