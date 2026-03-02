@@ -660,6 +660,34 @@ function init() {
           }
         }
 
+        function formatCompatiblePrinters(compatiblePrinters) {
+          if (!compatiblePrinters || compatiblePrinters.length === 0) {
+            return '-';
+          }
+
+          // Extract unique models
+          var models = [];
+          var seen = {};
+          for (var i = 0; i < compatiblePrinters.length; i++) {
+            var model = compatiblePrinters[i].model;
+            if (model && !seen[model]) {
+              seen[model] = true;
+              models.push(model);
+            }
+          }
+
+          return models.join(', ');
+        }
+
+        function getPrinterBrand(compatiblePrinters, fallbackBrand) {
+          if (!compatiblePrinters || compatiblePrinters.length === 0) {
+            return fallbackBrand || '-';
+          }
+
+          // Get the first printer's brand (they should all be the same for a preset)
+          return compatiblePrinters[0].brand || fallbackBrand || '-';
+        }
+
         for (var mat in groups) {
           var list = groups[mat];
           totalPresets += list.length;
@@ -683,7 +711,7 @@ function init() {
 
             rowsHtml.push('<tr class="folder-row" data-folder-id="' + folderId + '">' +
               '<td><label class="checkbox-label folder-checkbox-label" data-folder-id="' + folderId + '"><input type="checkbox" class="checkbox-input folder-checkbox-input"' + folderChecked + folderIndeterminate + '><span class="checkbox-custom"></span></label></td>' +
-              '<td colspan="2">' + folderIconSvg + escapeHtml(mat) + ' <span class="folder-count">(' + list.length + ' presets)</span></td>' +
+              '<td colspan="3">' + folderIconSvg + escapeHtml(mat) + ' <span class="folder-count">(' + list.length + ' presets)</span></td>' +
               '<td>-</td>' +
               '<td class="td-actions"><span class="folder-hint">Click to expand</span></td>' +
               '</tr>');
@@ -697,10 +725,13 @@ function init() {
               var isChecked = selectedPresets[presetId] ? ' checked' : '';
               var presetData = JSON.stringify({ url: url, filename: filename });
               var checkboxHtml = '<label class="checkbox-label preset-checkbox" data-preset-id="' + escapeHtml(presetId) + '" data-preset-data="' + escapeHtml(presetData) + '"><input type="checkbox" class="checkbox-input preset-checkbox-input"' + isChecked + '><span class="checkbox-custom"></span></label>';
+              var printerBrand = getPrinterBrand(p.compatiblePrinters, p.brand);
+              var compatiblePrintersList = formatCompatiblePrinters(p.compatiblePrinters);
               rowsHtml.push('<tr class="child-row" data-parent-folder="' + folderId + '">' +
                 '<td>' + checkboxHtml + '</td>' +
                 '<td class="child-material">' + escapeHtml(mat) + '</td>' +
-                '<td>' + escapeHtml(presetLabel.trim()) + '</td>' +
+                '<td>' + escapeHtml(printerBrand) + '</td>' +
+                '<td>' + escapeHtml(compatiblePrintersList) + '</td>' +
                 '<td>' + formatDate(p.updatedAt) + '</td>' +
                 '<td class="td-actions"><a href="' + url + '" class="btn-download" data-download-url="' + escapeHtml(url) + '" data-download-filename="' + escapeHtml(filename) + '" role="button" title="Download as JSON file">JSON</a></td>' +
                 '</tr>');
@@ -714,10 +745,13 @@ function init() {
             var isChecked0 = selectedPresets[presetId0] ? ' checked' : '';
             var presetData0 = JSON.stringify({ url: url0, filename: filename0 });
             var checkboxHtml0 = '<label class="checkbox-label preset-checkbox" data-preset-id="' + escapeHtml(presetId0) + '" data-preset-data="' + escapeHtml(presetData0) + '"><input type="checkbox" class="checkbox-input preset-checkbox-input"' + isChecked0 + '><span class="checkbox-custom"></span></label>';
+            var printerBrand0 = getPrinterBrand(first.compatiblePrinters, first.brand);
+            var compatiblePrintersList0 = formatCompatiblePrinters(first.compatiblePrinters);
             rowsHtml.push('<tr>' +
               '<td>' + checkboxHtml0 + '</td>' +
               '<td>' + escapeHtml(mat) + '</td>' +
-              '<td>' + escapeHtml(presetLabel.trim()) + '</td>' +
+              '<td>' + escapeHtml(printerBrand0) + '</td>' +
+              '<td>' + escapeHtml(compatiblePrintersList0) + '</td>' +
               '<td>' + formatDate(first.updatedAt) + '</td>' +
               '<td class="td-actions"><a href="' + url0 + '" class="btn-download" data-download-url="' + escapeHtml(url0) + '" data-download-filename="' + escapeHtml(filename0) + '" role="button" title="Download as JSON file">JSON</a></td>' +
               '</tr>');
