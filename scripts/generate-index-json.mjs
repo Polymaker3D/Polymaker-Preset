@@ -47,6 +47,36 @@ function normalizePosix(p) {
   return p.split(path.sep).join('/');
 }
 
+function extractCompatiblePrinters(presetData) {
+    if (!presetData || !Array.isArray(presetData.compatible_printers)) {
+        return [];
+    }
+
+    const printers = [];
+    for (const printerString of presetData.compatible_printers) {
+        // Parse "Bambu Lab X1C 0.4 nozzle" → extract brand and model
+        const match = printerString.match(/^(.+?)\s+([A-Z0-9]+)\s+0\.\d+\s*nozzle$/i);
+        if (match) {
+            printers.push({
+                brand: match[1].trim(),
+                model: match[2].trim(),
+                fullName: printerString
+            });
+        } else {
+            // Fallback: try to extract any text before a model-like pattern
+            const fallbackMatch = printerString.match(/^(.+?)\s+([A-Z0-9-]+)/i);
+            if (fallbackMatch) {
+                printers.push({
+                    brand: fallbackMatch[1].trim(),
+                    model: fallbackMatch[2].trim(),
+                    fullName: printerString
+                });
+            }
+        }
+    }
+    return printers;
+}
+
 function cmp(a, b) {
   return a < b ? -1 : a > b ? 1 : 0;
 }
@@ -73,7 +103,7 @@ async function main() {
   const models = new Set();
   const slicers = new Set();
 
-  /** @type {{material:string,brand:string,model:string,slicer:string,path:string,filename:string,updatedAt:string|null}[]} */
+  /** @type {{material:string,brand:string,model:string,slicer:string,path:string,filename:string,updatedAt:string|null,compatiblePrinters:{brand:string,model:string,fullName:string}[]}[]} */
   const presets = [];
 
   for (const absFile of jsonFiles) {
@@ -91,20 +121,31 @@ async function main() {
 
     const relPath = normalizePosix(path.join('preset', relFromPreset));
     const updatedAt = getGitLastUpdate(relPath);
-    
+
+    // Read the preset JSON content to extract compatible_printers
+    let compatiblePrinters = [];
+    try {
+        const fileContent = await fs.readFile(absFile, 'utf8');
+        const presetData = JSON.parse(fileContent);
+        compatiblePrinters = extractCompatiblePrinters(presetData);
+    } catch (e) {
+        console.warn(`Failed to parse ${relFromPreset}: ${e.message}`);
+    }
+
     materials.add(material);
     brands.add(printerBrand);
     models.add(printerModel);
     slicers.add(slicer);
 
-    presets.push({ 
-      material: material, 
-      brand: printerBrand, 
-      model: printerModel, 
-      slicer, 
-      path: relPath, 
+    presets.push({
+      material: material,
+      brand: printerBrand,
+      model: printerModel,
+      slicer,
+      path: relPath,
       filename,
-      updatedAt
+      updatedAt,
+      compatiblePrinters: compatiblePrinters
     });
   }
 
