@@ -120,7 +120,7 @@
     "nozzle_temperature_range_high": [
         "300"
     ],
-    "filament_id": "GFL50",
+    "filament_id": "PMPA02",
     "setting_id": "OGFSL50_00",
     "compatible_printers": [
         "Anycubic Kobra S1 0.4 nozzle"

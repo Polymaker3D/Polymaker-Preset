@@ -119,5 +119,6 @@
         "Snapmaker U1 (0.4 nozzle)"
     ],
     "version": "1.7.0.12",
-    "idle_temperature": 0
+    "idle_temperature": 0,
+    "filament_id": "PMPL34"
 }
