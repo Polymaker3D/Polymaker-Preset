@@ -610,6 +610,12 @@ body.theme-wiki .dropdown-menu::-webkit-scrollbar-thumb {
   flex-shrink: 0;
 }
 
+.list-header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
 .list-header-left {
   display: flex;
   align-items: center;
@@ -662,7 +668,12 @@ body.theme-wiki .dropdown-menu::-webkit-scrollbar-thumb {
 .preset-table td:nth-child(1) {
   width: 40px;
   text-align: center;
-  padding: 0.65rem 0.25rem;
+  padding: 0.65rem 0;
+}
+
+.preset-table th:nth-child(1) .checkbox-label,
+.preset-table td:nth-child(1) .checkbox-label {
+  margin: 0 auto;
 }
 
 .preset-table th:nth-child(2),
@@ -1129,16 +1140,6 @@ body.theme-wiki .btn-download-bundle:disabled {
   background: rgba(148, 163, 184, 0.3);
 }
 
-/* List header with multiple buttons */
-.list-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 0.75rem;
-  flex-wrap: wrap;
-}
-
 @media (max-width: 640px) {
   .list-header {
     flex-direction: column;
@@ -1146,7 +1147,12 @@ body.theme-wiki .btn-download-bundle:disabled {
     gap: 0.5rem;
   }
   
-  .list-header button {
+  .list-header-right {
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  .list-header-right button {
     width: 100%;
     justify-content: center;
   }
