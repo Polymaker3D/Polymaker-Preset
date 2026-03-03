@@ -47,6 +47,32 @@ function normalizePosix(p) {
   return p.split(path.sep).join('/');
 }
 
+// Machine name mapping table: maps full printer names to canonical brand/model
+// This avoids regex parsing and makes naming consistent across the application
+const MACHINE_NAME_MAP = {
+    // Anycubic
+    'Anycubic Kobra S1 0.4 nozzle': { brand: 'Anycubic', model: 'Kobra S1' },
+    
+    // BBL (Bambu Lab) - X1 variants are different machines
+    'Bambu Lab A1 0.4 nozzle': { brand: 'BBL', model: 'A1' },
+    'Bambu Lab A1 mini 0.4 nozzle': { brand: 'BBL', model: 'A1M' },
+    'Bambu Lab H2D 0.4 nozzle': { brand: 'BBL', model: 'H2D' },
+    'Bambu Lab H2S 0.4 nozzle': { brand: 'BBL', model: 'H2S' },
+    'Bambu Lab P1P 0.4 nozzle': { brand: 'BBL', model: 'P1P' },
+    'Bambu Lab P1S 0.4 nozzle': { brand: 'BBL', model: 'P1S' },
+    'Bambu Lab P2S 0.4 nozzle': { brand: 'BBL', model: 'P2S' },
+    'Bambu Lab X1 0.4 nozzle': { brand: 'BBL', model: 'X1' },
+    'Bambu Lab X1 Carbon 0.4 nozzle': { brand: 'BBL', model: 'X1C' },
+    'Bambu Lab X1C 0.4 nozzle': { brand: 'BBL', model: 'X1C' },
+    'Bambu Lab X1E 0.4 nozzle': { brand: 'BBL', model: 'X1E' },
+    
+    // Elegoo
+    'Elegoo Centauri Carbon 2 0.4 nozzle': { brand: 'Elegoo', model: 'CC2' },
+    
+    // Snapmaker
+    'Snapmaker U1 (0.4 nozzle)': { brand: 'Snapmaker', model: 'U1' }
+};
+
 function extractCompatiblePrinters(presetData) {
     if (!presetData || !Array.isArray(presetData.compatible_printers)) {
         return [];
@@ -54,24 +80,17 @@ function extractCompatiblePrinters(presetData) {
 
     const printers = [];
     for (const printerString of presetData.compatible_printers) {
-        // Parse "Bambu Lab X1C 0.4 nozzle" → extract brand and model
-        const match = printerString.match(/^(.+?)\s+([A-Z0-9]+)\s+0\.\d+\s*nozzle$/i);
-        if (match) {
+        // Use mapping table for known machines
+        const mapped = MACHINE_NAME_MAP[printerString];
+        if (mapped) {
             printers.push({
-                brand: match[1].trim(),
-                model: match[2].trim(),
+                brand: mapped.brand,
+                model: mapped.model,
                 fullName: printerString
             });
         } else {
-            // Fallback: try to extract any text before a model-like pattern
-            const fallbackMatch = printerString.match(/^(.+?)\s+([A-Z0-9-]+)/i);
-            if (fallbackMatch) {
-                printers.push({
-                    brand: fallbackMatch[1].trim(),
-                    model: fallbackMatch[2].trim(),
-                    fullName: printerString
-                });
-            }
+            // Unknown machine: log warning and skip
+            console.warn(`Unknown printer in compatible_printers: ${printerString}`);
         }
     }
     return printers;

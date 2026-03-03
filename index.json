@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updatedAt": "2026-03-02T08:14:13.506Z",
+  "updatedAt": "2026-03-03T01:53:05.846Z",
   "materials": [
     "Fiberon PA12-CF10",
     "Fiberon PA6-CF20",
@@ -83,7 +83,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2D",
           "fullName": "Bambu Lab H2D 0.4 nozzle"
         }
@@ -99,22 +99,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -130,22 +130,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -161,8 +161,8 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Anycubic Kobra",
-          "model": "S1",
+          "brand": "Anycubic",
+          "model": "Kobra S1",
           "fullName": "Anycubic Kobra S1 0.4 nozzle"
         }
       ]
@@ -177,7 +177,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2D",
           "fullName": "Bambu Lab H2D 0.4 nozzle"
         }
@@ -193,22 +193,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -224,22 +224,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -255,7 +255,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2D",
           "fullName": "Bambu Lab H2D 0.4 nozzle"
         }
@@ -271,22 +271,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -302,22 +302,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -333,7 +333,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2D",
           "fullName": "Bambu Lab H2D 0.4 nozzle"
         }
@@ -349,22 +349,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -380,22 +380,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -411,7 +411,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2D",
           "fullName": "Bambu Lab H2D 0.4 nozzle"
         }
@@ -427,22 +427,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -458,22 +458,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -489,7 +489,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2D",
           "fullName": "Bambu Lab H2D 0.4 nozzle"
         }
@@ -505,22 +505,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -536,22 +536,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -567,7 +567,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2D",
           "fullName": "Bambu Lab H2D 0.4 nozzle"
         }
@@ -583,22 +583,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -614,22 +614,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -645,13 +645,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -666,13 +666,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -687,12 +687,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -708,12 +708,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -729,7 +729,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2D",
           "fullName": "Bambu Lab H2D 0.4 nozzle"
         }
@@ -742,17 +742,12 @@
       "slicer": "BambuStudio",
       "path": "preset/Panchroma CoPE/BBL/P1P/BambuStudio/Panchroma CoPE @BBL P1P.json",
       "filename": "Panchroma CoPE @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -763,17 +758,12 @@
       "slicer": "Orcaslicer",
       "path": "preset/Panchroma CoPE/BBL/P1P/Orcaslicer/Panchroma CoPE @BBL P1P.json",
       "filename": "Panchroma CoPE @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -787,7 +777,7 @@
       "updatedAt": "2026-02-28T15:29:03+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P2S",
           "fullName": "Bambu Lab P2S 0.4 nozzle"
         }
@@ -803,22 +793,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -834,22 +824,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -865,8 +855,8 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Elegoo Centauri Carbon",
-          "model": "2",
+          "brand": "Elegoo",
+          "model": "CC2",
           "fullName": "Elegoo Centauri Carbon 2 0.4 nozzle"
         }
       ]
@@ -897,7 +887,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2S",
           "fullName": "Bambu Lab H2S 0.4 nozzle"
         }
@@ -913,7 +903,7 @@
       "updatedAt": "2026-02-28T15:29:03+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P2S",
           "fullName": "Bambu Lab P2S 0.4 nozzle"
         }
@@ -929,8 +919,8 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Elegoo Centauri Carbon",
-          "model": "2",
+          "brand": "Elegoo",
+          "model": "CC2",
           "fullName": "Elegoo Centauri Carbon 2 0.4 nozzle"
         }
       ]
@@ -945,13 +935,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -966,13 +956,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -987,12 +977,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -1008,12 +998,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -1029,7 +1019,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2D",
           "fullName": "Bambu Lab H2D 0.4 nozzle"
         }
@@ -1045,7 +1035,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2S",
           "fullName": "Bambu Lab H2S 0.4 nozzle"
         }
@@ -1058,17 +1048,12 @@
       "slicer": "BambuStudio",
       "path": "preset/Panchroma PLA Celestial/BBL/P1P/BambuStudio/Panchroma PLA Celestial @BBL P1P.json",
       "filename": "Panchroma PLA Celestial @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -1079,17 +1064,12 @@
       "slicer": "Orcaslicer",
       "path": "preset/Panchroma PLA Celestial/BBL/P1P/Orcaslicer/Panchroma PLA Celestial @BBL P1P.json",
       "filename": "Panchroma PLA Celestial @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -1103,7 +1083,7 @@
       "updatedAt": "2026-02-28T15:29:03+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P2S",
           "fullName": "Bambu Lab P2S 0.4 nozzle"
         }
@@ -1119,22 +1099,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -1150,22 +1130,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -1181,8 +1161,8 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Elegoo Centauri Carbon",
-          "model": "2",
+          "brand": "Elegoo",
+          "model": "CC2",
           "fullName": "Elegoo Centauri Carbon 2 0.4 nozzle"
         }
       ]
@@ -1213,13 +1193,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -1234,13 +1214,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -1255,12 +1235,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -1276,12 +1256,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -1297,7 +1277,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2D",
           "fullName": "Bambu Lab H2D 0.4 nozzle"
         }
@@ -1313,7 +1293,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2S",
           "fullName": "Bambu Lab H2S 0.4 nozzle"
         }
@@ -1326,17 +1306,12 @@
       "slicer": "BambuStudio",
       "path": "preset/Panchroma PLA Galaxy/BBL/P1P/BambuStudio/Panchroma PLA Galaxy @BBL P1P.json",
       "filename": "Panchroma PLA Galaxy @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -1347,17 +1322,12 @@
       "slicer": "Orcaslicer",
       "path": "preset/Panchroma PLA Galaxy/BBL/P1P/Orcaslicer/Panchroma PLA Galaxy @BBL P1P.json",
       "filename": "Panchroma PLA Galaxy @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -1371,7 +1341,7 @@
       "updatedAt": "2026-02-28T15:29:03+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P2S",
           "fullName": "Bambu Lab P2S 0.4 nozzle"
         }
@@ -1387,22 +1357,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -1418,22 +1388,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -1449,8 +1419,8 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Elegoo Centauri Carbon",
-          "model": "2",
+          "brand": "Elegoo",
+          "model": "CC2",
           "fullName": "Elegoo Centauri Carbon 2 0.4 nozzle"
         }
       ]
@@ -1481,13 +1451,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -1502,13 +1472,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -1523,12 +1493,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -1544,12 +1514,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -1565,7 +1535,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2D",
           "fullName": "Bambu Lab H2D 0.4 nozzle"
         }
@@ -1581,7 +1551,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2S",
           "fullName": "Bambu Lab H2S 0.4 nozzle"
         }
@@ -1594,17 +1564,12 @@
       "slicer": "BambuStudio",
       "path": "preset/Panchroma PLA Glow/BBL/P1P/BambuStudio/Panchroma PLA Glow @BBL P1P.json",
       "filename": "Panchroma PLA Glow @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -1615,17 +1580,12 @@
       "slicer": "Orcaslicer",
       "path": "preset/Panchroma PLA Glow/BBL/P1P/Orcaslicer/Panchroma PLA Glow @BBL P1P.json",
       "filename": "Panchroma PLA Glow @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -1639,7 +1599,7 @@
       "updatedAt": "2026-02-28T15:29:03+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P2S",
           "fullName": "Bambu Lab P2S 0.4 nozzle"
         }
@@ -1655,22 +1615,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -1686,22 +1646,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -1717,8 +1677,8 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Elegoo Centauri Carbon",
-          "model": "2",
+          "brand": "Elegoo",
+          "model": "CC2",
           "fullName": "Elegoo Centauri Carbon 2 0.4 nozzle"
         }
       ]
@@ -1749,13 +1709,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -1770,13 +1730,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -1791,12 +1751,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -1812,12 +1772,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -1833,7 +1793,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2D",
           "fullName": "Bambu Lab H2D 0.4 nozzle"
         }
@@ -1849,7 +1809,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2S",
           "fullName": "Bambu Lab H2S 0.4 nozzle"
         }
@@ -1862,17 +1822,12 @@
       "slicer": "BambuStudio",
       "path": "preset/Panchroma PLA Luminous/BBL/P1P/BambuStudio/Panchroma PLA Luminous @BBL P1P.json",
       "filename": "Panchroma PLA Luminous @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -1883,17 +1838,12 @@
       "slicer": "Orcaslicer",
       "path": "preset/Panchroma PLA Luminous/BBL/P1P/Orcaslicer/Panchroma PLA Luminous @BBL P1P.json",
       "filename": "Panchroma PLA Luminous @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -1907,7 +1857,7 @@
       "updatedAt": "2026-02-28T15:29:03+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P2S",
           "fullName": "Bambu Lab P2S 0.4 nozzle"
         }
@@ -1923,22 +1873,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -1954,22 +1904,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -1985,8 +1935,8 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Elegoo Centauri Carbon",
-          "model": "2",
+          "brand": "Elegoo",
+          "model": "CC2",
           "fullName": "Elegoo Centauri Carbon 2 0.4 nozzle"
         }
       ]
@@ -2017,13 +1967,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -2038,13 +1988,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -2059,12 +2009,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -2080,12 +2030,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -2098,17 +2048,12 @@
       "slicer": "BambuStudio",
       "path": "preset/Panchroma PLA Marble/BBL/P1P/BambuStudio/Panchroma PLA Marble @BBL P1P.json",
       "filename": "Panchroma PLA Marble @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -2119,17 +2064,12 @@
       "slicer": "Orcaslicer",
       "path": "preset/Panchroma PLA Marble/BBL/P1P/Orcaslicer/Panchroma PLA Marble @BBL P1P.json",
       "filename": "Panchroma PLA Marble @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -2143,7 +2083,7 @@
       "updatedAt": "2026-02-28T15:29:03+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P2S",
           "fullName": "Bambu Lab P2S 0.4 nozzle"
         }
@@ -2159,22 +2099,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -2190,22 +2130,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -2221,8 +2161,8 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Elegoo Centauri Carbon",
-          "model": "2",
+          "brand": "Elegoo",
+          "model": "CC2",
           "fullName": "Elegoo Centauri Carbon 2 0.4 nozzle"
         }
       ]
@@ -2253,13 +2193,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -2274,13 +2214,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -2295,12 +2235,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -2316,12 +2256,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -2334,17 +2274,12 @@
       "slicer": "BambuStudio",
       "path": "preset/Panchroma PLA Matte/BBL/P1P/BambuStudio/Panchroma PLA Matte @BBL P1P.json",
       "filename": "Panchroma PLA Matte @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -2355,17 +2290,12 @@
       "slicer": "Orcaslicer",
       "path": "preset/Panchroma PLA Matte/BBL/P1P/Orcaslicer/Panchroma PLA Matte @BBL P1P.json",
       "filename": "Panchroma PLA Matte @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -2379,7 +2309,7 @@
       "updatedAt": "2026-02-28T15:29:03+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P2S",
           "fullName": "Bambu Lab P2S 0.4 nozzle"
         }
@@ -2395,22 +2325,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -2426,22 +2356,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -2457,8 +2387,8 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Elegoo Centauri Carbon",
-          "model": "2",
+          "brand": "Elegoo",
+          "model": "CC2",
           "fullName": "Elegoo Centauri Carbon 2 0.4 nozzle"
         }
       ]
@@ -2489,13 +2419,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -2510,13 +2440,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -2531,12 +2461,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -2552,12 +2482,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -2573,7 +2503,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2D",
           "fullName": "Bambu Lab H2D 0.4 nozzle"
         }
@@ -2589,7 +2519,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2S",
           "fullName": "Bambu Lab H2S 0.4 nozzle"
         }
@@ -2602,17 +2532,12 @@
       "slicer": "BambuStudio",
       "path": "preset/Panchroma PLA Metallic/BBL/P1P/BambuStudio/Panchroma PLA Metallic @BBL P1P.json",
       "filename": "Panchroma PLA Metallic @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -2623,17 +2548,12 @@
       "slicer": "Orcaslicer",
       "path": "preset/Panchroma PLA Metallic/BBL/P1P/Orcaslicer/Panchroma PLA Metallic @BBL P1P.json",
       "filename": "Panchroma PLA Metallic @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -2647,7 +2567,7 @@
       "updatedAt": "2026-02-28T15:29:03+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P2S",
           "fullName": "Bambu Lab P2S 0.4 nozzle"
         }
@@ -2663,22 +2583,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -2694,22 +2614,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -2725,8 +2645,8 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Elegoo Centauri Carbon",
-          "model": "2",
+          "brand": "Elegoo",
+          "model": "CC2",
           "fullName": "Elegoo Centauri Carbon 2 0.4 nozzle"
         }
       ]
@@ -2757,13 +2677,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -2778,13 +2698,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -2799,12 +2719,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -2820,12 +2740,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -2841,7 +2761,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2D",
           "fullName": "Bambu Lab H2D 0.4 nozzle"
         }
@@ -2857,7 +2777,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2S",
           "fullName": "Bambu Lab H2S 0.4 nozzle"
         }
@@ -2870,17 +2790,12 @@
       "slicer": "BambuStudio",
       "path": "preset/Panchroma PLA Neon/BBL/P1P/BambuStudio/Panchroma PLA Neon @BBL P1P.json",
       "filename": "Panchroma PLA Neon @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -2891,17 +2806,12 @@
       "slicer": "Orcaslicer",
       "path": "preset/Panchroma PLA Neon/BBL/P1P/Orcaslicer/Panchroma PLA Neon @BBL P1P.json",
       "filename": "Panchroma PLA Neon @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -2915,7 +2825,7 @@
       "updatedAt": "2026-02-28T15:29:03+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P2S",
           "fullName": "Bambu Lab P2S 0.4 nozzle"
         }
@@ -2931,22 +2841,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -2962,22 +2872,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -2993,8 +2903,8 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Elegoo Centauri Carbon",
-          "model": "2",
+          "brand": "Elegoo",
+          "model": "CC2",
           "fullName": "Elegoo Centauri Carbon 2 0.4 nozzle"
         }
       ]
@@ -3025,13 +2935,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -3046,13 +2956,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -3067,12 +2977,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -3088,12 +2998,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -3109,7 +3019,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2S",
           "fullName": "Bambu Lab H2S 0.4 nozzle"
         }
@@ -3122,17 +3032,12 @@
       "slicer": "BambuStudio",
       "path": "preset/Panchroma PLA Satin/BBL/P1P/BambuStudio/Panchroma PLA Satin @BBL P1P.json",
       "filename": "Panchroma PLA Satin @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -3143,17 +3048,12 @@
       "slicer": "Orcaslicer",
       "path": "preset/Panchroma PLA Satin/BBL/P1P/Orcaslicer/Panchroma PLA Satin @BBL P1P.json",
       "filename": "Panchroma PLA Satin @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -3167,7 +3067,7 @@
       "updatedAt": "2026-02-28T15:29:03+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P2S",
           "fullName": "Bambu Lab P2S 0.4 nozzle"
         }
@@ -3183,22 +3083,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -3214,22 +3114,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -3245,8 +3145,8 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Elegoo Centauri Carbon",
-          "model": "2",
+          "brand": "Elegoo",
+          "model": "CC2",
           "fullName": "Elegoo Centauri Carbon 2 0.4 nozzle"
         }
       ]
@@ -3277,13 +3177,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -3298,13 +3198,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -3319,12 +3219,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -3340,12 +3240,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -3361,7 +3261,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2D",
           "fullName": "Bambu Lab H2D 0.4 nozzle"
         }
@@ -3374,17 +3274,12 @@
       "slicer": "BambuStudio",
       "path": "preset/Panchroma PLA Silk/BBL/P1P/BambuStudio/Panchroma PLA Silk @BBL P1P.json",
       "filename": "Panchroma PLA Silk @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -3395,17 +3290,12 @@
       "slicer": "Orcaslicer",
       "path": "preset/Panchroma PLA Silk/BBL/P1P/Orcaslicer/Panchroma PLA Silk @BBL P1P.json",
       "filename": "Panchroma PLA Silk @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -3419,7 +3309,7 @@
       "updatedAt": "2026-02-28T15:29:03+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P2S",
           "fullName": "Bambu Lab P2S 0.4 nozzle"
         }
@@ -3435,22 +3325,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -3466,22 +3356,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -3497,8 +3387,8 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Elegoo Centauri Carbon",
-          "model": "2",
+          "brand": "Elegoo",
+          "model": "CC2",
           "fullName": "Elegoo Centauri Carbon 2 0.4 nozzle"
         }
       ]
@@ -3529,13 +3419,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -3550,13 +3440,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -3571,12 +3461,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -3592,12 +3482,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -3613,7 +3503,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2D",
           "fullName": "Bambu Lab H2D 0.4 nozzle"
         }
@@ -3629,7 +3519,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2S",
           "fullName": "Bambu Lab H2S 0.4 nozzle"
         }
@@ -3642,17 +3532,12 @@
       "slicer": "BambuStudio",
       "path": "preset/Panchroma PLA Starlight/BBL/P1P/BambuStudio/Panchroma PLA Starlight @BBL P1P.json",
       "filename": "Panchroma PLA Starlight @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -3663,17 +3548,12 @@
       "slicer": "Orcaslicer",
       "path": "preset/Panchroma PLA Starlight/BBL/P1P/Orcaslicer/Panchroma PLA Starlight @BBL P1P.json",
       "filename": "Panchroma PLA Starlight @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -3687,7 +3567,7 @@
       "updatedAt": "2026-02-28T15:29:03+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P2S",
           "fullName": "Bambu Lab P2S 0.4 nozzle"
         }
@@ -3703,22 +3583,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -3734,22 +3614,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -3765,8 +3645,8 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Elegoo Centauri Carbon",
-          "model": "2",
+          "brand": "Elegoo",
+          "model": "CC2",
           "fullName": "Elegoo Centauri Carbon 2 0.4 nozzle"
         }
       ]
@@ -3797,13 +3677,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -3818,13 +3698,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -3839,12 +3719,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -3860,12 +3740,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -3881,7 +3761,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2D",
           "fullName": "Bambu Lab H2D 0.4 nozzle"
         }
@@ -3897,7 +3777,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2S",
           "fullName": "Bambu Lab H2S 0.4 nozzle"
         }
@@ -3910,17 +3790,12 @@
       "slicer": "BambuStudio",
       "path": "preset/Panchroma PLA Translucent/BBL/P1P/BambuStudio/Panchroma PLA Translucent @BBL P1P.json",
       "filename": "Panchroma PLA Translucent @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -3931,17 +3806,12 @@
       "slicer": "Orcaslicer",
       "path": "preset/Panchroma PLA Translucent/BBL/P1P/Orcaslicer/Panchroma PLA Translucent @BBL P1P.json",
       "filename": "Panchroma PLA Translucent @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -3955,7 +3825,7 @@
       "updatedAt": "2026-02-28T15:29:03+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P2S",
           "fullName": "Bambu Lab P2S 0.4 nozzle"
         }
@@ -3971,22 +3841,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -4002,22 +3872,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -4033,8 +3903,8 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Elegoo Centauri Carbon",
-          "model": "2",
+          "brand": "Elegoo",
+          "model": "CC2",
           "fullName": "Elegoo Centauri Carbon 2 0.4 nozzle"
         }
       ]
@@ -4065,13 +3935,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -4086,13 +3956,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -4107,12 +3977,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -4128,12 +3998,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -4149,7 +4019,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2D",
           "fullName": "Bambu Lab H2D 0.4 nozzle"
         }
@@ -4165,7 +4035,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2S",
           "fullName": "Bambu Lab H2S 0.4 nozzle"
         }
@@ -4178,17 +4048,12 @@
       "slicer": "BambuStudio",
       "path": "preset/Panchroma PLA UV Shift/BBL/P1P/BambuStudio/Panchroma PLA UV Shift @BBL P1P.json",
       "filename": "Panchroma PLA UV Shift @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -4199,17 +4064,12 @@
       "slicer": "Orcaslicer",
       "path": "preset/Panchroma PLA UV Shift/BBL/P1P/Orcaslicer/Panchroma PLA UV Shift @BBL P1P.json",
       "filename": "Panchroma PLA UV Shift @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -4223,7 +4083,7 @@
       "updatedAt": "2026-02-28T15:29:03+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P2S",
           "fullName": "Bambu Lab P2S 0.4 nozzle"
         }
@@ -4239,22 +4099,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -4270,22 +4130,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -4301,8 +4161,8 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Elegoo Centauri Carbon",
-          "model": "2",
+          "brand": "Elegoo",
+          "model": "CC2",
           "fullName": "Elegoo Centauri Carbon 2 0.4 nozzle"
         }
       ]
@@ -4333,13 +4193,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -4354,13 +4214,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -4375,12 +4235,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -4396,12 +4256,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -4417,7 +4277,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2S",
           "fullName": "Bambu Lab H2S 0.4 nozzle"
         }
@@ -4430,17 +4290,12 @@
       "slicer": "BambuStudio",
       "path": "preset/PolyLite CosPLA/BBL/P1P/BambuStudio/PolyLite CosPLA @BBL P1P.json",
       "filename": "PolyLite CosPLA @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -4451,17 +4306,12 @@
       "slicer": "Orcaslicer",
       "path": "preset/PolyLite CosPLA/BBL/P1P/Orcaslicer/PolyLite CosPLA @BBL P1P.json",
       "filename": "PolyLite CosPLA @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -4475,7 +4325,7 @@
       "updatedAt": "2026-02-28T15:29:03+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P2S",
           "fullName": "Bambu Lab P2S 0.4 nozzle"
         }
@@ -4491,22 +4341,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -4522,22 +4372,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -4553,8 +4403,8 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Elegoo Centauri Carbon",
-          "model": "2",
+          "brand": "Elegoo",
+          "model": "CC2",
           "fullName": "Elegoo Centauri Carbon 2 0.4 nozzle"
         }
       ]
@@ -4617,13 +4467,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -4638,13 +4488,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -4659,12 +4509,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -4680,12 +4530,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -4701,7 +4551,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2D",
           "fullName": "Bambu Lab H2D 0.4 nozzle"
         }
@@ -4717,7 +4567,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2S",
           "fullName": "Bambu Lab H2S 0.4 nozzle"
         }
@@ -4730,17 +4580,12 @@
       "slicer": "BambuStudio",
       "path": "preset/PolyLite PLA/BBL/P1P/BambuStudio/PolyLite PLA @BBL P1P.json",
       "filename": "PolyLite PLA @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -4751,17 +4596,12 @@
       "slicer": "Orcaslicer",
       "path": "preset/PolyLite PLA/BBL/P1P/Orcaslicer/PolyLite PLA @BBL P1P.json",
       "filename": "PolyLite PLA @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -4775,7 +4615,7 @@
       "updatedAt": "2026-02-28T15:29:03+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P2S",
           "fullName": "Bambu Lab P2S 0.4 nozzle"
         }
@@ -4791,22 +4631,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -4822,22 +4662,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -4853,8 +4693,8 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Elegoo Centauri Carbon",
-          "model": "2",
+          "brand": "Elegoo",
+          "model": "CC2",
           "fullName": "Elegoo Centauri Carbon 2 0.4 nozzle"
         }
       ]
@@ -4885,13 +4725,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -4906,13 +4746,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -4927,12 +4767,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -4948,12 +4788,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -4969,7 +4809,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2D",
           "fullName": "Bambu Lab H2D 0.4 nozzle"
         }
@@ -4985,7 +4825,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2S",
           "fullName": "Bambu Lab H2S 0.4 nozzle"
         }
@@ -4998,17 +4838,12 @@
       "slicer": "BambuStudio",
       "path": "preset/PolyLite PLA Galaxy/BBL/P1P/BambuStudio/PolyLite PLA Galaxy @BBL P1P.json",
       "filename": "PolyLite PLA Galaxy @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -5019,17 +4854,12 @@
       "slicer": "Orcaslicer",
       "path": "preset/PolyLite PLA Galaxy/BBL/P1P/Orcaslicer/PolyLite PLA Galaxy @BBL P1P.json",
       "filename": "PolyLite PLA Galaxy @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -5043,7 +4873,7 @@
       "updatedAt": "2026-02-28T15:29:03+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P2S",
           "fullName": "Bambu Lab P2S 0.4 nozzle"
         }
@@ -5059,22 +4889,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -5090,22 +4920,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -5121,8 +4951,8 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Elegoo Centauri Carbon",
-          "model": "2",
+          "brand": "Elegoo",
+          "model": "CC2",
           "fullName": "Elegoo Centauri Carbon 2 0.4 nozzle"
         }
       ]
@@ -5153,13 +4983,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -5174,13 +5004,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -5195,12 +5025,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -5216,12 +5046,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -5237,7 +5067,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2D",
           "fullName": "Bambu Lab H2D 0.4 nozzle"
         }
@@ -5253,7 +5083,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2S",
           "fullName": "Bambu Lab H2S 0.4 nozzle"
         }
@@ -5266,17 +5096,12 @@
       "slicer": "BambuStudio",
       "path": "preset/PolyLite PLA Glow/BBL/P1P/BambuStudio/PolyLite PLA Glow @BBL P1P.json",
       "filename": "PolyLite PLA Glow @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -5287,17 +5112,12 @@
       "slicer": "Orcaslicer",
       "path": "preset/PolyLite PLA Glow/BBL/P1P/Orcaslicer/PolyLite PLA Glow @BBL P1P.json",
       "filename": "PolyLite PLA Glow @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -5311,7 +5131,7 @@
       "updatedAt": "2026-02-28T15:29:03+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P2S",
           "fullName": "Bambu Lab P2S 0.4 nozzle"
         }
@@ -5327,22 +5147,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -5358,22 +5178,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -5389,8 +5209,8 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Elegoo Centauri Carbon",
-          "model": "2",
+          "brand": "Elegoo",
+          "model": "CC2",
           "fullName": "Elegoo Centauri Carbon 2 0.4 nozzle"
         }
       ]
@@ -5421,13 +5241,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -5442,13 +5262,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -5463,12 +5283,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -5484,12 +5304,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -5505,7 +5325,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2D",
           "fullName": "Bambu Lab H2D 0.4 nozzle"
         }
@@ -5521,7 +5341,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2S",
           "fullName": "Bambu Lab H2S 0.4 nozzle"
         }
@@ -5534,17 +5354,12 @@
       "slicer": "BambuStudio",
       "path": "preset/PolyLite PLA Luminous/BBL/P1P/BambuStudio/PolyLite PLA Luminous @BBL P1P.json",
       "filename": "PolyLite PLA Luminous @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -5555,17 +5370,12 @@
       "slicer": "Orcaslicer",
       "path": "preset/PolyLite PLA Luminous/BBL/P1P/Orcaslicer/PolyLite PLA Luminous @BBL P1P.json",
       "filename": "PolyLite PLA Luminous @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -5579,7 +5389,7 @@
       "updatedAt": "2026-02-28T15:29:03+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P2S",
           "fullName": "Bambu Lab P2S 0.4 nozzle"
         }
@@ -5595,22 +5405,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -5626,22 +5436,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -5657,8 +5467,8 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Elegoo Centauri Carbon",
-          "model": "2",
+          "brand": "Elegoo",
+          "model": "CC2",
           "fullName": "Elegoo Centauri Carbon 2 0.4 nozzle"
         }
       ]
@@ -5689,13 +5499,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -5710,13 +5520,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -5731,12 +5541,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -5752,12 +5562,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -5773,7 +5583,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2D",
           "fullName": "Bambu Lab H2D 0.4 nozzle"
         }
@@ -5789,7 +5599,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2S",
           "fullName": "Bambu Lab H2S 0.4 nozzle"
         }
@@ -5802,17 +5612,12 @@
       "slicer": "BambuStudio",
       "path": "preset/PolyLite PLA Neon/BBL/P1P/BambuStudio/PolyLite PLA Neon @BBL P1P.json",
       "filename": "PolyLite PLA Neon @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -5823,17 +5628,12 @@
       "slicer": "Orcaslicer",
       "path": "preset/PolyLite PLA Neon/BBL/P1P/Orcaslicer/PolyLite PLA Neon @BBL P1P.json",
       "filename": "PolyLite PLA Neon @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -5847,7 +5647,7 @@
       "updatedAt": "2026-02-28T15:29:03+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P2S",
           "fullName": "Bambu Lab P2S 0.4 nozzle"
         }
@@ -5863,22 +5663,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -5894,22 +5694,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -5925,8 +5725,8 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Elegoo Centauri Carbon",
-          "model": "2",
+          "brand": "Elegoo",
+          "model": "CC2",
           "fullName": "Elegoo Centauri Carbon 2 0.4 nozzle"
         }
       ]
@@ -5957,7 +5757,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2D",
           "fullName": "Bambu Lab H2D 0.4 nozzle"
         }
@@ -5973,7 +5773,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2S",
           "fullName": "Bambu Lab H2S 0.4 nozzle"
         }
@@ -5989,7 +5789,7 @@
       "updatedAt": "2026-02-28T15:29:03+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P2S",
           "fullName": "Bambu Lab P2S 0.4 nozzle"
         }
@@ -6005,8 +5805,8 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Elegoo Centauri Carbon",
-          "model": "2",
+          "brand": "Elegoo",
+          "model": "CC2",
           "fullName": "Elegoo Centauri Carbon 2 0.4 nozzle"
         }
       ]
@@ -6021,7 +5821,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2D",
           "fullName": "Bambu Lab H2D 0.4 nozzle"
         }
@@ -6037,7 +5837,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2S",
           "fullName": "Bambu Lab H2S 0.4 nozzle"
         }
@@ -6053,7 +5853,7 @@
       "updatedAt": "2026-02-28T15:29:03+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P2S",
           "fullName": "Bambu Lab P2S 0.4 nozzle"
         }
@@ -6069,8 +5869,8 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Elegoo Centauri Carbon",
-          "model": "2",
+          "brand": "Elegoo",
+          "model": "CC2",
           "fullName": "Elegoo Centauri Carbon 2 0.4 nozzle"
         }
       ]
@@ -6085,13 +5885,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -6106,13 +5906,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -6127,12 +5927,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -6148,12 +5948,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -6169,7 +5969,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2D",
           "fullName": "Bambu Lab H2D 0.4 nozzle"
         }
@@ -6185,7 +5985,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2S",
           "fullName": "Bambu Lab H2S 0.4 nozzle"
         }
@@ -6198,17 +5998,12 @@
       "slicer": "BambuStudio",
       "path": "preset/PolyLite PLA Starlight/BBL/P1P/BambuStudio/PolyLite PLA Starlight @BBL P1P.json",
       "filename": "PolyLite PLA Starlight @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -6219,17 +6014,12 @@
       "slicer": "Orcaslicer",
       "path": "preset/PolyLite PLA Starlight/BBL/P1P/Orcaslicer/PolyLite PLA Starlight @BBL P1P.json",
       "filename": "PolyLite PLA Starlight @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -6243,7 +6033,7 @@
       "updatedAt": "2026-02-28T15:29:03+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P2S",
           "fullName": "Bambu Lab P2S 0.4 nozzle"
         }
@@ -6259,22 +6049,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -6290,22 +6080,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -6321,8 +6111,8 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Elegoo Centauri Carbon",
-          "model": "2",
+          "brand": "Elegoo",
+          "model": "CC2",
           "fullName": "Elegoo Centauri Carbon 2 0.4 nozzle"
         }
       ]
@@ -6353,13 +6143,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -6374,13 +6164,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -6395,12 +6185,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -6416,12 +6206,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -6437,7 +6227,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2D",
           "fullName": "Bambu Lab H2D 0.4 nozzle"
         }
@@ -6453,7 +6243,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2S",
           "fullName": "Bambu Lab H2S 0.4 nozzle"
         }
@@ -6466,17 +6256,12 @@
       "slicer": "BambuStudio",
       "path": "preset/PolyLite PLA Translucent/BBL/P1P/BambuStudio/PolyLite PLA Translucent @BBL P1P.json",
       "filename": "PolyLite PLA Translucent @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -6487,17 +6272,12 @@
       "slicer": "Orcaslicer",
       "path": "preset/PolyLite PLA Translucent/BBL/P1P/Orcaslicer/PolyLite PLA Translucent @BBL P1P.json",
       "filename": "PolyLite PLA Translucent @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -6511,7 +6291,7 @@
       "updatedAt": "2026-02-28T15:29:03+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P2S",
           "fullName": "Bambu Lab P2S 0.4 nozzle"
         }
@@ -6527,22 +6307,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -6558,22 +6338,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -6589,8 +6369,8 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Elegoo Centauri Carbon",
-          "model": "2",
+          "brand": "Elegoo",
+          "model": "CC2",
           "fullName": "Elegoo Centauri Carbon 2 0.4 nozzle"
         }
       ]
@@ -6621,13 +6401,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -6642,13 +6422,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -6663,12 +6443,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -6684,12 +6464,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -6702,17 +6482,12 @@
       "slicer": "BambuStudio",
       "path": "preset/PolyTerra PLA/BBL/P1P/BambuStudio/PolyTerra PLA @BBL P1P.json",
       "filename": "PolyTerra PLA @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -6723,17 +6498,12 @@
       "slicer": "Orcaslicer",
       "path": "preset/PolyTerra PLA/BBL/P1P/Orcaslicer/PolyTerra PLA @BBL P1P.json",
       "filename": "PolyTerra PLA @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -6747,7 +6517,7 @@
       "updatedAt": "2026-02-28T15:29:03+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P2S",
           "fullName": "Bambu Lab P2S 0.4 nozzle"
         }
@@ -6763,22 +6533,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -6794,22 +6564,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -6825,8 +6595,8 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Elegoo Centauri Carbon",
-          "model": "2",
+          "brand": "Elegoo",
+          "model": "CC2",
           "fullName": "Elegoo Centauri Carbon 2 0.4 nozzle"
         }
       ]
@@ -6857,13 +6627,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -6878,13 +6648,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -6899,12 +6669,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -6920,12 +6690,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -6938,17 +6708,12 @@
       "slicer": "BambuStudio",
       "path": "preset/PolyTerra PLA Marble/BBL/P1P/BambuStudio/PolyTerra PLA Marble @BBL P1P.json",
       "filename": "PolyTerra PLA Marble @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -6959,17 +6724,12 @@
       "slicer": "Orcaslicer",
       "path": "preset/PolyTerra PLA Marble/BBL/P1P/Orcaslicer/PolyTerra PLA Marble @BBL P1P.json",
       "filename": "PolyTerra PLA Marble @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -6983,7 +6743,7 @@
       "updatedAt": "2026-02-28T15:29:03+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P2S",
           "fullName": "Bambu Lab P2S 0.4 nozzle"
         }
@@ -6999,22 +6759,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -7030,22 +6790,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -7061,8 +6821,8 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Elegoo Centauri Carbon",
-          "model": "2",
+          "brand": "Elegoo",
+          "model": "CC2",
           "fullName": "Elegoo Centauri Carbon 2 0.4 nozzle"
         }
       ]
@@ -7093,13 +6853,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -7114,13 +6874,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -7135,12 +6895,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -7156,12 +6916,12 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
@@ -7177,7 +6937,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2S",
           "fullName": "Bambu Lab H2S 0.4 nozzle"
         }
@@ -7190,17 +6950,12 @@
       "slicer": "BambuStudio",
       "path": "preset/PolyTerra PLA+/BBL/P1P/BambuStudio/PolyTerra PLA+ @BBL P1P.json",
       "filename": "PolyTerra PLA+ @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -7211,17 +6966,12 @@
       "slicer": "Orcaslicer",
       "path": "preset/PolyTerra PLA+/BBL/P1P/Orcaslicer/PolyTerra PLA+ @BBL P1P.json",
       "filename": "PolyTerra PLA+ @BBL P1P.json",
-      "updatedAt": "2026-02-11T15:10:54+08:00",
+      "updatedAt": "2026-03-02T17:26:37+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1P",
           "fullName": "Bambu Lab P1P 0.4 nozzle"
-        },
-        {
-          "brand": "Bambu Lab",
-          "model": "P1S",
-          "fullName": "Bambu Lab P1S 0.4 nozzle"
         }
       ]
     },
@@ -7235,7 +6985,7 @@
       "updatedAt": "2026-02-28T15:29:03+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P2S",
           "fullName": "Bambu Lab P2S 0.4 nozzle"
         }
@@ -7251,22 +7001,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -7282,22 +7032,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab X1",
-          "model": "Carbon",
+          "brand": "BBL",
+          "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -7313,8 +7063,8 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Elegoo Centauri Carbon",
-          "model": "2",
+          "brand": "Elegoo",
+          "model": "CC2",
           "fullName": "Elegoo Centauri Carbon 2 0.4 nozzle"
         }
       ]
@@ -7345,7 +7095,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2D",
           "fullName": "Bambu Lab H2D 0.4 nozzle"
         }
@@ -7361,7 +7111,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2S",
           "fullName": "Bambu Lab H2S 0.4 nozzle"
         }
@@ -7377,7 +7127,7 @@
       "updatedAt": "2026-02-28T15:29:03+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P2S",
           "fullName": "Bambu Lab P2S 0.4 nozzle"
         }
@@ -7393,8 +7143,8 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Elegoo Centauri Carbon",
-          "model": "2",
+          "brand": "Elegoo",
+          "model": "CC2",
           "fullName": "Elegoo Centauri Carbon 2 0.4 nozzle"
         }
       ]
@@ -7425,7 +7175,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2D",
           "fullName": "Bambu Lab H2D 0.4 nozzle"
         }
@@ -7441,7 +7191,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2S",
           "fullName": "Bambu Lab H2S 0.4 nozzle"
         }
@@ -7457,7 +7207,7 @@
       "updatedAt": "2026-02-28T15:29:03+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P2S",
           "fullName": "Bambu Lab P2S 0.4 nozzle"
         }
@@ -7473,8 +7223,8 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Elegoo Centauri Carbon",
-          "model": "2",
+          "brand": "Elegoo",
+          "model": "CC2",
           "fullName": "Elegoo Centauri Carbon 2 0.4 nozzle"
         }
       ]
@@ -7505,13 +7255,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -7526,7 +7276,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2S",
           "fullName": "Bambu Lab H2S 0.4 nozzle"
         }
@@ -7542,22 +7292,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1C",
           "fullName": "Bambu Lab X1C 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -7573,7 +7323,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P2S",
           "fullName": "Bambu Lab P2S 0.4 nozzle"
         }
@@ -7589,8 +7339,8 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Elegoo Centauri Carbon",
-          "model": "2",
+          "brand": "Elegoo",
+          "model": "CC2",
           "fullName": "Elegoo Centauri Carbon 2 0.4 nozzle"
         }
       ]
@@ -7621,13 +7371,13 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "A1",
           "fullName": "Bambu Lab A1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab A1",
-          "model": "mini",
+          "brand": "BBL",
+          "model": "A1M",
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
@@ -7642,7 +7392,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2S",
           "fullName": "Bambu Lab H2S 0.4 nozzle"
         }
@@ -7658,22 +7408,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1C",
           "fullName": "Bambu Lab X1C 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -7689,7 +7439,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P2S",
           "fullName": "Bambu Lab P2S 0.4 nozzle"
         }
@@ -7705,8 +7455,8 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Elegoo Centauri Carbon",
-          "model": "2",
+          "brand": "Elegoo",
+          "model": "CC2",
           "fullName": "Elegoo Centauri Carbon 2 0.4 nozzle"
         }
       ]
@@ -7737,7 +7487,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2D",
           "fullName": "Bambu Lab H2D 0.4 nozzle"
         }
@@ -7753,7 +7503,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2S",
           "fullName": "Bambu Lab H2S 0.4 nozzle"
         }
@@ -7769,7 +7519,7 @@
       "updatedAt": "2026-02-28T15:29:03+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P2S",
           "fullName": "Bambu Lab P2S 0.4 nozzle"
         }
@@ -7785,8 +7535,8 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Elegoo Centauri Carbon",
-          "model": "2",
+          "brand": "Elegoo",
+          "model": "CC2",
           "fullName": "Elegoo Centauri Carbon 2 0.4 nozzle"
         }
       ]
@@ -7801,8 +7551,8 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Anycubic Kobra",
-          "model": "S1",
+          "brand": "Anycubic",
+          "model": "Kobra S1",
           "fullName": "Anycubic Kobra S1 0.4 nozzle"
         }
       ]
@@ -7817,7 +7567,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2D",
           "fullName": "Bambu Lab H2D 0.4 nozzle"
         }
@@ -7833,7 +7583,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2S",
           "fullName": "Bambu Lab H2S 0.4 nozzle"
         }
@@ -7849,22 +7599,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1C",
           "fullName": "Bambu Lab X1C 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -7880,7 +7630,7 @@
       "updatedAt": "2026-02-28T15:29:03+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P2S",
           "fullName": "Bambu Lab P2S 0.4 nozzle"
         }
@@ -7896,8 +7646,8 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Elegoo Centauri Carbon",
-          "model": "2",
+          "brand": "Elegoo",
+          "model": "CC2",
           "fullName": "Elegoo Centauri Carbon 2 0.4 nozzle"
         }
       ]
@@ -7928,8 +7678,8 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Anycubic Kobra",
-          "model": "S1",
+          "brand": "Anycubic",
+          "model": "Kobra S1",
           "fullName": "Anycubic Kobra S1 0.4 nozzle"
         }
       ]
@@ -7944,7 +7694,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2D",
           "fullName": "Bambu Lab H2D 0.4 nozzle"
         }
@@ -7960,7 +7710,7 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "H2S",
           "fullName": "Bambu Lab H2S 0.4 nozzle"
         }
@@ -7976,22 +7726,22 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P1S",
           "fullName": "Bambu Lab P1S 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1C",
           "fullName": "Bambu Lab X1C 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1",
           "fullName": "Bambu Lab X1 0.4 nozzle"
         },
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
@@ -8007,7 +7757,7 @@
       "updatedAt": "2026-02-28T15:29:03+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Bambu Lab",
+          "brand": "BBL",
           "model": "P2S",
           "fullName": "Bambu Lab P2S 0.4 nozzle"
         }
@@ -8023,8 +7773,8 @@
       "updatedAt": "2026-02-11T15:10:54+08:00",
       "compatiblePrinters": [
         {
-          "brand": "Elegoo Centauri Carbon",
-          "model": "2",
+          "brand": "Elegoo",
+          "model": "CC2",
           "fullName": "Elegoo Centauri Carbon 2 0.4 nozzle"
         }
       ]
