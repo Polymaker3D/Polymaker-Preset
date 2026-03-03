@@ -116,8 +116,7 @@
         "70"
     ],
     "compatible_printers": [
-        "Bambu Lab P1P 0.4 nozzle",
-        "Bambu Lab P1S 0.4 nozzle"
+        "Bambu Lab P1P 0.4 nozzle"
     ],
     "filament_setting_id": [
         "PanchromaPLAMarble"

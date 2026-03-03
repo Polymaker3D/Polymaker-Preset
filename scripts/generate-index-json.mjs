@@ -47,6 +47,55 @@ function normalizePosix(p) {
   return p.split(path.sep).join('/');
 }
 
+// Machine name mapping table: maps full printer names to canonical brand/model
+// This avoids regex parsing and makes naming consistent across the application
+const MACHINE_NAME_MAP = {
+    // Anycubic
+    'Anycubic Kobra S1 0.4 nozzle': { brand: 'Anycubic', model: 'Kobra S1' },
+    
+    // BBL (Bambu Lab) - X1 variants are different machines
+    'Bambu Lab A1 0.4 nozzle': { brand: 'BBL', model: 'A1' },
+    'Bambu Lab A1 mini 0.4 nozzle': { brand: 'BBL', model: 'A1M' },
+    'Bambu Lab H2D 0.4 nozzle': { brand: 'BBL', model: 'H2D' },
+    'Bambu Lab H2S 0.4 nozzle': { brand: 'BBL', model: 'H2S' },
+    'Bambu Lab P1P 0.4 nozzle': { brand: 'BBL', model: 'P1P' },
+    'Bambu Lab P1S 0.4 nozzle': { brand: 'BBL', model: 'P1S' },
+    'Bambu Lab P2S 0.4 nozzle': { brand: 'BBL', model: 'P2S' },
+    'Bambu Lab X1 0.4 nozzle': { brand: 'BBL', model: 'X1' },
+    'Bambu Lab X1 Carbon 0.4 nozzle': { brand: 'BBL', model: 'X1C' },
+    'Bambu Lab X1C 0.4 nozzle': { brand: 'BBL', model: 'X1C' },
+    'Bambu Lab X1E 0.4 nozzle': { brand: 'BBL', model: 'X1E' },
+    
+    // Elegoo
+    'Elegoo Centauri Carbon 2 0.4 nozzle': { brand: 'Elegoo', model: 'CC2' },
+    
+    // Snapmaker
+    'Snapmaker U1 (0.4 nozzle)': { brand: 'Snapmaker', model: 'U1' }
+};
+
+function extractCompatiblePrinters(presetData) {
+    if (!presetData || !Array.isArray(presetData.compatible_printers)) {
+        return [];
+    }
+
+    const printers = [];
+    for (const printerString of presetData.compatible_printers) {
+        // Use mapping table for known machines
+        const mapped = MACHINE_NAME_MAP[printerString];
+        if (mapped) {
+            printers.push({
+                brand: mapped.brand,
+                model: mapped.model,
+                fullName: printerString
+            });
+        } else {
+            // Unknown machine: log warning and skip
+            console.warn(`Unknown printer in compatible_printers: ${printerString}`);
+        }
+    }
+    return printers;
+}
+
 function cmp(a, b) {
   return a < b ? -1 : a > b ? 1 : 0;
 }
@@ -73,7 +122,7 @@ async function main() {
   const models = new Set();
   const slicers = new Set();
 
-  /** @type {{material:string,brand:string,model:string,slicer:string,path:string,filename:string,updatedAt:string|null}[]} */
+  /** @type {{material:string,brand:string,model:string,slicer:string,path:string,filename:string,updatedAt:string|null,compatiblePrinters:{brand:string,model:string,fullName:string}[]}[]} */
   const presets = [];
 
   for (const absFile of jsonFiles) {
@@ -91,20 +140,31 @@ async function main() {
 
     const relPath = normalizePosix(path.join('preset', relFromPreset));
     const updatedAt = getGitLastUpdate(relPath);
-    
+
+    // Read the preset JSON content to extract compatible_printers
+    let compatiblePrinters = [];
+    try {
+        const fileContent = await fs.readFile(absFile, 'utf8');
+        const presetData = JSON.parse(fileContent);
+        compatiblePrinters = extractCompatiblePrinters(presetData);
+    } catch (e) {
+        console.warn(`Failed to parse ${relFromPreset}: ${e.message}`);
+    }
+
     materials.add(material);
     brands.add(printerBrand);
     models.add(printerModel);
     slicers.add(slicer);
 
-    presets.push({ 
-      material: material, 
-      brand: printerBrand, 
-      model: printerModel, 
-      slicer, 
-      path: relPath, 
+    presets.push({
+      material: material,
+      brand: printerBrand,
+      model: printerModel,
+      slicer,
+      path: relPath,
       filename,
-      updatedAt
+      updatedAt,
+      compatiblePrinters: compatiblePrinters
     });
   }
 

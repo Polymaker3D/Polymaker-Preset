@@ -27,6 +27,12 @@ Polymaker-Preset/
 ├── index.json              # Auto-generated index of all presets
 ├── favicon.ico             # Site favicon
 ├── README.md               # Human-readable documentation
+├── CNAME                   # GitHub Pages custom domain configuration
+├── robots.txt              # Web crawler instructions
+├── sitemap.xml             # SEO sitemap
+├── google7567ee593a9049c2.html  # Google site verification
+├── assets/                 # Static assets
+│   └── Logo_PNGArtboard 5@3x.png  # Polymaker logo
 ├── preset/                 # All preset JSON files
 │   └── <Material>/
 │       └── <Brand>/
@@ -35,7 +41,9 @@ Polymaker-Preset/
 │                   └── <Preset>.json
 ├── scripts/                # Build/maintenance scripts
 │   └── generate-index-json.mjs    # Generates index.json from preset files
-└── .github/workflows/      # CI/CD automation
+├── workflows/              # CI/CD automation (root level duplicate)
+│   └── auto-update-index-json.yml
+└── .github/workflows/      # CI/CD automation (GitHub standard location)
     └── auto-update-index-json.yml # Auto-regenerates index.json on PRs
 ```
 
@@ -48,13 +56,16 @@ preset/<Material>/<Brand>/<Model>/<Slicer>/<Preset>.json
 ```
 
 **Material Series** (defined in `app.js`):
-- `Panchroma` - Premium PLA variants (Galaxy, Matte, Silk, etc.)
-- `Polymaker` - Standard Polymaker filaments
-- `Fiberon` - Engineering/composite filaments (PA-CF, PET-CF, etc.)
-- `PolyTerra` - Eco-friendly PLA
-- `PolyLite` - Entry-level PLA/PETG
+- `Panchroma` - Premium PLA variants (Galaxy, Matte, Silk, Satin, Luminous, UV Shift, Marble, etc.)
+- `Polymaker` - Standard Polymaker filaments including sub-brands:
+  - **Polymaker** branded materials (HT-PLA, HT-PLA-GF, PETG, etc.)
+  - **PolyTerra** - Eco-friendly PLA variants (PLA+, Marble, etc.)
+  - **PolyLite** - Entry-level PLA/PETG variants (CosPLA, Galaxy, Glow, Luminous, Neon, Starlight, Translucent, Pro, Pro Metallic, PETG, PETG Translucent, etc.)
+- `Fiberon` - Engineering/composite filaments (PA12-CF10, PA6-CF20, PA6-GF25, PA612-CF15, PA-CF, PET-CF17, PET-CF, PETG-ESD, PETG-rCF08, etc.)
 
 **Brands**: Printer manufacturers (BBL, Anycubic, Elegoo, Snapmaker)
+
+**Models**: A1, A1M (A1 Mini), CC2, H2D, H2S, Kobra S1, P1P, P1S, P2S, U1, X1
 
 **Slicers**: BambuStudio, OrcaSlicer, ElegooSlicer, Orcaslicer
 
@@ -138,6 +149,8 @@ The `.github/workflows/auto-update-index-json.yml` workflow:
    - If `index.json` changed, commits the update to the PR branch
 3. **Bot**: Commits as `polymaker-bot`
 
+Note: The workflow file also exists at `workflows/auto-update-index-json.yml` (root level) for redundancy.
+
 ## Code Style Guidelines
 
 ### JavaScript (app.js)
@@ -182,14 +195,15 @@ const init = () => {
 
 ### Filter System (app.js)
 
-The main UI features 5 cascading dropdown filters:
-1. **Series** - Material product line (Panchroma, PolyLite, etc.)
-2. **Material** - Specific filament type
-3. **Printer Brand** - Manufacturer
-4. **Printer Model** - Specific printer
-5. **Slicer** - Software compatibility
+The main UI features 4 cascading dropdown filters:
+1. **Series** - Material product line (Panchroma, Polymaker, Fiberon)
+2. **Printer Brand** - Manufacturer
+3. **Printer Model** - Specific printer
+4. **Slicer** - Software compatibility
 
 Filters are interdependent - selecting one updates available options in others to prevent zero-result combinations.
+
+**Note:** The Material filter was removed - filtering is now done by Series only.
 
 ### Theme System
 
@@ -205,11 +219,15 @@ Theme preference is stored in `localStorage` with key `'polymaker-preset-theme'`
 - **ZIP Download**: Uses JSZip library to package JSON into ZIP
 - **Per-row dropdown**: When multiple presets exist for same material, a dropdown allows selecting specific printer/slicer combination
 
+### Slicer Name Normalization
+
+The application handles slicer name inconsistencies (e.g., "OrcaSlicer" vs "Orcaslicer") by normalizing them to a canonical form during filtering and display.
+
 ## Testing
 
 No automated test suite exists. Manual testing checklist:
 
-1. **Filter functionality**: Verify all 5 filters work independently and together
+1. **Filter functionality**: Verify all 4 filters work independently and together
 2. **Download**: Test JSON and ZIP downloads work correctly
 3. **Theme toggle**: Switch between dark and wiki themes
 4. **Responsive**: Test on mobile viewport (320px - 640px)
