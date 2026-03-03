@@ -722,12 +722,70 @@ body.theme-wiki .preset-table th {
 }
 
 .preset-table td.td-actions .btn-download,
-.preset-table td.td-actions .btn-download-zip-row {
+.preset-table td.td-actions .btn-download-zip-row,
+.preset-table td.td-actions .btn-bundle {
   margin-right: 0.5rem;
 }
 
-.preset-table td.td-actions .btn-download-zip-row:last-child {
+.preset-table td.td-actions .btn-download-zip-row:last-child,
+.preset-table td.td-actions .btn-bundle:last-child {
   margin-right: 0;
+}
+
+/* Table action buttons styling */
+.preset-table td.td-actions .btn-download,
+.preset-table td.td-actions .btn-bundle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all var(--transition);
+}
+
+.preset-table td.td-actions .btn-download {
+  color: #50BFCA;
+  background: rgba(80, 191, 202, 0.1);
+  border: 1px solid rgba(80, 191, 202, 0.3);
+}
+
+.preset-table td.td-actions .btn-download:hover {
+  background: rgba(80, 191, 202, 0.2);
+  border-color: rgba(80, 191, 202, 0.5);
+}
+
+.preset-table td.td-actions .btn-bundle {
+  color: #fff;
+  background: linear-gradient(135deg, #50BFCA, #3BA8B2);
+  border: 1px solid transparent;
+  margin-left: 0.25rem;
+}
+
+.preset-table td.td-actions .btn-bundle:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(80, 191, 202, 0.4);
+}
+
+body.theme-wiki .preset-table td.td-actions .btn-download {
+  color: #00787C;
+  background: rgba(0, 120, 124, 0.1);
+  border-color: rgba(0, 120, 124, 0.3);
+}
+
+body.theme-wiki .preset-table td.td-actions .btn-download:hover {
+  background: rgba(0, 120, 124, 0.2);
+  border-color: rgba(0, 120, 124, 0.5);
+}
+
+body.theme-wiki .preset-table td.td-actions .btn-bundle {
+  background: linear-gradient(135deg, #00787C, #3BA8B2);
+}
+
+body.theme-wiki .preset-table td.td-actions .btn-bundle:hover {
+  box-shadow: 0 2px 8px rgba(0, 120, 124, 0.4);
 }
 
 .preset-table td {
@@ -1023,6 +1081,75 @@ body.theme-wiki .btn-download-selected:hover:not(:disabled) {
 
 body.theme-wiki .btn-download-selected:disabled {
   background: rgba(148, 163, 184, 0.3);
+}
+
+/* Download bundle button */
+.btn-download-bundle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #fff;
+  background: linear-gradient(135deg, #50BFCA, #3BA8B2);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all var(--transition);
+  box-shadow: 0 2px 8px rgba(80, 191, 202, 0.3);
+}
+
+.btn-download-bundle:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(80, 191, 202, 0.45);
+}
+
+.btn-download-bundle:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-download-bundle svg {
+  flex-shrink: 0;
+}
+
+body.theme-wiki .btn-download-bundle {
+  background: linear-gradient(135deg, #50BFCA, #3BA8B2);
+  box-shadow: 0 2px 8px rgba(80, 191, 202, 0.25);
+}
+
+body.theme-wiki .btn-download-bundle:hover:not(:disabled) {
+  box-shadow: 0 4px 14px rgba(80, 191, 202, 0.4);
+}
+
+body.theme-wiki .btn-download-bundle:disabled {
+  background: rgba(148, 163, 184, 0.3);
+}
+
+/* List header with multiple buttons */
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .list-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .list-header button {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 /* Footer */
