@@ -82,7 +82,8 @@ function init() {
     material: '',
     brand: '',
     model: '',
-    slicer: ''
+    slicer: '',
+    strict: false
   };
 
   // Track selected presets
@@ -596,6 +597,15 @@ function init() {
         downloadSelectedBtn.addEventListener('click', downloadSelectedPresets);
       }
 
+      // Handle strict checkbox change
+      var strictCheckbox = document.getElementById('strict-checkbox');
+      if (strictCheckbox) {
+        strictCheckbox.addEventListener('change', function () {
+          filterState.strict = strictCheckbox.checked;
+          render();
+        });
+      }
+
       function render() {
         // Update visibility based on slicer selection
         updateVisibility();
@@ -622,7 +632,8 @@ function init() {
           if (series && !materialMatchesSeries(p.material, series)) return false;
           if (brand) {
               var brandMatches = p.brand === brand;
-              if (!brandMatches && p.compatiblePrinters && p.compatiblePrinters.length > 0) {
+              // In strict mode, only match exact brand, ignore compatiblePrinters
+              if (!filterState.strict && !brandMatches && p.compatiblePrinters && p.compatiblePrinters.length > 0) {
                   for (var i = 0; i < p.compatiblePrinters.length; i++) {
                       if (p.compatiblePrinters[i].brand === brand) {
                           brandMatches = true;
@@ -634,7 +645,8 @@ function init() {
           }
           if (model) {
               var modelMatches = p.model === model;
-              if (!modelMatches && p.compatiblePrinters && p.compatiblePrinters.length > 0) {
+              // In strict mode, only match exact model, ignore compatiblePrinters
+              if (!filterState.strict && !modelMatches && p.compatiblePrinters && p.compatiblePrinters.length > 0) {
                   for (var j = 0; j < p.compatiblePrinters.length; j++) {
                       if (p.compatiblePrinters[j].model === model) {
                           modelMatches = true;
@@ -687,11 +699,20 @@ function init() {
             return '-';
           }
 
+          // Model name mapping: full name -> display abbreviation
+          var modelDisplayMap = {
+            'Centauri Carbon 2': 'CC2'
+          };
+
           // Extract unique models
           var models = [];
           var seen = {};
           for (var i = 0; i < compatiblePrinters.length; i++) {
             var model = compatiblePrinters[i].model;
+            // Map to display name if available
+            if (model && modelDisplayMap[model]) {
+              model = modelDisplayMap[model];
+            }
             if (model && !seen[model]) {
               seen[model] = true;
               models.push(model);
@@ -733,7 +754,7 @@ function init() {
 
             rowsHtml.push('<tr class="folder-row" data-folder-id="' + folderId + '">' +
               '<td><label class="checkbox-label folder-checkbox-label" data-folder-id="' + folderId + '"><input type="checkbox" class="checkbox-input folder-checkbox-input"' + folderChecked + folderIndeterminate + '><span class="checkbox-custom"></span></label></td>' +
-              '<td colspan="3">' + folderIconSvg + escapeHtml(mat) + ' <span class="folder-count">(' + list.length + ' presets)</span></td>' +
+              '<td colspan="4">' + folderIconSvg + escapeHtml(mat) + ' <span class="folder-count">(' + list.length + ' presets)</span></td>' +
               '<td>-</td>' +
               '<td class="td-actions"><span class="folder-hint">Click to expand</span></td>' +
               '</tr>');
@@ -753,6 +774,7 @@ function init() {
                 '<td>' + checkboxHtml + '</td>' +
                 '<td class="child-material">' + escapeHtml(mat) + '</td>' +
                 '<td>' + escapeHtml(printerBrand) + '</td>' +
+                '<td>' + escapeHtml(p.model || '-') + '</td>' +
                 '<td>' + escapeHtml(compatiblePrintersList) + '</td>' +
                 '<td>' + formatDate(p.updatedAt) + '</td>' +
                 '<td class="td-actions"><a href="' + url + '" class="btn-download" data-download-url="' + escapeHtml(url) + '" data-download-filename="' + escapeHtml(filename) + '" role="button" title="Download as JSON file">JSON</a></td>' +
@@ -773,6 +795,7 @@ function init() {
               '<td>' + checkboxHtml0 + '</td>' +
               '<td>' + escapeHtml(mat) + '</td>' +
               '<td>' + escapeHtml(printerBrand0) + '</td>' +
+              '<td>' + escapeHtml(first.model || '-') + '</td>' +
               '<td>' + escapeHtml(compatiblePrintersList0) + '</td>' +
               '<td>' + formatDate(first.updatedAt) + '</td>' +
               '<td class="td-actions"><a href="' + url0 + '" class="btn-download" data-download-url="' + escapeHtml(url0) + '" data-download-filename="' + escapeHtml(filename0) + '" role="button" title="Download as JSON file">JSON</a></td>' +

@@ -59,7 +59,7 @@ body.theme-wiki .bg-gradient {
 .page {
   position: relative;
   z-index: 1;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0.5rem 1rem 0.25rem;
   min-height: 100vh;
@@ -421,6 +421,38 @@ body.theme-wiki .list-card .list-title {
   letter-spacing: 0.03em;
 }
 
+/* Filter options section (for strict mode checkbox) */
+.filter-options {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.checkbox-option {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  font-size: 0.75rem;
+  color: var(--text);
+}
+
+.checkbox-option .checkbox-custom {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.checkbox-option:hover .checkbox-custom {
+  border-color: var(--accent);
+}
+
+.checkbox-label-text {
+  font-size: 0.75rem;
+  color: var(--text);
+  line-height: 1.3;
+}
+
 /* Custom dropdown component */
 .dropdown {
   position: relative;
@@ -630,35 +662,46 @@ body.theme-wiki .dropdown-menu::-webkit-scrollbar-thumb {
 .preset-table td:nth-child(1) {
   width: 40px;
   text-align: center;
+  padding: 0.65rem 0.25rem;
 }
 
 .preset-table th:nth-child(2),
 .preset-table td:nth-child(2) {
-  width: 32%;
+  width: 20%;
 }
 
 .preset-table th:nth-child(3),
 .preset-table td:nth-child(3) {
-  width: 35%;
+  width: 10%;
 }
 
 .preset-table th:nth-child(4),
 .preset-table td:nth-child(4) {
-  width: 15%;
+  width: 7%;
 }
 
 .preset-table th:nth-child(5),
 .preset-table td:nth-child(5) {
-  width: 15%;
+  width: 28%;
+}
+
+.preset-table th:nth-child(6),
+.preset-table td:nth-child(6) {
+  width: 7%;
+}
+
+.preset-table th:nth-child(7),
+.preset-table td:nth-child(7) {
+  width: 10%;
 }
 
 .preset-table th {
   text-align: left;
-  padding: 0.75rem 1rem;
+  padding: 0.65rem;
   font-weight: 600;
   color: var(--text-muted);
   /* Dark background in dark theme to avoid content showing through */
-  /*“穿透感” */
+  /*"穿透感" */
   background: #050509;
   border-bottom: 1px solid var(--border);
   white-space: nowrap;
@@ -688,7 +731,7 @@ body.theme-wiki .preset-table th {
 }
 
 .preset-table td {
-  padding: 0.45rem 0.65rem;
+  padding: 0.65rem;
   border-bottom: 1px solid var(--border);
   vertical-align: middle;
   transition: background-color var(--transition), color var(--transition), border-color var(--transition);
@@ -740,8 +783,8 @@ body.theme-wiki .preset-table th {
 .folder-row .folder-icon {
   width: 14px;
   height: 14px;
-  margin-right: 0.35rem;
-  vertical-align: -2px;
+  margin-right: 0.5rem;
+  vertical-align: middle;
   transition: transform 0.2s ease;
   color: var(--accent);
   display: inline-block;
@@ -754,6 +797,15 @@ body.theme-wiki .preset-table th {
 .folder-row td:first-child {
   font-weight: 500;
   vertical-align: middle;
+}
+
+.folder-row td:nth-child(2) {
+  padding-left: 0.65rem;
+}
+
+.child-material {
+  color: var(--text-muted);
+  padding-left: 1.5rem;
 }
 
 .child-row {
@@ -771,19 +823,14 @@ body.theme-wiki .preset-table th {
 
 .folder-hint {
   color: var(--text-muted);
-  font-size: 0.7rem;
+  font-size: 0.75rem;
 }
 
 .folder-count {
   color: var(--text-muted);
   font-size: 0.75rem;
   font-weight: 400;
-  margin-left: 0.25rem;
-}
-
-.child-material {
-  color: var(--text-muted);
-  padding-left: 1.5rem;
+  margin-left: 0.5rem;
 }
 
 .preset-table .preset-row-dropdown .dropdown-menu {
