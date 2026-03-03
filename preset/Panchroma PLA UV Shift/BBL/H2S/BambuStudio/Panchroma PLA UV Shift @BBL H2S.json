@@ -294,5 +294,6 @@
     "volumetric_speed_coefficients": [
         ""
     ],
-    "idle_temperature": 0
+    "idle_temperature": 0,
+    "filament_id": "PMPL41"
 }

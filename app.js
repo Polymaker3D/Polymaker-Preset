@@ -76,6 +76,7 @@ function init() {
   var listCard = document.getElementById('list-card');
   var selectAllCheckbox = document.getElementById('select-all-checkbox');
   var downloadSelectedBtn = document.getElementById('download-selected-btn');
+  var downloadBundleBtn = document.getElementById('download-bundle-btn');
   var selectedCountSpan = document.getElementById('selected-count');
   var filterState = {
     series: '',
@@ -93,6 +94,189 @@ function init() {
   var MATERIAL_SERIES = ['Panchroma', 'Polymaker', 'Fiberon'];
 
   initTheme();
+
+  // ============================================
+  // .bbsflmt Bundle Helper Functions
+  // ============================================
+
+  /**
+   * Generate bundle_structure.json content
+   * @param {Array} presets - Array of preset objects
+   * @param {string} type - 'single' or 'batch'
+   * @returns {Object} Bundle structure object
+   */
+  function generateBundleStructure(presets, type) {
+    if (!presets || presets.length === 0) {
+      throw new Error('No presets provided');
+    }
+
+    // Use numeric timestamp format like BambuStudio (seconds since epoch)
+    var timestamp = Math.floor(Date.now() / 1000).toString();
+    var isBatch = type === 'batch' || presets.length > 1;
+
+    // Group presets by vendor
+    var vendorMap = {};
+
+    presets.forEach(function(preset) {
+      var vendor = extractVendorFromPreset(preset);
+
+      if (!vendorMap[vendor]) {
+        vendorMap[vendor] = {
+          // IMPORTANT: filament_path comes FIRST, vendor SECOND
+          filament_path: [],
+          vendor: vendor
+        };
+      }
+
+      // Path format: {vendor}/{filename}
+      vendorMap[vendor].filament_path.push(vendor + '/' + preset.filename);
+    });
+
+    // Determine filament_name
+    var filamentName;
+    if (isBatch) {
+      filamentName = 'Multiple Filaments';
+    } else {
+      filamentName = presets[0].material || 'Unknown Filament';
+    }
+
+    // Generate bundle_id in BambuStudio format: {user_id}_{filament_name}_{timestamp}
+    // Using "0" as user_id since we're generating publicly
+    var bundleId = '0_' + filamentName + '_' + timestamp;
+
+    // Build structure with CORRECT FIELD ORDER (bundle_id first, version LAST)
+    var structure = {};
+    structure.bundle_id = bundleId;
+    structure.bundle_type = 'filament config bundle';
+    structure.filament_name = filamentName;
+    structure.filament_vendor = Object.values(vendorMap);
+    structure.version = '02.05.00.56';  // BambuStudio version format, LAST field
+
+    return structure;
+  }
+
+  /**
+   * Generate filename for bundle download
+   * @param {Array} presets - Array of preset objects
+   * @returns {string} Bundle filename
+   */
+  function generateBundleFilename(presets) {
+    if (!presets || presets.length === 0) {
+      return 'polymaker-bundle.bbsflmt';
+    }
+
+    var timestamp = new Date().toISOString().slice(0, 10);
+
+    if (presets.length === 1) {
+      // Single preset: use material name
+      var material = presets[0].material || 'bundle';
+      var sanitized = material.replace(/[^a-zA-Z0-9\s-]/g, '').replace(/\s+/g, '-');
+      return sanitized + '-' + timestamp + '.bbsflmt';
+    } else {
+      // Multiple presets: use count
+      return 'polymaker-bundle-' + presets.length + '-' + timestamp + '.bbsflmt';
+    }
+  }
+
+  /**
+   * Extract vendor name from preset
+   * @param {Object} preset - Preset object
+   * @returns {string} Vendor name
+   */
+  function extractVendorFromPreset(preset) {
+    // Use filament_vendor field if available
+    if (preset.filament_vendor && Array.isArray(preset.filament_vendor) && preset.filament_vendor.length > 0) {
+      return preset.filament_vendor[0];
+    }
+
+    // Extract vendor from filename: "Name @Vendor Model.json"
+    var filename = preset.filename || '';
+    var match = filename.match(/@([^\s]+)/);
+
+    if (match && match[1]) {
+      return match[1];
+    }
+
+    // Fallback: try to extract from path
+    var path = preset.path || '';
+    var pathParts = path.split('/');
+
+    // Path format: preset/<Material>/<Brand>/<Model>/<Slicer>/<Preset>.json
+    if (pathParts.length >= 4) {
+      return pathParts[2]; // Brand is at index 2
+    }
+
+    return 'Unknown';
+  }
+
+  /**
+   * Download preset(s) as .bbsflmt bundle
+   * @param {Array} presets - Array of preset objects to bundle
+   */
+  function downloadAsBbsflmt(presets) {
+    if (!presets || presets.length === 0) {
+      console.warn('No presets to bundle');
+      return;
+    }
+
+    var zip = new JSZip();
+    var promises = [];
+
+    // Generate bundle structure
+    var structure = generateBundleStructure(presets, presets.length > 1 ? 'batch' : 'single');
+
+    // Group files by vendor
+    var vendorFolders = {};
+
+    presets.forEach(function(preset) {
+      var vendor = extractVendorFromPreset(preset);
+      if (!vendorFolders[vendor]) {
+        vendorFolders[vendor] = zip.folder(vendor);
+      }
+
+      var url = preset.path ? (RAW_BASE + encodeURI(preset.path)) : '#';
+      if (!url || url === '#') {
+        console.warn('Invalid URL for preset:', preset.filename);
+        return;
+      }
+
+      var promise = fetch(url, { mode: 'cors' })
+        .then(function(r) {
+          if (!r.ok) {
+            throw new Error('Failed to fetch ' + preset.filename + ': ' + r.statusText);
+          }
+          return r.blob();
+        })
+        .then(function(blob) {
+          vendorFolders[vendor].file(preset.filename, blob);
+        })
+        .catch(function(err) {
+          console.warn('Error downloading preset:', preset.filename, err);
+        });
+
+      promises.push(promise);
+    });
+
+    Promise.all(promises).then(function() {
+      // Add bundle_structure.json
+      zip.file('bundle_structure.json', JSON.stringify(structure, null, 2));
+
+      return zip.generateAsync({ type: 'blob' });
+    }).then(function(content) {
+      var objectUrl = URL.createObjectURL(content);
+      var a = document.createElement('a');
+      a.href = objectUrl;
+      a.download = generateBundleFilename(presets);
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(function() {
+        URL.revokeObjectURL(objectUrl);
+      }, 1000);
+    }).catch(function(err) {
+      console.error('Error generating bundle:', err);
+    });
+  }
 
   fetch(INDEX_JSON_URL)
     .then(function (r) {
@@ -332,6 +516,28 @@ function init() {
         var count = Object.keys(selectedPresets).length;
         if (selectedCountSpan) selectedCountSpan.textContent = count;
         if (downloadSelectedBtn) downloadSelectedBtn.disabled = count === 0;
+        updateBundleButtonState();
+      }
+
+      // Update bundle button state based on BambuStudio presets
+      function updateBundleButtonState() {
+        if (!downloadBundleBtn) return;
+
+        // Bundle download only available when:
+        // 1. Slicer is BambuStudio
+        // 2. No printer model filter is applied
+        if (filterState.slicer !== 'BambuStudio') {
+          downloadBundleBtn.disabled = true;
+          return;
+        }
+
+        if (filterState.model) {
+          downloadBundleBtn.disabled = true;
+          return;
+        }
+
+        // Enable button when slicer is BambuStudio and no model filter
+        downloadBundleBtn.disabled = false;
       }
 
       // Generate checkbox HTML
@@ -409,6 +615,182 @@ function init() {
             downloadSelectedBtn.disabled = false;
             downloadSelectedBtn.textContent = 'Download Selected';
           }
+        });
+      }
+
+      // Download selected BambuStudio presets as .bbsflmt bundle
+      function downloadSelectedBundle() {
+        // Filter for BambuStudio presets only
+        var bambuPresets = [];
+        for (var key in selectedPresets) {
+          var preset = selectedPresets[key];
+          if (preset.slicer === 'BambuStudio') {
+            bambuPresets.push(preset);
+          }
+        }
+
+        // If no presets selected, download ALL visible BambuStudio presets
+        if (bambuPresets.length === 0) {
+          bambuPresets = presets.filter(function(p) {
+            if (p.slicer !== 'BambuStudio') return false;
+            if (filterState.series && !materialMatchesSeries(p.material, filterState.series)) return false;
+            if (filterState.brand && p.brand !== filterState.brand) return false;
+            return true;
+          }).map(function(p) {
+            var base = (typeof RAW_BASE === 'string' && RAW_BASE !== null) ? RAW_BASE : (RAW_BASE || '');
+            return {
+              url: base + encodeURI(p.path),
+              filename: p.filename,
+              material: p.material,
+              slicer: p.slicer,
+              path: p.path
+            };
+          });
+        }
+
+        if (bambuPresets.length === 0) {
+          alert('No BambuStudio presets available to download.');
+          return;
+        }
+
+        // Show loading state
+        if (downloadBundleBtn) {
+          downloadBundleBtn.disabled = true;
+          downloadBundleBtn.textContent = 'Loading...';
+        }
+
+        // First, fetch all preset JSON files to get filament_vendor
+        var presetDataPromises = [];
+        var presetDataMap = {};
+
+        bambuPresets.forEach(function(preset) {
+          var promise = fetch(preset.url, { mode: 'cors' })
+            .then(function(r) {
+              if (!r.ok) throw new Error('Failed to fetch ' + preset.filename);
+              return r.json();
+            })
+            .then(function(data) {
+              // Use preset.material (filament name) not data.name (full preset name with printer)
+              presetDataMap[preset.filename] = {
+                material: preset.material,
+                filament_vendor: data.filament_vendor || ['Polymaker']
+              };
+            })
+            .catch(function() {
+              presetDataMap[preset.filename] = {
+                material: preset.material,
+                filament_vendor: ['Polymaker']
+              };
+            });
+          presetDataPromises.push(promise);
+        });
+
+        Promise.all(presetDataPromises).then(function() {
+          // Group presets by material
+          var presetsByMaterial = {};
+          bambuPresets.forEach(function(preset) {
+            var data = presetDataMap[preset.filename];
+            var material = data ? data.material : preset.material;
+            if (!presetsByMaterial[material]) {
+              presetsByMaterial[material] = [];
+            }
+            presetsByMaterial[material].push({
+              preset: preset,
+              filament_vendor: data ? data.filament_vendor : ['Polymaker']
+            });
+          });
+
+          // Create outer ZIP to hold all .bbsflmt files
+          var outerZip = new JSZip();
+          var materials = Object.keys(presetsByMaterial);
+          var materialPromises = [];
+
+          materials.forEach(function(material, index) {
+            var materialItems = presetsByMaterial[material];
+            // Add index to timestamp for unique bundle_id per material
+            var timestamp = Math.floor(Date.now() / 1000) + index;
+            var bundleId = '0_' + material + '_' + timestamp;
+
+            // Group by vendor
+            var vendorMap = {};
+            materialItems.forEach(function(item) {
+              var vendor = item.filament_vendor[0] || 'Polymaker';
+              if (!vendorMap[vendor]) {
+                vendorMap[vendor] = {
+                  filament_path: [],
+                  vendor: vendor
+                };
+              }
+              vendorMap[vendor].filament_path.push(vendor + '/' + item.preset.filename);
+            });
+
+            // Create structure
+            var structure = {
+              bundle_id: bundleId,
+              bundle_type: 'filament config bundle',
+              filament_name: material,
+              filament_vendor: Object.values(vendorMap),
+              version: '02.05.00.56'
+            };
+
+            // Create inner ZIP for this material
+            var innerZip = new JSZip();
+            innerZip.file('bundle_structure.json', JSON.stringify(structure, null, 2));
+
+            // Fetch and add all preset files
+            var filePromises = [];
+            Object.keys(vendorMap).forEach(function(vendor) {
+              var vendorFolder = innerZip.folder(vendor);
+              materialItems.forEach(function(item) {
+                if ((item.filament_vendor[0] || 'Polymaker') === vendor) {
+                  var fp = fetch(item.preset.url, { mode: 'cors' })
+                    .then(function(r) { return r.blob(); })
+                    .then(function(blob) {
+                      vendorFolder.file(item.preset.filename, blob);
+                    })
+                    .catch(function() {
+                      console.warn('Failed to fetch:', item.preset.filename);
+                    });
+                  filePromises.push(fp);
+                }
+              });
+            });
+
+            // After all files added, generate the .bbsflmt
+            var mp = Promise.all(filePromises).then(function() {
+              return innerZip.generateAsync({ type: 'blob' });
+            }).then(function(content) {
+              var sanitizedName = material.replace(/[^a-zA-Z0-9\s-]/g, '').replace(/\s+/g, '-');
+              outerZip.file(sanitizedName + '.bbsflmt', content);
+            });
+
+            materialPromises.push(mp);
+          });
+
+          // After all materials processed, generate final ZIP
+          Promise.all(materialPromises).then(function() {
+            return outerZip.generateAsync({ type: 'blob' });
+          }).then(function(finalContent) {
+            var objectUrl = URL.createObjectURL(finalContent);
+            var a = document.createElement('a');
+            a.href = objectUrl;
+            a.download = 'polymakerPresetBundle-' + materials.length + '.zip';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            setTimeout(function() { URL.revokeObjectURL(objectUrl); }, 1000);
+
+            if (downloadBundleBtn) {
+              downloadBundleBtn.disabled = false;
+              downloadBundleBtn.textContent = 'Download Bundle (.bbsflmt)';
+            }
+          }).catch(function(err) {
+            console.error('Error creating bundles:', err);
+            if (downloadBundleBtn) {
+              downloadBundleBtn.disabled = false;
+              downloadBundleBtn.textContent = 'Download Bundle (.bbsflmt)';
+            }
+          });
         });
       }
 
@@ -597,6 +979,10 @@ function init() {
         downloadSelectedBtn.addEventListener('click', downloadSelectedPresets);
       }
 
+      if (downloadBundleBtn) {
+        downloadBundleBtn.addEventListener('click', downloadSelectedBundle);
+      }
+
       // Handle strict checkbox change
       var strictCheckbox = document.getElementById('strict-checkbox');
       if (strictCheckbox) {
@@ -737,7 +1123,7 @@ function init() {
           var filename = displayFilename(p.filename, p.slicer);
           var presetId = p.path || (p.material + '-' + p.brand + '-' + p.model + '-' + p.slicer);
           var isChecked = selectedPresets[presetId] ? ' checked' : '';
-          var presetData = JSON.stringify({ url: url, filename: filename });
+          var presetData = JSON.stringify({ url: url, filename: filename, slicer: p.slicer, path: p.path, material: p.material });
           var checkboxHtml = '<label class="checkbox-label preset-checkbox" data-preset-id="' + escapeHtml(presetId) + '" data-preset-data="' + escapeHtml(presetData) + '"><input type="checkbox" class="checkbox-input preset-checkbox-input"' + isChecked + '><span class="checkbox-custom"></span></label>';
           var printerBrand = getPrinterBrand(p.compatiblePrinters, p.brand);
           var compatiblePrintersList = formatCompatiblePrinters(p.compatiblePrinters);
@@ -746,6 +1132,12 @@ function init() {
           var parentAttr = options.parentFolder ? ' data-parent-folder="' + options.parentFolder + '"' : '';
           var materialClass = options.isChild ? 'child-material' : '';
           
+          // Only show Bundle button for BambuStudio presets
+          var isBambuStudio = p.slicer === 'BambuStudio';
+          var bundleButtonHtml = isBambuStudio
+            ? '<a href="#" class="btn-download btn-bundle" data-bundle-url="' + escapeHtml(url) + '" data-bundle-filename="' + escapeHtml(p.filename) + '" data-bundle-material="' + escapeHtml(options.material) + '" role="button" title="Download as BambuStudio Bundle">.bbsflmt</a>'
+            : '';
+
           return '<tr' + (rowClass ? ' class="' + rowClass + '"' : '') + parentAttr + '>' +
             '<td>' + checkboxHtml + '</td>' +
             '<td' + (materialClass ? ' class="' + materialClass + '"' : '') + '>' + escapeHtml(options.material) + '</td>' +
@@ -753,7 +1145,7 @@ function init() {
             '<td>' + escapeHtml(p.model || '-') + '</td>' +
             '<td>' + escapeHtml(compatiblePrintersList) + '</td>' +
             '<td>' + formatDate(p.updatedAt) + '</td>' +
-            '<td class="td-actions"><a href="' + url + '" class="btn-download" data-download-url="' + escapeHtml(url) + '" data-download-filename="' + escapeHtml(filename) + '" role="button" title="Download as JSON file">JSON</a></td>' +
+            '<td class="td-actions"><a href="' + url + '" class="btn-download" data-download-url="' + escapeHtml(url) + '" data-download-filename="' + escapeHtml(filename) + '" role="button" title="Download as JSON file">JSON</a>' + bundleButtonHtml + '</td>' +
             '</tr>';
         }
 
@@ -854,9 +1246,54 @@ function init() {
         updateSelectAllCheckboxState();
 
         if (status) status.textContent = totalPresets + ' presets in ' + Object.keys(groups).length + ' materials.';
+        
+        // Update bundle button state when filters change
+        updateBundleButtonState();
       }
 
       tbody.addEventListener('click', function (e) {
+        // Handle Bundle button click (only for BambuStudio)
+        var bundleLink = e.target.closest('a.btn-bundle');
+        if (bundleLink) {
+          e.preventDefault();
+          var url = bundleLink.getAttribute('data-bundle-url');
+          var filename = bundleLink.getAttribute('data-bundle-filename');
+          var material = bundleLink.getAttribute('data-bundle-material');
+          
+          if (!url || url === '#') return;
+          
+          // Fetch the preset JSON to get filament_vendor
+          fetch(url, { mode: 'cors' })
+            .then(function (r) {
+              if (!r.ok) throw new Error('Failed to fetch preset');
+              return r.json();
+            })
+            .then(function (data) {
+              // Create preset object for bundle
+              var preset = {
+                path: url,
+                filename: filename,
+                material: data.name || material,
+                slicer: 'BambuStudio',
+                filament_vendor: data.filament_vendor || ['Polymaker']
+              };
+              downloadAsBbsflmt([preset]);
+            })
+            .catch(function (err) {
+              console.error('Error downloading bundle:', err);
+              // Fallback: try to download without fetching full data
+              var preset = {
+                path: url,
+                filename: filename,
+                material: material,
+                slicer: 'BambuStudio',
+                filament_vendor: ['Polymaker']
+              };
+              downloadAsBbsflmt([preset]);
+            });
+          return;
+        }
+        
         // Download as JSON (single file)
         var link = e.target.closest('a.btn-download');
         if (!link) return;

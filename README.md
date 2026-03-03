@@ -33,6 +33,19 @@ This is a temporary workaround. We will remove this change after Bambu Lab fixes
 
 ### Bambu Studio
 
+#### Method 1: Bundle Method (Recommended)
+
+1. Download the preset **.bbsflmt** file (or bundle ZIP) from the [download page](https://presets.polymaker.com).
+2. If it's a ZIP file, unzip it to extract the .bbsflmt file(s).
+3. Open Bambu Studio.
+4. Go to **File** → **Import** → **Import Preset...**.
+5. Select the **.bbsflmt** file(s).
+6. Click on a material in the project consumables list, select the imported custom preset, and the preset will appear in the preset list.
+
+**Note:** .bbsflmt bundles are only available for BambuStudio. The bundle download button only appears when no printer filter is applied.
+
+#### Method 2: Individual File Method
+
 1. Download the preset JSON file (or single-file ZIP) from the [download page](https://presets.polymaker.com).
 2. Open Bambu Studio.
 3. Go to **File** → **Import** → **Import Preset...**.

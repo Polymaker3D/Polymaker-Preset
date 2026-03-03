@@ -123,5 +123,6 @@
     ],
     "version": "2.0.0.54",
     "is_custom_defined": "0",
-    "idle_temperature": 0
+    "idle_temperature": 0,
+    "filament_id": "PMPL42"
 }
