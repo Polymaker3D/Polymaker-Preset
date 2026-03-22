@@ -4,6 +4,16 @@ var INDEX_JSON_URL = './index.json';
 var RAW_BASE = '';
 var THEME_STORAGE_KEY = 'polymaker-preset-theme';
 
+function escapeHtml(s) {
+  if (s === null || s === undefined) return '';
+  return String(s)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 function applyTheme(theme) {
   var body = document.body;
   if (theme === 'wiki') {
@@ -149,7 +159,7 @@ function init() {
     structure.bundle_id = bundleId;
     structure.bundle_type = 'filament config bundle';
     structure.filament_name = filamentName;
-    structure.filament_vendor = Object.values(vendorMap);
+    structure.filament_vendor = Object.keys(vendorMap).map(function(k) { return vendorMap[k]; });
     structure.version = '02.05.00.56';  // BambuStudio version format, LAST field
 
     return structure;
@@ -210,7 +220,166 @@ function init() {
   }
 
   /**
-   * Download preset(s) as .bbsflmt bundle
+   * Generate filenames from compatible_printers field
+   * @param {Object} preset - Preset object with material and presetData
+   * @param {Object} presetData - The parsed JSON content of the preset
+   * @returns {Array} Array of filename mappings
+   */
+  function generateFilenamesFromPrinters(preset, presetData) {
+    var mappings = [];
+    var material = preset.material || 'Unknown';
+    var compatiblePrinters = presetData && presetData.compatible_printers;
+
+    if (!compatiblePrinters || !Array.isArray(compatiblePrinters) || compatiblePrinters.length === 0) {
+      // Fallback: use original filename if no compatible_printers
+      mappings.push({
+        originalPreset: preset,
+        presetData: presetData,
+        printerName: null,
+        generatedFilename: preset.filename
+      });
+      return mappings;
+    }
+
+    compatiblePrinters.forEach(function(printerName) {
+      var filename = material + ' @' + printerName + '.json';
+      mappings.push({
+        originalPreset: preset,
+        presetData: presetData,
+        printerName: printerName,
+        generatedFilename: filename
+      });
+    });
+
+    return mappings;
+  }
+
+  /**
+   * Find duplicate filenames across all mappings
+   * Groups conflicts by material -> target printer -> source preset options
+   * @param {Array} filenameMappings - Array of filename mappings from generateFilenamesFromPrinters
+   * @returns {Array} Array of duplicate groups organized by material with target printer conflicts
+   */
+  function findDuplicateFilenames(filenameMappings) {
+    if (!filenameMappings || !Array.isArray(filenameMappings) || filenameMappings.length === 0) {
+      return [];
+    }
+
+    // Group by material first
+    var materialGroups = {};
+
+    filenameMappings.forEach(function(mapping) {
+      var material = mapping.originalPreset.material || 'Unknown';
+      var targetPrinter = mapping.printerName;
+
+      if (!materialGroups[material]) {
+        materialGroups[material] = {};
+      }
+
+      // Group by target printer within material
+      if (!materialGroups[material][targetPrinter]) {
+        materialGroups[material][targetPrinter] = [];
+      }
+
+      materialGroups[material][targetPrinter].push(mapping);
+    });
+
+    // Build conflicts list: only include groups with multiple source options
+    var conflicts = [];
+
+    for (var material in materialGroups) {
+      if (!materialGroups.hasOwnProperty(material)) continue;
+
+      var targetPrinters = materialGroups[material];
+      var targetPrinterConflicts = [];
+
+      for (var targetPrinter in targetPrinters) {
+        if (!targetPrinters.hasOwnProperty(targetPrinter)) continue;
+
+        var options = targetPrinters[targetPrinter];
+        // Only include if multiple source presets generate this filename
+        if (options.length > 1) {
+          targetPrinterConflicts.push({
+            targetPrinter: targetPrinter,
+            generatedFilename: options[0].generatedFilename,
+            options: options  // Different source presets for same target
+          });
+        }
+      }
+
+      // Only add material if it has conflicts
+      if (targetPrinterConflicts.length > 0) {
+        conflicts.push({
+          material: material,
+          targets: targetPrinterConflicts
+        });
+      }
+    }
+
+    return conflicts;
+  }
+
+  /**
+   * Generate bundle_structure.json content with multiple filenames per preset
+   * @param {Array} filenameMappings - Array of filename mappings
+   * @param {string} type - 'single' or 'batch'
+   * @param {string} materialName - Optional material name override
+   * @returns {Object} Bundle structure object
+   */
+  function generateBundleStructureFromMappings(filenameMappings, type, materialName) {
+    if (!filenameMappings || filenameMappings.length === 0) {
+      throw new Error('No filename mappings provided');
+    }
+
+    // Use numeric timestamp format like BambuStudio (seconds since epoch)
+    var timestamp = Math.floor(Date.now() / 1000).toString();
+    var isBatch = type === 'batch';
+
+    // Group by vendor
+    var vendorMap = {};
+
+    filenameMappings.forEach(function(mapping) {
+      var vendor = extractVendorFromPreset(mapping.originalPreset);
+
+      if (!vendorMap[vendor]) {
+        vendorMap[vendor] = {
+          // IMPORTANT: filament_path comes FIRST, vendor SECOND
+          filament_path: [],
+          vendor: vendor
+        };
+      }
+
+      // Path format: {vendor}/{filename}
+      vendorMap[vendor].filament_path.push(vendor + '/' + mapping.generatedFilename);
+    });
+
+    // Determine filament_name
+    var filamentName;
+    if (materialName) {
+      filamentName = materialName;
+    } else if (isBatch) {
+      filamentName = 'Multiple Filaments';
+    } else {
+      filamentName = filenameMappings[0].originalPreset.material || 'Unknown Filament';
+    }
+
+    // Generate bundle_id in BambuStudio format: {user_id}_{filament_name}_{timestamp}
+    // Using "0" as user_id since we're generating publicly
+    var bundleId = '0_' + filamentName + '_' + timestamp;
+
+    // Build structure with CORRECT FIELD ORDER (bundle_id first, version LAST)
+    var structure = {};
+    structure.bundle_id = bundleId;
+    structure.bundle_type = 'filament config bundle';
+    structure.filament_name = filamentName;
+    structure.filament_vendor = Object.keys(vendorMap).map(function(k) { return vendorMap[k]; });
+    structure.version = '02.05.00.56';  // BambuStudio version format, LAST field
+
+    return structure;
+  }
+
+  /**
+   * Download preset(s) as .bbsflmt bundle with compatible_printers expansion
    * @param {Array} presets - Array of preset objects to bundle
    */
   function downloadAsBbsflmt(presets) {
@@ -219,19 +388,13 @@ function init() {
       return;
     }
 
-    var zip = new JSZip();
-    var promises = [];
-
-    // Generate bundle structure
-    var structure = generateBundleStructure(presets, presets.length > 1 ? 'batch' : 'single');
-
-    // Group files by vendor
-    var vendorFolders = {};
+    var fetchPromises = [];
+    var presetDataMap = {};
 
     presets.forEach(function(preset) {
-      var vendor = extractVendorFromPreset(preset);
-      if (!vendorFolders[vendor]) {
-        vendorFolders[vendor] = zip.folder(vendor);
+      if (preset.presetData) {
+        presetDataMap[preset.path] = preset.presetData;
+        return;
       }
 
       var url = preset.path ? (RAW_BASE + encodeURI(preset.path)) : '#';
@@ -245,28 +408,95 @@ function init() {
           if (!r.ok) {
             throw new Error('Failed to fetch ' + preset.filename + ': ' + r.statusText);
           }
-          return r.blob();
+          return r.json();
         })
-        .then(function(blob) {
-          vendorFolders[vendor].file(preset.filename, blob);
+        .then(function(data) {
+          presetDataMap[preset.path] = data;
         })
         .catch(function(err) {
           console.warn('Error downloading preset:', preset.filename, err);
+          presetDataMap[preset.path] = null;
         });
 
-      promises.push(promise);
+      fetchPromises.push(promise);
     });
 
-    Promise.all(promises).then(function() {
-      // Add bundle_structure.json
-      zip.file('bundle_structure.json', JSON.stringify(structure, null, 2));
+    Promise.all(fetchPromises).then(function() {
+      var allMappings = [];
+      presets.forEach(function(preset) {
+        var presetData = presetDataMap[preset.path];
+        var mappings = generateFilenamesFromPrinters(preset, presetData);
+        allMappings = allMappings.concat(mappings);
+      });
 
-      return zip.generateAsync({ type: 'blob' });
-    }).then(function(content) {
+      var duplicates = findDuplicateFilenames(allMappings);
+
+      if (duplicates.length > 0) {
+        showDuplicateResolutionDialog(duplicates, function(selectedOptions) {
+          var filteredMappings = filterDuplicates(allMappings, selectedOptions, duplicates);
+          generateAndDownloadBbsflmt(filteredMappings, presets);
+        }, function() {
+          console.log('Export cancelled by user');
+        });
+      } else {
+        generateAndDownloadBbsflmt(allMappings, presets);
+      }
+    }).catch(function(err) {
+      console.error('Error fetching presets:', err);
+      alert('Error downloading preset: ' + err.message);
+    });
+  }
+
+  /**
+   * Generate and download the BBSFLMT bundle
+   * @param {Array} filenameMappings - Filtered filename mappings
+   * @param {Array} originalPresets - Original preset objects for reference
+   */
+  function generateAndDownloadBbsflmt(filenameMappings, originalPresets) {
+    if (!filenameMappings || filenameMappings.length === 0) {
+      console.warn('No filename mappings to bundle');
+      return;
+    }
+
+    var zip = new JSZip();
+    var materialName = originalPresets.length === 1 ? originalPresets[0].material : null;
+
+    // Generate bundle structure from mappings
+    var structure = generateBundleStructureFromMappings(filenameMappings, 'single', materialName);
+
+    // Group files by vendor
+    var vendorFolders = {};
+
+    filenameMappings.forEach(function(mapping) {
+      var vendor = extractVendorFromPreset(mapping.originalPreset);
+      if (!vendorFolders[vendor]) {
+        vendorFolders[vendor] = zip.folder(vendor);
+      }
+
+      var presetData = mapping.presetData;
+      if (!presetData) {
+        console.error('No preset data available for:', mapping.generatedFilename);
+        return;
+      }
+
+      var modifiedData = JSON.parse(JSON.stringify(presetData));
+      var nameWithoutExtension = mapping.generatedFilename.replace(/\.json$/, '');
+      modifiedData.name = nameWithoutExtension;
+
+      var jsonContent = JSON.stringify(modifiedData, null, 4);
+      var blob = new Blob([jsonContent], { type: 'application/json' });
+      vendorFolders[vendor].file(mapping.generatedFilename, blob);
+    });
+
+    // Add bundle_structure.json
+    zip.file('bundle_structure.json', JSON.stringify(structure, null, 2));
+
+    // Generate and download
+    zip.generateAsync({ type: 'blob' }).then(function(content) {
       var objectUrl = URL.createObjectURL(content);
       var a = document.createElement('a');
       a.href = objectUrl;
-      a.download = generateBundleFilename(presets);
+      a.download = generateBundleFilename(originalPresets);
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
@@ -315,16 +545,6 @@ function init() {
       presets.forEach(function(p) {
         p.slicer = normalizeSlicerName(p.slicer);
       });
-
-      function escapeHtml(s) {
-        if (s === null || s === undefined) return '';
-        return String(s)
-          .replace(/&/g, '&amp;')
-          .replace(/</g, '&lt;')
-          .replace(/>/g, '&gt;')
-          .replace(/"/g, '&quot;')
-          .replace(/'/g, '&#39;');
-      }
 
       // Check if slicer is selected
       function isSlicerSelected() {
@@ -618,7 +838,6 @@ function init() {
         });
       }
 
-      // Download selected BambuStudio presets as .bbsflmt bundle
       function downloadSelectedBundle() {
         // Filter for BambuStudio presets only
         var bambuPresets = [];
@@ -642,14 +861,19 @@ function init() {
               url: base + encodeURI(p.path),
               filename: p.filename,
               material: p.material,
+              brand: p.brand,
+              model: p.model,
               slicer: p.slicer,
               path: p.path
             };
           });
         }
 
+        // Debug logging to help diagnose issues
+        console.log('downloadSelectedBundle called, bambuPresets count:', bambuPresets.length);
         if (bambuPresets.length === 0) {
-          alert('No BambuStudio presets available to download.');
+          console.log('No BambuStudio presets found. filterState:', filterState);
+          alert('No BambuStudio presets available to download. Please make sure BambuStudio is selected as the slicer.');
           return;
         }
 
@@ -659,7 +883,7 @@ function init() {
           downloadBundleBtn.textContent = 'Loading...';
         }
 
-        // First, fetch all preset JSON files to get filament_vendor
+        // Fetch all preset JSON files with full data
         var presetDataPromises = [];
         var presetDataMap = {};
 
@@ -670,127 +894,155 @@ function init() {
               return r.json();
             })
             .then(function(data) {
-              // Use preset.material (filament name) not data.name (full preset name with printer)
-              presetDataMap[preset.filename] = {
-                material: preset.material,
-                filament_vendor: data.filament_vendor || ['Polymaker']
-              };
+              presetDataMap[preset.path] = data;
             })
             .catch(function() {
-              presetDataMap[preset.filename] = {
-                material: preset.material,
-                filament_vendor: ['Polymaker']
-              };
+              presetDataMap[preset.path] = null;
             });
           presetDataPromises.push(promise);
         });
 
         Promise.all(presetDataPromises).then(function() {
-          // Group presets by material
-          var presetsByMaterial = {};
+          var allMappings = [];
           bambuPresets.forEach(function(preset) {
-            var data = presetDataMap[preset.filename];
-            var material = data ? data.material : preset.material;
-            if (!presetsByMaterial[material]) {
-              presetsByMaterial[material] = [];
-            }
-            presetsByMaterial[material].push({
-              preset: preset,
-              filament_vendor: data ? data.filament_vendor : ['Polymaker']
-            });
+            var presetData = presetDataMap[preset.path];
+            var mappings = generateFilenamesFromPrinters(preset, presetData);
+            allMappings = allMappings.concat(mappings);
           });
 
-          // Create outer ZIP to hold all .bbsflmt files
-          var outerZip = new JSZip();
-          var materials = Object.keys(presetsByMaterial);
-          var materialPromises = [];
+          var validMappings = allMappings.filter(function(m) { return m.presetData !== null; });
+          if (validMappings.length === 0) {
+            alert('Failed to load preset data. Please check your connection and try again.');
+            if (downloadBundleBtn) {
+              downloadBundleBtn.disabled = false;
+              downloadBundleBtn.textContent = 'Download Bundle (.bbsflmt)';
+            }
+            return;
+          }
 
-          materials.forEach(function(material, index) {
-            var materialItems = presetsByMaterial[material];
-            // Add index to timestamp for unique bundle_id per material
-            var timestamp = Math.floor(Date.now() / 1000) + index;
-            var bundleId = '0_' + material + '_' + timestamp;
+          var duplicates = findDuplicateFilenames(allMappings);
 
-            // Group by vendor
-            var vendorMap = {};
-            materialItems.forEach(function(item) {
-              var vendor = item.filament_vendor[0] || 'Polymaker';
-              if (!vendorMap[vendor]) {
-                vendorMap[vendor] = {
-                  filament_path: [],
-                  vendor: vendor
-                };
+          if (duplicates.length > 0) {
+            showDuplicateResolutionDialog(duplicates, function(selectedOptions) {
+              var filteredMappings = filterDuplicates(allMappings, selectedOptions, duplicates);
+              generateAndDownloadBundleBatch(filteredMappings, bambuPresets);
+            }, function() {
+              if (downloadBundleBtn) {
+                downloadBundleBtn.disabled = false;
+                downloadBundleBtn.textContent = 'Download Bundle (.bbsflmt)';
               }
-              vendorMap[vendor].filament_path.push(vendor + '/' + item.preset.filename);
             });
+          } else {
+            generateAndDownloadBundleBatch(allMappings, bambuPresets);
+          }
+        }).catch(function(err) {
+          console.error('Error fetching presets:', err);
+          alert('Error loading presets: ' + err.message);
+          if (downloadBundleBtn) {
+            downloadBundleBtn.disabled = false;
+            downloadBundleBtn.textContent = 'Download Bundle (.bbsflmt)';
+          }
+        });
+      }
 
-            // Create structure
-            var structure = {
-              bundle_id: bundleId,
-              bundle_type: 'filament config bundle',
-              filament_name: material,
-              filament_vendor: Object.values(vendorMap),
-              version: '02.05.00.56'
-            };
+      function generateAndDownloadBundleBatch(filenameMappings, originalPresets) {
+        if (!filenameMappings || filenameMappings.length === 0) {
+          console.warn('No filename mappings to bundle');
+          if (downloadBundleBtn) {
+            downloadBundleBtn.disabled = false;
+            downloadBundleBtn.textContent = 'Download Bundle (.bbsflmt)';
+          }
+          return;
+        }
 
-            // Create inner ZIP for this material
-            var innerZip = new JSZip();
-            innerZip.file('bundle_structure.json', JSON.stringify(structure, null, 2));
+        var mappingsByMaterial = {};
+        filenameMappings.forEach(function(mapping) {
+          var material = mapping.originalPreset.material || 'Unknown';
+          if (!mappingsByMaterial[material]) {
+            mappingsByMaterial[material] = [];
+          }
+          mappingsByMaterial[material].push(mapping);
+        });
 
-            // Fetch and add all preset files
-            var filePromises = [];
-            Object.keys(vendorMap).forEach(function(vendor) {
-              var vendorFolder = innerZip.folder(vendor);
-              materialItems.forEach(function(item) {
-                if ((item.filament_vendor[0] || 'Polymaker') === vendor) {
-                  var fp = fetch(item.preset.url, { mode: 'cors' })
-                    .then(function(r) { return r.blob(); })
-                    .then(function(blob) {
-                      vendorFolder.file(item.preset.filename, blob);
-                    })
-                    .catch(function() {
-                      console.warn('Failed to fetch:', item.preset.filename);
-                    });
-                  filePromises.push(fp);
-                }
-              });
-            });
+        var outerZip = new JSZip();
+        var materials = Object.keys(mappingsByMaterial);
+        var materialPromises = [];
 
-            // After all files added, generate the .bbsflmt
-            var mp = Promise.all(filePromises).then(function() {
-              return innerZip.generateAsync({ type: 'blob' });
-            }).then(function(content) {
-              var sanitizedName = material.replace(/[^a-zA-Z0-9\s-]/g, '').replace(/\s+/g, '-');
-              outerZip.file(sanitizedName + '.bbsflmt', content);
-            });
+        materials.forEach(function(material, index) {
+          var materialMappings = mappingsByMaterial[material];
+          var timestamp = Math.floor(Date.now() / 1000) + index;
+          var bundleId = '0_' + material + '_' + timestamp;
 
-            materialPromises.push(mp);
+          var vendorMap = {};
+          materialMappings.forEach(function(mapping) {
+            var vendor = extractVendorFromPreset(mapping.originalPreset);
+            if (!vendorMap[vendor]) {
+              vendorMap[vendor] = {
+                filament_path: [],
+                vendor: vendor
+              };
+            }
+            vendorMap[vendor].filament_path.push(vendor + '/' + mapping.generatedFilename);
           });
 
-          // After all materials processed, generate final ZIP
-          Promise.all(materialPromises).then(function() {
-            return outerZip.generateAsync({ type: 'blob' });
-          }).then(function(finalContent) {
-            var objectUrl = URL.createObjectURL(finalContent);
-            var a = document.createElement('a');
-            a.href = objectUrl;
-            a.download = 'polymakerPresetBundle-' + materials.length + '.zip';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            setTimeout(function() { URL.revokeObjectURL(objectUrl); }, 1000);
+          var structure = {
+            bundle_id: bundleId,
+            bundle_type: 'filament config bundle',
+            filament_name: material,
+            filament_vendor: Object.keys(vendorMap).map(function(k) { return vendorMap[k]; }),
+            version: '02.05.00.56'
+          };
 
-            if (downloadBundleBtn) {
-              downloadBundleBtn.disabled = false;
-              downloadBundleBtn.textContent = 'Download Bundle (.bbsflmt)';
-            }
-          }).catch(function(err) {
-            console.error('Error creating bundles:', err);
-            if (downloadBundleBtn) {
-              downloadBundleBtn.disabled = false;
-              downloadBundleBtn.textContent = 'Download Bundle (.bbsflmt)';
-            }
+          var innerZip = new JSZip();
+          innerZip.file('bundle_structure.json', JSON.stringify(structure, null, 2));
+
+          Object.keys(vendorMap).forEach(function(vendor) {
+            var vendorFolder = innerZip.folder(vendor);
+            materialMappings.forEach(function(mapping) {
+              var mappingVendor = extractVendorFromPreset(mapping.originalPreset);
+              if (mappingVendor === vendor) {
+                var modifiedData = JSON.parse(JSON.stringify(mapping.presetData || {}));
+                var nameWithoutExtension = mapping.generatedFilename.replace(/\.json$/, '');
+                modifiedData.name = nameWithoutExtension;
+
+                var jsonContent = JSON.stringify(modifiedData, null, 4);
+                var blob = new Blob([jsonContent], { type: 'application/json' });
+                vendorFolder.file(mapping.generatedFilename, blob);
+              }
+            });
           });
+
+          var mp = innerZip.generateAsync({ type: 'blob' }).then(function(content) {
+            var sanitizedName = material.replace(/[^a-zA-Z0-9\s-]/g, '').replace(/\s+/g, '-');
+            outerZip.file(sanitizedName + '.bbsflmt', content);
+          });
+
+          materialPromises.push(mp);
+        });
+
+        // After all materials processed, generate final ZIP
+        Promise.all(materialPromises).then(function() {
+          return outerZip.generateAsync({ type: 'blob' });
+        }).then(function(finalContent) {
+          var objectUrl = URL.createObjectURL(finalContent);
+          var a = document.createElement('a');
+          a.href = objectUrl;
+          a.download = 'polymakerPresetBundle-' + materials.length + '.zip';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          setTimeout(function() { URL.revokeObjectURL(objectUrl); }, 1000);
+
+          if (downloadBundleBtn) {
+            downloadBundleBtn.disabled = false;
+            downloadBundleBtn.textContent = 'Download Bundle (.bbsflmt)';
+          }
+        }).catch(function(err) {
+          console.error('Error creating bundles:', err);
+          if (downloadBundleBtn) {
+            downloadBundleBtn.disabled = false;
+            downloadBundleBtn.textContent = 'Download Bundle (.bbsflmt)';
+          }
         });
       }
 
@@ -1123,7 +1375,7 @@ function init() {
           var filename = displayFilename(p.filename, p.slicer);
           var presetId = p.path || (p.material + '-' + p.brand + '-' + p.model + '-' + p.slicer);
           var isChecked = selectedPresets[presetId] ? ' checked' : '';
-          var presetData = JSON.stringify({ url: url, filename: filename, slicer: p.slicer, path: p.path, material: p.material });
+          var presetData = JSON.stringify({ url: url, filename: filename, slicer: p.slicer, path: p.path, material: p.material, model: p.model, brand: p.brand });
           var checkboxHtml = '<label class="checkbox-label preset-checkbox" data-preset-id="' + escapeHtml(presetId) + '" data-preset-data="' + escapeHtml(presetData) + '"><input type="checkbox" class="checkbox-input preset-checkbox-input"' + isChecked + '><span class="checkbox-custom"></span></label>';
           var printerBrand = getPrinterBrand(p.compatiblePrinters, p.brand);
           var compatiblePrintersList = formatCompatiblePrinters(p.compatiblePrinters);
@@ -1135,7 +1387,7 @@ function init() {
           // Only show Bundle button for BambuStudio presets
           var isBambuStudio = p.slicer === 'BambuStudio';
           var bundleButtonHtml = isBambuStudio
-            ? '<a href="#" class="btn-download btn-bundle" data-bundle-url="' + escapeHtml(url) + '" data-bundle-filename="' + escapeHtml(p.filename) + '" data-bundle-material="' + escapeHtml(options.material) + '" role="button" title="Download as BambuStudio Bundle">.bbsflmt</a>'
+            ? '<a href="#" class="btn-download btn-bundle" data-bundle-url="' + escapeHtml(url) + '" data-bundle-filename="' + escapeHtml(p.filename) + '" data-bundle-material="' + escapeHtml(options.material) + '" data-bundle-model="' + escapeHtml(p.model || '') + '" role="button" title="Download as BambuStudio Bundle">.bbsflmt</a>'
             : '';
 
           return '<tr' + (rowClass ? ' class="' + rowClass + '"' : '') + parentAttr + '>' +
@@ -1145,7 +1397,7 @@ function init() {
             '<td>' + escapeHtml(p.model || '-') + '</td>' +
             '<td>' + escapeHtml(compatiblePrintersList) + '</td>' +
             '<td>' + formatDate(p.updatedAt) + '</td>' +
-            '<td class="td-actions"><a href="' + url + '" class="btn-download" data-download-url="' + escapeHtml(url) + '" data-download-filename="' + escapeHtml(filename) + '" role="button" title="Download as JSON file">JSON</a>' + bundleButtonHtml + '</td>' +
+            '<td class="td-actions"><a href="' + url + '" class="btn-download" data-download-url="' + escapeHtml(url) + '" data-download-filename="' + escapeHtml(filename) + '" role="button" title="Download as JSON file" download="' + escapeHtml(filename) + '">JSON</a>' + bundleButtonHtml + '</td>' +
             '</tr>';
         }
 
@@ -1259,63 +1511,40 @@ function init() {
           var url = bundleLink.getAttribute('data-bundle-url');
           var filename = bundleLink.getAttribute('data-bundle-filename');
           var material = bundleLink.getAttribute('data-bundle-material');
-          
-          if (!url || url === '#') return;
-          
+          var model = bundleLink.getAttribute('data-bundle-model');
+
+          if (!url || url === '#') {
+            alert('Invalid preset URL');
+            return;
+          }
+
           // Fetch the preset JSON to get filament_vendor
           fetch(url, { mode: 'cors' })
             .then(function (r) {
-              if (!r.ok) throw new Error('Failed to fetch preset');
+              if (!r.ok) throw new Error('Failed to fetch preset: ' + r.statusText);
               return r.json();
             })
             .then(function (data) {
-              // Create preset object for bundle
+              if (!data || !data.compatible_printers) {
+                console.warn('Preset data missing compatible_printers:', data);
+              }
               var preset = {
                 path: url,
                 filename: filename,
                 material: data.name || material,
+                model: model,
                 slicer: 'BambuStudio',
-                filament_vendor: data.filament_vendor || ['Polymaker']
+                filament_vendor: data.filament_vendor || ['Polymaker'],
+                presetData: data
               };
               downloadAsBbsflmt([preset]);
             })
             .catch(function (err) {
               console.error('Error downloading bundle:', err);
-              // Fallback: try to download without fetching full data
-              var preset = {
-                path: url,
-                filename: filename,
-                material: material,
-                slicer: 'BambuStudio',
-                filament_vendor: ['Polymaker']
-              };
-              downloadAsBbsflmt([preset]);
+              alert('Error loading preset: ' + err.message + '. Please try again.');
             });
           return;
         }
-        
-        // Download as JSON (single file)
-        var link = e.target.closest('a.btn-download');
-        if (!link) return;
-        var url = link.getAttribute('data-download-url');
-        var filename = link.getAttribute('data-download-filename');
-        if (!url || url === '#') return;
-        e.preventDefault();
-        fetch(url, { mode: 'cors' })
-          .then(function (r) { return r.blob(); })
-          .then(function (blob) {
-            var objectUrl = URL.createObjectURL(blob);
-            var a = document.createElement('a');
-            a.href = objectUrl;
-            a.download = filename || 'preset.json';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(objectUrl);
-          })
-          .catch(function () {
-            window.open(url, '_blank', 'noopener');
-          });
       });
 
       render();
@@ -1364,6 +1593,264 @@ function initModal() {
   });
 }
 
+// Duplicate Resolution Modal functionality
+var duplicateModalState = {
+  duplicates: [],
+  selectedOptions: {},
+  onConfirm: null,
+  onCancel: null
+};
+
+function initDuplicateModal() {
+  var modal = document.getElementById('duplicate-modal');
+  if (!modal) return;
+
+  var closeBtn = document.getElementById('duplicate-modal-close');
+  var cancelBtn = document.getElementById('duplicate-cancel');
+  var confirmBtn = document.getElementById('duplicate-confirm');
+  var overlay = modal.querySelector('.modal-overlay');
+
+  function closeModal() {
+    modal.setAttribute('aria-hidden', 'true');
+    modal.classList.remove('is-open');
+    document.body.style.overflow = '';
+    if (duplicateModalState.onCancel) {
+      duplicateModalState.onCancel();
+    }
+  }
+
+  function confirmSelection() {
+    modal.setAttribute('aria-hidden', 'true');
+    modal.classList.remove('is-open');
+    document.body.style.overflow = '';
+    if (duplicateModalState.onConfirm) {
+      duplicateModalState.onConfirm(duplicateModalState.selectedOptions);
+    }
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeModal);
+  }
+
+  if (cancelBtn) {
+    cancelBtn.addEventListener('click', closeModal);
+  }
+
+  if (confirmBtn) {
+    confirmBtn.addEventListener('click', confirmSelection);
+  }
+
+  if (overlay) {
+    overlay.addEventListener('click', closeModal);
+  }
+
+  // Close on Escape key
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+      closeModal();
+    }
+  });
+}
+
+/**
+ * Format printer model name for display
+ * @param {string} model - Raw model name (e.g., "A1M", "A1")
+ * @returns {string} Formatted display name
+ */
+function formatModelDisplayName(model) {
+  if (!model) return 'Unknown';
+  var modelMap = {
+    'A1M': 'A1 mini',
+    'A1': 'A1',
+    'P1P': 'P1P',
+    'P1S': 'P1S',
+    'X1': 'X1',
+    'X1C': 'X1C',
+    'H2D': 'H2D',
+    'H2S': 'H2S',
+    'P2S': 'P2S',
+    'CC2': 'CC2',
+    'U1': 'U1',
+    'Kobra S1': 'Kobra S1'
+  };
+  return modelMap[model] || model;
+}
+
+/**
+ * Check if source model is the native match for target printer
+ * Native match means the source model matches the target printer name
+ * @param {string} sourceModel - Source model code (e.g., "A1", "A1M")
+ * @param {string} targetPrinter - Target printer name (e.g., "Bambu Lab A1 0.4 nozzle")
+ * @returns {boolean} True if native match
+ */
+function isNativeMatch(sourceModel, targetPrinter) {
+  if (!sourceModel || !targetPrinter) return false;
+
+  var displayName = formatModelDisplayName(sourceModel);
+
+  // Check if target printer contains the display name (e.g., "A1" in "Bambu Lab A1 0.4 nozzle")
+  // For A1 mini, need to check for "A1 mini" specifically to avoid matching "A1" first
+  if (sourceModel === 'A1M') {
+    return targetPrinter.indexOf('A1 mini') !== -1 || targetPrinter.indexOf('A1M') !== -1;
+  }
+  if (sourceModel === 'A1') {
+    // A1 should match "A1" but not "A1 mini" - check for A1 followed by non-letter or end
+    return targetPrinter.indexOf('A1') !== -1 && targetPrinter.indexOf('A1 mini') === -1;
+  }
+
+  return targetPrinter.indexOf(displayName) !== -1;
+}
+
+/**
+ * Show duplicate resolution dialog
+ * Groups conflicts by material, then by target printer
+ * Allows users to select which source preset to use for each target printer
+ * @param {Array} duplicates - Array of duplicate groups organized by material with target printer conflicts
+ * @param {Function} onConfirm - Callback when user confirms selection
+ * @param {Function} onCancel - Callback when user cancels
+ */
+function showDuplicateResolutionDialog(duplicates, onConfirm, onCancel) {
+  var modal = document.getElementById('duplicate-modal');
+  var listContainer = document.getElementById('duplicate-list');
+
+  if (!modal || !listContainer) {
+    console.error('Duplicate modal elements not found');
+    return;
+  }
+
+  // Store state - now organized by material and target printer
+  duplicateModalState.duplicates = duplicates;
+  duplicateModalState.selectedOptions = {};
+  duplicateModalState.onConfirm = onConfirm;
+  duplicateModalState.onCancel = onCancel;
+
+  // Initialize default selections - prefer native match (source model matches target printer)
+  duplicates.forEach(function(materialGroup, materialIndex) {
+    duplicateModalState.selectedOptions[materialIndex] = {};
+    materialGroup.targets.forEach(function(target, targetIndex) {
+      var defaultIndex = 0;
+      var targetPrinter = target.targetPrinter;
+
+      // Find the option where source model matches target printer (native support)
+      for (var i = 0; i < target.options.length; i++) {
+        var sourceModel = target.options[i].originalPreset.model;
+        if (isNativeMatch(sourceModel, targetPrinter)) {
+          defaultIndex = i;
+          break;
+        }
+      }
+
+      duplicateModalState.selectedOptions[materialIndex][targetIndex] = defaultIndex;
+    });
+  });
+
+  // Render duplicate list - grouped by material
+  var html = '';
+  duplicates.forEach(function(materialGroup, materialIndex) {
+    html += '<div class="duplicate-material-group">';
+    html += '<div class="duplicate-material-header">' + escapeHtml(materialGroup.material) + '</div>';
+
+    // Each target printer within this material
+    materialGroup.targets.forEach(function(target, targetIndex) {
+      html += '<div class="duplicate-target-section">';
+      html += '<div class="duplicate-target-label">For printer: ' + escapeHtml(target.targetPrinter) + '</div>';
+      html += '<div class="duplicate-options">';
+
+      // Each source preset option for this target
+      var selectedOptionIndex = duplicateModalState.selectedOptions[materialIndex][targetIndex];
+      target.options.forEach(function(mapping, optionIndex) {
+        var preset = mapping.originalPreset;
+        var presetData = mapping.presetData;
+        var sourceModel = preset.model || 'Unknown';
+        var sourceDisplayName = formatModelDisplayName(sourceModel);
+        var isSelected = optionIndex === selectedOptionIndex ? ' checked' : '';
+
+        // Get compatible printers list for this source preset
+        var compatiblePrinters = [];
+        if (presetData && presetData.compatible_printers && Array.isArray(presetData.compatible_printers)) {
+          compatiblePrinters = presetData.compatible_printers;
+        }
+
+        html += '<label class="duplicate-option">';
+        html += '<input type="radio" name="dup-' + materialIndex + '-' + targetIndex + '"' +
+                ' value="' + optionIndex + '"' + isSelected +
+                ' data-material-index="' + materialIndex + '"' +
+                ' data-target-index="' + targetIndex + '"' +
+                ' data-option-index="' + optionIndex + '">';
+        html += '<div class="duplicate-option-label">';
+        html += '<div class="duplicate-option-source">Use ' + escapeHtml(sourceDisplayName) + ' profile</div>';
+        html += '<div class="duplicate-option-compatible">Compatible with: ' + escapeHtml(compatiblePrinters.join(', ')) + '</div>';
+        html += '</div>';
+        html += '</label>';
+      });
+
+      html += '</div>'; // end duplicate-options
+      html += '</div>'; // end duplicate-target-section
+    });
+
+    html += '</div>'; // end duplicate-material-group
+  });
+
+  listContainer.innerHTML = html;
+
+  // Add change listeners to radio buttons
+  var radioButtons = listContainer.querySelectorAll('input[type="radio"]');
+  for (var i = 0; i < radioButtons.length; i++) {
+    radioButtons[i].addEventListener('change', function(e) {
+      var materialIndex = parseInt(e.target.getAttribute('data-material-index'), 10);
+      var targetIndex = parseInt(e.target.getAttribute('data-target-index'), 10);
+      var optionIndex = parseInt(e.target.getAttribute('data-option-index'), 10);
+      duplicateModalState.selectedOptions[materialIndex][targetIndex] = optionIndex;
+    });
+  }
+
+  // Show modal
+  modal.setAttribute('aria-hidden', 'false');
+  modal.classList.add('is-open');
+  document.body.style.overflow = 'hidden';
+}
+
+/**
+ * Filter out unselected duplicates based on user selection
+ * @param {Array} filenameMappings - All filename mappings
+ * @param {Object} selectedOptions - User's selected options from dialog (organized by materialIndex -> targetIndex -> optionIndex)
+ * @param {Array} duplicates - Original duplicates array (organized by material with target printer conflicts)
+ * @returns {Array} Filtered mappings
+ */
+function filterDuplicates(filenameMappings, selectedOptions, duplicates) {
+  if (!duplicates || duplicates.length === 0) {
+    return filenameMappings;
+  }
+
+  // Build exclusion set: keys of mappings to exclude
+  var excludeSet = {};
+
+  // Iterate through material groups
+  duplicates.forEach(function(materialGroup, materialIndex) {
+    var materialTargets = materialGroup.targets;
+
+    // Iterate through target printer conflicts within this material
+    materialTargets.forEach(function(target, targetIndex) {
+      var selectedOptionIndex = selectedOptions[materialIndex][targetIndex];
+
+      // Mark all unselected options for exclusion
+      target.options.forEach(function(mapping, optionIndex) {
+        if (optionIndex !== selectedOptionIndex) {
+          // Create unique key for this mapping
+          var key = mapping.generatedFilename + '|' + mapping.originalPreset.path;
+          excludeSet[key] = true;
+        }
+      });
+    });
+  });
+
+  // Filter out excluded mappings
+  return filenameMappings.filter(function(mapping) {
+    var key = mapping.generatedFilename + '|' + mapping.originalPreset.path;
+    return !excludeSet[key];
+  });
+}
+
 // Accordion functionality for Known Issues
 function initAccordion() {
   var accordionHeaders = document.querySelectorAll('.accordion-header');
@@ -1390,4 +1877,5 @@ function initAccordion() {
 // Tooltip positioning to prevent clipping
 init();
 initModal();
+initDuplicateModal();
 initAccordion();

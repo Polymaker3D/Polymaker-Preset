@@ -367,3 +367,621 @@ function extractVendorFromPreset(preset) {
   
   return 'Unknown';
 }
+// ============================================
+// TEST SUITE: Filename Generation from compatible_printers
+// ============================================
+
+describe('Filename Generation from compatible_printers', () => {
+  
+  test('Should generate one filename for single compatible_printer entry', () => {
+    // Given a preset with a single compatible printer
+    const preset = {
+      material: 'Panchroma PLA Galaxy',
+      compatible_printers: ['Bambu Lab X1 0.4 nozzle']
+    };
+
+    // When generating filenames from compatible_printers
+    const filenames = generateFilenamesFromCompatiblePrinters(preset);
+
+    // Then should generate exactly one filename
+    assert.strictEqual(filenames.length, 1, 'Should generate one filename');
+    
+    // And filename should follow the format: {material} @{compatible_printer}.json
+    assert.strictEqual(filenames[0], 'Panchroma PLA Galaxy @Bambu Lab X1 0.4 nozzle.json', 
+      'Filename should match expected format');
+  });
+
+  test('Should generate multiple filenames for multiple compatible_printers entries', () => {
+    // Given a preset with multiple compatible printers
+    const preset = {
+      material: 'Panchroma PLA Galaxy',
+      compatible_printers: [
+        'Bambu Lab X1 0.4 nozzle',
+        'Bambu Lab X1 Carbon 0.4 nozzle',
+        'Bambu Lab P1S 0.4 nozzle'
+      ]
+    };
+
+    // When generating filenames from compatible_printers
+    const filenames = generateFilenamesFromCompatiblePrinters(preset);
+
+    // Then should generate three filenames
+    assert.strictEqual(filenames.length, 3, 'Should generate three filenames');
+    
+    // And each should follow the format
+    assert.strictEqual(filenames[0], 'Panchroma PLA Galaxy @Bambu Lab X1 0.4 nozzle.json');
+    assert.strictEqual(filenames[1], 'Panchroma PLA Galaxy @Bambu Lab X1 Carbon 0.4 nozzle.json');
+    assert.strictEqual(filenames[2], 'Panchroma PLA Galaxy @Bambu Lab P1S 0.4 nozzle.json');
+  });
+
+  test('Should preserve nozzle specification in filename', () => {
+    // Given a preset with various nozzle specifications
+    const preset = {
+      material: 'PolyLite PETG',
+      compatible_printers: [
+        'Bambu Lab X1 0.4 nozzle',
+        'Bambu Lab A1 0.6 nozzle',
+        'Bambu Lab P1S 0.2 nozzle'
+      ]
+    };
+
+    // When generating filenames
+    const filenames = generateFilenamesFromCompatiblePrinters(preset);
+
+    // Then nozzle specification should be preserved
+    assert.ok(filenames[0].includes('0.4 nozzle'), 'Should preserve 0.4 nozzle');
+    assert.ok(filenames[1].includes('0.6 nozzle'), 'Should preserve 0.6 nozzle');
+    assert.ok(filenames[2].includes('0.2 nozzle'), 'Should preserve 0.2 nozzle');
+  });
+
+  test('Should use "Bambu Lab" format (not "BBL") in filename', () => {
+    // Given a preset with "Bambu Lab" brand in compatible_printers
+    const preset = {
+      material: 'Fiberon PA-CF',
+      compatible_printers: ['Bambu Lab X1 Carbon 0.4 nozzle']
+    };
+
+    // When generating filenames
+    const filenames = generateFilenamesFromCompatiblePrinters(preset);
+
+    // Then should use "Bambu Lab" format
+    assert.ok(filenames[0].includes('Bambu Lab'), 'Should use "Bambu Lab" format');
+    assert.ok(!filenames[0].includes('BBL'), 'Should not use "BBL" abbreviation');
+  });
+
+  test('Should generate correct filename format: {material} @{compatible_printer}.json', () => {
+    // Given a preset with various materials
+    const testCases = [
+      {
+        material: 'Panchroma PLA Silk',
+        compatible_printers: ['Bambu Lab X1 0.4 nozzle'],
+        expected: 'Panchroma PLA Silk @Bambu Lab X1 0.4 nozzle.json'
+      },
+      {
+        material: 'PolyTerra PLA+',
+        compatible_printers: ['Bambu Lab A1M 0.4 nozzle'],
+        expected: 'PolyTerra PLA+ @Bambu Lab A1M 0.4 nozzle.json'
+      },
+      {
+        material: 'Fiberon PETG-ESD',
+        compatible_printers: ['Bambu Lab H2D 0.4 nozzle'],
+        expected: 'Fiberon PETG-ESD @Bambu Lab H2D 0.4 nozzle.json'
+      }
+    ];
+
+    // When generating filenames for each case
+    testCases.forEach((testCase) => {
+      const preset = {
+        material: testCase.material,
+        compatible_printers: testCase.compatible_printers
+      };
+      
+      const filenames = generateFilenamesFromCompatiblePrinters(preset);
+      
+      // Then filename should match expected format
+      assert.strictEqual(filenames[0], testCase.expected, 
+        `Filename for ${testCase.material} should match expected format`);
+    });
+  });
+});
+
+// ============================================
+// TEST SUITE: Edge cases for filename generation
+// ============================================
+
+describe('Edge cases for filename generation', () => {
+  
+  test('Should handle empty compatible_printers array', () => {
+    // Given a preset with empty compatible_printers array
+    const preset = {
+      material: 'Panchroma PLA Galaxy',
+      compatible_printers: []
+    };
+
+    // When generating filenames
+    const filenames = generateFilenamesFromCompatiblePrinters(preset);
+
+    // Then should return empty array
+    assert.strictEqual(filenames.length, 0, 'Should return empty array for empty compatible_printers');
+  });
+
+  test('Should handle null compatible_printers', () => {
+    // Given a preset with null compatible_printers
+    const preset = {
+      material: 'Panchroma PLA Galaxy',
+      compatible_printers: null
+    };
+
+    // When generating filenames
+    const filenames = generateFilenamesFromCompatiblePrinters(preset);
+
+    // Then should return empty array
+    assert.strictEqual(filenames.length, 0, 'Should return empty array for null compatible_printers');
+  });
+
+  test('Should handle undefined compatible_printers', () => {
+    // Given a preset without compatible_printers field
+    const preset = {
+      material: 'Panchroma PLA Galaxy'
+    };
+
+    // When generating filenames
+    const filenames = generateFilenamesFromCompatiblePrinters(preset);
+
+    // Then should return empty array
+    assert.strictEqual(filenames.length, 0, 'Should return empty array for undefined compatible_printers');
+  });
+
+  test('Should handle special characters in material names', () => {
+    // Given a preset with special characters in material name
+    const preset = {
+      material: 'Panchroma PLA UV Shift',
+      compatible_printers: ['Bambu Lab X1 0.4 nozzle']
+    };
+
+    // When generating filenames
+    const filenames = generateFilenamesFromCompatiblePrinters(preset);
+
+    // Then should preserve special characters in filename
+    assert.strictEqual(filenames[0], 'Panchroma PLA UV Shift @Bambu Lab X1 0.4 nozzle.json',
+      'Should preserve special characters like UV Shift');
+  });
+
+  test('Should handle very long material names', () => {
+    // Given a preset with a very long material name
+    const longMaterialName = 'PolyLite PLA Pro Metallic Carbon Fiber Reinforced High Temperature';
+    const preset = {
+      material: longMaterialName,
+      compatible_printers: ['Bambu Lab X1 0.4 nozzle']
+    };
+
+    // When generating filenames
+    const filenames = generateFilenamesFromCompatiblePrinters(preset);
+
+    // Then should generate filename with full material name
+    assert.ok(filenames[0].startsWith(longMaterialName + ' @'), 
+      'Should handle very long material names');
+  });
+
+  test('Should handle single-character material names', () => {
+    // Given a preset with minimal material name
+    const preset = {
+      material: 'A',
+      compatible_printers: ['Bambu Lab X1 0.4 nozzle']
+    };
+
+    // When generating filenames
+    const filenames = generateFilenamesFromCompatiblePrinters(preset);
+
+    // Then should still generate valid filename
+    assert.strictEqual(filenames[0], 'A @Bambu Lab X1 0.4 nozzle.json',
+      'Should handle single-character material names');
+  });
+
+  test('Should handle printer names with special characters', () => {
+    // Given a preset with special characters in printer name
+    const preset = {
+      material: 'Test PLA',
+      compatible_printers: ['Bambu Lab X1 Carbon 0.4 nozzle']
+    };
+
+    // When generating filenames
+    const filenames = generateFilenamesFromCompatiblePrinters(preset);
+
+    // Then should preserve special characters in printer name
+    assert.ok(filenames[0].includes('Carbon'), 'Should preserve Carbon in printer name');
+  });
+
+  test('Should handle missing material field gracefully', () => {
+    // Given a preset without material field
+    const preset = {
+      compatible_printers: ['Bambu Lab X1 0.4 nozzle']
+    };
+
+    // When generating filenames
+    const filenames = generateFilenamesFromCompatiblePrinters(preset);
+
+    // Then should use empty string for material
+    assert.strictEqual(filenames[0], ' @Bambu Lab X1 0.4 nozzle.json',
+      'Should handle missing material field');
+  });
+});
+
+// ============================================
+// HELPER FUNCTION: Generate filenames from compatible_printers
+// ============================================
+
+/**
+ * Generate filenames from compatible_printers field
+ * Format: {material} @{compatible_printer}.json
+ * @param {Object} preset - Preset object with material and compatible_printers
+ * @returns {Array<string>} Array of filenames
+ */
+function generateFilenamesFromCompatiblePrinters(preset) {
+  const filenames = [];
+  
+  // Handle null/undefined/empty compatible_printers
+  if (!preset.compatible_printers || !Array.isArray(preset.compatible_printers)) {
+    return filenames;
+  }
+  
+  const material = preset.material || '';
+  
+  // Generate one filename per compatible_printer entry
+  preset.compatible_printers.forEach((compatiblePrinter) => {
+    const filename = material + ' @' + compatiblePrinter + '.json';
+    filenames.push(filename);
+  });
+  
+  return filenames;
+}
+
+// ============================================
+// TEST SUITE: Duplicate Filename Detection
+// ============================================
+
+describe('Duplicate Filename Detection', () => {
+  
+  /**
+   * Find duplicate filenames among preset mappings
+   * @param {Array} filenameMappings - Array of { originalPreset, printerName, generatedFilename }
+   * @returns {Array} Array of { filename, presets } objects for duplicates
+   */
+  function findDuplicateFilenames(filenameMappings) {
+    // Handle null/undefined/empty input
+    if (!filenameMappings || !Array.isArray(filenameMappings) || filenameMappings.length === 0) {
+      return [];
+    }
+
+    // Group by generated filename
+    const filenameGroups = new Map();
+
+    for (const mapping of filenameMappings) {
+      const filename = mapping.generatedFilename;
+      
+      if (!filenameGroups.has(filename)) {
+        filenameGroups.set(filename, []);
+      }
+      
+      filenameGroups.get(filename).push(mapping.originalPreset);
+    }
+
+    // Filter to only return duplicates (groups with more than one preset)
+    const duplicates = [];
+    
+    for (const [filename, presets] of filenameGroups) {
+      if (presets.length > 1) {
+        duplicates.push({
+          filename: filename,
+          presets: presets
+        });
+      }
+    }
+
+    return duplicates;
+  }
+
+  // TEST 1: No duplicates scenario - unique filenames
+  test('Should return empty array when all filenames are unique', () => {
+    // Given multiple presets with unique generated filenames
+    const filenameMappings = [
+      {
+        originalPreset: { material: 'Panchroma PLA Galaxy', brand: 'BBL', model: 'X1' },
+        printerName: 'Bambu Lab X1 0.4 nozzle',
+        generatedFilename: 'Panchroma PLA Galaxy @Bambu Lab X1 0.4 nozzle.json'
+      },
+      {
+        originalPreset: { material: 'Polymaker PETG', brand: 'BBL', model: 'X1' },
+        printerName: 'Bambu Lab X1 0.4 nozzle',
+        generatedFilename: 'Polymaker PETG @Bambu Lab X1 0.4 nozzle.json'
+      },
+      {
+        originalPreset: { material: 'PolyLite PLA', brand: 'BBL', model: 'P1P' },
+        printerName: 'Bambu Lab P1P 0.4 nozzle',
+        generatedFilename: 'PolyLite PLA @Bambu Lab P1P 0.4 nozzle.json'
+      }
+    ];
+
+    // When detecting duplicates
+    const duplicates = findDuplicateFilenames(filenameMappings);
+
+    // Then should return empty duplicates array
+    assert.deepStrictEqual(duplicates, [], 'Should return empty array when no duplicates exist');
+  });
+
+  // TEST 2: Exact filename duplicates
+  test('Should detect exact filename duplicates', () => {
+    // Given two presets that generate the same filename
+    const filenameMappings = [
+      {
+        originalPreset: { material: 'Panchroma PLA Galaxy', brand: 'BBL', model: 'X1', slicer: 'BambuStudio' },
+        printerName: 'Bambu Lab X1 0.4 nozzle',
+        generatedFilename: 'Panchroma PLA Galaxy @Bambu Lab X1 0.4 nozzle.json'
+      },
+      {
+        originalPreset: { material: 'Panchroma PLA Galaxy', brand: 'BBL', model: 'X1', slicer: 'OrcaSlicer' },
+        printerName: 'Bambu Lab X1 0.4 nozzle',
+        generatedFilename: 'Panchroma PLA Galaxy @Bambu Lab X1 0.4 nozzle.json'
+      }
+    ];
+
+    // When detecting duplicates
+    const duplicates = findDuplicateFilenames(filenameMappings);
+
+    // Then should return one duplicate entry with both presets
+    assert.strictEqual(duplicates.length, 1, 'Should find exactly one duplicate');
+    assert.strictEqual(duplicates[0].filename, 'Panchroma PLA Galaxy @Bambu Lab X1 0.4 nozzle.json', 'Filename should match');
+    assert.strictEqual(duplicates[0].presets.length, 2, 'Should contain both conflicting presets');
+  });
+
+  // TEST 3: Same printer, different materials (NOT duplicates)
+  test('Should NOT flag different materials as duplicates', () => {
+    // Given presets with same printer but different materials
+    const filenameMappings = [
+      {
+        originalPreset: { material: 'Panchroma PLA', brand: 'BBL', model: 'X1' },
+        printerName: 'Bambu Lab X1 0.4 nozzle',
+        generatedFilename: 'Panchroma PLA @Bambu Lab X1 0.4 nozzle.json'
+      },
+      {
+        originalPreset: { material: 'Polymaker PETG', brand: 'BBL', model: 'X1' },
+        printerName: 'Bambu Lab X1 0.4 nozzle',
+        generatedFilename: 'Polymaker PETG @Bambu Lab X1 0.4 nozzle.json'
+      }
+    ];
+
+    // When detecting duplicates
+    const duplicates = findDuplicateFilenames(filenameMappings);
+
+    // Then should NOT be duplicates (different material names = different filenames)
+    assert.strictEqual(duplicates.length, 0, 'Different materials should not be duplicates');
+  });
+
+  // TEST 4: Empty preset arrays
+  test('Should handle empty array input', () => {
+    // Given empty array
+    const filenameMappings = [];
+
+    // When detecting duplicates
+    const duplicates = findDuplicateFilenames(filenameMappings);
+
+    // Then should return empty array without errors
+    assert.deepStrictEqual(duplicates, [], 'Should return empty array for empty input');
+  });
+
+  test('Should handle null input', () => {
+    // Given null input
+    const filenameMappings = null;
+
+    // When detecting duplicates
+    const duplicates = findDuplicateFilenames(filenameMappings);
+
+    // Then should return empty array without errors
+    assert.deepStrictEqual(duplicates, [], 'Should return empty array for null input');
+  });
+
+  test('Should handle undefined input', () => {
+    // Given undefined input
+    const filenameMappings = undefined;
+
+    // When detecting duplicates
+    const duplicates = findDuplicateFilenames(filenameMappings);
+
+    // Then should return empty array without errors
+    assert.deepStrictEqual(duplicates, [], 'Should return empty array for undefined input');
+  });
+
+  // TEST 5: Multiple duplicates across many presets
+  test('Should detect multiple duplicates across many presets', () => {
+    // Given 5 presets resulting in 3 duplicates
+    const filenameMappings = [
+      // Duplicate 1: Two presets with same filename
+      {
+        originalPreset: { material: 'Panchroma PLA Galaxy', id: 1 },
+        printerName: 'Bambu Lab X1 0.4 nozzle',
+        generatedFilename: 'Panchroma PLA Galaxy @Bambu Lab X1 0.4 nozzle.json'
+      },
+      {
+        originalPreset: { material: 'Panchroma PLA Galaxy', id: 2 },
+        printerName: 'Bambu Lab X1 0.4 nozzle',
+        generatedFilename: 'Panchroma PLA Galaxy @Bambu Lab X1 0.4 nozzle.json'
+      },
+      // Unique: Different material
+      {
+        originalPreset: { material: 'Polymaker PETG', id: 3 },
+        printerName: 'Bambu Lab X1 0.4 nozzle',
+        generatedFilename: 'Polymaker PETG @Bambu Lab X1 0.4 nozzle.json'
+      },
+      // Duplicate 2: Two presets with same filename
+      {
+        originalPreset: { material: 'PolyLite PLA', id: 4 },
+        printerName: 'Bambu Lab P1P 0.4 nozzle',
+        generatedFilename: 'PolyLite PLA @Bambu Lab P1P 0.4 nozzle.json'
+      },
+      {
+        originalPreset: { material: 'PolyLite PLA', id: 5 },
+        printerName: 'Bambu Lab P1P 0.4 nozzle',
+        generatedFilename: 'PolyLite PLA @Bambu Lab P1P 0.4 nozzle.json'
+      },
+      // Duplicate 3: Two presets with same filename
+      {
+        originalPreset: { material: 'Fiberon PA-CF', id: 6 },
+        printerName: 'Bambu Lab H2D 0.4 nozzle',
+        generatedFilename: 'Fiberon PA-CF @Bambu Lab H2D 0.4 nozzle.json'
+      },
+      {
+        originalPreset: { material: 'Fiberon PA-CF', id: 7 },
+        printerName: 'Bambu Lab H2D 0.4 nozzle',
+        generatedFilename: 'Fiberon PA-CF @Bambu Lab H2D 0.4 nozzle.json'
+      }
+    ];
+
+    // When detecting duplicates
+    const duplicates = findDuplicateFilenames(filenameMappings);
+
+    // Then should return array with 3 duplicate entries
+    assert.strictEqual(duplicates.length, 3, 'Should find exactly 3 duplicates');
+    
+    // Verify each duplicate has correct number of presets
+    const presetCounts = duplicates.map(d => d.presets.length);
+    assert.ok(presetCounts.every(count => count === 2), 'Each duplicate should have exactly 2 presets');
+    
+    // Verify the duplicate filenames
+    const duplicateFilenames = duplicates.map(d => d.filename);
+    assert.ok(duplicateFilenames.includes('Panchroma PLA Galaxy @Bambu Lab X1 0.4 nozzle.json'), 'Should include first duplicate');
+    assert.ok(duplicateFilenames.includes('PolyLite PLA @Bambu Lab P1P 0.4 nozzle.json'), 'Should include second duplicate');
+    assert.ok(duplicateFilenames.includes('Fiberon PA-CF @Bambu Lab H2D 0.4 nozzle.json'), 'Should include third duplicate');
+  });
+
+  // TEST 6: Complex duplicate scenario
+  test('Should handle complex scenario with multiple materials, printers, and mixed duplicates', () => {
+    // Given a complex mix of presets
+    const filenameMappings = [
+      // Bambu Lab X1 presets
+      {
+        originalPreset: { material: 'Panchroma PLA Galaxy', brand: 'BBL', model: 'X1', id: 'x1-panchroma' },
+        printerName: 'Bambu Lab X1 0.4 nozzle',
+        generatedFilename: 'Panchroma PLA Galaxy @Bambu Lab X1 0.4 nozzle.json'
+      },
+      {
+        originalPreset: { material: 'Panchroma PLA Galaxy', brand: 'BBL', model: 'X1', id: 'x1-panchroma-dup' },
+        printerName: 'Bambu Lab X1 0.4 nozzle',
+        generatedFilename: 'Panchroma PLA Galaxy @Bambu Lab X1 0.4 nozzle.json'  // DUPLICATE
+      },
+      {
+        originalPreset: { material: 'Polymaker PETG', brand: 'BBL', model: 'X1', id: 'x1-petg' },
+        printerName: 'Bambu Lab X1 0.4 nozzle',
+        generatedFilename: 'Polymaker PETG @Bambu Lab X1 0.4 nozzle.json'  // UNIQUE
+      },
+      // Bambu Lab P1P presets
+      {
+        originalPreset: { material: 'PolyLite PLA', brand: 'BBL', model: 'P1P', id: 'p1p-polylite' },
+        printerName: 'Bambu Lab P1P 0.4 nozzle',
+        generatedFilename: 'PolyLite PLA @Bambu Lab P1P 0.4 nozzle.json'  // UNIQUE
+      },
+      {
+        originalPreset: { material: 'PolyTerra PLA', brand: 'BBL', model: 'P1P', id: 'p1p-polyterra' },
+        printerName: 'Bambu Lab P1P 0.4 nozzle',
+        generatedFilename: 'PolyTerra PLA @Bambu Lab P1P 0.4 nozzle.json'  // UNIQUE
+      },
+      // Bambu Lab A1 presets
+      {
+        originalPreset: { material: 'Panchroma PLA Silk', brand: 'BBL', model: 'A1', id: 'a1-silk' },
+        printerName: 'Bambu Lab A1 0.4 nozzle',
+        generatedFilename: 'Panchroma PLA Silk @Bambu Lab A1 0.4 nozzle.json'  // UNIQUE
+      },
+      {
+        originalPreset: { material: 'Panchroma PLA Silk', brand: 'BBL', model: 'A1', id: 'a1-silk-dup' },
+        printerName: 'Bambu Lab A1 0.4 nozzle',
+        generatedFilename: 'Panchroma PLA Silk @Bambu Lab A1 0.4 nozzle.json'  // DUPLICATE
+      },
+      // Elegoo CC2 preset (unique)
+      {
+        originalPreset: { material: 'PolyLite PETG', brand: 'Elegoo', model: 'CC2', id: 'cc2-petg' },
+        printerName: 'Elegoo CC2 0.4 nozzle',
+        generatedFilename: 'PolyLite PETG @Elegoo CC2 0.4 nozzle.json'  // UNIQUE
+      }
+    ];
+
+    // When detecting duplicates
+    const duplicates = findDuplicateFilenames(filenameMappings);
+
+    // Then should correctly identify duplicates
+    assert.strictEqual(duplicates.length, 2, 'Should find exactly 2 duplicates');
+    
+    // Verify first duplicate (X1)
+    const x1Duplicate = duplicates.find(d => d.filename.includes('X1'));
+    assert.ok(x1Duplicate, 'Should have X1 duplicate');
+    assert.strictEqual(x1Duplicate.presets.length, 2, 'X1 duplicate should have 2 presets');
+    const x1Ids = x1Duplicate.presets.map(p => p.id);
+    assert.ok(x1Ids.includes('x1-panchroma'), 'Should include first X1 preset');
+    assert.ok(x1Ids.includes('x1-panchroma-dup'), 'Should include duplicate X1 preset');
+    
+    // Verify second duplicate (A1)
+    const a1Duplicate = duplicates.find(d => d.filename.includes('A1'));
+    assert.ok(a1Duplicate, 'Should have A1 duplicate');
+    assert.strictEqual(a1Duplicate.presets.length, 2, 'A1 duplicate should have 2 presets');
+    const a1Ids = a1Duplicate.presets.map(p => p.id);
+    assert.ok(a1Ids.includes('a1-silk'), 'Should include first A1 preset');
+    assert.ok(a1Ids.includes('a1-silk-dup'), 'Should include duplicate A1 preset');
+    
+    // Verify unique presets are NOT in duplicates
+    const duplicateFilenames = duplicates.map(d => d.filename);
+    assert.ok(!duplicateFilenames.includes('Polymaker PETG @Bambu Lab X1 0.4 nozzle.json'), 'Unique X1 PETG should not be in duplicates');
+    assert.ok(!duplicateFilenames.includes('PolyLite PLA @Bambu Lab P1P 0.4 nozzle.json'), 'Unique P1P PolyLite should not be in duplicates');
+    assert.ok(!duplicateFilenames.includes('PolyTerra PLA @Bambu Lab P1P 0.4 nozzle.json'), 'Unique P1P PolyTerra should not be in duplicates');
+    assert.ok(!duplicateFilenames.includes('PolyLite PETG @Elegoo CC2 0.4 nozzle.json'), 'Unique CC2 PETG should not be in duplicates');
+  });
+
+  // TEST 7: Single preset (edge case)
+  test('Should return empty array for single preset', () => {
+    // Given a single preset
+    const filenameMappings = [
+      {
+        originalPreset: { material: 'Panchroma PLA Galaxy', brand: 'BBL', model: 'X1' },
+        printerName: 'Bambu Lab X1 0.4 nozzle',
+        generatedFilename: 'Panchroma PLA Galaxy @Bambu Lab X1 0.4 nozzle.json'
+      }
+    ];
+
+    // When detecting duplicates
+    const duplicates = findDuplicateFilenames(filenameMappings);
+
+    // Then should return empty array
+    assert.deepStrictEqual(duplicates, [], 'Should return empty array for single preset');
+  });
+
+  // TEST 8: All presets are duplicates
+  test('Should handle all presets being duplicates', () => {
+    // Given 4 presets all with the same filename
+    const filenameMappings = [
+      {
+        originalPreset: { material: 'Panchroma PLA Galaxy', id: 1 },
+        printerName: 'Bambu Lab X1 0.4 nozzle',
+        generatedFilename: 'Panchroma PLA Galaxy @Bambu Lab X1 0.4 nozzle.json'
+      },
+      {
+        originalPreset: { material: 'Panchroma PLA Galaxy', id: 2 },
+        printerName: 'Bambu Lab X1 0.4 nozzle',
+        generatedFilename: 'Panchroma PLA Galaxy @Bambu Lab X1 0.4 nozzle.json'
+      },
+      {
+        originalPreset: { material: 'Panchroma PLA Galaxy', id: 3 },
+        printerName: 'Bambu Lab X1 0.4 nozzle',
+        generatedFilename: 'Panchroma PLA Galaxy @Bambu Lab X1 0.4 nozzle.json'
+      },
+      {
+        originalPreset: { material: 'Panchroma PLA Galaxy', id: 4 },
+        printerName: 'Bambu Lab X1 0.4 nozzle',
+        generatedFilename: 'Panchroma PLA Galaxy @Bambu Lab X1 0.4 nozzle.json'
+      }
+    ];
+
+    // When detecting duplicates
+    const duplicates = findDuplicateFilenames(filenameMappings);
+
+    // Then should return one duplicate entry with all 4 presets
+    assert.strictEqual(duplicates.length, 1, 'Should find exactly one duplicate group');
+    assert.strictEqual(duplicates[0].presets.length, 4, 'Duplicate should contain all 4 presets');
+  });
+});

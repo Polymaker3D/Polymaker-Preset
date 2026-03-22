@@ -1507,6 +1507,183 @@ body.theme-wiki .install-section-title {
   border-radius: 3px;
   font-size: 0.85em;
   font-family: 'Courier New', monospace;
+}
+
+/* Duplicate Resolution Modal Styles */
+.duplicate-intro {
+  margin: 0 0 1rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.duplicate-list {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+}
+
+.duplicate-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.duplicate-filename {
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  word-break: break-all;
+}
+
+.duplicate-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.duplicate-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.duplicate-option:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.duplicate-option input[type="radio"] {
+  margin: 0;
+}
+
+.duplicate-option-label {
+  flex: 1;
+  font-size: 0.85rem;
+}
+
+.duplicate-option-material {
+  font-weight: 500;
+}
+
+.duplicate-option-printer {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.duplicate-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+.btn-secondary:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--accent);
+}
+
+.btn-primary {
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  color: #0d0d12;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.btn-primary:hover {
+  background: var(--accent-light);
+  border-color: var(--accent-light);
+}
+
+body.theme-wiki .duplicate-item {
+  background: rgba(15, 23, 42, 0.05);
+  border-color: rgba(15, 23, 42, 0.1);
+}
+
+body.theme-wiki .duplicate-option {
+  background: rgba(15, 23, 42, 0.05);
+}
+
+/* Grouped duplicate resolution styles - for material/target printer hierarchy */
+.duplicate-material-group {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.duplicate-material-header {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.duplicate-target-section {
+  margin-bottom: 0.75rem;
+}
+
+.duplicate-target-section:last-child {
+  margin-bottom: 0;
+}
+
+.duplicate-target-label {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.duplicate-option-source {
+  font-weight: 500;
+  color: var(--text);
+}
+
+.duplicate-option-compatible {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+}
+
+body.theme-wiki .duplicate-material-group {
+  background: rgba(15, 23, 42, 0.05);
+  border-color: rgba(15, 23, 42, 0.1);
+}
+
+body.theme-wiki .duplicate-option:hover {
+  background: rgba(15, 23, 42, 0.1);
+}
+
+body.theme-wiki .btn-primary {
+  color: #fff;
+}
   color: var(--accent-light);
 }
 
