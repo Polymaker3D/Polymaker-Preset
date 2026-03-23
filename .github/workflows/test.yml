@@ -1,0 +1,54 @@
+name: Run Tests
+
+permissions:
+  contents: read
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x, 22.x]
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+    
+    - name: Install dependencies
+      run: npm ci || npm install
+    
+    - name: Run tests
+      run: npm run test:all
+    
+    - name: Run tests with coverage
+      run: npm run test:coverage
+      continue-on-error: true
+
+  lint:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Use Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+    
+    - name: Verify preset JSON files
+      run: |
+        while IFS= read -r file; do
+          jq empty "$file" || exit 1
+        done < <(find preset -name "*.json")
+        echo "All preset files are valid JSON"
