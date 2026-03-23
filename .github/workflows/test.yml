@@ -48,7 +48,7 @@ jobs:
     
     - name: Verify preset JSON files
       run: |
-        for file in $(find preset -name "*.json"); do
+        while IFS= read -r file; do
           jq empty "$file" || exit 1
-        done
+        done < <(find preset -name "*.json")
         echo "All preset files are valid JSON"
