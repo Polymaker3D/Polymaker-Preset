@@ -644,41 +644,60 @@ describe('Duplicate Filename Detection', () => {
   
   /**
    * Find duplicate filenames among preset mappings
+   * Mirrors the production implementation in app.js.
    * @param {Array} filenameMappings - Array of { originalPreset, printerName, generatedFilename }
-   * @returns {Array} Array of { filename, presets } objects for duplicates
+   * @returns {Array} Array of { material, targets: [{ targetPrinter, generatedFilename, options[] }] }
    */
   function findDuplicateFilenames(filenameMappings) {
-    // Handle null/undefined/empty input
     if (!filenameMappings || !Array.isArray(filenameMappings) || filenameMappings.length === 0) {
       return [];
     }
 
-    // Group by generated filename
-    const filenameGroups = new Map();
+    var materialGroups = {};
 
-    for (const mapping of filenameMappings) {
-      const filename = mapping.generatedFilename;
-      
-      if (!filenameGroups.has(filename)) {
-        filenameGroups.set(filename, []);
+    filenameMappings.forEach(function(mapping) {
+      var material = mapping.originalPreset.material || 'Unknown';
+      var targetPrinter = mapping.printerName;
+
+      if (!materialGroups[material]) {
+        materialGroups[material] = {};
       }
-      
-      filenameGroups.get(filename).push(mapping.originalPreset);
-    }
+      if (!materialGroups[material][targetPrinter]) {
+        materialGroups[material][targetPrinter] = [];
+      }
+      materialGroups[material][targetPrinter].push(mapping);
+    });
 
-    // Filter to only return duplicates (groups with more than one preset)
-    const duplicates = [];
-    
-    for (const [filename, presets] of filenameGroups) {
-      if (presets.length > 1) {
-        duplicates.push({
-          filename: filename,
-          presets: presets
+    var conflicts = [];
+
+    for (var material in materialGroups) {
+      if (!materialGroups.hasOwnProperty(material)) continue;
+
+      var targetPrinters = materialGroups[material];
+      var targetPrinterConflicts = [];
+
+      for (var targetPrinter in targetPrinters) {
+        if (!targetPrinters.hasOwnProperty(targetPrinter)) continue;
+
+        var options = targetPrinters[targetPrinter];
+        if (options.length > 1) {
+          targetPrinterConflicts.push({
+            targetPrinter: targetPrinter,
+            generatedFilename: options[0].generatedFilename,
+            options: options
+          });
+        }
+      }
+
+      if (targetPrinterConflicts.length > 0) {
+        conflicts.push({
+          material: material,
+          targets: targetPrinterConflicts
         });
       }
     }
 
-    return duplicates;
+    return conflicts;
   }
 
   // TEST 1: No duplicates scenario - unique filenames
@@ -728,10 +747,10 @@ describe('Duplicate Filename Detection', () => {
     // When detecting duplicates
     const duplicates = findDuplicateFilenames(filenameMappings);
 
-    // Then should return one duplicate entry with both presets
-    assert.strictEqual(duplicates.length, 1, 'Should find exactly one duplicate');
-    assert.strictEqual(duplicates[0].filename, 'Panchroma PLA Galaxy @Bambu Lab X1 0.4 nozzle.json', 'Filename should match');
-    assert.strictEqual(duplicates[0].presets.length, 2, 'Should contain both conflicting presets');
+    // Then should return one duplicate material group with one conflicting target
+    assert.strictEqual(duplicates.length, 1, 'Should find exactly one duplicate material group');
+    assert.strictEqual(duplicates[0].targets[0].generatedFilename, 'Panchroma PLA Galaxy @Bambu Lab X1 0.4 nozzle.json', 'Filename should match');
+    assert.strictEqual(duplicates[0].targets[0].options.length, 2, 'Should contain both conflicting presets');
   });
 
   // TEST 3: Same printer, different materials (NOT duplicates)
@@ -839,15 +858,15 @@ describe('Duplicate Filename Detection', () => {
     // When detecting duplicates
     const duplicates = findDuplicateFilenames(filenameMappings);
 
-    // Then should return array with 3 duplicate entries
-    assert.strictEqual(duplicates.length, 3, 'Should find exactly 3 duplicates');
-    
-    // Verify each duplicate has correct number of presets
-    const presetCounts = duplicates.map(d => d.presets.length);
-    assert.ok(presetCounts.every(count => count === 2), 'Each duplicate should have exactly 2 presets');
-    
-    // Verify the duplicate filenames
-    const duplicateFilenames = duplicates.map(d => d.filename);
+    // Then should return array with 3 duplicate material groups
+    assert.strictEqual(duplicates.length, 3, 'Should find exactly 3 duplicate material groups');
+
+    // Verify each duplicate group has one conflicting target with 2 options
+    const optionCounts = duplicates.map(d => d.targets[0].options.length);
+    assert.ok(optionCounts.every(count => count === 2), 'Each duplicate should have exactly 2 conflicting options');
+
+    // Verify the duplicate generated filenames
+    const duplicateFilenames = duplicates.map(d => d.targets[0].generatedFilename);
     assert.ok(duplicateFilenames.includes('Panchroma PLA Galaxy @Bambu Lab X1 0.4 nozzle.json'), 'Should include first duplicate');
     assert.ok(duplicateFilenames.includes('PolyLite PLA @Bambu Lab P1P 0.4 nozzle.json'), 'Should include second duplicate');
     assert.ok(duplicateFilenames.includes('Fiberon PA-CF @Bambu Lab H2D 0.4 nozzle.json'), 'Should include third duplicate');
@@ -907,30 +926,30 @@ describe('Duplicate Filename Detection', () => {
     const duplicates = findDuplicateFilenames(filenameMappings);
 
     // Then should correctly identify duplicates
-    assert.strictEqual(duplicates.length, 2, 'Should find exactly 2 duplicates');
-    
-    // Verify first duplicate (X1)
-    const x1Duplicate = duplicates.find(d => d.filename.includes('X1'));
-    assert.ok(x1Duplicate, 'Should have X1 duplicate');
-    assert.strictEqual(x1Duplicate.presets.length, 2, 'X1 duplicate should have 2 presets');
-    const x1Ids = x1Duplicate.presets.map(p => p.id);
+    assert.strictEqual(duplicates.length, 2, 'Should find exactly 2 duplicate material groups');
+
+    // Verify first duplicate (Panchroma PLA Galaxy / X1)
+    const x1Duplicate = duplicates.find(d => d.material === 'Panchroma PLA Galaxy');
+    assert.ok(x1Duplicate, 'Should have Panchroma PLA Galaxy duplicate');
+    assert.strictEqual(x1Duplicate.targets[0].options.length, 2, 'X1 duplicate should have 2 conflicting options');
+    const x1Ids = x1Duplicate.targets[0].options.map(m => m.originalPreset.id);
     assert.ok(x1Ids.includes('x1-panchroma'), 'Should include first X1 preset');
     assert.ok(x1Ids.includes('x1-panchroma-dup'), 'Should include duplicate X1 preset');
-    
-    // Verify second duplicate (A1)
-    const a1Duplicate = duplicates.find(d => d.filename.includes('A1'));
-    assert.ok(a1Duplicate, 'Should have A1 duplicate');
-    assert.strictEqual(a1Duplicate.presets.length, 2, 'A1 duplicate should have 2 presets');
-    const a1Ids = a1Duplicate.presets.map(p => p.id);
+
+    // Verify second duplicate (Panchroma PLA Silk / A1)
+    const a1Duplicate = duplicates.find(d => d.material === 'Panchroma PLA Silk');
+    assert.ok(a1Duplicate, 'Should have Panchroma PLA Silk duplicate');
+    assert.strictEqual(a1Duplicate.targets[0].options.length, 2, 'A1 duplicate should have 2 conflicting options');
+    const a1Ids = a1Duplicate.targets[0].options.map(m => m.originalPreset.id);
     assert.ok(a1Ids.includes('a1-silk'), 'Should include first A1 preset');
     assert.ok(a1Ids.includes('a1-silk-dup'), 'Should include duplicate A1 preset');
-    
+
     // Verify unique presets are NOT in duplicates
-    const duplicateFilenames = duplicates.map(d => d.filename);
-    assert.ok(!duplicateFilenames.includes('Polymaker PETG @Bambu Lab X1 0.4 nozzle.json'), 'Unique X1 PETG should not be in duplicates');
-    assert.ok(!duplicateFilenames.includes('PolyLite PLA @Bambu Lab P1P 0.4 nozzle.json'), 'Unique P1P PolyLite should not be in duplicates');
-    assert.ok(!duplicateFilenames.includes('PolyTerra PLA @Bambu Lab P1P 0.4 nozzle.json'), 'Unique P1P PolyTerra should not be in duplicates');
-    assert.ok(!duplicateFilenames.includes('PolyLite PETG @Elegoo CC2 0.4 nozzle.json'), 'Unique CC2 PETG should not be in duplicates');
+    const duplicateMaterials = duplicates.map(d => d.material);
+    assert.ok(!duplicateMaterials.includes('Polymaker PETG'), 'Unique X1 PETG should not be in duplicates');
+    assert.ok(!duplicateMaterials.includes('PolyLite PLA'), 'Unique P1P PolyLite should not be in duplicates');
+    assert.ok(!duplicateMaterials.includes('PolyTerra PLA'), 'Unique P1P PolyTerra should not be in duplicates');
+    assert.ok(!duplicateMaterials.includes('PolyLite PETG'), 'Unique CC2 PETG should not be in duplicates');
   });
 
   // TEST 7: Single preset (edge case)
@@ -980,8 +999,8 @@ describe('Duplicate Filename Detection', () => {
     // When detecting duplicates
     const duplicates = findDuplicateFilenames(filenameMappings);
 
-    // Then should return one duplicate entry with all 4 presets
-    assert.strictEqual(duplicates.length, 1, 'Should find exactly one duplicate group');
-    assert.strictEqual(duplicates[0].presets.length, 4, 'Duplicate should contain all 4 presets');
+    // Then should return one duplicate material group with all 4 conflicting options
+    assert.strictEqual(duplicates.length, 1, 'Should find exactly one duplicate material group');
+    assert.strictEqual(duplicates[0].targets[0].options.length, 4, 'Duplicate should contain all 4 conflicting options');
   });
 });

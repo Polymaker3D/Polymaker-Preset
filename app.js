@@ -920,11 +920,11 @@ function init() {
             return;
           }
 
-          var duplicates = findDuplicateFilenames(allMappings);
+          var duplicates = findDuplicateFilenames(validMappings);
 
           if (duplicates.length > 0) {
             showDuplicateResolutionDialog(duplicates, function(selectedOptions) {
-              var filteredMappings = filterDuplicates(allMappings, selectedOptions, duplicates);
+              var filteredMappings = filterDuplicates(validMappings, selectedOptions, duplicates);
               generateAndDownloadBundleBatch(filteredMappings, bambuPresets);
             }, function() {
               if (downloadBundleBtn) {
@@ -933,7 +933,7 @@ function init() {
               }
             });
           } else {
-            generateAndDownloadBundleBatch(allMappings, bambuPresets);
+            generateAndDownloadBundleBatch(validMappings, bambuPresets);
           }
         }).catch(function(err) {
           console.error('Error fetching presets:', err);

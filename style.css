@@ -1684,8 +1684,6 @@ body.theme-wiki .duplicate-option:hover {
 body.theme-wiki .btn-primary {
   color: #fff;
 }
-  color: var(--accent-light);
-}
 
 body.theme-wiki .install-steps code {
   background: rgba(80, 191, 202, 0.15);
