@@ -348,26 +348,6 @@ function filterDuplicates(filenameMappings, selectedOptions, duplicates) {
 }
 
 // ============================================
-// VIRTUAL SLICER FUNCTIONS
-// ============================================
-
-var VIRTUAL_SLICERS = {
-  'OrcaSlicer (Snapmaker)': { actualSlicer: 'OrcaSlicer', forcedBrand: 'Snapmaker' }
-};
-
-function isVirtualSlicer(slicer) {
-  return !!(slicer && VIRTUAL_SLICERS.hasOwnProperty(slicer));
-}
-
-function getActualSlicer(slicer) {
-  return isVirtualSlicer(slicer) ? VIRTUAL_SLICERS[slicer].actualSlicer : slicer;
-}
-
-function getForcedBrand(slicer) {
-  return isVirtualSlicer(slicer) ? VIRTUAL_SLICERS[slicer].forcedBrand : null;
-}
-
-// ============================================
 // TESTS
 // ============================================
 
@@ -937,91 +917,5 @@ describe('filterDuplicates', () => {
     const result = filterDuplicates(mappings, selectedOptions, duplicates);
     assert.strictEqual(result.length, 1);
     assert.strictEqual(result[0].originalPreset.path, 'b');
-  });
-});
-
-describe('isVirtualSlicer', () => {
-  it('should return true for OrcaSlicer (Snapmaker)', () => {
-    assert.strictEqual(isVirtualSlicer('OrcaSlicer (Snapmaker)'), true);
-  });
-
-  it('should return false for regular slicer names', () => {
-    assert.strictEqual(isVirtualSlicer('OrcaSlicer'), false);
-    assert.strictEqual(isVirtualSlicer('BambuStudio'), false);
-    assert.strictEqual(isVirtualSlicer('ElegooSlicer'), false);
-  });
-
-  it('should return false for null', () => {
-    assert.strictEqual(isVirtualSlicer(null), false);
-  });
-
-  it('should return false for undefined', () => {
-    assert.strictEqual(isVirtualSlicer(undefined), false);
-  });
-
-  it('should return false for empty string', () => {
-    assert.strictEqual(isVirtualSlicer(''), false);
-  });
-
-  it('should return false for similar but non-virtual names', () => {
-    assert.strictEqual(isVirtualSlicer('OrcaSlicer (Snapmaker) '), false);
-    assert.strictEqual(isVirtualSlicer(' OrcaSlicer (Snapmaker)'), false);
-    assert.strictEqual(isVirtualSlicer('orcaSlicer (snapmaker)'), false);
-  });
-});
-
-describe('getActualSlicer', () => {
-  it('should return actual slicer for virtual slicer', () => {
-    assert.strictEqual(getActualSlicer('OrcaSlicer (Snapmaker)'), 'OrcaSlicer');
-  });
-
-  it('should return original for regular slicer names', () => {
-    assert.strictEqual(getActualSlicer('OrcaSlicer'), 'OrcaSlicer');
-    assert.strictEqual(getActualSlicer('BambuStudio'), 'BambuStudio');
-    assert.strictEqual(getActualSlicer('ElegooSlicer'), 'ElegooSlicer');
-  });
-
-  it('should return null for null', () => {
-    assert.strictEqual(getActualSlicer(null), null);
-  });
-
-  it('should return undefined for undefined', () => {
-    assert.strictEqual(getActualSlicer(undefined), undefined);
-  });
-
-  it('should return empty string for empty string', () => {
-    assert.strictEqual(getActualSlicer(''), '');
-  });
-
-  it('should return the exact string for non-virtual names', () => {
-    assert.strictEqual(getActualSlicer('SomeRandomSlicer'), 'SomeRandomSlicer');
-  });
-});
-
-describe('getForcedBrand', () => {
-  it('should return Snapmaker for OrcaSlicer (Snapmaker)', () => {
-    assert.strictEqual(getForcedBrand('OrcaSlicer (Snapmaker)'), 'Snapmaker');
-  });
-
-  it('should return null for regular slicer names', () => {
-    assert.strictEqual(getForcedBrand('OrcaSlicer'), null);
-    assert.strictEqual(getForcedBrand('BambuStudio'), null);
-    assert.strictEqual(getForcedBrand('ElegooSlicer'), null);
-  });
-
-  it('should return null for null', () => {
-    assert.strictEqual(getForcedBrand(null), null);
-  });
-
-  it('should return null for undefined', () => {
-    assert.strictEqual(getForcedBrand(undefined), null);
-  });
-
-  it('should return null for empty string', () => {
-    assert.strictEqual(getForcedBrand(''), null);
-  });
-
-  it('should return null for non-virtual names', () => {
-    assert.strictEqual(getForcedBrand('SomeRandomSlicer'), null);
   });
 });

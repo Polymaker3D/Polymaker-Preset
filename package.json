@@ -1,0 +1,27 @@
+{
+  "name": "polymaker-preset",
+  "version": "1.0.0",
+  "description": "Official Polymaker 3D printing filament presets for BambuStudio, OrcaSlicer, and ElegooSlicer",
+  "type": "module",
+  "scripts": {
+    "test": "node --test scripts/*.test.mjs tests/*.test.js",
+    "test:coverage": "node --test --experimental-test-coverage scripts/*.test.mjs tests/*.test.js",
+    "test:app": "node --test tests/app.test.mjs",
+    "test:all": "node --test scripts/*.test.mjs tests/*.test.mjs tests/*.test.js",
+    "generate-index": "node scripts/generate-index-json.mjs"
+  },
+  "keywords": [
+    "3d-printing",
+    "filament",
+    "presets",
+    "bambustudio",
+    "orcaslicer",
+    "elegooslicer",
+    "polymaker"
+  ],
+  "author": "Polymaker",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
