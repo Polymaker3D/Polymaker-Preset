@@ -119,6 +119,20 @@ function init() {
     return isVirtualSlicer(slicer) ? VIRTUAL_SLICERS[slicer].forcedBrand : null;
   }
 
+  function getEffectiveFilters(exceptFilter) {
+    var effectiveSlicer = filterState.slicer;
+    var effectiveBrand = filterState.brand;
+    if (filterState.slicer && isVirtualSlicer(filterState.slicer)) {
+      if (exceptFilter !== 'slicer') {
+        effectiveSlicer = getActualSlicer(filterState.slicer);
+      }
+      if (exceptFilter !== 'brand') {
+        effectiveBrand = getForcedBrand(filterState.slicer);
+      }
+    }
+    return { effectiveSlicer: effectiveSlicer, effectiveBrand: effectiveBrand };
+  }
+
   initTheme();
 
   // ============================================
@@ -644,6 +658,8 @@ function init() {
           if (isSlicer) {
             updateVisibility();
             updateBrandDropdownState();
+            selectedPresets = {};
+            updateSelectedCount();
           }
 
           render();
@@ -692,17 +708,9 @@ function init() {
       }
 
       function getMatchingPresets(exceptFilter) {
-        var effectiveSlicer = filterState.slicer;
-        var effectiveBrand = filterState.brand;
-
-        if (filterState.slicer && isVirtualSlicer(filterState.slicer)) {
-          if (exceptFilter !== 'slicer') {
-            effectiveSlicer = getActualSlicer(filterState.slicer);
-          }
-          if (exceptFilter !== 'brand') {
-            effectiveBrand = getForcedBrand(filterState.slicer);
-          }
-        }
+        var filters = getEffectiveFilters(exceptFilter);
+        var effectiveSlicer = filters.effectiveSlicer;
+        var effectiveBrand = filters.effectiveBrand;
 
         return presets.filter(function (p) {
           if (exceptFilter !== 'series' && filterState.series && !materialMatchesSeries(p.material, filterState.series)) return false;
@@ -785,6 +793,7 @@ function init() {
         } else {
           brandDropdown.classList.remove('is-disabled');
           if (toggle) toggle.disabled = false;
+          if (labelEl) labelEl.textContent = filterState.brand || 'All Brands';
         }
       }
 
@@ -797,13 +806,13 @@ function init() {
       }
 
       // Update bundle button state based on BambuStudio presets
+      // Bundle download only available when:
+      // 1. Slicer is BambuStudio
+      // 2. No printer model filter is applied
       function updateBundleButtonState() {
         if (!downloadBundleBtn) return;
 
-        var effectiveSlicer = filterState.slicer;
-        if (isVirtualSlicer(filterState.slicer)) {
-          effectiveSlicer = getActualSlicer(filterState.slicer);
-        }
+        var effectiveSlicer = getEffectiveFilters().effectiveSlicer;
 
         if (effectiveSlicer !== 'BambuStudio') {
           downloadBundleBtn.disabled = true;
@@ -815,6 +824,7 @@ function init() {
           return;
         }
 
+        // Enable button when slicer is BambuStudio and no model filter
         downloadBundleBtn.disabled = false;
       }
 
@@ -1322,16 +1332,12 @@ function init() {
         updateAllFilterOptions();
         updateBrandDropdownState();
         var series = filterState.series;
-        var brand = filterState.brand;
         var model = filterState.model;
         var slicer = filterState.slicer;
 
-        var effectiveSlicer = slicer;
-        var effectiveBrand = brand;
-        if (slicer && isVirtualSlicer(slicer)) {
-          effectiveSlicer = getActualSlicer(slicer);
-          effectiveBrand = getForcedBrand(slicer);
-        }
+        var filters = getEffectiveFilters();
+        var effectiveSlicer = filters.effectiveSlicer;
+        var effectiveBrand = filters.effectiveBrand;
 
         var filtered = presets.filter(function (p) {
           if (series && !materialMatchesSeries(p.material, series)) return false;
