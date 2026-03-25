@@ -599,6 +599,16 @@ body.theme-wiki .dropdown-menu::-webkit-scrollbar-thumb {
   background: rgba(80, 191, 202, 0.8);
 }
 
+.dropdown.is-disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.dropdown.is-disabled .dropdown-toggle {
+  cursor: not-allowed;
+  background-color: var(--bg-tertiary);
+}
+
 /* List card */
 .list-header {
   display: flex;

@@ -93,6 +93,22 @@ function init() {
   // Material series for filtering: Panchroma / Polymaker (includes PolyTerra/PolyLite) / Fiberon
   var MATERIAL_SERIES = ['Panchroma', 'Polymaker', 'Fiberon'];
 
+  var VIRTUAL_SLICERS = {
+    'OrcaSlicer (Snapmaker)': { actualSlicer: 'OrcaSlicer', forcedBrand: 'Snapmaker' }
+  };
+
+  function isVirtualSlicer(slicer) {
+    return !!(slicer && VIRTUAL_SLICERS.hasOwnProperty(slicer));
+  }
+
+  function getActualSlicer(slicer) {
+    return isVirtualSlicer(slicer) ? VIRTUAL_SLICERS[slicer].actualSlicer : slicer;
+  }
+
+  function getForcedBrand(slicer) {
+    return isVirtualSlicer(slicer) ? VIRTUAL_SLICERS[slicer].forcedBrand : null;
+  }
+
   initTheme();
 
   // ============================================
@@ -309,7 +325,14 @@ function init() {
           normalizedSlicers.push(normalized);
         }
       });
-      slicers = normalizedSlicers;
+
+      for (var virtualSlicer in VIRTUAL_SLICERS) {
+        if (VIRTUAL_SLICERS.hasOwnProperty(virtualSlicer) && !seenSlicers[virtualSlicer]) {
+          normalizedSlicers.push(virtualSlicer);
+        }
+      }
+
+      slicers = normalizedSlicers.sort();
 
       // Normalize slicer names in presets
       presets.forEach(function(p) {
@@ -400,6 +423,7 @@ function init() {
           // Update visibility when slicer changes
           if (isSlicer) {
             updateVisibility();
+            updateBrandDropdownState();
           }
 
           render();
@@ -447,13 +471,24 @@ function init() {
         return material.indexOf(series + ' ') === 0;
       }
 
-      /** Return presets matching current filters except the given dimension (for building "has result" option lists). */
       function getMatchingPresets(exceptFilter) {
+        var effectiveSlicer = filterState.slicer;
+        var effectiveBrand = filterState.brand;
+
+        if (filterState.slicer && isVirtualSlicer(filterState.slicer)) {
+          if (exceptFilter !== 'slicer') {
+            effectiveSlicer = getActualSlicer(filterState.slicer);
+          }
+          if (exceptFilter !== 'brand') {
+            effectiveBrand = getForcedBrand(filterState.slicer);
+          }
+        }
+
         return presets.filter(function (p) {
           if (exceptFilter !== 'series' && filterState.series && !materialMatchesSeries(p.material, filterState.series)) return false;
-          if (exceptFilter !== 'brand' && filterState.brand && p.brand !== filterState.brand) return false;
+          if (exceptFilter !== 'brand' && effectiveBrand && p.brand !== effectiveBrand) return false;
           if (exceptFilter !== 'model' && filterState.model && p.model !== filterState.model) return false;
-          if (exceptFilter !== 'slicer' && filterState.slicer && p.slicer !== filterState.slicer) return false;
+          if (exceptFilter !== 'slicer' && effectiveSlicer && p.slicer !== effectiveSlicer) return false;
           return true;
         });
       }
@@ -511,6 +546,28 @@ function init() {
         // regardless of other filter selections
       }
 
+      function updateBrandDropdownState() {
+        var brandDropdown = document.querySelector('.dropdown[data-filter="brand"]');
+        if (!brandDropdown) return;
+
+        var isVirtual = isVirtualSlicer(filterState.slicer);
+        var toggle = brandDropdown.querySelector('.dropdown-toggle');
+        var labelEl = brandDropdown.querySelector('.dropdown-label');
+
+        if (isVirtual) {
+          brandDropdown.classList.add('is-disabled');
+          if (toggle) toggle.disabled = true;
+
+          var forcedBrand = getForcedBrand(filterState.slicer);
+          if (labelEl && forcedBrand) {
+            labelEl.textContent = forcedBrand;
+          }
+        } else {
+          brandDropdown.classList.remove('is-disabled');
+          if (toggle) toggle.disabled = false;
+        }
+      }
+
       // Update the selected count display and button state
       function updateSelectedCount() {
         var count = Object.keys(selectedPresets).length;
@@ -523,10 +580,12 @@ function init() {
       function updateBundleButtonState() {
         if (!downloadBundleBtn) return;
 
-        // Bundle download only available when:
-        // 1. Slicer is BambuStudio
-        // 2. No printer model filter is applied
-        if (filterState.slicer !== 'BambuStudio') {
+        var effectiveSlicer = filterState.slicer;
+        if (isVirtualSlicer(filterState.slicer)) {
+          effectiveSlicer = getActualSlicer(filterState.slicer);
+        }
+
+        if (effectiveSlicer !== 'BambuStudio') {
           downloadBundleBtn.disabled = true;
           return;
         }
@@ -536,7 +595,6 @@ function init() {
           return;
         }
 
-        // Enable button when slicer is BambuStudio and no model filter
         downloadBundleBtn.disabled = false;
       }
 
@@ -1010,18 +1068,27 @@ function init() {
         }
 
         updateAllFilterOptions();
+        updateBrandDropdownState();
         var series = filterState.series;
         var brand = filterState.brand;
         var model = filterState.model;
         var slicer = filterState.slicer;
+
+        var effectiveSlicer = slicer;
+        var effectiveBrand = brand;
+        if (slicer && isVirtualSlicer(slicer)) {
+          effectiveSlicer = getActualSlicer(slicer);
+          effectiveBrand = getForcedBrand(slicer);
+        }
+
         var filtered = presets.filter(function (p) {
           if (series && !materialMatchesSeries(p.material, series)) return false;
-          if (brand) {
-              var brandMatches = p.brand === brand;
+          if (effectiveBrand) {
+              var brandMatches = p.brand === effectiveBrand;
               // Non-strict mode: also check compatiblePrinters for brand match
               if (!filterState.strict && !brandMatches && p.compatiblePrinters && p.compatiblePrinters.length > 0) {
                   for (var idx = 0; idx < p.compatiblePrinters.length; idx++) {
-                      if (p.compatiblePrinters[idx].brand === brand) {
+                      if (p.compatiblePrinters[idx].brand === effectiveBrand) {
                           brandMatches = true;
                           break;
                       }
@@ -1042,7 +1109,7 @@ function init() {
               }
               if (!modelMatches) return false;
           }
-          if (slicer && p.slicer !== slicer) return false;
+          if (effectiveSlicer && p.slicer !== effectiveSlicer) return false;
           return true;
         });
 
