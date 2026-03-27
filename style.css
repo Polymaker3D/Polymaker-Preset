@@ -1,4 +1,24 @@
-/* Dark theme with Polymaker accent #50BFCA and teal gradient */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url('./assets/font/Figtree/Figtree-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Figtree';
+  font-style: italic;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url('./assets/font/Figtree/Figtree-Italic-VariableFont_wght.ttf') format('truetype');
+}
+
+html {
+  font-family: 'Figtree', sans-serif;
+}
+
+/* Dark theme with Polymaker brand Teal #00CCCC */
 :root {
   --bg-dark: #0d0d12;
   --bg-card: rgba(255, 255, 255, 0.05);
@@ -6,25 +26,29 @@
   --border: rgba(255, 255, 255, 0.1);
   --text: #e4e4e7;
   --text-muted: #a1a1aa;
-  --accent: #50BFCA;
-  --accent-light: #6DD4DE;
-  --gradient-start: #3BA8B2;
-  --gradient-end: #50BFCA;
+  --accent: #00CCCC;
+  --accent-light: #4DE1E1;
+  --gradient-start: #00A3A3;
+  --gradient-end: #00CCCC;
+  --wiki-bg-tint: #E6FAFA;
   --radius: 8px;
   --radius-lg: 12px;
   --shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
   --transition: 0.15s ease;
 }
 
-/* Wiki embed theme: light gradient #E8F6F9 to #FFF, aligned with Polymaker Wiki palette */
+/* Wiki embed theme: light gradient from brand Teal tint to #FFF */
 body.theme-wiki {
-  --bg-dark: #E8F6F9;
+  --bg-dark: var(--wiki-bg-tint);
   --bg-card: rgba(255, 255, 255, 0.96);
-  --bg-card-hover: rgba(232, 246, 249, 1);
+  --bg-card-hover: rgba(230, 250, 250, 1);
   --border: rgba(15, 23, 42, 0.08);
   --text: #111827;
   --text-muted: #6B7280;
   --shadow: 0 8px 28px rgba(148, 163, 184, 0.35);
+  /* Wiki links match global brand accent */
+  --wiki-link: var(--accent);
+  --wiki-link-hover: var(--accent);
 }
 
 * {
@@ -32,7 +56,7 @@ body.theme-wiki {
 }
 
 body {
-  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Figtree', sans-serif;
   margin: 0;
   min-height: 100vh;
   overflow-y: auto;
@@ -44,15 +68,15 @@ body {
 .bg-gradient {
   position: fixed;
   inset: 0;
-  background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(80, 191, 202, 0.22), transparent),
-              radial-gradient(ellipse 60% 40% at 100% 50%, rgba(80, 191, 202, 0.12), transparent),
-              radial-gradient(ellipse 60% 40% at 0% 80%, rgba(80, 191, 202, 0.1), transparent);
+  background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 204, 204, 0.22), transparent),
+              radial-gradient(ellipse 60% 40% at 100% 50%, rgba(0, 204, 204, 0.12), transparent),
+              radial-gradient(ellipse 60% 40% at 0% 80%, rgba(0, 204, 204, 0.1), transparent);
   pointer-events: none;
   z-index: 0;
 }
 
 body.theme-wiki .bg-gradient {
-  background: linear-gradient(180deg, #E8F6F9 0%, #FFFFFF 55%, #E8F6F9 100%);
+  background: linear-gradient(180deg, #E6FAFA 0%, #FFFFFF 55%, #E6FAFA 100%);
   opacity: 1;
 }
 
@@ -111,10 +135,6 @@ body.theme-wiki .bg-gradient {
   flex-shrink: 0;
 }
 
-.brand-name {
-  color: var(--accent);
-}
-
 .preset-text {
   color: #fff;
 }
@@ -159,7 +179,7 @@ body.theme-wiki .preset-text {
 .help-icon-btn:focus-visible {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 2px rgba(80, 191, 202, 0.35);
+  box-shadow: 0 0 0 2px rgba(0, 204, 204, 0.35);
 }
 
 
@@ -202,7 +222,7 @@ body.theme-wiki .help-icon-btn:hover {
 .theme-toggle-btn:focus-visible {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 2px rgba(80, 191, 202, 0.35);
+  box-shadow: 0 0 0 2px rgba(0, 204, 204, 0.35);
 }
 
 .theme-toggle-icon {
@@ -210,13 +230,13 @@ body.theme-wiki .help-icon-btn:hover {
   height: 1rem;
   border-radius: 999px;
   background: radial-gradient(circle at 30% 30%, #ffffff, #e5e7eb 30%, transparent 60%),
-              conic-gradient(from 140deg, rgba(80, 191, 202, 0.9), rgba(59, 168, 178, 0.6), rgba(15, 23, 42, 1));
+              conic-gradient(from 140deg, rgba(0, 204, 204, 0.9), rgba(0, 163, 163, 0.6), rgba(15, 23, 42, 1));
   box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.6);
 }
 
 body.theme-wiki .theme-toggle-icon {
   background: radial-gradient(circle at 30% 30%, #ffffff, #f3f4f6 25%, transparent 55%),
-              conic-gradient(from 200deg, rgba(148, 163, 184, 0.9), rgba(59, 130, 246, 0.85), rgba(232, 246, 249, 1));
+              conic-gradient(from 200deg, rgba(148, 163, 184, 0.9), rgba(59, 130, 246, 0.85), rgba(230, 250, 250, 1));
 }
 
 body.theme-wiki .theme-toggle-btn {
@@ -254,11 +274,11 @@ body.theme-wiki .theme-toggle-btn:hover {
   padding: 0.6rem 0.75rem;
   position: relative;
   z-index: 10;
-  border-color: rgba(80, 191, 202, 0.3);
+  border-color: rgba(0, 204, 204, 0.3);
 }
 
 .slicer-card:hover {
-  border-color: rgba(80, 191, 202, 0.5);
+  border-color: rgba(0, 204, 204, 0.5);
 }
 
 /* Warning card */
@@ -327,6 +347,16 @@ body.theme-wiki .warning-title {
   text-decoration: underline;
 }
 
+body.theme-wiki .warning-links a:link,
+body.theme-wiki .warning-links a:visited {
+  color: var(--wiki-link) !important;
+}
+
+body.theme-wiki .warning-links a:hover,
+body.theme-wiki .warning-links a:active {
+  color: var(--wiki-link-hover) !important;
+}
+
 .warning-credits {
   font-size: 0.75rem;
   font-style: italic;
@@ -356,13 +386,13 @@ body.theme-wiki .warning-title {
 .slicer-filter-group .dropdown-toggle {
   padding: 0.5rem 0.75rem;
   font-size: 0.9rem;
-  background: rgba(80, 191, 202, 0.1);
-  border-color: rgba(80, 191, 202, 0.3);
+  background: rgba(0, 204, 204, 0.1);
+  border-color: rgba(0, 204, 204, 0.3);
 }
 
 .slicer-filter-group .dropdown-toggle:hover {
-  background: rgba(80, 191, 202, 0.15);
-  border-color: rgba(80, 191, 202, 0.5);
+  background: rgba(0, 204, 204, 0.15);
+  border-color: rgba(0, 204, 204, 0.5);
 }
 
 /* Utility class for hiding elements */
@@ -493,7 +523,7 @@ body.theme-wiki .dropdown-toggle:hover {
 .dropdown-toggle:focus-visible {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 2px rgba(80, 191, 202, 0.25);
+  box-shadow: 0 0 0 2px rgba(0, 204, 204, 0.25);
 }
 
 .dropdown-arrow {
@@ -554,7 +584,7 @@ body.theme-wiki .dropdown-menu {
 }
 
 .dropdown-option.is-active {
-  background: rgba(80, 191, 202, 0.2);
+  background: rgba(0, 204, 204, 0.2);
   color: #fff;
 }
 
@@ -563,12 +593,12 @@ body.theme-wiki .dropdown-option {
 }
 
 body.theme-wiki .dropdown-option:hover {
-  background: rgba(232, 246, 249, 1);
+  background: rgba(230, 250, 250, 1);
   color: #111827;
 }
 
 body.theme-wiki .dropdown-option.is-active {
-  background: rgba(80, 191, 202, 0.36);
+  background: rgba(0, 204, 204, 0.36);
   color: #111827;
 }
 
@@ -583,7 +613,7 @@ body.theme-wiki .dropdown-option.is-active {
 }
 
 .dropdown-menu::-webkit-scrollbar-thumb {
-  background: rgba(80, 191, 202, 0.55);
+  background: rgba(0, 204, 204, 0.55);
   border-radius: 999px;
 }
 
@@ -592,11 +622,11 @@ body.theme-wiki .dropdown-menu::-webkit-scrollbar-track {
 }
 
 body.theme-wiki .dropdown-menu::-webkit-scrollbar-thumb {
-  background: rgba(80, 191, 202, 0.6);
+  background: rgba(0, 204, 204, 0.6);
 }
 
 .dropdown-menu::-webkit-scrollbar-thumb:hover {
-  background: rgba(80, 191, 202, 0.8);
+  background: rgba(0, 204, 204, 0.8);
 }
 
 .dropdown.is-disabled {
@@ -659,12 +689,12 @@ body.theme-wiki .dropdown-menu::-webkit-scrollbar-thumb {
 }
 
 .table-wrap::-webkit-scrollbar-thumb {
-  background: rgba(80, 191, 202, 0.4);
+  background: rgba(0, 204, 204, 0.4);
   border-radius: 4px;
 }
 
 .table-wrap::-webkit-scrollbar-thumb:hover {
-  background: rgba(80, 191, 202, 0.6);
+  background: rgba(0, 204, 204, 0.6);
 }
 
 .preset-table {
@@ -732,9 +762,9 @@ body.theme-wiki .dropdown-menu::-webkit-scrollbar-thumb {
   transition: background-color var(--transition), color var(--transition), border-color var(--transition);
 }
 
-/* Wiki theme table header: brand teal #00787C with white text for contrast */
+/* Wiki theme table header: brand teal #006E6E with white text for contrast */
 body.theme-wiki .preset-table th {
-  background: #00787C;
+  background: #006E6E;
   color: #ffffff;
 }
 
@@ -768,30 +798,30 @@ body.theme-wiki .preset-table th {
 }
 
 .preset-table td.td-actions .btn-download {
-  color: #50BFCA;
-  background: rgba(80, 191, 202, 0.1);
-  border: 1px solid rgba(80, 191, 202, 0.3);
+  color: #00CCCC;
+  background: rgba(0, 204, 204, 0.1);
+  border: 1px solid rgba(0, 204, 204, 0.3);
 }
 
 .preset-table td.td-actions .btn-download:hover {
-  background: rgba(80, 191, 202, 0.2);
-  border-color: rgba(80, 191, 202, 0.5);
+  background: rgba(0, 204, 204, 0.2);
+  border-color: rgba(0, 204, 204, 0.5);
 }
 
 .preset-table td.td-actions .btn-bundle {
   color: #fff;
-  background: linear-gradient(135deg, #50BFCA, #3BA8B2);
+  background: linear-gradient(135deg, #00CCCC, #00A3A3);
   border: 1px solid transparent;
   margin-left: 0.25rem;
 }
 
 .preset-table td.td-actions .btn-bundle:hover {
   transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(80, 191, 202, 0.4);
+  box-shadow: 0 2px 8px rgba(0, 204, 204, 0.4);
 }
 
 body.theme-wiki .preset-table td.td-actions .btn-download {
-  color: #00787C;
+  color: #006E6E;
   background: rgba(0, 120, 124, 0.1);
   border-color: rgba(0, 120, 124, 0.3);
 }
@@ -802,7 +832,7 @@ body.theme-wiki .preset-table td.td-actions .btn-download:hover {
 }
 
 body.theme-wiki .preset-table td.td-actions .btn-bundle {
-  background: linear-gradient(135deg, #00787C, #3BA8B2);
+  background: linear-gradient(135deg, #006E6E, #00A3A3);
 }
 
 body.theme-wiki .preset-table td.td-actions .btn-bundle:hover {
@@ -924,18 +954,17 @@ body.theme-wiki .preset-table td.td-actions .btn-bundle:hover {
   font-size: 0.75rem;
   font-weight: 500;
   color: var(--accent-light);
-  background: linear-gradient(135deg, rgba(59, 168, 178, 0.2), rgba(80, 191, 202, 0.2));
-  border: 1px solid rgba(80, 191, 202, 0.4);
+  background: linear-gradient(135deg, rgba(0, 163, 163, 0.2), rgba(0, 204, 204, 0.2));
+  border: 1px solid rgba(0, 204, 204, 0.4);
   border-radius: 6px;
   text-decoration: none;
   transition: background-color var(--transition), color var(--transition), border-color var(--transition), box-shadow var(--transition), transform var(--transition);
 }
 
 body.theme-wiki .preset-table a {
-  color: #0f172a;
-  /* Default state: slightly higher opacity for readability */
-  background: rgba(80, 191, 202, 0.28);
-  border-color: rgba(80, 191, 202, 0.55);
+  color: var(--wiki-link) !important;
+  background: rgba(0, 204, 204, 0.12);
+  border-color: rgba(0, 204, 204, 0.45);
 }
 
 .preset-table a:hover {
@@ -943,13 +972,14 @@ body.theme-wiki .preset-table a {
   background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
   border-color: transparent;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(80, 191, 202, 0.35);
+  box-shadow: 0 4px 12px rgba(0, 204, 204, 0.35);
 }
 
 body.theme-wiki .preset-table a:hover {
-  background: rgba(80, 191, 202, 0.5);
-  border-color: rgba(80, 191, 202, 0.8);
-  box-shadow: 0 4px 14px rgba(80, 191, 202, 0.45);
+  color: #fff !important;
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 4px 14px rgba(0, 204, 204, 0.35);
 }
 
 body.theme-wiki .child-row {
@@ -1012,7 +1042,7 @@ body.theme-wiki .folder-row {
 }
 
 .checkbox-input:focus-visible + .checkbox-custom {
-  box-shadow: 0 0 0 2px rgba(80, 191, 202, 0.35);
+  box-shadow: 0 0 0 2px rgba(0, 204, 204, 0.35);
 }
 
 .checkbox-label:hover .checkbox-custom {
@@ -1073,12 +1103,12 @@ body.theme-wiki .checkbox-input[data-indeterminate="true"] + .checkbox-custom {
   border-radius: var(--radius);
   cursor: pointer;
   transition: all var(--transition);
-  box-shadow: 0 2px 8px rgba(80, 191, 202, 0.3);
+  box-shadow: 0 2px 8px rgba(0, 204, 204, 0.3);
 }
 
 .btn-download-selected:hover:not(:disabled) {
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(80, 191, 202, 0.45);
+  box-shadow: 0 4px 14px rgba(0, 204, 204, 0.45);
 }
 
 .btn-download-selected:disabled {
@@ -1092,12 +1122,12 @@ body.theme-wiki .checkbox-input[data-indeterminate="true"] + .checkbox-custom {
 }
 
 body.theme-wiki .btn-download-selected {
-  background: linear-gradient(135deg, #3BA8B2, #50BFCA);
-  box-shadow: 0 2px 8px rgba(80, 191, 202, 0.25);
+  background: linear-gradient(135deg, #00A3A3, #00CCCC);
+  box-shadow: 0 2px 8px rgba(0, 204, 204, 0.25);
 }
 
 body.theme-wiki .btn-download-selected:hover:not(:disabled) {
-  box-shadow: 0 4px 14px rgba(80, 191, 202, 0.4);
+  box-shadow: 0 4px 14px rgba(0, 204, 204, 0.4);
 }
 
 body.theme-wiki .btn-download-selected:disabled {
@@ -1114,17 +1144,17 @@ body.theme-wiki .btn-download-selected:disabled {
   font-size: 0.8rem;
   font-weight: 500;
   color: #fff;
-  background: linear-gradient(135deg, #50BFCA, #3BA8B2);
+  background: linear-gradient(135deg, #00CCCC, #00A3A3);
   border: none;
   border-radius: var(--radius);
   cursor: pointer;
   transition: all var(--transition);
-  box-shadow: 0 2px 8px rgba(80, 191, 202, 0.3);
+  box-shadow: 0 2px 8px rgba(0, 204, 204, 0.3);
 }
 
 .btn-download-bundle:hover:not(:disabled) {
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(80, 191, 202, 0.45);
+  box-shadow: 0 4px 14px rgba(0, 204, 204, 0.45);
 }
 
 .btn-download-bundle:disabled {
@@ -1138,12 +1168,12 @@ body.theme-wiki .btn-download-selected:disabled {
 }
 
 body.theme-wiki .btn-download-bundle {
-  background: linear-gradient(135deg, #50BFCA, #3BA8B2);
-  box-shadow: 0 2px 8px rgba(80, 191, 202, 0.25);
+  background: linear-gradient(135deg, #00CCCC, #00A3A3);
+  box-shadow: 0 2px 8px rgba(0, 204, 204, 0.25);
 }
 
 body.theme-wiki .btn-download-bundle:hover:not(:disabled) {
-  box-shadow: 0 4px 14px rgba(80, 191, 202, 0.4);
+  box-shadow: 0 4px 14px rgba(0, 204, 204, 0.4);
 }
 
 body.theme-wiki .btn-download-bundle:disabled {
@@ -1296,35 +1326,47 @@ body.theme-wiki .footer-label {
 
 body.theme-wiki .footer-col {
   background: rgba(0, 0, 0, 0.04);
-  border-color: rgba(0, 120, 124, 0.35);
+  border-color: rgba(0, 204, 204, 0.45);
 }
 
-body.theme-wiki .footer-link-item .footer-link-url {
-  color: #00787C;
-}
-
-body.theme-wiki .footer-link-item:hover .footer-link-url {
-  color: #005a5e;
+body.theme-wiki .footer-link-item:hover {
+  color: var(--text-muted);
 }
 
 body.theme-wiki .footer-col-title {
   color: #1a1a2e;
 }
 
-body.theme-wiki .footer-social-icon {
-  color: #00787C;
+body.theme-wiki .footer-social-item:hover {
+  color: var(--text-muted);
 }
 
-body.theme-wiki .footer-social-item:hover .footer-social-icon {
-  color: #00787C;
+body.theme-wiki .footer a:link,
+body.theme-wiki .footer a:visited {
+  color: var(--wiki-link);
 }
 
-body.theme-wiki .footer-social-url {
-  color: #00787C;
+body.theme-wiki .footer a:hover,
+body.theme-wiki .footer a:active {
+  color: var(--wiki-link-hover);
 }
 
-body.theme-wiki .footer-social-item:hover .footer-social-url {
-  color: #005a5e;
+body.theme-wiki .footer .footer-link-url,
+body.theme-wiki .footer .footer-social-url {
+  color: var(--wiki-link) !important;
+}
+
+body.theme-wiki .footer .footer-link-item:hover .footer-link-url,
+body.theme-wiki .footer .footer-social-item:hover .footer-social-url {
+  color: var(--wiki-link-hover) !important;
+}
+
+body.theme-wiki .footer .footer-social-icon {
+  color: var(--wiki-link) !important;
+}
+
+body.theme-wiki .footer .footer-social-item:hover .footer-social-icon {
+  color: var(--wiki-link-hover) !important;
 }
 
 .footer a {
@@ -1456,12 +1498,12 @@ body.theme-wiki .modal-title {
 }
 
 .modal-body::-webkit-scrollbar-thumb {
-  background: rgba(80, 191, 202, 0.4);
+  background: rgba(0, 204, 204, 0.4);
   border-radius: 4px;
 }
 
 .modal-body::-webkit-scrollbar-thumb:hover {
-  background: rgba(80, 191, 202, 0.6);
+  background: rgba(0, 204, 204, 0.6);
 }
 
 body.theme-wiki .modal-body::-webkit-scrollbar-track {
@@ -1469,7 +1511,7 @@ body.theme-wiki .modal-body::-webkit-scrollbar-track {
 }
 
 body.theme-wiki .modal-body::-webkit-scrollbar-thumb {
-  background: rgba(80, 191, 202, 0.6);
+  background: rgba(0, 204, 204, 0.6);
 }
 
 .install-section {
@@ -1516,7 +1558,8 @@ body.theme-wiki .install-section-title {
   padding: 0.1rem 0.3rem;
   border-radius: 3px;
   font-size: 0.85em;
-  font-family: 'Courier New', monospace;
+  font-family: 'Figtree', sans-serif;
+  font-variant-numeric: tabular-nums;
 }
 
 /* Duplicate Resolution Modal Styles */
@@ -1696,7 +1739,7 @@ body.theme-wiki .btn-primary {
 }
 
 body.theme-wiki .install-steps code {
-  background: rgba(80, 191, 202, 0.15);
+  background: rgba(0, 204, 204, 0.15);
   color: var(--accent);
 }
 
@@ -1712,8 +1755,14 @@ body.theme-wiki .install-steps code {
   text-decoration: underline;
 }
 
-body.theme-wiki .install-steps a {
-  color: var(--accent);
+body.theme-wiki .install-steps a:link,
+body.theme-wiki .install-steps a:visited {
+  color: var(--wiki-link) !important;
+}
+
+body.theme-wiki .install-steps a:hover,
+body.theme-wiki .install-steps a:active {
+  color: var(--wiki-link-hover) !important;
 }
 
 .install-steps strong {
@@ -1922,6 +1971,16 @@ body.theme-wiki .accordion-header:hover {
 
 .accordion-links a:hover {
   text-decoration: underline;
+}
+
+body.theme-wiki .accordion-links a:link,
+body.theme-wiki .accordion-links a:visited {
+  color: var(--wiki-link) !important;
+}
+
+body.theme-wiki .accordion-links a:hover,
+body.theme-wiki .accordion-links a:active {
+  color: var(--wiki-link-hover) !important;
 }
 
 .accordion-credits {

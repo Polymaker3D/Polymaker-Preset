@@ -70,6 +70,9 @@ Polymaker-Preset/
 ├── style.css               # Styling (dark theme + wiki light theme)
 ├── index.json              # Auto-generated index of all presets
 ├── package.json            # Node.js project configuration
+├── assets/                 # Static assets (logo, fonts)
+│   ├── logo/               # Brand logo (e.g. Polymaker Teal.png)
+│   └── font/Figtree/       # Self-hosted Figtree variable fonts (.ttf)
 ├── preset/                 # All preset JSON files
 │   └── <Material>/
 │       └── <Brand>/
