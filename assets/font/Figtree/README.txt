@@ -1,32 +1,19 @@
 Figtree Variable Font
 =====================
 
-This download contains Figtree as both variable fonts and static fonts.
+This repository ships only the variable fonts (the static instance .ttf pack is
+not included; variable fonts cover all weights for the web app).
 
 Figtree is a variable font with this axis:
   wght
 
-This means all the styles are contained in these files:
-  Figtree/Figtree-VariableFont_wght.ttf
-  Figtree/Figtree-Italic-VariableFont_wght.ttf
+Files used by the site:
+  Figtree-VariableFont_wght.ttf
+  Figtree-Italic-VariableFont_wght.ttf
 
-If your app fully supports variable fonts, you can now pick intermediate styles
-that aren’t available as static fonts. Not all apps support variable fonts, and
-in those cases you can use the static font files for Figtree:
-  Figtree/static/Figtree-Light.ttf
-  Figtree/static/Figtree-Regular.ttf
-  Figtree/static/Figtree-Medium.ttf
-  Figtree/static/Figtree-SemiBold.ttf
-  Figtree/static/Figtree-Bold.ttf
-  Figtree/static/Figtree-ExtraBold.ttf
-  Figtree/static/Figtree-Black.ttf
-  Figtree/static/Figtree-LightItalic.ttf
-  Figtree/static/Figtree-Italic.ttf
-  Figtree/static/Figtree-MediumItalic.ttf
-  Figtree/static/Figtree-SemiBoldItalic.ttf
-  Figtree/static/Figtree-BoldItalic.ttf
-  Figtree/static/Figtree-ExtraBoldItalic.ttf
-  Figtree/static/Figtree-BlackItalic.ttf
+If your app fully supports variable fonts, you can pick intermediate styles
+that aren’t available as static fonts. For static-only apps, obtain the full
+Google Fonts Figtree package separately.
 
 Get started
 -----------
