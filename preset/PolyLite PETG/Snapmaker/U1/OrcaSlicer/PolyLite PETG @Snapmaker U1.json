@@ -106,11 +106,11 @@
         "260"
     ],
     "temperature_vitrification": [
-        "75"
+        "81"
     ],
     "filament_id": "PMPE04",
     "nozzle_temperature_range_high": [
-        "240"
+        "260"
     ],
     "nozzle_temperature_range_low": [
         "230"

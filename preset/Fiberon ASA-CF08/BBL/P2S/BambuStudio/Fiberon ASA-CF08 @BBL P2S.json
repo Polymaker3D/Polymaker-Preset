@@ -1,0 +1,162 @@
+{
+    "type": "filament",
+    "name": "Fiberon ASA-CF08 @BBL P2S",
+    "from": "User",
+    "instantiation": "true",
+    "cool_plate_temp": [
+        "105"
+    ],
+    "eng_plate_temp": [
+        "90"
+    ],
+    "hot_plate_temp": [
+        "90"
+    ],
+    "textured_plate_temp": [
+        "90"
+    ],
+    "cool_plate_temp_initial_layer": [
+        "105"
+    ],
+    "eng_plate_temp_initial_layer": [
+        "90"
+    ],
+    "hot_plate_temp_initial_layer": [
+        "90"
+    ],
+    "textured_plate_temp_initial_layer": [
+        "90"
+    ],
+    "overhang_fan_threshold": [
+        "25%"
+    ],
+    "overhang_fan_speed": [
+        "80"
+    ],
+    "slow_down_for_layer_cooling": [
+        "1"
+    ],
+    "close_fan_the_first_x_layers": [
+        "3"
+    ],
+    "filament_end_gcode": [
+        "; filament end gcode \n"
+    ],
+    "filament_flow_ratio": [
+        "0.79",
+        "nil"
+    ],
+    "reduce_fan_stop_start_freq": [
+        "1"
+    ],
+    "fan_cooling_layer_time": [
+        "30"
+    ],
+    "filament_cost": [
+        "36.99"
+    ],
+    "filament_density": [
+        "1.02"
+    ],
+    "filament_diameter": [
+        "1.75"
+    ],
+    "filament_is_support": [
+        "0"
+    ],
+    "filament_max_volumetric_speed": [
+        "16",
+        "nil"
+    ],
+    "filament_minimal_purge_on_wipe_tower": [
+        "15"
+    ],
+    "filament_settings_id": [
+        "Fiberon ASA-CF08 @BBL P2S"
+    ],
+    "filament_soluble": [
+        "0"
+    ],
+    "filament_type": [
+        "ASA-CF"
+    ],
+    "filament_vendor": [
+        "Polymaker"
+    ],
+    "bed_type": [
+        "Cool Plate"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "270",
+        "nil"
+    ],
+    "full_fan_speed_layer": [
+        "0"
+    ],
+    "fan_max_speed": [
+        "30"
+    ],
+    "fan_min_speed": [
+        "10"
+    ],
+    "required_nozzle_HRC": [
+        "3"
+    ],
+    "slow_down_min_speed": [
+        "10",
+        "20"
+    ],
+    "slow_down_layer_time": [
+        "12"
+    ],
+    "filament_start_gcode": [
+        "; filament start gcode\n"
+    ],
+    "nozzle_temperature": [
+        "270",
+        "nil"
+    ],
+    "temperature_vitrification": [
+        "108"
+    ],
+    "nozzle_temperature_range_low": [
+        "250"
+    ],
+    "nozzle_temperature_range_high": [
+        "300"
+    ],
+    "filament_id": "PMAS01",
+    "impact_strength_z": [
+        "9.4"
+    ],
+    "setting_id": "GFSB51_08",
+    "activate_air_filtration": [
+        "0"
+    ],
+    "chamber_temperatures": [
+        "60"
+    ],
+    "filament_ramming_travel_time": [
+        "0",
+        "0"
+    ],
+    "include": [
+        "fdm_filament_template_direct_dual"
+    ],
+    "long_retractions_when_ec": [
+        "0",
+        "0"
+    ],
+    "retraction_distances_when_ec": [
+        "0",
+        "0"
+    ],
+    "compatible_printers": [
+        "Bambu Lab P2S 0.4 nozzle"
+    ],
+    "filament_extruder_variant": [
+        "Direct Drive Standard",
+        "Direct Drive High Flow"
+    ],
+    "version": "2.5.0.14"
+}

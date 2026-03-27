@@ -119,7 +119,7 @@
         "nil"
     ],
     "temperature_vitrification": [
-        "75"
+        "71.24"
     ],
     "nozzle_temperature_range_low": [
         "240"
@@ -127,7 +127,7 @@
     "nozzle_temperature_range_high": [
         "260"
     ],
-    "filament_id": "PMPE01",
+    "filament_id": "PMPE06",
     "setting_id": "GFSG99_09",
     "first_x_layer_fan_speed": [
         "0"

@@ -106,7 +106,7 @@
         "230"
     ],
     "temperature_vitrification": [
-        "64.7"
+        "58.2"
     ],
     "nozzle_temperature_range_low": [
         "190"
@@ -117,7 +117,7 @@
     "additional_cooling_fan_speed": [
         "0"
     ],
-    "filament_id": "PMPL42",
+    "filament_id": "PMPL11",
     "setting_id": "GPLA00",
     "pressure_advance": [
         "0.024"
