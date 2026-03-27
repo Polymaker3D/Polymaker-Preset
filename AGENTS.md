@@ -32,7 +32,9 @@ Polymaker-Preset/
 ├── sitemap.xml             # SEO sitemap
 ├── google7567ee593a9049c2.html  # Google site verification
 ├── assets/                 # Static assets
-│   └── Logo_PNGArtboard 5@3x.png  # Polymaker logo
+│   ├── logo/
+│   │   └── Polymaker Teal.png     # Polymaker logo (brand Teal)
+│   └── font/Figtree/              # Figtree variable fonts + OFL
 ├── preset/                 # All preset JSON files
 │   └── <Material>/
 │       └── <Brand>/
@@ -181,7 +183,7 @@ const init = () => {
 
 - CSS Custom Properties (variables) for theming
 - Two themes supported:
-  - **Dark** (default): `--bg-dark: #0d0d12`, `--accent: #50BFCA`
+  - **Dark** (default): `--bg-dark: #0d0d12`, `--accent: #00CCCC` (brand Teal)
   - **Wiki**: `body.theme-wiki` class for embedded wiki use
 - Mobile-first responsive design with `@media (max-width: 640px)`
 
@@ -270,7 +272,9 @@ No automated test suite exists. Manual testing checklist:
 ## External Dependencies
 
 Loaded via CDN in `index.html`:
-- **Google Fonts**: DM Sans font family
+- **Font Awesome** (CDN): icon font
 - **JSZip** (v3.10.1): For ZIP file generation during downloads
+
+**Typography**: **Figtree** is self-hosted via `@font-face` in `style.css` (`assets/font/Figtree/*.ttf`), not loaded from Google Fonts. **`style.css` is loaded before Font Awesome** so body text uses Figtree; icon elements still use Font Awesome’s font via its classes.
 
 No npm dependencies or lock files are used.
