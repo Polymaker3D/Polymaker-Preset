@@ -56,6 +56,7 @@ const MACHINE_NAME_MAP = {
     // BBL (Bambu Lab) - X1 variants are different machines
     'Bambu Lab A1 0.4 nozzle': { brand: 'BBL', model: 'A1' },
     'Bambu Lab A1 mini 0.4 nozzle': { brand: 'BBL', model: 'A1M' },
+    'Bambu Lab H2C 0.4 nozzle': { brand: 'BBL', model: 'H2C' },
     'Bambu Lab H2D 0.4 nozzle': { brand: 'BBL', model: 'H2D' },
     'Bambu Lab H2S 0.4 nozzle': { brand: 'BBL', model: 'H2S' },
     'Bambu Lab P1P 0.4 nozzle': { brand: 'BBL', model: 'P1P' },
