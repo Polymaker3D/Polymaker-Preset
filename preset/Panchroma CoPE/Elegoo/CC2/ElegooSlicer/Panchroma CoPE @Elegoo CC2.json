@@ -109,7 +109,7 @@
         "220"
     ],
     "temperature_vitrification": [
-        "65.5"
+        "58.2"
     ],
     "nozzle_temperature_range_low": [
         "200"
@@ -133,5 +133,5 @@
     ],
     "version": "1.3.0.11",
     "idle_temperature": 0,
-    "filament_id": "PMPL17"
+    "filament_id": "PMCO01"
 }

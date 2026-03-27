@@ -282,7 +282,7 @@
         "45"
     ],
     "temperature_vitrification": [
-        "63"
+        "61"
     ],
     "textured_plate_temp": [
         "55"
@@ -295,5 +295,5 @@
         ""
     ],
     "idle_temperature": 0,
-    "filament_id": "PMPL39"
+    "filament_id": "PMPL04"
 }
