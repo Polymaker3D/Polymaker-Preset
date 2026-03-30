@@ -93,8 +93,8 @@ var I18N = (function () {
       // Known Issues
       'issues.title': 'Known Issues',
       'issues.p2s.title': 'P2S Overheating Issue - Temporary Fix Applied',
-      'issues.p2s.issue': '<strong>Issue:</strong> P2S printer may overheat when printing materials with vitrification temperature &gt; 50\u00b0C due to starting G-code issues.',
-      'issues.p2s.solution': '<strong>Solution:</strong> We have implemented a temporary fix by adding cooling G-code commands to P2S presets with vitrification temperature &gt; 50\u00b0C. This is a temporary workaround until Bambu Lab fixes this issue.',
+      'issues.p2s.issue': '<strong>Issue:</strong> P2S printer may overheat when printing materials with vitrification temperature > 50\u00b0C due to starting G-code issues.',
+      'issues.p2s.solution': '<strong>Solution:</strong> We have implemented a temporary fix by adding cooling G-code commands to P2S presets with vitrification temperature > 50\u00b0C. This is a temporary workaround until Bambu Lab fixes this issue.',
       'issues.p2s.link': 'View BambuStudio Issue #8801 \u2192',
       'issues.p2s.credits': 'Thanks to alexbreinig and capsel22 for identifying this issue.',
 
@@ -288,13 +288,12 @@ var I18N = (function () {
       }
     }
 
-    // Update data-i18n-html elements (previously allowed raw HTML content)
+    // Update data-i18n-html elements (allow HTML content from trusted translation sources)
     var htmlEls = document.querySelectorAll('[data-i18n-html]');
     for (var j = 0; j < htmlEls.length; j++) {
       var hEl = htmlEls[j];
       var hKey = hEl.getAttribute('data-i18n-html');
-      // Render translation as text to avoid interpreting potentially tainted DOM data as HTML
-      hEl.textContent = t(hKey);
+      hEl.innerHTML = t(hKey);
     }
 
     // Render install modal step lists
