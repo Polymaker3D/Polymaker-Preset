@@ -15,7 +15,7 @@
 }
 
 html {
-  font-family: 'Figtree', sans-serif;
+  font-family: 'Figtree', 'Noto Sans SC', sans-serif;
 }
 
 /* Dark theme with Polymaker brand Teal #00CCCC */
@@ -56,7 +56,7 @@ body.theme-wiki {
 }
 
 body {
-  font-family: 'Figtree', sans-serif;
+  font-family: 'Figtree', 'Noto Sans SC', sans-serif;
   margin: 0;
   min-height: 100vh;
   overflow-y: auto;
@@ -1558,7 +1558,7 @@ body.theme-wiki .install-section-title {
   padding: 0.1rem 0.3rem;
   border-radius: 3px;
   font-size: 0.85em;
-  font-family: 'Figtree', sans-serif;
+  font-family: 'Figtree', 'Noto Sans SC', monospace;
   font-variant-numeric: tabular-nums;
 }
 
