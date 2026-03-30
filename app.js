@@ -614,12 +614,12 @@ function init() {
         var toggle = dropdown.querySelector('.dropdown-toggle');
         var labelEl = dropdown.querySelector('.dropdown-label');
         var menu = dropdown.querySelector('.dropdown-menu');
-        var defaultLabel = isSlicer ? 'Select Slicer' : ('All ' + (name === 'series' ? 'Series' : name === 'brand' ? 'Brands' : 'Models'));
+        var defaultLabel = isSlicer ? t('filter.slicer.placeholder') : (name === 'series' ? t('filter.all.series') : name === 'brand' ? t('filter.all.brands') : t('filter.all.models'));
 
         function renderOptions(options) {
           var html = '';
           if (!isSlicer) {
-            html += '<div class="dropdown-option' + (filterState[name] ? '' : ' is-active') + '" data-value="">All</div>';
+            html += '<div class="dropdown-option' + (filterState[name] ? '' : ' is-active') + '" data-value="">' + t('filter.all') + '</div>';
           }
           html += options.map(function (x) {
             var active = x === filterState[name] ? ' is-active' : '';
@@ -732,13 +732,13 @@ function init() {
         var menu = dropdown.querySelector('.dropdown-menu');
         var labelEl = dropdown.querySelector('.dropdown-label');
         var html = [
-          '<div class="dropdown-option' + (display ? '' : ' is-active') + '" data-value="">All</div>'
+          '<div class="dropdown-option' + (display ? '' : ' is-active') + '" data-value="">' + t('filter.all') + '</div>'
         ].concat(list.map(function (x) {
           var active = x === display ? ' is-active' : '';
           return '<div class="dropdown-option' + active + '" data-value="' + escapeHtml(x) + '">' + escapeHtml(x) + '</div>';
         }));
         menu.innerHTML = html.join('');
-        if (labelEl) labelEl.textContent = display || 'All';
+        if (labelEl) labelEl.textContent = display || t('filter.all');
       }
 
       /** Only show filter options that have at least one preset to avoid zero-result combinations.
@@ -845,7 +845,8 @@ function init() {
         // Show loading state
         if (downloadSelectedBtn) {
           downloadSelectedBtn.disabled = true;
-          downloadSelectedBtn.textContent = 'Loading...';
+          var dlSelSpan = downloadSelectedBtn.querySelector('[data-i18n="btn.download.selected"]');
+          if (dlSelSpan) dlSelSpan.textContent = t('btn.download.selected.loading');
         }
 
         var zip = new JSZip();
@@ -893,7 +894,8 @@ function init() {
             // Reset button state
             if (downloadSelectedBtn) {
               downloadSelectedBtn.disabled = false;
-              downloadSelectedBtn.textContent = 'Download Selected';
+              var dlSelSpanReset = downloadSelectedBtn.querySelector('[data-i18n="btn.download.selected"]');
+              if (dlSelSpanReset) dlSelSpanReset.textContent = t('btn.download.selected');
             }
           });
         }).catch(function (err) {
@@ -901,7 +903,8 @@ function init() {
           // Reset button state on error
           if (downloadSelectedBtn) {
             downloadSelectedBtn.disabled = false;
-            downloadSelectedBtn.textContent = 'Download Selected';
+            var dlSelSpanErr = downloadSelectedBtn.querySelector('[data-i18n="btn.download.selected"]');
+            if (dlSelSpanErr) dlSelSpanErr.textContent = t('btn.download.selected');
           }
         });
       }
@@ -941,14 +944,15 @@ function init() {
         console.log('downloadSelectedBundle called, bambuPresets count:', bambuPresets.length);
         if (bambuPresets.length === 0) {
           console.log('No BambuStudio presets found. filterState:', filterState);
-          alert('No BambuStudio presets available to download. Please make sure BambuStudio is selected as the slicer.');
+          alert(t('alert.no.bambu'));
           return;
         }
 
         // Show loading state
         if (downloadBundleBtn) {
           downloadBundleBtn.disabled = true;
-          downloadBundleBtn.textContent = 'Loading...';
+          var dlBndSpanLoad = downloadBundleBtn.querySelector('[data-i18n="btn.download.bundle"]');
+          if (dlBndSpanLoad) dlBndSpanLoad.textContent = t('btn.download.bundle.loading');
         }
 
         // Fetch all preset JSON files with full data
@@ -980,10 +984,11 @@ function init() {
 
           var validMappings = allMappings.filter(function(m) { return m.presetData !== null; });
           if (validMappings.length === 0) {
-            alert('Failed to load preset data. Please check your connection and try again.');
+            alert(t('alert.load.failed'));
             if (downloadBundleBtn) {
               downloadBundleBtn.disabled = false;
-              downloadBundleBtn.textContent = 'Download Bundle (.bbsflmt)';
+              var dlBndSpanRst = downloadBundleBtn.querySelector('[data-i18n="btn.download.bundle"]');
+            if (dlBndSpanRst) dlBndSpanRst.textContent = t('btn.download.bundle');
             }
             return;
           }
@@ -997,7 +1002,8 @@ function init() {
             }, function() {
               if (downloadBundleBtn) {
                 downloadBundleBtn.disabled = false;
-                downloadBundleBtn.textContent = 'Download Bundle (.bbsflmt)';
+                var dlBndSpanRst = downloadBundleBtn.querySelector('[data-i18n="btn.download.bundle"]');
+            if (dlBndSpanRst) dlBndSpanRst.textContent = t('btn.download.bundle');
               }
             });
           } else {
@@ -1005,10 +1011,11 @@ function init() {
           }
         }).catch(function(err) {
           console.error('Error fetching presets:', err);
-          alert('Error loading presets: ' + err.message);
+          alert(t('alert.error.loading', { msg: err.message }));
           if (downloadBundleBtn) {
             downloadBundleBtn.disabled = false;
-            downloadBundleBtn.textContent = 'Download Bundle (.bbsflmt)';
+            var dlBndSpanRst = downloadBundleBtn.querySelector('[data-i18n="btn.download.bundle"]');
+            if (dlBndSpanRst) dlBndSpanRst.textContent = t('btn.download.bundle');
           }
         });
       }
@@ -1018,7 +1025,8 @@ function init() {
           console.warn('No filename mappings to bundle');
           if (downloadBundleBtn) {
             downloadBundleBtn.disabled = false;
-            downloadBundleBtn.textContent = 'Download Bundle (.bbsflmt)';
+            var dlBndSpanRst = downloadBundleBtn.querySelector('[data-i18n="btn.download.bundle"]');
+            if (dlBndSpanRst) dlBndSpanRst.textContent = t('btn.download.bundle');
           }
           return;
         }
@@ -1103,13 +1111,15 @@ function init() {
 
           if (downloadBundleBtn) {
             downloadBundleBtn.disabled = false;
-            downloadBundleBtn.textContent = 'Download Bundle (.bbsflmt)';
+            var dlBndSpanRst = downloadBundleBtn.querySelector('[data-i18n="btn.download.bundle"]');
+            if (dlBndSpanRst) dlBndSpanRst.textContent = t('btn.download.bundle');
           }
         }).catch(function(err) {
           console.error('Error creating bundles:', err);
           if (downloadBundleBtn) {
             downloadBundleBtn.disabled = false;
-            downloadBundleBtn.textContent = 'Download Bundle (.bbsflmt)';
+            var dlBndSpanRst = downloadBundleBtn.querySelector('[data-i18n="btn.download.bundle"]');
+            if (dlBndSpanRst) dlBndSpanRst.textContent = t('btn.download.bundle');
           }
         });
       }
@@ -1497,9 +1507,9 @@ function init() {
 
             rowsHtml.push('<tr class="folder-row" data-folder-id="' + folderId + '">' +
               '<td><label class="checkbox-label folder-checkbox-label" data-folder-id="' + folderId + '"><input type="checkbox" class="checkbox-input folder-checkbox-input"' + folderChecked + folderIndeterminate + '><span class="checkbox-custom"></span></label></td>' +
-              '<td colspan="4">' + folderIconSvg + escapeHtml(mat) + ' <span class="folder-count">(' + list.length + ' presets)</span></td>' +
+              '<td colspan="4">' + folderIconSvg + escapeHtml(mat) + ' <span class="folder-count">(' + t('folder.presets', { n: list.length }) + ')</span></td>' +
               '<td>-</td>' +
-              '<td class="td-actions"><span class="folder-hint">Click to expand</span></td>' +
+              '<td class="td-actions"><span class="folder-hint">' + t('folder.expand') + '</span></td>' +
               '</tr>');
 
             // Child rows for each preset
@@ -1570,7 +1580,7 @@ function init() {
         // Update select all checkbox state after rendering
         updateSelectAllCheckboxState();
 
-        if (status) status.textContent = totalPresets + ' presets in ' + Object.keys(groups).length + ' materials.';
+        if (status) status.textContent = t('list.count', { n: totalPresets, m: Object.keys(groups).length });
         
         // Update bundle button state when filters change
         updateBundleButtonState();
@@ -1587,7 +1597,7 @@ function init() {
           var model = bundleLink.getAttribute('data-bundle-model');
 
           if (!url || url === '#') {
-            alert('Invalid preset URL');
+            alert(t('alert.invalid.url'));
             return;
           }
 
@@ -1614,16 +1624,21 @@ function init() {
             })
             .catch(function (err) {
               console.error('Error downloading bundle:', err);
-              alert('Error loading preset: ' + err.message + '. Please try again.');
+              alert(t('alert.error.preset', { msg: err.message }));
             });
           return;
         }
       });
 
       render();
+
+      // Re-render table and dynamic strings when language changes
+      document.addEventListener('langchange', function () {
+        render();
+      });
     })
     .catch(function (err) {
-      document.getElementById('status').textContent = 'Failed to load: ' + err.message;
+      document.getElementById('status').textContent = t('list.failed', { msg: err.message });
     });
 }
 
@@ -1826,7 +1841,7 @@ function showDuplicateResolutionDialog(duplicates, onConfirm, onCancel) {
     // Each target printer within this material
     materialGroup.targets.forEach(function(target, targetIndex) {
       html += '<div class="duplicate-target-section">';
-      html += '<div class="duplicate-target-label">For printer: ' + escapeHtml(target.targetPrinter) + '</div>';
+      html += '<div class="duplicate-target-label">' + t('dup.for.printer', { name: escapeHtml(target.targetPrinter) }) + '</div>';
       html += '<div class="duplicate-options">';
 
       // Each source preset option for this target
@@ -1851,8 +1866,8 @@ function showDuplicateResolutionDialog(duplicates, onConfirm, onCancel) {
                 ' data-target-index="' + targetIndex + '"' +
                 ' data-option-index="' + optionIndex + '">';
         html += '<div class="duplicate-option-label">';
-        html += '<div class="duplicate-option-source">Use ' + escapeHtml(sourceDisplayName) + ' profile</div>';
-        html += '<div class="duplicate-option-compatible">Compatible with: ' + escapeHtml(compatiblePrinters.join(', ')) + '</div>';
+        html += '<div class="duplicate-option-source">' + t('dup.use.profile', { name: escapeHtml(sourceDisplayName) }) + '</div>';
+        html += '<div class="duplicate-option-compatible">' + t('dup.compatible', { list: escapeHtml(compatiblePrinters.join(', ')) }) + '</div>';
         html += '</div>';
         html += '</label>';
       });
@@ -1947,7 +1962,38 @@ function initAccordion() {
   });
 }
 
-// Tooltip positioning to prevent clipping
+// ── i18n initialization ──────────────────────────────────
+function initLangSwitcher() {
+  var switcher = document.getElementById('lang-switcher');
+  var toggle = document.getElementById('lang-switcher-toggle');
+  var menu = document.getElementById('lang-menu');
+  if (!switcher || !toggle || !menu) return;
+
+  toggle.addEventListener('click', function (e) {
+    e.stopPropagation();
+    switcher.classList.toggle('is-open');
+  });
+
+  document.addEventListener('click', function () {
+    switcher.classList.remove('is-open');
+  });
+
+  var options = menu.querySelectorAll('.lang-option');
+  for (var i = 0; i < options.length; i++) {
+    options[i].addEventListener('click', function (e) {
+      e.stopPropagation();
+      var lang = this.getAttribute('data-lang');
+      I18N.applyLanguage(lang);
+      switcher.classList.remove('is-open');
+    });
+  }
+}
+
+// Apply detected browser language on load
+var detectedLang = I18N.detectLang();
+I18N.applyLanguage(detectedLang);
+initLangSwitcher();
+
 init();
 initModal();
 initDuplicateModal();
