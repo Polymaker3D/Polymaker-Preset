@@ -2,9 +2,15 @@
 // To add a new language: add a new key block below and a <li> in the lang dropdown in index.html.
 
 var I18N = (function () {
+  var LOGO_SRC = {
+    en: './assets/logo/Polymaker%20Teal.png',
+    zh: './assets/logo/Chinese_NoSlogan_Teal.png'
+  };
+
   var TRANSLATIONS = {
     en: {
       // Hero
+      'hero.logo.alt': 'Polymaker',
       'hero.title': 'Filament Presets',
       'hero.desc': 'Select your slicer to view and download Polymaker print profiles and filament presets',
       'hero.howto': 'How to use?',
@@ -124,6 +130,7 @@ var I18N = (function () {
 
     zh: {
       // Hero
+      'hero.logo.alt': '\u805a\u590d\u79d1\u6280',
       'hero.title': '耗材预设文件',
       'hero.desc': '选择您的切片软件，查看并下载 Polymaker 打印配置文件和耗材预设',
       'hero.howto': '如何使用？',
@@ -319,6 +326,16 @@ var I18N = (function () {
       } else {
         item.classList.remove('is-active');
       }
+    }
+
+    var logoEl = document.getElementById('hero-logo');
+    if (logoEl) {
+      logoEl.src = LOGO_SRC[lang] || LOGO_SRC.en;
+      logoEl.alt = t('hero.logo.alt');
+    }
+
+    if (document.documentElement) {
+      document.documentElement.setAttribute('lang', lang === 'zh' ? 'zh' : 'en');
     }
 
     // Notify app.js to re-render dynamic content

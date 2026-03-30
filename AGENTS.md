@@ -33,7 +33,8 @@ Polymaker-Preset/
 ├── google7567ee593a9049c2.html  # Google site verification
 ├── assets/                 # Static assets
 │   ├── logo/
-│   │   └── Polymaker Teal.png     # Polymaker logo (brand Teal)
+│   │   ├── Polymaker Teal.png           # English logo (default / en)
+│   │   └── Chinese_NoSlogan_Teal.png    # Chinese logo (zh; switched in i18n.js)
 │   └── font/Figtree/              # Figtree variable fonts + OFL
 ├── preset/                 # All preset JSON files
 │   └── <Material>/
