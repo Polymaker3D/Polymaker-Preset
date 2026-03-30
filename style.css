@@ -1988,3 +1988,72 @@ body.theme-wiki .accordion-links a:active {
   font-style: italic;
   opacity: 0.8;
 }
+
+/* ── Language Switcher ─────────────────────────────────── */
+.lang-switcher {
+  position: fixed;
+  top: 12px;
+  right: 16px;
+  z-index: 1000;
+}
+
+.lang-switcher-toggle {
+  background: var(--card-bg, #1e1e2e);
+  border: 1px solid var(--border, rgba(255,255,255,0.1));
+  border-radius: 6px;
+  color: var(--text, #e0e0e0);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.lang-switcher-toggle:hover {
+  border-color: var(--accent, #00b4b4);
+  color: var(--accent, #00b4b4);
+}
+
+.lang-switcher-arrow {
+  font-size: 9px;
+  opacity: 0.6;
+}
+
+.lang-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  background: var(--card-bg, #1e1e2e);
+  border: 1px solid var(--border, rgba(255,255,255,0.1));
+  border-radius: 6px;
+  min-width: 90px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.lang-switcher.is-open .lang-menu {
+  display: block;
+}
+
+.lang-option {
+  cursor: pointer;
+  font-size: 13px;
+  padding: 8px 12px;
+  color: var(--text, #e0e0e0);
+}
+
+.lang-option:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+.lang-option.is-active {
+  color: var(--accent, #00b4b4);
+  font-weight: 600;
+}
