@@ -137,12 +137,11 @@ body.theme-wiki .bg-gradient {
   flex-shrink: 0;
 }
 
-/* Lock subtitle to same vertical box as logo; color differs only */
 .preset-text {
   margin: 0;
   padding: 0;
   color: #fff;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 1em;
   line-height: 1;
   letter-spacing: inherit;
@@ -159,7 +158,6 @@ html[lang="en"] .preset-text {
   letter-spacing: -0.01em;
 }
 
-/* Chinese lockup: match raster wordmark in logo (聚复科技) — tighter tracking, slightly smaller caps */
 html[lang="zh"] .hero-title {
   letter-spacing: 0.02em;
 }
