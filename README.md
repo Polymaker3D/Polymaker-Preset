@@ -71,7 +71,7 @@ Polymaker-Preset/
 ├── index.json              # Auto-generated index of all presets
 ├── package.json            # Node.js project configuration
 ├── assets/                 # Static assets (logo, fonts)
-│   ├── logo/               # Brand logo (e.g. Polymaker Teal.png)
+│   ├── logo/               # Polymaker Teal.png (en), Chinese_NoSlogan_Teal.png (zh)
 │   └── font/Figtree/       # Self-hosted Figtree variable fonts (.ttf)
 ├── preset/                 # All preset JSON files
 │   └── <Material>/
