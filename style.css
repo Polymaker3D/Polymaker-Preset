@@ -113,7 +113,7 @@ body.theme-wiki .bg-gradient {
   align-items: center;
   gap: 0.5rem;
   position: relative;
-  z-index: 10;
+  z-index: 100;
   overflow: visible;
 }
 
