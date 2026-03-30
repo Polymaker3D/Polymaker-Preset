@@ -288,12 +288,13 @@ var I18N = (function () {
       }
     }
 
-    // Update data-i18n-html elements (allow HTML content)
+    // Update data-i18n-html elements (previously allowed raw HTML content)
     var htmlEls = document.querySelectorAll('[data-i18n-html]');
     for (var j = 0; j < htmlEls.length; j++) {
       var hEl = htmlEls[j];
       var hKey = hEl.getAttribute('data-i18n-html');
-      hEl.innerHTML = t(hKey);
+      // Render translation as text to avoid interpreting potentially tainted DOM data as HTML
+      hEl.textContent = t(hKey);
     }
 
     // Render install modal step lists
