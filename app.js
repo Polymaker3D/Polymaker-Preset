@@ -4,6 +4,9 @@ var INDEX_JSON_URL = './index.json';
 var RAW_BASE = '';
 var THEME_STORAGE_KEY = 'polymaker-preset-theme';
 
+// Defensive fallback for t() function if i18n.js fails to load
+var t = (typeof window !== 'undefined' && window.t) ? window.t : function(key) { return key; };
+
 function escapeHtml(s) {
   if (s === null || s === undefined) return '';
   return String(s)
@@ -147,7 +150,7 @@ function init() {
    */
   function generateBundleStructure(presets, type) {
     if (!presets || presets.length === 0) {
-      throw new Error('No presets provided');
+      throw new Error(t('alert.no.presets'));
     }
 
     // Use numeric timestamp format like BambuStudio (seconds since epoch)
@@ -1044,10 +1047,10 @@ function init() {
         var materials = Object.keys(mappingsByMaterial);
         var materialPromises = [];
 
-      materials.forEach(function(materialName, index) {
-        var materialMappings = mappingsByMaterial[materialName];
-        var timestamp = Math.floor(Date.now() / 1000) + index;
-        var bundleId = '0_' + materialName + '_' + timestamp;
+        materials.forEach(function(materialName, index) {
+          var materialMappings = mappingsByMaterial[materialName];
+          var timestamp = Math.floor(Date.now() / 1000) + index;
+          var bundleId = '0_' + materialName + '_' + timestamp;
 
           var vendorMap = {};
           materialMappings.forEach(function(mapping) {

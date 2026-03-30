@@ -45,6 +45,7 @@ var I18N = (function () {
 
       // Alerts / errors
       'alert.no.bambu': 'No BambuStudio presets available to download. Please make sure BambuStudio is selected as the slicer.',
+      'alert.no.presets': 'No presets provided',
       'alert.load.failed': 'Failed to load preset data. Please check your connection and try again.',
       'alert.error.loading': 'Error loading presets: {msg}',
       'alert.invalid.url': 'Invalid preset URL',
@@ -163,6 +164,7 @@ var I18N = (function () {
 
       // Alerts / errors
       'alert.no.bambu': '没有可用的 BambuStudio 预设。请确保已选择 BambuStudio 为切片软件。',
+      'alert.no.presets': '未提供预设',
       'alert.load.failed': '预设数据加载失败，请检查网络连接并重试。',
       'alert.error.loading': '加载预设出错：{msg}',
       'alert.invalid.url': '无效的预设链接',
