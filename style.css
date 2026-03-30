@@ -1991,10 +1991,7 @@ body.theme-wiki .accordion-links a:active {
 
 /* ── Language Switcher ─────────────────────────────────── */
 .lang-switcher {
-  position: fixed;
-  top: 12px;
-  right: 16px;
-  z-index: 1000;
+  position: relative;
 }
 
 .lang-switcher-toggle {

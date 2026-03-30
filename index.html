@@ -37,6 +37,16 @@
         </h1>
         <div class="hero-actions">
           <button id="help-btn" class="help-icon-btn" type="button" aria-label="Manual Installation" title="Manual Installation" data-i18n="hero.howto">How to use?</button>
+          <div class="lang-switcher" id="lang-switcher">
+            <button class="lang-switcher-toggle" id="lang-switcher-toggle" type="button" aria-label="Switch language">
+              <span id="lang-dropdown-label">EN</span>
+              <span class="lang-switcher-arrow" aria-hidden="true">▾</span>
+            </button>
+            <ul class="lang-menu" id="lang-menu" role="listbox">
+              <li class="lang-option" data-lang="en" role="option">English</li>
+              <li class="lang-option" data-lang="zh" role="option">中文</li>
+            </ul>
+          </div>
           <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Toggle theme" title="Toggle theme">
             <span class="theme-toggle-icon" aria-hidden="true"></span>
           </button>
@@ -265,18 +275,6 @@
         </div>
       </div>
     </div>
-  </div>
-
-  <!-- Language Switcher -->
-  <div class="lang-switcher" id="lang-switcher">
-    <button class="lang-switcher-toggle" id="lang-switcher-toggle" type="button" aria-label="Switch language">
-      <span id="lang-dropdown-label">EN</span>
-      <span class="lang-switcher-arrow" aria-hidden="true">▾</span>
-    </button>
-    <ul class="lang-menu" id="lang-menu" role="listbox">
-      <li class="lang-option" data-lang="en" role="option">English</li>
-      <li class="lang-option" data-lang="zh" role="option">中文</li>
-    </ul>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
