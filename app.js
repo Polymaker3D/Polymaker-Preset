@@ -177,7 +177,7 @@ function init() {
     if (isBatch) {
       filamentName = 'Multiple Filaments';
     } else {
-      filamentName = presets[0].material || 'Unknown Filament';
+      filamentName = presets[0].material || t('value.unknown.filament');
     }
 
     // Generate bundle_id in BambuStudio format: {user_id}_{filament_name}_{timestamp}
@@ -202,7 +202,7 @@ function init() {
    */
   function generateBundleFilename(presets) {
     if (!presets || presets.length === 0) {
-      return 'polymaker-bundle.bbsflmt';
+      return t('filename.bundle');
     }
 
     var timestamp = new Date().toISOString().slice(0, 10);
@@ -246,7 +246,7 @@ function init() {
       return pathParts[2]; // Brand is at index 2
     }
 
-    return 'Unknown';
+    return t('value.unknown');
   }
 
   /**
@@ -257,7 +257,7 @@ function init() {
    */
   function generateFilenamesFromPrinters(preset, presetData) {
     var mappings = [];
-    var material = preset.material || 'Unknown';
+    var material = preset.material || t('value.unknown');
     var compatiblePrinters = presetData && presetData.compatible_printers;
 
     if (!compatiblePrinters || !Array.isArray(compatiblePrinters) || compatiblePrinters.length === 0) {
@@ -299,7 +299,7 @@ function init() {
     var materialGroups = {};
 
     filenameMappings.forEach(function(mapping) {
-      var material = mapping.originalPreset.material || 'Unknown';
+      var material = mapping.originalPreset.material || t('value.unknown');
       var targetPrinter = mapping.printerName;
 
       if (!materialGroups[material]) {
@@ -358,7 +358,7 @@ function init() {
    */
   function generateBundleStructureFromMappings(filenameMappings, type, materialName) {
     if (!filenameMappings || filenameMappings.length === 0) {
-      throw new Error('No filename mappings provided');
+      throw new Error(t('alert.load.failed'));
     }
 
     // Use numeric timestamp format like BambuStudio (seconds since epoch)
@@ -390,7 +390,7 @@ function init() {
     } else if (isBatch) {
       filamentName = 'Multiple Filaments';
     } else {
-      filamentName = filenameMappings[0].originalPreset.material || 'Unknown Filament';
+      filamentName = filenameMappings[0].originalPreset.material || t('value.unknown.filament');
     }
 
     // Generate bundle_id in BambuStudio format: {user_id}_{filament_name}_{timestamp}
@@ -473,7 +473,7 @@ function init() {
       }
     }).catch(function(err) {
       console.error('Error fetching presets:', err);
-      alert('Error downloading preset: ' + err.message);
+      alert(t('alert.error.download', { msg: err.message }));
     });
   }
 
@@ -1033,7 +1033,7 @@ function init() {
 
         var mappingsByMaterial = {};
         filenameMappings.forEach(function(mapping) {
-          var material = mapping.originalPreset.material || 'Unknown';
+          var material = mapping.originalPreset.material || t('value.unknown');
           if (!mappingsByMaterial[material]) {
             mappingsByMaterial[material] = [];
           }
@@ -1044,10 +1044,10 @@ function init() {
         var materials = Object.keys(mappingsByMaterial);
         var materialPromises = [];
 
-        materials.forEach(function(material, index) {
-          var materialMappings = mappingsByMaterial[material];
-          var timestamp = Math.floor(Date.now() / 1000) + index;
-          var bundleId = '0_' + material + '_' + timestamp;
+      materials.forEach(function(materialName, index) {
+        var materialMappings = mappingsByMaterial[materialName];
+        var timestamp = Math.floor(Date.now() / 1000) + index;
+        var bundleId = '0_' + materialName + '_' + timestamp;
 
           var vendorMap = {};
           materialMappings.forEach(function(mapping) {
@@ -1064,7 +1064,7 @@ function init() {
           var structure = {
             bundle_id: bundleId,
             bundle_type: 'filament config bundle',
-            filament_name: material,
+            filament_name: materialName,
             filament_vendor: Object.keys(vendorMap).map(function(k) { return vendorMap[k]; }),
             version: '02.05.00.56'
           };
@@ -1395,7 +1395,7 @@ function init() {
         var folderIdCounter = 0;
         var FOLDER_ID_PREFIX = 'folder-';
         function displayFilename(filename, slicer) {
-          var fn = filename || 'preset.json';
+          var fn = filename || t('filename.preset');
           var ext = fn.replace(/^.*\./, '') || 'json';
           var baseName = fn.replace(/\.[^.]+$/, '') || 'preset';
           return slicer ? (baseName + ' - ' + slicer + '.' + ext) : fn;
@@ -1406,18 +1406,18 @@ function init() {
 
         // Format date for display
         function formatDate(dateString) {
-          if (!dateString) return '-';
+          if (!dateString) return t('value.none');
           try {
             var date = new Date(dateString);
             return date.toLocaleDateString();
           } catch (e) {
-            return '-';
+            return t('value.none');
           }
         }
 
         function formatCompatiblePrinters(compatiblePrinters) {
           if (!compatiblePrinters || compatiblePrinters.length === 0) {
-            return '-';
+            return t('value.none');
           }
 
           // Model name mapping: full name -> display abbreviation
@@ -1445,11 +1445,11 @@ function init() {
 
         function getPrinterBrand(compatiblePrinters, fallbackBrand) {
           if (!compatiblePrinters || compatiblePrinters.length === 0) {
-            return fallbackBrand || '-';
+            return fallbackBrand || t('value.none');
           }
 
           // Get the first printer's brand (they should all be the same for a preset)
-          return compatiblePrinters[0].brand || fallbackBrand || '-';
+          return compatiblePrinters[0].brand || fallbackBrand || t('value.none');
         }
 
         // Helper function to generate table row HTML for a preset
@@ -1470,17 +1470,17 @@ function init() {
           // Only show Bundle button for BambuStudio presets
           var isBambuStudio = p.slicer === 'BambuStudio';
           var bundleButtonHtml = isBambuStudio
-            ? '<a href="#" class="btn-download btn-bundle" data-bundle-url="' + escapeHtml(url) + '" data-bundle-filename="' + escapeHtml(p.filename) + '" data-bundle-material="' + escapeHtml(options.material) + '" data-bundle-model="' + escapeHtml(p.model || '') + '" role="button" title="Download as BambuStudio Bundle">.bbsflmt</a>'
+            ? '<a href="#" class="btn-download btn-bundle" data-bundle-url="' + escapeHtml(url) + '" data-bundle-filename="' + escapeHtml(p.filename) + '" data-bundle-material="' + escapeHtml(options.material) + '" data-bundle-model="' + escapeHtml(p.model || '') + '" role="button" title="' + t('title.download.bundle') + '">.bbsflmt</a>'
             : '';
 
           return '<tr' + (rowClass ? ' class="' + rowClass + '"' : '') + parentAttr + '>' +
             '<td>' + checkboxHtml + '</td>' +
             '<td' + (materialClass ? ' class="' + materialClass + '"' : '') + '>' + escapeHtml(options.material) + '</td>' +
             '<td>' + escapeHtml(printerBrand) + '</td>' +
-            '<td>' + escapeHtml(p.model || '-') + '</td>' +
+            '<td>' + escapeHtml(p.model || t('value.none')) + '</td>' +
             '<td>' + escapeHtml(compatiblePrintersList) + '</td>' +
             '<td>' + formatDate(p.updatedAt) + '</td>' +
-            '<td class="td-actions"><a href="' + url + '" class="btn-download" data-download-url="' + escapeHtml(url) + '" data-download-filename="' + escapeHtml(filename) + '" role="button" title="Download as JSON file" download="' + escapeHtml(filename) + '">JSON</a>' + bundleButtonHtml + '</td>' +
+            '<td class="td-actions"><a href="' + url + '" class="btn-download" data-download-url="' + escapeHtml(url) + '" data-download-filename="' + escapeHtml(filename) + '" role="button" title="' + t('title.download.json') + '" download="' + escapeHtml(filename) + '">JSON</a>' + bundleButtonHtml + '</td>' +
             '</tr>';
         }
 
@@ -1746,7 +1746,7 @@ function initDuplicateModal() {
  * @returns {string} Formatted display name
  */
 function formatModelDisplayName(model) {
-  if (!model) return 'Unknown';
+  if (!model) return t('value.unknown');
   var modelMap = {
     'A1M': 'A1 mini',
     'A1': 'A1',
@@ -1849,7 +1849,7 @@ function showDuplicateResolutionDialog(duplicates, onConfirm, onCancel) {
       target.options.forEach(function(mapping, optionIndex) {
         var preset = mapping.originalPreset;
         var presetData = mapping.presetData;
-        var sourceModel = preset.model || 'Unknown';
+        var sourceModel = preset.model || t('value.unknown');
         var sourceDisplayName = formatModelDisplayName(sourceModel);
         var isSelected = optionIndex === selectedOptionIndex ? ' checked' : '';
 

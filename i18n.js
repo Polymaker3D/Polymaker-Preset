@@ -49,6 +49,7 @@ var I18N = (function () {
       'alert.error.loading': 'Error loading presets: {msg}',
       'alert.invalid.url': 'Invalid preset URL',
       'alert.error.preset': 'Error loading preset: {msg}. Please try again.',
+      'alert.error.download': 'Error downloading preset: {msg}',
 
       // Duplicate modal
       'dup.title': '\u26a0\ufe0f Duplicate Files Detected',
@@ -104,111 +105,138 @@ var I18N = (function () {
 
       // Language switcher
       'lang.en': 'English',
-      'lang.zh': '\u4e2d\u6587'
+      'lang.zh': '中文',
+
+      // Missing value fallbacks
+      'value.unknown': 'Unknown',
+      'value.unknown.filament': 'Unknown Filament',
+      'value.none': '-',
+
+      // Download button titles
+      'title.download.json': 'Download as JSON file',
+      'title.download.bundle': 'Download as BambuStudio Bundle',
+
+      // Filename defaults
+      'filename.preset': 'preset.json',
+      'filename.bundle': 'polymaker-bundle.bbsflmt'
     },
 
     zh: {
       // Hero
-      'hero.title': '\u8033\u6750\u9884\u8bbe\u6587\u4ef6',
-      'hero.desc': '\u9009\u62e9\u60a8\u7684\u5207\u7247\u8f6f\u4ef6\uff0c\u67e5\u770b\u5e76\u4e0b\u8f7d Polymaker \u6253\u5370\u914d\u7f6e\u6587\u4ef6\u548c\u8033\u6750\u9884\u8bbe',
-      'hero.howto': '\u5982\u4f55\u4f7f\u7528\uff1f',
+      'hero.title': '耗材预设文件',
+      'hero.desc': '选择您的切片软件，查看并下载 Polymaker 打印配置文件和耗材预设',
+      'hero.howto': '如何使用？',
 
       // Filters
-      'filter.slicer.label': '\u9009\u62e9\u5207\u7247\u8f6f\u4ef6',
-      'filter.slicer.placeholder': '\u8bf7\u9009\u62e9',
-      'filter.series.label': '\u7cfb\u5217',
-      'filter.brand.label': '\u6253\u5370\u673a\u54c1\u724c',
-      'filter.model.label': '\u6253\u5370\u673a\u578b\u53f7',
-      'filter.all': '\u5168\u90e8',
-      'filter.all.series': '\u5168\u90e8\u7cfb\u5217',
-      'filter.all.brands': '\u5168\u90e8\u54c1\u724c',
-      'filter.all.models': '\u5168\u90e8\u578b\u53f7',
-      'filter.strict': '\u4e25\u683c\u6a21\u5f0f\uff1a\u4ec5\u663e\u793a\u4e3a\u8be5\u6253\u5370\u673a\u4e13\u9580\u5236\u4f5c\u7684\u9884\u8bbe',
+      'filter.slicer.label': '选择切片软件',
+      'filter.slicer.placeholder': '请选择',
+      'filter.series.label': '耗材系列',
+      'filter.brand.label': '打印机品牌',
+      'filter.model.label': '打印机型号',
+      'filter.all': '全部',
+      'filter.all.series': '全部系列',
+      'filter.all.brands': '全部品牌',
+      'filter.all.models': '全部型号',
+      'filter.strict': '严格模式：仅显示为该打印机专门制作的预设',
 
       // List / table
-      'list.title': '\u9884\u8bbe\u5217\u8868',
-      'list.loading': '\u52a0\u8f7d\u4e2d\u2026',
-      'list.count': '{m} \u79cd\u8033\u6750\u5171 {n} \u4e2a\u9884\u8bbe\u3002',
-      'list.failed': '\u52a0\u8f7d\u5931\u8d25\uff1a{msg}',
-      'table.material': '\u8033\u6750',
-      'table.brand': '\u6253\u5370\u673a\u54c1\u724c',
-      'table.printer': '\u6253\u5370\u673a',
-      'table.compatible': '\u517c\u5bb9\u6253\u5370\u673a',
-      'table.modified': '\u6700\u540e\u4fee\u6539',
-      'table.action': '\u4e0b\u8f7d',
+      'list.title': '预设列表',
+      'list.loading': '加载中…',
+      'list.count': '{m} 种耗材共 {n} 个预设。',
+      'list.failed': '加载失败：{msg}',
+      'table.material': '耗材',
+      'table.brand': '打印机品牌',
+      'table.printer': '打印机',
+      'table.compatible': '兼容打印机',
+      'table.modified': '最后修改',
+      'table.action': '下载',
 
       // Buttons
-      'btn.download.selected': '\u4e0b\u8f7d\u6240\u9009',
-      'btn.download.selected.loading': '\u52a0\u8f7d\u4e2d...',
-      'btn.download.bundle': '\u4e0b\u8f7d\u6253\u5305 (.bbsflmt)',
-      'btn.download.bundle.loading': '\u52a0\u8f7d\u4e2d...',
+      'btn.download.selected': '下载所选',
+      'btn.download.selected.loading': '加载中...',
+      'btn.download.bundle': '下载打包 (.bbsflmt)',
+      'btn.download.bundle.loading': '加载中...',
 
       // Folder row
-      'folder.presets': '{n} \u4e2a\u9884\u8bbe',
-      'folder.expand': '\u70b9\u51fb\u5c55\u5f00',
+      'folder.presets': '{n} 个预设',
+      'folder.expand': '点击展开',
 
       // Alerts / errors
-      'alert.no.bambu': '\u6ca1\u6709\u53ef\u7528\u7684 BambuStudio \u9884\u8bbe\u3002\u8bf7\u786e\u4fdd\u5df2\u9009\u62e9 BambuStudio \u4e3a\u5207\u7247\u8f6f\u4ef6\u3002',
-      'alert.load.failed': '\u9884\u8bbe\u6570\u636e\u52a0\u8f7d\u5931\u8d25\uff0c\u8bf7\u68c0\u67e5\u7f51\u7edc\u8fde\u63a5\u5e76\u91cd\u8bd5\u3002',
-      'alert.error.loading': '\u52a0\u8f7d\u9884\u8bbe\u51fa\u9519\uff1a{msg}',
-      'alert.invalid.url': '\u65e0\u6548\u7684\u9884\u8bbe\u94fe\u63a5',
-      'alert.error.preset': '\u52a0\u8f7d\u9884\u8bbe\u51fa\u9519\uff1a{msg}\uff0c\u8bf7\u91cd\u8bd5\u3002',
+      'alert.no.bambu': '没有可用的 BambuStudio 预设。请确保已选择 BambuStudio 为切片软件。',
+      'alert.load.failed': '预设数据加载失败，请检查网络连接并重试。',
+      'alert.error.loading': '加载预设出错：{msg}',
+      'alert.invalid.url': '无效的预设链接',
+      'alert.error.preset': '加载预设出错：{msg}，请重试。',
+      'alert.error.download': '下载预设出错：{msg}',
 
       // Duplicate modal
-      'dup.title': '\u26a0\ufe0f \u68c0\u6d4b\u5230\u91cd\u590d\u6587\u4ef6',
-      'dup.intro': '\u591a\u4e2a\u9884\u8bbe\u751f\u6210\u4e86\u76f8\u540c\u7684\u6587\u4ef6\u540d\uff0c\u8bf7\u4e3a\u6bcf\u4e2a\u91cd\u590d\u9009\u62e9\u4fdd\u7559\u54ea\u4e2a\u9884\u8bbe\uff1a',
-      'dup.for.printer': '\u9488\u5bf9\u6253\u5370\u673a\uff1a{name}',
-      'dup.use.profile': '\u4f7f\u7528 {name} \u914d\u7f6e\u6587\u4ef6',
-      'dup.compatible': '\u517c\u5bb9\uff1a{list}',
-      'dup.cancel': '\u53d6\u6d88',
-      'dup.confirm': '\u786e\u8ba4\u5bfc\u51fa',
+      'dup.title': '⚠️ 检测到重复文件',
+      'dup.intro': '多个预设生成了相同的文件名，请为每个重复选择保留哪个预设：',
+      'dup.for.printer': '针对打印机：{name}',
+      'dup.use.profile': '使用 {name} 配置文件',
+      'dup.compatible': '兼容：{list}',
+      'dup.cancel': '取消',
+      'dup.confirm': '确认导出',
 
       // Install modal
-      'modal.install.title': '\ud83d\udce6 \u624b\u52a8\u5b89\u88c5',
+      'modal.install.title': '📦 手动安装',
       'modal.bambu.title': 'Bambu Studio',
-      'modal.bambu.method1.title': '\u65b9\u6cd5\u4e00\uff1a\u6253\u5305\u6a21\u5f0f\uff08\u63a8\u8350\uff09',
+      'modal.bambu.method1.title': '方法一：打包模式（推荐）',
       'modal.bambu.method1.steps': [
-        '\u4ece<a href="https://presets.polymaker.com" target="_blank" rel="noopener noreferrer">\u4e0b\u8f7d\u9875\u9762</a>\u4e0b\u8f7d\u9884\u8bbe <strong>.bbsflmt</strong> \u6587\u4ef6\uff08\u6216\u6253\u5305 ZIP\uff09\u3002',
-        '\u5982\u679c\u662f ZIP \u6587\u4ef6\uff0c\u8bf7\u89e3\u538b\u4ee5\u63d0\u53d6 .bbsflmt \u6587\u4ef6\u3002',
-        '\u6253\u5f00 Bambu Studio\u3002',
-        '\u8fdb\u5165 <strong>\u6587\u4ef6</strong> \u2192 <strong>\u5bfc\u5165</strong> \u2192 <strong>\u5bfc\u5165\u9884\u8bbe...</strong>\u3002',
-        '\u9009\u62e9 <strong>.bbsflmt</strong> \u6587\u4ef6\u3002',
-        '\u5355\u51fb\u9879\u76ee\u6d88\u8017\u54c1\u5217\u8868\u4e2d\u7684\u8033\u6750\uff0c\u9009\u62e9\u5bfc\u5165\u7684\u81ea\u5b9a\u4e49\u9884\u8bbe\uff0c\u9884\u8bbe\u5c06\u51fa\u73b0\u5728\u9884\u8bbe\u5217\u8868\u4e2d\u3002'
+        '从<a href="https://presets.polymaker.com" target="_blank" rel="noopener noreferrer">下载页面</a>下载预设 <strong>.bbsflmt</strong> 文件（或打包 ZIP）。',
+        '如果是 ZIP 文件，请解压以提取 .bbsflmt 文件。',
+        '打开 Bambu Studio。',
+        '进入 <strong>文件</strong> → <strong>导入</strong> → <strong>导入预设...</strong>。',
+        '选择 <strong>.bbsflmt</strong> 文件。',
+        '单击项目耗材列表中的耗材，即可选择导入的自定义预设'
       ],
-      'modal.bambu.method1.note': '<strong>\u6ce8\u610f\uff1a</strong>.bbsflmt \u6253\u5305\u4ec5\u9002\u7528\u4e8e BambuStudio\u3002\u4ec5\u5728\u672a\u5e94\u7528\u6253\u5370\u673a\u7b5b\u9009\u65f6\uff0c\u6253\u5305\u4e0b\u8f7d\u6309\u9215\u624d\u4f1a\u663e\u793a\u3002',
-      'modal.bambu.method2.title': '\u65b9\u6cd5\u4e8c\uff1a\u5355\u6587\u4ef6\u6a21\u5f0f',
+      'modal.bambu.method1.note': '<strong>注意：</strong>.bbsflmt 打包仅适用于 BambuStudio。仅在未应用打印机筛选时，打包下载按钮才会显示。',
+      'modal.bambu.method2.title': '方法二：单文件模式',
       'modal.bambu.method2.steps': [
-        '\u4ece<a href="https://presets.polymaker.com" target="_blank" rel="noopener noreferrer">\u4e0b\u8f7d\u9875\u9762</a>\u4e0b\u8f7d JSON \u6587\u4ef6\uff08\u6216\u5355\u6587\u4ef6 ZIP\uff09\u3002',
-        '\u6253\u5f00 Bambu Studio\u3002',
-        '\u8fdb\u5165 <strong>\u6587\u4ef6</strong> \u2192 <strong>\u5bfc\u5165</strong> \u2192 <strong>\u5bfc\u5165\u9884\u8bbe...</strong>\u3002',
-        '\u9009\u62e9 JSON \u6216 ZIP \u6587\u4ef6\u3002',
-        '\u5355\u51fb\u9879\u76ee\u6d88\u8017\u54c1\u5217\u8868\u4e2d\u7684\u8033\u6750\uff0c\u9009\u62e9\u5bfc\u5165\u7684\u81ea\u5b9a\u4e49\u9884\u8bbe\uff0c\u9884\u8bbe\u5c06\u51fa\u73b0\u5728\u9884\u8bbe\u5217\u8868\u4e2d\u3002'
+        '从<a href="https://presets.polymaker.com" target="_blank" rel="noopener noreferrer">下载页面</a>下载 JSON 文件（或单文件 ZIP）。',
+        '打开 Bambu Studio。',
+        '进入 <strong>文件</strong> → <strong>导入</strong> → <strong>导入预设...</strong>。',
+        '选择 JSON 或 ZIP 文件。',
+        '单击项目消耗品列表中的耗材，选择导入的自定义预设，预设将出现在预设列表中。'
       ],
       'modal.orca.title': 'OrcaSlicer / ElegooSlicer',
       'modal.orca.steps': [
-        '\u4ece<a href="https://presets.polymaker.com" target="_blank" rel="noopener noreferrer">\u4e0b\u8f7d\u9875\u9762</a>\u4e0b\u8f7d <strong>JSON</strong> \u6216\u5355\u6587\u4ef6 <strong>ZIP</strong>\u3002',
-        '\u6253\u5f00 OrcaSlicer \u6216 ElegooSlicer\u3002',
-        '\u8fdb\u5165 <strong>\u6587\u4ef6</strong> \u2192 <strong>\u5bfc\u5165</strong>\uff1a<ul><li><strong>JSON</strong> \u6587\u4ef6\uff1a\u9009\u62e9 <strong>\u5bfc\u5165\u914d\u7f6e...</strong>\uff08OrcaSlicer\uff09\u6216 <strong>\u5bfc\u5165\u9884\u8bbe...</strong>\uff08ElegooSlicer\uff09\u3002</li><li><strong>ZIP</strong> \u6587\u4ef6\uff1a\u9009\u62e9 <strong>\u5bfc\u5165 ZIP \u5305...</strong>\uff0c\u65e0\u9700\u89e3\u538b\u3002</li></ul>',
-        '\u9884\u8bbe\u5c06\u51fa\u73b0\u5728\u9884\u8bbe\u5217\u8868\u4e2d\u3002'
+        '从<a href="https://presets.polymaker.com" target="_blank" rel="noopener noreferrer">下载页面</a>下载 <strong>JSON</strong> 或单文件 <strong>ZIP</strong>。',
+        '打开 OrcaSlicer 或 ElegooSlicer。',
+        '进入 <strong>文件</strong> → <strong>导入</strong>：<ul><li><strong>JSON</strong> 文件：选择 <strong>导入配置...</strong>（OrcaSlicer）或 <strong>导入预设...</strong>（ElegooSlicer）。</li><li><strong>ZIP</strong> 文件：选择 <strong>导入 ZIP 包...</strong>，无需解压。</li></ul>',
+        '预设将出现在预设列表中。'
       ],
 
       // Known Issues
-      'issues.title': '\u5df2\u77e5\u95ee\u9898',
-      'issues.p2s.title': 'P2S \u8fc7\u70ed\u95ee\u9898 - \u5df2\u5e94\u7528\u4e34\u65f6\u4fee\u590d',
-      'issues.p2s.issue': '<strong>\u95ee\u9898\uff1a</strong>P2S \u6253\u5370\u673a\u5728\u6253\u5370\u73bb\u7092\u5316\u6e29\u5ea6 &gt; 50\u00b0C \u7684\u8033\u6750\u65f6\uff0c\u53ef\u80fd\u56e0\u8d77\u59cb G-code \u95ee\u9898\u800c\u8fc7\u70ed\u3002',
-      'issues.p2s.solution': '<strong>\u89e3\u51b3\u65b9\u6848\uff1a</strong>\u6211\u4eec\u5df2\u5411\u73bb\u7092\u5316\u6e29\u5ea6 &gt; 50\u00b0C \u7684 P2S \u9884\u8bbe\u6dfb\u52a0\u51b7\u5374 G-code \u547d\u4ee4\u4f5c\u4e3a\u4e34\u65f6\u4fee\u590d\uff0c\u5c45\u5f85 Bambu Lab \u5b98\u65b9\u4fee\u590d\u6b64\u95ee\u9898\u3002',
-      'issues.p2s.link': '\u67e5\u770b BambuStudio Issue #8801 \u2192',
-      'issues.p2s.credits': '\u611f\u8c22 alexbreinig \u548c capsel22 \u53d1\u73b0\u4e86\u8fd9\u4e2a\u95ee\u9898\u3002',
+      'issues.title': '已知问题',
+      'issues.p2s.title': 'P2S 过热问题 - 已应用临时修复',
+      'issues.p2s.issue': '<strong>问题：</strong>P2S 打印机在打印玻璃化转变温度 > 50°C 的耗材时，可能因起始 G-code 问题而过热。',
+      'issues.p2s.solution': '<strong>解决方案：</strong>我们已向玻璃化转变温度 > 50°C 的 P2S 预设添加冷却 G-code 命令作为临时修复，期待 Bambu Lab 官方修复此问题。',
+      'issues.p2s.link': '查看 BambuStudio Issue #8801 →',
+      'issues.p2s.credits': '感谢 alexbreinig 和 capsel22 发现了这个问题。',
 
       // Footer
-      'footer.links': '\u94fe\u63a5',
-      'footer.social': '\u793e\u4ea4\u5e73\u53f0',
-      'footer.readme': '\u66f4\u591a\u4fe1\u606f\u8bf7\u67e5\u9605',
+      'footer.links': '链接',
+      'footer.social': '社交平台',
+      'footer.readme': '更多信息请查阅',
       'footer.readme.link': 'README',
 
       // Language switcher
       'lang.en': 'English',
-      'lang.zh': '\u4e2d\u6587'
+      'lang.zh': '中文',
+
+      // Missing value fallbacks
+      'value.unknown': '未知',
+      'value.unknown.filament': '未知耗材',
+      'value.none': '-',
+
+      // Download button titles
+      'title.download.json': '下载 JSON 文件',
+      'title.download.bundle': '下载 BambuStudio 打包文件',
+
+      // Filename defaults
+      'filename.preset': 'preset.json',
+      'filename.bundle': 'polymaker-bundle.bbsflmt'
     }
   };
 
@@ -277,7 +305,7 @@ var I18N = (function () {
     // Update active lang label in dropdown
     var activeLangLabel = document.getElementById('lang-dropdown-label');
     if (activeLangLabel) {
-      activeLangLabel.textContent = lang === 'zh' ? '\u4e2d\u6587' : 'EN';
+      activeLangLabel.textContent = lang === 'zh' ? '中文' : 'EN';
     }
 
     // Mark active item in lang list

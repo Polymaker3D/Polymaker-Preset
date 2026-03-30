@@ -1995,10 +1995,10 @@ body.theme-wiki .accordion-links a:active {
 }
 
 .lang-switcher-toggle {
-  background: var(--card-bg, #1e1e2e);
-  border: 1px solid var(--border, rgba(255,255,255,0.1));
+  background: var(--bg-card);
+  border: 1px solid var(--border);
   border-radius: 6px;
-  color: var(--text, #e0e0e0);
+  color: var(--text);
   cursor: pointer;
   font-size: 12px;
   font-weight: 600;
@@ -2009,9 +2009,20 @@ body.theme-wiki .accordion-links a:active {
   gap: 4px;
 }
 
+body.theme-wiki .lang-switcher-toggle {
+  background: rgba(255, 255, 255, 0.96);
+  border-color: rgba(15, 23, 42, 0.1);
+  color: var(--text);
+}
+
+body.theme-wiki .lang-switcher-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 .lang-switcher-toggle:hover {
-  border-color: var(--accent, #00b4b4);
-  color: var(--accent, #00b4b4);
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .lang-switcher-arrow {
@@ -2025,8 +2036,8 @@ body.theme-wiki .accordion-links a:active {
   top: calc(100% + 4px);
   right: 0;
   z-index: 9999;
-  background: var(--card-bg, #1e1e2e);
-  border: 1px solid var(--border, rgba(255,255,255,0.1));
+  background: #050509;
+  border: 1px solid var(--border);
   border-radius: 6px;
   min-width: 90px;
   overflow: hidden;
@@ -2034,6 +2045,12 @@ body.theme-wiki .accordion-links a:active {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+body.theme-wiki .lang-menu {
+  background: #ffffff;
+  border-color: rgba(148, 163, 184, 0.5);
+  box-shadow: 0 14px 40px rgba(148, 163, 184, 0.5);
 }
 
 .lang-switcher.is-open .lang-menu {
@@ -2044,14 +2061,18 @@ body.theme-wiki .accordion-links a:active {
   cursor: pointer;
   font-size: 13px;
   padding: 8px 12px;
-  color: var(--text, #e0e0e0);
+  color: var(--text);
 }
 
 .lang-option:hover {
-  background: rgba(255,255,255,0.05);
+  background: var(--bg-card-hover);
+}
+
+body.theme-wiki .lang-option:hover {
+  background: rgba(230, 250, 250, 1);
 }
 
 .lang-option.is-active {
-  color: var(--accent, #00b4b4);
+  color: var(--accent);
   font-weight: 600;
 }
