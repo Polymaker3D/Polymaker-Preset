@@ -33,25 +33,35 @@
       <div class="hero-main">
         <h1 class="hero-title">
           <img src="./assets/logo/Polymaker%20Teal.png" alt="Polymaker" class="hero-logo">
-          <span class="preset-text">Filament Presets</span>
+          <span class="preset-text" data-i18n="hero.title">Filament Presets</span>
         </h1>
         <div class="hero-actions">
-          <button id="help-btn" class="help-icon-btn" type="button" aria-label="Manual Installation" title="Manual Installation">How to use?</button>
+          <button id="help-btn" class="help-icon-btn" type="button" aria-label="Manual Installation" title="Manual Installation" data-i18n="hero.howto">How to use?</button>
+          <div class="lang-switcher" id="lang-switcher">
+            <button class="lang-switcher-toggle" id="lang-switcher-toggle" type="button" aria-label="Switch language">
+              <span id="lang-dropdown-label">EN</span>
+              <span class="lang-switcher-arrow" aria-hidden="true">▾</span>
+            </button>
+            <ul class="lang-menu" id="lang-menu" role="listbox">
+              <li class="lang-option" data-lang="en" role="option">English</li>
+              <li class="lang-option" data-lang="zh" role="option">中文</li>
+            </ul>
+          </div>
           <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Toggle theme" title="Toggle theme">
             <span class="theme-toggle-icon" aria-hidden="true"></span>
           </button>
         </div>
       </div>
-      <p class="hero-desc">Select your slicer to view and download Polymaker print profiles and filament presets</p>
+      <p class="hero-desc" data-i18n="hero.desc">Select your slicer to view and download Polymaker print profiles and filament presets</p>
     </header>
 
     <section class="card slicer-card" id="slicer-card">
       <div class="slicer-filter">
         <div class="filter-group slicer-filter-group">
-          <label class="filter-label">Select Your Slicer</label>
+          <label class="filter-label" data-i18n="filter.slicer.label">Select Your Slicer</label>
           <div class="dropdown" data-filter="slicer">
             <button class="dropdown-toggle" type="button">
-              <span class="dropdown-label">Select Slicer</span>
+              <span class="dropdown-label" data-i18n="filter.slicer.placeholder">Select Slicer</span>
               <span class="dropdown-arrow" aria-hidden="true"></span>
             </button>
             <div class="dropdown-menu"></div>
@@ -63,30 +73,30 @@
     <section class="card filters-card is-hidden" id="filters-card">
       <div class="filters">
         <div class="filter-group">
-          <label class="filter-label">Series</label>
+          <label class="filter-label" data-i18n="filter.series.label">Series</label>
           <div class="dropdown" data-filter="series">
             <button class="dropdown-toggle" type="button">
-              <span class="dropdown-label">All</span>
+              <span class="dropdown-label" data-i18n="filter.all">All</span>
               <span class="dropdown-arrow" aria-hidden="true"></span>
             </button>
             <div class="dropdown-menu"></div>
           </div>
         </div>
         <div class="filter-group">
-          <label class="filter-label">Printer Brand</label>
+          <label class="filter-label" data-i18n="filter.brand.label">Printer Brand</label>
           <div class="dropdown" data-filter="brand">
             <button class="dropdown-toggle" type="button">
-              <span class="dropdown-label">All</span>
+              <span class="dropdown-label" data-i18n="filter.all">All</span>
               <span class="dropdown-arrow" aria-hidden="true"></span>
             </button>
             <div class="dropdown-menu"></div>
           </div>
         </div>
         <div class="filter-group">
-          <label class="filter-label">Printer Model</label>
+          <label class="filter-label" data-i18n="filter.model.label">Printer Model</label>
           <div class="dropdown" data-filter="model">
             <button class="dropdown-toggle" type="button">
-              <span class="dropdown-label">All</span>
+              <span class="dropdown-label" data-i18n="filter.all">All</span>
               <span class="dropdown-arrow" aria-hidden="true"></span>
             </button>
             <div class="dropdown-menu"></div>
@@ -97,7 +107,7 @@
         <label class="checkbox-option">
           <input type="checkbox" id="strict-checkbox" class="checkbox-input">
           <span class="checkbox-custom"></span>
-          <span class="checkbox-label-text">Strict mode: Only show presets made specifically for this printer</span>
+          <span class="checkbox-label-text" data-i18n="filter.strict">Strict mode: Only show presets made specifically for this printer</span>
         </label>
       </div>
     </section>
@@ -105,8 +115,8 @@
     <section class="card list-card is-hidden" id="list-card">
       <div class="list-header">
         <div class="list-header-left">
-          <h2 class="list-title">Presets</h2>
-          <p id="status" class="list-count">Loading…</p>
+          <h2 class="list-title" data-i18n="list.title">Presets</h2>
+          <p id="status" class="list-count" data-i18n="list.loading">Loading…</p>
         </div>
         <div class="list-header-right">
           <button id="download-selected-btn" class="btn-download-selected" type="button" disabled>
@@ -115,7 +125,7 @@
               <polyline points="7 10 12 15 17 10"></polyline>
               <line x1="12" y1="15" x2="12" y2="3"></line>
             </svg>
-            Download Selected (<span id="selected-count">0</span>)
+            <span data-i18n="btn.download.selected">Download Selected</span> (<span id="selected-count">0</span>)
           </button>
           <button id="download-bundle-btn" class="btn-download-bundle" type="button" disabled>
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -123,7 +133,7 @@
               <polyline points="7 10 12 15 17 10"></polyline>
               <line x1="12" y1="15" x2="12" y2="3"></line>
             </svg>
-            Download Bundle (.bbsflmt)
+            <span data-i18n="btn.download.bundle">Download Bundle (.bbsflmt)</span>
           </button>
         </div>
       </div>
@@ -137,12 +147,12 @@
                   <span class="checkbox-custom"></span>
                 </label>
               </th>
-              <th>Material</th>
-              <th>Printer Brand</th>
-              <th>Printer</th>
-              <th>Compatible Printers</th>
-              <th>Last Modified</th>
-              <th>Download Action</th>
+              <th data-i18n="table.material">Material</th>
+              <th data-i18n="table.brand">Printer Brand</th>
+              <th data-i18n="table.printer">Printer</th>
+              <th data-i18n="table.compatible">Compatible Printers</th>
+              <th data-i18n="table.modified">Last Modified</th>
+              <th data-i18n="table.action">Download Action</th>
             </tr>
           </thead>
           <tbody id="tbody"></tbody>
@@ -151,21 +161,21 @@
     </section>
 
     <section class="known-issues-section">
-      <h2 class="known-issues-title">Known Issues</h2>
+      <h2 class="known-issues-title" data-i18n="issues.title">Known Issues</h2>
       <div class="accordion">
         <div class="accordion-item is-collapsed">
           <button class="accordion-header" type="button" aria-expanded="false">
-            <span class="accordion-title">P2S Overheating Issue - Temporary Fix Applied</span>
+            <span class="accordion-title" data-i18n="issues.p2s.title">P2S Overheating Issue - Temporary Fix Applied</span>
             <span class="accordion-icon" aria-hidden="true">▼</span>
           </button>
           <div class="accordion-content">
             <div class="accordion-body">
-              <p><strong>Issue:</strong> P2S printer may overheat when printing materials with vitrification temperature &gt; 50°C due to starting G-code issues.</p>
-              <p><strong>Solution:</strong> We have implemented a temporary fix by adding cooling G-code commands to P2S presets with vitrification temperature &gt; 50°C. This is a temporary workaround until Bambu Lab fixes this issue.</p>
+              <p data-i18n-html="issues.p2s.issue"><strong>Issue:</strong> P2S printer may overheat when printing materials with vitrification temperature &gt; 50°C due to starting G-code issues.</p>
+              <p data-i18n-html="issues.p2s.solution"><strong>Solution:</strong> We have implemented a temporary fix by adding cooling G-code commands to P2S presets with vitrification temperature &gt; 50°C. This is a temporary workaround until Bambu Lab fixes this issue.</p>
               <p class="accordion-links">
-                <a href="https://github.com/bambulab/BambuStudio/issues/8801" target="_blank" rel="noopener noreferrer">View BambuStudio Issue #8801 →</a>
+                <a href="https://github.com/bambulab/BambuStudio/issues/8801" target="_blank" rel="noopener noreferrer" data-i18n="issues.p2s.link">View BambuStudio Issue #8801 →</a>
               </p>
-              <p class="accordion-credits">Thanks to alexbreinig and capsel22 for identifying this issue.</p>
+              <p class="accordion-credits" data-i18n="issues.p2s.credits">Thanks to alexbreinig and capsel22 for identifying this issue.</p>
             </div>
           </div>
         </div>
@@ -175,7 +185,7 @@
     <footer class="footer">
       <div class="footer-columns">
         <div class="footer-col footer-col-links">
-          <h3 class="footer-col-title">Links</h3>
+          <h3 class="footer-col-title" data-i18n="footer.links">Links</h3>
           <div class="footer-links">
             <a href="https://polymaker.com/" target="_blank" rel="noopener noreferrer" class="footer-link-item">
               <span class="footer-label">Official Website:</span>
@@ -192,7 +202,7 @@
           </div>
         </div>
         <div class="footer-col footer-col-social">
-          <h3 class="footer-col-title">Social Accounts</h3>
+          <h3 class="footer-col-title" data-i18n="footer.social">Social Accounts</h3>
           <div class="footer-social-list">
             <a href="https://www.youtube.com/@Polymaker" target="_blank" rel="noopener noreferrer" class="footer-social-item" title="YouTube">
               <i class="fab fa-youtube footer-social-icon"></i>
@@ -209,7 +219,7 @@
           </div>
         </div>
       </div>
-      <p class="footer-readme">For more information, see <a href="https://github.com/Polymaker3D/Polymaker-Preset#readme" target="_blank" rel="noopener noreferrer">README</a></p>
+      <p class="footer-readme"><span data-i18n="footer.readme">For more information, see</span> <a href="https://github.com/Polymaker3D/Polymaker-Preset#readme" target="_blank" rel="noopener noreferrer" data-i18n="footer.readme.link">README</a></p>
     </footer>
   </div>
 
@@ -218,7 +228,7 @@
     <div class="modal-overlay"></div>
     <div class="modal-content">
       <div class="modal-header">
-        <h2 id="duplicate-modal-title" class="modal-title">⚠️ Duplicate Files Detected</h2>
+        <h2 id="duplicate-modal-title" class="modal-title" data-i18n="dup.title">⚠️ Duplicate Files Detected</h2>
         <button class="modal-close" type="button" aria-label="Close modal" id="duplicate-modal-close">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -227,11 +237,11 @@
         </button>
       </div>
       <div class="modal-body">
-        <p class="duplicate-intro">Multiple presets are generating the same filename. Please select which preset to keep for each duplicate:</p>
+        <p class="duplicate-intro" data-i18n="dup.intro">Multiple presets are generating the same filename. Please select which preset to keep for each duplicate:</p>
         <div id="duplicate-list" class="duplicate-list"></div>
         <div class="duplicate-actions">
-          <button type="button" class="btn-secondary" id="duplicate-cancel">Cancel</button>
-          <button type="button" class="btn-primary" id="duplicate-confirm">Confirm Export</button>
+          <button type="button" class="btn-secondary" id="duplicate-cancel" data-i18n="dup.cancel">Cancel</button>
+          <button type="button" class="btn-primary" id="duplicate-confirm" data-i18n="dup.confirm">Confirm Export</button>
         </div>
       </div>
     </div>
@@ -242,7 +252,7 @@
     <div class="modal-overlay"></div>
     <div class="modal-content">
       <div class="modal-header">
-        <h2 id="modal-title" class="modal-title">📦 Manual Installation</h2>
+        <h2 id="modal-title" class="modal-title" data-i18n="modal.install.title">📦 Manual Installation</h2>
         <button class="modal-close" type="button" aria-label="Close modal">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -252,47 +262,23 @@
       </div>
       <div class="modal-body">
         <div class="install-section">
-          <h3 class="install-section-title">Bambu Studio</h3>
-          
-          <h4 class="install-method-title">Method 1: Bundle Method (Recommended)</h4>
-          <ol class="install-steps">
-            <li>Download the preset <strong>.bbsflmt</strong> file (or bundle ZIP) from the <a href="https://presets.polymaker.com" target="_blank" rel="noopener noreferrer">download page</a>.</li>
-            <li>If it's a ZIP file, unzip it to extract the .bbsflmt file(s).</li>
-            <li>Open Bambu Studio.</li>
-            <li>Go to <strong>File</strong> → <strong>Import</strong> → <strong>Import Preset...</strong>.</li>
-            <li>Select the <strong>.bbsflmt</strong> file(s).</li>
-            <li>Click on a material in the project consumables list, select the imported custom preset, and the preset will appear in the preset list.</li>
-          </ol>
-          <p class="install-note"><strong>Note:</strong> .bbsflmt bundles are only available for BambuStudio. The bundle download button only appears when no printer filter is applied.</p>
-          
-          <h4 class="install-method-title">Method 2: Individual File Method</h4>
-          <ol class="install-steps">
-            <li>Download the preset JSON file (or single-file ZIP) from the <a href="https://presets.polymaker.com" target="_blank" rel="noopener noreferrer">download page</a>.</li>
-            <li>Open Bambu Studio.</li>
-            <li>Go to <strong>File</strong> → <strong>Import</strong> → <strong>Import Preset...</strong>.</li>
-            <li>Select a JSON or ZIP file.</li>
-            <li>Click on a material in the project consumables list, select the imported custom preset, and the preset will appear in the preset list.</li>
-          </ol>
+          <h3 class="install-section-title" data-i18n="modal.bambu.title">Bambu Studio</h3>
+          <h4 class="install-method-title" data-i18n="modal.bambu.method1.title">Method 1: Bundle Method (Recommended)</h4>
+          <ol class="install-steps" data-i18n-steps="modal.bambu.method1.steps"></ol>
+          <p class="install-note" data-i18n-html="modal.bambu.method1.note"></p>
+          <h4 class="install-method-title" data-i18n="modal.bambu.method2.title">Method 2: Individual File Method</h4>
+          <ol class="install-steps" data-i18n-steps="modal.bambu.method2.steps"></ol>
         </div>
         <div class="install-section">
-          <h3 class="install-section-title">OrcaSlicer / ElegooSlicer</h3>
-          <ol class="install-steps">
-            <li>Download the preset as <strong>JSON</strong> or <strong>single-file ZIP</strong> from the <a href="https://presets.polymaker.com" target="_blank" rel="noopener noreferrer">download page</a>.</li>
-            <li>Open OrcaSlicer or ElegooSlicer.</li>
-            <li>Go to <strong>File</strong> → <strong>Import</strong>:
-              <ul>
-                <li>For a <strong>JSON</strong> file: choose <strong>Import Configs...</strong> (OrcaSlicer) or <strong>Import Preset...</strong> (ElegooSlicer), then select the JSON file.</li>
-                <li>For a <strong>ZIP</strong> file: choose <strong>Import Zip Archive...</strong> (or the equivalent, e.g. "Import Zip Archive…" in ElegooSlicer), then select the ZIP file (no need to unzip).</li>
-              </ul>
-            </li>
-            <li>The preset will appear in your preset list.</li>
-          </ol>
+          <h3 class="install-section-title" data-i18n="modal.orca.title">OrcaSlicer / ElegooSlicer</h3>
+          <ol class="install-steps" data-i18n-steps="modal.orca.steps"></ol>
         </div>
       </div>
     </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+  <script src="i18n.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

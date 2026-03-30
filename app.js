@@ -4,6 +4,9 @@ var INDEX_JSON_URL = './index.json';
 var RAW_BASE = '';
 var THEME_STORAGE_KEY = 'polymaker-preset-theme';
 
+// Defensive fallback for t() function if i18n.js fails to load
+var t = (typeof window !== 'undefined' && window.t) ? window.t : function(key) { return key; };
+
 function escapeHtml(s) {
   if (s === null || s === undefined) return '';
   return String(s)
@@ -147,7 +150,7 @@ function init() {
    */
   function generateBundleStructure(presets, type) {
     if (!presets || presets.length === 0) {
-      throw new Error('No presets provided');
+      throw new Error(t('alert.no.presets'));
     }
 
     // Use numeric timestamp format like BambuStudio (seconds since epoch)
@@ -177,7 +180,7 @@ function init() {
     if (isBatch) {
       filamentName = 'Multiple Filaments';
     } else {
-      filamentName = presets[0].material || 'Unknown Filament';
+      filamentName = presets[0].material || t('value.unknown.filament');
     }
 
     // Generate bundle_id in BambuStudio format: {user_id}_{filament_name}_{timestamp}
@@ -202,7 +205,7 @@ function init() {
    */
   function generateBundleFilename(presets) {
     if (!presets || presets.length === 0) {
-      return 'polymaker-bundle.bbsflmt';
+      return t('filename.bundle');
     }
 
     var timestamp = new Date().toISOString().slice(0, 10);
@@ -246,7 +249,7 @@ function init() {
       return pathParts[2]; // Brand is at index 2
     }
 
-    return 'Unknown';
+    return t('value.unknown');
   }
 
   /**
@@ -257,7 +260,7 @@ function init() {
    */
   function generateFilenamesFromPrinters(preset, presetData) {
     var mappings = [];
-    var material = preset.material || 'Unknown';
+    var material = preset.material || t('value.unknown');
     var compatiblePrinters = presetData && presetData.compatible_printers;
 
     if (!compatiblePrinters || !Array.isArray(compatiblePrinters) || compatiblePrinters.length === 0) {
@@ -299,7 +302,7 @@ function init() {
     var materialGroups = {};
 
     filenameMappings.forEach(function(mapping) {
-      var material = mapping.originalPreset.material || 'Unknown';
+      var material = mapping.originalPreset.material || t('value.unknown');
       var targetPrinter = mapping.printerName;
 
       if (!materialGroups[material]) {
@@ -358,7 +361,7 @@ function init() {
    */
   function generateBundleStructureFromMappings(filenameMappings, type, materialName) {
     if (!filenameMappings || filenameMappings.length === 0) {
-      throw new Error('No filename mappings provided');
+      throw new Error(t('alert.load.failed'));
     }
 
     // Use numeric timestamp format like BambuStudio (seconds since epoch)
@@ -390,7 +393,7 @@ function init() {
     } else if (isBatch) {
       filamentName = 'Multiple Filaments';
     } else {
-      filamentName = filenameMappings[0].originalPreset.material || 'Unknown Filament';
+      filamentName = filenameMappings[0].originalPreset.material || t('value.unknown.filament');
     }
 
     // Generate bundle_id in BambuStudio format: {user_id}_{filament_name}_{timestamp}
@@ -473,7 +476,7 @@ function init() {
       }
     }).catch(function(err) {
       console.error('Error fetching presets:', err);
-      alert('Error downloading preset: ' + err.message);
+      alert(t('alert.error.download', { msg: err.message }));
     });
   }
 
@@ -483,6 +486,7 @@ function init() {
    * @param {Array} originalPresets - Original preset objects for reference
    */
   function generateAndDownloadBbsflmt(filenameMappings, originalPresets) {
+    console.log('generateAndDownloadBbsflmt called with', filenameMappings ? filenameMappings.length : 0, 'mappings');
     if (!filenameMappings || filenameMappings.length === 0) {
       console.warn('No filename mappings to bundle');
       return;
@@ -614,12 +618,12 @@ function init() {
         var toggle = dropdown.querySelector('.dropdown-toggle');
         var labelEl = dropdown.querySelector('.dropdown-label');
         var menu = dropdown.querySelector('.dropdown-menu');
-        var defaultLabel = isSlicer ? 'Select Slicer' : ('All ' + (name === 'series' ? 'Series' : name === 'brand' ? 'Brands' : 'Models'));
+        var defaultLabel = isSlicer ? t('filter.slicer.placeholder') : (name === 'series' ? t('filter.all.series') : name === 'brand' ? t('filter.all.brands') : t('filter.all.models'));
 
         function renderOptions(options) {
           var html = '';
           if (!isSlicer) {
-            html += '<div class="dropdown-option' + (filterState[name] ? '' : ' is-active') + '" data-value="">All</div>';
+            html += '<div class="dropdown-option' + (filterState[name] ? '' : ' is-active') + '" data-value="">' + t('filter.all') + '</div>';
           }
           html += options.map(function (x) {
             var active = x === filterState[name] ? ' is-active' : '';
@@ -732,13 +736,13 @@ function init() {
         var menu = dropdown.querySelector('.dropdown-menu');
         var labelEl = dropdown.querySelector('.dropdown-label');
         var html = [
-          '<div class="dropdown-option' + (display ? '' : ' is-active') + '" data-value="">All</div>'
+          '<div class="dropdown-option' + (display ? '' : ' is-active') + '" data-value="">' + t('filter.all') + '</div>'
         ].concat(list.map(function (x) {
           var active = x === display ? ' is-active' : '';
           return '<div class="dropdown-option' + active + '" data-value="' + escapeHtml(x) + '">' + escapeHtml(x) + '</div>';
         }));
         menu.innerHTML = html.join('');
-        if (labelEl) labelEl.textContent = display || 'All';
+        if (labelEl) labelEl.textContent = display || t('filter.all');
       }
 
       /** Only show filter options that have at least one preset to avoid zero-result combinations.
@@ -845,7 +849,8 @@ function init() {
         // Show loading state
         if (downloadSelectedBtn) {
           downloadSelectedBtn.disabled = true;
-          downloadSelectedBtn.textContent = 'Loading...';
+          var dlSelSpan = downloadSelectedBtn.querySelector('[data-i18n="btn.download.selected"]');
+          if (dlSelSpan) dlSelSpan.textContent = t('btn.download.selected.loading');
         }
 
         var zip = new JSZip();
@@ -893,7 +898,8 @@ function init() {
             // Reset button state
             if (downloadSelectedBtn) {
               downloadSelectedBtn.disabled = false;
-              downloadSelectedBtn.textContent = 'Download Selected';
+              var dlSelSpanReset = downloadSelectedBtn.querySelector('[data-i18n="btn.download.selected"]');
+              if (dlSelSpanReset) dlSelSpanReset.textContent = t('btn.download.selected');
             }
           });
         }).catch(function (err) {
@@ -901,7 +907,8 @@ function init() {
           // Reset button state on error
           if (downloadSelectedBtn) {
             downloadSelectedBtn.disabled = false;
-            downloadSelectedBtn.textContent = 'Download Selected';
+            var dlSelSpanErr = downloadSelectedBtn.querySelector('[data-i18n="btn.download.selected"]');
+            if (dlSelSpanErr) dlSelSpanErr.textContent = t('btn.download.selected');
           }
         });
       }
@@ -941,14 +948,15 @@ function init() {
         console.log('downloadSelectedBundle called, bambuPresets count:', bambuPresets.length);
         if (bambuPresets.length === 0) {
           console.log('No BambuStudio presets found. filterState:', filterState);
-          alert('No BambuStudio presets available to download. Please make sure BambuStudio is selected as the slicer.');
+          alert(t('alert.no.bambu'));
           return;
         }
 
         // Show loading state
         if (downloadBundleBtn) {
           downloadBundleBtn.disabled = true;
-          downloadBundleBtn.textContent = 'Loading...';
+          var dlBndSpanLoad = downloadBundleBtn.querySelector('[data-i18n="btn.download.bundle"]');
+          if (dlBndSpanLoad) dlBndSpanLoad.textContent = t('btn.download.bundle.loading');
         }
 
         // Fetch all preset JSON files with full data
@@ -980,10 +988,11 @@ function init() {
 
           var validMappings = allMappings.filter(function(m) { return m.presetData !== null; });
           if (validMappings.length === 0) {
-            alert('Failed to load preset data. Please check your connection and try again.');
+            alert(t('alert.load.failed'));
             if (downloadBundleBtn) {
               downloadBundleBtn.disabled = false;
-              downloadBundleBtn.textContent = 'Download Bundle (.bbsflmt)';
+              var dlBndSpanRst = downloadBundleBtn.querySelector('[data-i18n="btn.download.bundle"]');
+            if (dlBndSpanRst) dlBndSpanRst.textContent = t('btn.download.bundle');
             }
             return;
           }
@@ -997,7 +1006,8 @@ function init() {
             }, function() {
               if (downloadBundleBtn) {
                 downloadBundleBtn.disabled = false;
-                downloadBundleBtn.textContent = 'Download Bundle (.bbsflmt)';
+                var dlBndSpanRst = downloadBundleBtn.querySelector('[data-i18n="btn.download.bundle"]');
+            if (dlBndSpanRst) dlBndSpanRst.textContent = t('btn.download.bundle');
               }
             });
           } else {
@@ -1005,27 +1015,30 @@ function init() {
           }
         }).catch(function(err) {
           console.error('Error fetching presets:', err);
-          alert('Error loading presets: ' + err.message);
+          alert(t('alert.error.loading', { msg: err.message }));
           if (downloadBundleBtn) {
             downloadBundleBtn.disabled = false;
-            downloadBundleBtn.textContent = 'Download Bundle (.bbsflmt)';
+            var dlBndSpanRst = downloadBundleBtn.querySelector('[data-i18n="btn.download.bundle"]');
+            if (dlBndSpanRst) dlBndSpanRst.textContent = t('btn.download.bundle');
           }
         });
       }
 
       function generateAndDownloadBundleBatch(filenameMappings, originalPresets) {
+        console.log('generateAndDownloadBundleBatch called with', filenameMappings ? filenameMappings.length : 0, 'mappings');
         if (!filenameMappings || filenameMappings.length === 0) {
           console.warn('No filename mappings to bundle');
           if (downloadBundleBtn) {
             downloadBundleBtn.disabled = false;
-            downloadBundleBtn.textContent = 'Download Bundle (.bbsflmt)';
+            var dlBndSpanRst = downloadBundleBtn.querySelector('[data-i18n="btn.download.bundle"]');
+            if (dlBndSpanRst) dlBndSpanRst.textContent = t('btn.download.bundle');
           }
           return;
         }
 
         var mappingsByMaterial = {};
         filenameMappings.forEach(function(mapping) {
-          var material = mapping.originalPreset.material || 'Unknown';
+          var material = mapping.originalPreset.material || t('value.unknown');
           if (!mappingsByMaterial[material]) {
             mappingsByMaterial[material] = [];
           }
@@ -1036,10 +1049,10 @@ function init() {
         var materials = Object.keys(mappingsByMaterial);
         var materialPromises = [];
 
-        materials.forEach(function(material, index) {
-          var materialMappings = mappingsByMaterial[material];
+        materials.forEach(function(materialName, index) {
+          var materialMappings = mappingsByMaterial[materialName];
           var timestamp = Math.floor(Date.now() / 1000) + index;
-          var bundleId = '0_' + material + '_' + timestamp;
+          var bundleId = '0_' + materialName + '_' + timestamp;
 
           var vendorMap = {};
           materialMappings.forEach(function(mapping) {
@@ -1056,7 +1069,7 @@ function init() {
           var structure = {
             bundle_id: bundleId,
             bundle_type: 'filament config bundle',
-            filament_name: material,
+            filament_name: materialName,
             filament_vendor: Object.keys(vendorMap).map(function(k) { return vendorMap[k]; }),
             version: '02.05.00.56'
           };
@@ -1081,7 +1094,7 @@ function init() {
           });
 
           var mp = innerZip.generateAsync({ type: 'blob' }).then(function(content) {
-            var sanitizedName = material.replace(/[^a-zA-Z0-9\s-]/g, '').replace(/\s+/g, '-');
+            var sanitizedName = materialName.replace(/[^a-zA-Z0-9\s-]/g, '').replace(/\s+/g, '-');
             outerZip.file(sanitizedName + '.bbsflmt', content);
           });
 
@@ -1103,13 +1116,15 @@ function init() {
 
           if (downloadBundleBtn) {
             downloadBundleBtn.disabled = false;
-            downloadBundleBtn.textContent = 'Download Bundle (.bbsflmt)';
+            var dlBndSpanRst = downloadBundleBtn.querySelector('[data-i18n="btn.download.bundle"]');
+            if (dlBndSpanRst) dlBndSpanRst.textContent = t('btn.download.bundle');
           }
         }).catch(function(err) {
           console.error('Error creating bundles:', err);
           if (downloadBundleBtn) {
             downloadBundleBtn.disabled = false;
-            downloadBundleBtn.textContent = 'Download Bundle (.bbsflmt)';
+            var dlBndSpanRst = downloadBundleBtn.querySelector('[data-i18n="btn.download.bundle"]');
+            if (dlBndSpanRst) dlBndSpanRst.textContent = t('btn.download.bundle');
           }
         });
       }
@@ -1385,7 +1400,7 @@ function init() {
         var folderIdCounter = 0;
         var FOLDER_ID_PREFIX = 'folder-';
         function displayFilename(filename, slicer) {
-          var fn = filename || 'preset.json';
+          var fn = filename || t('filename.preset');
           var ext = fn.replace(/^.*\./, '') || 'json';
           var baseName = fn.replace(/\.[^.]+$/, '') || 'preset';
           return slicer ? (baseName + ' - ' + slicer + '.' + ext) : fn;
@@ -1396,18 +1411,18 @@ function init() {
 
         // Format date for display
         function formatDate(dateString) {
-          if (!dateString) return '-';
+          if (!dateString) return t('value.none');
           try {
             var date = new Date(dateString);
             return date.toLocaleDateString();
           } catch (e) {
-            return '-';
+            return t('value.none');
           }
         }
 
         function formatCompatiblePrinters(compatiblePrinters) {
           if (!compatiblePrinters || compatiblePrinters.length === 0) {
-            return '-';
+            return t('value.none');
           }
 
           // Model name mapping: full name -> display abbreviation
@@ -1435,11 +1450,11 @@ function init() {
 
         function getPrinterBrand(compatiblePrinters, fallbackBrand) {
           if (!compatiblePrinters || compatiblePrinters.length === 0) {
-            return fallbackBrand || '-';
+            return fallbackBrand || t('value.none');
           }
 
           // Get the first printer's brand (they should all be the same for a preset)
-          return compatiblePrinters[0].brand || fallbackBrand || '-';
+          return compatiblePrinters[0].brand || fallbackBrand || t('value.none');
         }
 
         // Helper function to generate table row HTML for a preset
@@ -1460,17 +1475,17 @@ function init() {
           // Only show Bundle button for BambuStudio presets
           var isBambuStudio = p.slicer === 'BambuStudio';
           var bundleButtonHtml = isBambuStudio
-            ? '<a href="#" class="btn-download btn-bundle" data-bundle-url="' + escapeHtml(url) + '" data-bundle-filename="' + escapeHtml(p.filename) + '" data-bundle-material="' + escapeHtml(options.material) + '" data-bundle-model="' + escapeHtml(p.model || '') + '" role="button" title="Download as BambuStudio Bundle">.bbsflmt</a>'
+            ? '<a href="#" class="btn-download btn-bundle" data-bundle-url="' + escapeHtml(url) + '" data-bundle-filename="' + escapeHtml(p.filename) + '" data-bundle-material="' + escapeHtml(options.material) + '" data-bundle-model="' + escapeHtml(p.model || '') + '" role="button" title="' + t('title.download.bundle') + '">.bbsflmt</a>'
             : '';
 
           return '<tr' + (rowClass ? ' class="' + rowClass + '"' : '') + parentAttr + '>' +
             '<td>' + checkboxHtml + '</td>' +
             '<td' + (materialClass ? ' class="' + materialClass + '"' : '') + '>' + escapeHtml(options.material) + '</td>' +
             '<td>' + escapeHtml(printerBrand) + '</td>' +
-            '<td>' + escapeHtml(p.model || '-') + '</td>' +
+            '<td>' + escapeHtml(p.model || t('value.none')) + '</td>' +
             '<td>' + escapeHtml(compatiblePrintersList) + '</td>' +
             '<td>' + formatDate(p.updatedAt) + '</td>' +
-            '<td class="td-actions"><a href="' + url + '" class="btn-download" data-download-url="' + escapeHtml(url) + '" data-download-filename="' + escapeHtml(filename) + '" role="button" title="Download as JSON file" download="' + escapeHtml(filename) + '">JSON</a>' + bundleButtonHtml + '</td>' +
+            '<td class="td-actions"><a href="' + url + '" class="btn-download" data-download-url="' + escapeHtml(url) + '" data-download-filename="' + escapeHtml(filename) + '" role="button" title="' + t('title.download.json') + '" download="' + escapeHtml(filename) + '">JSON</a>' + bundleButtonHtml + '</td>' +
             '</tr>';
         }
 
@@ -1497,9 +1512,9 @@ function init() {
 
             rowsHtml.push('<tr class="folder-row" data-folder-id="' + folderId + '">' +
               '<td><label class="checkbox-label folder-checkbox-label" data-folder-id="' + folderId + '"><input type="checkbox" class="checkbox-input folder-checkbox-input"' + folderChecked + folderIndeterminate + '><span class="checkbox-custom"></span></label></td>' +
-              '<td colspan="4">' + folderIconSvg + escapeHtml(mat) + ' <span class="folder-count">(' + list.length + ' presets)</span></td>' +
+              '<td colspan="4">' + folderIconSvg + escapeHtml(mat) + ' <span class="folder-count">(' + t('folder.presets', { n: list.length }) + ')</span></td>' +
               '<td>-</td>' +
-              '<td class="td-actions"><span class="folder-hint">Click to expand</span></td>' +
+              '<td class="td-actions"><span class="folder-hint">' + t('folder.expand') + '</span></td>' +
               '</tr>');
 
             // Child rows for each preset
@@ -1570,7 +1585,7 @@ function init() {
         // Update select all checkbox state after rendering
         updateSelectAllCheckboxState();
 
-        if (status) status.textContent = totalPresets + ' presets in ' + Object.keys(groups).length + ' materials.';
+        if (status) status.textContent = t('list.count', { n: totalPresets, m: Object.keys(groups).length });
         
         // Update bundle button state when filters change
         updateBundleButtonState();
@@ -1587,7 +1602,7 @@ function init() {
           var model = bundleLink.getAttribute('data-bundle-model');
 
           if (!url || url === '#') {
-            alert('Invalid preset URL');
+            alert(t('alert.invalid.url'));
             return;
           }
 
@@ -1614,16 +1629,21 @@ function init() {
             })
             .catch(function (err) {
               console.error('Error downloading bundle:', err);
-              alert('Error loading preset: ' + err.message + '. Please try again.');
+              alert(t('alert.error.preset', { msg: err.message }));
             });
           return;
         }
       });
 
       render();
+
+      // Re-render table and dynamic strings when language changes
+      document.addEventListener('langchange', function () {
+        render();
+      });
     })
     .catch(function (err) {
-      document.getElementById('status').textContent = 'Failed to load: ' + err.message;
+      document.getElementById('status').textContent = t('list.failed', { msg: err.message });
     });
 }
 
@@ -1697,7 +1717,10 @@ function initDuplicateModal() {
     modal.classList.remove('is-open');
     document.body.style.overflow = '';
     if (duplicateModalState.onConfirm) {
+      console.log('Confirm clicked, selectedOptions:', duplicateModalState.selectedOptions);
       duplicateModalState.onConfirm(duplicateModalState.selectedOptions);
+    } else {
+      console.warn('No onConfirm callback found');
     }
   }
 
@@ -1731,7 +1754,7 @@ function initDuplicateModal() {
  * @returns {string} Formatted display name
  */
 function formatModelDisplayName(model) {
-  if (!model) return 'Unknown';
+  if (!model) return t('value.unknown');
   var modelMap = {
     'A1M': 'A1 mini',
     'A1': 'A1',
@@ -1826,7 +1849,7 @@ function showDuplicateResolutionDialog(duplicates, onConfirm, onCancel) {
     // Each target printer within this material
     materialGroup.targets.forEach(function(target, targetIndex) {
       html += '<div class="duplicate-target-section">';
-      html += '<div class="duplicate-target-label">For printer: ' + escapeHtml(target.targetPrinter) + '</div>';
+      html += '<div class="duplicate-target-label">' + t('dup.for.printer', { name: escapeHtml(target.targetPrinter) }) + '</div>';
       html += '<div class="duplicate-options">';
 
       // Each source preset option for this target
@@ -1834,7 +1857,7 @@ function showDuplicateResolutionDialog(duplicates, onConfirm, onCancel) {
       target.options.forEach(function(mapping, optionIndex) {
         var preset = mapping.originalPreset;
         var presetData = mapping.presetData;
-        var sourceModel = preset.model || 'Unknown';
+        var sourceModel = preset.model || t('value.unknown');
         var sourceDisplayName = formatModelDisplayName(sourceModel);
         var isSelected = optionIndex === selectedOptionIndex ? ' checked' : '';
 
@@ -1851,8 +1874,8 @@ function showDuplicateResolutionDialog(duplicates, onConfirm, onCancel) {
                 ' data-target-index="' + targetIndex + '"' +
                 ' data-option-index="' + optionIndex + '">';
         html += '<div class="duplicate-option-label">';
-        html += '<div class="duplicate-option-source">Use ' + escapeHtml(sourceDisplayName) + ' profile</div>';
-        html += '<div class="duplicate-option-compatible">Compatible with: ' + escapeHtml(compatiblePrinters.join(', ')) + '</div>';
+        html += '<div class="duplicate-option-source">' + t('dup.use.profile', { name: escapeHtml(sourceDisplayName) }) + '</div>';
+        html += '<div class="duplicate-option-compatible">' + t('dup.compatible', { list: escapeHtml(compatiblePrinters.join(', ')) }) + '</div>';
         html += '</div>';
         html += '</label>';
       });
@@ -1891,6 +1914,12 @@ function showDuplicateResolutionDialog(duplicates, onConfirm, onCancel) {
  * @returns {Array} Filtered mappings
  */
 function filterDuplicates(filenameMappings, selectedOptions, duplicates) {
+  console.log('filterDuplicates called:', {
+    mappingsCount: filenameMappings.length,
+    duplicatesCount: duplicates.length,
+    selectedOptions: selectedOptions
+  });
+  
   if (!duplicates || duplicates.length === 0) {
     return filenameMappings;
   }
@@ -1905,23 +1934,34 @@ function filterDuplicates(filenameMappings, selectedOptions, duplicates) {
     // Iterate through target printer conflicts within this material
     materialTargets.forEach(function(target, targetIndex) {
       var selectedOptionIndex = selectedOptions[materialIndex][targetIndex];
+      console.log('Processing material', materialIndex, 'target', targetIndex, 'selected:', selectedOptionIndex);
 
       // Mark all unselected options for exclusion
       target.options.forEach(function(mapping, optionIndex) {
         if (optionIndex !== selectedOptionIndex) {
           // Create unique key for this mapping
           var key = mapping.generatedFilename + '|' + mapping.originalPreset.path;
+          console.log('  Excluding option', optionIndex, 'key:', key);
           excludeSet[key] = true;
         }
       });
     });
   });
 
+  console.log('excludeSet keys:', Object.keys(excludeSet));
+
   // Filter out excluded mappings
-  return filenameMappings.filter(function(mapping) {
+  var result = filenameMappings.filter(function(mapping) {
     var key = mapping.generatedFilename + '|' + mapping.originalPreset.path;
-    return !excludeSet[key];
+    var isExcluded = excludeSet[key];
+    if (isExcluded) {
+      console.log('Filtering out:', key);
+    }
+    return !isExcluded;
   });
+  
+  console.log('filterDuplicates result:', result.length, 'mappings');
+  return result;
 }
 
 // Accordion functionality for Known Issues
@@ -1947,7 +1987,38 @@ function initAccordion() {
   });
 }
 
-// Tooltip positioning to prevent clipping
+// ── i18n initialization ──────────────────────────────────
+function initLangSwitcher() {
+  var switcher = document.getElementById('lang-switcher');
+  var toggle = document.getElementById('lang-switcher-toggle');
+  var menu = document.getElementById('lang-menu');
+  if (!switcher || !toggle || !menu) return;
+
+  toggle.addEventListener('click', function (e) {
+    e.stopPropagation();
+    switcher.classList.toggle('is-open');
+  });
+
+  document.addEventListener('click', function () {
+    switcher.classList.remove('is-open');
+  });
+
+  var options = menu.querySelectorAll('.lang-option');
+  for (var i = 0; i < options.length; i++) {
+    options[i].addEventListener('click', function (e) {
+      e.stopPropagation();
+      var lang = this.getAttribute('data-lang');
+      I18N.applyLanguage(lang);
+      switcher.classList.remove('is-open');
+    });
+  }
+}
+
+// Apply detected browser language on load
+var detectedLang = I18N.detectLang();
+I18N.applyLanguage(detectedLang);
+initLangSwitcher();
+
 init();
 initModal();
 initDuplicateModal();
