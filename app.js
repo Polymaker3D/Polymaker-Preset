@@ -486,6 +486,7 @@ function init() {
    * @param {Array} originalPresets - Original preset objects for reference
    */
   function generateAndDownloadBbsflmt(filenameMappings, originalPresets) {
+    console.log('generateAndDownloadBbsflmt called with', filenameMappings ? filenameMappings.length : 0, 'mappings');
     if (!filenameMappings || filenameMappings.length === 0) {
       console.warn('No filename mappings to bundle');
       return;
@@ -1024,6 +1025,7 @@ function init() {
       }
 
       function generateAndDownloadBundleBatch(filenameMappings, originalPresets) {
+        console.log('generateAndDownloadBundleBatch called with', filenameMappings ? filenameMappings.length : 0, 'mappings');
         if (!filenameMappings || filenameMappings.length === 0) {
           console.warn('No filename mappings to bundle');
           if (downloadBundleBtn) {
@@ -1092,7 +1094,7 @@ function init() {
           });
 
           var mp = innerZip.generateAsync({ type: 'blob' }).then(function(content) {
-            var sanitizedName = material.replace(/[^a-zA-Z0-9\s-]/g, '').replace(/\s+/g, '-');
+            var sanitizedName = materialName.replace(/[^a-zA-Z0-9\s-]/g, '').replace(/\s+/g, '-');
             outerZip.file(sanitizedName + '.bbsflmt', content);
           });
 
@@ -1715,7 +1717,10 @@ function initDuplicateModal() {
     modal.classList.remove('is-open');
     document.body.style.overflow = '';
     if (duplicateModalState.onConfirm) {
+      console.log('Confirm clicked, selectedOptions:', duplicateModalState.selectedOptions);
       duplicateModalState.onConfirm(duplicateModalState.selectedOptions);
+    } else {
+      console.warn('No onConfirm callback found');
     }
   }
 
@@ -1909,6 +1914,12 @@ function showDuplicateResolutionDialog(duplicates, onConfirm, onCancel) {
  * @returns {Array} Filtered mappings
  */
 function filterDuplicates(filenameMappings, selectedOptions, duplicates) {
+  console.log('filterDuplicates called:', {
+    mappingsCount: filenameMappings.length,
+    duplicatesCount: duplicates.length,
+    selectedOptions: selectedOptions
+  });
+  
   if (!duplicates || duplicates.length === 0) {
     return filenameMappings;
   }
@@ -1923,23 +1934,34 @@ function filterDuplicates(filenameMappings, selectedOptions, duplicates) {
     // Iterate through target printer conflicts within this material
     materialTargets.forEach(function(target, targetIndex) {
       var selectedOptionIndex = selectedOptions[materialIndex][targetIndex];
+      console.log('Processing material', materialIndex, 'target', targetIndex, 'selected:', selectedOptionIndex);
 
       // Mark all unselected options for exclusion
       target.options.forEach(function(mapping, optionIndex) {
         if (optionIndex !== selectedOptionIndex) {
           // Create unique key for this mapping
           var key = mapping.generatedFilename + '|' + mapping.originalPreset.path;
+          console.log('  Excluding option', optionIndex, 'key:', key);
           excludeSet[key] = true;
         }
       });
     });
   });
 
+  console.log('excludeSet keys:', Object.keys(excludeSet));
+
   // Filter out excluded mappings
-  return filenameMappings.filter(function(mapping) {
+  var result = filenameMappings.filter(function(mapping) {
     var key = mapping.generatedFilename + '|' + mapping.originalPreset.path;
-    return !excludeSet[key];
+    var isExcluded = excludeSet[key];
+    if (isExcluded) {
+      console.log('Filtering out:', key);
+    }
+    return !isExcluded;
   });
+  
+  console.log('filterDuplicates result:', result.length, 'mappings');
+  return result;
 }
 
 // Accordion functionality for Known Issues
