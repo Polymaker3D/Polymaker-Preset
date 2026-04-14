@@ -15,7 +15,8 @@
         "1"
     ],
     "compatible_printers": [
-        "Bambu Lab P2S 0.4 nozzle"
+        "Bambu Lab A1 0.4 nozzle",
+        "Bambu Lab A1 mini 0.4 nozzle"
     ],
     "compatible_printers_condition": "",
     "compatible_prints": [],
@@ -141,7 +142,7 @@
         "Direct Drive Standard"
     ],
     "filament_flow_ratio": [
-        "1"
+        "0.98"
     ],
     "filament_flush_temp": [
         "0"
@@ -223,7 +224,7 @@
         "none"
     ],
     "filament_settings_id": [
-        "Polymaker PLA Pro Metallic @BBL P2S"
+        "Polymaker PLA Pro @BBL A1"
     ],
     "filament_shrink": [
         "100%"
@@ -232,7 +233,7 @@
         "0"
     ],
     "filament_start_gcode": [
-        "; Filament gcode\nM145 P0 ; set airduct mode to cooling mode for cooling\nM106 P2 S255 ; turn on auxiliary fan for cooling\nM106 P3 S127 ; turn on chamber fan for cooling\nM1002 gcode_claim_action : 29\nM191 S0 ; wait for chamber temp\nM106 P2 S102 ; turn on chamber cooling fan\nM106 P10 S0 ; turn off left aux fan\nM142 P6 R30 S40 U0.3 V0.8 ; set PETG exhaust chamber autocooling\n"
+        "; Filament gcode\n"
     ],
     "filament_tower_interface_pre_extrusion_dist": [
         "10"
@@ -292,7 +293,7 @@
     "long_retractions_when_ec": [
         "0"
     ],
-    "name": "Polymaker PLA Pro Metallic @BBL P2S",
+    "name": "Polymaker PLA Pro @BBL A1",
     "no_slow_down_for_cooling_on_outwalls": [
         "0"
     ],
@@ -339,7 +340,7 @@
         "1"
     ],
     "slow_down_layer_time": [
-        "6"
+        "8"
     ],
     "slow_down_min_speed": [
         "10"
@@ -364,5 +365,5 @@
         ""
     ],
     "idle_temperature": 0,
-    "filament_id": "PMPL26"
+    "filament_id": "PMPL25"
 }
