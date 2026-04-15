@@ -1,5 +1,6 @@
 // Same repo: index.json and preset files are served from the same origin as the page
 var INDEX_JSON_URL = './index.json';
+var X2D_PROGRESS_JSON_URL = './x2d-progress.json';
 // Use relative URL so fetch is same-origin (no CORS). Works on GitHub Pages and local.
 var RAW_BASE = '';
 var THEME_STORAGE_KEY = 'polymaker-preset-theme';
@@ -29,6 +30,182 @@ function applyTheme(theme) {
   if (btn) {
     btn.setAttribute('data-theme', theme);
   }
+}
+
+function formatDisplayDate(dateString) {
+  if (!dateString) return '';
+
+  var parts = String(dateString).split('-');
+  var year = parts[0];
+  var month = parseInt(parts[1], 10);
+  var day = parseInt(parts[2], 10);
+  var monthNames = [
+    'January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December'
+  ];
+
+  if (!year || isNaN(month) || isNaN(day) || month < 1 || month > 12) {
+    return dateString;
+  }
+
+  return monthNames[month - 1] + ' ' + day + ', ' + year;
+}
+
+function parseLocalDate(dateString) {
+  if (!dateString) return null;
+
+  var parts = String(dateString).split('-');
+  var year = parseInt(parts[0], 10);
+  var month = parseInt(parts[1], 10);
+  var day = parseInt(parts[2], 10);
+
+  if (isNaN(year) || isNaN(month) || isNaN(day)) {
+    return null;
+  }
+
+  return new Date(year, month - 1, day);
+}
+
+function getTimelineLabel(dateString) {
+  var targetDate = parseLocalDate(dateString);
+  var now = new Date();
+  var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  var daysLeft;
+
+  if (!targetDate) {
+    return 'Date not set';
+  }
+
+  daysLeft = Math.round((targetDate.getTime() - today.getTime()) / 86400000);
+
+  if (daysLeft > 1) {
+    return daysLeft + ' days left';
+  }
+  if (daysLeft === 1) {
+    return '1 day left';
+  }
+  if (daysLeft === 0) {
+    return 'Due today';
+  }
+  if (daysLeft === -1) {
+    return '1 day overdue';
+  }
+  return Math.abs(daysLeft) + ' days overdue';
+}
+
+function buildX2DChecklist(items) {
+  var html = '';
+  var i;
+  var item;
+  var itemClass;
+  var statusText;
+
+  for (i = 0; i < items.length; i++) {
+    item = items[i] || {};
+    itemClass = item.completed ? ' is-complete' : ' is-pending';
+    statusText = item.completed ? 'Done' : 'Pending';
+
+    html += '<li class="adaptation-item' + itemClass + '">';
+    html += '<span class="adaptation-item-name">' + escapeHtml(item.productName || 'Unknown product') + '</span>';
+    html += '<span class="adaptation-item-status">' + statusText + '</span>';
+    html += '</li>';
+  }
+
+  return html;
+}
+
+function renderX2DProgress(progressData) {
+  var titleEl = document.getElementById('x2d-progress-title');
+  var metaEl = document.getElementById('x2d-progress-meta');
+  var percentEl = document.getElementById('x2d-progress-percentage');
+  var barEl = document.getElementById('x2d-progress-bar');
+  var fillEl = document.getElementById('x2d-progress-fill');
+  var scopeEl = document.getElementById('x2d-progress-scope');
+  var completeEl = document.getElementById('x2d-progress-complete');
+  var remainingEl = document.getElementById('x2d-progress-remaining');
+  var deadlineEl = document.getElementById('x2d-progress-deadline');
+  var timelineEl = document.getElementById('x2d-progress-timeline');
+  var listEl = document.getElementById('x2d-progress-list');
+  var items = progressData && progressData.items ? progressData.items : [];
+  var completedCount = 0;
+  var totalCount = items.length;
+  var remainingCount;
+  var percent;
+  var title;
+  var goal;
+  var formattedDeadline;
+  var timelineLabel;
+  var i;
+
+  if (!titleEl || !metaEl || !percentEl || !barEl || !fillEl || !scopeEl || !completeEl || !remainingEl || !deadlineEl || !timelineEl || !listEl) {
+    return;
+  }
+
+  for (i = 0; i < totalCount; i++) {
+    if (items[i] && items[i].completed === true) {
+      completedCount += 1;
+    }
+  }
+
+  remainingCount = Math.max(totalCount - completedCount, 0);
+  percent = totalCount ? Math.round((completedCount / totalCount) * 100) : 0;
+  title = progressData && progressData.title ? progressData.title : 'Bambu X2D Preset Adaptation Progress';
+  goal = progressData && progressData.goal ? progressData.goal : 'We are planning to finish X2D presets for all active products';
+  formattedDeadline = formatDisplayDate(progressData && progressData.targetDate);
+  timelineLabel = getTimelineLabel(progressData && progressData.targetDate);
+
+  titleEl.textContent = title;
+  metaEl.textContent = goal + (formattedDeadline ? ' before ' + formattedDeadline + '.' : '.');
+  percentEl.textContent = percent + '%';
+  fillEl.style.width = percent + '%';
+  barEl.setAttribute('aria-valuenow', String(percent));
+  scopeEl.textContent = 'View product checklist (' + totalCount + ')';
+  completeEl.textContent = completedCount + ' / ' + totalCount;
+  remainingEl.textContent = String(remainingCount);
+  deadlineEl.textContent = formattedDeadline ? formattedDeadline : 'Date not set';
+  timelineEl.textContent = timelineLabel;
+  listEl.innerHTML = buildX2DChecklist(items);
+}
+
+function renderX2DProgressError(message) {
+  var metaEl = document.getElementById('x2d-progress-meta');
+  var percentEl = document.getElementById('x2d-progress-percentage');
+  var barEl = document.getElementById('x2d-progress-bar');
+  var fillEl = document.getElementById('x2d-progress-fill');
+  var scopeEl = document.getElementById('x2d-progress-scope');
+  var completeEl = document.getElementById('x2d-progress-complete');
+  var remainingEl = document.getElementById('x2d-progress-remaining');
+  var deadlineEl = document.getElementById('x2d-progress-deadline');
+  var timelineEl = document.getElementById('x2d-progress-timeline');
+  var listEl = document.getElementById('x2d-progress-list');
+
+  if (metaEl) metaEl.textContent = message;
+  if (percentEl) percentEl.textContent = '0%';
+  if (fillEl) fillEl.style.width = '0%';
+  if (barEl) barEl.setAttribute('aria-valuenow', '0');
+  if (scopeEl) scopeEl.textContent = 'View product checklist (0)';
+  if (completeEl) completeEl.textContent = '0 / 0';
+  if (remainingEl) remainingEl.textContent = '0';
+  if (deadlineEl) deadlineEl.textContent = 'Date not set';
+  if (timelineEl) timelineEl.textContent = 'Unavailable';
+  if (listEl) listEl.innerHTML = '';
+}
+
+function initX2DProgress() {
+  fetch(X2D_PROGRESS_JSON_URL)
+    .then(function (r) {
+      if (!r.ok) {
+        throw new Error('Network response was not ok: ' + r.statusText);
+      }
+      return r.json();
+    })
+    .then(function (data) {
+      renderX2DProgress(data);
+    })
+    .catch(function (err) {
+      console.warn('Failed to load X2D progress:', err);
+      renderX2DProgressError('Unable to load adaptation progress right now.');
+    });
 }
 
 function initTheme() {
@@ -137,6 +314,7 @@ function init() {
   }
 
   initTheme();
+  initX2DProgress();
 
   // ============================================
   // .bbsflmt Bundle Helper Functions

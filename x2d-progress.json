@@ -1,0 +1,157 @@
+{
+    "title": "Bambu X2D Preset Adaptation Progress",
+    "goal": "We are planning to finish X2D presets for all active products",
+    "targetDate": "2026-05-10",
+    "items": [
+        {
+            "series": "Panchroma",
+            "productName": "Panchroma PLA Celestial",
+            "completed": false
+        },
+        {
+            "series": "Panchroma",
+            "productName": "Panchroma PLA Galaxy",
+            "completed": false
+        },
+        {
+            "series": "Panchroma",
+            "productName": "Panchroma PLA Glow",
+            "completed": false
+        },
+        {
+            "series": "Panchroma",
+            "productName": "Panchroma PLA Luminous",
+            "completed": false
+        },
+        {
+            "series": "Panchroma",
+            "productName": "Panchroma PLA Metallic",
+            "completed": false
+        },
+        {
+            "series": "Panchroma",
+            "productName": "Panchroma PLA Neon",
+            "completed": false
+        },
+        {
+            "series": "Panchroma",
+            "productName": "Panchroma PLA Starlight",
+            "completed": false
+        },
+        {
+            "series": "Panchroma",
+            "productName": "Panchroma PLA Translucent",
+            "completed": false
+        },
+        {
+            "series": "Panchroma",
+            "productName": "Panchroma PLA UV Shift",
+            "completed": false
+        },
+        {
+            "series": "Panchroma",
+            "productName": "Panchroma CoPE",
+            "completed": false
+        },
+        {
+            "series": "Panchroma",
+            "productName": "Panchroma PLA Basic",
+            "completed": false
+        },
+        {
+            "series": "Panchroma",
+            "productName": "Panchroma PLA Silk",
+            "completed": false
+        },
+        {
+            "series": "Panchroma",
+            "productName": "Panchroma PLA Matte",
+            "completed": false
+        },
+        {
+            "series": "Panchroma",
+            "productName": "Panchroma PLA Marble",
+            "completed": false
+        },
+        {
+            "series": "Panchroma",
+            "productName": "Panchroma PLA Satin",
+            "completed": false
+        },
+        {
+            "series": "Polymaker",
+            "productName": "PolyFlex TPU95",
+            "completed": false
+        },
+        {
+            "series": "Polymaker",
+            "productName": "PolyFlex TPU95-HF",
+            "completed": false
+        },
+        {
+            "series": "Polymaker",
+            "productName": "PolyFlex TPU90",
+            "completed": false
+        },
+        {
+            "series": "Fiberon",
+            "productName": "Fiberon PETG-ESD",
+            "completed": false
+        },
+        {
+            "series": "Fiberon",
+            "productName": "Fiberon PETG-rCF08",
+            "completed": false
+        },
+        {
+            "series": "Fiberon",
+            "productName": "Fiberon ASA-CF08",
+            "completed": false
+        },
+        {
+            "series": "Fiberon",
+            "productName": "Fiberon PET-CF17",
+            "completed": false
+        },
+        {
+            "series": "Fiberon",
+            "productName": "Fiberon PET-GF15",
+            "completed": false
+        },
+        {
+            "series": "Fiberon",
+            "productName": "Fiberon PA12-CF10",
+            "completed": false
+        },
+        {
+            "series": "Fiberon",
+            "productName": "Fiberon PA6-CF20",
+            "completed": false
+        },
+        {
+            "series": "Fiberon",
+            "productName": "Fiberon PA6-GF25",
+            "completed": false
+        },
+        {
+            "series": "Fiberon",
+            "productName": "Fiberon PA612-CF15",
+            "completed": false
+        },
+        {
+            "series": "Fiberon",
+            "productName": "Fiberon PA612-ESD",
+            "completed": false
+        },
+        {
+            "series": "Fiberon",
+            "productName": "Fiberon PPS-CF10",
+            "completed": false
+        },
+        {
+            "series": "Fiberon",
+            "productName": "Fiberon PPS-GF20",
+            "completed": false
+        }
+    ]
+}
