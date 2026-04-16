@@ -57,6 +57,45 @@
       <p class="hero-desc" data-i18n="hero.desc">Select your slicer to view and download Polymaker print profiles and filament presets</p>
     </header>
 
+    <section class="card adaptation-card" id="x2d-progress-card" aria-live="polite">
+      <div class="adaptation-header">
+        <div class="adaptation-copy">
+          <p class="adaptation-kicker">Adaptation Progress</p>
+          <h2 class="adaptation-title" id="x2d-progress-title">Bambu X2D Preset Adaptation Progress</h2>
+          <p class="adaptation-summary" id="x2d-progress-meta">Loading adaptation progress...</p>
+        </div>
+        <div class="adaptation-score">
+          <span class="adaptation-score-value" id="x2d-progress-percentage">0%</span>
+          <span class="adaptation-score-label">Complete</span>
+        </div>
+      </div>
+      <div class="adaptation-progress-track" id="x2d-progress-bar" role="progressbar" aria-labelledby="x2d-progress-title" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div class="adaptation-progress-fill" id="x2d-progress-fill"></div>
+      </div>
+      <div class="adaptation-metrics">
+        <div class="adaptation-metric">
+          <span class="adaptation-metric-label">Completed</span>
+          <span class="adaptation-metric-value" id="x2d-progress-complete">0 / 0</span>
+        </div>
+        <div class="adaptation-metric">
+          <span class="adaptation-metric-label">Remaining</span>
+          <span class="adaptation-metric-value" id="x2d-progress-remaining">0</span>
+        </div>
+        <div class="adaptation-metric">
+          <span class="adaptation-metric-label">Target Date</span>
+          <span class="adaptation-metric-value" id="x2d-progress-deadline">May 10, 2026</span>
+        </div>
+        <div class="adaptation-metric">
+          <span class="adaptation-metric-label">Timeline</span>
+          <span class="adaptation-metric-value" id="x2d-progress-timeline">0 days left</span>
+        </div>
+      </div>
+      <details class="adaptation-details" id="x2d-progress-details">
+        <summary id="x2d-progress-scope">View product checklist (0)</summary>
+        <ul class="adaptation-items" id="x2d-progress-list"></ul>
+      </details>
+    </section>
+
     <section class="card slicer-card" id="slicer-card">
       <div class="slicer-filter">
         <div class="filter-group slicer-filter-group">
