@@ -4,6 +4,126 @@
     "targetDate": "2026-05-10",
     "items": [
         {
+            "series": "Polymaker",
+            "productName": "PolyCast",
+            "completed": false
+        },
+        {
+            "series": "Polymaker",
+            "productName": "PolyDissolve S1",
+            "completed": false
+        },
+        {
+            "series": "Polymaker",
+            "productName": "PolyFlex TPU90",
+            "completed": false
+        },
+        {
+            "series": "Polymaker",
+            "productName": "PolyFlex TPU95",
+            "completed": false
+        },
+        {
+            "series": "Polymaker",
+            "productName": "PolyFlex TPU95-HF",
+            "completed": false
+        },
+        {
+            "series": "Polymaker",
+            "productName": "Polymaker ABS",
+            "completed": false
+        },
+        {
+            "series": "Polymaker",
+            "productName": "Polymaker ASA",
+            "completed": false
+        },
+        {
+            "series": "Polymaker",
+            "productName": "Polymaker CosPLA",
+            "completed": false
+        },
+        {
+            "series": "Polymaker",
+            "productName": "PolyLite LW-PLA",
+            "completed": false
+        },
+        {
+            "series": "Polymaker",
+            "productName": "PolyLite PC",
+            "completed": false
+        },
+        {
+            "series": "Polymaker",
+            "productName": "PolyMax PC",
+            "completed": false
+        },
+        {
+            "series": "Polymaker",
+            "productName": "PolyLite PETG",
+            "completed": false
+        },
+        {
+            "series": "Polymaker",
+            "productName": "PolyLite PLA",
+            "completed": false
+        },
+        {
+            "series": "Polymaker",
+            "productName": "PolyLite PLA-CF",
+            "completed": false
+        },
+        {
+            "series": "Polymaker",
+            "productName": "PolyLite PLA Pro",
+            "completed": false
+        },
+        {
+            "series": "Polymaker",
+            "productName": "Polymaker HT-PLA",
+            "completed": false
+        },
+        {
+            "series": "Polymaker",
+            "productName": "Polymaker HT-PLA-GF",
+            "completed": false
+        },
+        {
+            "series": "Polymaker",
+            "productName": "Polymaker PETG",
+            "completed": false
+        },
+        {
+            "series": "Polymaker",
+            "productName": "Polymaker PLA Pro",
+            "completed": false
+        },
+        {
+            "series": "Polymaker",
+            "productName": "PolyMax PETG",
+            "completed": false
+        },
+        {
+            "series": "Polymaker",
+            "productName": "PolyMax PLA",
+            "completed": false
+        },
+        {
+            "series": "Polymaker",
+            "productName": "PolySmooth",
+            "completed": false
+        },
+        {
+            "series": "Polymaker",
+            "productName": "PolySupport for PLA",
+            "completed": false
+        },
+        {
+            "series": "Polymaker",
+            "productName": "PolySupport for PA12",
+            "completed": false
+        },
+        {
             "series": "Panchroma",
             "productName": "Panchroma PLA Celestial",
             "completed": false
@@ -76,21 +196,6 @@
         {
             "series": "Panchroma",
             "productName": "Panchroma PLA Satin",
-            "completed": false
-        },
-        {
-            "series": "Polymaker",
-            "productName": "PolyFlex TPU95",
-            "completed": false
-        },
-        {
-            "series": "Polymaker",
-            "productName": "PolyFlex TPU95-HF",
-            "completed": false
-        },
-        {
-            "series": "Polymaker",
-            "productName": "PolyFlex TPU90",
             "completed": false
         },
         {
