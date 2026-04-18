@@ -66,7 +66,7 @@
         {
             "series": "Polymaker",
             "productName": "PolyLite PLA",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Polymaker",
@@ -126,52 +126,52 @@
         {
             "series": "Panchroma",
             "productName": "Panchroma PLA Celestial",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Panchroma",
             "productName": "Panchroma PLA Galaxy",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Panchroma",
             "productName": "Panchroma PLA Glow",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Panchroma",
             "productName": "Panchroma PLA Luminous",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Panchroma",
             "productName": "Panchroma PLA Metallic",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Panchroma",
             "productName": "Panchroma PLA Neon",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Panchroma",
             "productName": "Panchroma PLA Starlight",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Panchroma",
             "productName": "Panchroma PLA Translucent",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Panchroma",
             "productName": "Panchroma PLA UV Shift",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Panchroma",
             "productName": "Panchroma CoPE",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Panchroma",
