@@ -39,6 +39,9 @@
     "close_fan_the_first_x_layers": [
         "1"
     ],
+    "close_additional_fan_first_x_layers": [
+        "1"
+    ],
     "filament_end_gcode": [
         "; filament end gcode \n"
     ],
@@ -109,6 +112,9 @@
     "full_fan_speed_layer": [
         "0"
     ],
+    "additional_fan_full_speed_layer": [
+        "0"
+    ],
     "fan_max_speed": [
         "100"
     ],
@@ -119,7 +125,8 @@
         "3"
     ],
     "slow_down_min_speed": [
-        "10"
+        "20",
+        "20"
     ],
     "slow_down_layer_time": [
         "12"
@@ -157,7 +164,7 @@
         "10"
     ],
     "filament_change_length": [
-        "5"
+        "4"
     ],
     "filament_prime_volume": [
         "30"
@@ -178,6 +185,10 @@
     "counter_limit_max": [
         "0.088"
     ],
+    "filament_cooling_before_tower": [
+        "10",
+        "10"
+    ],
     "filament_ramming_travel_time": [
         "0",
         "0"
@@ -190,6 +201,12 @@
     ],
     "pre_start_fan_time": [
         "2"
+    ],
+    "supertack_plate_temp": [
+        "40"
+    ],
+    "supertack_plate_temp_initial_layer": [
+        "40"
     ],
     "filament_extruder_variant": [
         "Direct Drive Standard",

@@ -7,25 +7,25 @@
         "105"
     ],
     "eng_plate_temp": [
-        "90"
+        "100"
     ],
     "hot_plate_temp": [
-        "90"
+        "100"
     ],
     "textured_plate_temp": [
-        "90"
+        "100"
     ],
     "cool_plate_temp_initial_layer": [
         "105"
     ],
     "eng_plate_temp_initial_layer": [
-        "90"
+        "100"
     ],
     "hot_plate_temp_initial_layer": [
-        "90"
+        "100"
     ],
     "textured_plate_temp_initial_layer": [
-        "90"
+        "100"
     ],
     "overhang_fan_threshold": [
         "25%"
@@ -37,6 +37,9 @@
         "1"
     ],
     "close_fan_the_first_x_layers": [
+        "3"
+    ],
+    "close_additional_fan_first_x_layers": [
         "3"
     ],
     "filament_end_gcode": [
@@ -93,6 +96,9 @@
     "full_fan_speed_layer": [
         "0"
     ],
+    "additional_fan_full_speed_layer": [
+        "0"
+    ],
     "fan_max_speed": [
         "30"
     ],
@@ -110,7 +116,7 @@
         "12"
     ],
     "filament_start_gcode": [
-        "; filament start gcode\n"
+        "; Filament gcode\nM145 P0 ; set airduct mode to cooling mode for cooling\nM106 P2 S255 ; turn on auxiliary fan for cooling\nM106 P3 S127 ; turn on chamber fan for cooling\nM1002 gcode_claim_action : 29\nM191 S0 ; wait for chamber temp\nM106 P2 S102 ; turn on chamber cooling fan\nM106 P10 S0 ; turn off left aux fan\nM142 P6 R30 S40 U0.3 V0.8 ; set PETG exhaust chamber autocooling\n"
     ],
     "nozzle_temperature": [
         "270",
@@ -126,6 +132,9 @@
         "300"
     ],
     "filament_id": "PMAS01",
+    "filament_dev_drying_cooling_temperature": [
+        "95"
+    ],
     "impact_strength_z": [
         "9.4"
     ],
@@ -135,6 +144,10 @@
     ],
     "chamber_temperatures": [
         "60"
+    ],
+    "filament_cooling_before_tower": [
+        "10",
+        "10"
     ],
     "filament_ramming_travel_time": [
         "0",
