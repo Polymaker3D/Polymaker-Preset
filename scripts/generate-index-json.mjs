@@ -66,6 +66,7 @@ const MACHINE_NAME_MAP = {
     'Bambu Lab X1 Carbon 0.4 nozzle': { brand: 'BBL', model: 'X1C' },
     'Bambu Lab X1C 0.4 nozzle': { brand: 'BBL', model: 'X1C' },
     'Bambu Lab X1E 0.4 nozzle': { brand: 'BBL', model: 'X1E' },
+    'Bambu Lab X2D 0.4 nozzle': { brand: 'BBL', model: 'X2D' },
     
     // Elegoo
     'Elegoo Centauri Carbon 2 0.4 nozzle': { brand: 'Elegoo', model: 'CC2' },

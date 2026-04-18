@@ -1,0 +1,184 @@
+{
+    "type": "filament",
+    "name": "Panchroma CoPE @BBL H2S",
+    "from": "User",
+    "instantiation": "true",
+    "cool_plate_temp": [
+        "60"
+    ],
+    "eng_plate_temp": [
+        "55"
+    ],
+    "hot_plate_temp": [
+        "60"
+    ],
+    "textured_plate_temp": [
+        "60"
+    ],
+    "cool_plate_temp_initial_layer": [
+        "60"
+    ],
+    "eng_plate_temp_initial_layer": [
+        "55"
+    ],
+    "hot_plate_temp_initial_layer": [
+        "60"
+    ],
+    "textured_plate_temp_initial_layer": [
+        "60"
+    ],
+    "overhang_fan_threshold": [
+        "50%"
+    ],
+    "overhang_fan_speed": [
+        "100"
+    ],
+    "slow_down_for_layer_cooling": [
+        "1"
+    ],
+    "close_fan_the_first_x_layers": [
+        "1"
+    ],
+    "close_additional_fan_first_x_layers": [
+        "1"
+    ],
+    "filament_end_gcode": [
+        "; filament end gcode \n"
+    ],
+    "filament_flow_ratio": [
+        "0.96",
+        "0.99"
+    ],
+    "reduce_fan_stop_start_freq": [
+        "1"
+    ],
+    "fan_cooling_layer_time": [
+        "100"
+    ],
+    "filament_cost": [
+        "20"
+    ],
+    "filament_density": [
+        "1.29"
+    ],
+    "filament_diameter": [
+        "1.75"
+    ],
+    "filament_is_support": [
+        "0"
+    ],
+    "filament_max_volumetric_speed": [
+        "18.8",
+        "nil"
+    ],
+    "filament_minimal_purge_on_wipe_tower": [
+        "15"
+    ],
+    "filament_retraction_length": [
+        "0.4",
+        "0.4"
+    ],
+    "filament_z_hop_types": [
+        "Spiral Lift",
+        "Spiral Lift"
+    ],
+    "filament_settings_id": [
+        "Panchroma CoPE @BBL H2S"
+    ],
+    "filament_soluble": [
+        "0"
+    ],
+    "filament_type": [
+        "PLA"
+    ],
+    "filament_vendor": [
+        "Polymaker"
+    ],
+    "filament_wipe": [
+        "1",
+        "1"
+    ],
+    "filament_wipe_distance": [
+        "1",
+        "1"
+    ],
+    "bed_type": [
+        "Cool Plate"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "210",
+        "nil"
+    ],
+    "full_fan_speed_layer": [
+        "0"
+    ],
+    "additional_fan_full_speed_layer": [
+        "0"
+    ],
+    "fan_max_speed": [
+        "100"
+    ],
+    "fan_min_speed": [
+        "100"
+    ],
+    "required_nozzle_HRC": [
+        "3"
+    ],
+    "slow_down_min_speed": [
+        "20",
+        "20"
+    ],
+    "slow_down_layer_time": [
+        "8"
+    ],
+    "filament_start_gcode": [
+        "; filament start gcode\n"
+    ],
+    "nozzle_temperature": [
+        "210",
+        "nil"
+    ],
+    "temperature_vitrification": [
+        "58.2"
+    ],
+    "nozzle_temperature_range_low": [
+        "200"
+    ],
+    "nozzle_temperature_range_high": [
+        "230"
+    ],
+    "additional_cooling_fan_speed": [
+        "75"
+    ],
+    "filament_id": "PMCO01",
+    "description": " ",
+    "setting_id": "GFSL99_08",
+    "filament_cooling_before_tower": [
+        "10",
+        "10"
+    ],
+    "filament_ramming_travel_time": [
+        "0",
+        "0"
+    ],
+    "include": [
+        "fdm_filament_template_direct_dual"
+    ],
+    "long_retractions_when_ec": [
+        "0",
+        "0"
+    ],
+    "retraction_distances_when_ec": [
+        "0",
+        "0"
+    ],
+    "compatible_printers": [
+        "Bambu Lab H2S 0.4 nozzle"
+    ],
+    "filament_extruder_variant": [
+        "Direct Drive Standard",
+        "Direct Drive High Flow"
+    ],
+    "version": "2.5.0.14",
+    "idle_temperature": 0
+}

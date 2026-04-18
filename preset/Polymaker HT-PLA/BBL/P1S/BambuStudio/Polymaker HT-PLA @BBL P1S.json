@@ -39,6 +39,9 @@
     "close_fan_the_first_x_layers": [
         "1"
     ],
+    "close_additional_fan_first_x_layers": [
+        "1"
+    ],
     "filament_end_gcode": [
         "; filament end gcode \n\n"
     ],
@@ -90,6 +93,9 @@
     "full_fan_speed_layer": [
         "0"
     ],
+    "additional_fan_full_speed_layer": [
+        "0"
+    ],
     "fan_max_speed": [
         "100"
     ],
@@ -124,7 +130,7 @@
         "70"
     ],
     "filament_id": "PMHT01",
-    "description": "The generic presets are conservatively tuned for compatibility with a wider range of filaments. For higher printing quality and speeds, please use Bambu filaments with Bambu presets.",
+    "description": " ",
     "setting_id": "GFSL99",
     "compatible_printers": [
         "Bambu Lab P1S 0.4 nozzle",
