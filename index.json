@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updatedAt": "2026-04-20T14:44:40.253Z",
+  "updatedAt": "2026-04-20T14:51:26.744Z",
   "materials": [
     "Fiberon ASA-CF08",
     "Fiberon PA12-CF10",
@@ -2401,7 +2401,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Panchroma PLA Marble/BBL/X2D/BambuStudio/Panchroma PLA Marble @BBL X2D.json",
       "filename": "Panchroma PLA Marble @BBL X2D.json",
-      "updatedAt": null,
+      "updatedAt": "2026-04-20T22:45:09+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -2659,7 +2659,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Panchroma PLA Matte/BBL/X2D/BambuStudio/Panchroma PLA Matte @BBL X2D.json",
       "filename": "Panchroma PLA Matte @BBL X2D.json",
-      "updatedAt": null,
+      "updatedAt": "2026-04-20T22:45:09+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -3771,7 +3771,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Panchroma PLA Silk/BBL/X2D/BambuStudio/Panchroma PLA Silk @BBL X2D.json",
       "filename": "Panchroma PLA Silk @BBL X2D.json",
-      "updatedAt": null,
+      "updatedAt": "2026-04-20T22:45:09+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -7411,7 +7411,7 @@
       "slicer": "BambuStudio",
       "path": "preset/PolyTerra PLA/BBL/X2D/BambuStudio/PolyTerra PLA @BBL X2D.json",
       "filename": "PolyTerra PLA @BBL X2D.json",
-      "updatedAt": null,
+      "updatedAt": "2026-04-20T22:45:09+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -7669,7 +7669,7 @@
       "slicer": "BambuStudio",
       "path": "preset/PolyTerra PLA Marble/BBL/X2D/BambuStudio/PolyTerra PLA Marble @BBL X2D.json",
       "filename": "PolyTerra PLA Marble @BBL X2D.json",
-      "updatedAt": null,
+      "updatedAt": "2026-04-20T22:45:09+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -8070,7 +8070,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Polymaker HT-PLA/BBL/X2D/BambuStudio/Polymaker HT-PLA @BBL X2D.json",
       "filename": "Polymaker HT-PLA @BBL X2D.json",
-      "updatedAt": null,
+      "updatedAt": "2026-04-20T22:45:09+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -8574,7 +8574,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Polymaker PLA/BBL/X2D/BambuStudio/Polymaker PLA @BBL X2D.json",
       "filename": "Polymaker PLA @BBL X2D.json",
-      "updatedAt": null,
+      "updatedAt": "2026-04-20T22:45:09+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
