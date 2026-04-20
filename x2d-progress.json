@@ -81,7 +81,7 @@
         {
             "series": "Polymaker",
             "productName": "Polymaker HT-PLA",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Polymaker",
@@ -181,17 +181,17 @@
         {
             "series": "Panchroma",
             "productName": "Panchroma PLA Silk",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Panchroma",
             "productName": "Panchroma PLA Matte",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Panchroma",
             "productName": "Panchroma PLA Marble",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Panchroma",
