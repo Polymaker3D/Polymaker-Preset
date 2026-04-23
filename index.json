@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updatedAt": "2026-04-20T14:51:26.744Z",
+  "updatedAt": "2026-04-23T04:22:54.644Z",
   "materials": [
     "Fiberon ASA-CF08",
     "Fiberon PA12-CF10",
@@ -26,6 +26,7 @@
     "Panchroma PLA Translucent",
     "Panchroma PLA UV Shift",
     "PolyLite CosPLA",
+    "PolyLite LW-PLA",
     "PolyLite PETG",
     "PolyLite PETG Translucent",
     "PolyLite PLA",
@@ -37,6 +38,8 @@
     "PolyLite PLA Pro Metallic",
     "PolyLite PLA Starlight",
     "PolyLite PLA Translucent",
+    "PolyLite PLA-CF",
+    "PolyMax PLA",
     "PolyTerra PLA",
     "PolyTerra PLA Marble",
     "PolyTerra PLA+",
@@ -495,6 +498,22 @@
           "brand": "BBL",
           "model": "X1E",
           "fullName": "Bambu Lab X1E 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "Fiberon PET-CF17",
+      "brand": "BBL",
+      "model": "X2D",
+      "slicer": "BambuStudio",
+      "path": "preset/Fiberon PET-CF17/BBL/X2D/BambuStudio/Fiberon PET-CF17 @BBL X2D.json",
+      "filename": "Fiberon PET-CF17 @BBL X2D.json",
+      "updatedAt": null,
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "X2D",
+          "fullName": "Bambu Lab X2D 0.4 nozzle"
         }
       ]
     },
@@ -2401,7 +2420,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Panchroma PLA Marble/BBL/X2D/BambuStudio/Panchroma PLA Marble @BBL X2D.json",
       "filename": "Panchroma PLA Marble @BBL X2D.json",
-      "updatedAt": "2026-04-20T22:45:09+08:00",
+      "updatedAt": "2026-04-20T22:52:20+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -2659,7 +2678,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Panchroma PLA Matte/BBL/X2D/BambuStudio/Panchroma PLA Matte @BBL X2D.json",
       "filename": "Panchroma PLA Matte @BBL X2D.json",
-      "updatedAt": "2026-04-20T22:45:09+08:00",
+      "updatedAt": "2026-04-20T22:52:20+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -3508,6 +3527,22 @@
     },
     {
       "material": "Panchroma PLA Satin",
+      "brand": "BBL",
+      "model": "X2D",
+      "slicer": "BambuStudio",
+      "path": "preset/Panchroma PLA Satin/BBL/X2D/BambuStudio/Panchroma PLA Satin @BBL X2D.json",
+      "filename": "Panchroma PLA Satin @BBL X2D.json",
+      "updatedAt": null,
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "X2D",
+          "fullName": "Bambu Lab X2D 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "Panchroma PLA Satin",
       "brand": "Elegoo",
       "model": "CC2",
       "slicer": "ElegooSlicer",
@@ -3771,7 +3806,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Panchroma PLA Silk/BBL/X2D/BambuStudio/Panchroma PLA Silk @BBL X2D.json",
       "filename": "Panchroma PLA Silk @BBL X2D.json",
-      "updatedAt": "2026-04-20T22:45:09+08:00",
+      "updatedAt": "2026-04-20T22:52:20+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -4910,6 +4945,22 @@
     },
     {
       "material": "PolyLite CosPLA",
+      "brand": "BBL",
+      "model": "X2D",
+      "slicer": "BambuStudio",
+      "path": "preset/PolyLite CosPLA/BBL/X2D/BambuStudio/PolyLite CosPLA @BBL X2D.json",
+      "filename": "PolyLite CosPLA @BBL X2D.json",
+      "updatedAt": null,
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "X2D",
+          "fullName": "Bambu Lab X2D 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "PolyLite CosPLA",
       "brand": "Elegoo",
       "model": "CC2",
       "slicer": "ElegooSlicer",
@@ -4937,6 +4988,22 @@
           "brand": "Snapmaker",
           "model": "U1",
           "fullName": "Snapmaker U1 (0.4 nozzle)"
+        }
+      ]
+    },
+    {
+      "material": "PolyLite LW-PLA",
+      "brand": "BBL",
+      "model": "X2D",
+      "slicer": "BambuStudio",
+      "path": "preset/PolyLite LW-PLA/BBL/X2D/BambuStudio/PolyLite LW-PLA @BBL X2D.json",
+      "filename": "PolyLite LW-PLA @BBL X2D.json",
+      "updatedAt": null,
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "X2D",
+          "fullName": "Bambu Lab X2D 0.4 nozzle"
         }
       ]
     },
@@ -7195,6 +7262,102 @@
       ]
     },
     {
+      "material": "PolyLite PLA-CF",
+      "brand": "BBL",
+      "model": "X2D",
+      "slicer": "BambuStudio",
+      "path": "preset/PolyLite PLA-CF/BBL/X2D/BambuStudio/PolyLite PLA-CF @BBL X2D.json",
+      "filename": "PolyLite PLA-CF @BBL X2D.json",
+      "updatedAt": null,
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "X2D",
+          "fullName": "Bambu Lab X2D 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "PolyMax PLA",
+      "brand": "BBL",
+      "model": "H2D",
+      "slicer": "BambuStudio",
+      "path": "preset/PolyMax PLA/BBL/H2D/BambuStudio/PolyMax PLA @BBL H2D.json",
+      "filename": "PolyMax PLA @BBL H2D.json",
+      "updatedAt": null,
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "H2D",
+          "fullName": "Bambu Lab H2D 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "PolyMax PLA",
+      "brand": "BBL",
+      "model": "H2S",
+      "slicer": "BambuStudio",
+      "path": "preset/PolyMax PLA/BBL/H2S/BambuStudio/PolyMax PLA @BBL H2S.json",
+      "filename": "PolyMax PLA @BBL H2S.json",
+      "updatedAt": null,
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "H2S",
+          "fullName": "Bambu Lab H2S 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "PolyMax PLA",
+      "brand": "BBL",
+      "model": "P2S",
+      "slicer": "BambuStudio",
+      "path": "preset/PolyMax PLA/BBL/P2S/BambuStudio/PolyMax PLA @BBL P2S.json",
+      "filename": "PolyMax PLA @BBL P2S.json",
+      "updatedAt": null,
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "P2S",
+          "fullName": "Bambu Lab P2S 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "PolyMax PLA",
+      "brand": "BBL",
+      "model": "X2D",
+      "slicer": "BambuStudio",
+      "path": "preset/PolyMax PLA/BBL/X2D/BambuStudio/PolyMax PLA @BBL X2D.json",
+      "filename": "PolyMax PLA @BBL X2D.json",
+      "updatedAt": null,
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "X2D",
+          "fullName": "Bambu Lab X2D 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "PolyMax PLA",
+      "brand": "Elegoo",
+      "model": "CC2",
+      "slicer": "ElegooSlicer",
+      "path": "preset/PolyMax PLA/Elegoo/CC2/ElegooSlicer/PolyMax PLA @Elegoo CC2.json",
+      "filename": "PolyMax PLA @Elegoo CC2.json",
+      "updatedAt": null,
+      "compatiblePrinters": [
+        {
+          "brand": "Elegoo",
+          "model": "CC2",
+          "fullName": "Elegoo Centauri Carbon 2 0.4 nozzle"
+        }
+      ]
+    },
+    {
       "material": "PolyTerra PLA",
       "brand": "BBL",
       "model": "A1",
@@ -7411,7 +7574,7 @@
       "slicer": "BambuStudio",
       "path": "preset/PolyTerra PLA/BBL/X2D/BambuStudio/PolyTerra PLA @BBL X2D.json",
       "filename": "PolyTerra PLA @BBL X2D.json",
-      "updatedAt": "2026-04-20T22:45:09+08:00",
+      "updatedAt": "2026-04-20T22:52:20+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -7669,7 +7832,7 @@
       "slicer": "BambuStudio",
       "path": "preset/PolyTerra PLA Marble/BBL/X2D/BambuStudio/PolyTerra PLA Marble @BBL X2D.json",
       "filename": "PolyTerra PLA Marble @BBL X2D.json",
-      "updatedAt": "2026-04-20T22:45:09+08:00",
+      "updatedAt": "2026-04-20T22:52:20+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -7938,6 +8101,22 @@
     },
     {
       "material": "PolyTerra PLA+",
+      "brand": "BBL",
+      "model": "X2D",
+      "slicer": "BambuStudio",
+      "path": "preset/PolyTerra PLA+/BBL/X2D/BambuStudio/PolyTerra PLA+ @BBL X2D.json",
+      "filename": "PolyTerra PLA+ @BBL X2D.json",
+      "updatedAt": null,
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "X2D",
+          "fullName": "Bambu Lab X2D 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "PolyTerra PLA+",
       "brand": "Elegoo",
       "model": "CC2",
       "slicer": "ElegooSlicer",
@@ -8070,7 +8249,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Polymaker HT-PLA/BBL/X2D/BambuStudio/Polymaker HT-PLA @BBL X2D.json",
       "filename": "Polymaker HT-PLA @BBL X2D.json",
-      "updatedAt": "2026-04-20T22:45:09+08:00",
+      "updatedAt": "2026-04-20T22:52:20+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -8172,6 +8351,22 @@
           "brand": "BBL",
           "model": "P2S",
           "fullName": "Bambu Lab P2S 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "Polymaker HT-PLA-GF",
+      "brand": "BBL",
+      "model": "X2D",
+      "slicer": "BambuStudio",
+      "path": "preset/Polymaker HT-PLA-GF/BBL/X2D/BambuStudio/Polymaker HT-PLA-GF @BBL X2D.json",
+      "filename": "Polymaker HT-PLA-GF @BBL X2D.json",
+      "updatedAt": null,
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "X2D",
+          "fullName": "Bambu Lab X2D 0.4 nozzle"
         }
       ]
     },
@@ -8574,7 +8769,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Polymaker PLA/BBL/X2D/BambuStudio/Polymaker PLA @BBL X2D.json",
       "filename": "Polymaker PLA @BBL X2D.json",
-      "updatedAt": "2026-04-20T22:45:09+08:00",
+      "updatedAt": "2026-04-20T22:52:20+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",

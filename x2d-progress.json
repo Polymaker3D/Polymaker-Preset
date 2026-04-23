@@ -41,12 +41,12 @@
         {
             "series": "Polymaker",
             "productName": "Polymaker CosPLA",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Polymaker",
             "productName": "PolyLite LW-PLA",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Polymaker",
@@ -71,7 +71,7 @@
         {
             "series": "Polymaker",
             "productName": "PolyLite PLA-CF",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Polymaker",
@@ -86,7 +86,7 @@
         {
             "series": "Polymaker",
             "productName": "Polymaker HT-PLA-GF",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Polymaker",
@@ -106,7 +106,7 @@
         {
             "series": "Polymaker",
             "productName": "PolyMax PLA",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Polymaker",
@@ -196,7 +196,7 @@
         {
             "series": "Panchroma",
             "productName": "Panchroma PLA Satin",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Fiberon",
@@ -216,7 +216,7 @@
         {
             "series": "Fiberon",
             "productName": "Fiberon PET-CF17",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Fiberon",
