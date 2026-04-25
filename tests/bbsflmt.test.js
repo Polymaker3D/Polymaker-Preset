@@ -1004,3 +1004,118 @@ describe('Duplicate Filename Detection', () => {
     assert.strictEqual(duplicates[0].targets[0].options.length, 4, 'Duplicate should contain all 4 conflicting options');
   });
 });
+
+// ============================================
+// TEST SUITE: Per-printer JSON expansion (issue #14)
+// ============================================
+
+// Local mirror of expandBambuPresetForDownload in app.js. Returns one
+// {filename, content} per compatible_printers entry, with `name` rewritten
+// to match the generated filename — the workaround for BambuStudio's
+// substring check in AMSMaterialsSetting::on_select_filament. Returns []
+// when compatible_printers is missing/empty: emitting the original filename
+// would re-introduce the bug, so callers must refuse the preset instead.
+function expandBambuPresetForDownloadLocal(preset, presetData) {
+  if (!presetData) return [];
+  const compatible = presetData.compatible_printers;
+  const material = preset.material || '';
+
+  if (!compatible || !Array.isArray(compatible) || compatible.length === 0) {
+    return [];
+  }
+
+  return compatible.map((printerName) => {
+    const filename = material + ' @' + printerName + '.json';
+    const cloned = JSON.parse(JSON.stringify(presetData));
+    cloned.name = filename.replace(/\.json$/, '');
+    return { filename, content: JSON.stringify(cloned, null, 4) };
+  });
+}
+
+describe('expandBambuPresetForDownload (issue #14)', () => {
+  test('Should produce one output per compatible_printers entry', () => {
+    const preset = { material: 'Panchroma PLA Matte', filename: 'Panchroma PLA Matte @BBL X1.json' };
+    const presetData = {
+      name: 'Panchroma PLA Matte @BBL X1',
+      compatible_printers: [
+        'Bambu Lab X1 0.4 nozzle',
+        'Bambu Lab X1 Carbon 0.4 nozzle',
+        'Bambu Lab P1S 0.4 nozzle',
+        'Bambu Lab X1E 0.4 nozzle'
+      ],
+      filament_id: 'PMPL07'
+    };
+
+    const expanded = expandBambuPresetForDownloadLocal(preset, presetData);
+
+    assert.strictEqual(expanded.length, 4, 'Should produce 4 outputs');
+    const filenames = expanded.map(e => e.filename);
+    assert.ok(filenames.includes('Panchroma PLA Matte @Bambu Lab X1 0.4 nozzle.json'));
+    assert.ok(filenames.includes('Panchroma PLA Matte @Bambu Lab P1S 0.4 nozzle.json'));
+  });
+
+  test('Each output `name` field equals the filename minus extension', () => {
+    const preset = { material: 'Panchroma PLA Matte', filename: 'Panchroma PLA Matte @BBL X1.json' };
+    const presetData = {
+      name: 'Panchroma PLA Matte @BBL X1',
+      compatible_printers: ['Bambu Lab P1S 0.4 nozzle']
+    };
+
+    const expanded = expandBambuPresetForDownloadLocal(preset, presetData);
+    const parsed = JSON.parse(expanded[0].content);
+
+    // Critical for the fix: BambuStudio's on_select_filament substring check
+    // looks at this `name` field. It must contain the full printer preset name.
+    assert.strictEqual(parsed.name, 'Panchroma PLA Matte @Bambu Lab P1S 0.4 nozzle');
+    assert.ok(parsed.name.includes('Bambu Lab P1S 0.4 nozzle'));
+  });
+
+  test('Should leave compatible_printers and filament_settings_id untouched', () => {
+    const preset = { material: 'Panchroma PLA Matte', filename: 'Panchroma PLA Matte @BBL X1.json' };
+    const presetData = {
+      name: 'Panchroma PLA Matte @BBL X1',
+      filament_settings_id: ['Panchroma PLA Matte @BBL X1'],
+      compatible_printers: ['Bambu Lab X1 0.4 nozzle', 'Bambu Lab P1S 0.4 nozzle']
+    };
+
+    const expanded = expandBambuPresetForDownloadLocal(preset, presetData);
+    expanded.forEach(entry => {
+      const parsed = JSON.parse(entry.content);
+      assert.deepStrictEqual(parsed.compatible_printers, presetData.compatible_printers);
+      assert.deepStrictEqual(parsed.filament_settings_id, ['Panchroma PLA Matte @BBL X1']);
+    });
+  });
+
+  test('Should return empty array when compatible_printers is missing', () => {
+    // Defensive: emitting the original @BBL X1 filename would re-introduce
+    // the BambuStudio substring-check bug, so the helper refuses instead.
+    const preset = { material: 'Panchroma PLA Matte', filename: 'Panchroma PLA Matte @BBL X1.json' };
+    const presetData = { name: 'Panchroma PLA Matte @BBL X1' };
+
+    assert.deepStrictEqual(expandBambuPresetForDownloadLocal(preset, presetData), []);
+  });
+
+  test('Should return empty array when compatible_printers is an empty array', () => {
+    const preset = { material: 'X', filename: 'X.json' };
+    const presetData = { name: 'X', compatible_printers: [] };
+
+    assert.deepStrictEqual(expandBambuPresetForDownloadLocal(preset, presetData), []);
+  });
+
+  test('Should return empty array when presetData is null', () => {
+    const preset = { material: 'X', filename: 'X.json' };
+    assert.deepStrictEqual(expandBambuPresetForDownloadLocal(preset, null), []);
+  });
+
+  test('Should not mutate the input presetData', () => {
+    const presetData = {
+      name: 'Panchroma PLA Matte @BBL X1',
+      compatible_printers: ['Bambu Lab X1 0.4 nozzle']
+    };
+    const snapshot = JSON.parse(JSON.stringify(presetData));
+
+    expandBambuPresetForDownloadLocal({ material: 'Panchroma PLA Matte' }, presetData);
+
+    assert.deepStrictEqual(presetData, snapshot, 'Input must not be mutated');
+  });
+});
