@@ -919,3 +919,104 @@ describe('filterDuplicates', () => {
     assert.strictEqual(result[0].originalPreset.path, 'b');
   });
 });
+
+// ============================================
+// downloadSelectedPresets — mixed slicers (issue #14)
+// ============================================
+//
+// Smoke test for the per-slicer branch in downloadSelectedPresets: BambuStudio
+// rows are expanded into per-printer JSONs (so BambuStudio's substring check
+// in on_select_filament finds the full printer name), while OrcaSlicer rows
+// are added to the same zip as raw JSON.
+
+function expandBambuPresetForDownloadLocal(preset, presetData) {
+  if (!presetData) return [];
+  const compatible = presetData.compatible_printers;
+  if (!compatible || !Array.isArray(compatible) || compatible.length === 0) {
+    return [];
+  }
+  const material = preset.material || '';
+  return compatible.map((printerName) => {
+    const filename = material + ' @' + printerName + '.json';
+    const cloned = JSON.parse(JSON.stringify(presetData));
+    cloned.name = filename.replace(/\.json$/, '');
+    return { filename, content: JSON.stringify(cloned, null, 4) };
+  });
+}
+
+// Mirrors the per-preset branch inside downloadSelectedPresets. A BambuStudio
+// row whose expansion is empty (missing compatible_printers) is skipped — not
+// emitted as raw — so the bug in issue #14 cannot resurface.
+function buildZipEntriesForSelected(selected) {
+  const entries = [];
+  selected.forEach((sel) => {
+    if (sel.preset.slicer === 'BambuStudio') {
+      const expanded = expandBambuPresetForDownloadLocal(sel.preset, sel.data);
+      expanded.forEach(e => entries.push(e));
+    } else {
+      entries.push({ filename: sel.preset.filename, content: JSON.stringify(sel.data) });
+    }
+  });
+  return entries;
+}
+
+describe('downloadSelectedPresets mixed slicers (issue #14)', () => {
+  it('expands BambuStudio entries while keeping OrcaSlicer entries raw', () => {
+    const selected = [
+      {
+        preset: {
+          slicer: 'BambuStudio',
+          material: 'Panchroma PLA Matte',
+          filename: 'Panchroma PLA Matte @BBL X1.json'
+        },
+        data: {
+          name: 'Panchroma PLA Matte @BBL X1',
+          compatible_printers: [
+            'Bambu Lab X1 0.4 nozzle',
+            'Bambu Lab X1 Carbon 0.4 nozzle',
+            'Bambu Lab P1S 0.4 nozzle',
+            'Bambu Lab X1E 0.4 nozzle'
+          ]
+        }
+      },
+      {
+        preset: {
+          slicer: 'OrcaSlicer',
+          material: 'PolyTerra PLA',
+          filename: 'PolyTerra PLA @BBL X1.json'
+        },
+        data: { name: 'PolyTerra PLA @BBL X1', compatible_printers: ['anything'] }
+      }
+    ];
+
+    const entries = buildZipEntriesForSelected(selected);
+
+    assert.strictEqual(entries.length, 5, '4 BambuStudio splits + 1 OrcaSlicer raw');
+
+    const bambuEntries = entries.filter(e => e.filename.startsWith('Panchroma'));
+    assert.strictEqual(bambuEntries.length, 4);
+    bambuEntries.forEach((entry) => {
+      const parsed = JSON.parse(entry.content);
+      assert.strictEqual(parsed.name, entry.filename.replace(/\.json$/, ''));
+    });
+
+    const orcaEntry = entries.find(e => e.filename === 'PolyTerra PLA @BBL X1.json');
+    assert.ok(orcaEntry, 'OrcaSlicer file kept under original filename');
+    const orcaParsed = JSON.parse(orcaEntry.content);
+    assert.strictEqual(orcaParsed.name, 'PolyTerra PLA @BBL X1', 'OrcaSlicer name unchanged');
+  });
+
+  it('skips a BambuStudio row with no compatible_printers — never emits raw', () => {
+    // Defensive guard: writing the raw @BBL X1 file would re-trigger the bug
+    // in BambuStudio's on_select_filament substring check (issue #14).
+    const selected = [
+      {
+        preset: { slicer: 'BambuStudio', material: 'X', filename: 'X @BBL X1.json' },
+        data: { name: 'X @BBL X1' /* no compatible_printers */ }
+      }
+    ];
+
+    const entries = buildZipEntriesForSelected(selected);
+    assert.strictEqual(entries.length, 0, 'Malformed BambuStudio preset must be skipped');
+  });
+});

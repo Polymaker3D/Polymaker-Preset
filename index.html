@@ -206,6 +206,21 @@
       <div class="accordion">
         <div class="accordion-item is-collapsed">
           <button class="accordion-header" type="button" aria-expanded="false">
+            <span class="accordion-title" data-i18n="issues.import.title">BambuStudio Preset Import Mismatch - Fixed</span>
+            <span class="accordion-icon" aria-hidden="true">▼</span>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-body">
+              <p data-i18n-html="issues.import.issue"><strong>Issue:</strong> BambuStudio matches filament presets to printers by checking whether the full printer preset name (e.g. "Bambu Lab X1 Carbon 0.4 nozzle") appears inside the preset's <code>name</code> field. Polymaker source files use the abbreviation <code>@BBL X1</code>, so the substring check fails and AMS slot temperature / type do not populate when assigning the imported filament.</p>
+              <p data-i18n-html="issues.import.solution"><strong>Solution:</strong> This website now automatically splits BambuStudio downloads into per-printer files and rewrites the <code>name</code> field to contain the full printer preset name. Download presets using the <strong>JSON</strong> or <strong>.bbsflmt</strong> buttons on this page — do not copy raw JSON files directly from GitHub.</p>
+              <p class="accordion-links">
+                <a href="https://github.com/Polymaker3D/Polymaker-Preset/issues/14" target="_blank" rel="noopener noreferrer" data-i18n="issues.import.link">View GitHub Issue #14 →</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item is-collapsed">
+          <button class="accordion-header" type="button" aria-expanded="false">
             <span class="accordion-title" data-i18n="issues.p2s.title">P2S Overheating Issue - Temporary Fix Applied</span>
             <span class="accordion-icon" aria-hidden="true">▼</span>
           </button>
