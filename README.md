@@ -1,6 +1,6 @@
 # Polymaker Filament Presets
 
-Official print presets for Polymaker 3D printing filaments, optimized for use with BambuStudio, OrcaSlicer, ElegooSlicer, and other compatible slicers.
+Official print presets for Polymaker 3D printing filaments, optimized for use with BambuStudio, OrcaSlicer, ElegooSlicer, PrusaSlicer, and other compatible slicers.
 
 ## ⚠️ Known Issues
 
@@ -61,6 +61,14 @@ This is a temporary workaround. We will remove this change after Bambu Lab fixes
    - For a **ZIP** file: choose **Import Zip Archive...** (or the equivalent, e.g. "Import Zip Archive…" in ElegooSlicer), then select the ZIP file (no need to unzip).
 4. The preset will appear in your preset list.
 
+### PrusaSlicer
+
+1. Download the preset as an **INI** file from the [download page](https://presets.polymaker.com).
+2. Open PrusaSlicer.
+3. Go to **File** → **Import** → **Import Config...**.
+4. Select the **INI** file.
+5. The filament preset will appear in your preset list.
+
 ## 📁 Repository Structure
 
 ```
@@ -73,12 +81,12 @@ Polymaker-Preset/
 ├── assets/                 # Static assets (logo, fonts)
 │   ├── logo/               # Polymaker Teal.png (en), Chinese_NoSlogan_Teal.png (zh)
 │   └── font/Figtree/       # Self-hosted Figtree variable fonts (.ttf)
-├── preset/                 # All preset JSON files
+├── preset/                 # All preset files
 │   └── <Material>/
 │       └── <Brand>/
 │           └── <Model>/
 │               └── <Slicer>/
-│                   └── <Preset>.json
+│                   └── <Preset>.json | <Preset>.ini
 ├── scripts/                # Build/maintenance scripts
 │   ├── generate-index-json.mjs    # Generates index.json from preset files
 │   ├── app-filter.test.mjs        # Filter logic tests
@@ -155,6 +163,7 @@ Polymaker-Preset/
 - **BBL** (Bambu Lab): A1, A1M (A1 Mini), H2D, H2S, P1P, P1S, P2S, X1
 - **Anycubic**: Kobra S1
 - **Elegoo**: CC2
+- **Prusa**: Core One
 - **Snapmaker**: U1
 
 ## 🔄 Updates

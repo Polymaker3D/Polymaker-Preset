@@ -1,0 +1,227 @@
+{
+    "type": "filament",
+    "name": "Fiberon PPS-CF10 @BBL X2D",
+    "from": "User",
+    "instantiation": "true",
+    "cool_plate_temp": [
+        "35"
+    ],
+    "eng_plate_temp": [
+        "55"
+    ],
+    "hot_plate_temp": [
+        "55"
+    ],
+    "textured_plate_temp": [
+        "55"
+    ],
+    "cool_plate_temp_initial_layer": [
+        "35"
+    ],
+    "eng_plate_temp_initial_layer": [
+        "55"
+    ],
+    "hot_plate_temp_initial_layer": [
+        "55"
+    ],
+    "textured_plate_temp_initial_layer": [
+        "55"
+    ],
+    "overhang_fan_threshold": [
+        "50%"
+    ],
+    "overhang_fan_speed": [
+        "100"
+    ],
+    "slow_down_for_layer_cooling": [
+        "1"
+    ],
+    "close_fan_the_first_x_layers": [
+        "1"
+    ],
+    "close_additional_fan_first_x_layers": [
+        "1"
+    ],
+    "filament_end_gcode": [
+        "; filament end gcode \n\n"
+    ],
+    "filament_flow_ratio": [
+        "1.02",
+        "nil",
+        "nil",
+        "nil"
+    ],
+    "reduce_fan_stop_start_freq": [
+        "1"
+    ],
+    "fan_cooling_layer_time": [
+        "31"
+    ],
+    "filament_cost": [
+        "77.99"
+    ],
+    "filament_density": [
+        "1.29"
+    ],
+    "filament_diameter": [
+        "1.75"
+    ],
+    "filament_is_support": [
+        "0"
+    ],
+    "filament_max_volumetric_speed": [
+        "200",
+        "nil",
+        "nil",
+        "nil"
+    ],
+    "filament_minimal_purge_on_wipe_tower": [
+        "15"
+    ],
+    "filament_settings_id": [
+        "Fiberon PPS-CF10 @BBL X2D"
+    ],
+    "filament_soluble": [
+        "0"
+    ],
+    "filament_type": [
+        "PP-CF"
+    ],
+    "filament_vendor": [
+        "Polymaker"
+    ],
+    "bed_type": [
+        "Cool Plate"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "300",
+        "nil",
+        "nil",
+        "nil"
+    ],
+    "full_fan_speed_layer": [
+        "0"
+    ],
+    "additional_fan_full_speed_layer": [
+        "0"
+    ],
+    "fan_max_speed": [
+        "40"
+    ],
+    "fan_min_speed": [
+        "10"
+    ],
+    "required_nozzle_HRC": [
+        "3"
+    ],
+    "slow_down_min_speed": [
+        "20",
+        "20",
+        "20",
+        "20"
+    ],
+    "slow_down_layer_time": [
+        "8"
+    ],
+    "filament_start_gcode": [
+        "; filament start gcode\n"
+    ],
+    "nozzle_temperature": [
+        "300",
+        "nil",
+        "nil",
+        "nil"
+    ],
+    "temperature_vitrification": [
+        "267"
+    ],
+    "additional_cooling_fan_speed": [
+        "70"
+    ],
+    "filament_adhesiveness_category": [
+        "902"
+    ],
+    "filament_dev_chamber_drying_bed_temperature": [
+        "70"
+    ],
+    "filament_dev_ams_drying_time": [
+        "12",
+        "12",
+        "12",
+        "12"
+    ],
+    "filament_dev_ams_drying_ams_limitations": [
+        "1",
+        "0"
+    ],
+    "filament_dev_ams_drying_heat_distortion_temperature": [
+        "60"
+    ],
+    "filament_dev_drying_cooling_temperature": [
+        "50"
+    ],
+    "filament_dev_ams_drying_temperature": [
+        "60",
+        "60",
+        "50",
+        "50"
+    ],
+    "filament_dev_drying_softening_temperature": [
+        "55"
+    ],
+    "nozzle_temperature_range_low": [
+        "310"
+    ],
+    "nozzle_temperature_range_high": [
+        "350"
+    ],
+    "supertack_plate_temp": [
+        "0"
+    ],
+    "supertack_plate_temp_initial_layer": [
+        "0"
+    ],
+    "filament_id": "PMPP01",
+    "setting_id": "GFSP96_05",
+    "description": " ",
+    "filament_cooling_before_tower": [
+        "10",
+        "10",
+        "10",
+        "10"
+    ],
+    "filament_ramming_travel_time": [
+        "0",
+        "0",
+        "0",
+        "0"
+    ],
+    "filament_tower_interface_print_temp": [
+        "235"
+    ],
+    "first_x_layer_fan_speed": [
+        "40"
+    ],
+    "include": [
+        "fdm_filament_template_direct_bowden"
+    ],
+    "retraction_distances_when_ec": [
+        "3",
+        "3",
+        "4",
+        "4"
+    ],
+    "compatible_printers": [
+        "Bambu Lab X2D 0.4 nozzle"
+    ],
+    "filament_extruder_variant": [
+        "Direct Drive Standard",
+        "Direct Drive High Flow",
+        "Bowden Standard",
+        "Bowden High Flow"
+    ],
+    "filament_velocity_adaptation_factor": [
+        "0.98"
+    ],
+    "version": "2.6.0.2"
+}

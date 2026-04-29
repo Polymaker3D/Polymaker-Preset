@@ -10,17 +10,22 @@ const REPO_ROOT = process.cwd();
 const PRESET_DIR = path.join(REPO_ROOT, 'preset');
 const TEST_DIR = path.join(__dirname, 'test-fixtures');
 
-async function walkJsonFiles(dir) {
+function isPresetFile(filename) {
+  const lower = filename.toLowerCase();
+  return lower.endsWith('.json') || lower.endsWith('.ini');
+}
+
+async function walkPresetFiles(dir) {
   const out = [];
   const entries = await fs.readdir(dir, { withFileTypes: true });
   for (const ent of entries) {
     const full = path.join(dir, ent.name);
     if (ent.isDirectory()) {
-      out.push(...(await walkJsonFiles(full)));
+      out.push(...(await walkPresetFiles(full)));
       continue;
     }
     if (!ent.isFile()) continue;
-    if (ent.name.toLowerCase().endsWith('.json')) out.push(full);
+    if (isPresetFile(ent.name)) out.push(full);
   }
   return out;
 }
@@ -83,26 +88,30 @@ describe('Preset Files', () => {
     });
   });
 
-  describe('walkJsonFiles function', () => {
-    it('should find all JSON files recursively', async () => {
+  describe('walkPresetFiles function', () => {
+    it('should find JSON and INI files recursively', async () => {
       await fs.mkdir(TEST_DIR, { recursive: true });
       await fs.mkdir(path.join(TEST_DIR, 'subdir'), { recursive: true });
       await fs.writeFile(path.join(TEST_DIR, 'file1.json'), '{}');
       await fs.writeFile(path.join(TEST_DIR, 'file2.JSON'), '{}');
+      await fs.writeFile(path.join(TEST_DIR, 'file3.ini'), '[filament:test]\ntemperature = 220\n');
       await fs.writeFile(path.join(TEST_DIR, 'file3.txt'), 'text');
       await fs.writeFile(path.join(TEST_DIR, 'subdir', 'file4.json'), '{}');
+      await fs.writeFile(path.join(TEST_DIR, 'subdir', 'file5.INI'), '[filament:test]\ntemperature = 220\n');
 
-      const files = await walkJsonFiles(TEST_DIR);
-      assert.strictEqual(files.length, 3);
+      const files = await walkPresetFiles(TEST_DIR);
+      assert.strictEqual(files.length, 5);
       assert.ok(files.some(f => f.includes('file1.json')));
       assert.ok(files.some(f => f.includes('file2.JSON')));
+      assert.ok(files.some(f => f.includes('file3.ini')));
       assert.ok(files.some(f => f.includes('file4.json')));
+      assert.ok(files.some(f => f.includes('file5.INI')));
     });
 
     it('should return empty array for empty directory', async () => {
       const emptyDir = path.join(TEST_DIR, 'empty');
       await fs.mkdir(emptyDir, { recursive: true });
-      const files = await walkJsonFiles(emptyDir);
+      const files = await walkPresetFiles(emptyDir);
       assert.deepStrictEqual(files, []);
     });
   });
@@ -114,28 +123,29 @@ describe('Preset Files', () => {
     });
 
     it('should have at least one preset file', async () => {
-      const jsonFiles = await walkJsonFiles(PRESET_DIR);
-      assert.ok(jsonFiles.length > 0, 'should have at least one preset JSON file');
+      const presetFiles = await walkPresetFiles(PRESET_DIR);
+      assert.ok(presetFiles.length > 0, 'should have at least one preset file');
     });
 
-    it('should follow correct directory structure (Material/Brand/Model/Slicer/File.json)', async () => {
-      const jsonFiles = await walkJsonFiles(PRESET_DIR);
+    it('should follow correct directory structure (Material/Brand/Model/Slicer/File.ext)', async () => {
+      const presetFiles = await walkPresetFiles(PRESET_DIR);
       
-      for (const absFile of jsonFiles) {
+      for (const absFile of presetFiles) {
         const relFromPreset = path.relative(PRESET_DIR, absFile);
         const parts = relFromPreset.split(path.sep);
         
         assert.ok(parts.length >= 5, 
-          `File ${relFromPreset} should be at least 5 levels deep (Material/Brand/Model/Slicer/File.json)`);
+          `File ${relFromPreset} should be at least 5 levels deep (Material/Brand/Model/Slicer/File.ext)`);
         
         const filename = parts[parts.length - 1];
-        assert.ok(filename.endsWith('.json'), 
-          `File ${filename} should end with .json`);
+        assert.ok(isPresetFile(filename), 
+          `File ${filename} should end with .json or .ini`);
       }
     });
 
     it('should have valid JSON in all preset files', async () => {
-      const jsonFiles = await walkJsonFiles(PRESET_DIR);
+      const presetFiles = await walkPresetFiles(PRESET_DIR);
+      const jsonFiles = presetFiles.filter((file) => file.toLowerCase().endsWith('.json'));
       
       for (const absFile of jsonFiles) {
         try {
@@ -150,7 +160,8 @@ describe('Preset Files', () => {
     });
 
     it('should have required fields in preset files', async () => {
-      const jsonFiles = await walkJsonFiles(PRESET_DIR);
+      const presetFiles = await walkPresetFiles(PRESET_DIR);
+      const jsonFiles = presetFiles.filter((file) => file.toLowerCase().endsWith('.json'));
       
       for (const absFile of jsonFiles) {
         const content = await fs.readFile(absFile, 'utf8');
@@ -179,7 +190,8 @@ describe('Preset Files', () => {
     });
 
     it('should have name matching filename pattern', async () => {
-      const jsonFiles = await walkJsonFiles(PRESET_DIR);
+      const presetFiles = await walkPresetFiles(PRESET_DIR);
+      const jsonFiles = presetFiles.filter((file) => file.toLowerCase().endsWith('.json'));
       
       for (const absFile of jsonFiles) {
         const content = await fs.readFile(absFile, 'utf8');
@@ -193,7 +205,8 @@ describe('Preset Files', () => {
     });
 
     it('should have temperature fields in correct format', async () => {
-      const jsonFiles = await walkJsonFiles(PRESET_DIR);
+      const presetFiles = await walkPresetFiles(PRESET_DIR);
+      const jsonFiles = presetFiles.filter((file) => file.toLowerCase().endsWith('.json'));
       const tempFields = [
         'nozzle_temperature',
         'nozzle_temperature_initial_layer',
@@ -219,7 +232,8 @@ describe('Preset Files', () => {
     });
 
     it('should have compatible_printers as array', async () => {
-      const jsonFiles = await walkJsonFiles(PRESET_DIR);
+      const presetFiles = await walkPresetFiles(PRESET_DIR);
+      const jsonFiles = presetFiles.filter((file) => file.toLowerCase().endsWith('.json'));
       
       for (const absFile of jsonFiles) {
         const content = await fs.readFile(absFile, 'utf8');
@@ -296,7 +310,8 @@ describe('Preset Files', () => {
         assert.ok(typeof preset.path === 'string', 'preset.path should be a string');
         assert.ok(typeof preset.filename === 'string', 'preset.filename should be a string');
         assert.ok(preset.path.startsWith('preset/'), 'preset.path should start with preset/');
-        assert.ok(preset.filename.endsWith('.json'), 'preset.filename should end with .json');
+        assert.ok(isPresetFile(preset.filename), 'preset.filename should end with .json or .ini');
+        assert.ok(Array.isArray(preset.compatiblePrinters), 'preset.compatiblePrinters should be an array');
         
         // Verify the file actually exists
         const fullPath = path.join(REPO_ROOT, preset.path);
@@ -343,10 +358,10 @@ describe('Preset Files', () => {
       const content = await fs.readFile(indexPath, 'utf8');
       const index = JSON.parse(content);
       
-      const jsonFiles = await walkJsonFiles(PRESET_DIR);
+      const presetFiles = await walkPresetFiles(PRESET_DIR);
       
-      assert.strictEqual(index.presets.length, jsonFiles.length, 
-        `index.json should have ${jsonFiles.length} presets, but has ${index.presets.length}`);
+      assert.strictEqual(index.presets.length, presetFiles.length, 
+        `index.json should have ${presetFiles.length} presets, but has ${index.presets.length}`);
     });
   });
 });

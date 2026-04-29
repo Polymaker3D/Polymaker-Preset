@@ -797,6 +797,7 @@ function init() {
       function normalizeSlicerName(slicer) {
         if (!slicer) return slicer;
         if (slicer.toLowerCase() === 'orcaslicer') return 'OrcaSlicer';
+        if (slicer.toLowerCase() === 'prusaslicer') return 'PrusaSlicer';
         return slicer;
       }
 
@@ -1049,13 +1050,23 @@ function init() {
       // Update bundle button state based on BambuStudio presets
       // Bundle download only available when:
       // 1. Slicer is BambuStudio
-      // 2. No printer model filter is applied
+      // 2. At least one preset is selected
+      // 3. No printer model filter is applied
       function updateBundleButtonState() {
         if (!downloadBundleBtn) return;
 
         var effectiveSlicer = getEffectiveFilters().effectiveSlicer;
+        var isBambuStudio = effectiveSlicer === 'BambuStudio';
+        var selectedCount = Object.keys(selectedPresets).length;
 
-        if (effectiveSlicer !== 'BambuStudio') {
+        downloadBundleBtn.classList.toggle('is-hidden', !isBambuStudio);
+
+        if (!isBambuStudio) {
+          downloadBundleBtn.disabled = true;
+          return;
+        }
+
+        if (selectedCount === 0) {
           downloadBundleBtn.disabled = true;
           return;
         }
@@ -1065,7 +1076,7 @@ function init() {
           return;
         }
 
-        // Enable button when slicer is BambuStudio and no model filter
+        // Enable button when slicer is BambuStudio, presets are selected, and no model filter is applied
         downloadBundleBtn.disabled = false;
       }
 
@@ -1200,27 +1211,6 @@ function init() {
           if (preset.slicer === 'BambuStudio') {
             bambuPresets.push(preset);
           }
-        }
-
-        // If no presets selected, download ALL visible BambuStudio presets
-        if (bambuPresets.length === 0) {
-          bambuPresets = presets.filter(function(p) {
-            if (p.slicer !== 'BambuStudio') return false;
-            if (filterState.series && !materialMatchesSeries(p.material, filterState.series)) return false;
-            if (filterState.brand && p.brand !== filterState.brand) return false;
-            return true;
-          }).map(function(p) {
-            var base = (typeof RAW_BASE === 'string' && RAW_BASE !== null) ? RAW_BASE : (RAW_BASE || '');
-            return {
-              url: base + encodeURI(p.path),
-              filename: p.filename,
-              material: p.material,
-              brand: p.brand,
-              model: p.model,
-              slicer: p.slicer,
-              path: p.path
-            };
-          });
         }
 
         // Debug logging to help diagnose issues
@@ -1644,6 +1634,13 @@ function init() {
           return slicer ? (baseName + ' - ' + slicer + '.' + ext) : fn;
         }
 
+        function getDownloadButtonLabel(filename) {
+          var fn = filename || t('filename.preset');
+          var match = fn.match(/\.([^.]+)$/);
+          var ext = match && match[1] ? match[1].toUpperCase() : 'FILE';
+          return ext;
+        }
+
         // Chevron right SVG icon
         var folderIconSvg = '<svg class="folder-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>';
 
@@ -1715,6 +1712,7 @@ function init() {
           var bundleButtonHtml = isBambuStudio
             ? '<a href="#" class="btn-download btn-bundle" data-bundle-url="' + escapeHtml(url) + '" data-bundle-filename="' + escapeHtml(p.filename) + '" data-bundle-material="' + escapeHtml(options.material) + '" data-bundle-model="' + escapeHtml(p.model || '') + '" role="button" title="' + t('title.download.bundle') + '">.bbsflmt</a>'
             : '';
+          var downloadLabel = getDownloadButtonLabel(p.filename);
 
           // For BambuStudio, the JSON anchor goes through a click handler that
           // expands compatible_printers and zips the result (issue #14). For

@@ -201,12 +201,12 @@
         {
             "series": "Fiberon",
             "productName": "Fiberon PETG-ESD",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Fiberon",
             "productName": "Fiberon PETG-rCF08",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Fiberon",
@@ -226,17 +226,17 @@
         {
             "series": "Fiberon",
             "productName": "Fiberon PA12-CF10",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Fiberon",
             "productName": "Fiberon PA6-CF20",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Fiberon",
             "productName": "Fiberon PA6-GF25",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Fiberon",
@@ -251,7 +251,7 @@
         {
             "series": "Fiberon",
             "productName": "Fiberon PPS-CF10",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Fiberon",
