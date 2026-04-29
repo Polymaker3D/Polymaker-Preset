@@ -105,6 +105,10 @@ var I18N = (function () {
 
       // Known Issues
       'issues.title': 'Known Issues',
+      'issues.import.title': 'BambuStudio Preset Import Mismatch - Fixed',
+      'issues.import.issue': '<strong>Issue:</strong> BambuStudio matches filament presets to printers by checking whether the full printer preset name (e.g. "Bambu Lab X1 Carbon 0.4 nozzle") appears inside the preset\'s <code>name</code> field. Polymaker source files use the abbreviation <code>@BBL X1</code>, so the substring check fails and AMS slot temperature / type do not populate when assigning the imported filament.',
+      'issues.import.solution': '<strong>Solution:</strong> This website now automatically splits BambuStudio downloads into per-printer files and rewrites the <code>name</code> field to contain the full printer preset name. Download presets using the <strong>JSON</strong> or <strong>.bbsflmt</strong> buttons on this page — do not copy raw JSON files directly from GitHub.',
+      'issues.import.link': 'View GitHub Issue #14 \u2192',
       'issues.p2s.title': 'P2S Overheating Issue - Temporary Fix Applied',
       'issues.p2s.issue': '<strong>Issue:</strong> P2S printer may overheat when printing materials with vitrification temperature > 50\u00b0C due to starting G-code issues.',
       'issues.p2s.solution': '<strong>Solution:</strong> We have implemented a temporary fix by adding cooling G-code commands to P2S presets with vitrification temperature > 50\u00b0C. This is a temporary workaround until Bambu Lab fixes this issue.',
@@ -232,6 +236,10 @@ var I18N = (function () {
 
       // Known Issues
       'issues.title': '已知问题',
+      'issues.import.title': 'BambuStudio 预设导入不匹配 - 已修复',
+      'issues.import.issue': '<strong>问题：</strong>BambuStudio 通过检查完整的打印机预设名称（例如 "Bambu Lab X1 Carbon 0.4 nozzle"）是否出现在预设的 <code>name</code> 字段中来匹配耗材预设。Polymaker 源文件使用缩写 <code>@BBL X1</code>，导致子字符串检查失败，分配导入的耗材到 AMS 槽位时温度/类型无法自动填充。',
+      'issues.import.solution': '<strong>解决方案：</strong>本网站现已自动将 BambuStudio 下载拆分为按打印机分类的文件，并将 <code>name</code> 字段重写为完整的打印机预设名称。请使用本页面的 <strong>JSON</strong> 或 <strong>.bbsflmt</strong> 按钮下载预设 — 不要直接从 GitHub 复制原始 JSON 文件。',
+      'issues.import.link': '查看 GitHub Issue #14 \u2192',
       'issues.p2s.title': 'P2S 过热问题 - 已应用临时修复',
       'issues.p2s.issue': '<strong>问题：</strong>P2S 打印机在打印玻璃化转变温度 > 50°C 的耗材时，可能因起始 G-code 问题而过热。',
       'issues.p2s.solution': '<strong>解决方案：</strong>我们已向玻璃化转变温度 > 50°C 的 P2S 预设添加冷却 G-code 命令作为临时修复，期待 Bambu Lab 官方修复此问题。',

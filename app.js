@@ -599,62 +599,15 @@ function init() {
       return;
     }
 
-    var fetchPromises = [];
-    var presetDataMap = {};
-
-    presets.forEach(function(preset) {
-      if (preset.presetData) {
-        presetDataMap[preset.path] = preset.presetData;
-        return;
-      }
-
-      var url = preset.path ? (RAW_BASE + encodeURI(preset.path)) : '#';
-      if (!url || url === '#') {
-        console.warn('Invalid URL for preset:', preset.filename);
-        return;
-      }
-
-      var promise = fetch(url, { mode: 'cors' })
-        .then(function(r) {
-          if (!r.ok) {
-            throw new Error('Failed to fetch ' + preset.filename + ': ' + r.statusText);
-          }
-          return r.json();
-        })
-        .then(function(data) {
-          presetDataMap[preset.path] = data;
-        })
-        .catch(function(err) {
-          console.warn('Error downloading preset:', preset.filename, err);
-          presetDataMap[preset.path] = null;
-        });
-
-      fetchPromises.push(promise);
-    });
-
-    Promise.all(fetchPromises).then(function() {
-      var allMappings = [];
-      presets.forEach(function(preset) {
-        var presetData = presetDataMap[preset.path];
-        var mappings = generateFilenamesFromPrinters(preset, presetData);
-        allMappings = allMappings.concat(mappings);
-      });
-
-      var duplicates = findDuplicateFilenames(allMappings);
-
-      if (duplicates.length > 0) {
-        showDuplicateResolutionDialog(duplicates, function(selectedOptions) {
-          var filteredMappings = filterDuplicates(allMappings, selectedOptions, duplicates);
-          generateAndDownloadBbsflmt(filteredMappings, presets);
-        }, function() {
-          console.log('Export cancelled by user');
-        });
+    resolveBambuMappingsWithDedup(presets, function(filteredMappings) {
+      generateAndDownloadBbsflmt(filteredMappings, presets);
+    }, function(err) {
+      if (err) {
+        console.error('Error fetching presets:', err);
+        alert(t('alert.error.download', { msg: err.message }));
       } else {
-        generateAndDownloadBbsflmt(allMappings, presets);
+        console.log('Export cancelled by user');
       }
-    }).catch(function(err) {
-      console.error('Error fetching presets:', err);
-      alert(t('alert.error.download', { msg: err.message }));
     });
   }
 
@@ -691,6 +644,15 @@ function init() {
         return;
       }
 
+      // Skip generateFilenamesFromPrinters' fallback (printerName === null when
+      // compatible_printers is missing/empty). Without a full printer name we
+      // cannot rewrite `name` to bypass BambuStudio's substring check (#14),
+      // and emitting the raw filename would re-introduce the bug.
+      if (!mapping.printerName) {
+        console.warn('Skipping preset without compatible_printers:', mapping.generatedFilename);
+        return;
+      }
+
       var modifiedData = JSON.parse(JSON.stringify(presetData));
       var nameWithoutExtension = mapping.generatedFilename.replace(/\.json$/, '');
       modifiedData.name = nameWithoutExtension;
@@ -717,6 +679,103 @@ function init() {
       }, 1000);
     }).catch(function(err) {
       console.error('Error generating bundle:', err);
+    });
+  }
+
+  // Expand one BambuStudio source preset into per-printer JSONs whose `name`
+  // field matches the full printer preset name. Works around BambuStudio's
+  // substring check in AMSMaterialsSetting::on_select_filament — see issue #14.
+  // Returns [] when compatible_printers is missing/empty so callers refuse to
+  // emit a file that would still trigger the bug.
+  function expandBambuPresetForDownload(preset, presetData) {
+    if (!presetData) return [];
+
+    var mappings = generateFilenamesFromPrinters(preset, presetData);
+    var rewritable = mappings.filter(function(m) { return m.printerName; });
+    if (rewritable.length === 0) return [];
+
+    return rewritable.map(function(mapping) {
+      var modifiedData = JSON.parse(JSON.stringify(presetData));
+      var nameWithoutExtension = mapping.generatedFilename.replace(/\.json$/, '');
+      modifiedData.name = nameWithoutExtension;
+      return {
+        filename: mapping.generatedFilename,
+        content: JSON.stringify(modifiedData, null, 4)
+      };
+    });
+  }
+
+  /**
+   * Fetch BambuStudio preset data, generate per-printer filename mappings,
+   * and resolve duplicate filenames through the user dialog.
+   * @param {Array} presets - BambuStudio preset objects (may have presetData pre-attached)
+   * @param {Function} onResolved - Callback(filteredMappings, presetDataMap)
+   * @param {Function} onCancelled - Callback(err) when user cancels or error occurs
+   */
+  function resolveBambuMappingsWithDedup(presets, onResolved, onCancelled) {
+    var presetDataMap = {};
+    var fetchPromises = [];
+
+    presets.forEach(function(preset) {
+      if (preset.presetData) {
+        presetDataMap[preset.path] = preset.presetData;
+        return;
+      }
+
+      var url = preset.url || (preset.path ? (RAW_BASE + encodeURI(preset.path)) : '#');
+      if (!url || url === '#') {
+        console.warn('Invalid URL for preset:', preset.filename);
+        presetDataMap[preset.path] = null;
+        return;
+      }
+
+      var promise = fetch(url, { mode: 'cors' })
+        .then(function(r) {
+          if (!r.ok) {
+            throw new Error('Failed to fetch ' + preset.filename + ': ' + r.statusText);
+          }
+          return r.json();
+        })
+        .then(function(data) {
+          presetDataMap[preset.path] = data;
+        })
+        .catch(function(err) {
+          console.warn('Error downloading preset:', preset.filename, err);
+          presetDataMap[preset.path] = null;
+        });
+
+      fetchPromises.push(promise);
+    });
+
+    Promise.all(fetchPromises).then(function() {
+      var allMappings = [];
+      presets.forEach(function(preset) {
+        var data = presetDataMap[preset.path];
+        if (!data) return;
+        var mappings = generateFilenamesFromPrinters(preset, data);
+        allMappings = allMappings.concat(mappings);
+      });
+
+      if (allMappings.length === 0) {
+        onResolved([], presetDataMap);
+        return;
+      }
+
+      var duplicates = findDuplicateFilenames(allMappings);
+
+      if (duplicates.length > 0) {
+        showDuplicateResolutionDialog(duplicates, function(selectedOptions) {
+          var filteredMappings = filterDuplicates(allMappings, selectedOptions, duplicates);
+          onResolved(filteredMappings, presetDataMap);
+        }, function() {
+          onCancelled();
+        });
+      } else {
+        onResolved(allMappings, presetDataMap);
+      }
+    }).catch(function(err) {
+      console.error('Error fetching presets:', err);
+      onCancelled(err);
     });
   }
 
@@ -1044,8 +1103,10 @@ function init() {
 
         var zip = new JSZip();
         var folder = zip.folder('polymaker-presets');
-        var promises = [];
+        var bambuPresets = [];
+        var nonBambuPromises = [];
 
+        // Separate BambuStudio and non-BambuStudio presets
         presetIds.forEach(function (presetId) {
           var preset = selectedPresets[presetId];
           // Validate URL before fetch
@@ -1053,24 +1114,36 @@ function init() {
             console.warn('Invalid URL for preset:', presetId);
             return;
           }
-          var promise = fetch(preset.url, { mode: 'cors' })
-            .then(function (r) {
-              if (!r.ok) {
-                throw new Error('Failed to fetch ' + preset.filename + ': ' + r.statusText);
-              }
-              return r.blob();
-            })
-            .then(function (blob) {
-              folder.file(preset.filename, blob);
-            })
-            .catch(function (err) {
-              console.warn('Error downloading preset:', presetId, err);
-              // Continue with other downloads, don't fail entire batch
-            });
-          promises.push(promise);
+          if (preset.slicer === 'BambuStudio') {
+            bambuPresets.push(preset);
+          } else {
+            var promise = fetch(preset.url, { mode: 'cors' })
+              .then(function (r) {
+                if (!r.ok) {
+                  throw new Error('Failed to fetch ' + preset.filename + ': ' + r.statusText);
+                }
+                return r.blob();
+              })
+              .then(function (blob) {
+                folder.file(preset.filename, blob);
+              })
+              .catch(function (err) {
+                console.warn('Error downloading preset:', presetId, err);
+                // Continue with other downloads, don't fail entire batch
+              });
+            nonBambuPromises.push(promise);
+          }
         });
 
-        Promise.all(promises).then(function () {
+        function resetButton() {
+          if (downloadSelectedBtn) {
+            downloadSelectedBtn.disabled = false;
+            var dlSelSpan = downloadSelectedBtn.querySelector('[data-i18n="btn.download.selected"]');
+            if (dlSelSpan) dlSelSpan.textContent = t('btn.download.selected');
+          }
+        }
+
+        function finishZip() {
           zip.generateAsync({ type: 'blob' }).then(function (content) {
             var objectUrl = URL.createObjectURL(content);
             var a = document.createElement('a');
@@ -1085,20 +1158,48 @@ function init() {
             }, 1000);
 
             // Reset button state
-            if (downloadSelectedBtn) {
-              downloadSelectedBtn.disabled = false;
-              var dlSelSpanReset = downloadSelectedBtn.querySelector('[data-i18n="btn.download.selected"]');
-              if (dlSelSpanReset) dlSelSpanReset.textContent = t('btn.download.selected');
-            }
+            resetButton();
+          }).catch(function (err) {
+            console.error('Error generating ZIP:', err);
+            resetButton();
           });
-        }).catch(function (err) {
-          console.error('Error generating ZIP:', err);
-          // Reset button state on error
-          if (downloadSelectedBtn) {
-            downloadSelectedBtn.disabled = false;
-            var dlSelSpanErr = downloadSelectedBtn.querySelector('[data-i18n="btn.download.selected"]');
-            if (dlSelSpanErr) dlSelSpanErr.textContent = t('btn.download.selected');
-          }
+        }
+
+        function addBambuMappingsToZip(mappings) {
+          mappings.forEach(function (mapping) {
+            // Skip generateFilenamesFromPrinters' fallback (printerName === null when
+            // compatible_printers is missing/empty). Without a full printer name we
+            // cannot rewrite `name` to bypass BambuStudio's substring check (#14),
+            // and emitting the raw filename would re-introduce the bug.
+            if (!mapping.printerName) {
+              console.warn('Skipping preset without compatible_printers:', mapping.generatedFilename);
+              return;
+            }
+            var modifiedData = JSON.parse(JSON.stringify(mapping.presetData));
+            var nameWithoutExtension = mapping.generatedFilename.replace(/\.json$/, '');
+            modifiedData.name = nameWithoutExtension;
+            folder.file(mapping.generatedFilename, JSON.stringify(modifiedData, null, 4));
+          });
+        }
+
+        // If no Bambu presets, just finish with non-Bambu
+        if (bambuPresets.length === 0) {
+          Promise.all(nonBambuPromises).then(finishZip).catch(function (err) {
+            console.error('Error generating ZIP:', err);
+            resetButton();
+          });
+          return;
+        }
+
+        resolveBambuMappingsWithDedup(bambuPresets, function (filteredMappings) {
+          addBambuMappingsToZip(filteredMappings);
+          Promise.all(nonBambuPromises).then(finishZip).catch(function (err) {
+            console.error('Error generating ZIP:', err);
+            resetButton();
+          });
+        }, function (err) {
+          if (err) console.error('Error fetching BambuStudio presets:', err);
+          resetButton();
         });
       }
 
@@ -1127,68 +1228,27 @@ function init() {
           if (dlBndSpanLoad) dlBndSpanLoad.textContent = t('btn.download.bundle.loading');
         }
 
-        // Fetch all preset JSON files with full data
-        var presetDataPromises = [];
-        var presetDataMap = {};
-
-        bambuPresets.forEach(function(preset) {
-          var promise = fetch(preset.url, { mode: 'cors' })
-            .then(function(r) {
-              if (!r.ok) throw new Error('Failed to fetch ' + preset.filename);
-              return r.json();
-            })
-            .then(function(data) {
-              presetDataMap[preset.path] = data;
-            })
-            .catch(function() {
-              presetDataMap[preset.path] = null;
-            });
-          presetDataPromises.push(promise);
-        });
-
-        Promise.all(presetDataPromises).then(function() {
-          var allMappings = [];
-          bambuPresets.forEach(function(preset) {
-            var presetData = presetDataMap[preset.path];
-            var mappings = generateFilenamesFromPrinters(preset, presetData);
-            allMappings = allMappings.concat(mappings);
-          });
-
-          var validMappings = allMappings.filter(function(m) { return m.presetData !== null; });
-          if (validMappings.length === 0) {
-            alert(t('alert.load.failed'));
-            if (downloadBundleBtn) {
-              downloadBundleBtn.disabled = false;
-              var dlBndSpanRst = downloadBundleBtn.querySelector('[data-i18n="btn.download.bundle"]');
-            if (dlBndSpanRst) dlBndSpanRst.textContent = t('btn.download.bundle');
-            }
-            return;
-          }
-
-          var duplicates = findDuplicateFilenames(validMappings);
-
-          if (duplicates.length > 0) {
-            showDuplicateResolutionDialog(duplicates, function(selectedOptions) {
-              var filteredMappings = filterDuplicates(validMappings, selectedOptions, duplicates);
-              generateAndDownloadBundleBatch(filteredMappings, bambuPresets);
-            }, function() {
-              if (downloadBundleBtn) {
-                downloadBundleBtn.disabled = false;
-                var dlBndSpanRst = downloadBundleBtn.querySelector('[data-i18n="btn.download.bundle"]');
-            if (dlBndSpanRst) dlBndSpanRst.textContent = t('btn.download.bundle');
-              }
-            });
-          } else {
-            generateAndDownloadBundleBatch(validMappings, bambuPresets);
-          }
-        }).catch(function(err) {
-          console.error('Error fetching presets:', err);
-          alert(t('alert.error.loading', { msg: err.message }));
+        function resetButton() {
           if (downloadBundleBtn) {
             downloadBundleBtn.disabled = false;
-            var dlBndSpanRst = downloadBundleBtn.querySelector('[data-i18n="btn.download.bundle"]');
-            if (dlBndSpanRst) dlBndSpanRst.textContent = t('btn.download.bundle');
+            var dlBndSpan = downloadBundleBtn.querySelector('[data-i18n="btn.download.bundle"]');
+            if (dlBndSpan) dlBndSpan.textContent = t('btn.download.bundle');
           }
+        }
+
+        resolveBambuMappingsWithDedup(bambuPresets, function(filteredMappings) {
+          if (filteredMappings.length === 0) {
+            alert(t('alert.load.failed'));
+            resetButton();
+            return;
+          }
+          generateAndDownloadBundleBatch(filteredMappings, bambuPresets);
+        }, function(err) {
+          if (err) {
+            console.error('Error fetching presets:', err);
+            alert(t('alert.error.loading', { msg: err.message }));
+          }
+          resetButton();
         });
       }
 
@@ -1654,6 +1714,13 @@ function init() {
             : '';
           var downloadLabel = getDownloadButtonLabel(p.filename);
 
+          // For BambuStudio, the JSON anchor goes through a click handler that
+          // expands compatible_printers and zips the result (issue #14). For
+          // other slicers, keep the direct download anchor.
+          var jsonButtonHtml = isBambuStudio
+            ? '<a href="#" class="btn-download btn-bambu-json" data-bambu-json="1" data-bundle-url="' + escapeHtml(url) + '" data-bundle-filename="' + escapeHtml(p.filename) + '" data-bundle-material="' + escapeHtml(options.material) + '" role="button" title="' + t('title.download.json') + '">JSON</a>'
+            : '<a href="' + url + '" class="btn-download" data-download-url="' + escapeHtml(url) + '" data-download-filename="' + escapeHtml(filename) + '" role="button" title="' + t('title.download.json') + '" download="' + escapeHtml(filename) + '">JSON</a>';
+
           return '<tr' + (rowClass ? ' class="' + rowClass + '"' : '') + parentAttr + '>' +
             '<td>' + checkboxHtml + '</td>' +
             '<td' + (materialClass ? ' class="' + materialClass + '"' : '') + '>' + escapeHtml(options.material) + '</td>' +
@@ -1661,7 +1728,7 @@ function init() {
             '<td>' + escapeHtml(p.model || t('value.none')) + '</td>' +
             '<td>' + escapeHtml(compatiblePrintersList) + '</td>' +
             '<td>' + formatDate(p.updatedAt) + '</td>' +
-            '<td class="td-actions"><a href="' + url + '" class="btn-download" data-download-url="' + escapeHtml(url) + '" data-download-filename="' + escapeHtml(filename) + '" role="button" title="' + t('title.download.json') + '" download="' + escapeHtml(filename) + '">' + escapeHtml(downloadLabel) + '</a>' + bundleButtonHtml + '</td>' +
+            '<td class="td-actions">' + jsonButtonHtml + bundleButtonHtml + '</td>' +
             '</tr>';
         }
 
@@ -1768,6 +1835,54 @@ function init() {
       }
 
       tbody.addEventListener('click', function (e) {
+        // Handle BambuStudio JSON button click — fetch, expand per-printer,
+        // zip, and download (issue #14).
+        var bambuJsonLink = e.target.closest('a[data-bambu-json="1"]');
+        if (bambuJsonLink) {
+          e.preventDefault();
+          var bjUrl = bambuJsonLink.getAttribute('data-bundle-url');
+          var bjFilename = bambuJsonLink.getAttribute('data-bundle-filename') || 'preset.json';
+          var bjMaterial = bambuJsonLink.getAttribute('data-bundle-material') || '';
+
+          if (!bjUrl || bjUrl === '#') {
+            alert(t('alert.invalid.url'));
+            return;
+          }
+
+          fetch(bjUrl, { mode: 'cors' })
+            .then(function (r) {
+              if (!r.ok) throw new Error('Failed to fetch preset: ' + r.statusText);
+              return r.json();
+            })
+            .then(function (data) {
+              var preset = { filename: bjFilename, material: bjMaterial, slicer: 'BambuStudio' };
+              var expanded = expandBambuPresetForDownload(preset, data);
+              if (expanded.length === 0) {
+                throw new Error('Preset has no compatible_printers');
+              }
+              var zip = new JSZip();
+              expanded.forEach(function (entry) {
+                zip.file(entry.filename, entry.content);
+              });
+              return zip.generateAsync({ type: 'blob' }).then(function (content) {
+                var zipName = (bjMaterial || bjFilename.replace(/\.json$/, '')) + '.zip';
+                var objectUrl = URL.createObjectURL(content);
+                var a = document.createElement('a');
+                a.href = objectUrl;
+                a.download = zipName;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                setTimeout(function () { URL.revokeObjectURL(objectUrl); }, 1000);
+              });
+            })
+            .catch(function (err) {
+              console.error('Error downloading JSON:', err);
+              alert(t('alert.error.preset', { msg: err.message }));
+            });
+          return;
+        }
+
         // Handle Bundle button click (only for BambuStudio)
         var bundleLink = e.target.closest('a.btn-bundle');
         if (bundleLink) {
