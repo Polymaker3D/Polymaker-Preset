@@ -12,7 +12,7 @@ var I18N = (function () {
       // Hero
       'hero.logo.alt': 'Polymaker',
       'hero.title': 'Filament Presets',
-      'hero.desc': 'Select your slicer to view and download Polymaker print profiles and filament presets',
+      'hero.desc': 'Select your slicer to view and download Polymaker print profiles and filament presets for Bambu Studio, OrcaSlicer, ElegooSlicer, and PrusaSlicer',
       'hero.howto': 'How to use?',
 
       // Filters
@@ -95,6 +95,13 @@ var I18N = (function () {
         'Go to <strong>File</strong> \u2192 <strong>Import</strong>:<ul><li>For a <strong>JSON</strong> file: choose <strong>Import Configs...</strong> (OrcaSlicer) or <strong>Import Preset...</strong> (ElegooSlicer), then select the JSON file.</li><li>For a <strong>ZIP</strong> file: choose <strong>Import Zip Archive...</strong> (or the equivalent, e.g. "Import Zip Archive\u2026" in ElegooSlicer), then select the ZIP file (no need to unzip).</li></ul>',
         'The preset will appear in your preset list.'
       ],
+      'modal.prusa.title': 'PrusaSlicer',
+      'modal.prusa.steps': [
+        'Download the preset as an <strong>INI</strong> file from the <a href="https://presets.polymaker.com" target="_blank" rel="noopener noreferrer">download page</a>.',
+        'Open PrusaSlicer.',
+        'Go to <strong>File</strong> \u2192 <strong>Import</strong> \u2192 <strong>Import Config...</strong>, then select the INI file.',
+        'The filament preset will appear in your preset list.'
+      ],
 
       // Known Issues
       'issues.title': 'Known Issues',
@@ -120,7 +127,7 @@ var I18N = (function () {
       'value.none': '-',
 
       // Download button titles
-      'title.download.json': 'Download as JSON file',
+      'title.download.json': 'Download preset file',
       'title.download.bundle': 'Download as BambuStudio Bundle',
 
       // Filename defaults
@@ -132,7 +139,7 @@ var I18N = (function () {
       // Hero
       'hero.logo.alt': '\u805a\u590d\u79d1\u6280',
       'hero.title': '耗材预设文件',
-      'hero.desc': '选择您的切片软件，查看并下载 Polymaker 打印配置文件和耗材预设',
+      'hero.desc': '选择您的切片软件，查看并下载适用于 Bambu Studio、OrcaSlicer、ElegooSlicer 和 PrusaSlicer 的 Polymaker 打印配置文件和耗材预设',
       'hero.howto': '如何使用？',
 
       // Filters
@@ -215,6 +222,13 @@ var I18N = (function () {
         '进入 <strong>文件</strong> → <strong>导入</strong>：<ul><li><strong>JSON</strong> 文件：选择 <strong>导入配置...</strong>（OrcaSlicer）或 <strong>导入预设...</strong>（ElegooSlicer）。</li><li><strong>ZIP</strong> 文件：选择 <strong>导入 ZIP 包...</strong>，无需解压。</li></ul>',
         '预设将出现在预设列表中。'
       ],
+      'modal.prusa.title': 'PrusaSlicer',
+      'modal.prusa.steps': [
+        '从<a href="https://presets.polymaker.com" target="_blank" rel="noopener noreferrer">下载页面</a>下载 <strong>INI</strong> 文件。',
+        '打开 PrusaSlicer。',
+        '进入 <strong>文件</strong> → <strong>导入</strong> → <strong>导入配置...</strong>，然后选择该 INI 文件。',
+        '耗材预设将出现在预设列表中。'
+      ],
 
       // Known Issues
       'issues.title': '已知问题',
@@ -240,7 +254,7 @@ var I18N = (function () {
       'value.none': '-',
 
       // Download button titles
-      'title.download.json': '下载 JSON 文件',
+      'title.download.json': '下载预设文件',
       'title.download.bundle': '下载 BambuStudio 打包文件',
 
       // Filename defaults

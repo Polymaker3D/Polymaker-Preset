@@ -5,6 +5,7 @@ import { execSync } from 'node:child_process';
 const REPO_ROOT = process.cwd();
 const PRESET_DIR = path.join(REPO_ROOT, 'preset');
 const INDEX_JSON_PATH = path.join(REPO_ROOT, 'index.json');
+const PRESET_FILE_EXTENSIONS = ['.json', '.ini'];
 
 function getGitLastUpdate(filePath) {
   try {
@@ -27,18 +28,23 @@ async function fileExists(p) {
   }
 }
 
-async function walkJsonFiles(dir) {
+function isPresetFile(filename) {
+  const lower = filename.toLowerCase();
+  return PRESET_FILE_EXTENSIONS.some((ext) => lower.endsWith(ext));
+}
+
+async function walkPresetFiles(dir) {
   /** @type {string[]} */
   const out = [];
   const entries = await fs.readdir(dir, { withFileTypes: true });
   for (const ent of entries) {
     const full = path.join(dir, ent.name);
     if (ent.isDirectory()) {
-      out.push(...(await walkJsonFiles(full)));
+      out.push(...(await walkPresetFiles(full)));
       continue;
     }
     if (!ent.isFile()) continue;
-    if (ent.name.toLowerCase().endsWith('.json')) out.push(full);
+    if (isPresetFile(ent.name)) out.push(full);
   }
   return out;
 }
@@ -117,7 +123,7 @@ async function main() {
     }
   }
 
-  const jsonFiles = await walkJsonFiles(PRESET_DIR);
+  const presetFiles = await walkPresetFiles(PRESET_DIR);
 
   const materials = new Set();
   const brands = new Set();
@@ -127,9 +133,10 @@ async function main() {
   /** @type {{material:string,brand:string,model:string,slicer:string,path:string,filename:string,updatedAt:string|null,compatiblePrinters:{brand:string,model:string,fullName:string}[]}[]} */
   const presets = [];
 
-  for (const absFile of jsonFiles) {
+  for (const absFile of presetFiles) {
     const relFromPreset = path.relative(PRESET_DIR, absFile);
     const parts = relFromPreset.split(path.sep);
+    const extension = path.extname(absFile).toLowerCase();
 
     // Expected: <Material>/<PrinterBrand>/<PrinterModel>/<Slicer>/<Preset>.json
     if (parts.length < 5) continue;
@@ -145,12 +152,14 @@ async function main() {
 
     // Read the preset JSON content to extract compatible_printers
     let compatiblePrinters = [];
-    try {
-        const fileContent = await fs.readFile(absFile, 'utf8');
-        const presetData = JSON.parse(fileContent);
-        compatiblePrinters = extractCompatiblePrinters(presetData);
-    } catch (e) {
-        console.warn(`Failed to parse ${relFromPreset}: ${e.message}`);
+    if (extension === '.json') {
+      try {
+          const fileContent = await fs.readFile(absFile, 'utf8');
+          const presetData = JSON.parse(fileContent);
+          compatiblePrinters = extractCompatiblePrinters(presetData);
+      } catch (e) {
+          console.warn(`Failed to parse ${relFromPreset}: ${e.message}`);
+      }
     }
 
     materials.add(material);
@@ -192,4 +201,3 @@ async function main() {
 }
 
 await main();
-
