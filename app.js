@@ -313,6 +313,11 @@ function init() {
     return { effectiveSlicer: effectiveSlicer, effectiveBrand: effectiveBrand };
   }
 
+  function isBambuStudioSlicerSelected() {
+    var filters = getEffectiveFilters();
+    return filters.effectiveSlicer === 'BambuStudio';
+  }
+
   initTheme();
   initX2DProgress();
 
@@ -1561,11 +1566,6 @@ function init() {
 
       if (selectAllCheckbox) {
         selectAllCheckbox.addEventListener('change', handleSelectAllChange);
-      }
-
-      function isBambuStudioSlicerSelected() {
-        var filters = getEffectiveFilters();
-        return filters.effectiveSlicer === 'BambuStudio';
       }
 
       function withBambuRestartWarning(action) {
