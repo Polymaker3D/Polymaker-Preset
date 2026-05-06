@@ -121,6 +121,10 @@ var I18N = (function () {
       'issues.p2s.solution': '<strong>Solution:</strong> We have implemented a temporary fix by adding cooling G-code commands to P2S presets with vitrification temperature > 50\u00b0C. This is a temporary workaround until Bambu Lab fixes this issue.',
       'issues.p2s.link': 'View BambuStudio Issue #8801 \u2192',
       'issues.p2s.credits': 'Thanks to alexbreinig and capsel22 for identifying this issue.',
+      'issues.restart.title': 'BambuStudio Restart Required After Import',
+      'issues.restart.issue': '<strong>Issue:</strong> BambuStudio may not correctly apply newly imported filament presets until the application is restarted. Slicing or printing without restarting may use incorrect temperature, flow rate, or other filament settings.',
+      'issues.restart.solution': '<strong>Solution:</strong> Always restart BambuStudio after importing Polymaker presets, before you start slicing or printing. A warning popup will also remind you when downloading BambuStudio presets from this page.',
+      'issues.restart.link': 'View BambuStudio Issue #10583 \u2192',
 
       // Footer
       'footer.links': 'Links',
@@ -259,6 +263,10 @@ var I18N = (function () {
       'issues.p2s.solution': '<strong>解决方案：</strong>我们已向玻璃化转变温度 > 50°C 的 P2S 预设添加冷却 G-code 命令作为临时修复，期待 Bambu Lab 官方修复此问题。',
       'issues.p2s.link': '查看 BambuStudio Issue #8801 →',
       'issues.p2s.credits': '感谢 alexbreinig 和 capsel22 发现了这个问题。',
+      'issues.restart.title': '导入 BambuStudio 预设后需要重启软件',
+      'issues.restart.issue': '<strong>问题：</strong>BambuStudio 在重启前可能无法正确应用新导入的耗材预设。未重启直接切片或打印可能会导致温度、流量或其他耗材设置错误。',
+      'issues.restart.solution': '<strong>解决方案：</strong>导入 Polymaker 预设后，在开始切片或打印前请务必重启 BambuStudio。从本页面下载 BambuStudio 预设时，也会弹出警告提醒您。',
+      'issues.restart.link': '查看 BambuStudio Issue #10583 \u2192',
 
       // Footer
       'footer.links': '链接',
