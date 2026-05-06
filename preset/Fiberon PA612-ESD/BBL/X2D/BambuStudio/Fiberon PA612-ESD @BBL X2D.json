@@ -1,52 +1,52 @@
 {
     "type": "filament",
-    "name": "PolyLite PLA-CF @BBL X2D",
+    "name": "Fiberon PA612-ESD @BBL X2D",
     "from": "User",
     "instantiation": "true",
     "cool_plate_temp": [
-        "45"
+        "0"
     ],
     "eng_plate_temp": [
-        "55"
+        "100"
     ],
     "hot_plate_temp": [
-        "60"
+        "100"
     ],
     "textured_plate_temp": [
-        "60"
+        "100"
     ],
     "cool_plate_temp_initial_layer": [
-        "45"
+        "0"
     ],
     "eng_plate_temp_initial_layer": [
-        "55"
+        "100"
     ],
     "hot_plate_temp_initial_layer": [
-        "60"
+        "100"
     ],
     "textured_plate_temp_initial_layer": [
-        "60"
+        "100"
     ],
     "overhang_fan_threshold": [
-        "50%"
+        "0%"
     ],
     "overhang_fan_speed": [
-        "100"
+        "40"
     ],
     "slow_down_for_layer_cooling": [
         "1"
     ],
     "close_fan_the_first_x_layers": [
-        "1"
+        "3"
     ],
     "close_additional_fan_first_x_layers": [
-        "1"
+        "3"
     ],
     "filament_end_gcode": [
         "; filament end gcode \n"
     ],
     "filament_flow_ratio": [
-        "1.02",
+        "0.84",
         "nil",
         "nil",
         "nil"
@@ -55,13 +55,13 @@
         "1"
     ],
     "fan_cooling_layer_time": [
-        "100"
+        "26"
     ],
     "filament_cost": [
-        "34.99"
+        "84.99"
     ],
     "filament_density": [
-        "1.29"
+        "1.1"
     ],
     "filament_diameter": [
         "1.75"
@@ -70,7 +70,7 @@
         "0"
     ],
     "filament_max_volumetric_speed": [
-        "12",
+        "10",
         "nil",
         "nil",
         "nil"
@@ -78,59 +78,41 @@
     "filament_minimal_purge_on_wipe_tower": [
         "15"
     ],
-    "filament_z_hop_types": [
-        "nil",
-        "nil",
-        "Spiral Lift",
-        "nil"
-    ],
     "filament_settings_id": [
-        "PolyLite PLA-CF @BBL X2D"
+        "Fiberon PA612-ESD @BBL X2D"
     ],
     "filament_soluble": [
         "0"
     ],
     "filament_type": [
-        "PLA-CF"
+        "PA-CF"
     ],
     "filament_vendor": [
         "Polymaker"
-    ],
-    "filament_wipe": [
-        "nil",
-        "nil",
-        "1",
-        "nil"
-    ],
-    "filament_wipe_distance": [
-        "nil",
-        "nil",
-        "1",
-        "nil"
     ],
     "bed_type": [
         "Cool Plate"
     ],
     "nozzle_temperature_initial_layer": [
-        "220",
-        "nil",
-        "nil",
-        "nil"
+        "290",
+        "290",
+        "290",
+        "290"
     ],
     "full_fan_speed_layer": [
-        "0"
+        "2"
     ],
     "additional_fan_full_speed_layer": [
-        "0"
+        "2"
     ],
     "fan_max_speed": [
-        "100"
+        "10"
     ],
     "fan_min_speed": [
-        "100"
+        "0"
     ],
     "required_nozzle_HRC": [
-        "40"
+        "3"
     ],
     "slow_down_min_speed": [
         "20",
@@ -139,51 +121,34 @@
         "20"
     ],
     "slow_down_layer_time": [
-        "9"
+        "8"
     ],
     "filament_start_gcode": [
         "; filament start gcode\n"
     ],
     "nozzle_temperature": [
-        "220",
-        "nil",
-        "nil",
-        "nil"
+        "290",
+        "290",
+        "290",
+        "290"
     ],
     "temperature_vitrification": [
-        "64"
-    ],
-    "nozzle_temperature_range_low": [
         "190"
     ],
+    "nozzle_temperature_range_low": [
+        "280"
+    ],
     "nozzle_temperature_range_high": [
-        "230"
+        "300"
     ],
-    "additional_cooling_fan_speed": [
-        "0"
-    ],
-    "filament_id": "PMPL31",
+    "filament_id": "PMPA05",
+    "description": " ",
     "impact_strength_z": [
-        "7.8"
+        "5.7"
     ],
-    "supertack_plate_temp": [
-        "50"
-    ],
-    "supertack_plate_temp_initial_layer": [
-        "50"
-    ],
-    "setting_id": "GFSA50_16",
-    "counter_coef_2": [
-        "0.0003"
-    ],
-    "counter_coef_3": [
-        "0.0224"
-    ],
-    "counter_limit_max": [
-        "0.03"
-    ],
-    "counter_limit_min": [
-        "0.0224"
+    "setting_id": "GFSN03_05",
+    "chamber_temperatures": [
+        "60"
     ],
     "filament_cooling_before_tower": [
         "10",
@@ -197,29 +162,8 @@
         "0",
         "0"
     ],
-    "filament_retraction_distances_when_cut": [
-        "10",
-        "10",
-        "10",
-        "10"
-    ],
     "filament_tower_interface_print_temp": [
-        "230"
-    ],
-    "first_x_layer_fan_speed": [
-        "40"
-    ],
-    "hole_coef_2": [
-        "-0.0028"
-    ],
-    "hole_coef_3": [
-        "0.1173"
-    ],
-    "hole_limit_max": [
-        "0.1173"
-    ],
-    "hole_limit_min": [
-        "0.048"
+        "290"
     ],
     "include": [
         "fdm_filament_template_direct_bowden"
@@ -239,6 +183,5 @@
         "Bowden Standard",
         "Bowden High Flow"
     ],
-    "version": "2.6.0.1",
-    "idle_temperature": 0
+    "version": "2.6.0.2"
 }

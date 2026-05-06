@@ -59,7 +59,7 @@
         "36.99"
     ],
     "filament_density": [
-        "1.02"
+        "1.09"
     ],
     "filament_diameter": [
         "1.75"
@@ -81,7 +81,7 @@
         "0"
     ],
     "filament_type": [
-        "ASA-CF"
+        "ASA"
     ],
     "filament_vendor": [
         "Polymaker"
@@ -123,13 +123,13 @@
         "nil"
     ],
     "temperature_vitrification": [
-        "108"
+        "110.8"
     ],
     "nozzle_temperature_range_low": [
-        "250"
+        "260"
     ],
     "nozzle_temperature_range_high": [
-        "300"
+        "280"
     ],
     "filament_id": "PMAS01",
     "filament_dev_drying_cooling_temperature": [
@@ -171,5 +171,6 @@
         "Direct Drive Standard",
         "Direct Drive High Flow"
     ],
-    "version": "2.5.0.14"
+    "version": "2.5.0.14",
+    "idle_temperature": 0
 }

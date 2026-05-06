@@ -46,10 +46,10 @@
         "; filament end gcode \n"
     ],
     "filament_flow_ratio": [
-        "0.95",
-        "nil",
-        "nil",
-        "nil"
+        "0.98",
+        "0.98",
+        "0.98",
+        "0.98"
     ],
     "reduce_fan_stop_start_freq": [
         "1"
@@ -61,7 +61,7 @@
         "20"
     ],
     "filament_density": [
-        "1.17"
+        "1.32"
     ],
     "filament_diameter": [
         "1.75"
@@ -70,10 +70,10 @@
         "0"
     ],
     "filament_max_volumetric_speed": [
-        "8",
-        "nil",
-        "nil",
-        "nil"
+        "12",
+        "12",
+        "12",
+        "12"
     ],
     "filament_minimal_purge_on_wipe_tower": [
         "15"
@@ -94,10 +94,10 @@
         "Cool Plate"
     ],
     "nozzle_temperature_initial_layer": [
-        "210",
-        "nil",
-        "nil",
-        "nil"
+        "220",
+        "220",
+        "220",
+        "220"
     ],
     "full_fan_speed_layer": [
         "0"
@@ -127,13 +127,13 @@
         "; filament start gcode\n"
     ],
     "nozzle_temperature": [
-        "210",
-        "nil",
-        "nil",
-        "nil"
+        "220",
+        "220",
+        "220",
+        "220"
     ],
     "temperature_vitrification": [
-        "61"
+        "62.5"
     ],
     "nozzle_temperature_range_low": [
         "190"

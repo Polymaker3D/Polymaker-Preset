@@ -1,34 +1,34 @@
 {
     "type": "filament",
-    "name": "Panchroma PLA @Elegoo CC2",
+    "name": "PolyMax PETG @Elegoo CC2",
     "from": "User",
     "instantiation": "true",
     "cool_plate_temp": [
-        "50"
+        "60"
     ],
     "eng_plate_temp": [
-        "50"
+        "0"
     ],
     "hot_plate_temp": [
-        "50"
+        "80"
     ],
     "textured_plate_temp": [
-        "50"
+        "80"
     ],
     "cool_plate_temp_initial_layer": [
-        "50"
+        "60"
     ],
     "eng_plate_temp_initial_layer": [
-        "50"
+        "0"
     ],
     "hot_plate_temp_initial_layer": [
-        "50"
+        "80"
     ],
     "textured_plate_temp_initial_layer": [
-        "50"
+        "80"
     ],
     "overhang_fan_threshold": [
-        "50%"
+        "0%"
     ],
     "overhang_fan_speed": [
         "100"
@@ -37,46 +37,43 @@
         "1"
     ],
     "close_fan_the_first_x_layers": [
-        "1"
+        "3"
     ],
     "filament_end_gcode": [
         "; filament end gcode \n"
     ],
     "filament_flow_ratio": [
-        "0.97"
+        "1.02"
     ],
     "reduce_fan_stop_start_freq": [
         "1"
     ],
     "fan_cooling_layer_time": [
-        "100"
+        "30"
     ],
     "filament_cost": [
         "30"
     ],
     "filament_density": [
-        "1.32"
+        "1.24"
     ],
     "filament_diameter": [
         "1.75"
     ],
     "filament_max_volumetric_speed": [
-        "20"
+        "4"
     ],
     "filament_minimal_purge_on_wipe_tower": [
         "15"
     ],
-    "filament_retraction_length": [
-        "0.8"
-    ],
     "filament_settings_id": [
-        "Panchroma PLA @Elegoo CC2"
+        "PolyMax PETG @Elegoo CC2"
     ],
     "filament_soluble": [
         "0"
     ],
     "filament_type": [
-        "PLA"
+        "PETG"
     ],
     "filament_vendor": [
         "Polymaker"
@@ -85,53 +82,60 @@
         "Cool Plate"
     ],
     "nozzle_temperature_initial_layer": [
-        "220"
+        "260"
     ],
     "full_fan_speed_layer": [
         "0"
     ],
     "fan_max_speed": [
-        "100"
+        "30"
     ],
     "fan_min_speed": [
-        "100"
+        "20"
     ],
     "slow_down_min_speed": [
-        "5"
+        "10"
     ],
     "slow_down_layer_time": [
-        "6"
+        "8"
     ],
     "filament_start_gcode": [
-        "; filament start gcode\n"
+        "; Filament gcode\n"
     ],
     "nozzle_temperature": [
-        "220"
+        "260"
     ],
     "temperature_vitrification": [
-        "62.5"
+        "79"
+    ],
+    "filament_id": "PMPE09",
+    "nozzle_temperature_range_high": [
+        "260"
     ],
     "nozzle_temperature_range_low": [
-        "190"
-    ],
-    "nozzle_temperature_range_high": [
         "230"
     ],
-    "additional_cooling_fan_speed": [
-        "0"
+    "supertack_plate_temp": [
+        "70"
     ],
-    "setting_id": "OGFSL99_02",
+    "supertack_plate_temp_initial_layer": [
+        "70"
+    ],
+    "renamed_from": "My Generic PETG",
+    "setting_id": "OGFSA04",
     "compatible_printers": [
         "Elegoo Centauri Carbon 2 0.4 nozzle"
+    ],
+    "additional_cooling_fan_speed": [
+        "30"
     ],
     "enable_pressure_advance": [
         "1"
     ],
     "is_custom_defined": "0",
     "pressure_advance": [
-        "0.05"
+        "0.15"
     ],
-    "version": "1.3.0.11",
-    "idle_temperature": 0,
-    "filament_id": "PMPL01"
+    "version": "1.3.2.9",
+    "idle_temperature": 0
 }

@@ -1,82 +1,85 @@
 {
     "type": "filament",
-    "name": "Panchroma PLA @Elegoo CC2",
+    "name": "Fiberon PA612-ESD @Snapmaker U1",
     "from": "User",
     "instantiation": "true",
     "cool_plate_temp": [
-        "50"
+        "0"
     ],
     "eng_plate_temp": [
-        "50"
+        "100"
     ],
     "hot_plate_temp": [
-        "50"
+        "100"
     ],
     "textured_plate_temp": [
-        "50"
+        "100"
     ],
     "cool_plate_temp_initial_layer": [
-        "50"
+        "0"
     ],
     "eng_plate_temp_initial_layer": [
-        "50"
+        "100"
     ],
     "hot_plate_temp_initial_layer": [
-        "50"
+        "100"
     ],
     "textured_plate_temp_initial_layer": [
-        "50"
+        "100"
     ],
     "overhang_fan_threshold": [
-        "50%"
+        "0%"
     ],
     "overhang_fan_speed": [
-        "100"
+        "40"
     ],
     "slow_down_for_layer_cooling": [
         "1"
     ],
     "close_fan_the_first_x_layers": [
-        "1"
+        "3"
     ],
     "filament_end_gcode": [
         "; filament end gcode \n"
     ],
     "filament_flow_ratio": [
-        "0.97"
+        "0.89"
     ],
     "reduce_fan_stop_start_freq": [
         "1"
     ],
     "fan_cooling_layer_time": [
-        "100"
+        "25"
     ],
     "filament_cost": [
-        "30"
+        "20"
     ],
     "filament_density": [
-        "1.32"
+        "1.1"
     ],
     "filament_diameter": [
         "1.75"
     ],
     "filament_max_volumetric_speed": [
-        "20"
+        "8"
     ],
     "filament_minimal_purge_on_wipe_tower": [
         "15"
     ],
     "filament_retraction_length": [
-        "0.8"
+        "1.0"
+    ],
+    "filament_z_hop": [
+        "0.0"
     ],
     "filament_settings_id": [
-        "Panchroma PLA @Elegoo CC2"
+        "Fiberon PA612-ESD @Snapmaker U1"
     ],
     "filament_soluble": [
         "0"
     ],
     "filament_type": [
-        "PLA"
+        "PA-CF"
     ],
     "filament_vendor": [
         "Polymaker"
@@ -85,53 +88,47 @@
         "Cool Plate"
     ],
     "nozzle_temperature_initial_layer": [
-        "220"
+        "270"
     ],
     "full_fan_speed_layer": [
-        "0"
+        "2"
     ],
     "fan_max_speed": [
-        "100"
+        "10"
     ],
     "fan_min_speed": [
-        "100"
-    ],
-    "slow_down_min_speed": [
-        "5"
-    ],
-    "slow_down_layer_time": [
-        "6"
-    ],
-    "filament_start_gcode": [
-        "; filament start gcode\n"
-    ],
-    "nozzle_temperature": [
-        "220"
-    ],
-    "temperature_vitrification": [
-        "62.5"
-    ],
-    "nozzle_temperature_range_low": [
-        "190"
-    ],
-    "nozzle_temperature_range_high": [
-        "230"
-    ],
-    "additional_cooling_fan_speed": [
         "0"
     ],
-    "setting_id": "OGFSL99_02",
+    "slow_down_min_speed": [
+        "10"
+    ],
+    "slow_down_layer_time": [
+        "1"
+    ],
+    "filament_start_gcode": [
+        "; Filament gcode\n"
+    ],
+    "nozzle_temperature": [
+        "270"
+    ],
+    "temperature_vitrification": [
+        "190"
+    ],
+    "nozzle_temperature_range_low": [
+        "280"
+    ],
+    "nozzle_temperature_range_high": [
+        "300"
+    ],
+    "filament_id": "PMPA05",
+    "description": " ",
+    "setting_id": "GFSN99",
     "compatible_printers": [
-        "Elegoo Centauri Carbon 2 0.4 nozzle"
+        "Snapmaker U1 (0.4 nozzle)"
     ],
     "enable_pressure_advance": [
         "1"
     ],
     "is_custom_defined": "0",
-    "pressure_advance": [
-        "0.05"
-    ],
-    "version": "1.3.0.11",
-    "idle_temperature": 0,
-    "filament_id": "PMPL01"
+    "version": "2.2.44.2"
 }

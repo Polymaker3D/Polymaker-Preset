@@ -1,31 +1,31 @@
 {
     "type": "filament",
-    "name": "Panchroma PLA @Elegoo CC2",
+    "name": "Polymaker PLA Pro @BBL X2D",
     "from": "User",
     "instantiation": "true",
     "cool_plate_temp": [
-        "50"
+        "60"
     ],
     "eng_plate_temp": [
-        "50"
+        "55"
     ],
     "hot_plate_temp": [
-        "50"
+        "60"
     ],
     "textured_plate_temp": [
-        "50"
+        "60"
     ],
     "cool_plate_temp_initial_layer": [
-        "50"
+        "60"
     ],
     "eng_plate_temp_initial_layer": [
-        "50"
+        "55"
     ],
     "hot_plate_temp_initial_layer": [
-        "50"
+        "60"
     ],
     "textured_plate_temp_initial_layer": [
-        "50"
+        "60"
     ],
     "overhang_fan_threshold": [
         "50%"
@@ -39,11 +39,17 @@
     "close_fan_the_first_x_layers": [
         "1"
     ],
+    "close_additional_fan_first_x_layers": [
+        "1"
+    ],
     "filament_end_gcode": [
         "; filament end gcode \n"
     ],
     "filament_flow_ratio": [
-        "0.97"
+        "0.96",
+        "nil",
+        "nil",
+        "nil"
     ],
     "reduce_fan_stop_start_freq": [
         "1"
@@ -52,25 +58,28 @@
         "100"
     ],
     "filament_cost": [
-        "30"
+        "20"
     ],
     "filament_density": [
-        "1.32"
+        "1.23"
     ],
     "filament_diameter": [
         "1.75"
     ],
+    "filament_is_support": [
+        "0"
+    ],
     "filament_max_volumetric_speed": [
-        "20"
+        "8",
+        "nil",
+        "nil",
+        "nil"
     ],
     "filament_minimal_purge_on_wipe_tower": [
         "15"
     ],
-    "filament_retraction_length": [
-        "0.8"
-    ],
     "filament_settings_id": [
-        "Panchroma PLA @Elegoo CC2"
+        "Polymaker PLA Pro @BBL X2D"
     ],
     "filament_soluble": [
         "0"
@@ -85,9 +94,15 @@
         "Cool Plate"
     ],
     "nozzle_temperature_initial_layer": [
-        "220"
+        "200",
+        "nil",
+        "nil",
+        "nil"
     ],
     "full_fan_speed_layer": [
+        "0"
+    ],
+    "additional_fan_full_speed_layer": [
         "0"
     ],
     "fan_max_speed": [
@@ -96,20 +111,29 @@
     "fan_min_speed": [
         "100"
     ],
+    "required_nozzle_HRC": [
+        "3"
+    ],
     "slow_down_min_speed": [
-        "5"
+        "20",
+        "20",
+        "20",
+        "20"
     ],
     "slow_down_layer_time": [
-        "6"
+        "15"
     ],
     "filament_start_gcode": [
         "; filament start gcode\n"
     ],
     "nozzle_temperature": [
-        "220"
+        "200",
+        "nil",
+        "nil",
+        "nil"
     ],
     "temperature_vitrification": [
-        "62.5"
+        "55"
     ],
     "nozzle_temperature_range_low": [
         "190"
@@ -118,20 +142,47 @@
         "230"
     ],
     "additional_cooling_fan_speed": [
+        "70"
+    ],
+    "filament_id": "PMPL25",
+    "description": " ",
+    "setting_id": "GFSL99_17",
+    "filament_cooling_before_tower": [
+        "10",
+        "10",
+        "10",
+        "10"
+    ],
+    "filament_ramming_travel_time": [
+        "0",
+        "0",
+        "0",
         "0"
     ],
-    "setting_id": "OGFSL99_02",
+    "filament_tower_interface_print_temp": [
+        "220"
+    ],
+    "first_x_layer_fan_speed": [
+        "40"
+    ],
+    "include": [
+        "fdm_filament_template_direct_bowden"
+    ],
+    "retraction_distances_when_ec": [
+        "3",
+        "3",
+        "4",
+        "4"
+    ],
     "compatible_printers": [
-        "Elegoo Centauri Carbon 2 0.4 nozzle"
+        "Bambu Lab X2D 0.4 nozzle"
     ],
-    "enable_pressure_advance": [
-        "1"
+    "filament_extruder_variant": [
+        "Direct Drive Standard",
+        "Direct Drive High Flow",
+        "Bowden Standard",
+        "Bowden High Flow"
     ],
-    "is_custom_defined": "0",
-    "pressure_advance": [
-        "0.05"
-    ],
-    "version": "1.3.0.11",
-    "idle_temperature": 0,
-    "filament_id": "PMPL01"
+    "version": "2.6.0.2",
+    "idle_temperature": 0
 }
