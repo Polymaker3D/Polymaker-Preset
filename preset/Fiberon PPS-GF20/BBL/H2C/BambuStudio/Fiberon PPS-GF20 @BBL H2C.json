@@ -1,0 +1,220 @@
+{
+    "type": "filament",
+    "name": "Fiberon PPS-GF20 @BBL H2C",
+    "from": "User",
+    "instantiation": "true",
+    "cool_plate_temp": [
+        "0"
+    ],
+    "eng_plate_temp": [
+        "110"
+    ],
+    "hot_plate_temp": [
+        "110"
+    ],
+    "textured_plate_temp": [
+        "110"
+    ],
+    "cool_plate_temp_initial_layer": [
+        "0"
+    ],
+    "eng_plate_temp_initial_layer": [
+        "110"
+    ],
+    "hot_plate_temp_initial_layer": [
+        "110"
+    ],
+    "textured_plate_temp_initial_layer": [
+        "110"
+    ],
+    "overhang_fan_threshold": [
+        "0%"
+    ],
+    "overhang_fan_speed": [
+        "30"
+    ],
+    "slow_down_for_layer_cooling": [
+        "1"
+    ],
+    "close_fan_the_first_x_layers": [
+        "3"
+    ],
+    "close_additional_fan_first_x_layers": [
+        "3"
+    ],
+    "filament_end_gcode": [
+        "; filament end gcode \n"
+    ],
+    "filament_flow_ratio": [
+        "1.03",
+        "nil"
+    ],
+    "reduce_fan_stop_start_freq": [
+        "1"
+    ],
+    "fan_cooling_layer_time": [
+        "27"
+    ],
+    "filament_cost": [
+        "240"
+    ],
+    "filament_density": [
+        "1.36"
+    ],
+    "filament_diameter": [
+        "1.75"
+    ],
+    "filament_is_support": [
+        "0"
+    ],
+    "filament_max_volumetric_speed": [
+        "8",
+        "nil"
+    ],
+    "filament_minimal_purge_on_wipe_tower": [
+        "15"
+    ],
+    "filament_settings_id": [
+        "Fiberon PPS-GF20 @BBL H2C"
+    ],
+    "filament_soluble": [
+        "0"
+    ],
+    "filament_type": [
+        "PPS-CF"
+    ],
+    "filament_vendor": [
+        "Polymaker"
+    ],
+    "bed_type": [
+        "Cool Plate"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "340",
+        "nil"
+    ],
+    "full_fan_speed_layer": [
+        "0"
+    ],
+    "additional_fan_full_speed_layer": [
+        "0"
+    ],
+    "fan_max_speed": [
+        "10"
+    ],
+    "fan_min_speed": [
+        "0"
+    ],
+    "required_nozzle_HRC": [
+        "40"
+    ],
+    "slow_down_min_speed": [
+        "10"
+    ],
+    "slow_down_layer_time": [
+        "13"
+    ],
+    "filament_start_gcode": [
+        "; filament start gcode\n"
+    ],
+    "nozzle_temperature": [
+        "340",
+        "nil"
+    ],
+    "temperature_vitrification": [
+        "272"
+    ],
+    "chamber_temperatures": [
+        "60"
+    ],
+    "filament_adhesiveness_category": [
+        "801"
+    ],
+    "filament_dev_chamber_drying_bed_temperature": [
+        "100"
+    ],
+    "filament_dev_ams_drying_time": [
+        "12",
+        "12",
+        "12",
+        "12"
+    ],
+    "filament_dev_ams_drying_ams_limitations": [
+        "-1"
+    ],
+    "filament_dev_ams_drying_heat_distortion_temperature": [
+        "165"
+    ],
+    "filament_dev_drying_cooling_temperature": [
+        "150"
+    ],
+    "filament_dev_ams_drying_temperature": [
+        "65",
+        "85",
+        "65",
+        "85"
+    ],
+    "filament_dev_drying_softening_temperature": [
+        "150"
+    ],
+    "nozzle_temperature_range_high": [
+        "350"
+    ],
+    "nozzle_temperature_range_low": [
+        "310"
+    ],
+    "supertack_plate_temp": [
+        "0"
+    ],
+    "supertack_plate_temp_initial_layer": [
+        "0"
+    ],
+    "filament_id": "PMPP02",
+    "description": " ",
+    "impact_strength_z": [
+        "5.7"
+    ],
+    "setting_id": "GFST98_03",
+    "filament_cooling_before_tower": [
+        "10",
+        "10"
+    ],
+    "filament_prime_volume": [
+        "30"
+    ],
+    "filament_prime_volume_nc": [
+        "30"
+    ],
+    "filament_pre_cooling_temperature_nc": [
+        "280",
+        "280"
+    ],
+    "filament_ramming_travel_time": [
+        "0",
+        "0"
+    ],
+    "filament_ramming_travel_time_nc": [
+        "1",
+        "1"
+    ],
+    "filament_change_length": [
+        "4"
+    ],
+    "first_x_layer_fan_speed": [
+        "0"
+    ],
+    "filament_change_length_nc": [
+        "4"
+    ],
+    "include": [
+        "fdm_filament_template_direct_dual"
+    ],
+    "compatible_printers": [
+        "Bambu Lab H2C 0.4 nozzle"
+    ],
+    "filament_extruder_variant": [
+        "Direct Drive Standard",
+        "Direct Drive High Flow"
+    ],
+    "version": "2.6.0.2"
+}

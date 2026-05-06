@@ -1,0 +1,134 @@
+{
+    "type": "filament",
+    "name": "Fiberon PA612-ESD @Snapmaker U1",
+    "from": "User",
+    "instantiation": "true",
+    "cool_plate_temp": [
+        "0"
+    ],
+    "eng_plate_temp": [
+        "100"
+    ],
+    "hot_plate_temp": [
+        "100"
+    ],
+    "textured_plate_temp": [
+        "100"
+    ],
+    "cool_plate_temp_initial_layer": [
+        "0"
+    ],
+    "eng_plate_temp_initial_layer": [
+        "100"
+    ],
+    "hot_plate_temp_initial_layer": [
+        "100"
+    ],
+    "textured_plate_temp_initial_layer": [
+        "100"
+    ],
+    "overhang_fan_threshold": [
+        "0%"
+    ],
+    "overhang_fan_speed": [
+        "40"
+    ],
+    "slow_down_for_layer_cooling": [
+        "1"
+    ],
+    "close_fan_the_first_x_layers": [
+        "3"
+    ],
+    "filament_end_gcode": [
+        "; filament end gcode \n"
+    ],
+    "filament_flow_ratio": [
+        "0.89"
+    ],
+    "reduce_fan_stop_start_freq": [
+        "1"
+    ],
+    "fan_cooling_layer_time": [
+        "25"
+    ],
+    "filament_cost": [
+        "20"
+    ],
+    "filament_density": [
+        "1.1"
+    ],
+    "filament_diameter": [
+        "1.75"
+    ],
+    "filament_max_volumetric_speed": [
+        "8"
+    ],
+    "filament_minimal_purge_on_wipe_tower": [
+        "15"
+    ],
+    "filament_retraction_length": [
+        "1.0"
+    ],
+    "filament_z_hop": [
+        "0.0"
+    ],
+    "filament_settings_id": [
+        "Fiberon PA612-ESD @Snapmaker U1"
+    ],
+    "filament_soluble": [
+        "0"
+    ],
+    "filament_type": [
+        "PA-CF"
+    ],
+    "filament_vendor": [
+        "Polymaker"
+    ],
+    "bed_type": [
+        "Cool Plate"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "270"
+    ],
+    "full_fan_speed_layer": [
+        "2"
+    ],
+    "fan_max_speed": [
+        "10"
+    ],
+    "fan_min_speed": [
+        "0"
+    ],
+    "slow_down_min_speed": [
+        "10"
+    ],
+    "slow_down_layer_time": [
+        "1"
+    ],
+    "filament_start_gcode": [
+        "; Filament gcode\n"
+    ],
+    "nozzle_temperature": [
+        "270"
+    ],
+    "temperature_vitrification": [
+        "190"
+    ],
+    "nozzle_temperature_range_low": [
+        "280"
+    ],
+    "nozzle_temperature_range_high": [
+        "300"
+    ],
+    "filament_id": "PMPA05",
+    "description": " ",
+    "setting_id": "GFSN99",
+    "compatible_printers": [
+        "Snapmaker U1 (0.4 nozzle)"
+    ],
+    "enable_pressure_advance": [
+        "1"
+    ],
+    "is_custom_defined": "0",
+    "version": "2.2.44.2"
+}

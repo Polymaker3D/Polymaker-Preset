@@ -76,7 +76,7 @@
         {
             "series": "Polymaker",
             "productName": "PolyLite PLA Pro",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Polymaker",
@@ -96,12 +96,12 @@
         {
             "series": "Polymaker",
             "productName": "Polymaker PLA Pro",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Polymaker",
             "productName": "PolyMax PETG",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Polymaker",
@@ -176,7 +176,7 @@
         {
             "series": "Panchroma",
             "productName": "Panchroma PLA Basic",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Panchroma",
@@ -221,7 +221,7 @@
         {
             "series": "Fiberon",
             "productName": "Fiberon PET-GF15",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Fiberon",
@@ -241,12 +241,12 @@
         {
             "series": "Fiberon",
             "productName": "Fiberon PA612-CF15",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Fiberon",
             "productName": "Fiberon PA612-ESD",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Fiberon",

@@ -2365,3 +2365,57 @@ body.theme-wiki .lang-option:hover {
   color: var(--accent);
   font-weight: 600;
 }
+
+/* ── BambuStudio Restart Warning Modal ─────────────────── */
+.warning-modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.warning-modal-text {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.warning-modal-text strong {
+  color: #eab308;
+}
+
+body.theme-wiki .warning-modal-text strong {
+  color: #a16207;
+}
+
+.warning-modal-link {
+  margin: 0;
+}
+
+.warning-modal-link a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+.warning-modal-link a:hover {
+  text-decoration: underline;
+}
+
+body.theme-wiki .warning-modal-link a:link,
+body.theme-wiki .warning-modal-link a:visited {
+  color: var(--wiki-link) !important;
+}
+
+body.theme-wiki .warning-modal-link a:hover,
+body.theme-wiki .warning-modal-link a:active {
+  color: var(--wiki-link-hover) !important;
+}
+
+.warning-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding-top: 0.5rem;
+}

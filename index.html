@@ -235,6 +235,21 @@
             </div>
           </div>
         </div>
+        <div class="accordion-item is-collapsed">
+          <button class="accordion-header" type="button" aria-expanded="false">
+            <span class="accordion-title" data-i18n="issues.restart.title">BambuStudio Restart Required After Import</span>
+            <span class="accordion-icon" aria-hidden="true">▼</span>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-body">
+              <p data-i18n-html="issues.restart.issue"><strong>Issue:</strong> BambuStudio may not correctly apply newly imported filament presets until the application is restarted. Slicing or printing without restarting may use incorrect temperature, flow rate, or other filament settings.</p>
+              <p data-i18n-html="issues.restart.solution"><strong>Solution:</strong> Always restart BambuStudio after importing Polymaker presets, before you start slicing or printing. A warning popup will also remind you when downloading BambuStudio presets from this page.</p>
+              <p class="accordion-links">
+                <a href="https://github.com/bambulab/BambuStudio/issues/10583" target="_blank" rel="noopener noreferrer" data-i18n="issues.restart.link">View BambuStudio Issue #10583 →</a>
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -298,6 +313,34 @@
         <div class="duplicate-actions">
           <button type="button" class="btn-secondary" id="duplicate-cancel" data-i18n="dup.cancel">Cancel</button>
           <button type="button" class="btn-primary" id="duplicate-confirm" data-i18n="dup.confirm">Confirm Export</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BambuStudio Restart Warning Modal -->
+  <div id="bambu-restart-modal" class="modal" role="dialog" aria-labelledby="bambu-restart-modal-title" aria-hidden="true">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="bambu-restart-modal-title" class="modal-title" data-i18n="modal.restart.title">⚠️ Restart BambuStudio Required</h2>
+        <button class="modal-close" type="button" aria-label="Close modal" id="bambu-restart-modal-close">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="warning-modal-body">
+          <p class="warning-modal-text" data-i18n-html="modal.restart.message"><strong>Important:</strong> After importing presets into BambuStudio, you <strong>must restart the slicer</strong> before slicing and printing. Failure to restart may cause incorrect settings to be applied.</p>
+          <p class="warning-modal-link">
+            <a href="https://github.com/bambulab/BambuStudio/issues/10583" target="_blank" rel="noopener noreferrer" data-i18n="modal.restart.link">View GitHub Issue #10583 →</a>
+          </p>
+          <div class="warning-modal-actions">
+            <button type="button" class="btn-secondary" id="bambu-restart-cancel" data-i18n="modal.restart.cancel">Cancel</button>
+            <button type="button" class="btn-primary" id="bambu-restart-confirm" data-i18n="modal.restart.confirm">Continue Download</button>
+          </div>
         </div>
       </div>
     </div>

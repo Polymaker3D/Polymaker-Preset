@@ -75,7 +75,7 @@
         "100"
     ],
     "filament_adaptive_volumetric_speed": [
-        "1"
+        "0"
     ],
     "filament_adhesiveness_category": [
         "0"
@@ -93,7 +93,7 @@
         "0"
     ],
     "filament_density": [
-        "1.17"
+        "1.32"
     ],
     "filament_diameter": [
         "1.75"
@@ -282,7 +282,7 @@
         "45"
     ],
     "temperature_vitrification": [
-        "61"
+        "62.5"
     ],
     "textured_plate_temp": [
         "55"
