@@ -303,6 +303,34 @@
     </div>
   </div>
 
+  <!-- BambuStudio Restart Warning Modal -->
+  <div id="bambu-restart-modal" class="modal" role="dialog" aria-labelledby="bambu-restart-modal-title" aria-hidden="true">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="bambu-restart-modal-title" class="modal-title" data-i18n="modal.restart.title">⚠️ Restart BambuStudio Required</h2>
+        <button class="modal-close" type="button" aria-label="Close modal" id="bambu-restart-modal-close">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="warning-modal-body">
+          <p class="warning-modal-text" data-i18n-html="modal.restart.message"><strong>Important:</strong> After importing presets into BambuStudio, you <strong>must restart the slicer</strong> before slicing and printing. Failure to restart may cause incorrect settings to be applied.</p>
+          <p class="warning-modal-link">
+            <a href="https://github.com/bambulab/BambuStudio/issues/10583" target="_blank" rel="noopener noreferrer" data-i18n="modal.restart.link">View GitHub Issue #10583 →</a>
+          </p>
+          <div class="warning-modal-actions">
+            <button type="button" class="btn-secondary" id="bambu-restart-cancel" data-i18n="modal.restart.cancel">Cancel</button>
+            <button type="button" class="btn-primary" id="bambu-restart-confirm" data-i18n="modal.restart.confirm">Continue Download</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Manual Installation Modal -->
   <div id="install-modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
     <div class="modal-overlay"></div>

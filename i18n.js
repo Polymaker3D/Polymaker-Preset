@@ -67,6 +67,13 @@ var I18N = (function () {
       'dup.cancel': 'Cancel',
       'dup.confirm': 'Confirm Export',
 
+      // BambuStudio Restart Warning Modal
+      'modal.restart.title': '\u26a0\ufe0f Restart BambuStudio Required',
+      'modal.restart.message': '<strong>Important:</strong> After importing presets into BambuStudio, you <strong>must restart the slicer</strong> before slicing and printing. Failure to restart may cause incorrect settings to be applied.',
+      'modal.restart.link': 'View GitHub Issue #10583 \u2192',
+      'modal.restart.cancel': 'Cancel',
+      'modal.restart.confirm': 'Continue Download',
+
       // Install modal
       'modal.install.title': '\ud83d\udce6 Manual Installation',
       'modal.bambu.title': 'Bambu Studio',
@@ -197,6 +204,13 @@ var I18N = (function () {
       'dup.compatible': '兼容：{list}',
       'dup.cancel': '取消',
       'dup.confirm': '确认导出',
+
+      // BambuStudio Restart Warning Modal
+      'modal.restart.title': '⚠️ 需要重启 BambuStudio',
+      'modal.restart.message': '<strong>重要提示：</strong>将预设导入 BambuStudio 后，在切片和打印前<strong>必须重启切片软件</strong>。如不重启，可能会导致设置错误。',
+      'modal.restart.link': '查看 GitHub Issue #10583 \u2192',
+      'modal.restart.cancel': '取消',
+      'modal.restart.confirm': '继续下载',
 
       // Install modal
       'modal.install.title': '📦 手动安装',

@@ -600,7 +600,14 @@ function init() {
     }
 
     resolveBambuMappingsWithDedup(presets, function(filteredMappings) {
-      generateAndDownloadBbsflmt(filteredMappings, presets);
+      function doGenerate() {
+        generateAndDownloadBbsflmt(filteredMappings, presets);
+      }
+      if (!isBambuStudioSlicerSelected()) {
+        doGenerate();
+        return;
+      }
+      showBambuRestartWarning(doGenerate, function () {});
     }, function(err) {
       if (err) {
         console.error('Error fetching presets:', err);
@@ -1192,9 +1199,18 @@ function init() {
         }
 
         resolveBambuMappingsWithDedup(bambuPresets, function (filteredMappings) {
-          addBambuMappingsToZip(filteredMappings);
-          Promise.all(nonBambuPromises).then(finishZip).catch(function (err) {
-            console.error('Error generating ZIP:', err);
+          function doFinishZip() {
+            addBambuMappingsToZip(filteredMappings);
+            Promise.all(nonBambuPromises).then(finishZip).catch(function (err) {
+              console.error('Error generating ZIP:', err);
+              resetButton();
+            });
+          }
+          if (!isBambuStudioSlicerSelected()) {
+            doFinishZip();
+            return;
+          }
+          showBambuRestartWarning(doFinishZip, function () {
             resetButton();
           });
         }, function (err) {
@@ -1242,7 +1258,16 @@ function init() {
             resetButton();
             return;
           }
-          generateAndDownloadBundleBatch(filteredMappings, bambuPresets);
+          function doGenerate() {
+            generateAndDownloadBundleBatch(filteredMappings, bambuPresets);
+          }
+          if (!isBambuStudioSlicerSelected()) {
+            doGenerate();
+            return;
+          }
+          showBambuRestartWarning(doGenerate, function () {
+            resetButton();
+          });
         }, function(err) {
           if (err) {
             console.error('Error fetching presets:', err);
@@ -1536,6 +1561,19 @@ function init() {
 
       if (selectAllCheckbox) {
         selectAllCheckbox.addEventListener('change', handleSelectAllChange);
+      }
+
+      function isBambuStudioSlicerSelected() {
+        var filters = getEffectiveFilters();
+        return filters.effectiveSlicer === 'BambuStudio';
+      }
+
+      function withBambuRestartWarning(action) {
+        if (!isBambuStudioSlicerSelected()) {
+          action();
+          return;
+        }
+        showBambuRestartWarning(action, function () {});
       }
 
       if (downloadSelectedBtn) {
@@ -1849,37 +1887,41 @@ function init() {
             return;
           }
 
-          fetch(bjUrl, { mode: 'cors' })
-            .then(function (r) {
-              if (!r.ok) throw new Error('Failed to fetch preset: ' + r.statusText);
-              return r.json();
-            })
-            .then(function (data) {
-              var preset = { filename: bjFilename, material: bjMaterial, slicer: 'BambuStudio' };
-              var expanded = expandBambuPresetForDownload(preset, data);
-              if (expanded.length === 0) {
-                throw new Error('Preset has no compatible_printers');
-              }
-              var zip = new JSZip();
-              expanded.forEach(function (entry) {
-                zip.file(entry.filename, entry.content);
+          function doDownloadBambuJson() {
+            fetch(bjUrl, { mode: 'cors' })
+              .then(function (r) {
+                if (!r.ok) throw new Error('Failed to fetch preset: ' + r.statusText);
+                return r.json();
+              })
+              .then(function (data) {
+                var preset = { filename: bjFilename, material: bjMaterial, slicer: 'BambuStudio' };
+                var expanded = expandBambuPresetForDownload(preset, data);
+                if (expanded.length === 0) {
+                  throw new Error('Preset has no compatible_printers');
+                }
+                var zip = new JSZip();
+                expanded.forEach(function (entry) {
+                  zip.file(entry.filename, entry.content);
+                });
+                return zip.generateAsync({ type: 'blob' }).then(function (content) {
+                  var zipName = (bjMaterial || bjFilename.replace(/\.json$/, '')) + '.zip';
+                  var objectUrl = URL.createObjectURL(content);
+                  var a = document.createElement('a');
+                  a.href = objectUrl;
+                  a.download = zipName;
+                  document.body.appendChild(a);
+                  a.click();
+                  document.body.removeChild(a);
+                  setTimeout(function () { URL.revokeObjectURL(objectUrl); }, 1000);
+                });
+              })
+              .catch(function (err) {
+                console.error('Error downloading JSON:', err);
+                alert(t('alert.error.preset', { msg: err.message }));
               });
-              return zip.generateAsync({ type: 'blob' }).then(function (content) {
-                var zipName = (bjMaterial || bjFilename.replace(/\.json$/, '')) + '.zip';
-                var objectUrl = URL.createObjectURL(content);
-                var a = document.createElement('a');
-                a.href = objectUrl;
-                a.download = zipName;
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                setTimeout(function () { URL.revokeObjectURL(objectUrl); }, 1000);
-              });
-            })
-            .catch(function (err) {
-              console.error('Error downloading JSON:', err);
-              alert(t('alert.error.preset', { msg: err.message }));
-            });
+          }
+
+          withBambuRestartWarning(doDownloadBambuJson);
           return;
         }
 
@@ -2037,6 +2079,77 @@ function initDuplicateModal() {
       closeModal();
     }
   });
+}
+
+// BambuStudio Restart Warning Modal
+var bambuRestartModalState = {
+  onConfirm: null,
+  onCancel: null
+};
+
+function initBambuRestartModal() {
+  var modal = document.getElementById('bambu-restart-modal');
+  if (!modal) return;
+
+  var closeBtn = document.getElementById('bambu-restart-modal-close');
+  var cancelBtn = document.getElementById('bambu-restart-cancel');
+  var confirmBtn = document.getElementById('bambu-restart-confirm');
+  var overlay = modal.querySelector('.modal-overlay');
+
+  function closeModal() {
+    modal.setAttribute('aria-hidden', 'true');
+    modal.classList.remove('is-open');
+    document.body.style.overflow = '';
+    if (bambuRestartModalState.onCancel) {
+      bambuRestartModalState.onCancel();
+    }
+  }
+
+  function confirmAction() {
+    modal.setAttribute('aria-hidden', 'true');
+    modal.classList.remove('is-open');
+    document.body.style.overflow = '';
+    if (bambuRestartModalState.onConfirm) {
+      bambuRestartModalState.onConfirm();
+    }
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeModal);
+  }
+
+  if (cancelBtn) {
+    cancelBtn.addEventListener('click', closeModal);
+  }
+
+  if (confirmBtn) {
+    confirmBtn.addEventListener('click', confirmAction);
+  }
+
+  if (overlay) {
+    overlay.addEventListener('click', closeModal);
+  }
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+      closeModal();
+    }
+  });
+}
+
+function showBambuRestartWarning(onConfirm, onCancel) {
+  var modal = document.getElementById('bambu-restart-modal');
+  if (!modal) {
+    if (onConfirm) onConfirm();
+    return;
+  }
+
+  bambuRestartModalState.onConfirm = onConfirm;
+  bambuRestartModalState.onCancel = onCancel;
+
+  modal.setAttribute('aria-hidden', 'false');
+  modal.classList.add('is-open');
+  document.body.style.overflow = 'hidden';
 }
 
 /**
@@ -2313,4 +2426,5 @@ initLangSwitcher();
 init();
 initModal();
 initDuplicateModal();
+initBambuRestartModal();
 initAccordion();
