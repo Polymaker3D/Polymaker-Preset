@@ -1,0 +1,235 @@
+{
+    "type": "filament",
+    "name": "PolyMax PC @BBL X2D",
+    "from": "User",
+    "instantiation": "true",
+    "cool_plate_temp": [
+        "0"
+    ],
+    "eng_plate_temp": [
+        "110"
+    ],
+    "hot_plate_temp": [
+        "110"
+    ],
+    "textured_plate_temp": [
+        "110"
+    ],
+    "cool_plate_temp_initial_layer": [
+        "0"
+    ],
+    "eng_plate_temp_initial_layer": [
+        "110"
+    ],
+    "hot_plate_temp_initial_layer": [
+        "110"
+    ],
+    "textured_plate_temp_initial_layer": [
+        "110"
+    ],
+    "overhang_fan_threshold": [
+        "25%"
+    ],
+    "overhang_fan_speed": [
+        "75"
+    ],
+    "slow_down_for_layer_cooling": [
+        "1"
+    ],
+    "close_fan_the_first_x_layers": [
+        "3"
+    ],
+    "close_additional_fan_first_x_layers": [
+        "3"
+    ],
+    "filament_end_gcode": [
+        "; filament end gcode \n"
+    ],
+    "filament_flow_ratio": [
+        "0.96",
+        "nil",
+        "nil",
+        "nil"
+    ],
+    "reduce_fan_stop_start_freq": [
+        "1"
+    ],
+    "fan_cooling_layer_time": [
+        "18"
+    ],
+    "filament_cost": [
+        "39.99"
+    ],
+    "filament_density": [
+        "1.19"
+    ],
+    "filament_diameter": [
+        "1.75"
+    ],
+    "filament_is_support": [
+        "0"
+    ],
+    "filament_max_volumetric_speed": [
+        "8",
+        "nil",
+        "nil",
+        "nil"
+    ],
+    "filament_minimal_purge_on_wipe_tower": [
+        "15"
+    ],
+    "filament_retraction_length": [
+        "0.4",
+        "0.4",
+        "nil",
+        "nil"
+    ],
+    "filament_z_hop_types": [
+        "Spiral Lift",
+        "Spiral Lift",
+        "Spiral Lift",
+        "Spiral Lift"
+    ],
+    "filament_settings_id": [
+        "PolyMax PC @BBL X2D"
+    ],
+    "filament_soluble": [
+        "0"
+    ],
+    "filament_type": [
+        "PC"
+    ],
+    "filament_vendor": [
+        "Polymaker"
+    ],
+    "filament_wipe": [
+        "1",
+        "1",
+        "1",
+        "1"
+    ],
+    "filament_wipe_distance": [
+        "1",
+        "1",
+        "1",
+        "1"
+    ],
+    "bed_type": [
+        "Cool Plate"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "270",
+        "270",
+        "270",
+        "270"
+    ],
+    "full_fan_speed_layer": [
+        "0"
+    ],
+    "additional_fan_full_speed_layer": [
+        "0"
+    ],
+    "fan_max_speed": [
+        "40"
+    ],
+    "fan_min_speed": [
+        "0"
+    ],
+    "required_nozzle_HRC": [
+        "3"
+    ],
+    "slow_down_min_speed": [
+        "20",
+        "20",
+        "20",
+        "20"
+    ],
+    "slow_down_layer_time": [
+        "6"
+    ],
+    "filament_start_gcode": [
+        "; filament start gcode\n"
+    ],
+    "nozzle_temperature": [
+        "270",
+        "nil",
+        "nil",
+        "nil"
+    ],
+    "temperature_vitrification": [
+        "113"
+    ],
+    "nozzle_temperature_range_low": [
+        "250"
+    ],
+    "nozzle_temperature_range_high": [
+        "270"
+    ],
+    "filament_id": "PMPC02",
+    "impact_strength_z": [
+        "9.0"
+    ],
+    "setting_id": "GFSC00_18",
+    "chamber_temperatures": [
+        "0"
+    ],
+    "counter_coef_2": [
+        "0.0081"
+    ],
+    "counter_coef_3": [
+        "0.0183"
+    ],
+    "counter_limit_max": [
+        "0.2208"
+    ],
+    "counter_limit_min": [
+        "0.0183"
+    ],
+    "filament_cooling_before_tower": [
+        "10",
+        "10",
+        "10",
+        "10"
+    ],
+    "filament_ramming_travel_time": [
+        "0",
+        "0",
+        "0",
+        "0"
+    ],
+    "filament_tower_interface_print_temp": [
+        "280"
+    ],
+    "hole_coef_2": [
+        "0.0009"
+    ],
+    "hole_coef_3": [
+        "0.0725"
+    ],
+    "hole_limit_max": [
+        "0.095"
+    ],
+    "hole_limit_min": [
+        "0.0725"
+    ],
+    "include": [
+        "fdm_filament_template_direct_bowden"
+    ],
+    "retraction_distances_when_ec": [
+        "3",
+        "3",
+        "4",
+        "4"
+    ],
+    "compatible_printers": [
+        "Bambu Lab X2D 0.4 nozzle"
+    ],
+    "filament_extruder_variant": [
+        "Direct Drive Standard",
+        "Direct Drive High Flow",
+        "Bowden Standard",
+        "Bowden High Flow"
+    ],
+    "version": "2.6.0.2",
+    "idle_temperature": 0
+}
