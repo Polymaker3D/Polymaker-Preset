@@ -372,6 +372,26 @@ body.theme-wiki .preset-text {
   color: #b8fffb;
 }
 
+.adaptation-item.is-incompatible {
+  background: rgba(239, 68, 68, 0.08);
+  border-color: rgba(239, 68, 68, 0.18);
+}
+
+.adaptation-item.is-incompatible .adaptation-item-status {
+  background: rgba(239, 68, 68, 0.15);
+  color: #fca5a5;
+}
+
+body.theme-wiki .adaptation-item.is-incompatible {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.22);
+}
+
+body.theme-wiki .adaptation-item.is-incompatible .adaptation-item-status {
+  background: rgba(239, 68, 68, 0.2);
+  color: #b91c1c;
+}
+
 body.theme-wiki .adaptation-card {
   border-color: rgba(0, 163, 163, 0.2);
   background:
