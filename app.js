@@ -4,6 +4,7 @@ var X2D_PROGRESS_JSON_URL = './x2d-progress.json';
 // Use relative URL so fetch is same-origin (no CORS). Works on GitHub Pages and local.
 var RAW_BASE = '';
 var THEME_STORAGE_KEY = 'polymaker-preset-theme';
+var x2dProgressData = null;
 
 // Defensive fallback for t() function if i18n.js fails to load
 var t = (typeof window !== 'undefined' && window.t) ? window.t : function(key) { return key; };
@@ -39,16 +40,19 @@ function formatDisplayDate(dateString) {
   var year = parts[0];
   var month = parseInt(parts[1], 10);
   var day = parseInt(parts[2], 10);
-  var monthNames = [
-    'January', 'February', 'March', 'April', 'May', 'June',
-    'July', 'August', 'September', 'October', 'November', 'December'
-  ];
+  var currentLang = (typeof I18N !== 'undefined' && I18N.getCurrentLang) ? I18N.getCurrentLang() : 'en';
+  var monthLabel;
 
   if (!year || isNaN(month) || isNaN(day) || month < 1 || month > 12) {
     return dateString;
   }
 
-  return monthNames[month - 1] + ' ' + day + ', ' + year;
+  if (currentLang === 'zh') {
+    return year + '年' + month + '月' + day + '日';
+  }
+
+  monthLabel = t('x2d.month.' + month);
+  return monthLabel + ' ' + day + ', ' + year;
 }
 
 function parseLocalDate(dateString) {
@@ -73,24 +77,24 @@ function getTimelineLabel(dateString) {
   var daysLeft;
 
   if (!targetDate) {
-    return 'Date not set';
+    return t('x2d.date.notset');
   }
 
   daysLeft = Math.round((targetDate.getTime() - today.getTime()) / 86400000);
 
   if (daysLeft > 1) {
-    return daysLeft + ' days left';
+    return t('x2d.date.days.left', { n: daysLeft });
   }
   if (daysLeft === 1) {
-    return '1 day left';
+    return t('x2d.date.one.day.left');
   }
   if (daysLeft === 0) {
-    return 'Due today';
+    return t('x2d.date.today');
   }
   if (daysLeft === -1) {
-    return '1 day overdue';
+    return t('x2d.date.one.day.overdue');
   }
-  return Math.abs(daysLeft) + ' days overdue';
+  return t('x2d.date.days.overdue', { n: Math.abs(daysLeft) });
 }
 
 function buildX2DChecklist(items) {
@@ -104,17 +108,17 @@ function buildX2DChecklist(items) {
     item = items[i] || {};
     if (item.incompatible === true) {
       itemClass = ' is-incompatible';
-      statusText = 'Incompatible';
+      statusText = t('x2d.status.incompatible');
     } else if (item.completed === true) {
       itemClass = ' is-complete';
-      statusText = 'Done';
+      statusText = t('x2d.status.done');
     } else {
       itemClass = ' is-pending';
-      statusText = 'Pending';
+      statusText = t('x2d.status.pending');
     }
 
     html += '<li class="adaptation-item' + itemClass + '">';
-    html += '<span class="adaptation-item-name">' + escapeHtml(item.productName || 'Unknown product') + '</span>';
+    html += '<span class="adaptation-item-name">' + escapeHtml(item.productName || t('x2d.value.unknown.product')) + '</span>';
     html += '<span class="adaptation-item-status">' + statusText + '</span>';
     html += '</li>';
   }
@@ -158,15 +162,15 @@ function renderX2DProgress(progressData) {
 
   compatibleCount = totalCount - incompatibleCount;
   percent = compatibleCount ? Math.round((completedCount / compatibleCount) * 100) : 0;
-  title = progressData && progressData.title ? progressData.title : 'Bambu X2D Preset Support Status';
-  goal = progressData && progressData.goal ? progressData.goal : 'X2D presets are available for all compatible materials';
+  title = t('x2d.title.fallback');
+  goal = t('x2d.goal.fallback');
 
   titleEl.textContent = title;
   metaEl.textContent = goal;
   percentEl.textContent = percent + '%';
   fillEl.style.width = percent + '%';
   barEl.setAttribute('aria-valuenow', String(percent));
-  scopeEl.textContent = 'View product checklist (' + totalCount + ')';
+  scopeEl.textContent = t('x2d.scope', { n: totalCount });
   completeEl.textContent = completedCount + ' / ' + compatibleCount;
   remainingEl.textContent = String(incompatibleCount);
   deadlineEl.textContent = String(totalCount);
@@ -186,11 +190,11 @@ function renderX2DProgressError(message) {
   var timelineEl = document.getElementById('x2d-progress-timeline');
   var listEl = document.getElementById('x2d-progress-list');
 
-  if (metaEl) metaEl.textContent = message;
+  if (metaEl) metaEl.textContent = message || t('x2d.meta.error');
   if (percentEl) percentEl.textContent = '0%';
   if (fillEl) fillEl.style.width = '0%';
   if (barEl) barEl.setAttribute('aria-valuenow', '0');
-  if (scopeEl) scopeEl.textContent = 'View product checklist (0)';
+  if (scopeEl) scopeEl.textContent = t('x2d.scope', { n: 0 });
   if (completeEl) completeEl.textContent = '0 / 0';
   if (remainingEl) remainingEl.textContent = '0';
   if (deadlineEl) deadlineEl.textContent = '0';
@@ -207,12 +211,22 @@ function initX2DProgress() {
       return r.json();
     })
     .then(function (data) {
+      x2dProgressData = data;
       renderX2DProgress(data);
     })
     .catch(function (err) {
       console.warn('Failed to load X2D progress:', err);
-      renderX2DProgressError('Unable to load support status right now.');
+      x2dProgressData = null;
+      renderX2DProgressError();
     });
+
+  document.addEventListener('langchange', function () {
+    if (x2dProgressData) {
+      renderX2DProgress(x2dProgressData);
+    } else {
+      renderX2DProgressError();
+    }
+  });
 }
 
 function initTheme() {
