@@ -1,42 +1,38 @@
 {
-    "title": "Bambu X2D Preset Adaptation Progress",
-    "goal": "We are planning to finish X2D presets for all active products",
+    "title": "Bambu X2D Preset Support Status",
+    "goal": "X2D presets are available for all compatible materials",
     "targetDate": "2026-05-10",
     "items": [
         {
             "series": "Polymaker",
             "productName": "PolyCast",
-            "completed": false
-        },
-        {
-            "series": "Polymaker",
-            "productName": "PolyDissolve S1",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Polymaker",
             "productName": "PolyFlex TPU90",
-            "completed": false
+            "completed": false,
+            "incompatible": true
         },
         {
             "series": "Polymaker",
             "productName": "PolyFlex TPU95",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Polymaker",
             "productName": "PolyFlex TPU95-HF",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Polymaker",
             "productName": "Polymaker ABS",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Polymaker",
             "productName": "Polymaker ASA",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Polymaker",
@@ -51,17 +47,17 @@
         {
             "series": "Polymaker",
             "productName": "PolyLite PC",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Polymaker",
             "productName": "PolyMax PC",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Polymaker",
             "productName": "PolyLite PETG",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Polymaker",
@@ -91,7 +87,7 @@
         {
             "series": "Polymaker",
             "productName": "Polymaker PETG",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Polymaker",
@@ -111,17 +107,17 @@
         {
             "series": "Polymaker",
             "productName": "PolySmooth",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Polymaker",
             "productName": "PolySupport for PLA",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Polymaker",
             "productName": "PolySupport for PA12",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Panchroma",
@@ -211,7 +207,7 @@
         {
             "series": "Fiberon",
             "productName": "Fiberon ASA-CF08",
-            "completed": false
+            "completed": true
         },
         {
             "series": "Fiberon",
@@ -251,12 +247,14 @@
         {
             "series": "Fiberon",
             "productName": "Fiberon PPS-CF10",
-            "completed": true
+            "completed": false,
+            "incompatible": true
         },
         {
             "series": "Fiberon",
             "productName": "Fiberon PPS-GF20",
-            "completed": false
+            "completed": false,
+            "incompatible": true
         }
     ]
 }

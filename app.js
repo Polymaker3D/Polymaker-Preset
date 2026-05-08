@@ -102,8 +102,16 @@ function buildX2DChecklist(items) {
 
   for (i = 0; i < items.length; i++) {
     item = items[i] || {};
-    itemClass = item.completed ? ' is-complete' : ' is-pending';
-    statusText = item.completed ? 'Done' : 'Pending';
+    if (item.incompatible === true) {
+      itemClass = ' is-incompatible';
+      statusText = 'Incompatible';
+    } else if (item.completed === true) {
+      itemClass = ' is-complete';
+      statusText = 'Done';
+    } else {
+      itemClass = ' is-pending';
+      statusText = 'Pending';
+    }
 
     html += '<li class="adaptation-item' + itemClass + '">';
     html += '<span class="adaptation-item-name">' + escapeHtml(item.productName || 'Unknown product') + '</span>';
@@ -128,13 +136,12 @@ function renderX2DProgress(progressData) {
   var listEl = document.getElementById('x2d-progress-list');
   var items = progressData && progressData.items ? progressData.items : [];
   var completedCount = 0;
+  var incompatibleCount = 0;
   var totalCount = items.length;
-  var remainingCount;
+  var compatibleCount;
   var percent;
   var title;
   var goal;
-  var formattedDeadline;
-  var timelineLabel;
   var i;
 
   if (!titleEl || !metaEl || !percentEl || !barEl || !fillEl || !scopeEl || !completeEl || !remainingEl || !deadlineEl || !timelineEl || !listEl) {
@@ -142,28 +149,28 @@ function renderX2DProgress(progressData) {
   }
 
   for (i = 0; i < totalCount; i++) {
-    if (items[i] && items[i].completed === true) {
+    if (items[i] && items[i].incompatible === true) {
+      incompatibleCount += 1;
+    } else if (items[i] && items[i].completed === true) {
       completedCount += 1;
     }
   }
 
-  remainingCount = Math.max(totalCount - completedCount, 0);
-  percent = totalCount ? Math.round((completedCount / totalCount) * 100) : 0;
-  title = progressData && progressData.title ? progressData.title : 'Bambu X2D Preset Adaptation Progress';
-  goal = progressData && progressData.goal ? progressData.goal : 'We are planning to finish X2D presets for all active products';
-  formattedDeadline = formatDisplayDate(progressData && progressData.targetDate);
-  timelineLabel = getTimelineLabel(progressData && progressData.targetDate);
+  compatibleCount = totalCount - incompatibleCount;
+  percent = compatibleCount ? Math.round((completedCount / compatibleCount) * 100) : 0;
+  title = progressData && progressData.title ? progressData.title : 'Bambu X2D Preset Support Status';
+  goal = progressData && progressData.goal ? progressData.goal : 'X2D presets are available for all compatible materials';
 
   titleEl.textContent = title;
-  metaEl.textContent = goal + (formattedDeadline ? ' before ' + formattedDeadline + '.' : '.');
+  metaEl.textContent = goal;
   percentEl.textContent = percent + '%';
   fillEl.style.width = percent + '%';
   barEl.setAttribute('aria-valuenow', String(percent));
   scopeEl.textContent = 'View product checklist (' + totalCount + ')';
-  completeEl.textContent = completedCount + ' / ' + totalCount;
-  remainingEl.textContent = String(remainingCount);
-  deadlineEl.textContent = formattedDeadline ? formattedDeadline : 'Date not set';
-  timelineEl.textContent = timelineLabel;
+  completeEl.textContent = completedCount + ' / ' + compatibleCount;
+  remainingEl.textContent = String(incompatibleCount);
+  deadlineEl.textContent = String(totalCount);
+  timelineEl.textContent = percent + '%';
   listEl.innerHTML = buildX2DChecklist(items);
 }
 
@@ -186,8 +193,8 @@ function renderX2DProgressError(message) {
   if (scopeEl) scopeEl.textContent = 'View product checklist (0)';
   if (completeEl) completeEl.textContent = '0 / 0';
   if (remainingEl) remainingEl.textContent = '0';
-  if (deadlineEl) deadlineEl.textContent = 'Date not set';
-  if (timelineEl) timelineEl.textContent = 'Unavailable';
+  if (deadlineEl) deadlineEl.textContent = '0';
+  if (timelineEl) timelineEl.textContent = '0%';
   if (listEl) listEl.innerHTML = '';
 }
 
@@ -204,7 +211,7 @@ function initX2DProgress() {
     })
     .catch(function (err) {
       console.warn('Failed to load X2D progress:', err);
-      renderX2DProgressError('Unable to load adaptation progress right now.');
+      renderX2DProgressError('Unable to load support status right now.');
     });
 }
 
