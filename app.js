@@ -1084,7 +1084,6 @@ function init() {
       // Bundle download only available when:
       // 1. Slicer is BambuStudio
       // 2. At least one preset is selected
-      // 3. No printer model filter is applied
       function updateBundleButtonState() {
         if (!downloadBundleBtn) return;
 
@@ -1104,12 +1103,7 @@ function init() {
           return;
         }
 
-        if (filterState.model) {
-          downloadBundleBtn.disabled = true;
-          return;
-        }
-
-        // Enable button when slicer is BambuStudio, presets are selected, and no model filter is applied
+        // Enable button when slicer is BambuStudio and presets are selected
         downloadBundleBtn.disabled = false;
       }
 
