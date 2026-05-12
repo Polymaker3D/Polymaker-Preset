@@ -86,7 +86,7 @@ var I18N = (function () {
         'Select the <strong>.bbsflmt</strong> file(s).',
         'Click on a material in the project consumables list, select the imported custom preset, and the preset will appear in the preset list.'
       ],
-      'modal.bambu.method1.note': '<strong>Note:</strong> .bbsflmt bundles are only available for BambuStudio. The bundle download button only appears when no printer filter is applied.',
+      'modal.bambu.method1.note': '<strong>Note:</strong> .bbsflmt bundles are only available for BambuStudio. The bundle download button appears when BambuStudio presets are selected.',
       'modal.bambu.method2.title': 'Method 2: Individual File Method',
       'modal.bambu.method2.steps': [
         'Download the preset JSON file (or single-file ZIP) from the <a href="https://presets.polymaker.com" target="_blank" rel="noopener noreferrer">download page</a>.',
@@ -267,7 +267,7 @@ var I18N = (function () {
         '选择 <strong>.bbsflmt</strong> 文件。',
         '单击项目耗材列表中的耗材，即可选择导入的自定义预设'
       ],
-      'modal.bambu.method1.note': '<strong>注意：</strong>.bbsflmt 打包仅适用于 BambuStudio。仅在未应用打印机筛选时，打包下载按钮才会显示。',
+      'modal.bambu.method1.note': '<strong>注意：</strong>.bbsflmt 打包仅适用于 BambuStudio。选择 BambuStudio 预设时，打包下载按钮才会显示。',
       'modal.bambu.method2.title': '方法二：单文件模式',
       'modal.bambu.method2.steps': [
         '从<a href="https://presets.polymaker.com" target="_blank" rel="noopener noreferrer">下载页面</a>下载 JSON 文件（或单文件 ZIP）。',
