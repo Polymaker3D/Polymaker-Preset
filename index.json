@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updatedAt": "2026-05-14T06:16:27.407Z",
+  "updatedAt": "2026-05-14T06:22:00.828Z",
   "materials": [
     "Fiberon ASA-CF08",
     "Fiberon PA12-CF10",
@@ -151,7 +151,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PA12-CF10/BBL/H2C/BambuStudio/Fiberon PA12-CF10 @BBL H2C.json",
       "filename": "Fiberon PA12-CF10 @BBL H2C.json",
-      "updatedAt": null,
+      "updatedAt": "2026-05-14T14:20:01+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -671,7 +671,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PA612-ESD/BBL/P2S/BambuStudio/Fiberon PA612-ESD @BBL P2S.json",
       "filename": "Fiberon PA612-ESD @BBL P2S.json",
-      "updatedAt": null,
+      "updatedAt": "2026-05-14T14:20:01+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -5643,7 +5643,7 @@
       "slicer": "BambuStudio",
       "path": "preset/PolyFlex TPU95-HF/BBL/H2D/BambuStudio/PolyFlex TPU95-HF @BBL H2D.json",
       "filename": "PolyFlex TPU95-HF @BBL H2D.json",
-      "updatedAt": null,
+      "updatedAt": "2026-05-14T14:20:01+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -10246,7 +10246,7 @@
       "slicer": "OrcaSlicer",
       "path": "preset/Polymaker PLA/Snapmaker/U1/OrcaSlicer/Polymaker PLA @Snapmaker U1.json",
       "filename": "Polymaker PLA @Snapmaker U1.json",
-      "updatedAt": null,
+      "updatedAt": "2026-05-14T14:20:01+08:00",
       "compatiblePrinters": [
         {
           "brand": "Snapmaker",
