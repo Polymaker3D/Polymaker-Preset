@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updatedAt": "2026-05-11T07:55:13.264Z",
+  "updatedAt": "2026-05-14T06:16:27.407Z",
   "materials": [
     "Fiberon ASA-CF08",
     "Fiberon PA12-CF10",
@@ -147,6 +147,22 @@
     {
       "material": "Fiberon PA12-CF10",
       "brand": "BBL",
+      "model": "H2C",
+      "slicer": "BambuStudio",
+      "path": "preset/Fiberon PA12-CF10/BBL/H2C/BambuStudio/Fiberon PA12-CF10 @BBL H2C.json",
+      "filename": "Fiberon PA12-CF10 @BBL H2C.json",
+      "updatedAt": null,
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "H2C",
+          "fullName": "Bambu Lab H2C 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "Fiberon PA12-CF10",
+      "brand": "BBL",
       "model": "H2D",
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PA12-CF10/BBL/H2D/BambuStudio/Fiberon PA12-CF10 @BBL H2D.json",
@@ -245,7 +261,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/Fiberon PA12-CF10/Elegoo/CC2/ElegooSlicer/Fiberon PA12-CF10 @Elegoo CC2.json",
       "filename": "Fiberon PA12-CF10 @Elegoo CC2.json",
-      "updatedAt": "2026-05-11T15:50:00+08:00",
+      "updatedAt": "2026-05-11T15:58:20+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -645,6 +661,22 @@
           "brand": "BBL",
           "model": "H2C",
           "fullName": "Bambu Lab H2C 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "Fiberon PA612-ESD",
+      "brand": "BBL",
+      "model": "P2S",
+      "slicer": "BambuStudio",
+      "path": "preset/Fiberon PA612-ESD/BBL/P2S/BambuStudio/Fiberon PA612-ESD @BBL P2S.json",
+      "filename": "Fiberon PA612-ESD @BBL P2S.json",
+      "updatedAt": null,
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "P2S",
+          "fullName": "Bambu Lab P2S 0.4 nozzle"
         }
       ]
     },
@@ -5607,6 +5639,22 @@
     {
       "material": "PolyFlex TPU95-HF",
       "brand": "BBL",
+      "model": "H2D",
+      "slicer": "BambuStudio",
+      "path": "preset/PolyFlex TPU95-HF/BBL/H2D/BambuStudio/PolyFlex TPU95-HF @BBL H2D.json",
+      "filename": "PolyFlex TPU95-HF @BBL H2D.json",
+      "updatedAt": null,
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "H2D",
+          "fullName": "Bambu Lab H2D 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "PolyFlex TPU95-HF",
+      "brand": "BBL",
       "model": "X2D",
       "slicer": "BambuStudio",
       "path": "preset/PolyFlex TPU95-HF/BBL/X2D/BambuStudio/PolyFlex TPU95-HF @BBL X2D.json",
@@ -5627,7 +5675,7 @@
       "slicer": "BambuStudio",
       "path": "preset/PolyLite ABS/BBL/P2S/BambuStudio/PolyLite ABS @BBL P2S.json",
       "filename": "PolyLite ABS @BBL P2S.json",
-      "updatedAt": "2026-05-11T15:50:00+08:00",
+      "updatedAt": "2026-05-11T15:58:20+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -9437,7 +9485,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Polymaker ASA/BBL/P2S/BambuStudio/Polymaker ASA @BBL P2S.json",
       "filename": "Polymaker ASA @BBL P2S.json",
-      "updatedAt": "2026-05-11T15:50:00+08:00",
+      "updatedAt": "2026-05-11T15:58:20+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -10190,6 +10238,22 @@
       "filename": "Polymaker PLA @Prusa Core One.ini",
       "updatedAt": "2026-05-06T13:59:02+08:00",
       "compatiblePrinters": []
+    },
+    {
+      "material": "Polymaker PLA",
+      "brand": "Snapmaker",
+      "model": "U1",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Polymaker PLA/Snapmaker/U1/OrcaSlicer/Polymaker PLA @Snapmaker U1.json",
+      "filename": "Polymaker PLA @Snapmaker U1.json",
+      "updatedAt": null,
+      "compatiblePrinters": [
+        {
+          "brand": "Snapmaker",
+          "model": "U1",
+          "fullName": "Snapmaker U1 (0.4 nozzle)"
+        }
+      ]
     },
     {
       "material": "Polymaker PLA Pro",
