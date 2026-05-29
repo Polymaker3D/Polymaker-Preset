@@ -157,10 +157,10 @@
         "150"
     ],
     "supertack_plate_temp": [
-        "80"
+        "70"
     ],
     "supertack_plate_temp_initial_layer": [
-        "80"
+        "70"
     ],
     "setting_id": "GFL54_10",
     "filament_cooling_before_tower": [
@@ -193,6 +193,6 @@
         "Direct Drive Standard",
         "Direct Drive High Flow"
     ],
-    "version": "2.6.0.2",
+    "version": "2.6.0.5",
     "idle_temperature": 0
 }

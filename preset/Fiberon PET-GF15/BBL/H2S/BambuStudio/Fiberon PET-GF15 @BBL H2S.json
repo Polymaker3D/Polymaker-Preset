@@ -52,10 +52,10 @@
         "70"
     ],
     "eng_plate_temp": [
-        "100"
+        "70"
     ],
     "eng_plate_temp_initial_layer": [
-        "100"
+        "70"
     ],
     "fan_cooling_layer_time": [
         "20"
@@ -252,10 +252,10 @@
         "1"
     ],
     "hot_plate_temp": [
-        "100"
+        "70"
     ],
     "hot_plate_temp_initial_layer": [
-        "100"
+        "70"
     ],
     "hole_coef_1": [
         "0"
@@ -341,10 +341,10 @@
         "232.6"
     ],
     "textured_plate_temp": [
-        "100"
+        "70"
     ],
     "textured_plate_temp_initial_layer": [
-        "100"
+        "70"
     ],
     "volumetric_speed_coefficients": [
         "0 0 0 0 0 0"
