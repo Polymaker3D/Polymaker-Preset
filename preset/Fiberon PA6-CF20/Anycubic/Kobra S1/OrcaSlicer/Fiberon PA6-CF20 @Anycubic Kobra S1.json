@@ -10,7 +10,7 @@
         "40"
     ],
     "hot_plate_temp": [
-        "40"
+        "50"
     ],
     "textured_plate_temp": [
         "40"
@@ -22,7 +22,7 @@
         "40"
     ],
     "hot_plate_temp_initial_layer": [
-        "40"
+        "50"
     ],
     "textured_plate_temp_initial_layer": [
         "40"
@@ -43,16 +43,16 @@
         "; filament end gcode \n"
     ],
     "filament_flow_ratio": [
-        "1.03"
+        "0.95"
     ],
     "reduce_fan_stop_start_freq": [
         "1"
     ],
     "fan_cooling_layer_time": [
-        "30"
+        "15"
     ],
     "filament_cost": [
-        "79.98"
+        "83.99"
     ],
     "filament_density": [
         "1.17"
@@ -61,7 +61,7 @@
         "1.75"
     ],
     "filament_max_volumetric_speed": [
-        "7.5"
+        "12"
     ],
     "filament_minimal_purge_on_wipe_tower": [
         "15"
@@ -94,7 +94,7 @@
         "0"
     ],
     "fan_max_speed": [
-        "30"
+        "100"
     ],
     "fan_min_speed": [
         "0"
@@ -103,7 +103,7 @@
         "10"
     ],
     "slow_down_layer_time": [
-        "6"
+        "2"
     ],
     "filament_start_gcode": [
         "; Filament gcode\n"
@@ -125,7 +125,9 @@
     "compatible_printers": [
         "Anycubic Kobra S1 0.4 nozzle"
     ],
-    "is_custom_defined": "0",
-    "version": "2.3.1.10",
+    "filament_extruder_variant": [
+        "Direct Drive Standard"
+    ],
+    "version": "2.3.2.60",
     "idle_temperature": 0
 }

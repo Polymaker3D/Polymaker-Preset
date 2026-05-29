@@ -52,10 +52,10 @@
         "70"
     ],
     "eng_plate_temp": [
-        "100"
+        "70"
     ],
     "eng_plate_temp_initial_layer": [
-        "100"
+        "70"
     ],
     "fan_cooling_layer_time": [
         "31"
@@ -252,10 +252,10 @@
         "1"
     ],
     "hot_plate_temp": [
-        "100"
+        "70"
     ],
     "hot_plate_temp_initial_layer": [
-        "100"
+        "70"
     ],
     "hole_coef_1": [
         "0"
@@ -329,19 +329,19 @@
         "10"
     ],
     "supertack_plate_temp": [
-        "80"
+        "70"
     ],
     "supertack_plate_temp_initial_layer": [
-        "80"
+        "70"
     ],
     "temperature_vitrification": [
         "79.3"
     ],
     "textured_plate_temp": [
-        "100"
+        "70"
     ],
     "textured_plate_temp_initial_layer": [
-        "100"
+        "70"
     ],
     "volumetric_speed_coefficients": [
         "0 0 0 0 0 0"
@@ -364,6 +364,6 @@
     "include": [
         "fdm_filament_template_direct_dual"
     ],
-    "version": "2.6.0.4",
+    "version": "2.6.0.5",
     "idle_temperature": 0
 }

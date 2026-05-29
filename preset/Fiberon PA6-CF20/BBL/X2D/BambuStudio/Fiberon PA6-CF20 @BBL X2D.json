@@ -10,7 +10,7 @@
         "0"
     ],
     "chamber_temperatures": [
-        "60"
+        "0"
     ],
     "circle_compensation_speed": [
         "200"
@@ -52,10 +52,10 @@
         "70"
     ],
     "eng_plate_temp": [
-        "100"
+        "50"
     ],
     "eng_plate_temp_initial_layer": [
-        "100"
+        "50"
     ],
     "fan_cooling_layer_time": [
         "31"
@@ -262,10 +262,10 @@
         "1"
     ],
     "hot_plate_temp": [
-        "100"
+        "50"
     ],
     "hot_plate_temp_initial_layer": [
-        "100"
+        "50"
     ],
     "hole_coef_1": [
         "0"
@@ -358,10 +358,10 @@
         "74.2"
     ],
     "textured_plate_temp": [
-        "100"
+        "50"
     ],
     "textured_plate_temp_initial_layer": [
-        "100"
+        "50"
     ],
     "volumetric_speed_coefficients": [
         "0 0 0 0 0 0"

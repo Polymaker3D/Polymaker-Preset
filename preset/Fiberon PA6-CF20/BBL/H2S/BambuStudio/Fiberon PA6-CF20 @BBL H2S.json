@@ -10,7 +10,7 @@
         "0"
     ],
     "chamber_temperatures": [
-        "0"
+        "60"
     ],
     "circle_compensation_speed": [
         "200"
@@ -34,16 +34,16 @@
         "0"
     ],
     "counter_coef_2": [
-        "0.008"
+        "-0.0016"
     ],
     "counter_coef_3": [
-        "-0.041"
+        "0.0031"
     ],
     "counter_limit_max": [
-        "0.033"
+        "0.0031"
     ],
     "counter_limit_min": [
-        "-0.035"
+        "-0.038"
     ],
     "diameter_limit": [
         "50"
@@ -58,13 +58,13 @@
         "100"
     ],
     "fan_cooling_layer_time": [
-        "31"
-    ],
-    "fan_max_speed": [
         "30"
     ],
+    "fan_max_speed": [
+        "70"
+    ],
     "fan_min_speed": [
-        "10"
+        "30"
     ],
     "filament_adaptive_volumetric_speed": [
         "0"
@@ -95,7 +95,7 @@
         "-1"
     ],
     "filament_cost": [
-        "84.99"
+        "0"
     ],
     "filament_density": [
         "1.17"
@@ -151,7 +151,7 @@
         "0"
     ],
     "filament_max_volumetric_speed": [
-        "4",
+        "24",
         "nil"
     ],
     "filament_metal_stickiness": [
@@ -203,10 +203,10 @@
         "Polymaker"
     ],
     "full_fan_speed_layer": [
-        "2"
+        "0"
     ],
     "additional_fan_full_speed_layer": [
-        "2"
+        "0"
     ],
     "filament_scarf_height": [
         "10%"
@@ -261,19 +261,19 @@
         "0"
     ],
     "hole_coef_2": [
-        "-0.008"
+        "-0.0051"
     ],
     "hole_coef_3": [
-        "0.23415"
+        "0.2194"
     ],
     "hole_limit_max": [
-        "0.22"
+        "0.2194"
     ],
     "hole_limit_min": [
-        "0.088"
+        "0.092"
     ],
     "impact_strength_z": [
-        "5.7"
+        "15.5"
     ],
     "long_retractions_when_ec": [
         "0",
@@ -325,7 +325,7 @@
         "10"
     ],
     "slow_down_layer_time": [
-        "8"
+        "6"
     ],
     "slow_down_min_speed": [
         "20",
@@ -363,10 +363,10 @@
     ],
     "filament_id": "PMPA02",
     "description": " ",
-    "setting_id": "GFSN03_09",
+    "setting_id": "GFSN05_10",
     "include": [
         "fdm_filament_template_direct_dual"
     ],
-    "version": "2.6.0.4",
+    "version": "2.4.0.8",
     "idle_temperature": 0
 }
