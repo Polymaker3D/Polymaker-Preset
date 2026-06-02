@@ -52,10 +52,10 @@
         "70"
     ],
     "eng_plate_temp": [
-        "100"
+        "50"
     ],
     "eng_plate_temp_initial_layer": [
-        "100"
+        "50"
     ],
     "fan_cooling_layer_time": [
         "20"
@@ -138,8 +138,8 @@
         "Direct Drive High Flow"
     ],
     "filament_flow_ratio": [
-        "1",
-        "1"
+        "0.96",
+        "nil"
     ],
     "filament_flush_temp": [
         "0"
@@ -252,10 +252,10 @@
         "1"
     ],
     "hot_plate_temp": [
-        "100"
+        "50"
     ],
     "hot_plate_temp_initial_layer": [
-        "100"
+        "50"
     ],
     "hole_coef_1": [
         "0"
@@ -340,10 +340,10 @@
         "74.2"
     ],
     "textured_plate_temp": [
-        "100"
+        "50"
     ],
     "textured_plate_temp_initial_layer": [
-        "100"
+        "50"
     ],
     "volumetric_speed_coefficients": [
         "0 0 0 0 0 0"
