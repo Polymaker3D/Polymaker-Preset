@@ -52,10 +52,10 @@
         "70"
     ],
     "eng_plate_temp": [
-        "100"
+        "50"
     ],
     "eng_plate_temp_initial_layer": [
-        "100"
+        "50"
     ],
     "fan_cooling_layer_time": [
         "30"
@@ -252,10 +252,10 @@
         "1"
     ],
     "hot_plate_temp": [
-        "100"
+        "50"
     ],
     "hot_plate_temp_initial_layer": [
-        "100"
+        "50"
     ],
     "hole_coef_1": [
         "0"
@@ -341,10 +341,10 @@
         "206.2"
     ],
     "textured_plate_temp": [
-        "100"
+        "50"
     ],
     "textured_plate_temp_initial_layer": [
-        "100"
+        "50"
     ],
     "volumetric_speed_coefficients": [
         "0 0 0 0 0 0"
@@ -370,6 +370,6 @@
     "include": [
         "fdm_filament_template_direct_dual"
     ],
-    "version": "2.6.0.3",
+    "version": "2.6.0.5",
     "idle_temperature": 0
 }
