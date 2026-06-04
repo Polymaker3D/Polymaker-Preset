@@ -8,7 +8,9 @@
     "test:coverage": "node --test --experimental-test-coverage scripts/*.test.mjs tests/*.test.js",
     "test:app": "node --test tests/app.test.mjs",
     "test:all": "node --test scripts/*.test.mjs tests/*.test.mjs tests/*.test.js",
-    "generate-index": "node scripts/generate-index-json.mjs"
+    "generate-index": "node scripts/generate-index-json.mjs",
+    "generate-seo": "node scripts/generate-seo.mjs",
+    "generate": "node scripts/generate-index-json.mjs && node scripts/generate-seo.mjs"
   },
   "keywords": [
     "3d-printing",

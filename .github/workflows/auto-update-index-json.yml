@@ -34,15 +34,18 @@ jobs:
       - name: Generate index.json
         run: node scripts/generate-index-json.mjs
 
+      - name: Inject SEO content into index.html
+        run: node scripts/generate-seo.mjs
+
       - name: Commit changes (if any)
         run: |
-          if git diff --quiet -- index.json; then
-            echo "index.json unchanged."
+          if git diff --quiet -- index.json index.html; then
+            echo "index.json and index.html unchanged."
             exit 0
           fi
 
           git config user.name "polymaker-bot"
           git config user.email "polymaker-bot@users.noreply.github.com"
-          git add index.json
-          git commit -m "chore: auto-update index.json"
+          git add index.json index.html
+          git commit -m "chore: auto-update index.json and SEO content"
           git push
