@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updatedAt": "2026-06-02T02:33:31.154Z",
+  "updatedAt": "2026-06-04T07:50:43.368Z",
   "materials": [
     "Fiberon ASA-CF08",
     "Fiberon PA12-CF10",
@@ -371,7 +371,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/Fiberon PA12-CF10/Elegoo/CC2/ElegooSlicer/Fiberon PA12-CF10 @Elegoo CC2.json",
       "filename": "Fiberon PA12-CF10 @Elegoo CC2.json",
-      "updatedAt": "2026-05-29T10:25:10+08:00",
+      "updatedAt": "2026-06-04T15:49:59+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -435,7 +435,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PA6-CF20/BBL/H2D/BambuStudio/Fiberon PA6-CF20 @BBL H2D.json",
       "filename": "Fiberon PA6-CF20 @BBL H2D.json",
-      "updatedAt": "2026-06-02T10:32:36+08:00",
+      "updatedAt": "2026-06-02T13:09:24+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -451,7 +451,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PA6-CF20/BBL/H2S/BambuStudio/Fiberon PA6-CF20 @BBL H2S.json",
       "filename": "Fiberon PA6-CF20 @BBL H2S.json",
-      "updatedAt": "2026-05-29T10:25:10+08:00",
+      "updatedAt": "2026-06-04T15:49:59+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -467,7 +467,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PA6-CF20/BBL/P2S/BambuStudio/Fiberon PA6-CF20 @BBL P2S.json",
       "filename": "Fiberon PA6-CF20 @BBL P2S.json",
-      "updatedAt": "2026-06-02T10:32:36+08:00",
+      "updatedAt": "2026-06-02T13:09:24+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -609,7 +609,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PA6-GF25/BBL/H2D/BambuStudio/Fiberon PA6-GF25 @BBL H2D.json",
       "filename": "Fiberon PA6-GF25 @BBL H2D.json",
-      "updatedAt": "2026-06-02T10:32:36+08:00",
+      "updatedAt": "2026-06-02T13:09:24+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -767,7 +767,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PA612-CF15/BBL/H2C/BambuStudio/Fiberon PA612-CF15 @BBL H2C.json",
       "filename": "Fiberon PA612-CF15 @BBL H2C.json",
-      "updatedAt": "2026-06-02T10:32:36+08:00",
+      "updatedAt": "2026-06-02T13:09:24+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -783,7 +783,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PA612-CF15/BBL/H2D/BambuStudio/Fiberon PA612-CF15 @BBL H2D.json",
       "filename": "Fiberon PA612-CF15 @BBL H2D.json",
-      "updatedAt": "2026-06-02T10:32:36+08:00",
+      "updatedAt": "2026-06-02T13:09:24+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -799,7 +799,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PA612-CF15/BBL/H2S/BambuStudio/Fiberon PA612-CF15 @BBL H2S.json",
       "filename": "Fiberon PA612-CF15 @BBL H2S.json",
-      "updatedAt": "2026-06-02T10:32:36+08:00",
+      "updatedAt": "2026-06-02T13:09:24+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -893,7 +893,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PA612-CF15/BBL/X2D/BambuStudio/Fiberon PA612-CF15 @BBL X2D.json",
       "filename": "Fiberon PA612-CF15 @BBL X2D.json",
-      "updatedAt": "2026-06-02T10:32:36+08:00",
+      "updatedAt": "2026-06-02T13:09:24+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -925,7 +925,7 @@
       "slicer": "OrcaSlicer",
       "path": "preset/Fiberon PA612-CF15/Snapmaker/U1/OrcaSlicer/Fiberon PA612-CF15 @Snapmaker U1.json",
       "filename": "Fiberon PA612-CF15 @Snapmaker U1.json",
-      "updatedAt": "2026-06-02T10:32:36+08:00",
+      "updatedAt": "2026-06-02T13:09:24+08:00",
       "compatiblePrinters": [
         {
           "brand": "Snapmaker",
@@ -941,7 +941,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PA612-ESD/BBL/H2C/BambuStudio/Fiberon PA612-ESD @BBL H2C.json",
       "filename": "Fiberon PA612-ESD @BBL H2C.json",
-      "updatedAt": "2026-06-02T10:32:36+08:00",
+      "updatedAt": "2026-06-02T13:09:24+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -957,7 +957,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PA612-ESD/BBL/H2D/BambuStudio/Fiberon PA612-ESD @BBL H2D.json",
       "filename": "Fiberon PA612-ESD @BBL H2D.json",
-      "updatedAt": "2026-05-29T10:25:10+08:00",
+      "updatedAt": "2026-06-04T15:49:59+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -973,7 +973,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PA612-ESD/BBL/H2S/BambuStudio/Fiberon PA612-ESD @BBL H2S.json",
       "filename": "Fiberon PA612-ESD @BBL H2S.json",
-      "updatedAt": "2026-06-02T10:32:36+08:00",
+      "updatedAt": "2026-06-02T13:09:24+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -989,7 +989,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PA612-ESD/BBL/P2S/BambuStudio/Fiberon PA612-ESD @BBL P2S.json",
       "filename": "Fiberon PA612-ESD @BBL P2S.json",
-      "updatedAt": "2026-06-02T10:32:36+08:00",
+      "updatedAt": "2026-06-02T13:09:24+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -1005,7 +1005,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PA612-ESD/BBL/X2D/BambuStudio/Fiberon PA612-ESD @BBL X2D.json",
       "filename": "Fiberon PA612-ESD @BBL X2D.json",
-      "updatedAt": "2026-06-02T10:32:36+08:00",
+      "updatedAt": "2026-06-02T13:09:24+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -1021,7 +1021,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/Fiberon PA612-ESD/Elegoo/CC2/ElegooSlicer/Fiberon PA612-ESD @Elegoo CC2.json",
       "filename": "Fiberon PA612-ESD @Elegoo CC2.json",
-      "updatedAt": "2026-06-02T10:32:36+08:00",
+      "updatedAt": "2026-06-02T13:09:24+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -1037,7 +1037,7 @@
       "slicer": "OrcaSlicer",
       "path": "preset/Fiberon PA612-ESD/Snapmaker/U1/OrcaSlicer/Fiberon PA612-ESD @Snapmaker U1.json",
       "filename": "Fiberon PA612-ESD @Snapmaker U1.json",
-      "updatedAt": "2026-06-02T10:32:36+08:00",
+      "updatedAt": "2026-06-02T13:09:24+08:00",
       "compatiblePrinters": [
         {
           "brand": "Snapmaker",
@@ -1275,7 +1275,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PET-GF15/BBL/P2S/BambuStudio/Fiberon PET-GF15 @BBL P2S.json",
       "filename": "Fiberon PET-GF15 @BBL P2S.json",
-      "updatedAt": "2026-05-29T10:25:10+08:00",
+      "updatedAt": "2026-06-04T15:49:59+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -1291,7 +1291,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PET-GF15/BBL/X2D/BambuStudio/Fiberon PET-GF15 @BBL X2D.json",
       "filename": "Fiberon PET-GF15 @BBL X2D.json",
-      "updatedAt": "2026-05-27T11:04:12+08:00",
+      "updatedAt": "2026-06-04T15:49:59+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -1323,7 +1323,7 @@
       "slicer": "OrcaSlicer",
       "path": "preset/Fiberon PET-GF15/Snapmaker/U1/OrcaSlicer/Fiberon PET-GF15 @Snapmaker U1.json",
       "filename": "Fiberon PET-GF15 @Snapmaker U1.json",
-      "updatedAt": "2026-05-29T10:25:10+08:00",
+      "updatedAt": "2026-06-04T15:49:59+08:00",
       "compatiblePrinters": [
         {
           "brand": "Snapmaker",
@@ -1719,7 +1719,7 @@
       "slicer": "OrcaSlicer",
       "path": "preset/Fiberon PPS-GF20/Snapmaker/U1/OrcaSlicer/Fiberon PPS-GF20 @Snapmaker U1.json",
       "filename": "Fiberon PPS-GF20 @Snapmaker U1.json",
-      "updatedAt": "2026-05-27T11:04:12+08:00",
+      "updatedAt": "2026-06-04T15:49:59+08:00",
       "compatiblePrinters": [
         {
           "brand": "Snapmaker",
@@ -10091,12 +10091,43 @@
       "slicer": "BambuStudio",
       "path": "preset/Polymaker ABS Max/BBL/H2D/BambuStudio/Polymaker ABS Max @BBL H2D.json",
       "filename": "Polymaker ABS Max @BBL H2D.json",
-      "updatedAt": "2026-05-29T10:25:10+08:00",
+      "updatedAt": "2026-06-04T15:49:59+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
           "model": "H2D",
           "fullName": "Bambu Lab H2D 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "Polymaker ABS Max",
+      "brand": "BBL",
+      "model": "P1S",
+      "slicer": "BambuStudio",
+      "path": "preset/Polymaker ABS Max/BBL/P1S/BambuStudio/Polymaker ABS Max @BBL P1S.json",
+      "filename": "Polymaker ABS Max @BBL P1S.json",
+      "updatedAt": "2026-06-04T15:49:59+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "P1S",
+          "fullName": "Bambu Lab P1S 0.4 nozzle"
+        },
+        {
+          "brand": "BBL",
+          "model": "X1C",
+          "fullName": "Bambu Lab X1C 0.4 nozzle"
+        },
+        {
+          "brand": "BBL",
+          "model": "X1",
+          "fullName": "Bambu Lab X1 0.4 nozzle"
+        },
+        {
+          "brand": "BBL",
+          "model": "X1E",
+          "fullName": "Bambu Lab X1E 0.4 nozzle"
         }
       ]
     },
