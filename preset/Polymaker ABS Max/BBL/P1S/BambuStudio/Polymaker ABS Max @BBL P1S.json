@@ -1,16 +1,16 @@
 {
     "type": "filament",
-    "name": "Fiberon PET-GF15 @BBL P2S",
+    "name": "Polymaker ABS Max @BBL P1S",
     "from": "User",
     "instantiation": "true",
     "activate_air_filtration": [
-        "0"
+        "1"
     ],
     "additional_cooling_fan_speed": [
         "0"
     ],
     "chamber_temperatures": [
-        "50"
+        "0"
     ],
     "circle_compensation_speed": [
         "200"
@@ -34,16 +34,16 @@
         "0"
     ],
     "counter_coef_2": [
-        "-0.0004"
+        "0.008"
     ],
     "counter_coef_3": [
-        "-0.0156"
+        "-0.041"
     ],
     "counter_limit_max": [
-        "-0.015"
+        "0.033"
     ],
     "counter_limit_min": [
-        "-0.025"
+        "-0.035"
     ],
     "diameter_limit": [
         "50"
@@ -52,19 +52,19 @@
         "70"
     ],
     "eng_plate_temp": [
-        "70"
+        "90"
     ],
     "eng_plate_temp_initial_layer": [
-        "70"
+        "90"
     ],
     "fan_cooling_layer_time": [
-        "31"
+        "30"
     ],
     "fan_max_speed": [
-        "70"
+        "30"
     ],
     "fan_min_speed": [
-        "40"
+        "0"
     ],
     "filament_adaptive_volumetric_speed": [
         "0"
@@ -73,8 +73,7 @@
         "0"
     ],
     "filament_cooling_before_tower": [
-        "10",
-        "10"
+        "0"
     ],
     "filament_preheat_temperature_delta": [
         "0"
@@ -95,51 +94,49 @@
         "-1"
     ],
     "filament_cost": [
-        "84.99"
+        "20"
     ],
     "filament_density": [
-        "1.43"
+        "1.06"
     ],
     "filament_dev_ams_drying_ams_limitations": [
         "1"
     ],
     "filament_dev_ams_drying_heat_distortion_temperature": [
-        "165"
+        "90"
     ],
     "filament_dev_ams_drying_temperature": [
         "65",
         "80",
         "65",
-        "80"
+        "75"
     ],
     "filament_dev_ams_drying_time": [
         "12",
+        "8.0",
         "12",
-        "12",
-        "12"
+        "8.0"
     ],
     "filament_dev_chamber_drying_bed_temperature": [
-        "90"
+        "90.0"
     ],
     "filament_dev_chamber_drying_time": [
         "12.0"
     ],
     "filament_dev_drying_cooling_temperature": [
-        "150"
+        "75"
     ],
     "filament_dev_drying_softening_temperature": [
-        "150"
+        "80"
     ],
     "filament_diameter": [
         "1.75"
     ],
     "filament_extruder_variant": [
-        "Direct Drive Standard",
-        "Direct Drive High Flow"
+        "Direct Drive Standard"
     ],
     "filament_flow_ratio": [
-        "0.94",
-        "nil"
+        "0.92"
     ],
     "filament_flush_temp": [
         "0"
@@ -151,11 +148,10 @@
         "0"
     ],
     "filament_max_volumetric_speed": [
-        "8",
         "8"
     ],
     "filament_metal_stickiness": [
-        "High"
+        "None"
     ],
     "filament_minimal_purge_on_wipe_tower": [
         "15"
@@ -184,11 +180,14 @@
     "filament_ramming_volumetric_speed_nc": [
         "-1"
     ],
+    "filament_retraction_length": [
+        "0.4"
+    ],
     "filament_scarf_seam_type": [
         "none"
     ],
     "filament_settings_id": [
-        "Fiberon PET-GF15 @BBL P2S"
+        "Polymaker ABS Max @BBL P1S"
     ],
     "filament_shrink": [
         "100%"
@@ -197,7 +196,7 @@
         "0"
     ],
     "filament_type": [
-        "PET-CF"
+        "ABS"
     ],
     "filament_vendor": [
         "Polymaker"
@@ -218,7 +217,6 @@
         "10"
     ],
     "filament_ramming_travel_time": [
-        "0",
         "0"
     ],
     "filament_retract_length_nc": [
@@ -252,55 +250,52 @@
         "1"
     ],
     "hot_plate_temp": [
-        "70"
+        "90"
     ],
     "hot_plate_temp_initial_layer": [
-        "70"
+        "90"
     ],
     "hole_coef_1": [
         "0"
     ],
     "hole_coef_2": [
-        "-0.0003"
+        "-0.008"
     ],
     "hole_coef_3": [
-        "0.1741"
+        "0.23415"
     ],
     "hole_limit_max": [
-        "0.174"
+        "0.22"
     ],
     "hole_limit_min": [
-        "0.167"
+        "0.088"
     ],
     "impact_strength_z": [
-        "4.5"
+        "10"
     ],
     "long_retractions_when_ec": [
-        "0",
         "0"
     ],
     "no_slow_down_for_cooling_on_outwalls": [
         "0"
     ],
     "nozzle_temperature": [
-        "270",
-        "270"
-    ],
-    "nozzle_temperature_initial_layer": [
-        "270",
-        "270"
-    ],
-    "nozzle_temperature_range_high": [
-        "300"
-    ],
-    "nozzle_temperature_range_low": [
         "280"
     ],
+    "nozzle_temperature_initial_layer": [
+        "280"
+    ],
+    "nozzle_temperature_range_high": [
+        "280"
+    ],
+    "nozzle_temperature_range_low": [
+        "260"
+    ],
     "overhang_fan_speed": [
-        "40"
+        "80"
     ],
     "overhang_fan_threshold": [
-        "0%"
+        "25%"
     ],
     "override_process_overhang_speed": [
         "0"
@@ -309,10 +304,9 @@
         "0"
     ],
     "required_nozzle_HRC": [
-        "40"
+        "3"
     ],
     "retraction_distances_when_ec": [
-        "0",
         "0"
     ],
     "slow_down_for_layer_cooling": [
@@ -325,48 +319,47 @@
         "10"
     ],
     "slow_down_layer_time": [
-        "8"
+        "6"
     ],
     "slow_down_min_speed": [
-        "20",
         "20"
     ],
     "supertack_plate_temp": [
-        "80"
+        "0"
     ],
     "supertack_plate_temp_initial_layer": [
-        "80"
+        "0"
     ],
     "temperature_vitrification": [
-        "232.6"
+        "127.4"
     ],
     "textured_plate_temp": [
-        "70"
+        "100"
     ],
     "textured_plate_temp_initial_layer": [
-        "70"
+        "100"
     ],
     "volumetric_speed_coefficients": [
         "0 0 0 0 0 0"
     ],
     "compatible_printers": [
-        "Bambu Lab P2S 0.4 nozzle"
+        "Bambu Lab P1S 0.4 nozzle",
+        "Bambu Lab X1C 0.4 nozzle",
+        "Bambu Lab X1 0.4 nozzle",
+        "Bambu Lab X1E 0.4 nozzle"
     ],
     "filament_start_gcode": [
-        "; Filament gcode\nM145 P0 ; set airduct mode to cooling mode for cooling\nM106 P2 S255 ; turn on auxiliary fan for cooling\nM106 P3 S127 ; turn on chamber fan for cooling\nM1002 gcode_claim_action : 29\nM191 S0 ; wait for chamber temp\nM106 P2 S102 ; turn on chamber cooling fan\nM106 P10 S0 ; turn off left aux fan\nM142 P6 R30 S40 U0.3 V0.8 ; set PETG exhaust chamber autocooling\n"
+        "; Filament gcode\n{if activate_air_filtration[current_extruder] && support_air_filtration}\nM106 P3 S{during_print_exhaust_fan_speed_num[current_extruder]} \n{endif}"
     ],
     "filament_end_gcode": [
         "; filament end gcode \n\n"
     ],
     "filament_adhesiveness_category": [
-        "800"
+        "200"
     ],
-    "filament_id": "PMPE08",
+    "filament_id": "PMAB02",
     "description": " ",
-    "setting_id": "GFST01_03",
-    "include": [
-        "fdm_filament_template_direct_dual"
-    ],
-    "version": "2.6.0.5",
+    "setting_id": "GFSB99",
+    "version": "2.7.0.7",
     "idle_temperature": 0
 }
