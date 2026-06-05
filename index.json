@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updatedAt": "2026-06-04T07:50:43.368Z",
+  "updatedAt": "2026-06-05T07:10:28.660Z",
   "materials": [
     "Fiberon ASA-CF08",
     "Fiberon PA12-CF10",
@@ -371,7 +371,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/Fiberon PA12-CF10/Elegoo/CC2/ElegooSlicer/Fiberon PA12-CF10 @Elegoo CC2.json",
       "filename": "Fiberon PA12-CF10 @Elegoo CC2.json",
-      "updatedAt": "2026-06-04T15:49:59+08:00",
+      "updatedAt": "2026-06-05T14:24:44+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -451,7 +451,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PA6-CF20/BBL/H2S/BambuStudio/Fiberon PA6-CF20 @BBL H2S.json",
       "filename": "Fiberon PA6-CF20 @BBL H2S.json",
-      "updatedAt": "2026-06-04T15:49:59+08:00",
+      "updatedAt": "2026-06-05T14:24:44+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -957,7 +957,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PA612-ESD/BBL/H2D/BambuStudio/Fiberon PA612-ESD @BBL H2D.json",
       "filename": "Fiberon PA612-ESD @BBL H2D.json",
-      "updatedAt": "2026-06-04T15:49:59+08:00",
+      "updatedAt": "2026-06-05T14:24:44+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -1275,7 +1275,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PET-GF15/BBL/P2S/BambuStudio/Fiberon PET-GF15 @BBL P2S.json",
       "filename": "Fiberon PET-GF15 @BBL P2S.json",
-      "updatedAt": "2026-06-04T15:49:59+08:00",
+      "updatedAt": "2026-06-05T14:24:44+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -1291,7 +1291,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PET-GF15/BBL/X2D/BambuStudio/Fiberon PET-GF15 @BBL X2D.json",
       "filename": "Fiberon PET-GF15 @BBL X2D.json",
-      "updatedAt": "2026-06-04T15:49:59+08:00",
+      "updatedAt": "2026-06-05T14:24:44+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -1323,7 +1323,7 @@
       "slicer": "OrcaSlicer",
       "path": "preset/Fiberon PET-GF15/Snapmaker/U1/OrcaSlicer/Fiberon PET-GF15 @Snapmaker U1.json",
       "filename": "Fiberon PET-GF15 @Snapmaker U1.json",
-      "updatedAt": "2026-06-04T15:49:59+08:00",
+      "updatedAt": "2026-06-05T14:24:44+08:00",
       "compatiblePrinters": [
         {
           "brand": "Snapmaker",
@@ -1719,7 +1719,7 @@
       "slicer": "OrcaSlicer",
       "path": "preset/Fiberon PPS-GF20/Snapmaker/U1/OrcaSlicer/Fiberon PPS-GF20 @Snapmaker U1.json",
       "filename": "Fiberon PPS-GF20 @Snapmaker U1.json",
-      "updatedAt": "2026-06-04T15:49:59+08:00",
+      "updatedAt": "2026-06-05T14:24:44+08:00",
       "compatiblePrinters": [
         {
           "brand": "Snapmaker",
@@ -10091,7 +10091,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Polymaker ABS Max/BBL/H2D/BambuStudio/Polymaker ABS Max @BBL H2D.json",
       "filename": "Polymaker ABS Max @BBL H2D.json",
-      "updatedAt": "2026-06-04T15:49:59+08:00",
+      "updatedAt": "2026-06-05T14:24:44+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -10103,11 +10103,27 @@
     {
       "material": "Polymaker ABS Max",
       "brand": "BBL",
+      "model": "H2S",
+      "slicer": "BambuStudio",
+      "path": "preset/Polymaker ABS Max/BBL/H2S/BambuStudio/Polymaker ABS Max @BBL H2S.json",
+      "filename": "Polymaker ABS Max @BBL H2S.json",
+      "updatedAt": "2026-06-05T15:01:19+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "H2S",
+          "fullName": "Bambu Lab H2S 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "Polymaker ABS Max",
+      "brand": "BBL",
       "model": "P1S",
       "slicer": "BambuStudio",
       "path": "preset/Polymaker ABS Max/BBL/P1S/BambuStudio/Polymaker ABS Max @BBL P1S.json",
       "filename": "Polymaker ABS Max @BBL P1S.json",
-      "updatedAt": "2026-06-04T15:49:59+08:00",
+      "updatedAt": "2026-06-05T14:24:44+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -10134,6 +10150,22 @@
     {
       "material": "Polymaker ABS Pro",
       "brand": "BBL",
+      "model": "H2C",
+      "slicer": "BambuStudio",
+      "path": "preset/Polymaker ABS Pro/BBL/H2C/BambuStudio/Polymaker ABS Pro @BBL H2C.json",
+      "filename": "Polymaker ABS Pro @BBL H2C.json",
+      "updatedAt": "2026-06-05T15:01:19+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "H2C",
+          "fullName": "Bambu Lab H2C 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "Polymaker ABS Pro",
+      "brand": "BBL",
       "model": "H2D",
       "slicer": "BambuStudio",
       "path": "preset/Polymaker ABS Pro/BBL/H2D/BambuStudio/Polymaker ABS Pro @BBL H2D.json",
@@ -10144,6 +10176,85 @@
           "brand": "BBL",
           "model": "H2D",
           "fullName": "Bambu Lab H2D 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "Polymaker ABS Pro",
+      "brand": "BBL",
+      "model": "P1S",
+      "slicer": "BambuStudio",
+      "path": "preset/Polymaker ABS Pro/BBL/P1S/BambuStudio/Polymaker ABS Pro @BBL P1S.json",
+      "filename": "Polymaker ABS Pro @BBL P1S.json",
+      "updatedAt": "2026-06-05T15:01:19+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "P1S",
+          "fullName": "Bambu Lab P1S 0.4 nozzle"
+        },
+        {
+          "brand": "BBL",
+          "model": "X1C",
+          "fullName": "Bambu Lab X1C 0.4 nozzle"
+        },
+        {
+          "brand": "BBL",
+          "model": "X1",
+          "fullName": "Bambu Lab X1 0.4 nozzle"
+        },
+        {
+          "brand": "BBL",
+          "model": "X1E",
+          "fullName": "Bambu Lab X1E 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "Polymaker ABS Pro",
+      "brand": "BBL",
+      "model": "P2S",
+      "slicer": "BambuStudio",
+      "path": "preset/Polymaker ABS Pro/BBL/P2S/BambuStudio/Polymaker ABS Pro @BBL P2S.json",
+      "filename": "Polymaker ABS Pro @BBL P2S.json",
+      "updatedAt": "2026-06-05T15:01:19+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "P2S",
+          "fullName": "Bambu Lab P2S 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "Polymaker ABS Pro",
+      "brand": "BBL",
+      "model": "X2D",
+      "slicer": "BambuStudio",
+      "path": "preset/Polymaker ABS Pro/BBL/X2D/BambuStudio/Polymaker ABS Pro @BBL X2D.json",
+      "filename": "Polymaker ABS Pro @BBL X2D.json",
+      "updatedAt": "2026-06-05T15:01:19+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "X2D",
+          "fullName": "Bambu Lab X2D 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "Polymaker ABS Pro Galaxy",
+      "brand": "BBL",
+      "model": "H2C",
+      "slicer": "BambuStudio",
+      "path": "preset/Polymaker ABS Pro Galaxy/BBL/H2C/BambuStudio/Polymaker ABS Pro Galaxy @BBL H2C.json",
+      "filename": "Polymaker ABS Pro Galaxy @BBL H2C.json",
+      "updatedAt": "2026-06-05T15:01:19+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "H2C",
+          "fullName": "Bambu Lab H2C 0.4 nozzle"
         }
       ]
     },
@@ -10160,6 +10271,69 @@
           "brand": "BBL",
           "model": "H2D",
           "fullName": "Bambu Lab H2D 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "Polymaker ABS Pro Galaxy",
+      "brand": "BBL",
+      "model": "P1S",
+      "slicer": "BambuStudio",
+      "path": "preset/Polymaker ABS Pro Galaxy/BBL/P1S/BambuStudio/Polymaker ABS Pro Galaxy @BBL P1S.json",
+      "filename": "Polymaker ABS Pro Galaxy @BBL P1S.json",
+      "updatedAt": "2026-06-05T15:01:19+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "P1S",
+          "fullName": "Bambu Lab P1S 0.4 nozzle"
+        },
+        {
+          "brand": "BBL",
+          "model": "X1C",
+          "fullName": "Bambu Lab X1C 0.4 nozzle"
+        },
+        {
+          "brand": "BBL",
+          "model": "X1",
+          "fullName": "Bambu Lab X1 0.4 nozzle"
+        },
+        {
+          "brand": "BBL",
+          "model": "X1E",
+          "fullName": "Bambu Lab X1E 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "Polymaker ABS Pro Galaxy",
+      "brand": "BBL",
+      "model": "P2S",
+      "slicer": "BambuStudio",
+      "path": "preset/Polymaker ABS Pro Galaxy/BBL/P2S/BambuStudio/Polymaker ABS Pro Galaxy @BBL P2S.json",
+      "filename": "Polymaker ABS Pro Galaxy @BBL P2S.json",
+      "updatedAt": "2026-06-05T15:01:19+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "P2S",
+          "fullName": "Bambu Lab P2S 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "Polymaker ABS Pro Galaxy",
+      "brand": "BBL",
+      "model": "X2D",
+      "slicer": "BambuStudio",
+      "path": "preset/Polymaker ABS Pro Galaxy/BBL/X2D/BambuStudio/Polymaker ABS Pro Galaxy @BBL X2D.json",
+      "filename": "Polymaker ABS Pro Galaxy @BBL X2D.json",
+      "updatedAt": "2026-06-05T15:01:19+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "X2D",
+          "fullName": "Bambu Lab X2D 0.4 nozzle"
         }
       ]
     },
