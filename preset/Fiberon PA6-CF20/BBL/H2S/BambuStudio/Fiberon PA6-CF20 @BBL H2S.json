@@ -10,7 +10,7 @@
         "0"
     ],
     "chamber_temperatures": [
-        "60"
+        "0"
     ],
     "circle_compensation_speed": [
         "200"
@@ -34,16 +34,16 @@
         "0"
     ],
     "counter_coef_2": [
-        "-0.0016"
+        "0.008"
     ],
     "counter_coef_3": [
-        "0.0031"
+        "-0.041"
     ],
     "counter_limit_max": [
-        "0.0031"
+        "0.033"
     ],
     "counter_limit_min": [
-        "-0.038"
+        "-0.035"
     ],
     "diameter_limit": [
         "50"
@@ -52,19 +52,19 @@
         "70"
     ],
     "eng_plate_temp": [
-        "100"
+        "50"
     ],
     "eng_plate_temp_initial_layer": [
-        "100"
+        "50"
     ],
     "fan_cooling_layer_time": [
-        "30"
+        "31"
     ],
     "fan_max_speed": [
-        "70"
+        "30"
     ],
     "fan_min_speed": [
-        "30"
+        "10"
     ],
     "filament_adaptive_volumetric_speed": [
         "0"
@@ -95,7 +95,7 @@
         "-1"
     ],
     "filament_cost": [
-        "0"
+        "84.99"
     ],
     "filament_density": [
         "1.17"
@@ -151,8 +151,8 @@
         "0"
     ],
     "filament_max_volumetric_speed": [
-        "24",
-        "nil"
+        "8",
+        "8"
     ],
     "filament_metal_stickiness": [
         "High"
@@ -203,10 +203,10 @@
         "Polymaker"
     ],
     "full_fan_speed_layer": [
-        "0"
+        "2"
     ],
     "additional_fan_full_speed_layer": [
-        "0"
+        "2"
     ],
     "filament_scarf_height": [
         "10%"
@@ -252,28 +252,28 @@
         "1"
     ],
     "hot_plate_temp": [
-        "100"
+        "50"
     ],
     "hot_plate_temp_initial_layer": [
-        "100"
+        "50"
     ],
     "hole_coef_1": [
         "0"
     ],
     "hole_coef_2": [
-        "-0.0051"
+        "-0.008"
     ],
     "hole_coef_3": [
-        "0.2194"
+        "0.23415"
     ],
     "hole_limit_max": [
-        "0.2194"
+        "0.22"
     ],
     "hole_limit_min": [
-        "0.092"
+        "0.088"
     ],
     "impact_strength_z": [
-        "15.5"
+        "5.7"
     ],
     "long_retractions_when_ec": [
         "0",
@@ -325,7 +325,7 @@
         "10"
     ],
     "slow_down_layer_time": [
-        "6"
+        "8"
     ],
     "slow_down_min_speed": [
         "20",
@@ -341,10 +341,10 @@
         "74.2"
     ],
     "textured_plate_temp": [
-        "100"
+        "50"
     ],
     "textured_plate_temp_initial_layer": [
-        "100"
+        "50"
     ],
     "volumetric_speed_coefficients": [
         "0 0 0 0 0 0"
@@ -363,10 +363,10 @@
     ],
     "filament_id": "PMPA02",
     "description": " ",
-    "setting_id": "GFSN05_10",
+    "setting_id": "GFSN03_09",
     "include": [
         "fdm_filament_template_direct_dual"
     ],
-    "version": "2.4.0.8",
+    "version": "2.6.0.5",
     "idle_temperature": 0
 }

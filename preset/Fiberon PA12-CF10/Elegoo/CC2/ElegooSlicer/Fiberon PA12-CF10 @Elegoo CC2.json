@@ -13,7 +13,7 @@
         "90"
     ],
     "textured_plate_temp": [
-        "100"
+        "50"
     ],
     "cool_plate_temp_initial_layer": [
         "0"
@@ -25,7 +25,7 @@
         "90"
     ],
     "textured_plate_temp_initial_layer": [
-        "100"
+        "50"
     ],
     "overhang_fan_threshold": [
         "25%"

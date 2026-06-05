@@ -98,7 +98,7 @@
         "20"
     ],
     "filament_density": [
-        "1.04"
+        "1.06"
     ],
     "filament_dev_ams_drying_ams_limitations": [
         "1"
@@ -290,10 +290,10 @@
         "nil"
     ],
     "nozzle_temperature_range_high": [
-        "300"
+        "280"
     ],
     "nozzle_temperature_range_low": [
-        "280"
+        "260"
     ],
     "overhang_fan_speed": [
         "80"
@@ -336,7 +336,7 @@
         "0"
     ],
     "temperature_vitrification": [
-        "100"
+        "127.4"
     ],
     "textured_plate_temp": [
         "120"
@@ -365,5 +365,6 @@
     "include": [
         "fdm_filament_template_direct_dual"
     ],
-    "version": "2.5.0.5"
+    "version": "2.5.0.5",
+    "idle_temperature": 0
 }
