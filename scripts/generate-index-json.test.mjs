@@ -360,8 +360,72 @@ describe('Preset Files', () => {
       
       const presetFiles = await walkPresetFiles(PRESET_DIR);
       
-      assert.strictEqual(index.presets.length, presetFiles.length, 
+      assert.strictEqual(index.presets.length, presetFiles.length,
         `index.json should have ${presetFiles.length} presets, but has ${index.presets.length}`);
+    });
+  });
+
+  describe('extractMissingExtruderVariants function', () => {
+    // Mirrors the helper in generate-index-json.mjs
+    function extractMissingExtruderVariants(presetData) {
+      if (!presetData) return [];
+      const variants = presetData.filament_extruder_variant;
+      const temps = presetData.nozzle_temperature;
+      if (!Array.isArray(variants) || variants.length <= 1) return [];
+      if (!Array.isArray(temps) || temps.length !== variants.length) return [];
+      const missing = [];
+      for (let i = 0; i < variants.length; i++) {
+        if (String(temps[i]).toLowerCase() === 'nil') {
+          missing.push(variants[i]);
+        }
+      }
+      return missing;
+    }
+
+    it('returns the names of variants whose nozzle_temperature is nil', () => {
+      const data = {
+        filament_extruder_variant: [
+          'Direct Drive Standard', 'Direct Drive High Flow', 'Bowden Standard', 'Bowden High Flow'
+        ],
+        nozzle_temperature: ['280', 'nil', 'nil', 'nil']
+      };
+      assert.deepStrictEqual(
+        extractMissingExtruderVariants(data),
+        ['Direct Drive High Flow', 'Bowden Standard', 'Bowden High Flow']
+      );
+    });
+
+    it('returns [] when every column has a value', () => {
+      const data = {
+        filament_extruder_variant: ['Direct Drive Standard', 'Direct Drive High Flow'],
+        nozzle_temperature: ['280', '290']
+      };
+      assert.deepStrictEqual(extractMissingExtruderVariants(data), []);
+    });
+
+    it('returns [] for single-variant presets', () => {
+      const data = {
+        filament_extruder_variant: ['Direct Drive Standard'],
+        nozzle_temperature: ['280']
+      };
+      assert.deepStrictEqual(extractMissingExtruderVariants(data), []);
+    });
+
+    it('returns [] when filament_extruder_variant is missing', () => {
+      assert.deepStrictEqual(extractMissingExtruderVariants({ nozzle_temperature: ['280', 'nil'] }), []);
+    });
+
+    it('returns [] when array lengths mismatch (skips detection safely)', () => {
+      const data = {
+        filament_extruder_variant: ['Direct Drive Standard', 'Direct Drive High Flow'],
+        nozzle_temperature: ['280']
+      };
+      assert.deepStrictEqual(extractMissingExtruderVariants(data), []);
+    });
+
+    it('returns [] for null/undefined preset data', () => {
+      assert.deepStrictEqual(extractMissingExtruderVariants(null), []);
+      assert.deepStrictEqual(extractMissingExtruderVariants(undefined), []);
     });
   });
 });
