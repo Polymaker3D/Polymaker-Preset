@@ -25,6 +25,26 @@ This is a temporary workaround. We will remove this change after Bambu Lab fixes
 
 **Acknowledgements**: Thanks to alexbreinig for pointing out this issue and capsel22 for reporting it in the BambuStudio issues. For more details, see: https://github.com/bambulab/BambuStudio/issues/8801
 
+### Missing Presets for Some Nozzle / Extruder Options
+
+**Issue**: Bambu Lab printers that offer more than one extruder/nozzle option (for example the multi-nozzle machines such as X2D and the H2 series) store a separate set of values for each option inside a single filament preset. The available options are:
+
+- `Direct Drive Standard`
+- `Direct Drive High Flow`
+- `Bowden Standard`
+- `Bowden High Flow`
+
+For some materials we have only tuned and authored values for one option (typically `Direct Drive Standard`). The remaining options are left empty (`nil`) in the preset, which means the auxiliary / additional nozzle has **no tuned values** for that material. This includes the auxiliary (Bowden) nozzle on dual-nozzle machines.
+
+**What we do about it**: When you download presets from the [download page](https://presets.polymaker.com), the site checks each selected preset. If any of them are missing values for one or more nozzle/extruder options, a warning appears before the download starts. The warning lists exactly which material and which options have no preset, for example:
+
+> We didn't make presets for these variants:
+> - PolyLite PLA — Bambu Lab X2D: Direct Drive High Flow, Bowden Standard, Bowden High Flow
+
+You can still continue the download — the listed nozzle options simply won't have tuned values, so they fall back to the slicer's generic settings. Printing on the option that **does** have a preset (usually the main Direct Drive nozzle) is unaffected.
+
+We are progressively adding presets for the remaining nozzle options. If a material you need is missing values for a nozzle option you use, please let us know.
+
 ## 🌐 Download Presets
 
 **Visit our download page:** [https://presets.polymaker.com](https://presets.polymaker.com) 

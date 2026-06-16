@@ -918,9 +918,37 @@ function init() {
       }
 
       // Download multiple presets as ZIP
-      function downloadSelectedPresets() {
+      // Aggregate the selected presets into a de-duplicated list of
+      // { material, model, variants } for those missing extruder variants.
+      function collectMissingVariantWarnings(presets) {
+        var seen = {};
+        var items = [];
+        for (var key in presets) {
+          if (!Object.prototype.hasOwnProperty.call(presets, key)) continue;
+          var p = presets[key];
+          var missing = p && p.missingExtruderVariants;
+          if (!missing || !missing.length) continue;
+          var dedupKey = (p.material || '') + '||' + (p.model || '') + '||' + missing.join(',');
+          if (seen[dedupKey]) continue;
+          seen[dedupKey] = true;
+          items.push({ material: p.material || '', model: p.model || '', variants: missing.slice() });
+        }
+        return items;
+      }
+
+      function downloadSelectedPresets(skipVariantWarning) {
         var presetIds = Object.keys(selectedPresets);
         if (presetIds.length === 0) return;
+
+        if (!skipVariantWarning) {
+          var variantWarnings = collectMissingVariantWarnings(selectedPresets);
+          if (variantWarnings.length) {
+            showMissingVariantWarning(variantWarnings, function () {
+              downloadSelectedPresets(true);
+            });
+            return;
+          }
+        }
 
         // Show loading state
         if (downloadSelectedBtn) {
@@ -1040,7 +1068,16 @@ function init() {
         });
       }
 
-      function downloadSelectedBundle() {
+      function downloadSelectedBundle(skipVariantWarning) {
+        if (!skipVariantWarning) {
+          var variantWarnings = collectMissingVariantWarnings(selectedPresets);
+          if (variantWarnings.length) {
+            showMissingVariantWarning(variantWarnings, function () {
+              downloadSelectedBundle(true);
+            });
+            return;
+          }
+        }
         // Filter for BambuStudio presets only
         var bambuPresets = [];
         for (var key in selectedPresets) {
@@ -1392,12 +1429,34 @@ function init() {
         showBambuRestartWarning(action, function () {});
       }
 
+      // For a single-row download: read the row's preset payload and, if it has
+      // missing extruder variants, show the warning modal before proceeding.
+      function withMissingVariantWarning(linkEl, action) {
+        var row = linkEl ? linkEl.closest('tr') : null;
+        var label = row ? row.querySelector('.preset-checkbox') : null;
+        if (label) {
+          try {
+            var d = JSON.parse(label.getAttribute('data-preset-data'));
+            if (d && d.missingExtruderVariants && d.missingExtruderVariants.length) {
+              showMissingVariantWarning(
+                [{ material: d.material || '', model: d.model || '', variants: d.missingExtruderVariants.slice() }],
+                action
+              );
+              return;
+            }
+          } catch (e) { /* fall through to action */ }
+        }
+        action();
+      }
+
       if (downloadSelectedBtn) {
-        downloadSelectedBtn.addEventListener('click', downloadSelectedPresets);
+        // Wrap so the click Event isn't passed as skipVariantWarning (which would
+        // bypass the missing-variant guard); the internal re-invoke passes true.
+        downloadSelectedBtn.addEventListener('click', function () { downloadSelectedPresets(); });
       }
 
       if (downloadBundleBtn) {
-        downloadBundleBtn.addEventListener('click', downloadSelectedBundle);
+        downloadBundleBtn.addEventListener('click', function () { downloadSelectedBundle(); });
       }
 
       // Handle strict checkbox change
@@ -1552,7 +1611,7 @@ function init() {
           var filename = displayFilename(p.filename, p.slicer);
           var presetId = p.path || (p.material + '-' + p.brand + '-' + p.model + '-' + p.slicer);
           var isChecked = selectedPresets[presetId] ? ' checked' : '';
-          var presetData = JSON.stringify({ url: url, filename: filename, slicer: p.slicer, path: p.path, material: p.material, model: p.model, brand: p.brand });
+          var presetData = JSON.stringify({ url: url, filename: filename, slicer: p.slicer, path: p.path, material: p.material, model: p.model, brand: p.brand, missingExtruderVariants: p.missingExtruderVariants || [] });
           var checkboxHtml = '<label class="checkbox-label preset-checkbox" data-preset-id="' + escapeHtml(presetId) + '" data-preset-data="' + escapeHtml(presetData) + '"><input type="checkbox" class="checkbox-input preset-checkbox-input"' + isChecked + '><span class="checkbox-custom"></span></label>';
           var printerBrand = getPrinterBrand(p.compatiblePrinters, p.brand);
           var compatiblePrintersList = formatCompatiblePrinters(p.compatiblePrinters);
@@ -1737,7 +1796,9 @@ function init() {
               });
           }
 
-          withBambuRestartWarning(doDownloadBambuJson);
+          withMissingVariantWarning(bambuJsonLink, function () {
+            withBambuRestartWarning(doDownloadBambuJson);
+          });
           return;
         }
 
@@ -1755,31 +1816,35 @@ function init() {
             return;
           }
 
-          // Fetch the preset JSON to get filament_vendor
-          fetch(url, { mode: 'cors' })
-            .then(function (r) {
-              if (!r.ok) throw new Error('Failed to fetch preset: ' + r.statusText);
-              return r.json();
-            })
-            .then(function (data) {
-              if (!data || !data.compatible_printers) {
-                console.warn('Preset data missing compatible_printers:', data);
-              }
-              var preset = {
-                path: url,
-                filename: filename,
-                material: data.name || material,
-                model: model,
-                slicer: 'BambuStudio',
-                filament_vendor: data.filament_vendor || ['Polymaker'],
-                presetData: data
-              };
-              downloadAsBbsflmt([preset]);
-            })
-            .catch(function (err) {
-              console.error('Error downloading bundle:', err);
-              alert(t('alert.error.preset', { msg: err.message }));
-            });
+          function doDownloadBundle() {
+            // Fetch the preset JSON to get filament_vendor
+            fetch(url, { mode: 'cors' })
+              .then(function (r) {
+                if (!r.ok) throw new Error('Failed to fetch preset: ' + r.statusText);
+                return r.json();
+              })
+              .then(function (data) {
+                if (!data || !data.compatible_printers) {
+                  console.warn('Preset data missing compatible_printers:', data);
+                }
+                var preset = {
+                  path: url,
+                  filename: filename,
+                  material: data.name || material,
+                  model: model,
+                  slicer: 'BambuStudio',
+                  filament_vendor: data.filament_vendor || ['Polymaker'],
+                  presetData: data
+                };
+                downloadAsBbsflmt([preset]);
+              })
+              .catch(function (err) {
+                console.error('Error downloading bundle:', err);
+                alert(t('alert.error.preset', { msg: err.message }));
+              });
+          }
+
+          withMissingVariantWarning(bundleLink, doDownloadBundle);
           return;
         }
       });
@@ -1966,6 +2031,62 @@ function showBambuRestartWarning(onConfirm, onCancel) {
   modal.setAttribute('aria-hidden', 'false');
   modal.classList.add('is-open');
   document.body.style.overflow = 'hidden';
+}
+
+var missingVariantModalState = {
+  onAck: null
+};
+
+function showMissingVariantWarning(items, onAck) {
+  var modal = document.getElementById('missing-variant-modal');
+  if (!modal || !items || !items.length) {
+    if (onAck) onAck();
+    return;
+  }
+
+  var listEl = document.getElementById('missing-variant-list');
+  if (listEl) {
+    var html = '';
+    for (var i = 0; i < items.length; i++) {
+      html += '<li><strong>' + escapeHtml(items[i].material) + ' — ' + escapeHtml(items[i].model) +
+        '</strong>: ' + escapeHtml(items[i].variants.join(', ')) + '</li>';
+    }
+    listEl.innerHTML = html;
+  }
+
+  missingVariantModalState.onAck = onAck;
+  modal.setAttribute('aria-hidden', 'false');
+  modal.classList.add('is-open');
+  document.body.style.overflow = 'hidden';
+}
+
+function initMissingVariantModal() {
+  var modal = document.getElementById('missing-variant-modal');
+  if (!modal) return;
+
+  var closeBtn = document.getElementById('missing-variant-modal-close');
+  var ackBtn = document.getElementById('missing-variant-ack');
+  var overlay = modal.querySelector('.modal-overlay');
+
+  // Acknowledge-only: every dismissal path proceeds with the download.
+  function ack() {
+    modal.setAttribute('aria-hidden', 'true');
+    modal.classList.remove('is-open');
+    document.body.style.overflow = '';
+    var cb = missingVariantModalState.onAck;
+    missingVariantModalState.onAck = null;
+    if (cb) cb();
+  }
+
+  if (closeBtn) closeBtn.addEventListener('click', ack);
+  if (ackBtn) ackBtn.addEventListener('click', ack);
+  if (overlay) overlay.addEventListener('click', ack);
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+      ack();
+    }
+  });
 }
 
 /**
@@ -2243,4 +2364,5 @@ init();
 initModal();
 initDuplicateModal();
 initBambuRestartModal();
+initMissingVariantModal();
 initAccordion();

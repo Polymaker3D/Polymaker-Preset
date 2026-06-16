@@ -104,6 +104,29 @@ function extractCompatiblePrinters(presetData) {
     return printers;
 }
 
+/**
+ * Find extruder/nozzle variants that have no tuned values.
+ * A preset is multi-variant when filament_extruder_variant has length > 1.
+ * The authority field is nozzle_temperature, aligned index-for-index.
+ * Any column equal to the string "nil" means that variant was not authored.
+ * @param {any} presetData
+ * @returns {string[]} names of missing variants (empty when none / not applicable)
+ */
+function extractMissingExtruderVariants(presetData) {
+    if (!presetData) return [];
+    const variants = presetData.filament_extruder_variant;
+    const temps = presetData.nozzle_temperature;
+    if (!Array.isArray(variants) || variants.length <= 1) return [];
+    if (!Array.isArray(temps) || temps.length !== variants.length) return [];
+    const missing = [];
+    for (let i = 0; i < variants.length; i++) {
+        if (String(temps[i]).toLowerCase() === 'nil') {
+            missing.push(variants[i]);
+        }
+    }
+    return missing;
+}
+
 function cmp(a, b) {
   return a < b ? -1 : a > b ? 1 : 0;
 }
@@ -152,11 +175,13 @@ async function main() {
 
     // Read the preset JSON content to extract compatible_printers
     let compatiblePrinters = [];
+    let missingExtruderVariants = [];
     if (extension === '.json') {
       try {
           const fileContent = await fs.readFile(absFile, 'utf8');
           const presetData = JSON.parse(fileContent);
           compatiblePrinters = extractCompatiblePrinters(presetData);
+          missingExtruderVariants = extractMissingExtruderVariants(presetData);
       } catch (e) {
           console.warn(`Failed to parse ${relFromPreset}: ${e.message}`);
       }
@@ -175,7 +200,8 @@ async function main() {
       path: relPath,
       filename,
       updatedAt,
-      compatiblePrinters: compatiblePrinters
+      compatiblePrinters: compatiblePrinters,
+      ...(missingExtruderVariants.length ? { missingExtruderVariants } : {})
     });
   }
 

@@ -2160,3 +2160,15 @@ body.theme-wiki .warning-modal-link a:active {
   gap: 0.75rem;
   padding-top: 0.5rem;
 }
+
+/* Missing extruder-variant warning */
+.missing-variant-list {
+  margin: 12px 0;
+  padding-left: 20px;
+  list-style: disc;
+}
+
+.missing-variant-list li {
+  margin-bottom: 6px;
+  line-height: 1.4;
+}

@@ -8980,6 +8980,17 @@
             </div>
           </div>
         </div>
+        <div class="accordion-item is-collapsed">
+          <button class="accordion-header" type="button" aria-expanded="false">
+            <span class="accordion-title" data-i18n="issues.aux.title">Missing Presets for Some Nozzle / Extruder Options</span>
+            <span class="accordion-icon" aria-hidden="true">▼</span>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-body">
+              <p data-i18n-html="issues.aux.issue"><strong>Issue:</strong> Bambu Lab printers that offer more than one extruder/nozzle option (such as the multi-nozzle X2D and the H2 series) store a separate set of values for each option — <code>Direct Drive Standard</code>, <code>Direct Drive High Flow</code>, <code>Bowden Standard</code>, and <code>Bowden High Flow</code> — inside a single filament preset. For some materials we have only tuned the main option (usually <code>Direct Drive Standard</code>), so the other nozzle options, including the auxiliary (Bowden) nozzle, are left empty and have no tuned values.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -9139,6 +9150,31 @@
           <div class="warning-modal-actions">
             <button type="button" class="btn-secondary" id="bambu-restart-cancel" data-i18n="modal.restart.cancel">Cancel</button>
             <button type="button" class="btn-primary" id="bambu-restart-confirm" data-i18n="modal.restart.confirm">Continue Download</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="missing-variant-modal" class="modal" role="dialog" aria-labelledby="missing-variant-modal-title" aria-hidden="true">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="missing-variant-modal-title" class="modal-title" data-i18n="modal.missingvariant.title">⚠️ Some Nozzle Options Have No Preset</h2>
+        <button class="modal-close" type="button" aria-label="Close modal" id="missing-variant-modal-close">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="warning-modal-body">
+          <p class="warning-modal-text" data-i18n="modal.missingvariant.intro">Some selected presets don't include every nozzle/extruder option for this printer. We didn't make presets for these variants:</p>
+          <ul class="missing-variant-list" id="missing-variant-list"></ul>
+          <p class="warning-modal-text" data-i18n="modal.missingvariant.note">You can still download — those nozzle options just won't have tuned values.</p>
+          <div class="warning-modal-actions">
+            <button type="button" class="btn-primary" id="missing-variant-ack" data-i18n="modal.missingvariant.ack">Continue Download</button>
           </div>
         </div>
       </div>

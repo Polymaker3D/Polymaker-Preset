@@ -73,6 +73,10 @@ var I18N = (function () {
       'modal.restart.link': 'View GitHub Issue #10583 \u2192',
       'modal.restart.cancel': 'Cancel',
       'modal.restart.confirm': 'Continue Download',
+      'modal.missingvariant.title': '⚠️ Some Nozzle Options Have No Preset',
+      'modal.missingvariant.intro': "Some selected presets don't include every nozzle/extruder option for this printer. We didn't make presets for these variants:",
+      'modal.missingvariant.note': "You can still download — those nozzle options just won't have tuned values.",
+      'modal.missingvariant.ack': 'Continue Download',
 
       // Install modal
       'modal.install.title': '\ud83d\udce6 Manual Installation',
@@ -125,6 +129,8 @@ var I18N = (function () {
       'issues.restart.issue': '<strong>Issue:</strong> BambuStudio may not correctly apply newly imported filament presets until the application is restarted. Slicing or printing without restarting may use incorrect temperature, flow rate, or other filament settings.',
       'issues.restart.solution': '<strong>Solution:</strong> Always restart BambuStudio after importing Polymaker presets, before you start slicing or printing. A warning popup will also remind you when downloading BambuStudio presets from this page.',
       'issues.restart.link': 'View BambuStudio Issue #10583 \u2192',
+      'issues.aux.title': 'Missing Presets for Some Nozzle / Extruder Options',
+      'issues.aux.issue': '<strong>Issue:</strong> Bambu Lab printers that offer more than one extruder/nozzle option (such as the multi-nozzle X2D and the H2 series) store a separate set of values for each option \u2014 <code>Direct Drive Standard</code>, <code>Direct Drive High Flow</code>, <code>Bowden Standard</code>, and <code>Bowden High Flow</code> \u2014 inside a single filament preset. For some materials we have only tuned the main option (usually <code>Direct Drive Standard</code>), so the other nozzle options, including the auxiliary (Bowden) nozzle, are left empty and have no tuned values.',
 
       // Footer
       'footer.links': 'Links',
@@ -215,6 +221,10 @@ var I18N = (function () {
       'modal.restart.link': '查看 GitHub Issue #10583 \u2192',
       'modal.restart.cancel': '取消',
       'modal.restart.confirm': '继续下载',
+      'modal.missingvariant.title': '⚠️ 部分喷嘴选项没有预设',
+      'modal.missingvariant.intro': '所选的部分预设并未覆盖该打印机的全部喷嘴/挤出机选项。以下变体我们没有制作预设：',
+      'modal.missingvariant.note': '你仍然可以下载 —— 这些喷嘴选项只是没有调校好的数值。',
+      'modal.missingvariant.ack': '继续下载',
 
       // Install modal
       'modal.install.title': '📦 手动安装',
@@ -266,6 +276,8 @@ var I18N = (function () {
       'issues.restart.title': '导入 BambuStudio 预设后需要重启软件',
       'issues.restart.issue': '<strong>问题：</strong>BambuStudio 在重启前可能无法正确应用新导入的耗材预设。未重启直接切片或打印可能会导致温度、流量或其他耗材设置错误。',
       'issues.restart.solution': '<strong>解决方案：</strong>导入 Polymaker 预设后，在开始切片或打印前请务必重启 BambuStudio。从本页面下载 BambuStudio 预设时，也会弹出警告提醒您。',
+      'issues.aux.title': '部分喷嘴 / 挤出机选项缺少预设',
+      'issues.aux.issue': '<strong>问题：</strong>提供多个挤出机/喷嘴选项的 Bambu Lab 打印机（例如多喷嘴的 X2D 和 H2 系列）会在同一个耗材预设中为每个选项分别存储一组数值——<code>Direct Drive Standard</code>、<code>Direct Drive High Flow</code>、<code>Bowden Standard</code> 和 <code>Bowden High Flow</code>。对于部分材料，我们只调校了主选项（通常是 <code>Direct Drive Standard</code>），因此其他喷嘴选项（包括辅助的 Bowden 喷嘴）为空，没有调校好的数值。',
       'issues.restart.link': '查看 BambuStudio Issue #10583 \u2192',
 
       // Footer
