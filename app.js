@@ -17,6 +17,22 @@ function escapeHtml(s) {
     .replace(/'/g, '&#39;');
 }
 
+function getGaValue(value) {
+  if (value === null || value === undefined) return 'unknown';
+  if (typeof value === 'string' && value.trim() === '') return 'unknown';
+  return value;
+}
+
+function trackGaEvent(eventName, params) {
+  if (typeof window === 'undefined') return;
+  if (typeof window.gtag !== 'function') return;
+  try {
+    window.gtag('event', eventName, params || {});
+  } catch (e) {
+    console.warn('GA event failed:', eventName, e);
+  }
+}
+
 function applyTheme(theme) {
   var body = document.body;
   if (theme === 'wiki') {
@@ -134,6 +150,17 @@ function init() {
       }
     }
     return { effectiveSlicer: effectiveSlicer, effectiveBrand: effectiveBrand };
+  }
+
+  function getRowGaContext(row, fallbackSlicer) {
+    var cells = row ? row.querySelectorAll('td') : [];
+    var filters = getEffectiveFilters();
+    return {
+      slicer: getGaValue(fallbackSlicer || filters.effectiveSlicer || filterState.slicer),
+      material: getGaValue(cells[1] ? cells[1].textContent.trim() : ''),
+      brand: getGaValue(cells[2] ? cells[2].textContent.trim() : ''),
+      model: getGaValue(cells[3] ? cells[3].textContent.trim() : '')
+    };
   }
 
   function isBambuStudioSlicerSelected() {
@@ -508,6 +535,16 @@ function init() {
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
+      if (originalPresets && originalPresets.length) {
+        var firstPreset = originalPresets[0];
+        trackGaEvent('download_bundle', {
+          file_type: 'bbsflmt',
+          slicer: getGaValue(firstPreset.slicer || 'BambuStudio'),
+          material: getGaValue(firstPreset.material),
+          brand: getGaValue(firstPreset.brand),
+          model: getGaValue(firstPreset.model)
+        });
+      }
       setTimeout(function() {
         URL.revokeObjectURL(objectUrl);
       }, 1000);
@@ -1008,6 +1045,15 @@ function init() {
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
+            var filters = getEffectiveFilters();
+            trackGaEvent('download_selected', {
+              file_type: 'zip',
+              selected_count: presetIds.length,
+              slicer: getGaValue(filters.effectiveSlicer || filterState.slicer),
+              series: getGaValue(filterState.series),
+              brand: getGaValue(filters.effectiveBrand || filterState.brand),
+              model: getGaValue(filterState.model)
+            });
             // Delay revoking object URL to ensure download starts
             setTimeout(function () {
               URL.revokeObjectURL(objectUrl);
@@ -1223,6 +1269,11 @@ function init() {
           document.body.appendChild(a);
           a.click();
           document.body.removeChild(a);
+          trackGaEvent('download_bundle_batch', {
+            file_type: 'zip',
+            material_count: materials.length,
+            slicer: 'BambuStudio'
+          });
           setTimeout(function() { URL.revokeObjectURL(objectUrl); }, 1000);
 
           if (downloadBundleBtn) {
@@ -1748,6 +1799,46 @@ function init() {
       }
 
       tbody.addEventListener('click', function (e) {
+        // Handle non-Bambu direct JSON download with post-download tracking.
+        var directJsonLink = e.target.closest('a[data-download-url]');
+        if (directJsonLink) {
+          e.preventDefault();
+          var djUrl = directJsonLink.getAttribute('data-download-url');
+          var djFilename = directJsonLink.getAttribute('data-download-filename') || 'preset.json';
+          if (!djUrl || djUrl === '#') {
+            alert(t('alert.invalid.url'));
+            return;
+          }
+          fetch(djUrl, { mode: 'cors' })
+            .then(function (r) {
+              if (!r.ok) throw new Error('Failed to fetch preset: ' + r.statusText);
+              return r.blob();
+            })
+            .then(function (blob) {
+              var objectUrl = URL.createObjectURL(blob);
+              var a = document.createElement('a');
+              a.href = objectUrl;
+              a.download = djFilename;
+              document.body.appendChild(a);
+              a.click();
+              document.body.removeChild(a);
+              var rowContext = getRowGaContext(directJsonLink.closest('tr'));
+              trackGaEvent('download_single', {
+                file_type: 'json',
+                slicer: rowContext.slicer,
+                material: rowContext.material,
+                brand: rowContext.brand,
+                model: rowContext.model
+              });
+              setTimeout(function () { URL.revokeObjectURL(objectUrl); }, 1000);
+            })
+            .catch(function (err) {
+              console.error('Error downloading JSON:', err);
+              alert(t('alert.error.preset', { msg: err.message }));
+            });
+          return;
+        }
+
         // Handle BambuStudio JSON button click — fetch, expand per-printer,
         // zip, and download (issue #14).
         var bambuJsonLink = e.target.closest('a[data-bambu-json="1"]');
@@ -1787,6 +1878,14 @@ function init() {
                   document.body.appendChild(a);
                   a.click();
                   document.body.removeChild(a);
+                  var rowContext = getRowGaContext(bambuJsonLink.closest('tr'), 'BambuStudio');
+                  trackGaEvent('download_single', {
+                    file_type: 'json',
+                    slicer: rowContext.slicer,
+                    material: getGaValue(bjMaterial || rowContext.material),
+                    brand: rowContext.brand,
+                    model: rowContext.model
+                  });
                   setTimeout(function () { URL.revokeObjectURL(objectUrl); }, 1000);
                 });
               })
