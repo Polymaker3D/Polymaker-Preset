@@ -281,5 +281,7 @@
     ],
     "is_custom_defined": "0",
     "version": "2.2.44.2",
-    "idle_temperature": 0
+    "idle_temperature": [
+        "0"
+    ]
 }

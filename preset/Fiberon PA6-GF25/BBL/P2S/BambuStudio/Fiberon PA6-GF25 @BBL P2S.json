@@ -144,6 +144,9 @@
     "filament_flush_temp": [
         "0"
     ],
+    "filament_flush_temp_fast": [
+        "0"
+    ],
     "filament_flush_volumetric_speed": [
         "0"
     ],
@@ -257,6 +260,9 @@
     "hot_plate_temp_initial_layer": [
         "50"
     ],
+    "filament_ingredients_safe": "1",
+    "filament_emission_safe": "1",
+    "filament_contact_safe": "1",
     "hole_coef_1": [
         "0"
     ],
@@ -368,5 +374,7 @@
         "fdm_filament_template_direct_dual"
     ],
     "version": "2.6.0.1",
-    "idle_temperature": 0
+    "idle_temperature": [
+        "0"
+    ]
 }

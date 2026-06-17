@@ -129,5 +129,7 @@
         "Direct Drive Standard"
     ],
     "version": "2.3.2.60",
-    "idle_temperature": 0
+    "idle_temperature": [
+        "0"
+    ]
 }

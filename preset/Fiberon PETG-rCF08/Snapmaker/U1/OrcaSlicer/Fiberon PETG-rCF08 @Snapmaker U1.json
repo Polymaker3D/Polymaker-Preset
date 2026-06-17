@@ -295,5 +295,7 @@
         "0.046"
     ],
     "version": "2.2.46.2",
-    "idle_temperature": 0
+    "idle_temperature": [
+        "0"
+    ]
 }

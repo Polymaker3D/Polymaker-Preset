@@ -134,5 +134,7 @@
         "0.08"
     ],
     "version": "1.5.0.7",
-    "idle_temperature": 0
+    "idle_temperature": [
+        "0"
+    ]
 }
