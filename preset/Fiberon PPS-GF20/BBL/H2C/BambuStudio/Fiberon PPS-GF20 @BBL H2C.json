@@ -145,6 +145,9 @@
     "filament_flush_temp": [
         "0"
     ],
+    "filament_flush_temp_fast": [
+        "0"
+    ],
     "filament_flush_volumetric_speed": [
         "0"
     ],
@@ -260,6 +263,9 @@
     "hot_plate_temp_initial_layer": [
         "110"
     ],
+    "filament_ingredients_safe": "1",
+    "filament_emission_safe": "1",
+    "filament_contact_safe": "1",
     "hole_coef_1": [
         "0"
     ],

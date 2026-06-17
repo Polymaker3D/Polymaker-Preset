@@ -98,7 +98,7 @@
         "84.99"
     ],
     "filament_density": [
-        "1.43"
+        "1.03"
     ],
     "filament_dev_ams_drying_ams_limitations": [
         "1"
@@ -142,6 +142,9 @@
         "nil"
     ],
     "filament_flush_temp": [
+        "0"
+    ],
+    "filament_flush_temp_fast": [
         "0"
     ],
     "filament_flush_volumetric_speed": [
@@ -257,6 +260,9 @@
     "hot_plate_temp_initial_layer": [
         "70"
     ],
+    "filament_ingredients_safe": "1",
+    "filament_emission_safe": "1",
+    "filament_contact_safe": "1",
     "hole_coef_1": [
         "0"
     ],
@@ -291,10 +297,10 @@
         "nil"
     ],
     "nozzle_temperature_range_high": [
-        "310"
+        "300"
     ],
     "nozzle_temperature_range_low": [
-        "280"
+        "250"
     ],
     "overhang_fan_speed": [
         "40"
@@ -338,7 +344,7 @@
         "80"
     ],
     "temperature_vitrification": [
-        "232.6"
+        "206"
     ],
     "textured_plate_temp": [
         "70"
@@ -368,5 +374,7 @@
         "fdm_filament_template_direct_dual"
     ],
     "version": "2.6.0.2",
-    "idle_temperature": 0
+    "idle_temperature": [
+        "0"
+    ]
 }

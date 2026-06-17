@@ -67,6 +67,9 @@
         "20"
     ],
     "filament_density": [
+        "1.22",
+        "1.22",
+        "1.22",
         "1.22"
     ],
     "filament_diameter": [
@@ -184,6 +187,9 @@
         "190"
     ],
     "nozzle_temperature_range_high": [
+        "230",
+        "230",
+        "230",
         "230"
     ],
     "nozzle_temperature": [
@@ -235,6 +241,9 @@
         "20"
     ],
     "temperature_vitrification": [
+        "62",
+        "62",
+        "62",
         "62"
     ],
     "textured_plate_temp": [
@@ -281,5 +290,7 @@
     ],
     "is_custom_defined": "0",
     "version": "2.2.44.2",
-    "idle_temperature": 0
+    "idle_temperature": [
+        "0"
+    ]
 }

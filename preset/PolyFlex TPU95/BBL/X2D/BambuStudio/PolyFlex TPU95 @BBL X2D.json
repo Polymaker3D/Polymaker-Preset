@@ -100,7 +100,7 @@
         "20"
     ],
     "filament_density": [
-        "1.16"
+        "1.17"
     ],
     "filament_dev_ams_drying_ams_limitations": [
         "1"
@@ -148,6 +148,9 @@
         "nil"
     ],
     "filament_flush_temp": [
+        "0"
+    ],
+    "filament_flush_temp_fast": [
         "0"
     ],
     "filament_flush_volumetric_speed": [
@@ -273,6 +276,9 @@
     "hot_plate_temp_initial_layer": [
         "35"
     ],
+    "filament_ingredients_safe": "1",
+    "filament_emission_safe": "1",
+    "filament_contact_safe": "1",
     "hole_coef_1": [
         "0"
     ],
@@ -310,7 +316,7 @@
         "nil"
     ],
     "nozzle_temperature_range_high": [
-        "240"
+        "230"
     ],
     "nozzle_temperature_range_low": [
         "210"
@@ -391,5 +397,7 @@
         "fdm_filament_template_direct_bowden"
     ],
     "version": "2.6.0.3",
-    "idle_temperature": 0
+    "idle_temperature": [
+        "0"
+    ]
 }

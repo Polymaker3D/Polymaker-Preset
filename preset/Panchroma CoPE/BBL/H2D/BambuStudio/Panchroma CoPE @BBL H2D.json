@@ -93,7 +93,7 @@
         "0"
     ],
     "filament_density": [
-        "1.29"
+        "1.26"
     ],
     "filament_diameter": [
         "1.75"
@@ -243,7 +243,7 @@
         "230"
     ],
     "nozzle_temperature_range_low": [
-        "200"
+        "190"
     ],
     "overhang_fan_speed": [
         "100"
@@ -285,7 +285,7 @@
         "45"
     ],
     "temperature_vitrification": [
-        "58.2"
+        "45"
     ],
     "textured_plate_temp": [
         "55"
@@ -297,6 +297,8 @@
     "volumetric_speed_coefficients": [
         ""
     ],
-    "idle_temperature": 0,
+    "idle_temperature": [
+        "0"
+    ],
     "filament_id": "PMCO01"
 }

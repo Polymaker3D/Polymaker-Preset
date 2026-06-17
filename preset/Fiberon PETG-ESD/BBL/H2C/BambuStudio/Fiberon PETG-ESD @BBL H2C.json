@@ -146,6 +146,9 @@
     "filament_flush_temp": [
         "0"
     ],
+    "filament_flush_temp_fast": [
+        "0"
+    ],
     "filament_flush_volumetric_speed": [
         "0"
     ],
@@ -278,6 +281,9 @@
     "hot_plate_temp_initial_layer": [
         "70"
     ],
+    "filament_ingredients_safe": "1",
+    "filament_emission_safe": "1",
+    "filament_contact_safe": "1",
     "hole_coef_1": [
         "0"
     ],
@@ -357,7 +363,7 @@
         "70"
     ],
     "temperature_vitrification": [
-        "77"
+        "86"
     ],
     "textured_plate_temp": [
         "70"
@@ -395,5 +401,7 @@
         "2"
     ],
     "version": "2.6.0.4",
-    "idle_temperature": 0
+    "idle_temperature": [
+        "0"
+    ]
 }

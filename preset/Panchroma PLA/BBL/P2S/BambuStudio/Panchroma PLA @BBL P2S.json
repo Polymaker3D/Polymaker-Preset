@@ -240,7 +240,7 @@
         "230"
     ],
     "nozzle_temperature_range_low": [
-        "190"
+        "210"
     ],
     "overhang_fan_speed": [
         "100"
@@ -282,7 +282,7 @@
         "45"
     ],
     "temperature_vitrification": [
-        "62.5"
+        "62"
     ],
     "textured_plate_temp": [
         "55"
@@ -294,6 +294,8 @@
     "volumetric_speed_coefficients": [
         ""
     ],
-    "idle_temperature": 0,
+    "idle_temperature": [
+        "0"
+    ],
     "filament_id": "PMPL01"
 }

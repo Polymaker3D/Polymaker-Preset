@@ -106,7 +106,7 @@
         "300"
     ],
     "temperature_vitrification": [
-        "79.3"
+        "238"
     ],
     "filament_id": "PMPE01",
     "nozzle_temperature_range_high": [
@@ -133,5 +133,7 @@
     ],
     "is_custom_defined": "0",
     "version": "2.3.1.10",
-    "idle_temperature": 0
+    "idle_temperature": [
+        "0"
+    ]
 }

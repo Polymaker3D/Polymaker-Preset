@@ -354,7 +354,7 @@
         "45"
     ],
     "temperature_vitrification": [
-        "55"
+        "61"
     ],
     "textured_plate_temp": [
         "55"
@@ -366,6 +366,8 @@
     "volumetric_speed_coefficients": [
         ""
     ],
-    "idle_temperature": 0,
+    "idle_temperature": [
+        "0"
+    ],
     "filament_id": "PMPL25"
 }

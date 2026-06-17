@@ -112,7 +112,7 @@
         "260"
     ],
     "nozzle_temperature_range_high": [
-        "280"
+        "300"
     ],
     "additional_cooling_fan_speed": [
         "0"
@@ -131,5 +131,7 @@
         "0.025"
     ],
     "version": "1.5.0.7",
-    "idle_temperature": 0
+    "idle_temperature": [
+        "0"
+    ]
 }

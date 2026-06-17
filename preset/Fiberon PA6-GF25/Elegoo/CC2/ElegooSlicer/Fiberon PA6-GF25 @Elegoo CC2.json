@@ -55,7 +55,7 @@
         "20"
     ],
     "filament_density": [
-        "1.2"
+        "1.17"
     ],
     "filament_diameter": [
         "1.75"
@@ -73,7 +73,7 @@
         "0"
     ],
     "filament_type": [
-        "PA-GF"
+        "PA"
     ],
     "filament_vendor": [
         "Polymaker"
@@ -106,7 +106,7 @@
         "290"
     ],
     "temperature_vitrification": [
-        "70.4"
+        "219"
     ],
     "nozzle_temperature_range_low": [
         "280"
@@ -124,5 +124,7 @@
         "0.1"
     ],
     "version": "1.3.2.9",
-    "idle_temperature": 0
+    "idle_temperature": [
+        "0"
+    ]
 }

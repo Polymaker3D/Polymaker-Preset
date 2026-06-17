@@ -93,7 +93,7 @@
         "0"
     ],
     "filament_density": [
-        "1.23"
+        "1.32"
     ],
     "filament_diameter": [
         "1.75"
@@ -285,7 +285,7 @@
         "45"
     ],
     "temperature_vitrification": [
-        "59"
+        "62"
     ],
     "textured_plate_temp": [
         "55"
@@ -297,6 +297,8 @@
     "volumetric_speed_coefficients": [
         ""
     ],
-    "idle_temperature": 0,
+    "idle_temperature": [
+        "0"
+    ],
     "filament_id": "PMPL24"
 }

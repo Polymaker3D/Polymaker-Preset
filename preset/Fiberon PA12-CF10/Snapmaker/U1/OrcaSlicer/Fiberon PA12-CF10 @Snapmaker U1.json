@@ -112,7 +112,7 @@
         "270"
     ],
     "temperature_vitrification": [
-        "55"
+        "170"
     ],
     "nozzle_temperature_range_low": [
         "280"
@@ -136,5 +136,7 @@
         "0.05"
     ],
     "version": "2.3.2.60",
-    "idle_temperature": 0
+    "idle_temperature": [
+        "0"
+    ]
 }

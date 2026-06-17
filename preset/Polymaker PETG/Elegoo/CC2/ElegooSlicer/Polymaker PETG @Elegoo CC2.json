@@ -110,7 +110,7 @@
     ],
     "filament_id": "PMPE06",
     "nozzle_temperature_range_high": [
-        "260"
+        "270"
     ],
     "nozzle_temperature_range_low": [
         "240"
@@ -134,5 +134,7 @@
         "0.05"
     ],
     "version": "1.3.0.11",
-    "idle_temperature": 0
+    "idle_temperature": [
+        "0"
+    ]
 }

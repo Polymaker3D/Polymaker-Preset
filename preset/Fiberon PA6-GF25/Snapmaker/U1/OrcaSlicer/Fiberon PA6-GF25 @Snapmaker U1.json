@@ -106,6 +106,9 @@
         "20"
     ],
     "filament_density": [
+        "1.2",
+        "1.2",
+        "1.2",
         "1.2"
     ],
     "filament_diameter": [
@@ -184,10 +187,16 @@
         "Fiberon PA6-GF25 @Snapmaker U1"
     ],
     "filament_soluble": [
+        "0",
+        "0",
+        "0",
         "0"
     ],
     "filament_type": [
-        "PA-GF"
+        "PA-CF",
+        "PA-CF",
+        "PA-CF",
+        "PA-CF"
     ],
     "filament_vendor": [
         "Polymaker"
@@ -262,9 +271,15 @@
         "0"
     ],
     "nozzle_temperature_range_low": [
+        "280",
+        "280",
+        "280",
         "280"
     ],
     "nozzle_temperature_range_high": [
+        "300",
+        "300",
+        "300",
         "300"
     ],
     "nozzle_temperature": [
@@ -337,7 +352,10 @@
         "10"
     ],
     "temperature_vitrification": [
-        "70.4"
+        "211",
+        "211",
+        "211",
+        "211"
     ],
     "textured_plate_temp": [
         "100",
@@ -550,6 +568,9 @@
         "100"
     ],
     "idle_temperature": [
+        "0",
+        "0",
+        "0",
         "0"
     ],
     "internal_bridge_fan_speed": [

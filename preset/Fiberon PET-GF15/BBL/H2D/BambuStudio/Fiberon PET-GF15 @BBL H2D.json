@@ -123,7 +123,7 @@
         "nil"
     ],
     "temperature_vitrification": [
-        "232.6"
+        "232"
     ],
     "nozzle_temperature_range_low": [
         "280"
@@ -194,5 +194,7 @@
         "Direct Drive High Flow"
     ],
     "version": "2.6.0.5",
-    "idle_temperature": 0
+    "idle_temperature": [
+        "0"
+    ]
 }

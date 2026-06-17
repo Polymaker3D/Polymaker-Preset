@@ -110,7 +110,7 @@
         "190"
     ],
     "nozzle_temperature_range_high": [
-        "230"
+        "240"
     ],
     "additional_cooling_fan_speed": [
         "70"
@@ -126,6 +126,8 @@
     ],
     "version": "2.0.0.54",
     "is_custom_defined": "0",
-    "idle_temperature": 0,
+    "idle_temperature": [
+        "0"
+    ],
     "filament_id": "PMPL12"
 }
