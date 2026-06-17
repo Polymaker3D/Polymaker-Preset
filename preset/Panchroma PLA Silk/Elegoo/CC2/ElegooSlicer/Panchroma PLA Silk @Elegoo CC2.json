@@ -55,7 +55,7 @@
         "0"
     ],
     "filament_density": [
-        "1.24"
+        "1.34"
     ],
     "filament_diameter": [
         "1.75"
@@ -106,7 +106,7 @@
         "230"
     ],
     "temperature_vitrification": [
-        "53"
+        "58.2"
     ],
     "nozzle_temperature_range_low": [
         "190"

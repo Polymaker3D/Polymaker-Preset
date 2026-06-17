@@ -299,7 +299,7 @@
         "nil"
     ],
     "nozzle_temperature_range_high": [
-        "330"
+        "310"
     ],
     "nozzle_temperature_range_low": [
         "280"
@@ -344,7 +344,7 @@
         "70"
     ],
     "temperature_vitrification": [
-        "232"
+        "232.6"
     ],
     "textured_plate_temp": [
         "70"

@@ -93,7 +93,7 @@
         "0"
     ],
     "filament_density": [
-        "1.26"
+        "1.29"
     ],
     "filament_diameter": [
         "1.75"
@@ -243,7 +243,7 @@
         "230"
     ],
     "nozzle_temperature_range_low": [
-        "190"
+        "200"
     ],
     "overhang_fan_speed": [
         "100"
@@ -285,7 +285,7 @@
         "45"
     ],
     "temperature_vitrification": [
-        "45"
+        "58.2"
     ],
     "textured_plate_temp": [
         "55"

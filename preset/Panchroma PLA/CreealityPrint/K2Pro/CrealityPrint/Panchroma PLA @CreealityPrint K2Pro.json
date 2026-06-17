@@ -72,7 +72,7 @@
         "190"
     ],
     "nozzle_temperature_range_high": [
-        "250"
+        "230"
     ],
     "additional_cooling_fan_speed": "80",
     "filament_id": "PMPL01",

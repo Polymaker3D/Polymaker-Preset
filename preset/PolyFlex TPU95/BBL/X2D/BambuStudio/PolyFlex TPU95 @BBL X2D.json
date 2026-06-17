@@ -100,7 +100,7 @@
         "20"
     ],
     "filament_density": [
-        "1.17"
+        "1.16"
     ],
     "filament_dev_ams_drying_ams_limitations": [
         "1"
@@ -316,7 +316,7 @@
         "nil"
     ],
     "nozzle_temperature_range_high": [
-        "230"
+        "240"
     ],
     "nozzle_temperature_range_low": [
         "210"

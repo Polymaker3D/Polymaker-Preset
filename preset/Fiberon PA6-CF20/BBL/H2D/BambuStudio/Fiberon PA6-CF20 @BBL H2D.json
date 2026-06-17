@@ -99,7 +99,7 @@
         "20"
     ],
     "filament_density": [
-        "1.2"
+        "1.17"
     ],
     "filament_dev_ams_drying_ams_limitations": [
         "1"
@@ -345,7 +345,7 @@
         "0"
     ],
     "temperature_vitrification": [
-        "211"
+        "74.2"
     ],
     "textured_plate_temp": [
         "50"

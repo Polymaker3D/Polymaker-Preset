@@ -93,7 +93,7 @@
         "24.99"
     ],
     "filament_density": [
-        "1.29"
+        "1.28"
     ],
     "filament_diameter": [
         "1.75"
@@ -282,7 +282,7 @@
         "45"
     ],
     "temperature_vitrification": [
-        "59"
+        "59.8"
     ],
     "textured_plate_temp": [
         "55"

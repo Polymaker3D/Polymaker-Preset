@@ -318,7 +318,7 @@
         "300"
     ],
     "nozzle_temperature_range_low": [
-        "260"
+        "270"
     ],
     "overhang_fan_speed": [
         "80"
@@ -361,7 +361,7 @@
         "0"
     ],
     "temperature_vitrification": [
-        "127"
+        "127.4"
     ],
     "textured_plate_temp": [
         "110"

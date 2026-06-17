@@ -53,7 +53,7 @@
         "21.99"
     ],
     "filament_density": [
-        "1.31"
+        "1.37"
     ],
     "filament_diameter": [
         "1.75"
@@ -110,7 +110,7 @@
         "190"
     ],
     "nozzle_temperature_range_high": [
-        "240"
+        "230"
     ],
     "additional_cooling_fan_speed": [
         "70"

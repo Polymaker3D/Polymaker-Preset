@@ -73,7 +73,7 @@
         "0"
     ],
     "filament_type": [
-        "PETG"
+        "PET-CF"
     ],
     "filament_vendor": [
         "Polymaker"
@@ -106,7 +106,7 @@
         "270"
     ],
     "temperature_vitrification": [
-        "238"
+        "79.3"
     ],
     "filament_id": "PMPE01",
     "nozzle_temperature_range_high": [

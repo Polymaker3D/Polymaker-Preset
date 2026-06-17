@@ -104,13 +104,13 @@
         "230"
     ],
     "temperature_vitrification": [
-        "58"
+        "58.2"
     ],
     "nozzle_temperature_range_low": [
-        "190"
+        "200"
     ],
     "nozzle_temperature_range_high": [
-        "240"
+        "230"
     ],
     "additional_cooling_fan_speed": [
         "70"
