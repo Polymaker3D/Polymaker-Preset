@@ -1,10 +1,10 @@
 {
     "type": "filament",
-    "name": "Polymaker ABS Pro @BBL P1S",
+    "name": "PolyLite PETG Translucent @BBL P2S",
     "from": "User",
     "instantiation": "true",
     "activate_air_filtration": [
-        "1"
+        "0"
     ],
     "additional_cooling_fan_speed": [
         "0"
@@ -52,16 +52,16 @@
         "70"
     ],
     "eng_plate_temp": [
-        "100"
+        "70"
     ],
     "eng_plate_temp_initial_layer": [
-        "100"
+        "70"
     ],
     "fan_cooling_layer_time": [
-        "20"
+        "25"
     ],
     "fan_max_speed": [
-        "60"
+        "30"
     ],
     "fan_min_speed": [
         "10"
@@ -73,7 +73,8 @@
         "0"
     ],
     "filament_cooling_before_tower": [
-        "0"
+        "10",
+        "10"
     ],
     "filament_preheat_temperature_delta": [
         "0"
@@ -94,49 +95,52 @@
         "-1"
     ],
     "filament_cost": [
-        "20"
+        "30"
     ],
     "filament_density": [
-        "1.04"
+        "1.25"
     ],
     "filament_dev_ams_drying_ams_limitations": [
-        "1"
+        "1",
+        "0"
     ],
     "filament_dev_ams_drying_heat_distortion_temperature": [
-        "90"
+        "75"
     ],
     "filament_dev_ams_drying_temperature": [
         "65",
-        "80",
         "65",
-        "75"
+        "55",
+        "55"
     ],
     "filament_dev_ams_drying_time": [
         "12",
-        "8.0",
         "12",
-        "8.0"
+        "12",
+        "12"
     ],
     "filament_dev_chamber_drying_bed_temperature": [
-        "90.0"
+        "80"
     ],
     "filament_dev_chamber_drying_time": [
         "12.0"
     ],
     "filament_dev_drying_cooling_temperature": [
-        "75"
+        "55"
     ],
     "filament_dev_drying_softening_temperature": [
-        "80"
+        "60"
     ],
     "filament_diameter": [
         "1.75"
     ],
     "filament_extruder_variant": [
-        "Direct Drive Standard"
+        "Direct Drive Standard",
+        "Direct Drive High Flow"
     ],
     "filament_flow_ratio": [
-        "0.96"
+        "0.96",
+        "nil"
     ],
     "filament_flush_temp": [
         "0"
@@ -151,10 +155,11 @@
         "0"
     ],
     "filament_max_volumetric_speed": [
-        "16"
+        "8",
+        "nil"
     ],
     "filament_metal_stickiness": [
-        "None"
+        "High"
     ],
     "filament_minimal_purge_on_wipe_tower": [
         "15"
@@ -183,14 +188,11 @@
     "filament_ramming_volumetric_speed_nc": [
         "-1"
     ],
-    "filament_retraction_length": [
-        "0.4"
-    ],
     "filament_scarf_seam_type": [
         "none"
     ],
     "filament_settings_id": [
-        "Polymaker ABS Pro @BBL P1S"
+        "PolyLite PETG Translucent @BBL P2S"
     ],
     "filament_shrink": [
         "100%"
@@ -199,7 +201,7 @@
         "0"
     ],
     "filament_type": [
-        "ABS"
+        "PETG"
     ],
     "filament_vendor": [
         "Polymaker"
@@ -220,6 +222,7 @@
         "10"
     ],
     "filament_ramming_travel_time": [
+        "0",
         "0"
     ],
     "filament_retract_length_nc": [
@@ -253,10 +256,10 @@
         "1"
     ],
     "hot_plate_temp": [
-        "100"
+        "70"
     ],
     "hot_plate_temp_initial_layer": [
-        "100"
+        "70"
     ],
     "filament_ingredients_safe": "1",
     "filament_emission_safe": "1",
@@ -280,28 +283,31 @@
         "10"
     ],
     "long_retractions_when_ec": [
+        "0",
         "0"
     ],
     "no_slow_down_for_cooling_on_outwalls": [
         "0"
     ],
     "nozzle_temperature": [
-        "280"
+        "250",
+        "nil"
     ],
     "nozzle_temperature_initial_layer": [
-        "280"
+        "250",
+        "nil"
     ],
     "nozzle_temperature_range_high": [
-        "290"
+        "260"
     ],
     "nozzle_temperature_range_low": [
-        "270"
+        "230"
     ],
     "overhang_fan_speed": [
-        "80"
+        "100"
     ],
     "overhang_fan_threshold": [
-        "25%"
+        "95%"
     ],
     "override_process_overhang_speed": [
         "0"
@@ -313,6 +319,7 @@
         "3"
     ],
     "retraction_distances_when_ec": [
+        "0",
         "0"
     ],
     "slow_down_for_layer_cooling": [
@@ -325,48 +332,51 @@
         "10"
     ],
     "slow_down_layer_time": [
-        "6"
+        "8"
     ],
     "slow_down_min_speed": [
+        "20",
         "20"
     ],
     "supertack_plate_temp": [
-        "0"
+        "70"
     ],
     "supertack_plate_temp_initial_layer": [
-        "0"
+        "70"
     ],
     "temperature_vitrification": [
-        "112"
+        "81"
     ],
     "textured_plate_temp": [
-        "100"
+        "70"
     ],
     "textured_plate_temp_initial_layer": [
-        "100"
+        "70"
     ],
     "volumetric_speed_coefficients": [
         "0 0 0 0 0 0"
     ],
     "compatible_printers": [
-        "Bambu Lab P1S 0.4 nozzle",
-        "Bambu Lab X1C 0.4 nozzle",
-        "Bambu Lab X1 0.4 nozzle",
-        "Bambu Lab X1E 0.4 nozzle"
+        "Bambu Lab P2S 0.4 nozzle"
     ],
     "filament_start_gcode": [
-        "; Filament gcode\n{if activate_air_filtration[current_extruder] && support_air_filtration}\nM106 P3 S{during_print_exhaust_fan_speed_num[current_extruder]} \n{endif}"
+        "; Filament gcode\nM145 P0 ; set airduct mode to cooling mode for cooling\nM106 P2 S255 ; turn on auxiliary fan for cooling\nM106 P3 S127 ; turn on chamber fan for cooling\nM1002 gcode_claim_action : 29\nM191 S0 ; wait for chamber temp\nM106 P2 S102 ; turn on chamber cooling fan\nM106 P10 S0 ; turn off left aux fan\nM142 P6 R30 S40 U0.3 V0.8 ; set PETG exhaust chamber autocooling\n"
     ],
     "filament_end_gcode": [
         "; filament end gcode \n\n"
     ],
     "filament_adhesiveness_category": [
-        "200"
+        "300"
     ],
-    "filament_id": "PMAB04",
-    "description": " ",
-    "setting_id": "GFSB99",
-    "version": "2.6.0.5",
+    "filament_id": "PMPE05",
+    "setting_id": "GFSG99_09",
+    "first_x_layer_fan_speed": [
+        "0"
+    ],
+    "include": [
+        "fdm_filament_template_direct_dual"
+    ],
+    "version": "2.5.0.14",
     "idle_temperature": [
         "0"
     ]
