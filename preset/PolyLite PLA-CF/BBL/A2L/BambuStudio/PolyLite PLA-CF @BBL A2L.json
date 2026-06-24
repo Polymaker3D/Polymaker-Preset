@@ -1,13 +1,13 @@
 {
     "type": "filament",
-    "name": "Polymaker ABS Pro @BBL P1S",
+    "name": "PolyLite PLA-CF @BBL A2L",
     "from": "User",
     "instantiation": "true",
     "activate_air_filtration": [
-        "1"
+        "0"
     ],
     "additional_cooling_fan_speed": [
-        "0"
+        "70"
     ],
     "chamber_temperatures": [
         "0"
@@ -16,19 +16,19 @@
         "200"
     ],
     "close_fan_the_first_x_layers": [
-        "3"
+        "1"
     ],
     "close_additional_fan_first_x_layers": [
-        "3"
+        "1"
     ],
     "complete_print_exhaust_fan_speed": [
         "70"
     ],
     "cool_plate_temp": [
-        "0"
+        "35"
     ],
     "cool_plate_temp_initial_layer": [
-        "0"
+        "35"
     ],
     "counter_coef_1": [
         "0"
@@ -52,19 +52,19 @@
         "70"
     ],
     "eng_plate_temp": [
-        "100"
+        "55"
     ],
     "eng_plate_temp_initial_layer": [
-        "100"
+        "55"
     ],
     "fan_cooling_layer_time": [
-        "20"
+        "100"
     ],
     "fan_max_speed": [
-        "60"
+        "100"
     ],
     "fan_min_speed": [
-        "10"
+        "100"
     ],
     "filament_adaptive_volumetric_speed": [
         "0"
@@ -97,37 +97,38 @@
         "20"
     ],
     "filament_density": [
-        "1.04"
+        "1.29"
     ],
     "filament_dev_ams_drying_ams_limitations": [
-        "1"
+        "1",
+        "0"
     ],
     "filament_dev_ams_drying_heat_distortion_temperature": [
-        "90"
+        "45"
     ],
     "filament_dev_ams_drying_temperature": [
-        "65",
-        "80",
-        "65",
-        "75"
+        "45",
+        "45",
+        "45",
+        "45"
     ],
     "filament_dev_ams_drying_time": [
         "12",
-        "8.0",
         "12",
-        "8.0"
+        "12",
+        "12"
     ],
     "filament_dev_chamber_drying_bed_temperature": [
-        "90.0"
+        "70"
     ],
     "filament_dev_chamber_drying_time": [
         "12.0"
     ],
     "filament_dev_drying_cooling_temperature": [
-        "75"
+        "45"
     ],
     "filament_dev_drying_softening_temperature": [
-        "80"
+        "50"
     ],
     "filament_diameter": [
         "1.75"
@@ -136,10 +137,10 @@
         "Direct Drive Standard"
     ],
     "filament_flow_ratio": [
-        "0.96"
+        "1.07"
     ],
     "filament_flush_temp": [
-        "0"
+        "220"
     ],
     "filament_flush_temp_fast": [
         "0"
@@ -151,7 +152,7 @@
         "0"
     ],
     "filament_max_volumetric_speed": [
-        "16"
+        "12"
     ],
     "filament_metal_stickiness": [
         "None"
@@ -183,14 +184,11 @@
     "filament_ramming_volumetric_speed_nc": [
         "-1"
     ],
-    "filament_retraction_length": [
-        "0.4"
-    ],
     "filament_scarf_seam_type": [
         "none"
     ],
     "filament_settings_id": [
-        "Polymaker ABS Pro @BBL P1S"
+        "PolyLite PLA-CF @BBL A2L"
     ],
     "filament_shrink": [
         "100%"
@@ -199,7 +197,7 @@
         "0"
     ],
     "filament_type": [
-        "ABS"
+        "PLA-CF"
     ],
     "filament_vendor": [
         "Polymaker"
@@ -214,7 +212,7 @@
         "10%"
     ],
     "filament_scarf_gap": [
-        "0%"
+        "15%"
     ],
     "filament_scarf_length": [
         "10"
@@ -253,10 +251,10 @@
         "1"
     ],
     "hot_plate_temp": [
-        "100"
+        "55"
     ],
     "hot_plate_temp_initial_layer": [
-        "100"
+        "55"
     ],
     "filament_ingredients_safe": "1",
     "filament_emission_safe": "1",
@@ -277,7 +275,7 @@
         "0.088"
     ],
     "impact_strength_z": [
-        "10"
+        "10.0"
     ],
     "long_retractions_when_ec": [
         "0"
@@ -286,19 +284,19 @@
         "0"
     ],
     "nozzle_temperature": [
-        "280"
+        "230"
     ],
     "nozzle_temperature_initial_layer": [
-        "280"
+        "230"
     ],
     "nozzle_temperature_range_high": [
-        "290"
+        "230"
     ],
     "nozzle_temperature_range_low": [
-        "270"
+        "190"
     ],
     "overhang_fan_speed": [
-        "80"
+        "100"
     ],
     "overhang_fan_threshold": [
         "25%"
@@ -331,42 +329,42 @@
         "20"
     ],
     "supertack_plate_temp": [
-        "0"
+        "45"
     ],
     "supertack_plate_temp_initial_layer": [
-        "0"
+        "45"
     ],
     "temperature_vitrification": [
-        "112"
+        "64"
     ],
     "textured_plate_temp": [
-        "100"
+        "60"
     ],
     "textured_plate_temp_initial_layer": [
-        "100"
+        "60"
     ],
     "volumetric_speed_coefficients": [
         "0 0 0 0 0 0"
     ],
     "compatible_printers": [
-        "Bambu Lab P1S 0.4 nozzle",
-        "Bambu Lab X1C 0.4 nozzle",
-        "Bambu Lab X1 0.4 nozzle",
-        "Bambu Lab X1E 0.4 nozzle"
+        "Bambu Lab A2L 0.4 nozzle"
     ],
     "filament_start_gcode": [
-        "; Filament gcode\n{if activate_air_filtration[current_extruder] && support_air_filtration}\nM106 P3 S{during_print_exhaust_fan_speed_num[current_extruder]} \n{endif}"
+        ""
     ],
     "filament_end_gcode": [
         "; filament end gcode \n\n"
     ],
     "filament_adhesiveness_category": [
-        "200"
+        "100"
     ],
-    "filament_id": "PMAB04",
+    "filament_id": "PMPL31",
     "description": " ",
-    "setting_id": "GFSB99",
-    "version": "2.6.0.5",
+    "setting_id": "GFSL99_24",
+    "pre_start_fan_time": [
+        "2"
+    ],
+    "version": "2.7.0.8",
     "idle_temperature": [
         "0"
     ]
