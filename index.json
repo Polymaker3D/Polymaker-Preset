@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updatedAt": "2026-06-24T02:49:01.325Z",
+  "updatedAt": "2026-07-02T08:50:28.961Z",
   "materials": [
     "Fiberon ASA-CF08",
     "Fiberon PA12-CF10",
@@ -1771,6 +1771,25 @@
           "brand": "BBL",
           "model": "H2C",
           "fullName": "Bambu Lab H2C 0.4 nozzle"
+        }
+      ],
+      "missingExtruderVariants": [
+        "Direct Drive High Flow"
+      ]
+    },
+    {
+      "material": "Fiberon PPS-CF10",
+      "brand": "BBL",
+      "model": "H2D",
+      "slicer": "BambuStudio",
+      "path": "preset/Fiberon PPS-CF10/BBL/H2D/BambuStudio/Fiberon PPS-CF10 @BBL H2D.json",
+      "filename": "Fiberon PPS-CF10 @BBL H2D.json",
+      "updatedAt": "2026-07-02T16:49:31+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "H2D",
+          "fullName": "Bambu Lab H2D 0.4 nozzle"
         }
       ],
       "missingExtruderVariants": [
@@ -3857,6 +3876,16 @@
     {
       "material": "Panchroma PLA Marble",
       "brand": "BBL",
+      "model": "A2L",
+      "slicer": "BambuStudio",
+      "path": "preset/Panchroma PLA Marble/BBL/A2L/BambuStudio/Panchroma PLA Marble @BBL A2L.json",
+      "filename": "Panchroma PLA Marble @BBL A2L.json",
+      "updatedAt": "2026-07-02T16:49:31+08:00",
+      "compatiblePrinters": []
+    },
+    {
+      "material": "Panchroma PLA Marble",
+      "brand": "BBL",
       "model": "H2C",
       "slicer": "BambuStudio",
       "path": "preset/Panchroma PLA Marble/BBL/H2C/BambuStudio/Panchroma PLA Marble @BBL H2C.json",
@@ -4137,6 +4166,16 @@
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
       ]
+    },
+    {
+      "material": "Panchroma PLA Matte",
+      "brand": "BBL",
+      "model": "A2L",
+      "slicer": "BambuStudio",
+      "path": "preset/Panchroma PLA Matte/BBL/A2L/BambuStudio/Panchroma PLA Matte @BBL A2L.json",
+      "filename": "Panchroma PLA Matte @BBL A2L.json",
+      "updatedAt": "2026-07-02T16:49:31+08:00",
+      "compatiblePrinters": []
     },
     {
       "material": "Panchroma PLA Matte",
@@ -6485,6 +6524,32 @@
     {
       "material": "PolyCast",
       "brand": "BBL",
+      "model": "A2L",
+      "slicer": "BambuStudio",
+      "path": "preset/PolyCast/BBL/A2L/BambuStudio/PolyCast @BBL A2L.json",
+      "filename": "PolyCast @BBL A2L.json",
+      "updatedAt": "2026-07-02T16:49:31+08:00",
+      "compatiblePrinters": []
+    },
+    {
+      "material": "PolyCast",
+      "brand": "BBL",
+      "model": "P2S",
+      "slicer": "BambuStudio",
+      "path": "preset/PolyCast/BBL/P2S/BambuStudio/PolyCast @BBL P2S.json",
+      "filename": "PolyCast @BBL P2S.json",
+      "updatedAt": "2026-07-02T16:49:31+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "P2S",
+          "fullName": "Bambu Lab P2S 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "PolyCast",
+      "brand": "BBL",
       "model": "X2D",
       "slicer": "BambuStudio",
       "path": "preset/PolyCast/BBL/X2D/BambuStudio/PolyCast @BBL X2D.json",
@@ -6549,6 +6614,16 @@
         "Bowden Standard",
         "Bowden High Flow"
       ]
+    },
+    {
+      "material": "PolyFlex TPU95-HF",
+      "brand": "BBL",
+      "model": "A2L",
+      "slicer": "BambuStudio",
+      "path": "preset/PolyFlex TPU95-HF/BBL/A2L/BambuStudio/PolyFlex TPU95-HF @BBL A2L.json",
+      "filename": "PolyFlex TPU95-HF @BBL A2L.json",
+      "updatedAt": "2026-07-02T16:49:31+08:00",
+      "compatiblePrinters": []
     },
     {
       "material": "PolyFlex TPU95-HF",
@@ -6989,11 +7064,21 @@
     {
       "material": "PolyLite PETG",
       "brand": "BBL",
+      "model": "A2L",
+      "slicer": "BambuStudio",
+      "path": "preset/PolyLite PETG/BBL/A2L/BambuStudio/PolyLite PETG @BBL A2L.json",
+      "filename": "PolyLite PETG @BBL A2L.json",
+      "updatedAt": "2026-07-02T16:49:31+08:00",
+      "compatiblePrinters": []
+    },
+    {
+      "material": "PolyLite PETG",
+      "brand": "BBL",
       "model": "P2S",
       "slicer": "BambuStudio",
       "path": "preset/PolyLite PETG/BBL/P2S/BambuStudio/PolyLite PETG @BBL P2S.json",
       "filename": "PolyLite PETG @BBL P2S.json",
-      "updatedAt": "2026-06-24T10:26:38+08:00",
+      "updatedAt": "2026-06-24T10:50:30+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -7061,11 +7146,21 @@
     {
       "material": "PolyLite PETG Translucent",
       "brand": "BBL",
+      "model": "A2L",
+      "slicer": "BambuStudio",
+      "path": "preset/PolyLite PETG Translucent/BBL/A2L/BambuStudio/PolyLite PETG Translucent @BBL A2L.json",
+      "filename": "PolyLite PETG Translucent @BBL A2L.json",
+      "updatedAt": "2026-07-02T16:49:31+08:00",
+      "compatiblePrinters": []
+    },
+    {
+      "material": "PolyLite PETG Translucent",
+      "brand": "BBL",
       "model": "P2S",
       "slicer": "BambuStudio",
       "path": "preset/PolyLite PETG Translucent/BBL/P2S/BambuStudio/PolyLite PETG Translucent @BBL P2S.json",
       "filename": "PolyLite PETG Translucent @BBL P2S.json",
-      "updatedAt": "2026-06-24T10:26:38+08:00",
+      "updatedAt": "2026-06-24T10:50:30+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -9571,7 +9666,7 @@
       "slicer": "BambuStudio",
       "path": "preset/PolyLite PLA-CF/BBL/A2L/BambuStudio/PolyLite PLA-CF @BBL A2L.json",
       "filename": "PolyLite PLA-CF @BBL A2L.json",
-      "updatedAt": "2026-06-24T10:26:38+08:00",
+      "updatedAt": "2026-06-24T10:50:30+08:00",
       "compatiblePrinters": []
     },
     {
@@ -9593,6 +9688,22 @@
         "Direct Drive High Flow",
         "Bowden Standard",
         "Bowden High Flow"
+      ]
+    },
+    {
+      "material": "PolyLite PLA-CF",
+      "brand": "Snapmaker",
+      "model": "U1",
+      "slicer": "OrcaSlicer",
+      "path": "preset/PolyLite PLA-CF/Snapmaker/U1/OrcaSlicer/PolyLite PLA-CF @Snapmaker U1.json",
+      "filename": "PolyLite PLA-CF @Snapmaker U1.json",
+      "updatedAt": "2026-07-02T16:49:31+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "Snapmaker",
+          "model": "U1",
+          "fullName": "Snapmaker U1 (0.4 nozzle)"
+        }
       ]
     },
     {
@@ -9623,7 +9734,7 @@
       "slicer": "BambuStudio",
       "path": "preset/PolyMax PETG/BBL/P2S/BambuStudio/PolyMax PETG @BBL P2S.json",
       "filename": "PolyMax PETG @BBL P2S.json",
-      "updatedAt": "2026-06-24T10:26:38+08:00",
+      "updatedAt": "2026-06-24T10:50:30+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -9674,7 +9785,7 @@
       "slicer": "BambuStudio",
       "path": "preset/PolyMax PLA/BBL/A2L/BambuStudio/PolyMax PLA @BBL A2L.json",
       "filename": "PolyMax PLA @BBL A2L.json",
-      "updatedAt": "2026-06-24T10:26:38+08:00",
+      "updatedAt": "2026-06-24T10:50:30+08:00",
       "compatiblePrinters": []
     },
     {
@@ -9779,7 +9890,7 @@
       "slicer": "BambuStudio",
       "path": "preset/PolySmooth/BBL/A2L/BambuStudio/PolySmooth @BBL A2L.json",
       "filename": "PolySmooth @BBL A2L.json",
-      "updatedAt": "2026-06-24T10:26:38+08:00",
+      "updatedAt": "2026-06-24T10:50:30+08:00",
       "compatiblePrinters": []
     },
     {
@@ -9805,7 +9916,7 @@
       "slicer": "BambuStudio",
       "path": "preset/PolySupport/BBL/A2L/BambuStudio/PolySupport @BBL A2L.json",
       "filename": "PolySupport @BBL A2L.json",
-      "updatedAt": "2026-06-24T10:26:38+08:00",
+      "updatedAt": "2026-06-24T10:50:30+08:00",
       "compatiblePrinters": []
     },
     {
@@ -9931,6 +10042,16 @@
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
       ]
+    },
+    {
+      "material": "PolyTerra PLA",
+      "brand": "BBL",
+      "model": "A2L",
+      "slicer": "BambuStudio",
+      "path": "preset/PolyTerra PLA/BBL/A2L/BambuStudio/PolyTerra PLA @BBL A2L.json",
+      "filename": "PolyTerra PLA @BBL A2L.json",
+      "updatedAt": "2026-07-02T16:49:31+08:00",
+      "compatiblePrinters": []
     },
     {
       "material": "PolyTerra PLA",
@@ -10215,6 +10336,16 @@
           "fullName": "Bambu Lab A1 0.4 nozzle"
         }
       ]
+    },
+    {
+      "material": "PolyTerra PLA Marble",
+      "brand": "BBL",
+      "model": "A2L",
+      "slicer": "BambuStudio",
+      "path": "preset/PolyTerra PLA Marble/BBL/A2L/BambuStudio/PolyTerra PLA Marble @BBL A2L.json",
+      "filename": "PolyTerra PLA Marble @BBL A2L.json",
+      "updatedAt": "2026-07-02T16:49:31+08:00",
+      "compatiblePrinters": []
     },
     {
       "material": "PolyTerra PLA Marble",
@@ -10745,7 +10876,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Polymaker ABS Max/BBL/H2S/BambuStudio/Polymaker ABS Max @BBL H2S.json",
       "filename": "Polymaker ABS Max @BBL H2S.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-02T16:49:31+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -10827,6 +10958,16 @@
         "Bowden Standard",
         "Bowden High Flow"
       ]
+    },
+    {
+      "material": "Polymaker ABS Max",
+      "brand": "CreealityPrint",
+      "model": "K2Pro",
+      "slicer": "CrealityPrint",
+      "path": "preset/Polymaker ABS Max/CreealityPrint/K2Pro/CrealityPrint/Polymaker ABS Max @CreealityPrint K2Pro.json",
+      "filename": "Polymaker ABS Max @CreealityPrint K2Pro.json",
+      "updatedAt": "2026-07-02T16:49:31+08:00",
+      "compatiblePrinters": []
     },
     {
       "material": "Polymaker ABS Max",
@@ -10931,7 +11072,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Polymaker ABS Pro/BBL/P1S/BambuStudio/Polymaker ABS Pro @BBL P1S.json",
       "filename": "Polymaker ABS Pro @BBL P1S.json",
-      "updatedAt": "2026-06-24T10:26:38+08:00",
+      "updatedAt": "2026-06-24T10:50:30+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -11114,7 +11255,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Polymaker ABS Pro Galaxy/BBL/P1S/BambuStudio/Polymaker ABS Pro Galaxy @BBL P1S.json",
       "filename": "Polymaker ABS Pro Galaxy @BBL P1S.json",
-      "updatedAt": "2026-06-24T10:26:38+08:00",
+      "updatedAt": "2026-06-24T10:50:30+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -11281,7 +11422,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Polymaker HT-PLA/BBL/A2L/BambuStudio/Polymaker HT-PLA @BBL A2L.json",
       "filename": "Polymaker HT-PLA @BBL A2L.json",
-      "updatedAt": "2026-06-24T10:26:38+08:00",
+      "updatedAt": "2026-06-24T10:50:30+08:00",
       "compatiblePrinters": []
     },
     {
@@ -11588,6 +11729,16 @@
     {
       "material": "Polymaker PETG",
       "brand": "BBL",
+      "model": "A2L",
+      "slicer": "BambuStudio",
+      "path": "preset/Polymaker PETG/BBL/A2L/BambuStudio/Polymaker PETG @BBL A2L.json",
+      "filename": "Polymaker PETG @BBL A2L.json",
+      "updatedAt": "2026-07-02T16:49:31+08:00",
+      "compatiblePrinters": []
+    },
+    {
+      "material": "Polymaker PETG",
+      "brand": "BBL",
       "model": "H2C",
       "slicer": "BambuStudio",
       "path": "preset/Polymaker PETG/BBL/H2C/BambuStudio/Polymaker PETG @BBL H2C.json",
@@ -11775,6 +11926,16 @@
           "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
+    },
+    {
+      "material": "Polymaker PETG Galaxy",
+      "brand": "BBL",
+      "model": "A2L",
+      "slicer": "BambuStudio",
+      "path": "preset/Polymaker PETG Galaxy/BBL/A2L/BambuStudio/Polymaker PETG Galaxy @BBL A2L.json",
+      "filename": "Polymaker PETG Galaxy @BBL A2L.json",
+      "updatedAt": "2026-07-02T16:49:31+08:00",
+      "compatiblePrinters": []
     },
     {
       "material": "Polymaker PETG Galaxy",
