@@ -1,16 +1,16 @@
 {
     "type": "filament",
-    "name": "Polymaker ABS Max @BBL H2S",
+    "name": "Fiberon PPS-CF10 @BBL H2D",
     "from": "User",
     "instantiation": "true",
     "activate_air_filtration": [
-        "1"
+        "0"
     ],
     "additional_cooling_fan_speed": [
         "0"
     ],
     "chamber_temperatures": [
-        "60"
+        "0"
     ],
     "circle_compensation_speed": [
         "200"
@@ -52,19 +52,19 @@
         "70"
     ],
     "eng_plate_temp": [
-        "90"
+        "110"
     ],
     "eng_plate_temp_initial_layer": [
-        "90"
+        "110"
     ],
     "fan_cooling_layer_time": [
-        "30"
+        "27"
     ],
     "fan_max_speed": [
-        "50"
+        "30"
     ],
     "fan_min_speed": [
-        "30"
+        "0"
     ],
     "filament_adaptive_volumetric_speed": [
         "0"
@@ -95,40 +95,40 @@
         "-1"
     ],
     "filament_cost": [
-        "20"
+        "240"
     ],
     "filament_density": [
-        "1.06"
+        "1.29"
     ],
     "filament_dev_ams_drying_ams_limitations": [
-        "1"
+        "-1"
     ],
     "filament_dev_ams_drying_heat_distortion_temperature": [
-        "90"
+        "165"
     ],
     "filament_dev_ams_drying_temperature": [
         "65",
-        "80",
+        "85",
         "65",
-        "75"
+        "85"
     ],
     "filament_dev_ams_drying_time": [
         "12",
-        "8.0",
         "12",
-        "8.0"
+        "12",
+        "12"
     ],
     "filament_dev_chamber_drying_bed_temperature": [
-        "90.0"
+        "100"
     ],
     "filament_dev_chamber_drying_time": [
         "12.0"
     ],
     "filament_dev_drying_cooling_temperature": [
-        "75"
+        "150"
     ],
     "filament_dev_drying_softening_temperature": [
-        "80"
+        "150"
     ],
     "filament_diameter": [
         "1.75"
@@ -138,7 +138,7 @@
         "Direct Drive High Flow"
     ],
     "filament_flow_ratio": [
-        "0.97",
+        "1",
         "nil"
     ],
     "filament_flush_temp": [
@@ -154,7 +154,7 @@
         "0"
     ],
     "filament_max_volumetric_speed": [
-        "12",
+        "8",
         "nil"
     ],
     "filament_metal_stickiness": [
@@ -187,15 +187,11 @@
     "filament_ramming_volumetric_speed_nc": [
         "-1"
     ],
-    "filament_retraction_length": [
-        "0.4",
-        "0.4"
-    ],
     "filament_scarf_seam_type": [
         "none"
     ],
     "filament_settings_id": [
-        "Polymaker ABS Max @BBL H2S"
+        "Fiberon PPS-CF10 @BBL H2D"
     ],
     "filament_shrink": [
         "100%"
@@ -204,22 +200,10 @@
         "0"
     ],
     "filament_type": [
-        "ABS"
+        "PPS-CF"
     ],
     "filament_vendor": [
         "Polymaker"
-    ],
-    "filament_wipe": [
-        "1",
-        "1"
-    ],
-    "filament_wipe_distance": [
-        "1",
-        "1"
-    ],
-    "filament_z_hop_types": [
-        "Spiral Lift",
-        "Spiral Lift"
     ],
     "full_fan_speed_layer": [
         "0"
@@ -271,10 +255,10 @@
         "1"
     ],
     "hot_plate_temp": [
-        "90"
+        "110"
     ],
     "hot_plate_temp_initial_layer": [
-        "90"
+        "110"
     ],
     "filament_ingredients_safe": "1",
     "filament_emission_safe": "1",
@@ -295,34 +279,33 @@
         "0.088"
     ],
     "impact_strength_z": [
-        "10"
+        "5.7"
     ],
     "long_retractions_when_ec": [
-        "0",
         "0"
     ],
     "no_slow_down_for_cooling_on_outwalls": [
         "0"
     ],
     "nozzle_temperature": [
-        "290",
+        "350",
         "nil"
     ],
     "nozzle_temperature_initial_layer": [
-        "290",
+        "350",
         "nil"
     ],
     "nozzle_temperature_range_high": [
-        "300"
+        "350"
     ],
     "nozzle_temperature_range_low": [
-        "270"
+        "310"
     ],
     "overhang_fan_speed": [
-        "80"
+        "30"
     ],
     "overhang_fan_threshold": [
-        "25%"
+        "0%"
     ],
     "override_process_overhang_speed": [
         "0"
@@ -331,14 +314,13 @@
         "1"
     ],
     "required_nozzle_HRC": [
-        "3"
+        "40"
     ],
     "retraction_distances_when_ec": [
-        "0",
         "0"
     ],
     "slow_down_for_layer_cooling": [
-        "1"
+        "0"
     ],
     "cooling_slowdown_logic": [
         "uniform_cooling"
@@ -350,8 +332,7 @@
         "6"
     ],
     "slow_down_min_speed": [
-        "20",
-        "20"
+        "10"
     ],
     "supertack_plate_temp": [
         "0"
@@ -360,37 +341,37 @@
         "0"
     ],
     "temperature_vitrification": [
-        "127.4"
+        "267"
     ],
     "textured_plate_temp": [
-        "120"
+        "110"
     ],
     "textured_plate_temp_initial_layer": [
-        "120"
+        "110"
     ],
     "volumetric_speed_coefficients": [
         "0 0 0 0 0 0"
     ],
     "compatible_printers": [
-        "Bambu Lab H2S 0.4 nozzle"
+        "Bambu Lab H2D 0.4 nozzle"
     ],
     "filament_start_gcode": [
         "; filament start gcode\n"
     ],
     "filament_end_gcode": [
-        "; filament end gcode \n\n"
+        "; filament end gcode \n"
     ],
     "filament_adhesiveness_category": [
-        "200"
+        "801"
     ],
-    "filament_id": "PMAB02",
+    "filament_id": "PMPP01",
     "description": " ",
-    "setting_id": "GFSB99_21",
+    "setting_id": "GFST98_01",
     "include": [
         "fdm_filament_template_direct_dual"
     ],
-    "version": "2.7.0.7",
-    "idle_temperature": [
+    "enable_overhang_bridge_fan": [
         "0"
-    ]
+    ],
+    "version": "2.6.0.5"
 }
