@@ -114,6 +114,7 @@
     "temperature_vitrification": [
         "170"
     ],
+    "inherits": "Generic PA6-CF @Elegoo",
     "nozzle_temperature_range_low": [
         "260"
     ],

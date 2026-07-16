@@ -74,6 +74,7 @@
     ],
     "filament_cooling_before_tower": [
         "10",
+        "10",
         "10"
     ],
     "filament_preheat_temperature_delta": [
@@ -95,7 +96,7 @@
         "-1"
     ],
     "filament_cost": [
-        "24.99"
+        "19.99"
     ],
     "filament_density": [
         "1.06"
@@ -144,9 +145,6 @@
     "filament_flush_temp": [
         "0"
     ],
-    "filament_flush_temp_fast": [
-        "0"
-    ],
     "filament_flush_volumetric_speed": [
         "0"
     ],
@@ -155,6 +153,7 @@
     ],
     "filament_max_volumetric_speed": [
         "16",
+        "25",
         "25"
     ],
     "filament_metal_stickiness": [
@@ -189,9 +188,11 @@
     ],
     "filament_retraction_distances_when_cut": [
         "10",
+        "10",
         "10"
     ],
     "filament_retraction_length": [
+        "0.4",
         "0.4",
         "0.4"
     ],
@@ -215,6 +216,7 @@
     ],
     "filament_z_hop_types": [
         "Spiral Lift",
+        "Spiral Lift",
         "Spiral Lift"
     ],
     "full_fan_speed_layer": [
@@ -233,6 +235,7 @@
         "10"
     ],
     "filament_ramming_travel_time": [
+        "0",
         "0",
         "0"
     ],
@@ -295,6 +298,7 @@
     ],
     "long_retractions_when_ec": [
         "0",
+        "0",
         "0"
     ],
     "no_slow_down_for_cooling_on_outwalls": [
@@ -331,6 +335,7 @@
     ],
     "retraction_distances_when_ec": [
         "0",
+        "0",
         "0"
     ],
     "slow_down_for_layer_cooling": [
@@ -346,6 +351,7 @@
         "6"
     ],
     "slow_down_min_speed": [
+        "20",
         "20",
         "20"
     ],
@@ -376,6 +382,7 @@
     "filament_end_gcode": [
         "; filament end gcode \n\n"
     ],
+    "inherits": "Bambu ABS @BBL P2S",
     "filament_adhesiveness_category": [
         "200"
     ],
@@ -383,7 +390,7 @@
     "description": " ",
     "setting_id": "GFSB00_10",
     "include": [
-        "fdm_filament_template_direct_dual"
+        "fdm_filament_template_direct_dual_e3d"
     ],
     "version": "2.6.0.5",
     "idle_temperature": [

@@ -78,6 +78,7 @@
     "temperature_vitrification": [
         "127.4"
     ],
+    "inherits": "Generic ABS @Creality K2 Pro 0.4 nozzle",
     "filament_adhesiveness_category": [
         "200"
     ],

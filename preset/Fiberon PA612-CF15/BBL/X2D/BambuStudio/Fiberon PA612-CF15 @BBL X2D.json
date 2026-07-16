@@ -150,9 +150,6 @@
     "filament_flush_temp": [
         "0"
     ],
-    "filament_flush_temp_fast": [
-        "0"
-    ],
     "filament_flush_volumetric_speed": [
         "0"
     ],
@@ -381,6 +378,7 @@
     "filament_end_gcode": [
         "; filament end gcode \n\n"
     ],
+    "inherits": "Bambu PA-CF @BBL X2D 0.4 nozzle",
     "filament_adhesiveness_category": [
         "400"
     ],

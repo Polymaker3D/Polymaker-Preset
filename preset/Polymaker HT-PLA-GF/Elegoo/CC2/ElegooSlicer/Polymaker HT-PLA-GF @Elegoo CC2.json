@@ -111,6 +111,7 @@
     "temperature_vitrification": [
         "59.76"
     ],
+    "inherits": "Generic PLA Matte @System",
     "nozzle_temperature_range_low": [
         "210"
     ],

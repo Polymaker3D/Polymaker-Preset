@@ -140,9 +140,6 @@
         "1"
     ],
     "filament_flush_temp": [
-        "220"
-    ],
-    "filament_flush_temp_fast": [
         "0"
     ],
     "filament_flush_volumetric_speed": [
@@ -355,6 +352,7 @@
     "filament_end_gcode": [
         "; filament end gcode \n\n"
     ],
+    "inherits": "Generic PLA @BBL A2L",
     "filament_adhesiveness_category": [
         "100"
     ],

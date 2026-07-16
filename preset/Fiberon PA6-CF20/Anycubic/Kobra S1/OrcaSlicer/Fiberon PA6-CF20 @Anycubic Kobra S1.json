@@ -114,6 +114,7 @@
     "temperature_vitrification": [
         "74.2"
     ],
+    "inherits": "Fiberon PA6-CF @System",
     "nozzle_temperature_range_low": [
         "280"
     ],

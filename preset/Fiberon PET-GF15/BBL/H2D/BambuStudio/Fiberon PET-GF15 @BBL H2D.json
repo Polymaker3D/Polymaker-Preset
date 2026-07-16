@@ -125,6 +125,7 @@
     "temperature_vitrification": [
         "232.6"
     ],
+    "inherits": "Fiberon PET-CF @BBL H2D",
     "nozzle_temperature_range_low": [
         "280"
     ],

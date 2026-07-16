@@ -108,6 +108,7 @@
     "temperature_vitrification": [
         "70.4"
     ],
+    "inherits": "Generic PC-CF @Elegoo",
     "nozzle_temperature_range_low": [
         "280"
     ],

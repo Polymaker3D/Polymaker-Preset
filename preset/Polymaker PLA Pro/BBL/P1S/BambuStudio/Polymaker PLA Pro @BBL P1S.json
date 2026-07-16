@@ -16,9 +16,9 @@
     ],
     "compatible_printers": [
         "Bambu Lab P1S 0.4 nozzle",
-        "Bambu Lab X1C 0.4 nozzle",
         "Bambu Lab X1 0.4 nozzle",
-        "Bambu Lab X1E 0.4 nozzle"
+        "Bambu Lab X1E 0.4 nozzle",
+        "Bambu Lab X1 Carbon 0.4 nozzle"
     ],
     "compatible_printers_condition": "",
     "compatible_prints": [],
@@ -292,6 +292,7 @@
     "impact_strength_z": [
         "0"
     ],
+    "inherits": "",
     "long_retractions_when_ec": [
         "0"
     ],

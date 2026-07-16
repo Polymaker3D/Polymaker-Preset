@@ -151,9 +151,6 @@
     "filament_flush_temp": [
         "0"
     ],
-    "filament_flush_temp_fast": [
-        "0"
-    ],
     "filament_flush_volumetric_speed": [
         "0"
     ],
@@ -206,7 +203,7 @@
         "100%"
     ],
     "filament_soluble": [
-        "1"
+        "0"
     ],
     "filament_type": [
         "PA"
@@ -382,6 +379,7 @@
     "filament_end_gcode": [
         "; filament end gcode \n\n"
     ],
+    "inherits": "Generic PLA @BBL X2D 0.4 nozzle",
     "filament_adhesiveness_category": [
         "100"
     ],

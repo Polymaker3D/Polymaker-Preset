@@ -114,6 +114,7 @@
     "temperature_vitrification": [
         "206.2"
     ],
+    "inherits": "Generic PA-CF @System",
     "nozzle_temperature_range_low": [
         "250"
     ],

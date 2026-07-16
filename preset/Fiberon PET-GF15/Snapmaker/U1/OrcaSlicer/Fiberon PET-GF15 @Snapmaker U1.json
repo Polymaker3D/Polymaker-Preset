@@ -108,6 +108,7 @@
     "temperature_vitrification": [
         "232.6"
     ],
+    "inherits": "Fiberon PET-CF @System",
     "filament_id": "PMPE08",
     "nozzle_temperature_range_high": [
         "300"

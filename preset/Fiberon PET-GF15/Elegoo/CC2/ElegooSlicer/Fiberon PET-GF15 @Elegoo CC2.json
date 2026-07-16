@@ -52,7 +52,7 @@
         "25"
     ],
     "filament_cost": [
-        "0"
+        "30"
     ],
     "filament_density": [
         "1.43"
@@ -108,6 +108,7 @@
     "temperature_vitrification": [
         "232.6"
     ],
+    "inherits": "Generic PET-CF @Elegoo Centauri",
     "filament_id": "PMPE08",
     "nozzle_temperature_range_high": [
         "310"

@@ -65,6 +65,7 @@
     "temperature_vitrification": [
         "62.5"
     ],
+    "inherits": "Hyper PLA @Creality K2 Pro 0.4 nozzle",
     "filament_adhesiveness_category": [
         "100"
     ],

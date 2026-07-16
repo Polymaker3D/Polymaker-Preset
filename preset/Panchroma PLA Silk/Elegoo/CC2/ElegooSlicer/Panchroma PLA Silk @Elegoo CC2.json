@@ -52,7 +52,7 @@
         "100"
     ],
     "filament_cost": [
-        "0"
+        "30"
     ],
     "filament_density": [
         "1.34"
@@ -108,6 +108,7 @@
     "temperature_vitrification": [
         "58.2"
     ],
+    "inherits": "Generic PLA @Elegoo Centauri",
     "nozzle_temperature_range_low": [
         "190"
     ],

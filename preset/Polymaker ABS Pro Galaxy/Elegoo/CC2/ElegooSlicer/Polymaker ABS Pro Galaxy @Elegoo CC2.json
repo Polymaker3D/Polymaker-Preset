@@ -108,6 +108,7 @@
     "temperature_vitrification": [
         "112"
     ],
+    "inherits": "Generic ABS @Elegoo Centauri",
     "nozzle_temperature_range_low": [
         "270"
     ],

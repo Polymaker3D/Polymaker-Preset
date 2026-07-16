@@ -76,6 +76,8 @@
         "10",
         "10",
         "10",
+        "10",
+        "10",
         "10"
     ],
     "filament_preheat_temperature_delta": [
@@ -97,7 +99,7 @@
         "220"
     ],
     "filament_cost": [
-        "69.98"
+        "39.98"
     ],
     "filament_density": [
         "1.1"
@@ -149,9 +151,6 @@
         "nil"
     ],
     "filament_flush_temp": [
-        "0"
-    ],
-    "filament_flush_temp_fast": [
         "0"
     ],
     "filament_flush_volumetric_speed": [
@@ -233,6 +232,8 @@
         "0",
         "0",
         "0",
+        "0",
+        "0",
         "0"
     ],
     "filament_retract_length_nc": [
@@ -302,9 +303,13 @@
         "220",
         "220",
         "220",
+        "220",
+        "220",
         "220"
     ],
     "nozzle_temperature_initial_layer": [
+        "220",
+        "220",
         "220",
         "220",
         "220",
@@ -334,6 +339,8 @@
     "retraction_distances_when_ec": [
         "3",
         "3",
+        "3",
+        "4",
         "4",
         "4"
     ],
@@ -350,6 +357,8 @@
         "10"
     ],
     "slow_down_min_speed": [
+        "20",
+        "20",
         "20",
         "20",
         "20",
@@ -382,6 +391,7 @@
     "filament_end_gcode": [
         "; filament end gcode \n\n"
     ],
+    "inherits": "Bambu Support For PLA @BBL X2D 0.4 nozzle",
     "filament_adhesiveness_category": [
         "702"
     ],
@@ -392,7 +402,7 @@
         "40"
     ],
     "include": [
-        "fdm_filament_template_direct_bowden"
+        "fdm_filament_template_direct_bowden_e3d"
     ],
     "enable_overhang_bridge_fan": [
         "0"

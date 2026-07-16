@@ -108,6 +108,7 @@
     "temperature_vitrification": [
         "79"
     ],
+    "inherits": "Generic PETG @System",
     "filament_id": "PMPE09",
     "nozzle_temperature_range_high": [
         "260"

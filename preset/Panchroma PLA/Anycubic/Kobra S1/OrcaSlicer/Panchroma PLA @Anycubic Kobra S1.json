@@ -108,6 +108,7 @@
     "temperature_vitrification": [
         "62.5"
     ],
+    "inherits": "Generic PLA @System",
     "nozzle_temperature_range_low": [
         "190"
     ],

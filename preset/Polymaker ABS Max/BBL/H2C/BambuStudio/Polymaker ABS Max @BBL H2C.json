@@ -74,9 +74,11 @@
     ],
     "filament_cooling_before_tower": [
         "10",
+        "10",
         "10"
     ],
     "filament_preheat_temperature_delta": [
+        "20",
         "20",
         "20"
     ],
@@ -96,7 +98,7 @@
         "-1"
     ],
     "filament_cost": [
-        "24.99"
+        "19.99"
     ],
     "filament_density": [
         "1.06"
@@ -140,12 +142,10 @@
     ],
     "filament_flow_ratio": [
         "0.98",
+        "0.98",
         "0.98"
     ],
     "filament_flush_temp": [
-        "0"
-    ],
-    "filament_flush_temp_fast": [
         "0"
     ],
     "filament_flush_volumetric_speed": [
@@ -169,6 +169,7 @@
     ],
     "filament_pre_cooling_temperature_nc": [
         "230",
+        "230",
         "230"
     ],
     "filament_prime_volume": [
@@ -182,6 +183,7 @@
     ],
     "filament_ramming_travel_time_nc": [
         "1",
+        "1",
         "1"
     ],
     "filament_ramming_volumetric_speed": [
@@ -192,6 +194,7 @@
     ],
     "filament_retraction_length": [
         "0.4",
+        "0.6",
         "0.6"
     ],
     "filament_scarf_seam_type": [
@@ -214,13 +217,16 @@
     ],
     "filament_wipe": [
         "1",
+        "1",
         "1"
     ],
     "filament_wipe_distance": [
         "1",
+        "1",
         "1"
     ],
     "filament_z_hop_types": [
+        "Spiral Lift",
         "Spiral Lift",
         "Spiral Lift"
     ],
@@ -240,6 +246,7 @@
         "10"
     ],
     "filament_ramming_travel_time": [
+        "0",
         "0",
         "0"
     ],
@@ -352,6 +359,7 @@
     ],
     "slow_down_min_speed": [
         "20",
+        "20",
         "20"
     ],
     "supertack_plate_temp": [
@@ -381,20 +389,18 @@
     "filament_end_gcode": [
         "; filament end gcode \n"
     ],
+    "inherits": "Bambu ABS @BBL H2C",
     "filament_adhesiveness_category": [
         "200"
     ],
     "filament_id": "PMAB02",
     "description": " ",
     "setting_id": "GFSB00_22",
-    "first_x_layer_fan_speed": [
-        "0"
-    ],
     "filament_change_length_nc": [
         "4"
     ],
     "include": [
-        "fdm_filament_template_direct_dual"
+        "fdm_filament_template_direct_dual_e3d"
     ],
     "version": "2.6.0.5",
     "idle_temperature": [
