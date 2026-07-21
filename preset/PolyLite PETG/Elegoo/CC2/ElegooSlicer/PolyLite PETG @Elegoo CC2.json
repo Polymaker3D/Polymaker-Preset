@@ -3,53 +3,41 @@
     "name": "PolyLite PETG @Elegoo CC2",
     "from": "User",
     "instantiation": "true",
-    "cool_plate_temp": [
-        "60"
-    ],
-    "eng_plate_temp": [
+    "activate_air_filtration": [
         "0"
     ],
-    "hot_plate_temp": [
-        "80"
-    ],
-    "textured_plate_temp": [
-        "80"
-    ],
-    "cool_plate_temp_initial_layer": [
-        "60"
-    ],
-    "eng_plate_temp_initial_layer": [
+    "chamber_temperatures": [
         "0"
-    ],
-    "hot_plate_temp_initial_layer": [
-        "80"
-    ],
-    "textured_plate_temp_initial_layer": [
-        "80"
-    ],
-    "overhang_fan_threshold": [
-        "0%"
-    ],
-    "overhang_fan_speed": [
-        "100"
-    ],
-    "slow_down_for_layer_cooling": [
-        "1"
     ],
     "close_fan_the_first_x_layers": [
         "3"
     ],
-    "filament_end_gcode": [
-        "; filament end gcode \n"
+    "complete_print_exhaust_fan_speed": [
+        "70"
     ],
-    "filament_flow_ratio": [
-        "1.03"
+    "cool_plate_temp": [
+        "60"
     ],
-    "reduce_fan_stop_start_freq": [
-        "1"
+    "cool_plate_temp_initial_layer": [
+        "60"
+    ],
+    "during_print_exhaust_fan_speed": [
+        "70"
+    ],
+    "eng_plate_temp": [
+        "0"
+    ],
+    "eng_plate_temp_initial_layer": [
+        "0"
     ],
     "fan_cooling_layer_time": [
         "30"
+    ],
+    "fan_max_speed": [
+        "20"
+    ],
+    "fan_min_speed": [
+        "10"
     ],
     "filament_cost": [
         "30"
@@ -59,6 +47,12 @@
     ],
     "filament_diameter": [
         "1.75"
+    ],
+    "filament_flow_ratio": [
+        "1.03"
+    ],
+    "filament_is_support": [
+        "0"
     ],
     "filament_max_volumetric_speed": [
         "8"
@@ -78,42 +72,47 @@
     "filament_vendor": [
         "Polymaker"
     ],
-    "bed_type": [
-        "Cool Plate"
-    ],
-    "nozzle_temperature_initial_layer": [
-        "260"
-    ],
     "full_fan_speed_layer": [
         "0"
     ],
-    "fan_max_speed": [
-        "20"
+    "filament_scarf_seam_type": [
+        "none"
     ],
-    "fan_min_speed": [
+    "filament_scarf_height": [
+        "10%"
+    ],
+    "filament_scarf_gap": [
+        "0%"
+    ],
+    "filament_scarf_length": [
         "10"
     ],
-    "slow_down_min_speed": [
-        "10"
+    "filament_shrink": [
+        "100%"
     ],
-    "slow_down_layer_time": [
-        "6"
+    "hot_plate_temp": [
+        "80"
     ],
-    "filament_start_gcode": [
-        "; Filament gcode\n"
+    "hot_plate_temp_initial_layer": [
+        "80"
     ],
     "nozzle_temperature": [
         "260"
     ],
-    "temperature_vitrification": [
-        "81"
-    ],
-    "filament_id": "PMPE04",
-    "nozzle_temperature_range_high": [
+    "nozzle_temperature_initial_layer": [
         "260"
     ],
-    "nozzle_temperature_range_low": [
-        "230"
+    "overhang_fan_speed": [
+        "100"
+    ],
+    "overhang_fan_threshold": [
+        "0%"
+    ],
+    "reduce_fan_stop_start_freq": [
+        "1"
+    ],
+    "required_nozzle_HRC": [
+        "3"
     ],
     "supertack_plate_temp": [
         "70"
@@ -121,11 +120,43 @@
     "supertack_plate_temp_initial_layer": [
         "70"
     ],
-    "renamed_from": "My Generic PETG",
-    "setting_id": "OGFSA04",
+    "slow_down_for_layer_cooling": [
+        "1"
+    ],
+    "slow_down_layer_time": [
+        "6"
+    ],
+    "slow_down_min_speed": [
+        "10"
+    ],
+    "temperature_vitrification": [
+        "81"
+    ],
+    "textured_plate_temp": [
+        "80"
+    ],
+    "textured_plate_temp_initial_layer": [
+        "80"
+    ],
+    "filament_start_gcode": [
+        "; Filament gcode\n"
+    ],
+    "filament_end_gcode": [
+        "; filament end gcode\n"
+    ],
     "compatible_printers": [
         "Elegoo Centauri Carbon 2 0.4 nozzle"
     ],
+    "inherits": "Generic PETG @System",
+    "filament_id": "PMPE04",
+    "nozzle_temperature_range_high": [
+        "260"
+    ],
+    "nozzle_temperature_range_low": [
+        "230"
+    ],
+    "renamed_from": "My Generic PETG",
+    "setting_id": "OGFSA04",
     "enable_pressure_advance": [
         "1"
     ],

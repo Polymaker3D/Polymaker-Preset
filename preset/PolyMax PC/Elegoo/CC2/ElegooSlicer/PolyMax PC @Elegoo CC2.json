@@ -1,0 +1,149 @@
+{
+    "type": "filament",
+    "name": "PolyMax PC @Elegoo CC2",
+    "from": "User",
+    "instantiation": "true",
+    "activate_air_filtration": [
+        "0"
+    ],
+    "chamber_temperatures": [
+        "0"
+    ],
+    "close_fan_the_first_x_layers": [
+        "3"
+    ],
+    "complete_print_exhaust_fan_speed": [
+        "70"
+    ],
+    "cool_plate_temp": [
+        "0"
+    ],
+    "cool_plate_temp_initial_layer": [
+        "0"
+    ],
+    "during_print_exhaust_fan_speed": [
+        "70"
+    ],
+    "eng_plate_temp": [
+        "110"
+    ],
+    "eng_plate_temp_initial_layer": [
+        "110"
+    ],
+    "fan_cooling_layer_time": [
+        "30"
+    ],
+    "fan_max_speed": [
+        "20"
+    ],
+    "fan_min_speed": [
+        "10"
+    ],
+    "filament_cost": [
+        "20"
+    ],
+    "filament_density": [
+        "1.19"
+    ],
+    "filament_diameter": [
+        "1.75"
+    ],
+    "filament_flow_ratio": [
+        "0.99"
+    ],
+    "filament_is_support": [
+        "0"
+    ],
+    "filament_max_volumetric_speed": [
+        "4"
+    ],
+    "filament_minimal_purge_on_wipe_tower": [
+        "15"
+    ],
+    "filament_settings_id": [
+        "PolyMax PC @Elegoo CC2"
+    ],
+    "filament_soluble": [
+        "0"
+    ],
+    "filament_type": [
+        "PC"
+    ],
+    "filament_vendor": [
+        "Polymaker"
+    ],
+    "full_fan_speed_layer": [
+        "0"
+    ],
+    "hot_plate_temp": [
+        "110"
+    ],
+    "hot_plate_temp_initial_layer": [
+        "110"
+    ],
+    "nozzle_temperature": [
+        "270"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "270"
+    ],
+    "overhang_fan_speed": [
+        "50"
+    ],
+    "overhang_fan_threshold": [
+        "25%"
+    ],
+    "reduce_fan_stop_start_freq": [
+        "1"
+    ],
+    "required_nozzle_HRC": [
+        "3"
+    ],
+    "slow_down_for_layer_cooling": [
+        "1"
+    ],
+    "slow_down_layer_time": [
+        "6"
+    ],
+    "slow_down_min_speed": [
+        "20"
+    ],
+    "temperature_vitrification": [
+        "117"
+    ],
+    "textured_plate_temp": [
+        "110"
+    ],
+    "textured_plate_temp_initial_layer": [
+        "110"
+    ],
+    "compatible_printers": [
+        "Elegoo Centauri Carbon 2 0.4 nozzle"
+    ],
+    "filament_start_gcode": [
+        "; Filament start gcode\n"
+    ],
+    "filament_end_gcode": [
+        "; filament end gcode \n"
+    ],
+    "inherits": "Generic PC @Elegoo",
+    "nozzle_temperature_range_low": [
+        "250"
+    ],
+    "nozzle_temperature_range_high": [
+        "270"
+    ],
+    "filament_id": "PMPC02",
+    "setting_id": "GPC00",
+    "additional_cooling_fan_speed": [
+        "100"
+    ],
+    "enable_pressure_advance": [
+        "1"
+    ],
+    "is_custom_defined": "0",
+    "version": "1.5.2.2",
+    "idle_temperature": [
+        "0"
+    ]
+}

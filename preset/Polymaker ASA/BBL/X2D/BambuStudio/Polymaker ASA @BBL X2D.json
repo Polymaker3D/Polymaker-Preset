@@ -10,7 +10,7 @@
         "0"
     ],
     "chamber_temperatures": [
-        "0"
+        "65"
     ],
     "circle_compensation_speed": [
         "200"
@@ -52,19 +52,19 @@
         "70"
     ],
     "eng_plate_temp": [
-        "100"
+        "110"
     ],
     "eng_plate_temp_initial_layer": [
-        "100"
+        "110"
     ],
     "fan_cooling_layer_time": [
-        "25"
+        "35"
     ],
     "fan_max_speed": [
         "70"
     ],
     "fan_min_speed": [
-        "0"
+        "20"
     ],
     "filament_adaptive_volumetric_speed": [
         "0"
@@ -142,15 +142,12 @@
         "Bowden High Flow"
     ],
     "filament_flow_ratio": [
-        "0.92",
+        "0.97",
         "nil",
         "nil",
         "nil"
     ],
     "filament_flush_temp": [
-        "0"
-    ],
-    "filament_flush_temp_fast": [
         "0"
     ],
     "filament_flush_volumetric_speed": [
@@ -160,7 +157,7 @@
         "0"
     ],
     "filament_max_volumetric_speed": [
-        "8",
+        "16",
         "nil",
         "nil",
         "nil"
@@ -265,10 +262,10 @@
         "1"
     ],
     "hot_plate_temp": [
-        "100"
+        "110"
     ],
     "hot_plate_temp_initial_layer": [
-        "100"
+        "110"
     ],
     "filament_ingredients_safe": "1",
     "filament_emission_safe": "1",
@@ -346,7 +343,7 @@
         "10"
     ],
     "slow_down_layer_time": [
-        "10"
+        "6"
     ],
     "slow_down_min_speed": [
         "20",
@@ -364,10 +361,10 @@
         "105"
     ],
     "textured_plate_temp": [
-        "100"
+        "110"
     ],
     "textured_plate_temp_initial_layer": [
-        "100"
+        "110"
     ],
     "volumetric_speed_coefficients": [
         "0 0 0 0 0 0"
@@ -381,6 +378,7 @@
     "filament_end_gcode": [
         "; filament end gcode \n\n"
     ],
+    "inherits": "Generic ASA @BBL X2D 0.4 nozzle",
     "filament_adhesiveness_category": [
         "200"
     ],
@@ -390,7 +388,7 @@
     "include": [
         "fdm_filament_template_direct_bowden"
     ],
-    "version": "2.6.0.2",
+    "version": "2.7.0.9",
     "idle_temperature": [
         "0"
     ]

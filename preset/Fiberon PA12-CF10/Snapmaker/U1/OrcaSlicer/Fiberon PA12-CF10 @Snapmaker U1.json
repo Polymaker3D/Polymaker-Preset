@@ -3,53 +3,41 @@
     "name": "Fiberon PA12-CF10 @Snapmaker U1",
     "from": "User",
     "instantiation": "true",
-    "cool_plate_temp": [
+    "activate_air_filtration": [
         "0"
     ],
-    "eng_plate_temp": [
-        "50"
-    ],
-    "hot_plate_temp": [
-        "50"
-    ],
-    "textured_plate_temp": [
-        "50"
-    ],
-    "cool_plate_temp_initial_layer": [
+    "chamber_temperatures": [
         "0"
-    ],
-    "eng_plate_temp_initial_layer": [
-        "50"
-    ],
-    "hot_plate_temp_initial_layer": [
-        "50"
-    ],
-    "textured_plate_temp_initial_layer": [
-        "50"
-    ],
-    "overhang_fan_threshold": [
-        "95%"
-    ],
-    "overhang_fan_speed": [
-        "60"
-    ],
-    "slow_down_for_layer_cooling": [
-        "1"
     ],
     "close_fan_the_first_x_layers": [
         "3"
     ],
-    "filament_end_gcode": [
-        "; filament end gcode \n"
+    "complete_print_exhaust_fan_speed": [
+        "70"
     ],
-    "filament_flow_ratio": [
-        "0.87"
+    "cool_plate_temp": [
+        "0"
     ],
-    "reduce_fan_stop_start_freq": [
-        "1"
+    "cool_plate_temp_initial_layer": [
+        "0"
+    ],
+    "during_print_exhaust_fan_speed": [
+        "70"
+    ],
+    "eng_plate_temp": [
+        "50"
+    ],
+    "eng_plate_temp_initial_layer": [
+        "50"
     ],
     "fan_cooling_layer_time": [
         "31"
+    ],
+    "fan_max_speed": [
+        "50"
+    ],
+    "fan_min_speed": [
+        "20"
     ],
     "filament_cost": [
         "20"
@@ -60,17 +48,17 @@
     "filament_diameter": [
         "1.75"
     ],
+    "filament_flow_ratio": [
+        "0.87"
+    ],
+    "filament_is_support": [
+        "0"
+    ],
     "filament_max_volumetric_speed": [
         "8"
     ],
     "filament_minimal_purge_on_wipe_tower": [
         "15"
-    ],
-    "filament_retraction_length": [
-        "1.0"
-    ],
-    "filament_z_hop": [
-        "0.0"
     ],
     "filament_settings_id": [
         "Fiberon PA12-CF10 @Snapmaker U1"
@@ -84,48 +72,91 @@
     "filament_vendor": [
         "Polymaker"
     ],
-    "bed_type": [
-        "Cool Plate"
-    ],
-    "nozzle_temperature_initial_layer": [
-        "270"
-    ],
     "full_fan_speed_layer": [
         "0"
     ],
-    "fan_max_speed": [
+    "filament_scarf_seam_type": [
+        "none"
+    ],
+    "filament_scarf_height": [
+        "10%"
+    ],
+    "filament_scarf_gap": [
+        "0%"
+    ],
+    "filament_scarf_length": [
+        "10"
+    ],
+    "filament_shrink": [
+        "100%"
+    ],
+    "hot_plate_temp": [
         "50"
     ],
-    "fan_min_speed": [
-        "20"
+    "hot_plate_temp_initial_layer": [
+        "50"
     ],
-    "slow_down_min_speed": [
-        "10"
+    "nozzle_temperature": [
+        "280"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "280"
+    ],
+    "overhang_fan_speed": [
+        "30"
+    ],
+    "overhang_fan_threshold": [
+        "95%"
+    ],
+    "reduce_fan_stop_start_freq": [
+        "1"
+    ],
+    "required_nozzle_HRC": [
+        "40"
+    ],
+    "supertack_plate_temp": [
+        "0"
+    ],
+    "supertack_plate_temp_initial_layer": [
+        "0"
+    ],
+    "slow_down_for_layer_cooling": [
+        "1"
     ],
     "slow_down_layer_time": [
         "8"
     ],
-    "filament_start_gcode": [
-        "; Filament gcode\n"
-    ],
-    "nozzle_temperature": [
-        "270"
+    "slow_down_min_speed": [
+        "10"
     ],
     "temperature_vitrification": [
         "55"
     ],
-    "nozzle_temperature_range_low": [
-        "280"
+    "textured_plate_temp": [
+        "50"
     ],
-    "nozzle_temperature_range_high": [
-        "300"
+    "textured_plate_temp_initial_layer": [
+        "50"
     ],
-    "renamed_from": "My Generic PA-CF",
-    "setting_id": "OGFSA04",
-    "filament_id": "PMPA01",
+    "filament_start_gcode": [
+        "; Filament gcode\n"
+    ],
+    "filament_end_gcode": [
+        "; filament end gcode\n"
+    ],
     "compatible_printers": [
         "Snapmaker U1 (0.4 nozzle)"
     ],
+    "inherits": "Generic PA-CF @System",
+    "filament_id": "PMPA01",
+    "nozzle_temperature_range_high": [
+        "300"
+    ],
+    "nozzle_temperature_range_low": [
+        "280"
+    ],
+    "renamed_from": "My Generic PA-CF",
+    "setting_id": "OGFSA04",
     "enable_pressure_advance": [
         "1"
     ],

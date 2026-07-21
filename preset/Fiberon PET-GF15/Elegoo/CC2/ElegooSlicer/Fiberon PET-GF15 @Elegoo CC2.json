@@ -3,62 +3,56 @@
     "name": "Fiberon PET-GF15 @Elegoo CC2",
     "from": "User",
     "instantiation": "true",
-    "cool_plate_temp": [
+    "activate_air_filtration": [
         "0"
     ],
-    "eng_plate_temp": [
-        "70"
-    ],
-    "hot_plate_temp": [
-        "90"
-    ],
-    "textured_plate_temp": [
-        "70"
-    ],
-    "cool_plate_temp_initial_layer": [
+    "chamber_temperatures": [
         "0"
-    ],
-    "eng_plate_temp_initial_layer": [
-        "70"
-    ],
-    "hot_plate_temp_initial_layer": [
-        "90"
-    ],
-    "textured_plate_temp_initial_layer": [
-        "70"
-    ],
-    "overhang_fan_threshold": [
-        "25%"
-    ],
-    "overhang_fan_speed": [
-        "100"
-    ],
-    "slow_down_for_layer_cooling": [
-        "1"
     ],
     "close_fan_the_first_x_layers": [
         "3"
     ],
-    "filament_end_gcode": [
-        "; filament end gcode \n"
+    "complete_print_exhaust_fan_speed": [
+        "70"
     ],
-    "filament_flow_ratio": [
-        "0.94"
-    ],
-    "reduce_fan_stop_start_freq": [
+    "cool_plate_temp": [
         "0"
+    ],
+    "cool_plate_temp_initial_layer": [
+        "0"
+    ],
+    "during_print_exhaust_fan_speed": [
+        "70"
+    ],
+    "eng_plate_temp": [
+        "70"
+    ],
+    "eng_plate_temp_initial_layer": [
+        "70"
     ],
     "fan_cooling_layer_time": [
         "25"
     ],
-    "filament_cost": [
+    "fan_max_speed": [
+        "40"
+    ],
+    "fan_min_speed": [
         "0"
+    ],
+    "filament_cost": [
+        "30"
     ],
     "filament_density": [
         "1.43"
     ],
     "filament_diameter": [
         "1.75"
+    ],
+    "filament_flow_ratio": [
+        "0.94"
+    ],
+    "filament_is_support": [
+        "0"
     ],
     "filament_max_volumetric_speed": [
         "16"
@@ -78,56 +72,69 @@
     "filament_vendor": [
         "Polymaker"
     ],
-    "bed_type": [
-        "Cool Plate"
-    ],
-    "nozzle_temperature_initial_layer": [
-        "300"
-    ],
     "full_fan_speed_layer": [
         "0"
     ],
-    "fan_max_speed": [
-        "40"
+    "hot_plate_temp": [
+        "90"
     ],
-    "fan_min_speed": [
-        "0"
-    ],
-    "slow_down_min_speed": [
-        "20"
-    ],
-    "slow_down_layer_time": [
-        "6"
-    ],
-    "filament_start_gcode": [
-        "; Filament start gcode\n"
+    "hot_plate_temp_initial_layer": [
+        "90"
     ],
     "nozzle_temperature": [
         "300"
     ],
+    "nozzle_temperature_initial_layer": [
+        "300"
+    ],
+    "overhang_fan_speed": [
+        "100"
+    ],
+    "overhang_fan_threshold": [
+        "25%"
+    ],
+    "reduce_fan_stop_start_freq": [
+        "0"
+    ],
+    "required_nozzle_HRC": [
+        "40"
+    ],
+    "slow_down_for_layer_cooling": [
+        "1"
+    ],
+    "slow_down_layer_time": [
+        "6"
+    ],
+    "slow_down_min_speed": [
+        "20"
+    ],
     "temperature_vitrification": [
         "232.6"
     ],
-    "filament_id": "PMPE08",
+    "textured_plate_temp": [
+        "70"
+    ],
+    "textured_plate_temp_initial_layer": [
+        "70"
+    ],
+    "compatible_printers": [
+        "Elegoo Centauri Carbon 2 0.4 nozzle"
+    ],
+    "filament_start_gcode": [
+        "; Filament start gcode\n"
+    ],
+    "filament_end_gcode": [
+        "; filament end gcode \n"
+    ],
+    "inherits": "Generic PET-CF @Elegoo Centauri",
     "nozzle_temperature_range_high": [
         "310"
     ],
     "nozzle_temperature_range_low": [
         "280"
     ],
-    "supertack_plate_temp": [
-        "70"
-    ],
-    "supertack_plate_temp_initial_layer": [
-        "70"
-    ],
+    "filament_id": "PMPE08",
     "setting_id": "GPETCF00",
-    "required_nozzle_HRC": [
-        "40"
-    ],
-    "compatible_printers": [
-        "Elegoo Centauri Carbon 2 0.4 nozzle"
-    ],
     "enable_pressure_advance": [
         "1"
     ],
