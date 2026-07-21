@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updatedAt": "2026-07-02T08:50:28.961Z",
+  "updatedAt": "2026-07-21T08:54:36.207Z",
   "materials": [
     "Fiberon ASA-CF08",
     "Fiberon PA12-CF10",
@@ -210,7 +210,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/Fiberon ASA-CF08/Elegoo/CC2/ElegooSlicer/Fiberon ASA-CF08 @Elegoo CC2.json",
       "filename": "Fiberon ASA-CF08 @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -236,7 +236,7 @@
       "slicer": "OrcaSlicer",
       "path": "preset/Fiberon ASA-CF08/Snapmaker/U1/OrcaSlicer/Fiberon ASA-CF08 @Snapmaker U1.json",
       "filename": "Fiberon ASA-CF08 @Snapmaker U1.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Snapmaker",
@@ -405,7 +405,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/Fiberon PA12-CF10/Elegoo/CC2/ElegooSlicer/Fiberon PA12-CF10 @Elegoo CC2.json",
       "filename": "Fiberon PA12-CF10 @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -421,7 +421,7 @@
       "slicer": "OrcaSlicer",
       "path": "preset/Fiberon PA12-CF10/Snapmaker/U1/OrcaSlicer/Fiberon PA12-CF10 @Snapmaker U1.json",
       "filename": "Fiberon PA12-CF10 @Snapmaker U1.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Snapmaker",
@@ -437,7 +437,7 @@
       "slicer": "OrcaSlicer",
       "path": "preset/Fiberon PA6-CF20/Anycubic/Kobra S1/OrcaSlicer/Fiberon PA6-CF20 @Anycubic Kobra S1.json",
       "filename": "Fiberon PA6-CF20 @Anycubic Kobra S1.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Anycubic",
@@ -607,7 +607,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/Fiberon PA6-CF20/Elegoo/CC2/ElegooSlicer/Fiberon PA6-CF20 @Elegoo CC2.json",
       "filename": "Fiberon PA6-CF20 @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -798,7 +798,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/Fiberon PA6-GF25/Elegoo/CC2/ElegooSlicer/Fiberon PA6-GF25 @Elegoo CC2.json",
       "filename": "Fiberon PA6-GF25 @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -978,7 +978,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/Fiberon PA612-CF15/Elegoo/CC2/ElegooSlicer/Fiberon PA612-CF15 @Elegoo CC2.json",
       "filename": "Fiberon PA612-CF15 @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -1099,7 +1099,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/Fiberon PA612-ESD/Elegoo/CC2/ElegooSlicer/Fiberon PA612-ESD @Elegoo CC2.json",
       "filename": "Fiberon PA612-ESD @Elegoo CC2.json",
-      "updatedAt": "2026-06-02T13:09:24+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -1279,7 +1279,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/Fiberon PET-CF17/Elegoo/CC2/ElegooSlicer/Fiberon PET-CF17 @Elegoo CC2.json",
       "filename": "Fiberon PET-CF17 @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -1295,7 +1295,7 @@
       "slicer": "OrcaSlicer",
       "path": "preset/Fiberon PET-CF17/Snapmaker/U1/OrcaSlicer/Fiberon PET-CF17 @Snapmaker U1.json",
       "filename": "Fiberon PET-CF17 @Snapmaker U1.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Snapmaker",
@@ -1330,7 +1330,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PET-GF15/BBL/H2D/BambuStudio/Fiberon PET-GF15 @BBL H2D.json",
       "filename": "Fiberon PET-GF15 @BBL H2D.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -1405,7 +1405,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/Fiberon PET-GF15/Elegoo/CC2/ElegooSlicer/Fiberon PET-GF15 @Elegoo CC2.json",
       "filename": "Fiberon PET-GF15 @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -1421,7 +1421,7 @@
       "slicer": "OrcaSlicer",
       "path": "preset/Fiberon PET-GF15/Snapmaker/U1/OrcaSlicer/Fiberon PET-GF15 @Snapmaker U1.json",
       "filename": "Fiberon PET-GF15 @Snapmaker U1.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Snapmaker",
@@ -1577,7 +1577,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/Fiberon PETG-ESD/Elegoo/CC2/ElegooSlicer/Fiberon PETG-ESD @Elegoo CC2.json",
       "filename": "Fiberon PETG-ESD @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -1593,7 +1593,7 @@
       "slicer": "OrcaSlicer",
       "path": "preset/Fiberon PETG-ESD/Snapmaker/U1/OrcaSlicer/Fiberon PETG-ESD @Snapmaker U1.json",
       "filename": "Fiberon PETG-ESD @Snapmaker U1.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Snapmaker",
@@ -1784,7 +1784,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PPS-CF10/BBL/H2D/BambuStudio/Fiberon PPS-CF10 @BBL H2D.json",
       "filename": "Fiberon PPS-CF10 @BBL H2D.json",
-      "updatedAt": "2026-07-02T16:49:31+08:00",
+      "updatedAt": "2026-07-02T17:45:22+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -2163,7 +2163,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/Panchroma CoPE/Elegoo/CC2/ElegooSlicer/Panchroma CoPE @Elegoo CC2.json",
       "filename": "Panchroma CoPE @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -2205,7 +2205,7 @@
       "slicer": "OrcaSlicer",
       "path": "preset/Panchroma PLA/Anycubic/Kobra S1/OrcaSlicer/Panchroma PLA @Anycubic Kobra S1.json",
       "filename": "Panchroma PLA @Anycubic Kobra S1.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Anycubic",
@@ -2514,7 +2514,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/Panchroma PLA/Elegoo/CC2/ElegooSlicer/Panchroma PLA @Elegoo CC2.json",
       "filename": "Panchroma PLA @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -2824,7 +2824,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/Panchroma PLA Celestial/Elegoo/CC2/ElegooSlicer/Panchroma PLA Celestial @Elegoo CC2.json",
       "filename": "Panchroma PLA Celestial @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -3134,7 +3134,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/Panchroma PLA Galaxy/Elegoo/CC2/ElegooSlicer/Panchroma PLA Galaxy @Elegoo CC2.json",
       "filename": "Panchroma PLA Galaxy @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -3444,7 +3444,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/Panchroma PLA Glow/Elegoo/CC2/ElegooSlicer/Panchroma PLA Glow @Elegoo CC2.json",
       "filename": "Panchroma PLA Glow @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -3754,7 +3754,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/Panchroma PLA Luminous/Elegoo/CC2/ElegooSlicer/Panchroma PLA Luminous @Elegoo CC2.json",
       "filename": "Panchroma PLA Luminous @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -3880,7 +3880,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Panchroma PLA Marble/BBL/A2L/BambuStudio/Panchroma PLA Marble @BBL A2L.json",
       "filename": "Panchroma PLA Marble @BBL A2L.json",
-      "updatedAt": "2026-07-02T16:49:31+08:00",
+      "updatedAt": "2026-07-02T17:45:22+08:00",
       "compatiblePrinters": []
     },
     {
@@ -4048,7 +4048,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/Panchroma PLA Marble/Elegoo/CC2/ElegooSlicer/Panchroma PLA Marble @Elegoo CC2.json",
       "filename": "Panchroma PLA Marble @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -4174,7 +4174,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Panchroma PLA Matte/BBL/A2L/BambuStudio/Panchroma PLA Matte @BBL A2L.json",
       "filename": "Panchroma PLA Matte @BBL A2L.json",
-      "updatedAt": "2026-07-02T16:49:31+08:00",
+      "updatedAt": "2026-07-02T17:45:22+08:00",
       "compatiblePrinters": []
     },
     {
@@ -4342,7 +4342,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/Panchroma PLA Matte/Elegoo/CC2/ElegooSlicer/Panchroma PLA Matte @Elegoo CC2.json",
       "filename": "Panchroma PLA Matte @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -4652,7 +4652,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/Panchroma PLA Metallic/Elegoo/CC2/ElegooSlicer/Panchroma PLA Metallic @Elegoo CC2.json",
       "filename": "Panchroma PLA Metallic @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -4962,7 +4962,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/Panchroma PLA Neon/Elegoo/CC2/ElegooSlicer/Panchroma PLA Neon @Elegoo CC2.json",
       "filename": "Panchroma PLA Neon @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -5246,7 +5246,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/Panchroma PLA Satin/Elegoo/CC2/ElegooSlicer/Panchroma PLA Satin @Elegoo CC2.json",
       "filename": "Panchroma PLA Satin @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -5556,7 +5556,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/Panchroma PLA Silk/Elegoo/CC2/ElegooSlicer/Panchroma PLA Silk @Elegoo CC2.json",
       "filename": "Panchroma PLA Silk @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -5866,7 +5866,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/Panchroma PLA Starlight/Elegoo/CC2/ElegooSlicer/Panchroma PLA Starlight @Elegoo CC2.json",
       "filename": "Panchroma PLA Starlight @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -6176,7 +6176,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/Panchroma PLA Translucent/Elegoo/CC2/ElegooSlicer/Panchroma PLA Translucent @Elegoo CC2.json",
       "filename": "Panchroma PLA Translucent @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -6486,7 +6486,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/Panchroma PLA UV Shift/Elegoo/CC2/ElegooSlicer/Panchroma PLA UV Shift @Elegoo CC2.json",
       "filename": "Panchroma PLA UV Shift @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -6528,7 +6528,7 @@
       "slicer": "BambuStudio",
       "path": "preset/PolyCast/BBL/A2L/BambuStudio/PolyCast @BBL A2L.json",
       "filename": "PolyCast @BBL A2L.json",
-      "updatedAt": "2026-07-02T16:49:31+08:00",
+      "updatedAt": "2026-07-02T17:45:22+08:00",
       "compatiblePrinters": []
     },
     {
@@ -6538,7 +6538,7 @@
       "slicer": "BambuStudio",
       "path": "preset/PolyCast/BBL/P2S/BambuStudio/PolyCast @BBL P2S.json",
       "filename": "PolyCast @BBL P2S.json",
-      "updatedAt": "2026-07-02T16:49:31+08:00",
+      "updatedAt": "2026-07-02T17:45:22+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -6616,13 +6616,29 @@
       ]
     },
     {
+      "material": "PolyFlex TPU95",
+      "brand": "Elegoo",
+      "model": "CC2",
+      "slicer": "ElegooSlicer",
+      "path": "preset/PolyFlex TPU95/Elegoo/CC2/ElegooSlicer/PolyFlex TPU95 @Elegoo CC2.json",
+      "filename": "PolyFlex TPU95 @Elegoo CC2.json",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "Elegoo",
+          "model": "CC2",
+          "fullName": "Elegoo Centauri Carbon 2 0.4 nozzle"
+        }
+      ]
+    },
+    {
       "material": "PolyFlex TPU95-HF",
       "brand": "BBL",
       "model": "A2L",
       "slicer": "BambuStudio",
       "path": "preset/PolyFlex TPU95-HF/BBL/A2L/BambuStudio/PolyFlex TPU95-HF @BBL A2L.json",
       "filename": "PolyFlex TPU95-HF @BBL A2L.json",
-      "updatedAt": "2026-07-02T16:49:31+08:00",
+      "updatedAt": "2026-07-02T17:45:22+08:00",
       "compatiblePrinters": []
     },
     {
@@ -6955,7 +6971,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/PolyLite CosPLA/Elegoo/CC2/ElegooSlicer/PolyLite CosPLA @Elegoo CC2.json",
       "filename": "PolyLite CosPLA @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -7068,7 +7084,7 @@
       "slicer": "BambuStudio",
       "path": "preset/PolyLite PETG/BBL/A2L/BambuStudio/PolyLite PETG @BBL A2L.json",
       "filename": "PolyLite PETG @BBL A2L.json",
-      "updatedAt": "2026-07-02T16:49:31+08:00",
+      "updatedAt": "2026-07-02T17:45:22+08:00",
       "compatiblePrinters": []
     },
     {
@@ -7118,7 +7134,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/PolyLite PETG/Elegoo/CC2/ElegooSlicer/PolyLite PETG @Elegoo CC2.json",
       "filename": "PolyLite PETG @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -7134,7 +7150,7 @@
       "slicer": "OrcaSlicer",
       "path": "preset/PolyLite PETG/Snapmaker/U1/OrcaSlicer/PolyLite PETG @Snapmaker U1.json",
       "filename": "PolyLite PETG @Snapmaker U1.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Snapmaker",
@@ -7150,7 +7166,7 @@
       "slicer": "BambuStudio",
       "path": "preset/PolyLite PETG Translucent/BBL/A2L/BambuStudio/PolyLite PETG Translucent @BBL A2L.json",
       "filename": "PolyLite PETG Translucent @BBL A2L.json",
-      "updatedAt": "2026-07-02T16:49:31+08:00",
+      "updatedAt": "2026-07-02T17:45:22+08:00",
       "compatiblePrinters": []
     },
     {
@@ -7200,7 +7216,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/PolyLite PETG Translucent/Elegoo/CC2/ElegooSlicer/PolyLite PETG Translucent @Elegoo CC2.json",
       "filename": "PolyLite PETG Translucent @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -7216,7 +7232,7 @@
       "slicer": "OrcaSlicer",
       "path": "preset/PolyLite PETG Translucent/Snapmaker/U1/OrcaSlicer/PolyLite PETG Translucent @Snapmaker U1.json",
       "filename": "PolyLite PETG Translucent @Snapmaker U1.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Snapmaker",
@@ -7500,7 +7516,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/PolyLite PLA/Elegoo/CC2/ElegooSlicer/PolyLite PLA @Elegoo CC2.json",
       "filename": "PolyLite PLA @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -7810,7 +7826,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/PolyLite PLA Galaxy/Elegoo/CC2/ElegooSlicer/PolyLite PLA Galaxy @Elegoo CC2.json",
       "filename": "PolyLite PLA Galaxy @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -8120,7 +8136,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/PolyLite PLA Glow/Elegoo/CC2/ElegooSlicer/PolyLite PLA Glow @Elegoo CC2.json",
       "filename": "PolyLite PLA Glow @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -8430,7 +8446,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/PolyLite PLA Luminous/Elegoo/CC2/ElegooSlicer/PolyLite PLA Luminous @Elegoo CC2.json",
       "filename": "PolyLite PLA Luminous @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -8740,7 +8756,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/PolyLite PLA Neon/Elegoo/CC2/ElegooSlicer/PolyLite PLA Neon @Elegoo CC2.json",
       "filename": "PolyLite PLA Neon @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -8872,7 +8888,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/PolyLite PLA Pro/Elegoo/CC2/ElegooSlicer/PolyLite PLA Pro @Elegoo CC2.json",
       "filename": "PolyLite PLA Pro @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -9004,7 +9020,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/PolyLite PLA Pro Metallic/Elegoo/CC2/ElegooSlicer/PolyLite PLA Pro Metallic @Elegoo CC2.json",
       "filename": "PolyLite PLA Pro Metallic @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -9314,7 +9330,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/PolyLite PLA Starlight/Elegoo/CC2/ElegooSlicer/PolyLite PLA Starlight @Elegoo CC2.json",
       "filename": "PolyLite PLA Starlight @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -9624,7 +9640,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/PolyLite PLA Translucent/Elegoo/CC2/ElegooSlicer/PolyLite PLA Translucent @Elegoo CC2.json",
       "filename": "PolyLite PLA Translucent @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -9697,7 +9713,7 @@
       "slicer": "OrcaSlicer",
       "path": "preset/PolyLite PLA-CF/Snapmaker/U1/OrcaSlicer/PolyLite PLA-CF @Snapmaker U1.json",
       "filename": "PolyLite PLA-CF @Snapmaker U1.json",
-      "updatedAt": "2026-07-02T16:49:31+08:00",
+      "updatedAt": "2026-07-02T17:45:22+08:00",
       "compatiblePrinters": [
         {
           "brand": "Snapmaker",
@@ -9713,7 +9729,7 @@
       "slicer": "BambuStudio",
       "path": "preset/PolyMax PC/BBL/X2D/BambuStudio/PolyMax PC @BBL X2D.json",
       "filename": "PolyMax PC @BBL X2D.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -9726,6 +9742,32 @@
         "Bowden Standard",
         "Bowden High Flow"
       ]
+    },
+    {
+      "material": "PolyMax PC",
+      "brand": "Elegoo",
+      "model": "CC2",
+      "slicer": "ElegooSlicer",
+      "path": "preset/PolyMax PC/Elegoo/CC2/ElegooSlicer/PolyMax PC @Elegoo CC2.json",
+      "filename": "PolyMax PC @Elegoo CC2.json",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "Elegoo",
+          "model": "CC2",
+          "fullName": "Elegoo Centauri Carbon 2 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "PolyMax PETG",
+      "brand": "BBL",
+      "model": "A2L",
+      "slicer": "BambuStudio",
+      "path": "preset/PolyMax PETG/BBL/A2L/BambuStudio/PolyMax PETG @BBL A2L.json",
+      "filename": "PolyMax PETG @BBL A2L.json",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
+      "compatiblePrinters": []
     },
     {
       "material": "PolyMax PETG",
@@ -9769,7 +9811,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/PolyMax PETG/Elegoo/CC2/ElegooSlicer/PolyMax PETG @Elegoo CC2.json",
       "filename": "PolyMax PETG @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -9864,7 +9906,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/PolyMax PLA/Elegoo/CC2/ElegooSlicer/PolyMax PLA @Elegoo CC2.json",
       "filename": "PolyMax PLA @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -10050,7 +10092,7 @@
       "slicer": "BambuStudio",
       "path": "preset/PolyTerra PLA/BBL/A2L/BambuStudio/PolyTerra PLA @BBL A2L.json",
       "filename": "PolyTerra PLA @BBL A2L.json",
-      "updatedAt": "2026-07-02T16:49:31+08:00",
+      "updatedAt": "2026-07-02T17:45:22+08:00",
       "compatiblePrinters": []
     },
     {
@@ -10218,7 +10260,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/PolyTerra PLA/Elegoo/CC2/ElegooSlicer/PolyTerra PLA @Elegoo CC2.json",
       "filename": "PolyTerra PLA @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -10344,7 +10386,7 @@
       "slicer": "BambuStudio",
       "path": "preset/PolyTerra PLA Marble/BBL/A2L/BambuStudio/PolyTerra PLA Marble @BBL A2L.json",
       "filename": "PolyTerra PLA Marble @BBL A2L.json",
-      "updatedAt": "2026-07-02T16:49:31+08:00",
+      "updatedAt": "2026-07-02T17:45:22+08:00",
       "compatiblePrinters": []
     },
     {
@@ -10512,7 +10554,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/PolyTerra PLA Marble/Elegoo/CC2/ElegooSlicer/PolyTerra PLA Marble @Elegoo CC2.json",
       "filename": "PolyTerra PLA Marble @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -10796,7 +10838,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/PolyTerra PLA+/Elegoo/CC2/ElegooSlicer/PolyTerra PLA+ @Elegoo CC2.json",
       "filename": "PolyTerra PLA+ @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -10876,7 +10918,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Polymaker ABS Max/BBL/H2S/BambuStudio/Polymaker ABS Max @BBL H2S.json",
       "filename": "Polymaker ABS Max @BBL H2S.json",
-      "updatedAt": "2026-07-02T16:49:31+08:00",
+      "updatedAt": "2026-07-02T17:45:22+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -10966,7 +11008,7 @@
       "slicer": "CrealityPrint",
       "path": "preset/Polymaker ABS Max/CreealityPrint/K2Pro/CrealityPrint/Polymaker ABS Max @CreealityPrint K2Pro.json",
       "filename": "Polymaker ABS Max @CreealityPrint K2Pro.json",
-      "updatedAt": "2026-07-02T16:49:31+08:00",
+      "updatedAt": "2026-07-02T17:45:22+08:00",
       "compatiblePrinters": []
     },
     {
@@ -10976,7 +11018,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/Polymaker ABS Max/Elegoo/CC2/ElegooSlicer/Polymaker ABS Max @Elegoo CC2.json",
       "filename": "Polymaker ABS Max @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -11002,7 +11044,7 @@
       "slicer": "OrcaSlicer",
       "path": "preset/Polymaker ABS Pro/Anycubic/Kobra S1/OrcaSlicer/Polymaker ABS Pro @Anycubic Kobra S1.json",
       "filename": "Polymaker ABS Pro @Anycubic Kobra S1.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Anycubic",
@@ -11153,7 +11195,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/Polymaker ABS Pro/Elegoo/CC2/ElegooSlicer/Polymaker ABS Pro @Elegoo CC2.json",
       "filename": "Polymaker ABS Pro @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -11169,7 +11211,7 @@
       "slicer": "OrcaSlicer",
       "path": "preset/Polymaker ABS Pro/Snapmaker/U1/OrcaSlicer/Polymaker ABS Pro @Snapmaker U1.json",
       "filename": "Polymaker ABS Pro @Snapmaker U1.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Snapmaker",
@@ -11185,7 +11227,7 @@
       "slicer": "OrcaSlicer",
       "path": "preset/Polymaker ABS Pro Galaxy/Anycubic/Kobra S1/OrcaSlicer/Polymaker ABS Pro Galaxy @Anycubic Kobra S1.json",
       "filename": "Polymaker ABS Pro Galaxy @Anycubic Kobra S1.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Anycubic",
@@ -11336,7 +11378,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/Polymaker ABS Pro Galaxy/Elegoo/CC2/ElegooSlicer/Polymaker ABS Pro Galaxy @Elegoo CC2.json",
       "filename": "Polymaker ABS Pro Galaxy @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -11352,7 +11394,7 @@
       "slicer": "OrcaSlicer",
       "path": "preset/Polymaker ABS Pro Galaxy/Snapmaker/U1/OrcaSlicer/Polymaker ABS Pro Galaxy @Snapmaker U1.json",
       "filename": "Polymaker ABS Pro Galaxy @Snapmaker U1.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Snapmaker",
@@ -11406,7 +11448,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Polymaker ASA/BBL/X2D/BambuStudio/Polymaker ASA @BBL X2D.json",
       "filename": "Polymaker ASA @BBL X2D.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -11414,6 +11456,16 @@
           "fullName": "Bambu Lab X2D 0.4 nozzle"
         }
       ]
+    },
+    {
+      "material": "Polymaker ASA",
+      "brand": "CreealityPrint",
+      "model": "K2Pro",
+      "slicer": "CrealityPrint",
+      "path": "preset/Polymaker ASA/CreealityPrint/K2Pro/CrealityPrint/Polymaker ASA @CreealityPrint K2Pro.json",
+      "filename": "Polymaker ASA @CreealityPrint K2Pro.json",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
+      "compatiblePrinters": []
     },
     {
       "material": "Polymaker HT-PLA",
@@ -11548,7 +11600,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/Polymaker HT-PLA/Elegoo/CC2/ElegooSlicer/Polymaker HT-PLA @Elegoo CC2.json",
       "filename": "Polymaker HT-PLA @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -11574,7 +11626,7 @@
       "slicer": "OrcaSlicer",
       "path": "preset/Polymaker HT-PLA/Snapmaker/U1/OrcaSlicer/Polymaker HT-PLA @Snapmaker U1.json",
       "filename": "Polymaker HT-PLA @Snapmaker U1.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Snapmaker",
@@ -11582,6 +11634,16 @@
           "fullName": "Snapmaker U1 (0.4 nozzle)"
         }
       ]
+    },
+    {
+      "material": "Polymaker HT-PLA-GF",
+      "brand": "BBL",
+      "model": "A2L",
+      "slicer": "BambuStudio",
+      "path": "preset/Polymaker HT-PLA-GF/BBL/A2L/BambuStudio/Polymaker HT-PLA-GF @BBL A2L.json",
+      "filename": "Polymaker HT-PLA-GF @BBL A2L.json",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
+      "compatiblePrinters": []
     },
     {
       "material": "Polymaker HT-PLA-GF",
@@ -11670,7 +11732,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/Polymaker HT-PLA-GF/Elegoo/CC2/ElegooSlicer/Polymaker HT-PLA-GF @Elegoo CC2.json",
       "filename": "Polymaker HT-PLA-GF @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -11696,7 +11758,7 @@
       "slicer": "OrcaSlicer",
       "path": "preset/Polymaker HT-PLA-GF/Snapmaker/U1/OrcaSlicer/Polymaker HT-PLA-GF @Snapmaker U1.json",
       "filename": "Polymaker HT-PLA-GF @Snapmaker U1.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Snapmaker",
@@ -11733,7 +11795,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Polymaker PETG/BBL/A2L/BambuStudio/Polymaker PETG @BBL A2L.json",
       "filename": "Polymaker PETG @BBL A2L.json",
-      "updatedAt": "2026-07-02T16:49:31+08:00",
+      "updatedAt": "2026-07-02T17:45:22+08:00",
       "compatiblePrinters": []
     },
     {
@@ -11871,7 +11933,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/Polymaker PETG/Elegoo/CC2/ElegooSlicer/Polymaker PETG @Elegoo CC2.json",
       "filename": "Polymaker PETG @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -11897,7 +11959,7 @@
       "slicer": "OrcaSlicer",
       "path": "preset/Polymaker PETG/Snapmaker/U1/OrcaSlicer/Polymaker PETG @Snapmaker U1.json",
       "filename": "Polymaker PETG @Snapmaker U1.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Snapmaker",
@@ -11934,7 +11996,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Polymaker PETG Galaxy/BBL/A2L/BambuStudio/Polymaker PETG Galaxy @BBL A2L.json",
       "filename": "Polymaker PETG Galaxy @BBL A2L.json",
-      "updatedAt": "2026-07-02T16:49:31+08:00",
+      "updatedAt": "2026-07-02T17:45:22+08:00",
       "compatiblePrinters": []
     },
     {
@@ -12072,7 +12134,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/Polymaker PETG Galaxy/Elegoo/CC2/ElegooSlicer/Polymaker PETG Galaxy @Elegoo CC2.json",
       "filename": "Polymaker PETG Galaxy @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -12098,7 +12160,7 @@
       "slicer": "OrcaSlicer",
       "path": "preset/Polymaker PETG Galaxy/Snapmaker/U1/OrcaSlicer/Polymaker PETG Galaxy @Snapmaker U1.json",
       "filename": "Polymaker PETG Galaxy @Snapmaker U1.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Snapmaker",
@@ -12106,6 +12168,16 @@
           "fullName": "Snapmaker U1 (0.4 nozzle)"
         }
       ]
+    },
+    {
+      "material": "Polymaker PLA",
+      "brand": "BBL",
+      "model": "A2L",
+      "slicer": "BambuStudio",
+      "path": "preset/Polymaker PLA/BBL/A2L/BambuStudio/Polymaker PLA @BBL A2L.json",
+      "filename": "Polymaker PLA @BBL A2L.json",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
+      "compatiblePrinters": []
     },
     {
       "material": "Polymaker PLA",
@@ -12194,7 +12266,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/Polymaker PLA/Elegoo/CC2/ElegooSlicer/Polymaker PLA @Elegoo CC2.json",
       "filename": "Polymaker PLA @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -12220,7 +12292,7 @@
       "slicer": "OrcaSlicer",
       "path": "preset/Polymaker PLA/Snapmaker/U1/OrcaSlicer/Polymaker PLA @Snapmaker U1.json",
       "filename": "Polymaker PLA @Snapmaker U1.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Snapmaker",
@@ -12236,7 +12308,7 @@
       "slicer": "OrcaSlicer",
       "path": "preset/Polymaker PLA Pro/Anycubic/Kobra S1/OrcaSlicer/Polymaker PLA Pro @Anycubic Kobra S1.json",
       "filename": "Polymaker PLA Pro @Anycubic Kobra S1.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Anycubic",
@@ -12399,7 +12471,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/Polymaker PLA Pro/Elegoo/CC2/ElegooSlicer/Polymaker PLA Pro @Elegoo CC2.json",
       "filename": "Polymaker PLA Pro @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -12425,7 +12497,7 @@
       "slicer": "OrcaSlicer",
       "path": "preset/Polymaker PLA Pro/Snapmaker/U1/OrcaSlicer/Polymaker PLA Pro @Snapmaker U1.json",
       "filename": "Polymaker PLA Pro @Snapmaker U1.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Snapmaker",
@@ -12441,7 +12513,7 @@
       "slicer": "OrcaSlicer",
       "path": "preset/Polymaker PLA Pro Metallic/Anycubic/Kobra S1/OrcaSlicer/Polymaker PLA Pro Metallic @Anycubic Kobra S1.json",
       "filename": "Polymaker PLA Pro Metallic @Anycubic Kobra S1.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Anycubic",
@@ -12604,7 +12676,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/Polymaker PLA Pro Metallic/Elegoo/CC2/ElegooSlicer/Polymaker PLA Pro Metallic @Elegoo CC2.json",
       "filename": "Polymaker PLA Pro Metallic @Elegoo CC2.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -12630,7 +12702,7 @@
       "slicer": "OrcaSlicer",
       "path": "preset/Polymaker PLA Pro Metallic/Snapmaker/U1/OrcaSlicer/Polymaker PLA Pro Metallic @Snapmaker U1.json",
       "filename": "Polymaker PLA Pro Metallic @Snapmaker U1.json",
-      "updatedAt": "2026-06-17T16:06:55+08:00",
+      "updatedAt": "2026-07-21T16:49:55+08:00",
       "compatiblePrinters": [
         {
           "brand": "Snapmaker",
