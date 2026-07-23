@@ -14,6 +14,9 @@ var I18N = (function () {
       'hero.title': 'Filament Presets',
       'hero.desc': 'Select your slicer to view and download Polymaker print profiles and filament presets for Bambu Studio, OrcaSlicer, ElegooSlicer, and PrusaSlicer',
       'hero.howto': 'How to use?',
+      'product.htPlaPro.title': 'Introducing Polymaker™ HT-PLA Pro',
+      'product.htPlaPro.tagline': 'Heat Ready. Impact Ready. Still PLA.',
+      'product.htPlaPro.cta': 'Learn More',
 
       // Filters
       'filter.slicer.label': 'Select Your Slicer',
@@ -162,6 +165,9 @@ var I18N = (function () {
       'hero.title': '耗材预设文件',
       'hero.desc': '选择您的切片软件，查看并下载适用于 Bambu Studio、OrcaSlicer、ElegooSlicer 和 PrusaSlicer 的 Polymaker 打印配置文件和耗材预设',
       'hero.howto': '如何使用？',
+      'product.htPlaPro.title': '全新 Polymaker™ HT-PLA Pro',
+      'product.htPlaPro.tagline': '耐热就绪，抗冲击就绪，依然是 PLA。',
+      'product.htPlaPro.cta': '了解更多',
 
       // Filters
       'filter.slicer.label': '选择切片软件',

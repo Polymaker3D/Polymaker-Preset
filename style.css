@@ -179,6 +179,89 @@ body.theme-wiki .preset-text {
   margin: 0;
 }
 
+/* Compact product highlight */
+.product-highlight {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0 0 0.35rem;
+  padding: 0.55rem 0.75rem;
+  border-left: 2px solid rgba(0, 204, 204, 0.75);
+  background: rgba(0, 204, 204, 0.065);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  flex-shrink: 0;
+}
+
+.product-highlight-copy {
+  min-width: 0;
+}
+
+.product-highlight-title,
+.product-highlight-tagline {
+  margin: 0;
+}
+
+.product-highlight-title {
+  color: var(--text);
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.product-highlight-tagline {
+  margin-top: 0.08rem;
+  color: var(--text-muted);
+  font-size: 0.76rem;
+  line-height: 1.3;
+}
+
+.product-highlight-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28rem;
+  color: var(--accent-light);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color var(--transition), transform var(--transition);
+}
+
+.product-highlight-link svg {
+  width: 0.82rem;
+  height: 0.82rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.product-highlight-link:hover {
+  color: #ffffff;
+  transform: translateX(1px);
+}
+
+.product-highlight-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+body.theme-wiki .product-highlight {
+  background: rgba(255, 255, 255, 0.55);
+  border-left-color: var(--accent);
+}
+
+body.theme-wiki .product-highlight-link {
+  color: var(--gradient-start);
+}
+
+body.theme-wiki .product-highlight-link:hover {
+  color: #007f7f;
+}
+
 /* Help icon button */
 .help-icon-btn {
   position: relative;
@@ -1818,6 +1901,21 @@ body.theme-wiki .install-steps strong {
   }
   .hero-desc {
     font-size: 0.75rem;
+  }
+  .product-highlight {
+    align-items: flex-end;
+    gap: 0.75rem;
+    margin-bottom: 0.25rem;
+    padding: 0.5rem 0.6rem;
+  }
+  .product-highlight-title {
+    font-size: 0.82rem;
+  }
+  .product-highlight-tagline {
+    font-size: 0.72rem;
+  }
+  .product-highlight-link {
+    font-size: 0.74rem;
   }
   .card {
     padding: 0.4rem 0.6rem;

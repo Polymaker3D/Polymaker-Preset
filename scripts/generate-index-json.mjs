@@ -58,10 +58,15 @@ function normalizePosix(p) {
 const MACHINE_NAME_MAP = {
     // Anycubic
     'Anycubic Kobra S1 0.4 nozzle': { brand: 'Anycubic', model: 'Kobra S1' },
+
+    // Creality Print
+    'Creality K2 Pro 0.4 nozzle': { brand: 'CreealityPrint', model: 'K2Pro' },
+    'SPARKX i7 0.4 nozzle': { brand: 'CreealityPrint', model: 'I7' },
     
     // BBL (Bambu Lab) - X1 variants are different machines
     'Bambu Lab A1 0.4 nozzle': { brand: 'BBL', model: 'A1' },
     'Bambu Lab A1 mini 0.4 nozzle': { brand: 'BBL', model: 'A1M' },
+    'Bambu Lab A2L 0.4 nozzle': { brand: 'BBL', model: 'A2L' },
     'Bambu Lab H2C 0.4 nozzle': { brand: 'BBL', model: 'H2C' },
     'Bambu Lab H2D 0.4 nozzle': { brand: 'BBL', model: 'H2D' },
     'Bambu Lab H2S 0.4 nozzle': { brand: 'BBL', model: 'H2S' },
@@ -76,6 +81,9 @@ const MACHINE_NAME_MAP = {
     
     // Elegoo
     'Elegoo Centauri Carbon 2 0.4 nozzle': { brand: 'Elegoo', model: 'CC2' },
+
+    // QIDI
+    'Qidi Q2 0.4 nozzle': { brand: 'QIDI', model: 'Q2' },
     
     // Snapmaker
     'Snapmaker U1 (0.4 nozzle)': { brand: 'Snapmaker', model: 'U1' }
