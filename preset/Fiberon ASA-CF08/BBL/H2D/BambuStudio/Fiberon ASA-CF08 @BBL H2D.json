@@ -95,7 +95,7 @@
         "-1"
     ],
     "filament_cost": [
-        "36.99"
+        "33.99"
     ],
     "filament_density": [
         "1.09"
@@ -142,9 +142,6 @@
         "nil"
     ],
     "filament_flush_temp": [
-        "0"
-    ],
-    "filament_flush_temp_fast": [
         "0"
     ],
     "filament_flush_volumetric_speed": [
@@ -362,6 +359,7 @@
     "filament_end_gcode": [
         "; filament end gcode \n"
     ],
+    "inherits": "Bambu ASA-CF @BBL H2D 0.4 nozzle",
     "filament_adhesiveness_category": [
         "200"
     ],

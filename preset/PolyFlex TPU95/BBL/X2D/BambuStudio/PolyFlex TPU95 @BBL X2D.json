@@ -100,7 +100,7 @@
         "20"
     ],
     "filament_density": [
-        "1.16"
+        "1.2"
     ],
     "filament_dev_ams_drying_ams_limitations": [
         "1"
@@ -148,9 +148,6 @@
         "nil"
     ],
     "filament_flush_temp": [
-        "0"
-    ],
-    "filament_flush_temp_fast": [
         "0"
     ],
     "filament_flush_volumetric_speed": [
@@ -316,7 +313,7 @@
         "nil"
     ],
     "nozzle_temperature_range_high": [
-        "240"
+        "230"
     ],
     "nozzle_temperature_range_low": [
         "210"
@@ -384,6 +381,7 @@
     "filament_end_gcode": [
         "; filament end gcode \n\n"
     ],
+    "inherits": "Generic TPU @BBL X2D 0.4 nozzle",
     "filament_adhesiveness_category": [
         "600"
     ],

@@ -97,7 +97,7 @@
         "270"
     ],
     "filament_cost": [
-        "84.99"
+        "81.99"
     ],
     "filament_density": [
         "1.34"
@@ -148,9 +148,6 @@
         "nil"
     ],
     "filament_flush_temp": [
-        "0"
-    ],
-    "filament_flush_temp_fast": [
         "0"
     ],
     "filament_flush_volumetric_speed": [
@@ -387,6 +384,7 @@
     "filament_end_gcode": [
         "; filament end gcode \n\n"
     ],
+    "inherits": "Bambu PET-CF @BBL X2D 0.4 nozzle",
     "filament_adhesiveness_category": [
         "800"
     ],

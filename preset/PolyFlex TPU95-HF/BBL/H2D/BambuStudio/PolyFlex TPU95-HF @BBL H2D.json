@@ -158,9 +158,6 @@
         "0",
         "0"
     ],
-    "filament_flush_temp_fast": [
-        "0"
-    ],
     "filament_flush_volumetric_speed": [
         "0",
         "0",
@@ -477,6 +474,7 @@
     "filament_end_gcode": [
         "; filament end gcode \n"
     ],
+    "inherits": "Generic TPU @BBL H2D",
     "filament_adhesiveness_category": [
         "600"
     ],

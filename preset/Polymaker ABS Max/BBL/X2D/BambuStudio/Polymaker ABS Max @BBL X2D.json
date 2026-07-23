@@ -76,6 +76,8 @@
         "10",
         "10",
         "10",
+        "10",
+        "10",
         "10"
     ],
     "filament_preheat_temperature_delta": [
@@ -97,7 +99,7 @@
         "270"
     ],
     "filament_cost": [
-        "24.99"
+        "19.99"
     ],
     "filament_density": [
         "1.06"
@@ -150,9 +152,6 @@
     "filament_flush_temp": [
         "0"
     ],
-    "filament_flush_temp_fast": [
-        "0"
-    ],
     "filament_flush_volumetric_speed": [
         "0"
     ],
@@ -162,7 +161,9 @@
     "filament_max_volumetric_speed": [
         "16",
         "25",
+        "25",
         "16",
+        "18",
         "18"
     ],
     "filament_metal_stickiness": [
@@ -199,13 +200,9 @@
         "10",
         "10",
         "10",
+        "10",
+        "10",
         "10"
-    ],
-    "filament_retraction_length": [
-        "0.4",
-        "0.4",
-        "nil",
-        "nil"
     ],
     "filament_scarf_seam_type": [
         "none"
@@ -226,22 +223,28 @@
         "Polymaker"
     ],
     "filament_wipe": [
+        "nil",
+        "nil",
+        "nil",
         "1",
-        "1",
-        "1",
-        "1"
+        "nil",
+        "nil"
     ],
     "filament_wipe_distance": [
+        "nil",
+        "nil",
+        "nil",
         "1",
-        "1",
-        "1",
-        "1"
+        "nil",
+        "nil"
     ],
     "filament_z_hop_types": [
+        "nil",
+        "nil",
+        "nil",
         "Spiral Lift",
-        "Spiral Lift",
-        "Spiral Lift",
-        "Spiral Lift"
+        "nil",
+        "nil"
     ],
     "full_fan_speed_layer": [
         "0"
@@ -259,6 +262,8 @@
         "10"
     ],
     "filament_ramming_travel_time": [
+        "0",
+        "0",
         "0",
         "0",
         "0",
@@ -363,6 +368,8 @@
     "retraction_distances_when_ec": [
         "3",
         "3",
+        "3",
+        "4",
         "4",
         "4"
     ],
@@ -379,6 +386,8 @@
         "6"
     ],
     "slow_down_min_speed": [
+        "20",
+        "20",
         "20",
         "20",
         "20",
@@ -411,6 +420,7 @@
     "filament_end_gcode": [
         "; filament end gcode \n\n"
     ],
+    "inherits": "Bambu ABS @BBL X2D 0.4 nozzle",
     "filament_adhesiveness_category": [
         "200"
     ],
@@ -418,7 +428,7 @@
     "description": " ",
     "setting_id": "GFSB00_09",
     "include": [
-        "fdm_filament_template_direct_bowden"
+        "fdm_filament_template_direct_bowden_e3d"
     ],
     "enable_overhang_bridge_fan": [
         "0"

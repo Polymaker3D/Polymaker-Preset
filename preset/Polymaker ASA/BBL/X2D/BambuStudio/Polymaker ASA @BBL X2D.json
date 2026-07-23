@@ -10,7 +10,7 @@
         "0"
     ],
     "chamber_temperatures": [
-        "65"
+        "0"
     ],
     "circle_compensation_speed": [
         "200"
@@ -52,19 +52,19 @@
         "70"
     ],
     "eng_plate_temp": [
-        "110"
+        "100"
     ],
     "eng_plate_temp_initial_layer": [
-        "110"
+        "100"
     ],
     "fan_cooling_layer_time": [
-        "35"
+        "25"
     ],
     "fan_max_speed": [
         "70"
     ],
     "fan_min_speed": [
-        "20"
+        "0"
     ],
     "filament_adaptive_volumetric_speed": [
         "0"
@@ -142,7 +142,7 @@
         "Bowden High Flow"
     ],
     "filament_flow_ratio": [
-        "0.97",
+        "0.92",
         "nil",
         "nil",
         "nil"
@@ -157,7 +157,7 @@
         "0"
     ],
     "filament_max_volumetric_speed": [
-        "16",
+        "8",
         "nil",
         "nil",
         "nil"
@@ -262,10 +262,10 @@
         "1"
     ],
     "hot_plate_temp": [
-        "110"
+        "100"
     ],
     "hot_plate_temp_initial_layer": [
-        "110"
+        "100"
     ],
     "filament_ingredients_safe": "1",
     "filament_emission_safe": "1",
@@ -343,7 +343,7 @@
         "10"
     ],
     "slow_down_layer_time": [
-        "6"
+        "10"
     ],
     "slow_down_min_speed": [
         "20",
@@ -361,10 +361,10 @@
         "105"
     ],
     "textured_plate_temp": [
-        "110"
+        "100"
     ],
     "textured_plate_temp_initial_layer": [
-        "110"
+        "100"
     ],
     "volumetric_speed_coefficients": [
         "0 0 0 0 0 0"
@@ -388,7 +388,7 @@
     "include": [
         "fdm_filament_template_direct_bowden"
     ],
-    "version": "2.7.0.9",
+    "version": "2.6.0.2",
     "idle_temperature": [
         "0"
     ]

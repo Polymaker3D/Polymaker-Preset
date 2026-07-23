@@ -198,6 +198,7 @@
     "hot_plate_temp": [
         "120"
     ],
+    "inherits": "Generic ABS @Qidi Q2 0.4 nozzle",
     "setting_id": "GFSA04",
     "filament_id": "PMAB02",
     "filament_adhesiveness_category": [

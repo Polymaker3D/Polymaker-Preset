@@ -264,6 +264,7 @@
     "volumetric_speed_coefficients": [
         "0 0 0 0 0 0"
     ],
+    "inherits": "Generic PLA-CF",
     "filament_adhesiveness_category": [
         "100"
     ],

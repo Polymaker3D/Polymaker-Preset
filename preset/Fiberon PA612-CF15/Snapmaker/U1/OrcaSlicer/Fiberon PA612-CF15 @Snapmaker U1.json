@@ -249,6 +249,7 @@
     "volumetric_speed_coefficients": [
         ""
     ],
+    "inherits": "Generic PA-CF",
     "filament_adhesiveness_category": [
         "0"
     ],

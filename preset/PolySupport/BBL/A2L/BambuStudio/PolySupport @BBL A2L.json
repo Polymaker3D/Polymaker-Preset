@@ -94,7 +94,7 @@
         "-1"
     ],
     "filament_cost": [
-        "69.98"
+        "39.98"
     ],
     "filament_density": [
         "1.22"
@@ -141,9 +141,6 @@
     ],
     "filament_flush_temp": [
         "0"
-    ],
-    "filament_flush_temp_fast": [
-        "220"
     ],
     "filament_flush_volumetric_speed": [
         "0"
@@ -355,6 +352,7 @@
     "filament_end_gcode": [
         "; filament end gcode \n\n"
     ],
+    "inherits": "Bambu Support For PLA @BBL A2L",
     "filament_adhesiveness_category": [
         "702"
     ],

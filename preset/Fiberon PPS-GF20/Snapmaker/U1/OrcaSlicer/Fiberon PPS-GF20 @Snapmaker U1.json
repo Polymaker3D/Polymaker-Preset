@@ -249,6 +249,7 @@
     "volumetric_speed_coefficients": [
         "0 0 0 0 0 0"
     ],
+    "inherits": "Generic ABS",
     "filament_adhesiveness_category": [
         "200"
     ],

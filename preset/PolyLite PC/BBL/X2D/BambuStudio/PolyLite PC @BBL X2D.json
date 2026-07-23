@@ -76,6 +76,8 @@
         "10",
         "10",
         "10",
+        "10",
+        "10",
         "10"
     ],
     "filament_preheat_temperature_delta": [
@@ -97,7 +99,7 @@
         "280"
     ],
     "filament_cost": [
-        "39.99"
+        "36.99"
     ],
     "filament_density": [
         "1.19"
@@ -150,9 +152,6 @@
     "filament_flush_temp": [
         "0"
     ],
-    "filament_flush_temp_fast": [
-        "0"
-    ],
     "filament_flush_volumetric_speed": [
         "0"
     ],
@@ -195,12 +194,6 @@
     "filament_ramming_volumetric_speed_nc": [
         "-1"
     ],
-    "filament_retraction_length": [
-        "0.4",
-        "0.4",
-        "nil",
-        "nil"
-    ],
     "filament_scarf_seam_type": [
         "none"
     ],
@@ -219,24 +212,6 @@
     "filament_vendor": [
         "Polymaker"
     ],
-    "filament_wipe": [
-        "1",
-        "1",
-        "1",
-        "1"
-    ],
-    "filament_wipe_distance": [
-        "1",
-        "1",
-        "1",
-        "1"
-    ],
-    "filament_z_hop_types": [
-        "Spiral Lift",
-        "Spiral Lift",
-        "Spiral Lift",
-        "Spiral Lift"
-    ],
     "full_fan_speed_layer": [
         "0"
     ],
@@ -253,6 +228,8 @@
         "10"
     ],
     "filament_ramming_travel_time": [
+        "0",
+        "0",
         "0",
         "0",
         "0",
@@ -340,7 +317,7 @@
         "250"
     ],
     "overhang_fan_speed": [
-        "75"
+        "60"
     ],
     "overhang_fan_threshold": [
         "25%"
@@ -357,6 +334,8 @@
     "retraction_distances_when_ec": [
         "3",
         "3",
+        "3",
+        "4",
         "4",
         "4"
     ],
@@ -373,6 +352,8 @@
         "12"
     ],
     "slow_down_min_speed": [
+        "20",
+        "20",
         "20",
         "20",
         "20",
@@ -405,13 +386,14 @@
     "filament_end_gcode": [
         "; filament end gcode \n\n"
     ],
+    "inherits": "Bambu PC @BBL X2D 0.4 nozzle",
     "filament_adhesiveness_category": [
         "500"
     ],
     "filament_id": "PMPC01",
     "setting_id": "GFSC00_18",
     "include": [
-        "fdm_filament_template_direct_bowden"
+        "fdm_filament_template_direct_bowden_e3d"
     ],
     "version": "2.6.0.2",
     "idle_temperature": [

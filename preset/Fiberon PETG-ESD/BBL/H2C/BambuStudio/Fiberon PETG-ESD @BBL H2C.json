@@ -146,9 +146,6 @@
     "filament_flush_temp": [
         "0"
     ],
-    "filament_flush_temp_fast": [
-        "0"
-    ],
     "filament_flush_volumetric_speed": [
         "0"
     ],
@@ -383,6 +380,7 @@
     "filament_end_gcode": [
         "; filament end gcode \n"
     ],
+    "inherits": "Generic PETG @BBL H2C 0.4 nozzle",
     "filament_adhesiveness_category": [
         "300"
     ],
