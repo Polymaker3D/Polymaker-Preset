@@ -1,0 +1,274 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - heading "Polymaker Filament Presets" [level=1] [ref=e5]:
+          - img "Polymaker" [ref=e6]
+          - generic [ref=e7]: Filament Presets
+        - generic [ref=e8]:
+          - button "Manual Installation" [ref=e9] [cursor=pointer]: How to use?
+          - button "Switch language" [ref=e11] [cursor=pointer]:
+            - generic [ref=e12]: EN
+            - generic [ref=e13]: ▾
+          - button "Toggle theme" [ref=e14] [cursor=pointer]
+      - paragraph [ref=e16]: Select your slicer to view and download Polymaker print profiles and filament presets for Bambu Studio, OrcaSlicer, ElegooSlicer, and PrusaSlicer
+    - generic [ref=e19]:
+      - generic [ref=e20]: Select Your Slicer
+      - generic [ref=e21]:
+        - button "Select Slicer" [ref=e22] [cursor=pointer]
+        - generic:
+          - generic: BambuStudio
+          - generic: CrealityPrint
+          - generic: ElegooSlicer
+          - generic: OrcaSlicer
+          - generic: OrcaSlicer (Snapmaker)
+          - generic: PrusaSlicer
+    - generic [ref=e25]:
+      - heading "Known Issues" [level=2] [ref=e26]
+      - generic [ref=e27]:
+        - generic [ref=e28]:
+          - button "BambuStudio Preset Import Mismatch - Fixed" [ref=e29] [cursor=pointer]:
+            - generic [ref=e31]: ▼
+          - generic [ref=e32]:
+            - paragraph [ref=e33]:
+              - strong [ref=e34]: "Issue:"
+              - text: BambuStudio matches filament presets to printers by checking whether the full printer preset name (e.g. "Bambu Lab X1 Carbon 0.4 nozzle") appears inside the preset's
+              - code [ref=e35]: name
+              - text: field. Polymaker source files use the abbreviation
+              - code [ref=e36]: "@BBL X1"
+              - text: ", so the substring check fails and AMS slot temperature / type do not populate when assigning the imported filament."
+            - paragraph [ref=e37]:
+              - strong [ref=e38]: "Solution:"
+              - text: This website now automatically splits BambuStudio downloads into per-printer files and rewrites the
+              - code [ref=e39]: name
+              - text: field to contain the full printer preset name. Download presets using the
+              - strong [ref=e40]: JSON
+              - text: or
+              - strong [ref=e41]: .bbsflmt
+              - text: buttons on this page — do not copy raw JSON files directly from GitHub.
+            - paragraph [ref=e42]:
+              - 'link "View GitHub Issue #14 →" [ref=e43] [cursor=pointer]':
+                - /url: https://github.com/Polymaker3D/Polymaker-Preset/issues/14
+        - generic [ref=e44]:
+          - button "P2S Overheating Issue - Temporary Fix Applied" [ref=e45] [cursor=pointer]:
+            - generic [ref=e47]: ▼
+          - generic [ref=e48]:
+            - paragraph [ref=e49]:
+              - strong [ref=e50]: "Issue:"
+              - text: P2S printer may overheat when printing materials with vitrification temperature > 50°C due to starting G-code issues.
+            - paragraph [ref=e51]:
+              - strong [ref=e52]: "Solution:"
+              - text: We have implemented a temporary fix by adding cooling G-code commands to P2S presets with vitrification temperature > 50°C. This is a temporary workaround until Bambu Lab fixes this issue.
+            - paragraph [ref=e53]: Thanks to alexbreinig and capsel22 for identifying this issue.
+        - generic [ref=e54]:
+          - button "BambuStudio Restart Required After Import" [ref=e55] [cursor=pointer]:
+            - generic [ref=e57]: ▼
+          - generic [ref=e58]:
+            - paragraph [ref=e59]:
+              - strong [ref=e60]: "Issue:"
+              - text: BambuStudio may not correctly apply newly imported filament presets until the application is restarted. Slicing or printing without restarting may use incorrect temperature, flow rate, or other filament settings.
+            - paragraph [ref=e61]:
+              - strong [ref=e62]: "Solution:"
+              - text: Always restart BambuStudio after importing Polymaker presets, before you start slicing or printing. A warning popup will also remind you when downloading BambuStudio presets from this page.
+            - paragraph [ref=e63]:
+              - 'link "View BambuStudio Issue #10583 →" [ref=e64] [cursor=pointer]':
+                - /url: https://github.com/bambulab/BambuStudio/issues/10583
+    - contentinfo [ref=e65]:
+      - generic [ref=e66]:
+        - generic [ref=e67]:
+          - heading "Links" [level=3] [ref=e68]
+          - generic [ref=e69]:
+            - 'link "官方网站: https://polymaker.com.cn/" [ref=e70] [cursor=pointer]':
+              - /url: https://polymaker.com.cn/
+              - generic [ref=e71]: "官方网站:"
+              - generic [ref=e72]: https://polymaker.com.cn/
+            - 'link "天猫旗舰店: Polymaker天猫旗舰店" [ref=e73] [cursor=pointer]':
+              - /url: https://polymaker.tmall.com/shop/view_shop.htm?appUid=RAzN8HWZMKqC7EJdHZM3c35RSQRndtENLvV1XDNbLHeRrNjDDQD&spm=a21n57.1.hoverItem.3
+              - generic [ref=e74]: "天猫旗舰店:"
+              - generic [ref=e75]: Polymaker天猫旗舰店
+            - 'link "京东: Polymaker京东官方旗舰店" [ref=e76] [cursor=pointer]':
+              - /url: https://mall.jd.com/index-11480242.html?from=pc
+              - generic [ref=e77]: "京东:"
+              - generic [ref=e78]: Polymaker京东官方旗舰店
+            - 'link "拼多多: Polymaker拼多多官方旗舰店" [ref=e79] [cursor=pointer]':
+              - /url: https://mobile.yangkeduo.com/mall_page.html?ps=hWbVcDDvRE
+              - generic [ref=e80]: "拼多多:"
+              - generic [ref=e81]: Polymaker拼多多官方旗舰店
+        - generic [ref=e82]:
+          - heading "Social Accounts" [level=3] [ref=e83]
+          - generic [ref=e84]:
+            - link " 哔哩哔哩" [ref=e85] [cursor=pointer]:
+              - /url: https://b23.tv/9TArcE9
+              - generic [ref=e86]: 
+              - generic [ref=e87]: 哔哩哔哩
+            - link " 抖音" [ref=e88] [cursor=pointer]:
+              - /url: https://v.douyin.com/TuUsFvE0wVM/
+              - generic [ref=e89]: 
+              - generic [ref=e90]: 抖音
+            - link " 小红书" [ref=e91] [cursor=pointer]:
+              - /url: https://xhslink.com/m/7IsxNt6IGIS
+              - generic [ref=e92]: 
+              - generic [ref=e93]: 小红书
+            - link " 快手" [ref=e94] [cursor=pointer]:
+              - /url: https://v.kuaishou.com/J7Elnm5y
+              - generic [ref=e95]: 
+              - generic [ref=e96]: 快手
+            - link " 微博" [ref=e97] [cursor=pointer]:
+              - /url: https://weibo.com/u/8020822581
+              - generic [ref=e98]: 
+              - generic [ref=e99]: 微博
+      - paragraph [ref=e100]:
+        - link "苏ICP备2025214399号" [ref=e101] [cursor=pointer]:
+          - /url: https://beian.miit.gov.cn/
+  - dialog:
+    - generic:
+      - generic:
+        - heading [level=2]: ⚠️ Duplicate Files Detected
+        - button
+      - generic:
+        - paragraph: "Multiple presets are generating the same filename. Please select which preset to keep for each duplicate:"
+        - generic:
+          - button: Cancel
+          - button: Confirm Export
+  - dialog:
+    - generic:
+      - generic:
+        - heading [level=2]: ⚠️ Restart BambuStudio Required
+        - button
+      - generic:
+        - generic:
+          - paragraph:
+            - strong: "Important:"
+            - text: After importing presets into BambuStudio, you
+            - strong: must restart the slicer
+            - text: before slicing and printing. Failure to restart may cause incorrect settings to be applied.
+          - paragraph:
+            - link:
+              - /url: https://github.com/bambulab/BambuStudio/issues/10583
+              - text: "View GitHub Issue #10583 →"
+          - generic:
+            - button: Cancel
+            - button: Continue Download
+  - dialog:
+    - generic:
+      - generic:
+        - heading [level=2]: ⚠️ Some Nozzle Options Have No Preset
+        - button
+      - generic:
+        - generic:
+          - paragraph: "Some selected presets don't include every nozzle/extruder option for this printer. We didn't make presets for these variants:"
+          - paragraph: You can still download — those nozzle options just won't have tuned values.
+          - generic:
+            - button: Continue Download
+  - dialog:
+    - generic:
+      - generic:
+        - heading [level=2]: 📦 Manual Installation
+        - button
+      - generic:
+        - generic:
+          - heading [level=3]: Bambu Studio
+          - heading [level=4]: "Method 1: Bundle Method (Recommended)"
+          - list:
+            - listitem:
+              - text: Download the preset
+              - strong: .bbsflmt
+              - text: file (or bundle ZIP) from the
+              - link:
+                - /url: https://presets.polymaker.com.cn
+                - text: download page
+              - text: .
+            - listitem: If it's a ZIP file, unzip it to extract the .bbsflmt file(s).
+            - listitem: Open Bambu Studio.
+            - listitem:
+              - text: Go to
+              - strong: File
+              - text: →
+              - strong: Import
+              - text: →
+              - strong: Import Preset...
+              - text: .
+            - listitem:
+              - text: Select the
+              - strong: .bbsflmt
+              - text: file(s).
+            - listitem: Click on a material in the project consumables list, select the imported custom preset, and the preset will appear in the preset list.
+          - paragraph:
+            - strong: "Note:"
+            - text: .bbsflmt bundles are only available for BambuStudio. The bundle download button appears when BambuStudio presets are selected.
+          - heading [level=4]: "Method 2: Individual File Method"
+          - list:
+            - listitem:
+              - text: Download the preset JSON file (or single-file ZIP) from the
+              - link:
+                - /url: https://presets.polymaker.com.cn
+                - text: download page
+              - text: .
+            - listitem: Open Bambu Studio.
+            - listitem:
+              - text: Go to
+              - strong: File
+              - text: →
+              - strong: Import
+              - text: →
+              - strong: Import Preset...
+              - text: .
+            - listitem: Select a JSON or ZIP file.
+            - listitem: Click on a material in the project consumables list, select the imported custom preset, and the preset will appear in the preset list.
+        - generic:
+          - heading [level=3]: OrcaSlicer / ElegooSlicer
+          - list:
+            - listitem:
+              - text: Download the preset as
+              - strong: JSON
+              - text: or
+              - strong: single-file ZIP
+              - text: from the
+              - link:
+                - /url: https://presets.polymaker.com.cn
+                - text: download page
+              - text: .
+            - listitem: Open OrcaSlicer or ElegooSlicer.
+            - listitem:
+              - text: Go to
+              - strong: File
+              - text: →
+              - strong: Import
+              - text: ":"
+              - list:
+                - listitem:
+                  - text: For a
+                  - strong: JSON
+                  - text: "file: choose"
+                  - strong: Import Configs...
+                  - text: (OrcaSlicer) or
+                  - strong: Import Preset...
+                  - text: (ElegooSlicer), then select the JSON file.
+                - listitem:
+                  - text: For a
+                  - strong: ZIP
+                  - text: "file: choose"
+                  - strong: Import Zip Archive...
+                  - text: (or the equivalent, e.g. "Import Zip Archive…" in ElegooSlicer), then select the ZIP file (no need to unzip).
+            - listitem: The preset will appear in your preset list.
+        - generic:
+          - heading [level=3]: PrusaSlicer
+          - list:
+            - listitem:
+              - text: Download the preset as an
+              - strong: INI
+              - text: file from the
+              - link:
+                - /url: https://presets.polymaker.com.cn
+                - text: download page
+              - text: .
+            - listitem: Open PrusaSlicer.
+            - listitem:
+              - text: Go to
+              - strong: File
+              - text: →
+              - strong: Import
+              - text: →
+              - strong: Import Config...
+              - text: ", then select the INI file."
+            - listitem: The filament preset will appear in your preset list.
