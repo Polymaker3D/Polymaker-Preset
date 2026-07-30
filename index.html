@@ -10418,6 +10418,10 @@
           </div>
         </div>
       </div>
+      <p class="slicer-notice">
+        <span data-i18n="filter.slicer.notice">We tune each preset for a specific material, printer, and slicer combination. If you cannot find the preset you need, you can adapt one manually.</span>
+        <button id="conversion-guide-btn" class="slicer-notice-link" type="button" data-i18n="filter.slicer.guide">Open conversion guide</button>
+      </p>
     </section>
 
     <section class="card filters-card is-hidden" id="filters-card">
@@ -10546,27 +10550,28 @@
         </div>
         <div class="accordion-item is-collapsed">
           <button class="accordion-header" type="button" aria-expanded="false">
-            <span class="accordion-title" data-i18n="issues.restart.title">BambuStudio Restart Required After Import</span>
-            <span class="accordion-icon" aria-hidden="true">▼</span>
-          </button>
-          <div class="accordion-content">
-            <div class="accordion-body">
-              <p data-i18n-html="issues.restart.issue"><strong>Issue:</strong> BambuStudio may not correctly apply newly imported filament presets until the application is restarted. Slicing or printing without restarting may use incorrect temperature, flow rate, or other filament settings.</p>
-              <p data-i18n-html="issues.restart.solution"><strong>Solution:</strong> Always restart BambuStudio after importing Polymaker presets, before you start slicing or printing. A warning popup will also remind you when downloading BambuStudio presets from this page.</p>
-              <p class="accordion-links">
-                <a href="https://github.com/bambulab/BambuStudio/issues/10583" target="_blank" rel="noopener noreferrer" data-i18n="issues.restart.link">View BambuStudio Issue #10583 →</a>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item is-collapsed">
-          <button class="accordion-header" type="button" aria-expanded="false">
             <span class="accordion-title" data-i18n="issues.aux.title">Missing Presets for Some Nozzle / Extruder Options</span>
             <span class="accordion-icon" aria-hidden="true">▼</span>
           </button>
           <div class="accordion-content">
             <div class="accordion-body">
               <p data-i18n-html="issues.aux.issue"><strong>Issue:</strong> Bambu Lab printers that offer more than one extruder/nozzle option (such as the multi-nozzle X2D and the H2 series) store a separate set of values for each option — <code>Direct Drive Standard</code>, <code>Direct Drive High Flow</code>, <code>Bowden Standard</code>, and <code>Bowden High Flow</code> — inside a single filament preset. For some materials we have only tuned the main option (usually <code>Direct Drive Standard</code>), so the other nozzle options, including the auxiliary (Bowden) nozzle, are left empty and have no tuned values.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item resolved-issues-group is-collapsed">
+          <button class="accordion-header" type="button" aria-expanded="false">
+            <span class="accordion-title" data-i18n="issues.resolved.title">Resolved Issues</span>
+            <span class="accordion-icon" aria-hidden="true">▼</span>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-body">
+              <h3 class="resolved-issue-title" data-i18n="issues.restart.title">BambuStudio Restart Required After Import</h3>
+              <p data-i18n-html="issues.restart.issue"><strong>Issue:</strong> BambuStudio may not correctly apply newly imported filament presets until the application is restarted. Slicing or printing without restarting may use incorrect temperature, flow rate, or other filament settings.</p>
+              <p data-i18n-html="issues.restart.solution"><strong>Solution:</strong> Always restart BambuStudio after importing Polymaker presets, before you start slicing or printing. A warning popup will also remind you when downloading BambuStudio presets from this page.</p>
+              <p class="accordion-links">
+                <a href="https://github.com/bambulab/BambuStudio/issues/10583" target="_blank" rel="noopener noreferrer" data-i18n="issues.restart.link">View BambuStudio Issue #10583 →</a>
+              </p>
             </div>
           </div>
         </div>
@@ -10760,6 +10765,27 @@
             <button type="button" class="btn-primary" id="missing-variant-ack" data-i18n="modal.missingvariant.ack">Continue Download</button>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="conversion-guide-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="conversion-guide-modal-title" aria-hidden="true">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="conversion-guide-modal-title" class="modal-title" data-i18n="modal.convert.title">How to Import Bambu Studio Presets into Orca Slicer</h2>
+        <button class="modal-close" type="button" aria-label="Close conversion guide" id="conversion-guide-modal-close">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class="conversion-warning" data-i18n="modal.convert.warning">WARNING: Polymaker does not officially support manual preset conversion. Conversion can remove settings, assign incorrect values, or cause other parameter errors. These errors can cause unpredictable printing results. Review all imported parameters and run a test print before you use the converted preset.</p>
+        <p class="conversion-intro" data-i18n="modal.convert.intro">This guide explains how to import print profiles from Bambu Studio, or another printer brand's slicer, into Orca Slicer.</p>
+        <ol class="install-steps conversion-guide-steps" data-i18n-steps="modal.convert.steps"></ol>
+        <p class="conversion-note" data-i18n="modal.convert.complete">After you save the custom preset, you can select it directly from the Orca Slicer preset menu.</p>
       </div>
     </div>
   </div>

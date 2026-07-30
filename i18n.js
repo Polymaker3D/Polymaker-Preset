@@ -21,6 +21,8 @@ var I18N = (function () {
       // Filters
       'filter.slicer.label': 'Select Your Slicer',
       'filter.slicer.placeholder': 'Select Slicer',
+    'filter.slicer.notice': 'Each preset we provide is tuned for a specific combination of material, printer model, and slicer. If a preset is unavailable for your slicer but available for another, you can adapt it manually.',
+      'filter.slicer.guide': 'Open conversion guide',
       'filter.series.label': 'Series',
       'filter.brand.label': 'Printer Brand',
       'filter.model.label': 'Printer Model',
@@ -81,6 +83,20 @@ var I18N = (function () {
       'modal.missingvariant.note': "You can still download — those nozzle options just won't have tuned values.",
       'modal.missingvariant.ack': 'Continue Download',
 
+      'modal.convert.title': 'How to Import Bambu Studio Presets into Orca Slicer',
+      'modal.convert.warning': 'WARNING: Polymaker does not officially support manual preset conversion. Conversion can remove settings, assign incorrect values, or cause other parameter errors. These errors can cause unpredictable printing results. Review all imported parameters and run a test print before you use the converted preset.',
+      'modal.convert.intro': "This guide explains how to import print profiles from Bambu Studio, or another printer brand's slicer, into Orca Slicer.",
+      'modal.convert.steps': [
+        '<h3 class="conversion-step-title">Select Printer and Filament</h3><p>In Bambu Studio, first make sure you have correctly selected the <b>Printer</b> and <b>Filament</b> you want to export, and have applied the parameter configurations you wish to export.</p><img class="conversion-step-image" src="assets/conversion-guide/en-step-1.png" alt="Printer and filament selection in Bambu Studio" width="1915" height="1021" loading="lazy" decoding="async">',
+        '<h3 class="conversion-step-title">Save Project As 3MF File</h3><p>Once configured, click on the File menu and select <b>Save Project As</b> to save the current project as a <code>.3mf</code> file.</p><img class="conversion-step-image" src="assets/conversion-guide/en-step-2.png" alt="Save Project As command in Bambu Studio" width="1919" height="1011" loading="lazy" decoding="async">',
+        '<h3 class="conversion-step-title">Open Project in Orca Slicer</h3><p>Open Orca Slicer, click <b>Open Project</b> in the File menu, or drag the saved <code>.3mf</code> file into the Orca Slicer window.</p><img class="conversion-step-image" src="assets/conversion-guide/en-step-3.png" alt="Open Project command in Orca Slicer" width="1911" height="1015" loading="lazy" decoding="async">',
+        '<h3 class="conversion-step-title">Review Import Errors</h3><p>Orca Slicer can show errors for unsupported parameters while it opens the file. Review each message, then confirm or close it to continue.</p><img class="conversion-step-image" src="assets/conversion-guide/en-step-4.png" alt="Unsupported parameter message in Orca Slicer" width="1918" height="1005" loading="lazy" decoding="async">',
+        '<h3 class="conversion-step-title">Edit Filament</h3><p>After the project loads, find the imported filament and process settings in the left panel. Click the <b>Edit</b> button next to the filament. Check the parameters, then click the <b>Save</b> icon.</p><img class="conversion-step-image" src="assets/conversion-guide/en-step-5.png" alt="Edit filament settings in Orca Slicer" width="1917" height="1020" loading="lazy" decoding="async">',
+        '<h3 class="conversion-step-title">Save as User Preset</h3><p>In the save dialog, select <b>User preset</b>, then confirm the save. Orca Slicer will store the configuration as a custom preset.</p><img class="conversion-step-image" src="assets/conversion-guide/en-step-6.png" alt="Save as User preset option in Orca Slicer" width="1919" height="1017" loading="lazy" decoding="async">',
+        '<h3 class="conversion-step-title">Check Correctness</h3><p>Check the imported process and filament parameters, including layer height, extruder temperature, bed temperature, and speed. Compare them with the original Bambu Studio settings before you print.</p><img class="conversion-step-image" src="assets/conversion-guide/en-step-7.png" alt="Imported preset parameters in Orca Slicer" width="1915" height="1015" loading="lazy" decoding="async">'
+      ],
+      'modal.convert.complete': 'After you save the custom preset, you can select it directly from the Orca Slicer preset menu.',
+
       // Install modal
       'modal.install.title': '\ud83d\udce6 Manual Installation',
       'modal.bambu.title': 'Bambu Studio',
@@ -119,6 +135,7 @@ var I18N = (function () {
 
       // Known Issues
       'issues.title': 'Known Issues',
+      'issues.resolved.title': 'Resolved Issues',
       'issues.import.title': 'BambuStudio Preset Import Mismatch - Fixed',
       'issues.import.issue': '<strong>Issue:</strong> BambuStudio matches filament presets to printers by checking whether the full printer preset name (e.g. "Bambu Lab X1 Carbon 0.4 nozzle") appears inside the preset\'s <code>name</code> field. Polymaker source files use the abbreviation <code>@BBL X1</code>, so the substring check fails and AMS slot temperature / type do not populate when assigning the imported filament.',
       'issues.import.solution': '<strong>Solution:</strong> This website now automatically splits BambuStudio downloads into per-printer files and rewrites the <code>name</code> field to contain the full printer preset name. Download presets using the <strong>JSON</strong> or <strong>.bbsflmt</strong> buttons on this page — do not copy raw JSON files directly from GitHub.',
@@ -172,6 +189,8 @@ var I18N = (function () {
       // Filters
       'filter.slicer.label': '选择切片软件',
       'filter.slicer.placeholder': '请选择',
+    'filter.slicer.notice': '我们提供的每个预设均针对特定的耗材、打印机型号和切片软件组合进行调校。如果您的切片软件没有所需预设，但其他切片软件有可用预设，您可以手动进行转换。',
+      'filter.slicer.guide': '打开转换指南',
       'filter.series.label': '耗材系列',
       'filter.brand.label': '打印机品牌',
       'filter.model.label': '打印机型号',
@@ -232,6 +251,20 @@ var I18N = (function () {
       'modal.missingvariant.note': '你仍然可以下载 —— 这些喷嘴选项只是没有调校好的数值。',
       'modal.missingvariant.ack': '继续下载',
 
+      'modal.convert.title': '如何将 Bambu Studio 预设文件导入到 Orca Slicer',
+      'modal.convert.warning': '警告：Polymaker 不正式支持手动转换预设。转换过程可能导致设置丢失、数值错误或其他参数异常。这些问题可能造成不可预测的打印结果。使用转换后的预设前，请检查所有导入参数并进行测试打印。',
+      'modal.convert.intro': '本指南介绍如何将 Bambu Studio 或其他打印机品牌自有切片软件中的打印配置导入到 Orca Slicer。',
+      'modal.convert.steps': [
+        '<h3 class="conversion-step-title">选择设备和耗材</h3><p>在 Bambu Studio 中，确认已经选择要导出的<b>打印机设备</b>和<b>耗材类型</b>，并应用需要导出的参数配置。</p><img class="conversion-step-image" src="assets/conversion-guide/zh-step-1.png" alt="在 Bambu Studio 中选择打印机和耗材" width="1919" height="1017" loading="lazy" decoding="async">',
+        '<h3 class="conversion-step-title">将项目另存为 3MF 文件</h3><p>配置完成后，打开文件菜单，选择<b>另存为</b>或<b>保存项目</b>，将当前项目保存为 <code>.3mf</code> 文件。</p><img class="conversion-step-image" src="assets/conversion-guide/zh-step-2.png" alt="在 Bambu Studio 中将项目另存为 3MF 文件" width="1918" height="1017" loading="lazy" decoding="async">',
+        '<h3 class="conversion-step-title">在 Orca Slicer 中打开项目</h3><p>打开 Orca Slicer，在文件菜单中选择<b>打开项目</b>，或将保存的 <code>.3mf</code> 文件拖到 Orca Slicer 主界面中。</p><img class="conversion-step-image" src="assets/conversion-guide/zh-step-3.png" alt="在 Orca Slicer 中打开 3MF 项目" width="1919" height="1022" loading="lazy" decoding="async">',
+        '<h3 class="conversion-step-title">检查导入错误</h3><p>Orca Slicer 打开文件时，可能提示部分参数不受支持。请检查每条提示，然后确认或关闭提示以继续导入。</p><img class="conversion-step-image" src="assets/conversion-guide/zh-step-4.png" alt="Orca Slicer 中不支持参数的提示" width="1919" height="1009" loading="lazy" decoding="async">',
+        '<h3 class="conversion-step-title">编辑耗材</h3><p>项目加载后，在左侧面板中找到导入的耗材和工艺配置。单击耗材旁边的<b>编辑按钮</b>，检查参数，然后单击上方的<b>保存图标</b>。</p><img class="conversion-step-image" src="assets/conversion-guide/zh-step-5.png" alt="在 Orca Slicer 中编辑耗材设置" width="1894" height="996" loading="lazy" decoding="async">',
+        '<h3 class="conversion-step-title">保存为用户预设</h3><p>在保存对话框中选择 <b>User preset（用户预设）</b>，然后确认保存。Orca Slicer 会将该配置保存为自定义预设。</p><img class="conversion-step-image" src="assets/conversion-guide/zh-step-6.png" alt="在 Orca Slicer 中选择用户预设" width="887" height="706" loading="lazy" decoding="async">',
+        '<h3 class="conversion-step-title">检查正确性</h3><p>检查导入的工艺和耗材参数，包括层高、挤出机温度、热床温度和速度。打印前，请将这些参数与 Bambu Studio 中的原始设置进行比较。</p><img class="conversion-step-image" src="assets/conversion-guide/zh-step-7.png" alt="检查 Orca Slicer 中导入的预设参数" width="1917" height="1006" loading="lazy" decoding="async">'
+      ],
+      'modal.convert.complete': '成功保存自定义预设后，您可以直接从 Orca Slicer 的预设下拉菜单中选择并使用该配置。',
+
       // Install modal
       'modal.install.title': '📦 手动安装',
       'modal.bambu.title': 'Bambu Studio',
@@ -270,6 +303,7 @@ var I18N = (function () {
 
       // Known Issues
       'issues.title': '已知问题',
+      'issues.resolved.title': '已解决问题',
       'issues.import.title': 'BambuStudio 预设导入不匹配 - 已修复',
       'issues.import.issue': '<strong>问题：</strong>BambuStudio 通过检查完整的打印机预设名称（例如 "Bambu Lab X1 Carbon 0.4 nozzle"）是否出现在预设的 <code>name</code> 字段中来匹配耗材预设。Polymaker 源文件使用缩写 <code>@BBL X1</code>，导致子字符串检查失败，分配导入的耗材到 AMS 槽位时温度/类型无法自动填充。',
       'issues.import.solution': '<strong>解决方案：</strong>本网站现已自动将 BambuStudio 下载拆分为按打印机分类的文件，并将 <code>name</code> 字段重写为完整的打印机预设名称。请使用本页面的 <strong>JSON</strong> 或 <strong>.bbsflmt</strong> 按钮下载预设 — 不要直接从 GitHub 复制原始 JSON 文件。',

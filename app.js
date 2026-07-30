@@ -1999,6 +1999,41 @@ function initModal() {
   });
 }
 
+function initConversionModal() {
+  var modal = document.getElementById('conversion-guide-modal');
+  var guideBtn = document.getElementById('conversion-guide-btn');
+  if (!modal || !guideBtn) return;
+
+  var closeBtn = document.getElementById('conversion-guide-modal-close');
+  var overlay = modal.querySelector('.modal-overlay');
+  var previousFocus = null;
+
+  function openModal() {
+    previousFocus = document.activeElement;
+    modal.setAttribute('aria-hidden', 'false');
+    modal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    if (closeBtn) closeBtn.focus();
+  }
+
+  function closeModal() {
+    modal.setAttribute('aria-hidden', 'true');
+    modal.classList.remove('is-open');
+    document.body.style.overflow = '';
+    if (previousFocus) previousFocus.focus();
+  }
+
+  guideBtn.addEventListener('click', openModal);
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  if (overlay) overlay.addEventListener('click', closeModal);
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+      closeModal();
+    }
+  });
+}
+
 // Duplicate Resolution Modal functionality
 var duplicateModalState = {
   duplicates: [],
@@ -2461,6 +2496,7 @@ initLangSwitcher();
 
 init();
 initModal();
+initConversionModal();
 initDuplicateModal();
 initBambuRestartModal();
 initMissingVariantModal();
