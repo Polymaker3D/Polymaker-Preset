@@ -97,7 +97,7 @@
         "20"
     ],
     "filament_density": [
-        "1.32"
+        "1.17"
     ],
     "filament_dev_ams_drying_ams_limitations": [
         "1",
@@ -137,7 +137,7 @@
         "Direct Drive Standard"
     ],
     "filament_flow_ratio": [
-        "0.99"
+        "1"
     ],
     "filament_flush_temp": [
         "0"
@@ -332,7 +332,7 @@
         "45"
     ],
     "temperature_vitrification": [
-        "62.5"
+        "61"
     ],
     "textured_plate_temp": [
         "55"
@@ -364,6 +364,9 @@
     ],
     "version": "2.7.0.7",
     "idle_temperature": [
+        "0"
+    ],
+    "filament_long_retractions_when_cut": [
         "0"
     ]
 }

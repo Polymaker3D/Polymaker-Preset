@@ -75,7 +75,7 @@
         "100"
     ],
     "filament_adaptive_volumetric_speed": [
-        "0"
+        "1"
     ],
     "filament_adhesiveness_category": [
         "0"
@@ -90,7 +90,7 @@
         "10"
     ],
     "filament_cost": [
-        "24.99"
+        "0"
     ],
     "filament_density": [
         "1.17"
@@ -105,7 +105,7 @@
         "Direct Drive Standard"
     ],
     "filament_flow_ratio": [
-        "0.99"
+        "0.98"
     ],
     "filament_flush_temp": [
         "0"
@@ -117,7 +117,7 @@
         "0"
     ],
     "filament_long_retractions_when_cut": [
-        "1"
+        "0"
     ],
     "filament_max_volumetric_speed": [
         "16"

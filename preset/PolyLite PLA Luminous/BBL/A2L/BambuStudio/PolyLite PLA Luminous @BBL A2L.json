@@ -58,7 +58,7 @@
         "55"
     ],
     "fan_cooling_layer_time": [
-        "100"
+        "80"
     ],
     "fan_max_speed": [
         "100"
@@ -137,7 +137,7 @@
         "Direct Drive Standard"
     ],
     "filament_flow_ratio": [
-        "0.98"
+        "1"
     ],
     "filament_flush_temp": [
         "0"
@@ -149,7 +149,7 @@
         "0"
     ],
     "filament_max_volumetric_speed": [
-        "12"
+        "16"
     ],
     "filament_metal_stickiness": [
         "None"
@@ -302,7 +302,7 @@
         "0"
     ],
     "reduce_fan_stop_start_freq": [
-        "0"
+        "1"
     ],
     "required_nozzle_HRC": [
         "3"
@@ -311,7 +311,7 @@
         "0"
     ],
     "slow_down_for_layer_cooling": [
-        "0"
+        "1"
     ],
     "cooling_slowdown_logic": [
         "uniform_cooling"
@@ -362,11 +362,11 @@
     "pre_start_fan_time": [
         "2"
     ],
-    "enable_overhang_bridge_fan": [
-        "0"
-    ],
     "version": "2.7.0.7",
     "idle_temperature": [
+        "0"
+    ],
+    "filament_long_retractions_when_cut": [
         "0"
     ]
 }

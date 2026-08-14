@@ -167,9 +167,7 @@
         "0"
     ],
     "filament_long_retractions_when_cut": [
-        "nil",
-        "nil",
-        "nil"
+        "0"
     ],
     "filament_max_volumetric_speed": [
         "8",
