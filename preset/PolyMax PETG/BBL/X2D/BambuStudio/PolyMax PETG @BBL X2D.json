@@ -34,16 +34,16 @@
         "0"
     ],
     "counter_coef_2": [
-        "0.008"
+        "0.0081"
     ],
     "counter_coef_3": [
-        "-0.041"
+        "0.0183"
     ],
     "counter_limit_max": [
-        "0.033"
+        "0.2208"
     ],
     "counter_limit_min": [
-        "-0.035"
+        "0.0183"
     ],
     "diameter_limit": [
         "50"
@@ -52,19 +52,19 @@
         "70"
     ],
     "eng_plate_temp": [
-        "70"
+        "110"
     ],
     "eng_plate_temp_initial_layer": [
-        "70"
+        "110"
     ],
     "fan_cooling_layer_time": [
-        "26"
+        "18"
     ],
     "fan_max_speed": [
-        "90"
+        "40"
     ],
     "fan_min_speed": [
-        "30"
+        "0"
     ],
     "filament_adaptive_volumetric_speed": [
         "0"
@@ -73,6 +73,8 @@
         "0"
     ],
     "filament_cooling_before_tower": [
+        "10",
+        "10",
         "10",
         "10",
         "10",
@@ -94,44 +96,43 @@
         "20"
     ],
     "filament_tower_interface_print_temp": [
-        "255"
+        "280"
     ],
     "filament_cost": [
-        "30"
+        "36.99"
     ],
     "filament_density": [
-        "1.24"
+        "1.19"
     ],
     "filament_dev_ams_drying_ams_limitations": [
-        "1",
-        "0"
+        "1"
     ],
     "filament_dev_ams_drying_heat_distortion_temperature": [
-        "75"
+        "105"
     ],
     "filament_dev_ams_drying_temperature": [
         "65",
+        "80",
         "65",
-        "55",
-        "55"
+        "80"
     ],
     "filament_dev_ams_drying_time": [
         "12",
+        "8.0",
         "12",
-        "12",
-        "12"
+        "8.0"
     ],
     "filament_dev_chamber_drying_bed_temperature": [
-        "80"
+        "90.0"
     ],
     "filament_dev_chamber_drying_time": [
         "12.0"
     ],
     "filament_dev_drying_cooling_temperature": [
-        "55"
+        "90"
     ],
     "filament_dev_drying_softening_temperature": [
-        "60"
+        "90"
     ],
     "filament_diameter": [
         "1.75"
@@ -143,10 +144,10 @@
         "Bowden High Flow"
     ],
     "filament_flow_ratio": [
-        "0.97",
-        "1",
-        "1",
-        "1"
+        "0.96",
+        "nil",
+        "nil",
+        "nil"
     ],
     "filament_flush_temp": [
         "0"
@@ -158,13 +159,13 @@
         "0"
     ],
     "filament_max_volumetric_speed": [
-        "4",
+        "8",
         "nil",
         "nil",
         "nil"
     ],
     "filament_metal_stickiness": [
-        "High"
+        "None"
     ],
     "filament_minimal_purge_on_wipe_tower": [
         "15"
@@ -206,7 +207,7 @@
         "0"
     ],
     "filament_type": [
-        "PETG"
+        "PC"
     ],
     "filament_vendor": [
         "Polymaker"
@@ -227,6 +228,8 @@
         "10"
     ],
     "filament_ramming_travel_time": [
+        "0",
+        "0",
         "0",
         "0",
         "0",
@@ -263,10 +266,10 @@
         "1"
     ],
     "hot_plate_temp": [
-        "70"
+        "110"
     ],
     "hot_plate_temp_initial_layer": [
-        "70"
+        "110"
     ],
     "filament_ingredients_safe": "1",
     "filament_emission_safe": "1",
@@ -275,19 +278,19 @@
         "0"
     ],
     "hole_coef_2": [
-        "-0.008"
+        "0.0009"
     ],
     "hole_coef_3": [
-        "0.23415"
+        "0.0725"
     ],
     "hole_limit_max": [
-        "0.22"
+        "0.095"
     ],
     "hole_limit_min": [
-        "0.088"
+        "0.0725"
     ],
     "impact_strength_z": [
-        "10"
+        "9.0"
     ],
     "long_retractions_when_ec": [
         "0"
@@ -296,28 +299,30 @@
         "0"
     ],
     "nozzle_temperature": [
-        "260",
-        "260",
-        "260",
-        "260"
+        "270",
+        "nil",
+        "nil",
+        "nil"
     ],
     "nozzle_temperature_initial_layer": [
-        "260",
-        "260",
-        "260",
-        "260"
+        "270",
+        "270",
+        "270",
+        "270",
+        "270",
+        "270"
     ],
     "nozzle_temperature_range_high": [
-        "260"
+        "270"
     ],
     "nozzle_temperature_range_low": [
-        "230"
+        "250"
     ],
     "overhang_fan_speed": [
-        "90"
+        "60"
     ],
     "overhang_fan_threshold": [
-        "10%"
+        "25%"
     ],
     "override_process_overhang_speed": [
         "0"
@@ -331,6 +336,8 @@
     "retraction_distances_when_ec": [
         "3",
         "3",
+        "3",
+        "4",
         "4",
         "4"
     ],
@@ -344,28 +351,30 @@
         "10"
     ],
     "slow_down_layer_time": [
-        "8"
+        "6"
     ],
     "slow_down_min_speed": [
+        "20",
+        "20",
         "20",
         "20",
         "20",
         "20"
     ],
     "supertack_plate_temp": [
-        "70"
+        "0"
     ],
     "supertack_plate_temp_initial_layer": [
-        "70"
+        "0"
     ],
     "temperature_vitrification": [
-        "79"
+        "117"
     ],
     "textured_plate_temp": [
-        "70"
+        "110"
     ],
     "textured_plate_temp_initial_layer": [
-        "70"
+        "110"
     ],
     "volumetric_speed_coefficients": [
         "0 0 0 0 0 0"
@@ -379,20 +388,20 @@
     "filament_end_gcode": [
         "; filament end gcode \n\n"
     ],
-    "inherits": "Generic PETG @BBL X2D 0.4 nozzle",
+    "inherits": "Bambu PC @BBL X2D 0.4 nozzle",
     "filament_adhesiveness_category": [
-        "300"
+        "500"
     ],
     "filament_id": "PMPE09",
-    "setting_id": "GFSG99_15",
-    "first_x_layer_fan_speed": [
-        "40"
-    ],
+    "setting_id": "GFSC00_18",
     "include": [
-        "fdm_filament_template_direct_bowden"
+        "fdm_filament_template_direct_bowden_e3d"
     ],
     "version": "2.6.0.2",
     "idle_temperature": [
+        "0"
+    ],
+    "filament_long_retractions_when_cut": [
         "0"
     ]
 }

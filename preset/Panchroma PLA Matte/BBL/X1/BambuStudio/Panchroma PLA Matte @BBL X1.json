@@ -125,5 +125,8 @@
     "idle_temperature": [
         "0"
     ],
-    "filament_id": "PMPL07"
+    "filament_id": "PMPL07",
+    "filament_long_retractions_when_cut": [
+        "0"
+    ]
 }

@@ -405,5 +405,8 @@
     "version": "2.5.0.14",
     "idle_temperature": [
         "0"
+    ],
+    "filament_long_retractions_when_cut": [
+        "0"
     ]
 }

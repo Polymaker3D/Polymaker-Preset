@@ -357,11 +357,14 @@
     "filament_adhesiveness_category": [
         "100"
     ],
-    "filament_id": "PMPL36",
+    "filament_id": "PMPL60",
     "description": " ",
     "setting_id": "GFSL99_04",
     "version": "2.7.0.7",
     "idle_temperature": [
         "60"
+    ],
+    "filament_long_retractions_when_cut": [
+        "0"
     ]
 }

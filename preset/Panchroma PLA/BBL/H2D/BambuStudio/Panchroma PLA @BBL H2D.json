@@ -5,11 +5,17 @@
     "additional_cooling_fan_speed": [
         "70"
     ],
+    "additional_fan_full_speed_layer": [
+        "0"
+    ],
     "chamber_temperatures": [
         "0"
     ],
     "circle_compensation_speed": [
         "200"
+    ],
+    "close_additional_fan_first_x_layers": [
+        "1"
     ],
     "close_fan_the_first_x_layers": [
         "1"
@@ -28,6 +34,12 @@
     ],
     "cool_plate_temp_initial_layer": [
         "35"
+    ],
+    "cooling_perimeter_transition_distance": [
+        "10"
+    ],
+    "cooling_slowdown_logic": [
+        "uniform_cooling"
     ],
     "counter_coef_1": [
         "0"
@@ -80,6 +92,9 @@
     "filament_adhesiveness_category": [
         "0"
     ],
+    "filament_bridge_speed": [
+        "25"
+    ],
     "filament_change_length": [
         "10"
     ],
@@ -93,19 +108,49 @@
         "0"
     ],
     "filament_density": [
-        "1.32"
+        "1.17"
+    ],
+    "filament_dev_ams_drying_ams_limitations": [
+        ""
+    ],
+    "filament_dev_ams_drying_heat_distortion_temperature": [
+        "0"
+    ],
+    "filament_dev_ams_drying_temperature": [
+        "0"
+    ],
+    "filament_dev_ams_drying_time": [
+        "0"
+    ],
+    "filament_dev_chamber_drying_bed_temperature": [
+        "0"
+    ],
+    "filament_dev_chamber_drying_time": [
+        "0"
+    ],
+    "filament_dev_drying_cooling_temperature": [
+        "0"
+    ],
+    "filament_dev_drying_softening_temperature": [
+        "0"
     ],
     "filament_diameter": [
         "1.75"
     ],
+    "filament_enable_overhang_speed": [
+        "1"
+    ],
     "filament_end_gcode": [
         "; filament end gcode\n"
+    ],
+    "filament_extruder_compatibility": [
+        "0"
     ],
     "filament_extruder_variant": [
         "Direct Drive Standard"
     ],
     "filament_flow_ratio": [
-        "0.97"
+        "0.98"
     ],
     "filament_flush_temp": [
         "0"
@@ -117,19 +162,40 @@
         "0"
     ],
     "filament_long_retractions_when_cut": [
-        "1"
+        "0"
     ],
     "filament_max_volumetric_speed": [
-        "20"
+        "16"
+    ],
+    "filament_metal_stickiness": [
+        "None"
     ],
     "filament_minimal_purge_on_wipe_tower": [
         "15"
     ],
     "filament_notes": "",
+    "filament_overhang_1_4_speed": [
+        "0"
+    ],
+    "filament_overhang_2_4_speed": [
+        "0"
+    ],
+    "filament_overhang_3_4_speed": [
+        "0"
+    ],
+    "filament_overhang_4_4_speed": [
+        "0"
+    ],
+    "filament_overhang_totally_speed": [
+        "10"
+    ],
     "filament_pre_cooling_temperature": [
         "0"
     ],
     "filament_pre_cooling_temperature_nc": [
+        "0"
+    ],
+    "filament_preheat_temperature_delta": [
         "0"
     ],
     "filament_prime_volume": [
@@ -186,6 +252,21 @@
     "filament_start_gcode": [
         "; Filament gcode\n"
     ],
+    "filament_tower_interface_pre_extrusion_dist": [
+        "10"
+    ],
+    "filament_tower_interface_pre_extrusion_length": [
+        "0"
+    ],
+    "filament_tower_interface_print_temp": [
+        "-1"
+    ],
+    "filament_tower_interface_purge_volume": [
+        "20"
+    ],
+    "filament_tower_ironing_area": [
+        "4"
+    ],
     "filament_type": [
         "PLA"
     ],
@@ -196,6 +277,9 @@
         "Polymaker"
     ],
     "first_x_layer_fan_speed": [
+        "0"
+    ],
+    "first_x_layer_part_fan_speed": [
         "0"
     ],
     "from": "User",
@@ -227,6 +311,9 @@
         "0"
     ],
     "inherits": "",
+    "ironing_fan_speed": [
+        "-1"
+    ],
     "long_retractions_when_ec": [
         "0"
     ],
@@ -254,6 +341,9 @@
     ],
     "overhang_threshold_participating_cooling": [
         "95%"
+    ],
+    "override_process_overhang_speed": [
+        "0"
     ],
     "pre_start_fan_time": [
         "0"
@@ -286,7 +376,7 @@
         "45"
     ],
     "temperature_vitrification": [
-        "62.5"
+        "61"
     ],
     "textured_plate_temp": [
         "55"
