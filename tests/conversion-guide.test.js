@@ -35,9 +35,9 @@ describe('Preset conversion guide', () => {
     assert.ok(appContent.includes('initConversionModal();'));
   });
 
-  it('includes English and Chinese copy', () => {
-    assert.strictEqual(i18nContent.split("'filter.slicer.notice':").length - 1, 2);
-    assert.strictEqual(i18nContent.split("'modal.convert.steps':").length - 1, 2);
+  it('includes copy in every supported language', () => {
+    assert.strictEqual(i18nContent.split("'filter.slicer.notice':").length - 1, 6);
+    assert.strictEqual(i18nContent.split("'modal.convert.steps':").length - 1, 6);
   });
 
   it('renders every Feishu guide screenshot from local assets', () => {
@@ -47,7 +47,7 @@ describe('Preset conversion guide', () => {
     });
 
     assert.strictEqual(imageNames.length, 14);
-    assert.strictEqual(i18nContent.split('class="conversion-step-image"').length - 1, 14);
+    assert.strictEqual(i18nContent.split('class="conversion-step-image"').length - 1, 42);
 
     imageNames.forEach(function (name) {
       assert.ok(fs.statSync(path.join(assetsDir, name)).size > 0, `${name} should not be empty`);
