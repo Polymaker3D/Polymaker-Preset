@@ -144,6 +144,10 @@ var I18N = (function () {
       // Language switcher
       'lang.en': 'English',
       'lang.zh': '中文',
+      'lang.de': 'Deutsch',
+      'lang.it': 'Italiano',
+      'lang.fr': 'Français',
+      'lang.es': 'Español',
 
       // Missing value fallbacks
       'value.unknown': 'Unknown',
@@ -295,6 +299,10 @@ var I18N = (function () {
       // Language switcher
       'lang.en': 'English',
       'lang.zh': '中文',
+      'lang.de': 'Deutsch',
+      'lang.it': 'Italiano',
+      'lang.fr': 'Français',
+      'lang.es': 'Español',
 
       // Missing value fallbacks
       'value.unknown': '未知',
@@ -308,14 +316,604 @@ var I18N = (function () {
       // Filename defaults
       'filename.preset': 'preset.json',
       'filename.bundle': 'polymaker-bundle.bbsflmt'
+    },
+
+    de: {
+      // Hero
+      'hero.logo.alt': 'Polymaker',
+      'hero.title': 'Filamentprofile',
+      'hero.desc': 'Wählen Sie Ihren Slicer aus, um Polymaker-Druckprofile und Filamentprofile für Bambu Studio, OrcaSlicer, ElegooSlicer und PrusaSlicer anzuzeigen und herunterzuladen',
+      'hero.howto': 'Wie funktioniert es?',
+      'product.htPlaPro.title': 'Wir stellen vor: Polymaker™ HT-PLA Pro',
+      'product.htPlaPro.tagline': 'Hitzebeständig. Schlagfest. Trotzdem PLA.',
+      'product.htPlaPro.cta': 'Mehr erfahren',
+
+      // Filters
+      'filter.slicer.label': 'Slicer auswählen',
+      'filter.slicer.placeholder': 'Slicer auswählen',
+      'filter.series.label': 'Serie',
+      'filter.brand.label': 'Druckermarke',
+      'filter.model.label': 'Druckermodell',
+      'filter.all': 'Alle',
+      'filter.all.series': 'Alle Serien',
+      'filter.all.brands': 'Alle Marken',
+      'filter.all.models': 'Alle Modelle',
+      'filter.strict': 'Strikter Modus: Nur Profile anzeigen, die speziell für diesen Drucker erstellt wurden',
+
+      // List / table
+      'list.title': 'Profile',
+      'list.loading': 'Wird geladen…',
+      'list.count': '{n} Profile in {m} Materialien.',
+      'list.failed': 'Laden fehlgeschlagen: {msg}',
+      'table.material': 'Material',
+      'table.brand': 'Druckermarke',
+      'table.printer': 'Drucker',
+      'table.compatible': 'Kompatible Drucker',
+      'table.modified': 'Zuletzt geändert',
+      'table.action': 'Download-Aktion',
+
+      // Buttons
+      'btn.download.selected': 'Auswahl herunterladen',
+      'btn.download.selected.loading': 'Wird geladen...',
+      'btn.download.bundle': 'Paket herunterladen (.bbsflmt)',
+      'btn.download.bundle.loading': 'Wird geladen...',
+
+      // Folder row
+      'folder.presets': '{n} Profile',
+      'folder.expand': 'Zum Aufklappen klicken',
+
+      // Alerts / errors
+      'alert.no.bambu': 'Keine BambuStudio-Profile zum Herunterladen verfügbar. Bitte stellen Sie sicher, dass BambuStudio als Slicer ausgewählt ist.',
+      'alert.no.presets': 'Keine Profile verfügbar',
+      'alert.load.failed': 'Die Profildaten konnten nicht geladen werden. Bitte überprüfen Sie Ihre Verbindung und versuchen Sie es erneut.',
+      'alert.error.loading': 'Fehler beim Laden der Profile: {msg}',
+      'alert.invalid.url': 'Ungültige Profil-URL',
+      'alert.error.preset': 'Fehler beim Laden des Profils: {msg}. Bitte versuchen Sie es erneut.',
+      'alert.error.download': 'Fehler beim Herunterladen des Profils: {msg}',
+
+      // Duplicate modal
+      'dup.title': '⚠️ Doppelte Dateien erkannt',
+      'dup.intro': 'Mehrere Profile erzeugen denselben Dateinamen. Bitte wählen Sie für jedes Duplikat das Profil aus, das beibehalten werden soll:',
+      'dup.for.printer': 'Für Drucker: {name}',
+      'dup.use.profile': 'Profil {name} verwenden',
+      'dup.compatible': 'Kompatibel mit: {list}',
+      'dup.cancel': 'Abbrechen',
+      'dup.confirm': 'Export bestätigen',
+
+      // BambuStudio Restart Warning Modal
+      'modal.restart.title': '⚠️ Neustart von BambuStudio erforderlich',
+      'modal.restart.message': '<strong>Wichtig:</strong> Nach dem Importieren von Profilen in BambuStudio <strong>müssen Sie den Slicer neu starten</strong>, bevor Sie slicen und drucken. Ohne Neustart werden möglicherweise falsche Einstellungen angewendet.',
+      'modal.restart.link': 'GitHub Issue #10583 anzeigen →',
+      'modal.restart.cancel': 'Abbrechen',
+      'modal.restart.confirm': 'Download fortsetzen',
+      'modal.missingvariant.title': '⚠️ Für einige Düsenoptionen ist kein Profil vorhanden',
+      'modal.missingvariant.intro': 'Einige ausgewählte Profile enthalten nicht alle Düsen-/Extruderoptionen für diesen Drucker. Für folgende Varianten haben wir keine Profile erstellt:',
+      'modal.missingvariant.note': 'Sie können sie trotzdem herunterladen — diese Düsenoptionen haben einfach keine abgestimmten Werte.',
+      'modal.missingvariant.ack': 'Download fortsetzen',
+
+      // Install modal
+      'modal.install.title': '📦 Manuelle Installation',
+      'modal.bambu.title': 'Bambu Studio',
+      'modal.bambu.method1.title': 'Methode 1: Paketmethode (empfohlen)',
+      'modal.bambu.method1.steps': [
+        'Laden Sie die Profildatei <strong>.bbsflmt</strong> (oder das Paket als ZIP) von der <a href="https://presets.polymaker.com" target="_blank" rel="noopener noreferrer">Download-Seite</a> herunter.',
+        'Wenn es sich um eine ZIP-Datei handelt, entpacken Sie sie, um die .bbsflmt-Datei(en) zu extrahieren.',
+        'Öffnen Sie Bambu Studio.',
+        'Navigieren Sie zu <strong>File</strong> → <strong>Import</strong> → <strong>Import Preset...</strong>.',
+        'Wählen Sie die <strong>.bbsflmt</strong>-Datei(en) aus.',
+        'Klicken Sie in der Filamentliste des Projekts auf ein Material und wählen Sie das importierte benutzerdefinierte Profil aus. Das Profil erscheint anschließend in der Profilliste.'
+      ],
+      'modal.bambu.method1.note': '<strong>Hinweis:</strong> .bbsflmt-Pakete sind nur für BambuStudio verfügbar. Die Schaltfläche für den Paket-Download erscheint, wenn BambuStudio-Profile ausgewählt sind.',
+      'modal.bambu.method2.title': 'Methode 2: Einzeldateimethode',
+      'modal.bambu.method2.steps': [
+        'Laden Sie die JSON-Profil-Datei (oder das Einzeldatei-ZIP) von der <a href="https://presets.polymaker.com" target="_blank" rel="noopener noreferrer">Download-Seite</a> herunter.',
+        'Öffnen Sie Bambu Studio.',
+        'Navigieren Sie zu <strong>File</strong> → <strong>Import</strong> → <strong>Import Preset...</strong>.',
+        'Wählen Sie eine JSON- oder ZIP-Datei aus.',
+        'Klicken Sie in der Filamentliste des Projekts auf ein Material und wählen Sie das importierte benutzerdefinierte Profil aus. Das Profil erscheint anschließend in der Profilliste.'
+      ],
+      'modal.orca.title': 'OrcaSlicer / ElegooSlicer',
+      'modal.orca.steps': [
+        'Laden Sie das Profil als <strong>JSON</strong> oder <strong>Einzeldatei-ZIP</strong> von der <a href="https://presets.polymaker.com" target="_blank" rel="noopener noreferrer">Download-Seite</a> herunter.',
+        'Öffnen Sie OrcaSlicer oder ElegooSlicer.',
+        'Navigieren Sie zu <strong>File</strong> → <strong>Import</strong>:<ul><li>Für eine <strong>JSON</strong>-Datei: Wählen Sie <strong>Import Configs...</strong> (OrcaSlicer) oder <strong>Import Preset...</strong> (ElegooSlicer) und anschließend die JSON-Datei aus.</li><li>Für eine <strong>ZIP</strong>-Datei: Wählen Sie <strong>Import Zip Archive...</strong> (oder die entsprechende Option, z. B. "Import Zip Archive…" in ElegooSlicer) und anschließend die ZIP-Datei aus (Entpacken ist nicht erforderlich).</li></ul>',
+        'Das Profil erscheint in Ihrer Profilliste.'
+      ],
+      'modal.prusa.title': 'PrusaSlicer',
+      'modal.prusa.steps': [
+        'Laden Sie das Profil als <strong>INI</strong>-Datei von der <a href="https://presets.polymaker.com" target="_blank" rel="noopener noreferrer">Download-Seite</a> herunter.',
+        'Öffnen Sie PrusaSlicer.',
+        'Navigieren Sie zu <strong>File</strong> → <strong>Import</strong> → <strong>Import Config...</strong> und wählen Sie anschließend die INI-Datei aus.',
+        'Das Filamentprofil erscheint in Ihrer Profilliste.'
+      ],
+
+      // Known Issues
+      'issues.title': 'Bekannte Probleme',
+      'issues.import.title': 'Fehlerhafte Zuordnung beim Import von BambuStudio-Profilen - behoben',
+      'issues.import.issue': '<strong>Problem:</strong> BambuStudio ordnet Filamentprofile Druckern zu, indem geprüft wird, ob der vollständige Name des Druckerprofils (z. B. "Bambu Lab X1 Carbon 0.4 nozzle") im Feld <code>name</code> des Profils enthalten ist. Die Polymaker-Quelldateien verwenden die Abkürzung <code>@BBL X1</code>, sodass die Teilzeichenfolgenprüfung fehlschlägt und Temperatur / Typ des AMS-Slots beim Zuweisen des importierten Filaments nicht ausgefüllt werden.',
+      'issues.import.solution': '<strong>Lösung:</strong> Diese Website teilt BambuStudio-Downloads nun automatisch in druckerspezifische Dateien auf und schreibt das Feld <code>name</code> so um, dass es den vollständigen Namen des Druckerprofils enthält. Laden Sie Profile über die Schaltflächen <strong>JSON</strong> oder <strong>.bbsflmt</strong> auf dieser Seite herunter — kopieren Sie keine rohen JSON-Dateien direkt von GitHub.',
+      'issues.import.link': 'GitHub Issue #14 anzeigen →',
+      'issues.p2s.title': 'Überhitzungsproblem beim P2S - vorläufige Lösung angewendet',
+      'issues.p2s.issue': '<strong>Problem:</strong> Der P2S-Drucker kann beim Drucken von Materialien mit einer Glasübergangstemperatur > 50°C aufgrund von Problemen mit dem Start-G-code überhitzen.',
+      'issues.p2s.solution': '<strong>Lösung:</strong> Wir haben eine vorläufige Lösung implementiert, indem wir P2S-Profilen für Materialien mit einer Glasübergangstemperatur > 50°C G-code-Befehle zur Kühlung hinzugefügt haben. Dies ist eine Übergangslösung, bis Bambu Lab das Problem behebt.',
+      'issues.p2s.link': 'BambuStudio Issue #8801 anzeigen →',
+      'issues.p2s.credits': 'Vielen Dank an alexbreinig und capsel22 für die Identifizierung dieses Problems.',
+      'issues.restart.title': 'Neustart von BambuStudio nach dem Import erforderlich',
+      'issues.restart.issue': '<strong>Problem:</strong> BambuStudio wendet neu importierte Filamentprofile möglicherweise erst nach einem Neustart der Anwendung korrekt an. Beim Slicen oder Drucken ohne Neustart werden unter Umständen falsche Werte für Temperatur, Flussrate oder andere Filamenteinstellungen verwendet.',
+      'issues.restart.solution': '<strong>Lösung:</strong> Starten Sie BambuStudio nach dem Import von Polymaker-Profilen immer neu, bevor Sie mit dem Slicen oder Drucken beginnen. Ein Warnhinweis erinnert Sie auch daran, wenn Sie BambuStudio-Profile von dieser Seite herunterladen.',
+      'issues.restart.link': 'BambuStudio Issue #10583 anzeigen →',
+      'issues.aux.title': 'Fehlende Profile für einige Düsen / Extruderoptionen',
+      'issues.aux.issue': '<strong>Problem:</strong> Bambu Lab-Drucker mit mehr als einer Extruder-/Düsenoption (z. B. der X2D mit mehreren Düsen und die H2-Serie) speichern für jede Option einen eigenen Wertesatz — <code>Direct Drive Standard</code>, <code>Direct Drive High Flow</code>, <code>Bowden Standard</code> und <code>Bowden High Flow</code> — innerhalb eines einzelnen Filamentprofils. Bei einigen Materialien haben wir nur die Hauptoption (in der Regel <code>Direct Drive Standard</code>) abgestimmt. Daher bleiben die anderen Düsenoptionen einschließlich der Hilfsdüse (Bowden) leer und enthalten keine abgestimmten Werte.',
+
+      // Footer
+      'footer.links': 'Links',
+      'footer.social': 'Soziale Netzwerke',
+      'footer.readme': 'Weitere Informationen finden Sie in der',
+      'footer.readme.link': 'README',
+
+      // Language switcher
+      'lang.en': 'English',
+      'lang.zh': '中文',
+      'lang.de': 'Deutsch',
+      'lang.it': 'Italiano',
+      'lang.fr': 'Français',
+      'lang.es': 'Español',
+
+      // Missing value fallbacks
+      'value.unknown': 'Unbekannt',
+      'value.unknown.filament': 'Unbekanntes Filament',
+      'value.none': '-',
+
+      // Download button titles
+      'title.download.json': 'Profildatei herunterladen',
+      'title.download.bundle': 'Als BambuStudio-Paket herunterladen',
+
+      // Filename defaults
+      'filename.preset': 'preset.json',
+      'filename.bundle': 'polymaker-bundle.bbsflmt'
+    },
+
+    it: {
+      'hero.logo.alt': 'Polymaker',
+      'hero.title': 'Preset per filamenti',
+      'hero.desc': 'Seleziona il tuo slicer per visualizzare e scaricare i profili di stampa e i preset per filamenti Polymaker per Bambu Studio, OrcaSlicer, ElegooSlicer e PrusaSlicer',
+      'hero.howto': 'Come si usa?',
+      'product.htPlaPro.title': 'Presentiamo Polymaker™ HT-PLA Pro',
+      'product.htPlaPro.tagline': 'Resistente al calore. Resistente agli urti. Sempre PLA.',
+      'product.htPlaPro.cta': 'Scopri di più',
+
+      'filter.slicer.label': 'Seleziona il tuo slicer',
+      'filter.slicer.placeholder': 'Seleziona slicer',
+      'filter.series.label': 'Serie',
+      'filter.brand.label': 'Marca della stampante',
+      'filter.model.label': 'Modello della stampante',
+      'filter.all': 'Tutti',
+      'filter.all.series': 'Tutte le serie',
+      'filter.all.brands': 'Tutte le marche',
+      'filter.all.models': 'Tutti i modelli',
+      'filter.strict': 'Modalità rigorosa: mostra solo i preset creati specificamente per questa stampante',
+
+      'list.title': 'Preset',
+      'list.loading': 'Caricamento\u2026',
+      'list.count': '{n} preset per {m} materiali.',
+      'list.failed': 'Caricamento non riuscito: {msg}',
+      'table.material': 'Materiale',
+      'table.brand': 'Marca della stampante',
+      'table.printer': 'Stampante',
+      'table.compatible': 'Stampanti compatibili',
+      'table.modified': 'Ultima modifica',
+      'table.action': 'Azione di download',
+
+      'btn.download.selected': 'Scarica selezionati',
+      'btn.download.selected.loading': 'Caricamento...',
+      'btn.download.bundle': 'Scarica pacchetto (.bbsflmt)',
+      'btn.download.bundle.loading': 'Caricamento...',
+
+      'folder.presets': '{n} preset',
+      'folder.expand': 'Fai clic per espandere',
+
+      'alert.no.bambu': 'Nessun preset BambuStudio disponibile per il download. Assicurati di aver selezionato BambuStudio come slicer.',
+      'alert.no.presets': 'Nessun preset disponibile',
+      'alert.load.failed': 'Impossibile caricare i dati dei preset. Controlla la connessione e riprova.',
+      'alert.error.loading': 'Errore durante il caricamento dei preset: {msg}',
+      'alert.invalid.url': 'URL del preset non valido',
+      'alert.error.preset': 'Errore durante il caricamento del preset: {msg}. Riprova.',
+      'alert.error.download': 'Errore durante il download del preset: {msg}',
+
+      'dup.title': '\u26a0\ufe0f Rilevati file duplicati',
+      'dup.intro': 'Più preset generano lo stesso nome file. Seleziona il preset da mantenere per ogni duplicato:',
+      'dup.for.printer': 'Per la stampante: {name}',
+      'dup.use.profile': 'Usa il profilo {name}',
+      'dup.compatible': 'Compatibile con: {list}',
+      'dup.cancel': 'Annulla',
+      'dup.confirm': 'Conferma esportazione',
+
+      'modal.restart.title': '\u26a0\ufe0f Riavvio di BambuStudio necessario',
+      'modal.restart.message': '<strong>Importante:</strong> dopo aver importato i preset in BambuStudio, <strong>devi riavviare lo slicer</strong> prima di eseguire lo slicing e la stampa. Se non lo riavvii, potrebbero essere applicate impostazioni errate.',
+      'modal.restart.link': 'Visualizza GitHub Issue #10583 \u2192',
+      'modal.restart.cancel': 'Annulla',
+      'modal.restart.confirm': 'Continua il download',
+      'modal.missingvariant.title': '⚠️ Alcune opzioni dell’ugello non hanno un preset',
+      'modal.missingvariant.intro': 'Alcuni preset selezionati non includono tutte le opzioni di ugello/estrusore per questa stampante. Non abbiamo creato preset per queste varianti:',
+      'modal.missingvariant.note': 'Puoi comunque scaricare — queste opzioni dell’ugello semplicemente non avranno valori ottimizzati.',
+      'modal.missingvariant.ack': 'Continua il download',
+
+      'modal.install.title': '\ud83d\udce6 Installazione manuale',
+      'modal.bambu.title': 'Bambu Studio',
+      'modal.bambu.method1.title': 'Metodo 1: metodo con pacchetto (consigliato)',
+      'modal.bambu.method1.steps': [
+        'Scarica il file del preset <strong>.bbsflmt</strong> (o il pacchetto ZIP) dalla <a href="https://presets.polymaker.com" target="_blank" rel="noopener noreferrer">pagina di download</a>.',
+        'Se è un file ZIP, decomprimilo per estrarre i file .bbsflmt.',
+        'Apri Bambu Studio.',
+        'Vai a <strong>File</strong> \u2192 <strong>Importa</strong> \u2192 <strong>Importa preset...</strong>.',
+        'Seleziona i file <strong>.bbsflmt</strong>.',
+        'Fai clic su un materiale nell’elenco dei consumabili del progetto, seleziona il preset personalizzato importato e il preset comparirà nell’elenco dei preset.'
+      ],
+      'modal.bambu.method1.note': '<strong>Nota:</strong> i pacchetti .bbsflmt sono disponibili solo per BambuStudio. Il pulsante per scaricare il pacchetto compare quando sono selezionati preset BambuStudio.',
+      'modal.bambu.method2.title': 'Metodo 2: metodo con file singolo',
+      'modal.bambu.method2.steps': [
+        'Scarica il file JSON del preset (o lo ZIP con un singolo file) dalla <a href="https://presets.polymaker.com" target="_blank" rel="noopener noreferrer">pagina di download</a>.',
+        'Apri Bambu Studio.',
+        'Vai a <strong>File</strong> \u2192 <strong>Importa</strong> \u2192 <strong>Importa preset...</strong>.',
+        'Seleziona un file JSON o ZIP.',
+        'Fai clic su un materiale nell’elenco dei consumabili del progetto, seleziona il preset personalizzato importato e il preset comparirà nell’elenco dei preset.'
+      ],
+      'modal.orca.title': 'OrcaSlicer / ElegooSlicer',
+      'modal.orca.steps': [
+        'Scarica il preset come <strong>JSON</strong> o <strong>ZIP con un singolo file</strong> dalla <a href="https://presets.polymaker.com" target="_blank" rel="noopener noreferrer">pagina di download</a>.',
+        'Apri OrcaSlicer o ElegooSlicer.',
+        'Vai a <strong>File</strong> \u2192 <strong>Importa</strong>:<ul><li>Per un file <strong>JSON</strong>: scegli <strong>Importa configurazioni...</strong> (OrcaSlicer) o <strong>Importa preset...</strong> (ElegooSlicer), quindi seleziona il file JSON.</li><li>Per un file <strong>ZIP</strong>: scegli <strong>Importa archivio ZIP...</strong> (o l’opzione equivalente, ad es. "Importa archivio ZIP\u2026" in ElegooSlicer), quindi seleziona il file ZIP (non è necessario decomprimerlo).</li></ul>',
+        'Il preset comparirà nell’elenco dei preset.'
+      ],
+      'modal.prusa.title': 'PrusaSlicer',
+      'modal.prusa.steps': [
+        'Scarica il preset come file <strong>INI</strong> dalla <a href="https://presets.polymaker.com" target="_blank" rel="noopener noreferrer">pagina di download</a>.',
+        'Apri PrusaSlicer.',
+        'Vai a <strong>File</strong> \u2192 <strong>Importa</strong> \u2192 <strong>Importa configurazione...</strong>, quindi seleziona il file INI.',
+        'Il preset del filamento comparirà nell’elenco dei preset.'
+      ],
+
+      'issues.title': 'Problemi noti',
+      'issues.import.title': 'Mancata corrispondenza nell’importazione dei preset BambuStudio - Risolto',
+      'issues.import.issue': '<strong>Problema:</strong> BambuStudio associa i preset dei filamenti alle stampanti verificando se il nome completo del preset della stampante (ad es. "Bambu Lab X1 Carbon 0.4 nozzle") compare nel campo <code>name</code> del preset. I file sorgente Polymaker usano l’abbreviazione <code>@BBL X1</code>, quindi il controllo della sottostringa non riesce e la temperatura / il tipo dello slot AMS non vengono compilati quando si assegna il filamento importato.',
+      'issues.import.solution': '<strong>Soluzione:</strong> questo sito ora suddivide automaticamente i download BambuStudio in file per singola stampante e riscrive il campo <code>name</code> in modo che contenga il nome completo del preset della stampante. Scarica i preset usando i pulsanti <strong>JSON</strong> o <strong>.bbsflmt</strong> di questa pagina — non copiare i file JSON originali direttamente da GitHub.',
+      'issues.import.link': 'Visualizza GitHub Issue #14 \u2192',
+      'issues.p2s.title': 'Problema di surriscaldamento di P2S - Applicata una correzione temporanea',
+      'issues.p2s.issue': '<strong>Problema:</strong> la stampante P2S potrebbe surriscaldarsi durante la stampa di materiali con temperatura di transizione vetrosa > 50\u00b0C a causa di problemi nel G-code di avvio.',
+      'issues.p2s.solution': '<strong>Soluzione:</strong> abbiamo implementato una correzione temporanea aggiungendo comandi G-code di raffreddamento ai preset P2S con temperatura di transizione vetrosa > 50\u00b0C. Si tratta di una soluzione provvisoria in attesa che Bambu Lab risolva il problema.',
+      'issues.p2s.link': 'Visualizza BambuStudio Issue #8801 \u2192',
+      'issues.p2s.credits': 'Grazie ad alexbreinig e capsel22 per aver individuato questo problema.',
+      'issues.restart.title': 'Riavvio di BambuStudio necessario dopo l’importazione',
+      'issues.restart.issue': '<strong>Problema:</strong> BambuStudio potrebbe non applicare correttamente i preset dei filamenti appena importati finché l’applicazione non viene riavviata. Eseguire lo slicing o la stampa senza riavviare potrebbe utilizzare impostazioni errate di temperatura, portata o altri parametri del filamento.',
+      'issues.restart.solution': '<strong>Soluzione:</strong> riavvia sempre BambuStudio dopo aver importato i preset Polymaker, prima di iniziare lo slicing o la stampa. Un avviso te lo ricorderà anche quando scarichi i preset BambuStudio da questa pagina.',
+      'issues.restart.link': 'Visualizza BambuStudio Issue #10583 \u2192',
+      'issues.aux.title': 'Preset mancanti per alcune opzioni di ugello / estrusore',
+      'issues.aux.issue': '<strong>Problema:</strong> le stampanti Bambu Lab che offrono più opzioni di estrusore/ugello (come la X2D a più ugelli e la serie H2) memorizzano un gruppo di valori separato per ogni opzione — <code>Direct Drive Standard</code>, <code>Direct Drive High Flow</code>, <code>Bowden Standard</code> e <code>Bowden High Flow</code> — all’interno di un singolo preset del filamento. Per alcuni materiali abbiamo ottimizzato solo l’opzione principale (in genere <code>Direct Drive Standard</code>), quindi le altre opzioni dell’ugello, incluso l’ugello ausiliario (Bowden), restano vuote e non hanno valori ottimizzati.',
+
+      'footer.links': 'Link',
+      'footer.social': 'Account social',
+      'footer.readme': 'Per maggiori informazioni, consulta il',
+      'footer.readme.link': 'README',
+
+      'lang.en': 'English',
+      'lang.zh': '中文',
+      'lang.de': 'Deutsch',
+      'lang.it': 'Italiano',
+      'lang.fr': 'Français',
+      'lang.es': 'Español',
+
+      'value.unknown': 'Sconosciuto',
+      'value.unknown.filament': 'Filamento sconosciuto',
+      'value.none': '-',
+
+      'title.download.json': 'Scarica il file del preset',
+      'title.download.bundle': 'Scarica come pacchetto BambuStudio',
+
+      'filename.preset': 'preset.json',
+      'filename.bundle': 'polymaker-bundle.bbsflmt'
+    },
+
+    fr: {
+      'hero.logo.alt': 'Polymaker',
+      'hero.title': 'Profils d\'impression',
+      'hero.desc': 'Sélectionnez votre slicer pour consulter et télécharger les profils d’impression et les préréglages de filament Polymaker pour Bambu Studio, OrcaSlicer, ElegooSlicer et PrusaSlicer',
+      'hero.howto': 'Comment les utiliser ?',
+      'product.htPlaPro.title': 'Découvrez Polymaker™ HT-PLA Pro',
+      'product.htPlaPro.tagline': 'Résistant à la chaleur. Résistant aux chocs. Toujours du PLA.',
+      'product.htPlaPro.cta': 'En savoir plus',
+
+      'filter.slicer.label': 'Sélectionnez votre slicer',
+      'filter.slicer.placeholder': 'Sélectionner un slicer',
+      'filter.series.label': 'Gamme',
+      'filter.brand.label': 'Marque de l’imprimante',
+      'filter.model.label': 'Modèle de l’imprimante',
+      'filter.all': 'Tous',
+      'filter.all.series': 'Toutes les gammes',
+      'filter.all.brands': 'Toutes les marques',
+      'filter.all.models': 'Tous les modèles',
+      'filter.strict': 'Mode strict : afficher uniquement les préréglages conçus spécifiquement pour cette imprimante',
+
+      'list.title': 'Préréglages',
+      'list.loading': 'Chargement\u2026',
+      'list.count': '{n} préréglages pour {m} matériaux.',
+      'list.failed': 'Échec du chargement : {msg}',
+      'table.material': 'Matériau',
+      'table.brand': 'Marque de l’imprimante',
+      'table.printer': 'Imprimante',
+      'table.compatible': 'Imprimantes compatibles',
+      'table.modified': 'Dernière modification',
+      'table.action': 'Action de téléchargement',
+
+      'btn.download.selected': 'Télécharger la sélection',
+      'btn.download.selected.loading': 'Chargement...',
+      'btn.download.bundle': 'Télécharger le lot (.bbsflmt)',
+      'btn.download.bundle.loading': 'Chargement...',
+
+      'folder.presets': '{n} préréglages',
+      'folder.expand': 'Cliquer pour développer',
+
+      'alert.no.bambu': 'Aucun préréglage BambuStudio n’est disponible au téléchargement. Vérifiez que BambuStudio est sélectionné comme logiciel de tranchage.',
+      'alert.no.presets': 'Aucun préréglage fourni',
+      'alert.load.failed': 'Échec du chargement des données de préréglage. Vérifiez votre connexion et réessayez.',
+      'alert.error.loading': 'Erreur lors du chargement des préréglages : {msg}',
+      'alert.invalid.url': 'URL du préréglage non valide',
+      'alert.error.preset': 'Erreur lors du chargement du préréglage : {msg}. Veuillez réessayer.',
+      'alert.error.download': 'Erreur lors du téléchargement du préréglage : {msg}',
+
+      'dup.title': '⚠️ Fichiers doublons détectés',
+      'dup.intro': 'Plusieurs préréglages génèrent le même nom de fichier. Sélectionnez le préréglage à conserver pour chaque doublon :',
+      'dup.for.printer': 'Pour l’imprimante : {name}',
+      'dup.use.profile': 'Utiliser le profil {name}',
+      'dup.compatible': 'Compatible avec : {list}',
+      'dup.cancel': 'Annuler',
+      'dup.confirm': 'Confirmer l’exportation',
+
+      'modal.restart.title': '⚠️ Redémarrage de BambuStudio requis',
+      'modal.restart.message': '<strong>Important :</strong> après avoir importé les préréglages dans BambuStudio, vous <strong>devez redémarrer le logiciel</strong> avant de trancher et d’imprimer. Sans redémarrage, des paramètres incorrects risquent d’être appliqués.',
+      'modal.restart.link': 'Voir le ticket GitHub #10583 →',
+      'modal.restart.cancel': 'Annuler',
+      'modal.restart.confirm': 'Continuer le téléchargement',
+      'modal.missingvariant.title': '⚠️ Certaines options de buse n’ont pas de préréglage',
+      'modal.missingvariant.intro': 'Certains préréglages sélectionnés ne comprennent pas toutes les options de buse ou d’extrudeur de cette imprimante. Nous n’avons pas créé de préréglages pour les variantes suivantes :',
+      'modal.missingvariant.note': 'Vous pouvez tout de même les télécharger — ces options de buse n’auront simplement pas de valeurs optimisées.',
+      'modal.missingvariant.ack': 'Continuer le téléchargement',
+
+      'modal.install.title': '📦 Installation manuelle',
+      'modal.bambu.title': 'Bambu Studio',
+      'modal.bambu.method1.title': 'Méthode 1 : lot (recommandée)',
+      'modal.bambu.method1.steps': [
+        'Téléchargez le fichier de préréglage <strong>.bbsflmt</strong> (ou le lot ZIP) depuis la <a href="https://presets.polymaker.com" target="_blank" rel="noopener noreferrer">page de téléchargement</a>.',
+        'S’il s’agit d’un fichier ZIP, décompressez-le pour extraire le ou les fichiers .bbsflmt.',
+        'Ouvrez Bambu Studio.',
+        'Accédez à <strong>File</strong> → <strong>Import</strong> → <strong>Import Preset...</strong>.',
+        'Sélectionnez le ou les fichiers <strong>.bbsflmt</strong>.',
+        'Cliquez sur un matériau dans la liste des consommables du projet, sélectionnez le préréglage personnalisé importé : il apparaîtra dans la liste des préréglages.'
+      ],
+      'modal.bambu.method1.note': '<strong>Remarque :</strong> les lots .bbsflmt sont uniquement disponibles pour BambuStudio. Le bouton de téléchargement du lot apparaît lorsque des préréglages BambuStudio sont sélectionnés.',
+      'modal.bambu.method2.title': 'Méthode 2 : fichier individuel',
+      'modal.bambu.method2.steps': [
+        'Téléchargez le fichier JSON du préréglage (ou le ZIP à fichier unique) depuis la <a href="https://presets.polymaker.com" target="_blank" rel="noopener noreferrer">page de téléchargement</a>.',
+        'Ouvrez Bambu Studio.',
+        'Accédez à <strong>File</strong> → <strong>Import</strong> → <strong>Import Preset...</strong>.',
+        'Sélectionnez un fichier JSON ou ZIP.',
+        'Cliquez sur un matériau dans la liste des consommables du projet, sélectionnez le préréglage personnalisé importé : il apparaîtra dans la liste des préréglages.'
+      ],
+      'modal.orca.title': 'OrcaSlicer / ElegooSlicer',
+      'modal.orca.steps': [
+        'Téléchargez le préréglage au format <strong>JSON</strong> ou <strong>ZIP à fichier unique</strong> depuis la <a href="https://presets.polymaker.com" target="_blank" rel="noopener noreferrer">page de téléchargement</a>.',
+        'Ouvrez OrcaSlicer ou ElegooSlicer.',
+        'Accédez à <strong>File</strong> → <strong>Import</strong> :<ul><li>Pour un fichier <strong>JSON</strong> : choisissez <strong>Import Configs...</strong> (OrcaSlicer) ou <strong>Import Preset...</strong> (ElegooSlicer), puis sélectionnez le fichier JSON.</li><li>Pour un fichier <strong>ZIP</strong> : choisissez <strong>Import Zip Archive...</strong> (ou l’équivalent, par exemple "Import Zip Archive\u2026" dans ElegooSlicer), puis sélectionnez le fichier ZIP (inutile de le décompresser).</li></ul>',
+        'Le préréglage apparaîtra dans votre liste de préréglages.'
+      ],
+      'modal.prusa.title': 'PrusaSlicer',
+      'modal.prusa.steps': [
+        'Téléchargez le préréglage sous forme de fichier <strong>INI</strong> depuis la <a href="https://presets.polymaker.com" target="_blank" rel="noopener noreferrer">page de téléchargement</a>.',
+        'Ouvrez PrusaSlicer.',
+        'Accédez à <strong>File</strong> → <strong>Import</strong> → <strong>Import Config...</strong>, puis sélectionnez le fichier INI.',
+        'Le préréglage de filament apparaîtra dans votre liste de préréglages.'
+      ],
+
+      'issues.title': 'Problèmes connus',
+      'issues.import.title': 'Incompatibilité lors de l’importation d’un préréglage BambuStudio — corrigée',
+      'issues.import.issue': '<strong>Problème :</strong> BambuStudio associe les préréglages de filament aux imprimantes en vérifiant si le nom complet du préréglage d’imprimante (par exemple "Bambu Lab X1 Carbon 0.4 nozzle") figure dans le champ <code>name</code> du préréglage. Les fichiers sources Polymaker utilisent l’abréviation <code>@BBL X1</code> : la recherche de sous-chaîne échoue donc, et la température ainsi que le type de l’emplacement AMS ne sont pas renseignés lors de l’affectation du filament importé.',
+      'issues.import.solution': '<strong>Solution :</strong> ce site répartit désormais automatiquement les téléchargements BambuStudio dans des fichiers propres à chaque imprimante et réécrit le champ <code>name</code> pour y inclure le nom complet du préréglage d’imprimante. Téléchargez les préréglages à l’aide des boutons <strong>JSON</strong> ou <strong>.bbsflmt</strong> de cette page — ne copiez pas directement les fichiers JSON bruts depuis GitHub.',
+      'issues.import.link': 'Voir le ticket GitHub #14 →',
+      'issues.p2s.title': 'Surchauffe de la P2S — correctif temporaire appliqué',
+      'issues.p2s.issue': '<strong>Problème :</strong> l’imprimante P2S peut surchauffer lors de l’impression de matériaux dont la température de transition vitreuse est > 50°C en raison de problèmes dans le G-code de démarrage.',
+      'issues.p2s.solution': '<strong>Solution :</strong> nous avons appliqué un correctif temporaire en ajoutant des commandes G-code de refroidissement aux préréglages P2S dont la température de transition vitreuse est > 50°C. Il s’agit d’une solution de contournement temporaire, dans l’attente d’un correctif de Bambu Lab.',
+      'issues.p2s.link': 'Voir le ticket BambuStudio #8801 →',
+      'issues.p2s.credits': 'Merci à alexbreinig et capsel22 d’avoir identifié ce problème.',
+      'issues.restart.title': 'Redémarrage de BambuStudio requis après l’importation',
+      'issues.restart.issue': '<strong>Problème :</strong> BambuStudio peut ne pas appliquer correctement les préréglages de filament nouvellement importés tant que l’application n’a pas été redémarrée. Trancher ou imprimer sans redémarrer peut entraîner l’utilisation d’une température, d’un débit ou d’autres paramètres de filament incorrects.',
+      'issues.restart.solution': '<strong>Solution :</strong> redémarrez toujours BambuStudio après avoir importé des préréglages Polymaker, avant de commencer le tranchage ou l’impression. Une fenêtre d’avertissement vous le rappellera également lorsque vous téléchargerez des préréglages BambuStudio depuis cette page.',
+      'issues.restart.link': 'Voir le ticket BambuStudio #10583 →',
+      'issues.aux.title': 'Préréglages manquants pour certaines options de buse ou d’extrudeur',
+      'issues.aux.issue': '<strong>Problème :</strong> les imprimantes Bambu Lab proposant plusieurs options d’extrudeur ou de buse (comme la X2D à plusieurs buses et la série H2) enregistrent un ensemble distinct de valeurs pour chaque option — <code>Direct Drive Standard</code>, <code>Direct Drive High Flow</code>, <code>Bowden Standard</code> et <code>Bowden High Flow</code> — au sein d’un même préréglage de filament. Pour certains matériaux, nous n’avons optimisé que l’option principale (généralement <code>Direct Drive Standard</code>) ; les autres options de buse, y compris la buse auxiliaire (Bowden), restent donc vides et ne disposent d’aucune valeur optimisée.',
+
+      'footer.links': 'Liens',
+      'footer.social': 'Réseaux sociaux',
+      'footer.readme': 'Pour plus d’informations, consultez le',
+      'footer.readme.link': 'README',
+
+      'lang.en': 'English',
+      'lang.zh': '中文',
+      'lang.de': 'Deutsch',
+      'lang.it': 'Italiano',
+      'lang.fr': 'Français',
+      'lang.es': 'Español',
+
+      'value.unknown': 'Inconnu',
+      'value.unknown.filament': 'Filament inconnu',
+      'value.none': '-',
+
+      'title.download.json': 'Télécharger le fichier de préréglage',
+      'title.download.bundle': 'Télécharger sous forme de lot BambuStudio',
+
+      'filename.preset': 'preset.json',
+      'filename.bundle': 'polymaker-bundle.bbsflmt'
+    },
+
+    es: {
+      // Hero
+      'hero.logo.alt': 'Polymaker',
+      'hero.title': 'Preajustes de filamento',
+      'hero.desc': 'Seleccione su laminador para ver y descargar perfiles de impresión y preajustes de filamento de Polymaker para Bambu Studio, OrcaSlicer, ElegooSlicer y PrusaSlicer',
+      'hero.howto': '¿Cómo se usa?',
+      'product.htPlaPro.title': 'Presentamos Polymaker™ HT-PLA Pro',
+      'product.htPlaPro.tagline': 'Listo para el calor. Listo para los impactos. Y sigue siendo PLA.',
+      'product.htPlaPro.cta': 'Más información',
+
+      // Filters
+      'filter.slicer.label': 'Seleccione su laminador',
+      'filter.slicer.placeholder': 'Seleccionar laminador',
+      'filter.series.label': 'Serie',
+      'filter.brand.label': 'Marca de la impresora',
+      'filter.model.label': 'Modelo de la impresora',
+      'filter.all': 'Todos',
+      'filter.all.series': 'Todas las series',
+      'filter.all.brands': 'Todas las marcas',
+      'filter.all.models': 'Todos los modelos',
+      'filter.strict': 'Modo estricto: mostrar solo los preajustes creados específicamente para esta impresora',
+
+      // List / table
+      'list.title': 'Preajustes',
+      'list.loading': 'Cargando\u2026',
+      'list.count': '{n} preajustes en {m} materiales.',
+      'list.failed': 'Error al cargar: {msg}',
+      'table.material': 'Material',
+      'table.brand': 'Marca de la impresora',
+      'table.printer': 'Impresora',
+      'table.compatible': 'Impresoras compatibles',
+      'table.modified': 'Última modificación',
+      'table.action': 'Acción de descarga',
+
+      // Buttons
+      'btn.download.selected': 'Descargar seleccionados',
+      'btn.download.selected.loading': 'Cargando...',
+      'btn.download.bundle': 'Descargar paquete (.bbsflmt)',
+      'btn.download.bundle.loading': 'Cargando...',
+
+      // Folder row
+      'folder.presets': '{n} preajustes',
+      'folder.expand': 'Hacer clic para expandir',
+
+      // Alerts / errors
+      'alert.no.bambu': 'No hay preajustes de BambuStudio disponibles para descargar. Asegúrese de que BambuStudio esté seleccionado como laminador.',
+      'alert.no.presets': 'No se proporcionaron preajustes',
+      'alert.load.failed': 'No se pudieron cargar los datos de los preajustes. Compruebe su conexión y vuelva a intentarlo.',
+      'alert.error.loading': 'Error al cargar los preajustes: {msg}',
+      'alert.invalid.url': 'URL de preajuste no válida',
+      'alert.error.preset': 'Error al cargar el preajuste: {msg}. Vuelva a intentarlo.',
+      'alert.error.download': 'Error al descargar el preajuste: {msg}',
+
+      // Duplicate modal
+      'dup.title': '\u26a0\ufe0f Se detectaron archivos duplicados',
+      'dup.intro': 'Varios preajustes generan el mismo nombre de archivo. Seleccione qué preajuste desea conservar para cada duplicado:',
+      'dup.for.printer': 'Para la impresora: {name}',
+      'dup.use.profile': 'Usar el perfil {name}',
+      'dup.compatible': 'Compatible con: {list}',
+      'dup.cancel': 'Cancelar',
+      'dup.confirm': 'Confirmar exportación',
+
+      // BambuStudio Restart Warning Modal
+      'modal.restart.title': '\u26a0\ufe0f Es necesario reiniciar BambuStudio',
+      'modal.restart.message': '<strong>Importante:</strong> Después de importar los preajustes en BambuStudio, <strong>debe reiniciar el laminador</strong> antes de laminar e imprimir. Si no lo reinicia, podrían aplicarse ajustes incorrectos.',
+      'modal.restart.link': 'Ver la incidencia #10583 de GitHub \u2192',
+      'modal.restart.cancel': 'Cancelar',
+      'modal.restart.confirm': 'Continuar con la descarga',
+      'modal.missingvariant.title': '⚠️ Algunas opciones de boquilla no tienen preajuste',
+      'modal.missingvariant.intro': 'Algunos preajustes seleccionados no incluyen todas las opciones de boquilla/extrusor para esta impresora. No creamos preajustes para estas variantes:',
+      'modal.missingvariant.note': 'Aun así, puede descargar los preajustes — esas opciones de boquilla simplemente no tendrán valores calibrados.',
+      'modal.missingvariant.ack': 'Continuar con la descarga',
+
+      // Install modal
+      'modal.install.title': '\ud83d\udce6 Instalación del manual',
+      'modal.bambu.title': 'Bambu Studio',
+      'modal.bambu.method1.title': 'Método 1: método de paquete (recomendado)',
+      'modal.bambu.method1.steps': [
+        'Descargue el archivo de preajuste <strong>.bbsflmt</strong> (o el paquete ZIP) desde la <a href="https://presets.polymaker.com" target="_blank" rel="noopener noreferrer">página de descargas</a>.',
+        'Si es un archivo ZIP, descomprímalo para extraer los archivos .bbsflmt.',
+        'Abra Bambu Studio.',
+        'Vaya a <strong>Archivo</strong> \u2192 <strong>Importar</strong> \u2192 <strong>Importar preajuste...</strong>.',
+        'Seleccione los archivos <strong>.bbsflmt</strong>.',
+        'Haga clic en un material de la lista de consumibles del proyecto, seleccione el preajuste personalizado importado y este aparecerá en la lista de preajustes.'
+      ],
+      'modal.bambu.method1.note': '<strong>Nota:</strong> Los paquetes .bbsflmt solo están disponibles para BambuStudio. El botón de descarga de paquetes aparece cuando se seleccionan preajustes de BambuStudio.',
+      'modal.bambu.method2.title': 'Método 2: método de archivo individual',
+      'modal.bambu.method2.steps': [
+        'Descargue el archivo JSON del preajuste (o el ZIP de un solo archivo) desde la <a href="https://presets.polymaker.com" target="_blank" rel="noopener noreferrer">página de descargas</a>.',
+        'Abra Bambu Studio.',
+        'Vaya a <strong>Archivo</strong> \u2192 <strong>Importar</strong> \u2192 <strong>Importar preajuste...</strong>.',
+        'Seleccione un archivo JSON o ZIP.',
+        'Haga clic en un material de la lista de consumibles del proyecto, seleccione el preajuste personalizado importado y éste aparecerá en la lista de preajustes.'
+      ],
+      'modal.orca.title': 'OrcaSlicer / ElegooSlicer',
+      'modal.orca.steps': [
+        'Descargue el preajuste como archivo <strong>JSON</strong> o <strong>ZIP de un solo archivo</strong> desde la <a href="https://presets.polymaker.com" target="_blank" rel="noopener noreferrer">página de descargas</a>.',
+        'Abra OrcaSlicer o ElegooSlicer.',
+        'Vaya a <strong>Archivo</strong> \u2192 <strong>Importar</strong>:<ul><li>Para un archivo <strong>JSON</strong>: elija <strong>Importar configuraciones...</strong> (OrcaSlicer) o <strong>Importar preajuste...</strong> (ElegooSlicer) y, a continuación, seleccione el archivo JSON.</li><li>Para un archivo <strong>ZIP</strong>: elija <strong>Importar archivo ZIP...</strong> (o la opción equivalente, p. ej., "Importar archivo ZIP\u2026" en ElegooSlicer) y, a continuación, seleccione el archivo ZIP (no es necesario descomprimirlo).</li></ul>',
+        'El preajuste aparecerá en su lista de preajustes.'
+      ],
+      'modal.prusa.title': 'PrusaSlicer',
+      'modal.prusa.steps': [
+        'Descargue el preajuste como archivo <strong>INI</strong> desde la <a href="https://presets.polymaker.com" target="_blank" rel="noopener noreferrer">página de descargas</a>.',
+        'Abra PrusaSlicer.',
+        'Vaya a <strong>Archivo</strong> \u2192 <strong>Importar</strong> \u2192 <strong>Importar configuración...</strong> y, a continuación, seleccione el archivo INI.',
+        'El preajuste de filamento aparecerá en su lista de preajustes.'
+      ],
+
+      // Known Issues
+      'issues.title': 'Incidencia conocida',
+      'issues.import.title': 'Discrepancia al importar preajustes de BambuStudio - Corregida',
+      'issues.import.issue': '<strong>Problema:</strong> BambuStudio asocia los preajustes de filamento con las impresoras comprobando si el nombre completo del preajuste de impresora (p. ej., "Bambu Lab X1 Carbon 0.4 nozzle") aparece en el campo <code>name</code> del preajuste. Los archivos fuente de Polymaker usan la abreviatura <code>@BBL X1</code>, por lo que la comprobación de la subcadena falla y la temperatura/el tipo de la ranura AMS no se rellenan al asignar el filamento importado.',
+      'issues.import.solution': '<strong>Solución:</strong> Este sitio web ahora divide automáticamente las descargas de BambuStudio en archivos por impresora y reescribe el campo <code>name</code> para que contenga el nombre completo del preajuste de impresora. Descargue los preajustes mediante los botones <strong>JSON</strong> o <strong>.bbsflmt</strong> de esta página \u2014 no copie directamente los archivos JSON sin procesar desde GitHub.',
+      'issues.import.link': 'Ver la Incidencia #14 de GitHub \u2192',
+      'issues.p2s.title': 'Problema de sobrecalentamiento de P2S - Corrección temporal aplicada',
+      'issues.p2s.issue': '<strong>Problema:</strong> La impresora P2S puede sobrecalentarse al imprimir materiales con una temperatura de transición vítrea > 50\u00b0C debido a problemas en el G-code inicial.',
+      'issues.p2s.solution': '<strong>Solución:</strong> Implementamos una corrección temporal añadiendo comandos de refrigeración de G-code a los preajustes de P2S con una temperatura de transición vítrea > 50\u00b0C. Esta es una solución provisional hasta que Bambu Lab corrija el problema.',
+      'issues.p2s.link': 'Ver la Incidencia #8801 de BambuStudio \u2192',
+      'issues.p2s.credits': 'Gracias a alexbreinig y capsel22 por identificar esta incidencia.',
+      'issues.restart.title': 'Es necesario reiniciar BambuStudio después de importar',
+      'issues.restart.issue': '<strong>Problema:</strong> Es posible que BambuStudio no aplique correctamente los preajustes de filamento recién importados hasta que se reinicie la aplicación. Laminar o imprimir sin reiniciarla puede hacer que se usen valores incorrectos de temperatura, flujo u otros ajustes del filamento.',
+      'issues.restart.solution': '<strong>Solución:</strong> Reinicie siempre BambuStudio después de importar los preajustes de Polymaker y antes de comenzar a laminar o imprimir. Una ventana emergente también se lo recordará cuando descargue preajustes de BambuStudio desde esta página.',
+      'issues.restart.link': 'Ver la Incidencia #10583 de BambuStudio \u2192',
+      'issues.aux.title': 'Faltan preajustes para algunas opciones de boquilla/extrusor',
+      'issues.aux.issue': '<strong>Problema:</strong> Las impresoras Bambu Lab que ofrecen más de una opción de extrusor/boquilla (como la X2D de varias boquillas y la serie H2) almacenan un conjunto de valores independiente para cada opción \u2014 <code>Direct Drive Standard</code>, <code>Direct Drive High Flow</code>, <code>Bowden Standard</code> y <code>Bowden High Flow</code> \u2014 dentro de un único preajuste de filamento. Para algunos materiales, solo calibramos la opción principal (normalmente <code>Direct Drive Standard</code>), por lo que las demás opciones de boquilla, incluida la boquilla auxiliar (Bowden), quedan vacías y no tienen valores calibrados.',
+
+      // Footer
+      'footer.links': 'Enlaces',
+      'footer.social': 'Redes sociales',
+      'footer.readme': 'Para obtener más información, consulte ',
+      'footer.readme.link': 'README',
+
+      // Language switcher
+      'lang.en': 'English',
+      'lang.zh': '中文',
+      'lang.de': 'Deutsch',
+      'lang.it': 'Italiano',
+      'lang.fr': 'Français',
+      'lang.es': 'Español',
+
+      // Missing value fallbacks
+      'value.unknown': 'Desconocido',
+      'value.unknown.filament': 'Filamento desconocido',
+      'value.none': '-',
+
+      // Download button titles
+      'title.download.json': 'Descargar archivo de preajuste',
+      'title.download.bundle': 'Descargar como paquete de BambuStudio',
+
+      // Filename defaults
+      'filename.preset': 'preset.json',
+      'filename.bundle': 'polymaker-bundle.bbsflmt'
     }
   };
 
   var currentLang = 'en';
 
   function detectLang() {
-    var lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
-    return lang.indexOf('zh') === 0 ? 'zh' : 'en';
+    var lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase().split(/[-_]/)[0];
+    return TRANSLATIONS[lang] ? lang : 'en';
   }
 
   function t(key, vars) {
@@ -376,7 +974,7 @@ var I18N = (function () {
     // Update active lang label in dropdown
     var activeLangLabel = document.getElementById('lang-dropdown-label');
     if (activeLangLabel) {
-      activeLangLabel.textContent = lang === 'zh' ? '中文' : 'EN';
+      activeLangLabel.textContent = lang === 'zh' ? '中文' : lang.toUpperCase();
     }
 
     // Mark active item in lang list
@@ -397,7 +995,7 @@ var I18N = (function () {
     }
 
     if (document.documentElement) {
-      document.documentElement.setAttribute('lang', lang === 'zh' ? 'zh' : 'en');
+      document.documentElement.setAttribute('lang', lang);
     }
 
     // Notify app.js to re-render dynamic content
