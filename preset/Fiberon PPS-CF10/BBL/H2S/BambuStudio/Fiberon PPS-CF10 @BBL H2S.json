@@ -373,5 +373,8 @@
     "include": [
         "fdm_filament_template_direct_dual"
     ],
-    "version": "2.6.0.4"
+    "version": "2.6.0.4",
+    "filament_long_retractions_when_cut": [
+        "0"
+    ]
 }

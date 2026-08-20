@@ -58,7 +58,7 @@
         "110"
     ],
     "fan_cooling_layer_time": [
-        "27"
+        "20"
     ],
     "fan_max_speed": [
         "30"
@@ -317,7 +317,7 @@
         "0"
     ],
     "slow_down_for_layer_cooling": [
-        "0"
+        "1"
     ],
     "cooling_slowdown_logic": [
         "uniform_cooling"
@@ -368,8 +368,8 @@
     "include": [
         "fdm_filament_template_direct_dual"
     ],
-    "enable_overhang_bridge_fan": [
+    "version": "2.6.0.5",
+    "filament_long_retractions_when_cut": [
         "0"
-    ],
-    "version": "2.6.0.5"
+    ]
 }

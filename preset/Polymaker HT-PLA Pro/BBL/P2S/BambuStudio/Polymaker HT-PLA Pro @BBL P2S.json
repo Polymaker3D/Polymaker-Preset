@@ -153,7 +153,7 @@
         "0"
     ],
     "filament_long_retractions_when_cut": [
-        "1"
+        "0"
     ],
     "filament_max_volumetric_speed": [
         "20"
@@ -367,5 +367,5 @@
     "idle_temperature": [
         "60"
     ],
-    "filament_id": "PMPL36"
+    "filament_id": "PMPL60"
 }

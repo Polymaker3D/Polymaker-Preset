@@ -93,7 +93,7 @@
         "0"
     ],
     "filament_density": [
-        "1.32"
+        "1.17"
     ],
     "filament_diameter": [
         "1.75"
@@ -117,10 +117,10 @@
         "0"
     ],
     "filament_long_retractions_when_cut": [
-        "1"
+        "0"
     ],
     "filament_max_volumetric_speed": [
-        "24"
+        "16"
     ],
     "filament_minimal_purge_on_wipe_tower": [
         "15"
@@ -271,7 +271,7 @@
         "1"
     ],
     "slow_down_layer_time": [
-        "6"
+        "8"
     ],
     "slow_down_min_speed": [
         "10"
@@ -283,7 +283,7 @@
         "45"
     ],
     "temperature_vitrification": [
-        "62.5"
+        "61"
     ],
     "textured_plate_temp": [
         "55"

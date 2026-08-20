@@ -143,7 +143,7 @@
         "Bowden High Flow"
     ],
     "filament_flow_ratio": [
-        "0.99",
+        "0.95",
         "nil",
         "nil",
         "nil"
@@ -158,10 +158,10 @@
         "0"
     ],
     "filament_max_volumetric_speed": [
-        "12",
-        "12",
-        "12",
-        "12"
+        "8",
+        "nil",
+        "nil",
+        "nil"
     ],
     "filament_metal_stickiness": [
         "None"
@@ -296,16 +296,16 @@
         "0"
     ],
     "nozzle_temperature": [
-        "220",
-        "220",
-        "220",
-        "220"
+        "210",
+        "nil",
+        "nil",
+        "nil"
     ],
     "nozzle_temperature_initial_layer": [
-        "220",
-        "220",
-        "220",
-        "220"
+        "210",
+        "nil",
+        "nil",
+        "nil"
     ],
     "nozzle_temperature_range_high": [
         "230"
@@ -394,6 +394,9 @@
     ],
     "version": "2.5.0.19",
     "idle_temperature": [
+        "0"
+    ],
+    "filament_long_retractions_when_cut": [
         "0"
     ]
 }

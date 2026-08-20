@@ -2,3 +2,6 @@
 .opencode/
 .omo/
 doc-outside/
+.playwright-mcp/
+.ruff_cache/
+.claude/

@@ -191,7 +191,7 @@
         "100%"
     ],
     "filament_soluble": [
-        "1"
+        "0"
     ],
     "filament_type": [
         "PLA"
@@ -364,6 +364,9 @@
     ],
     "version": "2.7.0.7",
     "idle_temperature": [
+        "0"
+    ],
+    "filament_long_retractions_when_cut": [
         "0"
     ]
 }

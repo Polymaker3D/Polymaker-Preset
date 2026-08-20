@@ -394,6 +394,34 @@ body.theme-wiki .theme-toggle-btn:hover {
   border-color: rgba(0, 204, 204, 0.5);
 }
 
+.slicer-notice {
+  margin: 0.5rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+.slicer-notice-link {
+  border: none;
+  padding: 0;
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.slicer-notice-link:hover {
+  color: var(--accent-light);
+}
+
+.slicer-notice-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
 /* Warning card */
 .warning-card {
   padding: 0.75rem 1rem;
@@ -1675,6 +1703,67 @@ body.theme-wiki .install-section-title {
   font-variant-numeric: tabular-nums;
 }
 
+.conversion-intro,
+.conversion-note {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+#conversion-guide-modal .modal-content {
+  max-width: 960px;
+}
+
+.conversion-warning {
+  margin: 0 0 0.75rem;
+  padding: 0.75rem;
+  border: 1px solid rgba(234, 179, 8, 0.4);
+  border-radius: var(--radius);
+  background: rgba(234, 179, 8, 0.08);
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.conversion-guide-steps > li {
+  margin-bottom: 1.25rem;
+}
+
+.conversion-step-title {
+  margin: 0 0 0.35rem;
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.conversion-guide-steps p {
+  margin: 0;
+}
+
+.conversion-step-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.conversion-note {
+  padding: 0.75rem;
+  border-left: 2px solid var(--accent);
+  background: var(--bg-card-hover);
+}
+
+.conversion-intro {
+  margin: 0 0 0.75rem;
+}
+
+.conversion-note {
+  margin: 0.75rem 0 0;
+}
+
 /* Duplicate Resolution Modal Styles */
 .duplicate-intro {
   margin: 0 0 1rem;
@@ -1979,6 +2068,7 @@ body.theme-wiki .install-steps strong {
 .known-issues-section {
   margin-top: 1rem;
   padding: 0.75rem;
+  padding-bottom: 0;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
@@ -2043,6 +2133,40 @@ body.theme-wiki .accordion-header:hover {
   background: rgba(234, 179, 8, 0.12);
 }
 
+.resolved-issues-group {
+  border: none;
+  border-top: 1px solid var(--border);
+  border-radius: 0;
+}
+
+.resolved-issues-group:hover,
+body.theme-wiki .resolved-issues-group:hover {
+  border-color: var(--border);
+}
+
+.resolved-issues-group > .accordion-header {
+  justify-content: flex-start;
+  min-height: 1.5rem;
+  padding: 0;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
+
+.resolved-issues-group .accordion-title {
+  flex: 0 1 auto;
+}
+
+.resolved-issues-group .accordion-icon {
+  margin-left: 0.35rem;
+}
+
+.resolved-issues-group > .accordion-header:hover,
+body.theme-wiki .resolved-issues-group > .accordion-header,
+body.theme-wiki .resolved-issues-group > .accordion-header:hover {
+  background: transparent;
+}
+
 .accordion-title {
   flex: 1;
 }
@@ -2085,6 +2209,13 @@ body.theme-wiki .accordion-header:hover {
 
 .accordion-body p:last-child {
   margin-bottom: 0;
+}
+
+.resolved-issue-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 0.5rem 0;
 }
 
 .accordion-links {
