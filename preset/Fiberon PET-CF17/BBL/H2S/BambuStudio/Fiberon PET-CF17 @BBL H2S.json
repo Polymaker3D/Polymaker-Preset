@@ -286,11 +286,11 @@
         "0"
     ],
     "nozzle_temperature": [
-        "70",
+        "300",
         "nil"
     ],
     "nozzle_temperature_initial_layer": [
-        "70",
+        "300",
         "nil"
     ],
     "nozzle_temperature_range_high": [
@@ -371,7 +371,7 @@
     "include": [
         "fdm_filament_template_direct_dual"
     ],
-    "version": "2.6.0.5",
+    "version": "2.6.0.2",
     "idle_temperature": [
         "0"
     ],

@@ -1,6 +1,6 @@
 {
     "type": "filament",
-    "name": "Panchroma PLA Translucent @Creality I7",
+    "name": "Panchroma PLA Glow @Creality I7",
     "from": "User",
     "instantiation": "true",
     "cool_plate_temp": "55",
@@ -35,7 +35,7 @@
     "filament_retraction_minimum_travel": "2",
     "filament_retract_before_wipe": "100%",
     "filament_settings_id": [
-        "Panchroma PLA Translucent @Creality I7"
+        "Panchroma PLA Glow @Creality I7"
     ],
     "filament_soluble": [
         "0"
@@ -79,7 +79,7 @@
         "230"
     ],
     "additional_cooling_fan_speed": "0",
-    "filament_id": "PMPL13",
+    "filament_id": "PMPL04",
     "setting_id": "GFSA04",
     "activate_air_filtration": "0",
     "activate_chamber_temp_control": "0",
