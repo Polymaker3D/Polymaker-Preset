@@ -98,9 +98,11 @@ Polymaker-Preset/
 ├── style.css               # Styling (dark theme + wiki light theme)
 ├── index.json              # Auto-generated index of all presets
 ├── package.json            # Node.js project configuration
-├── assets/                 # Static assets (logo, fonts)
+├── assets/                 # Static assets (logo, fonts, banner)
 │   ├── logo/               # Polymaker Teal.png (en), Chinese_NoSlogan_Teal.png (zh)
+│   ├── banner/             # LayerHub banner art, logos, mail icon
 │   └── font/Figtree/       # Self-hosted Figtree variable fonts (.ttf)
+├── worker/subscribe/       # Cloudflare Worker → Brevo LayerHub Waitlist
 ├── preset/                 # All preset files
 │   └── <Material>/
 │       └── <Brand>/

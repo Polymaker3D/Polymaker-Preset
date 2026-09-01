@@ -179,6 +179,197 @@ body.theme-wiki .preset-text {
   margin: 0;
 }
 
+/* LayerHub waitlist banner — Figma 51:52 (dark) / 51:94 (wiki) */
+.layerhub-banner {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  flex-shrink: 0;
+  margin: 0 0 1.25rem;
+  min-height: 280px;
+  border-radius: var(--radius-lg);
+  background: #0e0c25;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.layerhub-banner-art {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.layerhub-banner-art--wiki {
+  display: none;
+}
+
+/* Figma 51:54 glow layers: 2126×1458 on 2880×720, mix-blend-screen */
+.layerhub-banner-glow {
+  position: absolute;
+  width: 73.82%;
+  height: 202.5%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.layerhub-banner-glow--magenta {
+  left: -32.78%;
+  top: -6.39%;
+  bottom: auto;
+  opacity: 0.4;
+  mix-blend-mode: screen;
+  background: radial-gradient(ellipse 50% 50% at 50% 50%, rgb(188, 43, 134) 0%, rgba(188, 43, 134, 0) 87.5%);
+}
+
+.layerhub-banner-glow--cyan {
+  left: 65.17%;
+  right: auto;
+  top: -15.28%;
+  bottom: auto;
+  opacity: 0.25;
+  mix-blend-mode: screen;
+  background: radial-gradient(ellipse 50% 50% at 50% 50%, rgb(0, 192, 198) 0%, rgba(0, 192, 198, 0) 87.5%);
+}
+
+.layerhub-banner-inner {
+  position: relative;
+  z-index: 2;
+  max-width: min(42rem, 56%);
+  padding: 1.5rem 1.75rem 1.25rem;
+}
+
+.layerhub-banner-logo {
+  display: block;
+  width: 155px;
+  height: 40px;
+  margin: 0 0 0.75rem;
+}
+
+.layerhub-banner-logo--wiki {
+  display: none;
+}
+
+.layerhub-banner-title {
+  margin: 0 0 0.5rem;
+  color: #ffffff;
+  font-size: clamp(1.35rem, 2.6vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.layerhub-banner-title span {
+  display: block;
+}
+
+.layerhub-banner-title span:first-child {
+  white-space: nowrap;
+}
+
+.layerhub-banner-subtitle {
+  margin: 0 0 1rem;
+  max-width: 27.5rem;
+  color: #ffffff;
+  font-size: clamp(0.78rem, 1.15vw, 0.94rem);
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.layerhub-banner-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: 8.5rem;
+  height: 48px;
+  padding: 0 1.25rem;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #bc2b86 0%, #ec4f59 58%, #ffb52c 100%);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: filter var(--transition), transform var(--transition);
+}
+
+.layerhub-banner-submit:hover {
+  filter: brightness(1.06);
+}
+
+.layerhub-banner-submit:focus-visible {
+  outline: 2px solid #ffb52c;
+  outline-offset: 2px;
+}
+
+
+body.theme-wiki .layerhub-banner {
+  min-height: 320px;
+  background: #f9f9fb;
+  border-color: rgba(15, 23, 42, 0.06);
+}
+
+body.theme-wiki .layerhub-banner-art--dark {
+  display: none;
+}
+
+body.theme-wiki .layerhub-banner-art--wiki {
+  display: block;
+}
+
+body.theme-wiki .layerhub-banner-glow {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body.theme-wiki .layerhub-banner-glow--magenta {
+  left: 0;
+  right: auto;
+  top: 0;
+  bottom: auto;
+  opacity: 1;
+  mix-blend-mode: normal;
+  background: radial-gradient(ellipse 50% 78% at 0% 100%, rgba(210, 140, 180, 0.16) 0%, rgba(210, 140, 180, 0) 68%);
+}
+
+body.theme-wiki .layerhub-banner-glow--cyan {
+  left: 0;
+  right: auto;
+  top: 0;
+  bottom: auto;
+  opacity: 1;
+  mix-blend-mode: normal;
+  background: radial-gradient(ellipse 46% 74% at 100% 100%, rgba(130, 195, 215, 0.14) 0%, rgba(130, 195, 215, 0) 68%);
+}
+
+body.theme-wiki .layerhub-banner-logo--dark {
+  display: none;
+}
+
+body.theme-wiki .layerhub-banner-logo--wiki {
+  display: block;
+}
+
+body.theme-wiki .layerhub-banner-title {
+  color: #111111;
+}
+
+body.theme-wiki .layerhub-banner-subtitle {
+  color: #33363c;
+}
+
+body.theme-wiki .layerhub-banner-submit {
+  background: linear-gradient(90deg, #ea4c5c 0%, #f57a48 50%, #ffac34 100%);
+}
+
 /* Compact product highlight */
 .product-highlight {
   display: flex;
@@ -1990,6 +2181,34 @@ body.theme-wiki .install-steps strong {
   }
   .hero-desc {
     font-size: 0.75rem;
+  }
+  .layerhub-banner {
+    min-height: 0;
+  }
+  .layerhub-banner-inner {
+    max-width: 100%;
+    padding: 1rem 0.75rem 0.9rem;
+  }
+  .layerhub-banner-art {
+    opacity: 0.35;
+  }
+  .layerhub-banner-logo {
+    width: 124px;
+    height: 32px;
+    margin-bottom: 0.5rem;
+  }
+  .layerhub-banner-title {
+    font-size: 1.2rem;
+  }
+  .layerhub-banner-title span:first-child {
+    white-space: normal;
+  }
+  .layerhub-banner-subtitle {
+    font-size: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  .layerhub-banner-submit {
+    min-width: 7.5rem;
   }
   .product-highlight {
     align-items: flex-end;

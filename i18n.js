@@ -18,6 +18,12 @@ var I18N = (function () {
       'product.htPlaPro.tagline': 'Heat Ready. Impact Ready. Still PLA.',
       'product.htPlaPro.cta': 'Learn More',
 
+      // LayerHub banner
+      'banner.title': 'Official Presets + Global Creators',
+      'banner.title.line2': 'All on LayerHub',
+      'banner.subtitle': 'Not finding the filament preset you\'re interested in?<br>LayerHub is a community platform where you can discover official picks alongside presets shared by creators worldwide – and share your own too.',
+      'banner.submit': 'Explore Now',
+
       // Filters
       'filter.slicer.label': 'Select Your Slicer',
       'filter.slicer.placeholder': 'Select Slicer',
@@ -190,6 +196,12 @@ var I18N = (function () {
       'product.htPlaPro.tagline': '耐热就绪，抗冲击就绪，依然是 PLA。',
       'product.htPlaPro.cta': '了解更多',
 
+      // LayerHub banner
+      'banner.title': '官方预设 + 全球创作者',
+      'banner.title.line2': '都在 LayerHub',
+      'banner.subtitle': '没找到你感兴趣的耗材预设？<br>LayerHub 是一个社区平台，你可以在这里发现官方精选和全球创作者分享的预设，也可以分享你自己的作品。',
+      'banner.submit': '立即探索',
+
       // Filters
       'filter.slicer.label': '选择切片软件',
       'filter.slicer.placeholder': '请选择',
@@ -361,6 +373,12 @@ var I18N = (function () {
       'product.htPlaPro.title': 'Wir stellen vor: Polymaker™ HT-PLA Pro',
       'product.htPlaPro.tagline': 'Hitzebeständig. Schlagfest. Trotzdem PLA.',
       'product.htPlaPro.cta': 'Mehr erfahren',
+
+      // LayerHub banner
+      'banner.title': 'Offizielle Presets + globale Creator',
+      'banner.title.line2': 'Alles auf LayerHub',
+      'banner.subtitle': 'Sie finden das gewünschte Filamentprofil nicht?<br>LayerHub ist eine Community-Plattform, auf der Sie offizielle Empfehlungen und von Creatorn weltweit geteilte Presets entdecken – und eigene teilen können.',
+      'banner.submit': 'Jetzt entdecken',
 
       // Filters
       'filter.slicer.label': 'Slicer auswählen',
@@ -536,6 +554,12 @@ var I18N = (function () {
       'product.htPlaPro.tagline': 'Resistente al calore. Resistente agli urti. Sempre PLA.',
       'product.htPlaPro.cta': 'Scopri di più',
 
+      // LayerHub banner
+      'banner.title': 'Preset ufficiali + creator globali',
+      'banner.title.line2': 'Tutto su LayerHub',
+      'banner.subtitle': 'Non trovi il preset di filamento che ti interessa?<br>LayerHub è una piattaforma community dove puoi scoprire selezioni ufficiali e preset condivisi da creator di tutto il mondo — e condividere i tuoi.',
+      'banner.submit': 'Esplora ora',
+
       'filter.slicer.label': 'Seleziona il tuo slicer',
       'filter.slicer.placeholder': 'Seleziona slicer',
       'filter.slicer.notice': 'Each preset we provide is tuned for a specific combination of material, printer model, and slicer. If a preset is unavailable for your slicer but available for another, you can adapt it manually.',
@@ -695,6 +719,12 @@ var I18N = (function () {
       'product.htPlaPro.title': 'Découvrez Polymaker™ HT-PLA Pro',
       'product.htPlaPro.tagline': 'Résistant à la chaleur. Résistant aux chocs. Toujours du PLA.',
       'product.htPlaPro.cta': 'En savoir plus',
+
+      // LayerHub banner
+      'banner.title': 'Presets officiels + créateurs du monde',
+      'banner.title.line2': 'Tout sur LayerHub',
+      'banner.subtitle': 'Vous ne trouvez pas le preset de filament qui vous intéresse ?<br>LayerHub est une plateforme communautaire où vous pouvez découvrir des sélections officielles et des presets partagés par des créateurs du monde entier — et partager les vôtres.',
+      'banner.submit': 'Explorer maintenant',
 
       'filter.slicer.label': 'Sélectionnez votre slicer',
       'filter.slicer.placeholder': 'Sélectionner un slicer',
@@ -856,6 +886,12 @@ var I18N = (function () {
       'product.htPlaPro.title': 'Presentamos Polymaker™ HT-PLA Pro',
       'product.htPlaPro.tagline': 'Listo para el calor. Listo para los impactos. Y sigue siendo PLA.',
       'product.htPlaPro.cta': 'Más información',
+
+      // LayerHub banner
+      'banner.title': 'Presets oficiales + creadores globales',
+      'banner.title.line2': 'Todo en LayerHub',
+      'banner.subtitle': '¿No encuentras el preset de filamento que te interesa?<br>LayerHub es una plataforma comunitaria donde puedes descubrir selecciones oficiales y presets compartidos por creadores de todo el mundo, y compartir los tuyos.',
+      'banner.submit': 'Explorar ahora',
 
       // Filters
       'filter.slicer.label': 'Seleccione su laminador',
