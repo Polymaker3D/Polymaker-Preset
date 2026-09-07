@@ -261,6 +261,15 @@ These scripts do not load `.env` automatically. Keep credentials out of tracked
 files and generated site content. This integration records build events, not
 website visitor activity.
 
+The **PostHog build analytics** GitHub Actions workflow runs after pushes to
+`main`, or manually from the Actions tab on `main`. Set the repository secret
+`POSTHOG_API_KEY` to your PostHog project token and the repository variable
+`POSTHOG_HOST` to your ingestion endpoint (for example, `https://us.i.posthog.com`).
+It installs dependencies and runs both generators, sending `index_generated`
+and `seo_injected` events under `github-actions`. Generated files stay in the
+temporary runner; this workflow does not commit changes or publish the site.
+Pull request tests and preset-update jobs continue to run without analytics.
+
 ## 🔗 Links
 
 - **Download Page**: [https://presets.polymaker.com](https://presets.polymaker.com) 
