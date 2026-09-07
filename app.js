@@ -23,13 +23,22 @@ function getGaValue(value) {
   return value;
 }
 
-function trackGaEvent(eventName, params) {
+function trackUsageEvent(eventName, params) {
   if (typeof window === 'undefined') return;
-  if (typeof window.gtag !== 'function') return;
+  // Each provider is independent: blocked analytics must never break downloads.
   try {
-    window.gtag('event', eventName, params || {});
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', eventName, params || {});
+    }
   } catch (e) {
     console.warn('GA event failed:', eventName, e);
+  }
+  try {
+    if (window.posthog && typeof window.posthog.capture === 'function') {
+      window.posthog.capture(eventName, params || {});
+    }
+  } catch (e) {
+    console.warn('PostHog event failed:', eventName, e);
   }
 }
 
@@ -537,7 +546,7 @@ function init() {
       document.body.removeChild(a);
       if (originalPresets && originalPresets.length) {
         var firstPreset = originalPresets[0];
-        trackGaEvent('download_bundle', {
+        trackUsageEvent('download_bundle', {
           file_type: 'bbsflmt',
           slicer: getGaValue(firstPreset.slicer || 'BambuStudio'),
           material: getGaValue(firstPreset.material),
@@ -776,6 +785,15 @@ function init() {
           }
 
           render();
+          trackUsageEvent('filter_changed', {
+            filter: name,
+            value: value || 'all',
+            series: filterState.series || 'all',
+            brand: filterState.brand || 'all',
+            model: filterState.model || 'all',
+            slicer: filterState.slicer || 'all',
+            strict: filterState.strict
+          });
         });
       }
 
@@ -1046,7 +1064,7 @@ function init() {
             a.click();
             document.body.removeChild(a);
             var filters = getEffectiveFilters();
-            trackGaEvent('download_selected', {
+            trackUsageEvent('download_selected', {
               file_type: 'zip',
               selected_count: presetIds.length,
               slicer: getGaValue(filters.effectiveSlicer || filterState.slicer),
@@ -1269,7 +1287,7 @@ function init() {
           document.body.appendChild(a);
           a.click();
           document.body.removeChild(a);
-          trackGaEvent('download_bundle_batch', {
+          trackUsageEvent('download_bundle_batch', {
             file_type: 'zip',
             material_count: materials.length,
             slicer: 'BambuStudio'
@@ -1516,6 +1534,7 @@ function init() {
         strictCheckbox.addEventListener('change', function () {
           filterState.strict = strictCheckbox.checked;
           render();
+          trackUsageEvent('filter_changed', { filter: 'strict', value: filterState.strict });
         });
       }
 
@@ -1823,8 +1842,8 @@ function init() {
               a.click();
               document.body.removeChild(a);
               var rowContext = getRowGaContext(directJsonLink.closest('tr'));
-              trackGaEvent('download_single', {
-                file_type: 'json',
+              trackUsageEvent('download_single', {
+                file_type: /\.ini$/i.test(djFilename) ? 'ini' : 'json',
                 slicer: rowContext.slicer,
                 material: rowContext.material,
                 brand: rowContext.brand,
@@ -1879,7 +1898,7 @@ function init() {
                   a.click();
                   document.body.removeChild(a);
                   var rowContext = getRowGaContext(bambuJsonLink.closest('tr'), 'BambuStudio');
-                  trackGaEvent('download_single', {
+                  trackUsageEvent('download_single', {
                     file_type: 'json',
                     slicer: rowContext.slicer,
                     material: getGaValue(bjMaterial || rowContext.material),

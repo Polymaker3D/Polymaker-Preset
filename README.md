@@ -270,6 +270,24 @@ and `seo_injected` events under `github-actions`. Generated files stay in the
 temporary runner; this workflow does not commit changes or publish the site.
 Pull request tests and preset-update jobs continue to run without analytics.
 
+### Website usage analytics
+
+`analytics.js` loads the PostHog browser SDK on `presets.polymaker.com` using the
+public write-only project token. Local and preview hosts do not send PostHog
+events. This is separate from the Node build SDK and GitHub Actions secrets.
+
+PostHog records pageviews (`$pageview`), page leaves, automatic interactions
+(`$autocapture`), and `filter_changed` with the selected filter and value.
+The existing successful-download handlers send `download_single`,
+`download_selected`, `download_bundle`, and `download_bundle_batch` to both
+Google Analytics and PostHog, including material/printer/slicer metadata where
+available. A download event means the browser was handed the generated file;
+it cannot confirm the user saved or imported it. Session recording is disabled.
+
+View these events in PostHog **Activity**, or use **Web analytics** for visits
+and **Product analytics** for filter and download usage. Ad blockers or a
+visitor's analytics opt-out can prevent events from arriving.
+
 ## 🔗 Links
 
 - **Download Page**: [https://presets.polymaker.com](https://presets.polymaker.com) 
