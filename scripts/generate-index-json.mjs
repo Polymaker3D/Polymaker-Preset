@@ -1,6 +1,7 @@
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { execSync } from 'node:child_process';
+import { capture, captureException, shutdown } from './posthog.mjs';
 
 const REPO_ROOT = process.cwd();
 const PRESET_DIR = path.join(REPO_ROOT, 'preset');
@@ -232,6 +233,21 @@ async function main() {
   await fs.writeFile(INDEX_JSON_PATH, JSON.stringify(next, null, 2) + '\n', 'utf8');
   // eslint-disable-next-line no-console
   console.log(`Generated index.json with ${next.presets.length} presets.`);
+
+  capture('index_generated', {
+    preset_count: next.presets.length,
+    material_count: next.materials.length,
+    brand_count: next.brands.length,
+    model_count: next.models.length,
+    slicer_count: next.slicers.length,
+  });
 }
 
-await main();
+try {
+  await main();
+} catch (err) {
+  captureException(err);
+  throw err;
+} finally {
+  await shutdown();
+}

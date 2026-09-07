@@ -14,6 +14,7 @@
 
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
+import { capture, captureException, shutdown } from './posthog.mjs';
 
 const REPO_ROOT = process.cwd();
 const INDEX_JSON_PATH = path.join(REPO_ROOT, 'index.json');
@@ -308,15 +309,32 @@ async function main() {
   const next = injectSeo(html, data);
   if (next === html) {
     console.log('index.html SEO content unchanged.');
+    capture('seo_injected', {
+      preset_count: data.presets.length,
+      material_count: data.materials.length,
+      changed: false,
+    });
     return;
   }
   await fs.writeFile(INDEX_HTML_PATH, next, 'utf8');
   console.log(
     `Injected SEO content: ${data.presets.length} presets, ${data.materials.length} materials.`
   );
+  capture('seo_injected', {
+    preset_count: data.presets.length,
+    material_count: data.materials.length,
+    changed: true,
+  });
 }
 
 // Only run when executed directly (not when imported by tests).
 if (import.meta.url === `file://${process.argv[1]}`) {
-  await main();
+  try {
+    await main();
+  } catch (err) {
+    captureException(err);
+    throw err;
+  } finally {
+    await shutdown();
+  }
 }
