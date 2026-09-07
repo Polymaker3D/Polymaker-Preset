@@ -140,7 +140,7 @@ node scripts/generate-index-json.mjs
 ```
 
 Requirements:
-- Node.js 18+
+- Node.js 20.20+ (20.x), or 22.22+ (recommended)
 
 ## CI/CD Workflow
 

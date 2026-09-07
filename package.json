@@ -24,7 +24,7 @@
   "author": "Polymaker",
   "license": "MIT",
   "engines": {
-    "node": ">=18.0.0"
+    "node": "^20.20.0 || >=22.22.0"
   },
   "dependencies": {
     "posthog-node": "^5.51.6"

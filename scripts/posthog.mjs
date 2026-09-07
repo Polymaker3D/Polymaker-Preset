@@ -8,14 +8,14 @@
  * is never silently ignored.
  */
 
-import { PostHog } from 'posthog-node';
-
 const apiKey = process.env.POSTHOG_API_KEY;
 const host = process.env.POSTHOG_HOST;
 
 let posthog = null;
 
 if (apiKey) {
+  // Keep dependency-free generation working when analytics is disabled.
+  const { PostHog } = await import('posthog-node');
   posthog = new PostHog(apiKey, {
     host: host || 'https://us.i.posthog.com',
     // Build scripts are short-lived processes — flush immediately so no
