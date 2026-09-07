@@ -5,3 +5,8 @@ doc-outside/
 .playwright-mcp/
 .ruff_cache/
 .claude/
+node_modules/
+.env
+.env.*
+!.env.example
+posthog-self-driving-report.md
