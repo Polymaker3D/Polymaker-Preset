@@ -230,7 +230,7 @@ npm run test:app
 
 ### Prerequisites
 
-- Node.js 18 or higher
+- Node.js 20.20+ (20.x), or 22.22+ (recommended)
 
 ### Local Development
 
@@ -255,6 +255,13 @@ npm run generate-index
 # or
 node scripts/generate-index-json.mjs
 ```
+
+Generation works without installing dependencies when `POSTHOG_API_KEY` is unset.
+For optional build analytics, run `npm ci` and provide `POSTHOG_API_KEY` through
+your shell or CI environment; `POSTHOG_HOST` optionally overrides the US endpoint.
+These scripts do not load `.env` automatically. Keep credentials out of tracked
+files and generated site content. This integration records build events, not
+website visitor activity.
 
 ## 🔗 Links
 

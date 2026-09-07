@@ -8,3 +8,8 @@ doc-outside/
 worker/subscribe/.dev.vars
 worker/subscribe/node_modules/
 worker/subscribe/.wrangler/
+node_modules/
+.env
+.env.*
+!.env.example
+posthog-self-driving-report.md
