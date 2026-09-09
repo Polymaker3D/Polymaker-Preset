@@ -42,11 +42,29 @@ function trackUsageEvent(eventName, params) {
   }
 }
 
+// Row download buttons fetch (and sometimes zip) before the browser saves a file.
+// Without a busy state the button looks unresponsive for the whole wait, so users
+// click again and start a second download of the same preset.
+function setRowDownloadBusy(link, busy) {
+  if (!link) return;
+  if (busy) {
+    link.classList.add('is-busy');
+    link.setAttribute('aria-busy', 'true');
+  } else {
+    link.classList.remove('is-busy');
+    link.removeAttribute('aria-busy');
+  }
+}
+
+function isRowDownloadBusy(link) {
+  return !!link && link.classList.contains('is-busy');
+}
+
 function initBannerCta() {
   var cta = document.getElementById('layerhub-banner-cta');
   if (!cta) return;
   cta.addEventListener('click', function () {
-    trackGaEvent('banner_explore', { destination: 'layerhub3d.com' });
+    trackUsageEvent('banner_explore', { destination: 'layerhub3d.com' });
   });
 }
 
@@ -1830,12 +1848,14 @@ function init() {
         var directJsonLink = e.target.closest('a[data-download-url]');
         if (directJsonLink) {
           e.preventDefault();
+          if (isRowDownloadBusy(directJsonLink)) return;
           var djUrl = directJsonLink.getAttribute('data-download-url');
           var djFilename = directJsonLink.getAttribute('data-download-filename') || 'preset.json';
           if (!djUrl || djUrl === '#') {
             alert(t('alert.invalid.url'));
             return;
           }
+          setRowDownloadBusy(directJsonLink, true);
           fetch(djUrl, { mode: 'cors' })
             .then(function (r) {
               if (!r.ok) throw new Error('Failed to fetch preset: ' + r.statusText);
@@ -1858,9 +1878,11 @@ function init() {
                 model: rowContext.model
               });
               setTimeout(function () { URL.revokeObjectURL(objectUrl); }, 1000);
+              setRowDownloadBusy(directJsonLink, false);
             })
             .catch(function (err) {
               console.error('Error downloading JSON:', err);
+              setRowDownloadBusy(directJsonLink, false);
               alert(t('alert.error.preset', { msg: err.message }));
             });
           return;
@@ -1871,6 +1893,7 @@ function init() {
         var bambuJsonLink = e.target.closest('a[data-bambu-json="1"]');
         if (bambuJsonLink) {
           e.preventDefault();
+          if (isRowDownloadBusy(bambuJsonLink)) return;
           var bjUrl = bambuJsonLink.getAttribute('data-bundle-url');
           var bjFilename = bambuJsonLink.getAttribute('data-bundle-filename') || 'preset.json';
           var bjMaterial = bambuJsonLink.getAttribute('data-bundle-material') || '';
@@ -1881,6 +1904,7 @@ function init() {
           }
 
           function doDownloadBambuJson() {
+            setRowDownloadBusy(bambuJsonLink, true);
             fetch(bjUrl, { mode: 'cors' })
               .then(function (r) {
                 if (!r.ok) throw new Error('Failed to fetch preset: ' + r.statusText);
@@ -1914,10 +1938,12 @@ function init() {
                     model: rowContext.model
                   });
                   setTimeout(function () { URL.revokeObjectURL(objectUrl); }, 1000);
+                  setRowDownloadBusy(bambuJsonLink, false);
                 });
               })
               .catch(function (err) {
                 console.error('Error downloading JSON:', err);
+                setRowDownloadBusy(bambuJsonLink, false);
                 alert(t('alert.error.preset', { msg: err.message }));
               });
           }
@@ -1932,6 +1958,7 @@ function init() {
         var bundleLink = e.target.closest('a.btn-bundle');
         if (bundleLink) {
           e.preventDefault();
+          if (isRowDownloadBusy(bundleLink)) return;
           var url = bundleLink.getAttribute('data-bundle-url');
           var filename = bundleLink.getAttribute('data-bundle-filename');
           var material = bundleLink.getAttribute('data-bundle-material');
@@ -1943,6 +1970,9 @@ function init() {
           }
 
           function doDownloadBundle() {
+            // Busy until downloadAsBbsflmt takes over — from there its own modals
+            // and progress are the visible feedback.
+            setRowDownloadBusy(bundleLink, true);
             // Fetch the preset JSON to get filament_vendor
             fetch(url, { mode: 'cors' })
               .then(function (r) {
@@ -1962,10 +1992,12 @@ function init() {
                   filament_vendor: data.filament_vendor || ['Polymaker'],
                   presetData: data
                 };
+                setRowDownloadBusy(bundleLink, false);
                 downloadAsBbsflmt([preset]);
               })
               .catch(function (err) {
                 console.error('Error downloading bundle:', err);
+                setRowDownloadBusy(bundleLink, false);
                 alert(t('alert.error.preset', { msg: err.message }));
               });
           }

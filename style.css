@@ -1152,6 +1152,38 @@ body.theme-wiki .preset-table th {
   box-shadow: 0 2px 8px rgba(0, 204, 204, 0.4);
 }
 
+/* Busy state while a row download fetches and packs its file, so the button
+   visibly reacts to the first click instead of looking unresponsive. */
+.preset-table td.td-actions .btn-download.is-busy,
+.preset-table td.td-actions .btn-bundle.is-busy {
+  opacity: 0.6;
+  cursor: progress;
+  pointer-events: none;
+}
+
+.preset-table td.td-actions .btn-download.is-busy::after,
+.preset-table td.td-actions .btn-bundle.is-busy::after {
+  content: '';
+  width: 0.7em;
+  height: 0.7em;
+  margin-left: 0.4em;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: row-download-spin 0.7s linear infinite;
+}
+
+@keyframes row-download-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .preset-table td.td-actions .btn-download.is-busy::after,
+  .preset-table td.td-actions .btn-bundle.is-busy::after {
+    animation: none;
+  }
+}
+
 body.theme-wiki .preset-table td.td-actions .btn-download {
   color: #006E6E;
   background: rgba(0, 120, 124, 0.1);

@@ -119,10 +119,12 @@ describe('app.js CTA wiring', () => {
   it('initializes the banner CTA and tracks banner_explore', () => {
     assert.ok(appContent.includes('function initBannerCta()'));
     assert.ok(appContent.includes('initBannerCta();'));
-    assert.ok(appContent.includes("trackGaEvent('banner_explore'"));
+    assert.ok(appContent.includes("trackUsageEvent('banner_explore'"));
     assert.ok(appContent.includes("getElementById('layerhub-banner-cta')"));
+    // trackGaEvent was never defined, so the CTA threw instead of tracking.
+    assert.ok(!appContent.includes('trackGaEvent'));
     assert.ok(!appContent.includes('function initBannerSubscribe()'));
-    assert.ok(!appContent.includes("trackGaEvent('banner_subscribe'"));
+    assert.ok(!appContent.includes("trackUsageEvent('banner_subscribe'"));
     assert.ok(!appContent.includes('isSubscribeHoneypotFilled'));
   });
 });
