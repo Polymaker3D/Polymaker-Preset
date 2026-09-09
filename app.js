@@ -42,6 +42,14 @@ function trackUsageEvent(eventName, params) {
   }
 }
 
+function initBannerCta() {
+  var cta = document.getElementById('layerhub-banner-cta');
+  if (!cta) return;
+  cta.addEventListener('click', function () {
+    trackGaEvent('banner_explore', { destination: 'layerhub3d.com' });
+  });
+}
+
 function applyTheme(theme) {
   var body = document.body;
   if (theme === 'wiki') {
@@ -2520,3 +2528,4 @@ initDuplicateModal();
 initBambuRestartModal();
 initMissingVariantModal();
 initAccordion();
+initBannerCta();

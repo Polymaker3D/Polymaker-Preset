@@ -1,0 +1,16 @@
+name = "layerhub-subscribe"
+main = "src/index.js"
+compatibility_date = "2026-08-31"
+
+# Secrets (do not commit):
+#   wrangler secret put BREVO_API_KEY
+#   wrangler secret put BREVO_LIST_ID
+#
+# Optional:
+#   wrangler secret put BREVO_DOI_TEMPLATE_ID
+#   wrangler secret put BREVO_DOI_REDIRECT_URL
+#
+# Set BREVO_DOI=1 only after the DOI template exists.
+
+[vars]
+BREVO_DOI = "0"
