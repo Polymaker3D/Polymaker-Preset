@@ -42,11 +42,29 @@ function trackUsageEvent(eventName, params) {
   }
 }
 
+// Row download buttons fetch (and sometimes zip) before the browser saves a file.
+// Without a busy state the button looks unresponsive for the whole wait, so users
+// click again and start a second download of the same preset.
+function setRowDownloadBusy(link, busy) {
+  if (!link) return;
+  if (busy) {
+    link.classList.add('is-busy');
+    link.setAttribute('aria-busy', 'true');
+  } else {
+    link.classList.remove('is-busy');
+    link.removeAttribute('aria-busy');
+  }
+}
+
+function isRowDownloadBusy(link) {
+  return !!link && link.classList.contains('is-busy');
+}
+
 function initBannerCta() {
   var cta = document.getElementById('layerhub-banner-cta');
   if (!cta) return;
   cta.addEventListener('click', function () {
-    trackGaEvent('banner_explore', { destination: 'layerhub3d.com' });
+    trackUsageEvent('banner_explore', { destination: 'layerhub3d.com' });
   });
 }
 
@@ -466,26 +484,27 @@ function init() {
    */
   function downloadAsBbsflmt(presets) {
     if (!presets || presets.length === 0) {
-      console.warn('No presets to bundle');
-      return;
+      return Promise.resolve();
     }
 
-    resolveBambuMappingsWithDedup(presets, function(filteredMappings) {
-      function doGenerate() {
-        generateAndDownloadBbsflmt(filteredMappings, presets);
-      }
-      if (!isBambuStudioSlicerSelected()) {
-        doGenerate();
-        return;
-      }
-      showBambuRestartWarning(doGenerate, function () {});
-    }, function(err) {
-      if (err) {
-        console.error('Error fetching presets:', err);
-        alert(t('alert.error.download', { msg: err.message }));
-      } else {
-        console.log('Export cancelled by user');
-      }
+    // Keep the caller pending through mapping, dialogs, and ZIP generation.
+    // Cancellation resolves normally; failures reject to the download handler.
+    return new Promise(function(resolve, reject) {
+      resolveBambuMappingsWithDedup(presets, function(filteredMappings) {
+        function doGenerate() {
+          Promise.resolve().then(function() {
+            return generateAndDownloadBbsflmt(filteredMappings, presets);
+          }).then(resolve, reject);
+        }
+        if (!isBambuStudioSlicerSelected()) {
+          doGenerate();
+          return;
+        }
+        showBambuRestartWarning(doGenerate, resolve);
+      }, function(err) {
+        if (err) reject(err);
+        else resolve();
+      });
     });
   }
 
@@ -544,7 +563,7 @@ function init() {
     zip.file('bundle_structure.json', JSON.stringify(structure, null, 2));
 
     // Generate and download
-    zip.generateAsync({ type: 'blob' }).then(function(content) {
+    return zip.generateAsync({ type: 'blob' }).then(function(content) {
       var objectUrl = URL.createObjectURL(content);
       var a = document.createElement('a');
       a.href = objectUrl;
@@ -565,8 +584,6 @@ function init() {
       setTimeout(function() {
         URL.revokeObjectURL(objectUrl);
       }, 1000);
-    }).catch(function(err) {
-      console.error('Error generating bundle:', err);
     });
   }
 
@@ -1830,12 +1847,14 @@ function init() {
         var directJsonLink = e.target.closest('a[data-download-url]');
         if (directJsonLink) {
           e.preventDefault();
+          if (isRowDownloadBusy(directJsonLink)) return;
           var djUrl = directJsonLink.getAttribute('data-download-url');
           var djFilename = directJsonLink.getAttribute('data-download-filename') || 'preset.json';
           if (!djUrl || djUrl === '#') {
             alert(t('alert.invalid.url'));
             return;
           }
+          setRowDownloadBusy(directJsonLink, true);
           fetch(djUrl, { mode: 'cors' })
             .then(function (r) {
               if (!r.ok) throw new Error('Failed to fetch preset: ' + r.statusText);
@@ -1858,9 +1877,11 @@ function init() {
                 model: rowContext.model
               });
               setTimeout(function () { URL.revokeObjectURL(objectUrl); }, 1000);
+              setRowDownloadBusy(directJsonLink, false);
             })
             .catch(function (err) {
               console.error('Error downloading JSON:', err);
+              setRowDownloadBusy(directJsonLink, false);
               alert(t('alert.error.preset', { msg: err.message }));
             });
           return;
@@ -1871,6 +1892,7 @@ function init() {
         var bambuJsonLink = e.target.closest('a[data-bambu-json="1"]');
         if (bambuJsonLink) {
           e.preventDefault();
+          if (isRowDownloadBusy(bambuJsonLink)) return;
           var bjUrl = bambuJsonLink.getAttribute('data-bundle-url');
           var bjFilename = bambuJsonLink.getAttribute('data-bundle-filename') || 'preset.json';
           var bjMaterial = bambuJsonLink.getAttribute('data-bundle-material') || '';
@@ -1881,6 +1903,7 @@ function init() {
           }
 
           function doDownloadBambuJson() {
+            setRowDownloadBusy(bambuJsonLink, true);
             fetch(bjUrl, { mode: 'cors' })
               .then(function (r) {
                 if (!r.ok) throw new Error('Failed to fetch preset: ' + r.statusText);
@@ -1914,10 +1937,12 @@ function init() {
                     model: rowContext.model
                   });
                   setTimeout(function () { URL.revokeObjectURL(objectUrl); }, 1000);
+                  setRowDownloadBusy(bambuJsonLink, false);
                 });
               })
               .catch(function (err) {
                 console.error('Error downloading JSON:', err);
+                setRowDownloadBusy(bambuJsonLink, false);
                 alert(t('alert.error.preset', { msg: err.message }));
               });
           }
@@ -1932,6 +1957,7 @@ function init() {
         var bundleLink = e.target.closest('a.btn-bundle');
         if (bundleLink) {
           e.preventDefault();
+          if (isRowDownloadBusy(bundleLink)) return;
           var url = bundleLink.getAttribute('data-bundle-url');
           var filename = bundleLink.getAttribute('data-bundle-filename');
           var material = bundleLink.getAttribute('data-bundle-material');
@@ -1943,6 +1969,8 @@ function init() {
           }
 
           function doDownloadBundle() {
+            // Keep busy through dialogs and ZIP generation, including cancellation.
+            setRowDownloadBusy(bundleLink, true);
             // Fetch the preset JSON to get filament_vendor
             fetch(url, { mode: 'cors' })
               .then(function (r) {
@@ -1962,10 +1990,14 @@ function init() {
                   filament_vendor: data.filament_vendor || ['Polymaker'],
                   presetData: data
                 };
-                downloadAsBbsflmt([preset]);
+                return downloadAsBbsflmt([preset]);
+              })
+              .then(function () {
+                setRowDownloadBusy(bundleLink, false);
               })
               .catch(function (err) {
                 console.error('Error downloading bundle:', err);
+                setRowDownloadBusy(bundleLink, false);
                 alert(t('alert.error.preset', { msg: err.message }));
               });
           }
