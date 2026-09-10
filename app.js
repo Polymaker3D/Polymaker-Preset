@@ -484,26 +484,27 @@ function init() {
    */
   function downloadAsBbsflmt(presets) {
     if (!presets || presets.length === 0) {
-      console.warn('No presets to bundle');
-      return;
+      return Promise.resolve();
     }
 
-    resolveBambuMappingsWithDedup(presets, function(filteredMappings) {
-      function doGenerate() {
-        generateAndDownloadBbsflmt(filteredMappings, presets);
-      }
-      if (!isBambuStudioSlicerSelected()) {
-        doGenerate();
-        return;
-      }
-      showBambuRestartWarning(doGenerate, function () {});
-    }, function(err) {
-      if (err) {
-        console.error('Error fetching presets:', err);
-        alert(t('alert.error.download', { msg: err.message }));
-      } else {
-        console.log('Export cancelled by user');
-      }
+    // Keep the caller pending through mapping, dialogs, and ZIP generation.
+    // Cancellation resolves normally; failures reject to the download handler.
+    return new Promise(function(resolve, reject) {
+      resolveBambuMappingsWithDedup(presets, function(filteredMappings) {
+        function doGenerate() {
+          Promise.resolve().then(function() {
+            return generateAndDownloadBbsflmt(filteredMappings, presets);
+          }).then(resolve, reject);
+        }
+        if (!isBambuStudioSlicerSelected()) {
+          doGenerate();
+          return;
+        }
+        showBambuRestartWarning(doGenerate, resolve);
+      }, function(err) {
+        if (err) reject(err);
+        else resolve();
+      });
     });
   }
 
@@ -562,7 +563,7 @@ function init() {
     zip.file('bundle_structure.json', JSON.stringify(structure, null, 2));
 
     // Generate and download
-    zip.generateAsync({ type: 'blob' }).then(function(content) {
+    return zip.generateAsync({ type: 'blob' }).then(function(content) {
       var objectUrl = URL.createObjectURL(content);
       var a = document.createElement('a');
       a.href = objectUrl;
@@ -583,8 +584,6 @@ function init() {
       setTimeout(function() {
         URL.revokeObjectURL(objectUrl);
       }, 1000);
-    }).catch(function(err) {
-      console.error('Error generating bundle:', err);
     });
   }
 
@@ -1970,8 +1969,7 @@ function init() {
           }
 
           function doDownloadBundle() {
-            // Busy until downloadAsBbsflmt takes over — from there its own modals
-            // and progress are the visible feedback.
+            // Keep busy through dialogs and ZIP generation, including cancellation.
             setRowDownloadBusy(bundleLink, true);
             // Fetch the preset JSON to get filament_vendor
             fetch(url, { mode: 'cors' })
@@ -1992,8 +1990,10 @@ function init() {
                   filament_vendor: data.filament_vendor || ['Polymaker'],
                   presetData: data
                 };
+                return downloadAsBbsflmt([preset]);
+              })
+              .then(function () {
                 setRowDownloadBusy(bundleLink, false);
-                downloadAsBbsflmt([preset]);
               })
               .catch(function (err) {
                 console.error('Error downloading bundle:', err);

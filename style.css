@@ -1075,7 +1075,8 @@ body.theme-wiki .dropdown-menu::-webkit-scrollbar-thumb {
 
 .preset-table th:nth-child(7),
 .preset-table td:nth-child(7) {
-  width: 10%;
+  /* Fit both download buttons and their busy indicators without ellipsis. */
+  width: 12rem;
 }
 
 .preset-table th {
