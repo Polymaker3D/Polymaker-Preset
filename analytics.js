@@ -29,10 +29,18 @@
     posthog._i.push([token, config, 'posthog']);
   };
 
-  // Suppress only exceptions whose frames are all identifiable third-party code.
-  // Missing stacks and unfamiliar paths may be first-party failures: retain them.
+  // Drop an exception only when its stack points at third-party code alone.
+  // Native and anonymous frames name no source, so skip them.
+  // Any first-party or unknown frame keeps the exception, so first-party failures stay visible.
   var OWN_HOST = String(window.location.hostname).toLowerCase();
   var URL_HOST = /^(?:https?:)?\/\/([^/?#]+)/i;
+
+  function isNativeFrame(frame) {
+    // The browser reports built-in frames such as Array.reduce with no source file.
+    if (!frame || frame.in_app === true) return false;
+    var ref = frame.filename || frame.source;
+    return ref === '<anonymous>' || ref === '[native code]';
+  }
 
   function isThirdPartyFrame(frame) {
     // filename is the raw SDK location; source can be a host-stripped path.
@@ -49,13 +57,23 @@
     return /^\/onsite\/js\//.test(ref);
   }
 
+  function isThirdPartyEntry(entry) {
+    var frames = entry && entry.stacktrace && entry.stacktrace.frames;
+    if (!Array.isArray(frames) || frames.length === 0) return false;
+    var sawThirdParty = false;
+    for (var i = 0; i < frames.length; i++) {
+      var frame = frames[i];
+      if (isNativeFrame(frame)) continue;
+      if (!isThirdPartyFrame(frame)) return false;
+      sawThirdParty = true;
+    }
+    return sawThirdParty;
+  }
+
   function isThirdPartyException(event) {
     var list = event.properties && event.properties.$exception_list;
     if (!Array.isArray(list) || list.length === 0) return false;
-    return list.every(function(entry) {
-      var frames = entry && entry.stacktrace && entry.stacktrace.frames;
-      return Array.isArray(frames) && frames.length > 0 && frames.every(isThirdPartyFrame);
-    });
+    return list.every(isThirdPartyEntry);
   }
 
   function beforeSend(event) {

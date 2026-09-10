@@ -73,6 +73,19 @@ describe('analytics.js before_send filter', () => {
     assert.strictEqual(beforeSend(event), null);
   });
 
+  it('drops a Klaviyo chunk failure that interleaves a native frame', () => {
+    const beforeSend = loadBeforeSend();
+    const event = exceptionEvent([
+      { source: '/onsite/js/runtime.08a889cad67f0.js', in_app: true },
+      { source: '/onsite/js/7130.b41c2e9f5a1d7.js', in_app: true },
+      { function: 'Array.reduce', filename: '<anonymous>', in_app: false },
+      { source: '/onsite/js/vendor.4d2f8a1c9b3e6.js', in_app: true },
+      { filename: 'https://static.klaviyo.com/onsite/js/klaviyo.js?cb=3' },
+      { source: '/onsite/js/onsite.2c7e9a4f1d8b0.js', in_app: true }
+    ]);
+    assert.strictEqual(beforeSend(event), null);
+  });
+
   it('drops third-party frames served from a foreign host', () => {
     const beforeSend = loadBeforeSend();
     const event = exceptionEvent([
