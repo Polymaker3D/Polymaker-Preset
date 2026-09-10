@@ -2,8 +2,8 @@
  * Tests for the third-party exception filter in analytics.js.
  *
  * The filter is the before_send hook passed to PostHog. It keeps an exception
- * only when a stack frame comes from our own origin, so vendor errors (Klaviyo,
- * Google, CDNs) and frameless browser noise never reach error tracking.
+ * unless every frame is identifiable third-party code. Unknown origins and
+ * missing stacks are retained so first-party failures remain visible.
  *
  * The test runs the real analytics.js source in a stub browser, then reads the
  * before_send function that the snippet queued for the SDK.
@@ -81,10 +81,12 @@ describe('analytics.js before_send filter', () => {
     assert.strictEqual(beforeSend(event), null);
   });
 
-  it('drops frameless browser noise (ResizeObserver, ProgressEvent)', () => {
+  it('retains frameless exceptions whose origin cannot be established', () => {
     const beforeSend = loadBeforeSend();
-    assert.strictEqual(beforeSend(exceptionEvent([])), null);
-    assert.strictEqual(beforeSend(exceptionEvent(undefined)), null);
+    for (const frames of [[], undefined]) {
+      const event = exceptionEvent(frames);
+      assert.strictEqual(beforeSend(event), event);
+    }
   });
 
   it('keeps a host-stripped frame from every first-party script in index.html', () => {
@@ -116,5 +118,48 @@ describe('analytics.js before_send filter', () => {
     const beforeSend = loadBeforeSend();
     const pageview = { event: '$pageview', properties: {} };
     assert.strictEqual(beforeSend(pageview), pageview);
+  });
+});
+
+describe('unknown-origin exception protection', () => {
+  it('retains unknown, inline, malformed, and newly added first-party frames', () => {
+    const beforeSend = loadBeforeSend();
+    for (const frame of [
+      { filename: '/index.html' }, { source: '/new-feature.js' },
+      { filename: '<anonymous>' }, {}, { filename: 123 },
+      { filename: 'blob:https://presets.polymaker.com/example' },
+      { filename: '//presets.polymaker.com/app.js' },
+      { filename: 'https://presets.polymaker.com:443/app.js' }
+    ]) {
+      const event = exceptionEvent([frame]);
+      assert.strictEqual(beforeSend(event), event);
+    }
+  });
+
+  it('retains mixed foreign and unknown frames and exception causes', () => {
+    const beforeSend = loadBeforeSend();
+    const foreign = { filename: 'https://static.klaviyo.com/runtime.js' };
+    const mixed = exceptionEvent([foreign, { filename: '/new-feature.js' }]);
+    assert.strictEqual(beforeSend(mixed), mixed);
+    const cause = exceptionEvent([foreign]);
+    cause.properties.$exception_list.push({ type: 'UnhandledRejection', value: 'Preset export failed' });
+    assert.strictEqual(beforeSend(cause), cause);
+  });
+
+  it('retains absent, empty, and malformed exception lists', () => {
+    const beforeSend = loadBeforeSend();
+    for (const list of [undefined, [], [null], 'unexpected']) {
+      const event = { event: '$exception', properties: { $exception_list: list } };
+      assert.strictEqual(beforeSend(event), event);
+    }
+  });
+
+  it('drops protocol-relative foreign scripts but trusts an explicit own URL over source', () => {
+    const beforeSend = loadBeforeSend();
+    assert.strictEqual(beforeSend(exceptionEvent([{ filename: '//static.klaviyo.com/runtime.js' }])), null);
+    const event = exceptionEvent([{
+      filename: 'https://presets.polymaker.com/app.js', source: '/onsite/js/runtime.js'
+    }]);
+    assert.strictEqual(beforeSend(event), event);
   });
 });

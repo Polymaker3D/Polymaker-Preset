@@ -29,46 +29,38 @@
     posthog._i.push([token, config, 'posthog']);
   };
 
-  // Drop exceptions raised entirely by third-party scripts (Klaviyo, Google, CDNs).
-  // Their frames name files we do not host, so we can neither fix nor retry them.
-  // Keeping only exceptions with a frame from our own origin also clears frameless
-  // browser noise such as "ResizeObserver loop" and bare "ProgressEvent" errors.
-  var HAS_SCHEME = /^https?:\/\//i;
-  var URL_HOST = /^https?:\/\/([^/?#]+)/i;
+  // Suppress only exceptions whose frames are all identifiable third-party code.
+  // Missing stacks and unfamiliar paths may be first-party failures: retain them.
   var OWN_HOST = String(window.location.hostname).toLowerCase();
-  // Our own first-party scripts, matched by file name when error tracking reports a
-  // frame as a host-stripped path. Keep in sync with the same-origin <script> tags in
-  // index.html; tests/analytics-third-party-filter.test.js fails if this drifts.
-  var OWN_SCRIPTS = ['analytics.js', 'app.js', 'i18n.js'];
+  var URL_HOST = /^(?:https?:)?\/\/([^/?#]+)/i;
 
-  function frameHostname(ref) {
-    var match = URL_HOST.exec(ref);
-    return match ? match[1].split(':')[0].toLowerCase() : '';
-  }
-
-  function isOwnFrame(frame) {
+  function isThirdPartyFrame(frame) {
+    // filename is the raw SDK location; source can be a host-stripped path.
     var ref = frame && (frame.filename || frame.source);
-    if (!ref) return false;
-    // A full URL carries its host; trust it.
-    if (HAS_SCHEME.test(ref)) return frameHostname(ref) === OWN_HOST;
-    // A host-stripped path: recognise our own files by name, or the page itself.
-    var path = String(ref).split('?')[0].split('#')[0];
-    if (path === '' || path.charAt(path.length - 1) === '/') return true;
-    return OWN_SCRIPTS.indexOf(path.substring(path.lastIndexOf('/') + 1)) !== -1;
+    if (typeof ref !== 'string' || !ref) return false;
+    var match = URL_HOST.exec(ref);
+    if (match) {
+      var host = match[1].toLowerCase();
+      // Unusual authorities are unknown, rather than evidence of foreign code.
+      if (!/^[a-z0-9.-]+(?::[0-9]+)?$/.test(host)) return false;
+      return host.split(':')[0] !== OWN_HOST;
+    }
+    // Klaviyo's onsite runtime is also reported without its hostname.
+    return /^\/onsite\/js\//.test(ref);
   }
 
-  function hasOwnFrame(event) {
+  function isThirdPartyException(event) {
     var list = event.properties && event.properties.$exception_list;
-    if (!Array.isArray(list)) return true;
-    return list.some(function (entry) {
+    if (!Array.isArray(list) || list.length === 0) return false;
+    return list.every(function(entry) {
       var frames = entry && entry.stacktrace && entry.stacktrace.frames;
-      return Array.isArray(frames) && frames.some(isOwnFrame);
+      return Array.isArray(frames) && frames.length > 0 && frames.every(isThirdPartyFrame);
     });
   }
 
   function beforeSend(event) {
     if (!event || event.event !== '$exception') return event;
-    return hasOwnFrame(event) ? event : null;
+    return isThirdPartyException(event) ? null : event;
   }
 
   window.posthog.init('phc_CdvtTDKLvkXysqQN43CbH674J2p9r9LoEZBGEHbrfsYi', {
