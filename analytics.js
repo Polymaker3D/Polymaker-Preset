@@ -29,10 +29,17 @@
     posthog._i.push([token, config, 'posthog']);
   };
 
-  // Suppress only exceptions whose frames are all identifiable third-party code.
-  // Missing stacks and unfamiliar paths may be first-party failures: retain them.
+  // Suppress only exceptions with identifiable third-party code in every stack.
+  // Ignore native frames; retain missing/native-only stacks and unfamiliar paths.
   var OWN_HOST = String(window.location.hostname).toLowerCase();
   var URL_HOST = /^(?:https?:)?\/\/([^/?#]+)/i;
+
+  function isNativeFrame(frame) {
+    // Native calls such as Array.reduce have no script origin. Neither an
+    // anonymous filename nor in_app: false alone is enough to ignore a frame.
+    return frame && frame.filename === '<anonymous>' && frame.in_app === false &&
+      (!frame.source || frame.source === '<anonymous>');
+  }
 
   function isThirdPartyFrame(frame) {
     // filename is the raw SDK location; source can be a host-stripped path.
@@ -54,7 +61,9 @@
     if (!Array.isArray(list) || list.length === 0) return false;
     return list.every(function(entry) {
       var frames = entry && entry.stacktrace && entry.stacktrace.frames;
-      return Array.isArray(frames) && frames.length > 0 && frames.every(isThirdPartyFrame);
+      if (!Array.isArray(frames)) return false;
+      var scriptFrames = frames.filter(function(frame) { return !isNativeFrame(frame); });
+      return scriptFrames.length > 0 && scriptFrames.every(isThirdPartyFrame);
     });
   }
 

@@ -2,8 +2,9 @@
  * Tests for the third-party exception filter in analytics.js.
  *
  * The filter is the before_send hook passed to PostHog. It keeps an exception
- * unless every frame is identifiable third-party code. Unknown origins and
- * missing stacks are retained so first-party failures remain visible.
+ * unless every non-native frame is identifiable third-party code, with at
+ * least one such frame per exception. Unknown origins and missing stacks are
+ * retained so first-party failures remain visible.
  *
  * The test runs the real analytics.js source in a stub browser, then reads the
  * before_send function that the snippet queued for the SDK.
@@ -81,6 +82,20 @@ describe('analytics.js before_send filter', () => {
     assert.strictEqual(beforeSend(event), null);
   });
 
+  it('drops the chunk 7130 failure with five Klaviyo frames and native Array.reduce', () => {
+    const beforeSend = loadBeforeSend();
+    const event = exceptionEvent([
+      { filename: 'https://static.klaviyo.com/onsite/js/runtime.js', in_app: true },
+      { source: '/onsite/js/runtime.js', in_app: true },
+      { source: '/onsite/js/runtime.js', in_app: true },
+      { filename: '<anonymous>', function: 'Array.reduce', in_app: false },
+      { source: '/onsite/js/runtime.js', in_app: true },
+      { source: '/onsite/js/runtime.js', in_app: true }
+    ]);
+    event.properties.$exception_list[0].value = 'Loading chunk 7130 failed after 3 retries.';
+    assert.strictEqual(beforeSend(event), null);
+  });
+
   it('retains frameless exceptions whose origin cannot be established', () => {
     const beforeSend = loadBeforeSend();
     for (const frames of [[], undefined]) {
@@ -122,6 +137,44 @@ describe('analytics.js before_send filter', () => {
 });
 
 describe('unknown-origin exception protection', () => {
+  const nativeFrame = { filename: '<anonymous>', function: 'Array.reduce', in_app: false };
+  const foreignFrame = { source: '/onsite/js/runtime.js', in_app: true };
+
+  it('retains native-only stacks, including native-only exception causes', () => {
+    const beforeSend = loadBeforeSend();
+    const event = exceptionEvent([nativeFrame]);
+    assert.strictEqual(beforeSend(event), event);
+    const cause = exceptionEvent([foreignFrame, nativeFrame]);
+    cause.properties.$exception_list.push({ stacktrace: { frames: [nativeFrame] } });
+    assert.strictEqual(beforeSend(cause), cause);
+  });
+
+  it('retains first-party or unknown code alongside vendor and native frames', () => {
+    const beforeSend = loadBeforeSend();
+    for (const frame of [
+      { filename: 'https://presets.polymaker.com/app.js', in_app: false },
+      { source: '/new-feature.js', in_app: false },
+      { filename: '<anonymous>', function: 'Array.reduce' },
+      { filename: '<anonymous>', function: 'Array.reduce', in_app: true },
+      { filename: '<anonymous>', in_app: 'false' },
+      { filename: '<anonymous>', source: '/app.js', in_app: false },
+      { function: 'Array.reduce', in_app: false },
+      null
+    ]) {
+      const event = exceptionEvent([foreignFrame, nativeFrame, frame]);
+      assert.strictEqual(beforeSend(event), event, JSON.stringify(frame));
+    }
+  });
+
+  it('checks every exception cause after ignoring native frames', () => {
+    const beforeSend = loadBeforeSend();
+    const event = exceptionEvent([foreignFrame, nativeFrame]);
+    event.properties.$exception_list.push({ stacktrace: { frames: [nativeFrame, foreignFrame] } });
+    assert.strictEqual(beforeSend(event), null);
+    event.properties.$exception_list[1].stacktrace.frames.push({ source: '/app.js' });
+    assert.strictEqual(beforeSend(event), event);
+  });
+
   it('retains unknown, inline, malformed, and newly added first-party frames', () => {
     const beforeSend = loadBeforeSend();
     for (const frame of [
