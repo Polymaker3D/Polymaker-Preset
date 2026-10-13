@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updatedAt": "2026-10-13T07:41:21.461Z",
+  "updatedAt": "2026-10-13T08:09:18.168Z",
   "materials": [
     "Fiberon ASA-CF08",
     "Fiberon PA12-CF10",
@@ -2954,7 +2954,7 @@
       "slicer": "CrealityPrint",
       "path": "preset/Panchroma PLA Celestial/Creality/K2Pro/CrealityPrint/Panchroma PLA Celestial @Creality K2Pro.json",
       "filename": "Panchroma PLA Celestial @Creality K2Pro.json",
-      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "updatedAt": "2026-10-13T16:05:53+08:00",
       "compatiblePrinters": [
         {
           "brand": "CreealityPrint",
@@ -3333,7 +3333,7 @@
       "slicer": "CrealityPrint",
       "path": "preset/Panchroma PLA Galaxy/Creality/K2Pro/CrealityPrint/Panchroma PLA Galaxy @Creality K2Pro.json",
       "filename": "Panchroma PLA Galaxy @Creality K2Pro.json",
-      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "updatedAt": "2026-10-13T16:05:53+08:00",
       "compatiblePrinters": [
         {
           "brand": "CreealityPrint",
@@ -4075,7 +4075,7 @@
       "slicer": "CrealityPrint",
       "path": "preset/Panchroma PLA Luminous/Creality/K2Pro/CrealityPrint/Panchroma PLA Luminous @Creality K2Pro.json",
       "filename": "Panchroma PLA Luminous @Creality K2Pro.json",
-      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "updatedAt": "2026-10-13T16:05:53+08:00",
       "compatiblePrinters": [
         {
           "brand": "CreealityPrint",
@@ -4265,7 +4265,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Panchroma PLA Marble/BBL/H2S/BambuStudio/Panchroma PLA Marble @BBL H2S.json",
       "filename": "Panchroma PLA Marble @BBL H2S.json",
-      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "updatedAt": "2026-10-13T16:05:53+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -4407,7 +4407,7 @@
       "slicer": "CrealityPrint",
       "path": "preset/Panchroma PLA Marble/Creality/I7/CrealityPrint/Panchroma PLA Marble @Creality I7.json",
       "filename": "Panchroma PLA Marble @Creality I7.json",
-      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "updatedAt": "2026-10-13T16:05:53+08:00",
       "compatiblePrinters": [
         {
           "brand": "CreealityPrint",
@@ -4423,7 +4423,7 @@
       "slicer": "CrealityPrint",
       "path": "preset/Panchroma PLA Marble/Creality/K2Pro/CrealityPrint/Panchroma PLA Marble @Creality K2Pro.json",
       "filename": "Panchroma PLA Marble @Creality K2Pro.json",
-      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "updatedAt": "2026-10-13T16:05:53+08:00",
       "compatiblePrinters": [
         {
           "brand": "CreealityPrint",
@@ -4613,7 +4613,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Panchroma PLA Matte/BBL/H2S/BambuStudio/Panchroma PLA Matte @BBL H2S.json",
       "filename": "Panchroma PLA Matte @BBL H2S.json",
-      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "updatedAt": "2026-10-13T16:05:53+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -4755,7 +4755,7 @@
       "slicer": "CrealityPrint",
       "path": "preset/Panchroma PLA Matte/Creality/I7/CrealityPrint/Panchroma PLA Matte @Creality I7.json",
       "filename": "Panchroma PLA Matte @Creality I7.json",
-      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "updatedAt": "2026-10-13T16:05:53+08:00",
       "compatiblePrinters": [
         {
           "brand": "CreealityPrint",
@@ -4771,7 +4771,7 @@
       "slicer": "CrealityPrint",
       "path": "preset/Panchroma PLA Matte/Creality/K2Pro/CrealityPrint/Panchroma PLA Matte @Creality K2Pro.json",
       "filename": "Panchroma PLA Matte @Creality K2Pro.json",
-      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "updatedAt": "2026-10-13T16:05:53+08:00",
       "compatiblePrinters": [
         {
           "brand": "CreealityPrint",
@@ -5513,7 +5513,7 @@
       "slicer": "CrealityPrint",
       "path": "preset/Panchroma PLA Neon/Creality/K2Pro/CrealityPrint/Panchroma PLA Neon @Creality K2Pro.json",
       "filename": "Panchroma PLA Neon @Creality K2Pro.json",
-      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "updatedAt": "2026-10-13T16:05:53+08:00",
       "compatiblePrinters": [
         {
           "brand": "CreealityPrint",
@@ -6129,7 +6129,7 @@
       "slicer": "CrealityPrint",
       "path": "preset/Panchroma PLA Silk/Creality/K2Pro/CrealityPrint/Panchroma PLA Silk @Creality K2Pro.json",
       "filename": "Panchroma PLA Silk @Creality K2Pro.json",
-      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "updatedAt": "2026-10-13T16:05:53+08:00",
       "compatiblePrinters": [
         {
           "brand": "CreealityPrint",
@@ -6508,7 +6508,7 @@
       "slicer": "CrealityPrint",
       "path": "preset/Panchroma PLA Starlight/Creality/K2Pro/CrealityPrint/Panchroma PLA Starlight @Creality K2Pro.json",
       "filename": "Panchroma PLA Starlight @Creality K2Pro.json",
-      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "updatedAt": "2026-10-13T16:05:53+08:00",
       "compatiblePrinters": [
         {
           "brand": "CreealityPrint",
@@ -7581,7 +7581,7 @@
       "slicer": "BambuStudio",
       "path": "preset/PolyFlex TPU95-HF/BBL/P2S/BambuStudio/PolyFlex TPU95-HF @BBL P2S.json",
       "filename": "PolyFlex TPU95-HF @BBL P2S.json",
-      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "updatedAt": "2026-10-13T16:05:53+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -7621,7 +7621,7 @@
       "slicer": "BambuStudio",
       "path": "preset/PolyLite ABS/BBL/A1/BambuStudio/PolyLite ABS @BBL A1.json",
       "filename": "PolyLite ABS @BBL A1.json",
-      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "updatedAt": "2026-10-13T16:05:53+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -7991,7 +7991,7 @@
       "slicer": "CrealityPrint",
       "path": "preset/PolyLite CosPLA/Creality/K2Pro/CrealityPrint/PolyLite CosPLA @Creality K2Pro.json",
       "filename": "PolyLite CosPLA @Creality K2Pro.json",
-      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "updatedAt": "2026-10-13T16:05:53+08:00",
       "compatiblePrinters": [
         {
           "brand": "CreealityPrint",
@@ -8105,7 +8105,7 @@
       "slicer": "BambuStudio",
       "path": "preset/PolyLite PC/BBL/H2C/BambuStudio/PolyLite PC @BBL H2C.json",
       "filename": "PolyLite PC @BBL H2C.json",
-      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "updatedAt": "2026-10-13T16:05:53+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -9810,7 +9810,7 @@
       "slicer": "CrealityPrint",
       "path": "preset/PolyLite PLA Luminous/Creality/K2Pro/CrealityPrint/PolyLite PLA Luminous @Creality K2Pro.json",
       "filename": "PolyLite PLA Luminous @Creality K2Pro.json",
-      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "updatedAt": "2026-10-13T16:05:53+08:00",
       "compatiblePrinters": [
         {
           "brand": "CreealityPrint",
@@ -10327,7 +10327,7 @@
       "slicer": "CrealityPrint",
       "path": "preset/PolyLite PLA Pro/Creality/K2Pro/CrealityPrint/PolyLite PLA Pro @Creality K2Pro.json",
       "filename": "PolyLite PLA Pro @Creality K2Pro.json",
-      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "updatedAt": "2026-10-13T16:05:53+08:00",
       "compatiblePrinters": [
         {
           "brand": "CreealityPrint",
@@ -10481,7 +10481,7 @@
       "slicer": "CrealityPrint",
       "path": "preset/PolyLite PLA Pro Metallic/Creality/K2Pro/CrealityPrint/PolyLite PLA Pro Metallic @Creality K2Pro.json",
       "filename": "PolyLite PLA Pro Metallic @Creality K2Pro.json",
-      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "updatedAt": "2026-10-13T16:05:53+08:00",
       "compatiblePrinters": [
         {
           "brand": "CreealityPrint",
@@ -11281,7 +11281,7 @@
       "slicer": "BambuStudio",
       "path": "preset/PolyLite PLA-CF/BBL/H2C/BambuStudio/PolyLite PLA-CF @BBL H2C.json",
       "filename": "PolyLite PLA-CF @BBL H2C.json",
-      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "updatedAt": "2026-10-13T16:05:53+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -11297,7 +11297,7 @@
       "slicer": "BambuStudio",
       "path": "preset/PolyLite PLA-CF/BBL/H2D/BambuStudio/PolyLite PLA-CF @BBL H2D.json",
       "filename": "PolyLite PLA-CF @BBL H2D.json",
-      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "updatedAt": "2026-10-13T16:05:53+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -11332,7 +11332,7 @@
       "slicer": "BambuStudio",
       "path": "preset/PolyLite PLA-CF/BBL/P2S/BambuStudio/PolyLite PLA-CF @BBL P2S.json",
       "filename": "PolyLite PLA-CF @BBL P2S.json",
-      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "updatedAt": "2026-10-13T16:05:53+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -11389,7 +11389,7 @@
       "slicer": "BambuStudio",
       "path": "preset/PolyMax PC/BBL/H2C/BambuStudio/PolyMax PC @BBL H2C.json",
       "filename": "PolyMax PC @BBL H2C.json",
-      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "updatedAt": "2026-10-13T16:05:53+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -11500,7 +11500,7 @@
       "slicer": "BambuStudio",
       "path": "preset/PolyMax PETG/BBL/H2C/BambuStudio/PolyMax PETG @BBL H2C.json",
       "filename": "PolyMax PETG @BBL H2C.json",
-      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "updatedAt": "2026-10-13T16:05:53+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -11614,7 +11614,7 @@
       "slicer": "BambuStudio",
       "path": "preset/PolyMax PLA/BBL/A1/BambuStudio/PolyMax PLA @BBL A1.json",
       "filename": "PolyMax PLA @BBL A1.json",
-      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "updatedAt": "2026-10-13T16:05:53+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -11736,7 +11736,7 @@
       "slicer": "CrealityPrint",
       "path": "preset/PolyMax PLA/Creality/K2Pro/CrealityPrint/PolyMax PLA @Creality K2Pro.json",
       "filename": "PolyMax PLA @Creality K2Pro.json",
-      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "updatedAt": "2026-10-13T16:05:53+08:00",
       "compatiblePrinters": [
         {
           "brand": "CreealityPrint",
@@ -11842,7 +11842,7 @@
       "slicer": "BambuStudio",
       "path": "preset/PolySupport/BBL/H2C/BambuStudio/PolySupport @BBL H2C.json",
       "filename": "PolySupport @BBL H2C.json",
-      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "updatedAt": "2026-10-13T16:05:53+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -11901,7 +11901,7 @@
       "slicer": "BambuStudio",
       "path": "preset/PolySupport for PA12/BBL/H2C/BambuStudio/PolySupport for PA12 @BBL H2C.json",
       "filename": "PolySupport for PA12 @BBL H2C.json",
-      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "updatedAt": "2026-10-13T16:05:53+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -12111,7 +12111,7 @@
       "slicer": "BambuStudio",
       "path": "preset/PolyTerra PLA/BBL/H2S/BambuStudio/PolyTerra PLA @BBL H2S.json",
       "filename": "PolyTerra PLA @BBL H2S.json",
-      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "updatedAt": "2026-10-13T16:05:53+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -12253,7 +12253,7 @@
       "slicer": "CrealityPrint",
       "path": "preset/PolyTerra PLA/Creality/I7/CrealityPrint/PolyTerra PLA @Creality I7.json",
       "filename": "PolyTerra PLA @Creality I7.json",
-      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "updatedAt": "2026-10-13T16:05:53+08:00",
       "compatiblePrinters": [
         {
           "brand": "CreealityPrint",
@@ -12269,7 +12269,7 @@
       "slicer": "CrealityPrint",
       "path": "preset/PolyTerra PLA/Creality/K2Pro/CrealityPrint/PolyTerra PLA @Creality K2Pro.json",
       "filename": "PolyTerra PLA @Creality K2Pro.json",
-      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "updatedAt": "2026-10-13T16:05:53+08:00",
       "compatiblePrinters": [
         {
           "brand": "CreealityPrint",
@@ -12459,7 +12459,7 @@
       "slicer": "BambuStudio",
       "path": "preset/PolyTerra PLA Marble/BBL/H2S/BambuStudio/PolyTerra PLA Marble @BBL H2S.json",
       "filename": "PolyTerra PLA Marble @BBL H2S.json",
-      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "updatedAt": "2026-10-13T16:05:53+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -12601,7 +12601,7 @@
       "slicer": "CrealityPrint",
       "path": "preset/PolyTerra PLA Marble/Creality/I7/CrealityPrint/PolyTerra PLA Marble @Creality I7.json",
       "filename": "PolyTerra PLA Marble @Creality I7.json",
-      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "updatedAt": "2026-10-13T16:05:53+08:00",
       "compatiblePrinters": [
         {
           "brand": "CreealityPrint",
@@ -12617,7 +12617,7 @@
       "slicer": "CrealityPrint",
       "path": "preset/PolyTerra PLA Marble/Creality/K2Pro/CrealityPrint/PolyTerra PLA Marble @Creality K2Pro.json",
       "filename": "PolyTerra PLA Marble @Creality K2Pro.json",
-      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "updatedAt": "2026-10-13T16:05:53+08:00",
       "compatiblePrinters": [
         {
           "brand": "CreealityPrint",
@@ -12959,7 +12959,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Polylite ASA for TYC Americas/BBL/A1/BambuStudio/Polylite ASA for TYC Americas @BBL A1.json",
       "filename": "Polylite ASA for TYC Americas @BBL A1.json",
-      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "updatedAt": "2026-10-13T16:05:53+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -13639,7 +13639,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Polymaker ASA/BBL/A1/BambuStudio/Polymaker ASA @BBL A1.json",
       "filename": "Polymaker ASA @BBL A1.json",
-      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "updatedAt": "2026-10-13T16:05:53+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -14735,7 +14735,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Polymaker PLA/BBL/A1/BambuStudio/Polymaker PLA @BBL A1.json",
       "filename": "Polymaker PLA @BBL A1.json",
-      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "updatedAt": "2026-10-13T16:05:53+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -14883,7 +14883,7 @@
       "slicer": "CrealityPrint",
       "path": "preset/Polymaker PLA/Creality/K2Pro/CrealityPrint/Polymaker PLA @Creality K2Pro.json",
       "filename": "Polymaker PLA @Creality K2Pro.json",
-      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "updatedAt": "2026-10-13T16:05:53+08:00",
       "compatiblePrinters": [
         {
           "brand": "CreealityPrint",
