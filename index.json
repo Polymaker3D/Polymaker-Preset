@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updatedAt": "2026-08-25T01:57:13.525Z",
+  "updatedAt": "2026-10-13T07:41:21.461Z",
   "materials": [
     "Fiberon ASA-CF08",
     "Fiberon PA12-CF10",
@@ -1169,7 +1169,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PET-CF17/BBL/H2S/BambuStudio/Fiberon PET-CF17 @BBL H2S.json",
       "filename": "Fiberon PET-CF17 @BBL H2S.json",
-      "updatedAt": "2026-08-25T09:37:13+08:00",
+      "updatedAt": "2026-08-26T10:32:04+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -2938,12 +2938,28 @@
       "slicer": "CrealityPrint",
       "path": "preset/Panchroma PLA Celestial/Creality/I7/CrealityPrint/Panchroma PLA Celestial @Creality I7.json",
       "filename": "Panchroma PLA Celestial @Creality I7.json",
-      "updatedAt": "2026-08-25T09:37:13+08:00",
+      "updatedAt": "2026-08-26T10:32:04+08:00",
       "compatiblePrinters": [
         {
           "brand": "CreealityPrint",
           "model": "I7",
           "fullName": "SPARKX i7 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "Panchroma PLA Celestial",
+      "brand": "Creality",
+      "model": "K2Pro",
+      "slicer": "CrealityPrint",
+      "path": "preset/Panchroma PLA Celestial/Creality/K2Pro/CrealityPrint/Panchroma PLA Celestial @Creality K2Pro.json",
+      "filename": "Panchroma PLA Celestial @Creality K2Pro.json",
+      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "CreealityPrint",
+          "model": "K2Pro",
+          "fullName": "Creality K2 Pro 0.4 nozzle"
         }
       ]
     },
@@ -3301,12 +3317,28 @@
       "slicer": "CrealityPrint",
       "path": "preset/Panchroma PLA Galaxy/Creality/I7/CrealityPrint/Panchroma PLA Galaxy @Creality I7.json",
       "filename": "Panchroma PLA Galaxy @Creality I7.json",
-      "updatedAt": "2026-08-25T09:37:13+08:00",
+      "updatedAt": "2026-08-26T10:32:04+08:00",
       "compatiblePrinters": [
         {
           "brand": "CreealityPrint",
           "model": "I7",
           "fullName": "SPARKX i7 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "Panchroma PLA Galaxy",
+      "brand": "Creality",
+      "model": "K2Pro",
+      "slicer": "CrealityPrint",
+      "path": "preset/Panchroma PLA Galaxy/Creality/K2Pro/CrealityPrint/Panchroma PLA Galaxy @Creality K2Pro.json",
+      "filename": "Panchroma PLA Galaxy @Creality K2Pro.json",
+      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "CreealityPrint",
+          "model": "K2Pro",
+          "fullName": "Creality K2 Pro 0.4 nozzle"
         }
       ]
     },
@@ -3664,7 +3696,7 @@
       "slicer": "CrealityPrint",
       "path": "preset/Panchroma PLA Glow/Creality/I7/CrealityPrint/Panchroma PLA Glow @Creality I7.json",
       "filename": "Panchroma PLA Glow @Creality I7.json",
-      "updatedAt": "2026-08-25T09:37:13+08:00",
+      "updatedAt": "2026-08-26T10:32:04+08:00",
       "compatiblePrinters": [
         {
           "brand": "CreealityPrint",
@@ -4027,12 +4059,28 @@
       "slicer": "CrealityPrint",
       "path": "preset/Panchroma PLA Luminous/Creality/I7/CrealityPrint/Panchroma PLA Luminous @Creality I7.json",
       "filename": "Panchroma PLA Luminous @Creality I7.json",
-      "updatedAt": "2026-08-25T09:37:13+08:00",
+      "updatedAt": "2026-08-26T10:32:04+08:00",
       "compatiblePrinters": [
         {
           "brand": "CreealityPrint",
           "model": "I7",
           "fullName": "SPARKX i7 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "Panchroma PLA Luminous",
+      "brand": "Creality",
+      "model": "K2Pro",
+      "slicer": "CrealityPrint",
+      "path": "preset/Panchroma PLA Luminous/Creality/K2Pro/CrealityPrint/Panchroma PLA Luminous @Creality K2Pro.json",
+      "filename": "Panchroma PLA Luminous @Creality K2Pro.json",
+      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "CreealityPrint",
+          "model": "K2Pro",
+          "fullName": "Creality K2 Pro 0.4 nozzle"
         }
       ]
     },
@@ -4213,6 +4261,22 @@
     {
       "material": "Panchroma PLA Marble",
       "brand": "BBL",
+      "model": "H2S",
+      "slicer": "BambuStudio",
+      "path": "preset/Panchroma PLA Marble/BBL/H2S/BambuStudio/Panchroma PLA Marble @BBL H2S.json",
+      "filename": "Panchroma PLA Marble @BBL H2S.json",
+      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "H2S",
+          "fullName": "Bambu Lab H2S 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "Panchroma PLA Marble",
+      "brand": "BBL",
       "model": "P1P",
       "slicer": "BambuStudio",
       "path": "preset/Panchroma PLA Marble/BBL/P1P/BambuStudio/Panchroma PLA Marble @BBL P1P.json",
@@ -4333,6 +4397,38 @@
           "brand": "BBL",
           "model": "X2D",
           "fullName": "Bambu Lab X2D 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "Panchroma PLA Marble",
+      "brand": "Creality",
+      "model": "I7",
+      "slicer": "CrealityPrint",
+      "path": "preset/Panchroma PLA Marble/Creality/I7/CrealityPrint/Panchroma PLA Marble @Creality I7.json",
+      "filename": "Panchroma PLA Marble @Creality I7.json",
+      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "CreealityPrint",
+          "model": "I7",
+          "fullName": "SPARKX i7 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "Panchroma PLA Marble",
+      "brand": "Creality",
+      "model": "K2Pro",
+      "slicer": "CrealityPrint",
+      "path": "preset/Panchroma PLA Marble/Creality/K2Pro/CrealityPrint/Panchroma PLA Marble @Creality K2Pro.json",
+      "filename": "Panchroma PLA Marble @Creality K2Pro.json",
+      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "CreealityPrint",
+          "model": "K2Pro",
+          "fullName": "Creality K2 Pro 0.4 nozzle"
         }
       ]
     },
@@ -4513,6 +4609,22 @@
     {
       "material": "Panchroma PLA Matte",
       "brand": "BBL",
+      "model": "H2S",
+      "slicer": "BambuStudio",
+      "path": "preset/Panchroma PLA Matte/BBL/H2S/BambuStudio/Panchroma PLA Matte @BBL H2S.json",
+      "filename": "Panchroma PLA Matte @BBL H2S.json",
+      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "H2S",
+          "fullName": "Bambu Lab H2S 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "Panchroma PLA Matte",
+      "brand": "BBL",
       "model": "P1P",
       "slicer": "BambuStudio",
       "path": "preset/Panchroma PLA Matte/BBL/P1P/BambuStudio/Panchroma PLA Matte @BBL P1P.json",
@@ -4633,6 +4745,38 @@
           "brand": "BBL",
           "model": "X2D",
           "fullName": "Bambu Lab X2D 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "Panchroma PLA Matte",
+      "brand": "Creality",
+      "model": "I7",
+      "slicer": "CrealityPrint",
+      "path": "preset/Panchroma PLA Matte/Creality/I7/CrealityPrint/Panchroma PLA Matte @Creality I7.json",
+      "filename": "Panchroma PLA Matte @Creality I7.json",
+      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "CreealityPrint",
+          "model": "I7",
+          "fullName": "SPARKX i7 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "Panchroma PLA Matte",
+      "brand": "Creality",
+      "model": "K2Pro",
+      "slicer": "CrealityPrint",
+      "path": "preset/Panchroma PLA Matte/Creality/K2Pro/CrealityPrint/Panchroma PLA Matte @Creality K2Pro.json",
+      "filename": "Panchroma PLA Matte @Creality K2Pro.json",
+      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "CreealityPrint",
+          "model": "K2Pro",
+          "fullName": "Creality K2 Pro 0.4 nozzle"
         }
       ]
     },
@@ -4990,7 +5134,7 @@
       "slicer": "CrealityPrint",
       "path": "preset/Panchroma PLA Metallic/Creality/I7/CrealityPrint/Panchroma PLA Metallic @Creality I7.json",
       "filename": "Panchroma PLA Metallic @Creality I7.json",
-      "updatedAt": "2026-08-25T09:37:13+08:00",
+      "updatedAt": "2026-08-26T10:32:04+08:00",
       "compatiblePrinters": [
         {
           "brand": "CreealityPrint",
@@ -5353,12 +5497,28 @@
       "slicer": "CrealityPrint",
       "path": "preset/Panchroma PLA Neon/Creality/I7/CrealityPrint/Panchroma PLA Neon @Creality I7.json",
       "filename": "Panchroma PLA Neon @Creality I7.json",
-      "updatedAt": "2026-08-25T09:37:13+08:00",
+      "updatedAt": "2026-08-26T10:32:04+08:00",
       "compatiblePrinters": [
         {
           "brand": "CreealityPrint",
           "model": "I7",
           "fullName": "SPARKX i7 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "Panchroma PLA Neon",
+      "brand": "Creality",
+      "model": "K2Pro",
+      "slicer": "CrealityPrint",
+      "path": "preset/Panchroma PLA Neon/Creality/K2Pro/CrealityPrint/Panchroma PLA Neon @Creality K2Pro.json",
+      "filename": "Panchroma PLA Neon @Creality K2Pro.json",
+      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "CreealityPrint",
+          "model": "K2Pro",
+          "fullName": "Creality K2 Pro 0.4 nozzle"
         }
       ]
     },
@@ -5964,6 +6124,22 @@
     },
     {
       "material": "Panchroma PLA Silk",
+      "brand": "Creality",
+      "model": "K2Pro",
+      "slicer": "CrealityPrint",
+      "path": "preset/Panchroma PLA Silk/Creality/K2Pro/CrealityPrint/Panchroma PLA Silk @Creality K2Pro.json",
+      "filename": "Panchroma PLA Silk @Creality K2Pro.json",
+      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "CreealityPrint",
+          "model": "K2Pro",
+          "fullName": "Creality K2 Pro 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "Panchroma PLA Silk",
       "brand": "Elegoo",
       "model": "CC2",
       "slicer": "ElegooSlicer",
@@ -6316,12 +6492,28 @@
       "slicer": "CrealityPrint",
       "path": "preset/Panchroma PLA Starlight/Creality/I7/CrealityPrint/Panchroma PLA Starlight @Creality I7.json",
       "filename": "Panchroma PLA Starlight @Creality I7.json",
-      "updatedAt": "2026-08-25T09:37:13+08:00",
+      "updatedAt": "2026-08-26T10:32:04+08:00",
       "compatiblePrinters": [
         {
           "brand": "CreealityPrint",
           "model": "I7",
           "fullName": "SPARKX i7 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "Panchroma PLA Starlight",
+      "brand": "Creality",
+      "model": "K2Pro",
+      "slicer": "CrealityPrint",
+      "path": "preset/Panchroma PLA Starlight/Creality/K2Pro/CrealityPrint/Panchroma PLA Starlight @Creality K2Pro.json",
+      "filename": "Panchroma PLA Starlight @Creality K2Pro.json",
+      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "CreealityPrint",
+          "model": "K2Pro",
+          "fullName": "Creality K2 Pro 0.4 nozzle"
         }
       ]
     },
@@ -6695,7 +6887,7 @@
       "slicer": "CrealityPrint",
       "path": "preset/Panchroma PLA Translucent/Creality/I7/CrealityPrint/Panchroma PLA Translucent @Creality I7.json",
       "filename": "Panchroma PLA Translucent @Creality I7.json",
-      "updatedAt": "2026-08-25T09:37:13+08:00",
+      "updatedAt": "2026-08-26T10:32:04+08:00",
       "compatiblePrinters": [
         {
           "brand": "CreealityPrint",
@@ -7090,7 +7282,7 @@
       "slicer": "CrealityPrint",
       "path": "preset/Panchroma PLA UV Shift/Creality/I7/CrealityPrint/Panchroma PLA UV Shift @Creality I7.json",
       "filename": "Panchroma PLA UV Shift @Creality I7.json",
-      "updatedAt": "2026-08-25T09:37:13+08:00",
+      "updatedAt": "2026-08-26T10:32:04+08:00",
       "compatiblePrinters": [
         {
           "brand": "CreealityPrint",
@@ -7385,6 +7577,25 @@
     {
       "material": "PolyFlex TPU95-HF",
       "brand": "BBL",
+      "model": "P2S",
+      "slicer": "BambuStudio",
+      "path": "preset/PolyFlex TPU95-HF/BBL/P2S/BambuStudio/PolyFlex TPU95-HF @BBL P2S.json",
+      "filename": "PolyFlex TPU95-HF @BBL P2S.json",
+      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "P2S",
+          "fullName": "Bambu Lab P2S 0.4 nozzle"
+        }
+      ],
+      "missingExtruderVariants": [
+        "Direct Drive High Flow"
+      ]
+    },
+    {
+      "material": "PolyFlex TPU95-HF",
+      "brand": "BBL",
       "model": "X2D",
       "slicer": "BambuStudio",
       "path": "preset/PolyFlex TPU95-HF/BBL/X2D/BambuStudio/PolyFlex TPU95-HF @BBL X2D.json",
@@ -7406,11 +7617,32 @@
     {
       "material": "PolyLite ABS",
       "brand": "BBL",
+      "model": "A1",
+      "slicer": "BambuStudio",
+      "path": "preset/PolyLite ABS/BBL/A1/BambuStudio/PolyLite ABS @BBL A1.json",
+      "filename": "PolyLite ABS @BBL A1.json",
+      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "A1",
+          "fullName": "Bambu Lab A1 0.4 nozzle"
+        },
+        {
+          "brand": "BBL",
+          "model": "A1M",
+          "fullName": "Bambu Lab A1 mini 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "PolyLite ABS",
+      "brand": "BBL",
       "model": "H2D",
       "slicer": "BambuStudio",
       "path": "preset/PolyLite ABS/BBL/H2D/BambuStudio/PolyLite ABS @BBL H2D.json",
       "filename": "PolyLite ABS @BBL H2D.json",
-      "updatedAt": "2026-08-25T09:37:13+08:00",
+      "updatedAt": "2026-08-26T10:32:04+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -7754,6 +7986,22 @@
     },
     {
       "material": "PolyLite CosPLA",
+      "brand": "Creality",
+      "model": "K2Pro",
+      "slicer": "CrealityPrint",
+      "path": "preset/PolyLite CosPLA/Creality/K2Pro/CrealityPrint/PolyLite CosPLA @Creality K2Pro.json",
+      "filename": "PolyLite CosPLA @Creality K2Pro.json",
+      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "CreealityPrint",
+          "model": "K2Pro",
+          "fullName": "Creality K2 Pro 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "PolyLite CosPLA",
       "brand": "Elegoo",
       "model": "CC2",
       "slicer": "ElegooSlicer",
@@ -7853,11 +8101,31 @@
     {
       "material": "PolyLite PC",
       "brand": "BBL",
+      "model": "H2C",
+      "slicer": "BambuStudio",
+      "path": "preset/PolyLite PC/BBL/H2C/BambuStudio/PolyLite PC @BBL H2C.json",
+      "filename": "PolyLite PC @BBL H2C.json",
+      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "H2C",
+          "fullName": "Bambu Lab H2C 0.4 nozzle"
+        }
+      ],
+      "missingExtruderVariants": [
+        "Direct Drive High Flow",
+        "Direct Drive E3D High Flow"
+      ]
+    },
+    {
+      "material": "PolyLite PC",
+      "brand": "BBL",
       "model": "H2D",
       "slicer": "BambuStudio",
       "path": "preset/PolyLite PC/BBL/H2D/BambuStudio/PolyLite PC @BBL H2D.json",
       "filename": "PolyLite PC @BBL H2D.json",
-      "updatedAt": "2026-08-25T09:37:13+08:00",
+      "updatedAt": "2026-08-26T10:32:04+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -8429,7 +8697,7 @@
       "slicer": "CrealityPrint",
       "path": "preset/PolyLite PLA/Creality/I7/CrealityPrint/PolyLite PLA @Creality I7.json",
       "filename": "PolyLite PLA @Creality I7.json",
-      "updatedAt": "2026-08-25T09:37:13+08:00",
+      "updatedAt": "2026-08-26T10:32:04+08:00",
       "compatiblePrinters": [
         {
           "brand": "CreealityPrint",
@@ -8792,7 +9060,7 @@
       "slicer": "CrealityPrint",
       "path": "preset/PolyLite PLA Galaxy/Creality/I7/CrealityPrint/PolyLite PLA Galaxy @Creality I7.json",
       "filename": "PolyLite PLA Galaxy @Creality I7.json",
-      "updatedAt": "2026-08-25T09:37:13+08:00",
+      "updatedAt": "2026-08-26T10:32:04+08:00",
       "compatiblePrinters": [
         {
           "brand": "CreealityPrint",
@@ -9155,7 +9423,7 @@
       "slicer": "CrealityPrint",
       "path": "preset/PolyLite PLA Glow/Creality/I7/CrealityPrint/PolyLite PLA Glow @Creality I7.json",
       "filename": "PolyLite PLA Glow @Creality I7.json",
-      "updatedAt": "2026-08-25T09:37:13+08:00",
+      "updatedAt": "2026-08-26T10:32:04+08:00",
       "compatiblePrinters": [
         {
           "brand": "CreealityPrint",
@@ -9526,12 +9794,28 @@
       "slicer": "CrealityPrint",
       "path": "preset/PolyLite PLA Luminous/Creality/I7/CrealityPrint/PolyLite PLA Luminous @Creality I7.json",
       "filename": "PolyLite PLA Luminous @Creality I7.json",
-      "updatedAt": "2026-08-25T09:37:13+08:00",
+      "updatedAt": "2026-08-26T10:32:04+08:00",
       "compatiblePrinters": [
         {
           "brand": "CreealityPrint",
           "model": "I7",
           "fullName": "SPARKX i7 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "PolyLite PLA Luminous",
+      "brand": "Creality",
+      "model": "K2Pro",
+      "slicer": "CrealityPrint",
+      "path": "preset/PolyLite PLA Luminous/Creality/K2Pro/CrealityPrint/PolyLite PLA Luminous @Creality K2Pro.json",
+      "filename": "PolyLite PLA Luminous @Creality K2Pro.json",
+      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "CreealityPrint",
+          "model": "K2Pro",
+          "fullName": "Creality K2 Pro 0.4 nozzle"
         }
       ]
     },
@@ -9889,7 +10173,7 @@
       "slicer": "CrealityPrint",
       "path": "preset/PolyLite PLA Neon/Creality/I7/CrealityPrint/PolyLite PLA Neon @Creality I7.json",
       "filename": "PolyLite PLA Neon @Creality I7.json",
-      "updatedAt": "2026-08-25T09:37:13+08:00",
+      "updatedAt": "2026-08-26T10:32:04+08:00",
       "compatiblePrinters": [
         {
           "brand": "CreealityPrint",
@@ -10038,6 +10322,22 @@
     },
     {
       "material": "PolyLite PLA Pro",
+      "brand": "Creality",
+      "model": "K2Pro",
+      "slicer": "CrealityPrint",
+      "path": "preset/PolyLite PLA Pro/Creality/K2Pro/CrealityPrint/PolyLite PLA Pro @Creality K2Pro.json",
+      "filename": "PolyLite PLA Pro @Creality K2Pro.json",
+      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "CreealityPrint",
+          "model": "K2Pro",
+          "fullName": "Creality K2 Pro 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "PolyLite PLA Pro",
       "brand": "Elegoo",
       "model": "CC2",
       "slicer": "ElegooSlicer",
@@ -10171,6 +10471,22 @@
           "brand": "BBL",
           "model": "X2D",
           "fullName": "Bambu Lab X2D 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "PolyLite PLA Pro Metallic",
+      "brand": "Creality",
+      "model": "K2Pro",
+      "slicer": "CrealityPrint",
+      "path": "preset/PolyLite PLA Pro Metallic/Creality/K2Pro/CrealityPrint/PolyLite PLA Pro Metallic @Creality K2Pro.json",
+      "filename": "PolyLite PLA Pro Metallic @Creality K2Pro.json",
+      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "CreealityPrint",
+          "model": "K2Pro",
+          "fullName": "Creality K2 Pro 0.4 nozzle"
         }
       ]
     },
@@ -10528,7 +10844,7 @@
       "slicer": "CrealityPrint",
       "path": "preset/PolyLite PLA Starlight/Creality/I7/CrealityPrint/PolyLite PLA Starlight @Creality I7.json",
       "filename": "PolyLite PLA Starlight @Creality I7.json",
-      "updatedAt": "2026-08-25T09:37:13+08:00",
+      "updatedAt": "2026-08-26T10:32:04+08:00",
       "compatiblePrinters": [
         {
           "brand": "CreealityPrint",
@@ -10891,7 +11207,7 @@
       "slicer": "CrealityPrint",
       "path": "preset/PolyLite PLA Translucent/Creality/I7/CrealityPrint/PolyLite PLA Translucent @Creality I7.json",
       "filename": "PolyLite PLA Translucent @Creality I7.json",
-      "updatedAt": "2026-08-25T09:37:13+08:00",
+      "updatedAt": "2026-08-26T10:32:04+08:00",
       "compatiblePrinters": [
         {
           "brand": "CreealityPrint",
@@ -10961,6 +11277,38 @@
     {
       "material": "PolyLite PLA-CF",
       "brand": "BBL",
+      "model": "H2C",
+      "slicer": "BambuStudio",
+      "path": "preset/PolyLite PLA-CF/BBL/H2C/BambuStudio/PolyLite PLA-CF @BBL H2C.json",
+      "filename": "PolyLite PLA-CF @BBL H2C.json",
+      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "H2C",
+          "fullName": "Bambu Lab H2C 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "PolyLite PLA-CF",
+      "brand": "BBL",
+      "model": "H2D",
+      "slicer": "BambuStudio",
+      "path": "preset/PolyLite PLA-CF/BBL/H2D/BambuStudio/PolyLite PLA-CF @BBL H2D.json",
+      "filename": "PolyLite PLA-CF @BBL H2D.json",
+      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "H2D",
+          "fullName": "Bambu Lab H2D 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "PolyLite PLA-CF",
+      "brand": "BBL",
       "model": "H2S",
       "slicer": "BambuStudio",
       "path": "preset/PolyLite PLA-CF/BBL/H2S/BambuStudio/PolyLite PLA-CF @BBL H2S.json",
@@ -10975,6 +11323,26 @@
       ],
       "missingExtruderVariants": [
         "Direct Drive High Flow"
+      ]
+    },
+    {
+      "material": "PolyLite PLA-CF",
+      "brand": "BBL",
+      "model": "P2S",
+      "slicer": "BambuStudio",
+      "path": "preset/PolyLite PLA-CF/BBL/P2S/BambuStudio/PolyLite PLA-CF @BBL P2S.json",
+      "filename": "PolyLite PLA-CF @BBL P2S.json",
+      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "P2S",
+          "fullName": "Bambu Lab P2S 0.4 nozzle"
+        }
+      ],
+      "missingExtruderVariants": [
+        "Direct Drive High Flow",
+        "Direct Drive E3D High Flow"
       ]
     },
     {
@@ -11017,11 +11385,31 @@
     {
       "material": "PolyMax PC",
       "brand": "BBL",
+      "model": "H2C",
+      "slicer": "BambuStudio",
+      "path": "preset/PolyMax PC/BBL/H2C/BambuStudio/PolyMax PC @BBL H2C.json",
+      "filename": "PolyMax PC @BBL H2C.json",
+      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "H2C",
+          "fullName": "Bambu Lab H2C 0.4 nozzle"
+        }
+      ],
+      "missingExtruderVariants": [
+        "Direct Drive High Flow",
+        "Direct Drive E3D High Flow"
+      ]
+    },
+    {
+      "material": "PolyMax PC",
+      "brand": "BBL",
       "model": "H2D",
       "slicer": "BambuStudio",
       "path": "preset/PolyMax PC/BBL/H2D/BambuStudio/PolyMax PC @BBL H2D.json",
       "filename": "PolyMax PC @BBL H2D.json",
-      "updatedAt": "2026-08-25T09:37:13+08:00",
+      "updatedAt": "2026-08-26T10:32:04+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -11040,7 +11428,7 @@
       "slicer": "BambuStudio",
       "path": "preset/PolyMax PC/BBL/H2S/BambuStudio/PolyMax PC @BBL H2S.json",
       "filename": "PolyMax PC @BBL H2S.json",
-      "updatedAt": "2026-08-25T09:37:13+08:00",
+      "updatedAt": "2026-08-26T10:32:04+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -11103,6 +11491,26 @@
           "model": "A2L",
           "fullName": "Bambu Lab A2L 0.4 nozzle"
         }
+      ]
+    },
+    {
+      "material": "PolyMax PETG",
+      "brand": "BBL",
+      "model": "H2C",
+      "slicer": "BambuStudio",
+      "path": "preset/PolyMax PETG/BBL/H2C/BambuStudio/PolyMax PETG @BBL H2C.json",
+      "filename": "PolyMax PETG @BBL H2C.json",
+      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "H2C",
+          "fullName": "Bambu Lab H2C 0.4 nozzle"
+        }
+      ],
+      "missingExtruderVariants": [
+        "Direct Drive High Flow",
+        "Direct Drive E3D High Flow"
       ]
     },
     {
@@ -11196,6 +11604,27 @@
           "brand": "Elegoo",
           "model": "CC2",
           "fullName": "Elegoo Centauri Carbon 2 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "PolyMax PLA",
+      "brand": "BBL",
+      "model": "A1",
+      "slicer": "BambuStudio",
+      "path": "preset/PolyMax PLA/BBL/A1/BambuStudio/PolyMax PLA @BBL A1.json",
+      "filename": "PolyMax PLA @BBL A1.json",
+      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "A1",
+          "fullName": "Bambu Lab A1 0.4 nozzle"
+        },
+        {
+          "brand": "BBL",
+          "model": "A1M",
+          "fullName": "Bambu Lab A1 mini 0.4 nozzle"
         }
       ]
     },
@@ -11302,6 +11731,22 @@
     },
     {
       "material": "PolyMax PLA",
+      "brand": "Creality",
+      "model": "K2Pro",
+      "slicer": "CrealityPrint",
+      "path": "preset/PolyMax PLA/Creality/K2Pro/CrealityPrint/PolyMax PLA @Creality K2Pro.json",
+      "filename": "PolyMax PLA @Creality K2Pro.json",
+      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "CreealityPrint",
+          "model": "K2Pro",
+          "fullName": "Creality K2 Pro 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "PolyMax PLA",
       "brand": "Elegoo",
       "model": "CC2",
       "slicer": "ElegooSlicer",
@@ -11393,6 +11838,26 @@
     {
       "material": "PolySupport",
       "brand": "BBL",
+      "model": "H2C",
+      "slicer": "BambuStudio",
+      "path": "preset/PolySupport/BBL/H2C/BambuStudio/PolySupport @BBL H2C.json",
+      "filename": "PolySupport @BBL H2C.json",
+      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "H2C",
+          "fullName": "Bambu Lab H2C 0.4 nozzle"
+        }
+      ],
+      "missingExtruderVariants": [
+        "Direct Drive High Flow",
+        "Direct Drive E3D High Flow"
+      ]
+    },
+    {
+      "material": "PolySupport",
+      "brand": "BBL",
       "model": "H2S",
       "slicer": "BambuStudio",
       "path": "preset/PolySupport/BBL/H2S/BambuStudio/PolySupport @BBL H2S.json",
@@ -11427,6 +11892,26 @@
       "missingExtruderVariants": [
         "Direct Drive High Flow",
         "Bowden High Flow"
+      ]
+    },
+    {
+      "material": "PolySupport for PA12",
+      "brand": "BBL",
+      "model": "H2C",
+      "slicer": "BambuStudio",
+      "path": "preset/PolySupport for PA12/BBL/H2C/BambuStudio/PolySupport for PA12 @BBL H2C.json",
+      "filename": "PolySupport for PA12 @BBL H2C.json",
+      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "H2C",
+          "fullName": "Bambu Lab H2C 0.4 nozzle"
+        }
+      ],
+      "missingExtruderVariants": [
+        "Direct Drive High Flow",
+        "Direct Drive E3D High Flow"
       ]
     },
     {
@@ -11622,6 +12107,22 @@
     {
       "material": "PolyTerra PLA",
       "brand": "BBL",
+      "model": "H2S",
+      "slicer": "BambuStudio",
+      "path": "preset/PolyTerra PLA/BBL/H2S/BambuStudio/PolyTerra PLA @BBL H2S.json",
+      "filename": "PolyTerra PLA @BBL H2S.json",
+      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "H2S",
+          "fullName": "Bambu Lab H2S 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "PolyTerra PLA",
+      "brand": "BBL",
       "model": "P1P",
       "slicer": "BambuStudio",
       "path": "preset/PolyTerra PLA/BBL/P1P/BambuStudio/PolyTerra PLA @BBL P1P.json",
@@ -11742,6 +12243,38 @@
           "brand": "BBL",
           "model": "X2D",
           "fullName": "Bambu Lab X2D 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "PolyTerra PLA",
+      "brand": "Creality",
+      "model": "I7",
+      "slicer": "CrealityPrint",
+      "path": "preset/PolyTerra PLA/Creality/I7/CrealityPrint/PolyTerra PLA @Creality I7.json",
+      "filename": "PolyTerra PLA @Creality I7.json",
+      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "CreealityPrint",
+          "model": "I7",
+          "fullName": "SPARKX i7 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "PolyTerra PLA",
+      "brand": "Creality",
+      "model": "K2Pro",
+      "slicer": "CrealityPrint",
+      "path": "preset/PolyTerra PLA/Creality/K2Pro/CrealityPrint/PolyTerra PLA @Creality K2Pro.json",
+      "filename": "PolyTerra PLA @Creality K2Pro.json",
+      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "CreealityPrint",
+          "model": "K2Pro",
+          "fullName": "Creality K2 Pro 0.4 nozzle"
         }
       ]
     },
@@ -11922,6 +12455,22 @@
     {
       "material": "PolyTerra PLA Marble",
       "brand": "BBL",
+      "model": "H2S",
+      "slicer": "BambuStudio",
+      "path": "preset/PolyTerra PLA Marble/BBL/H2S/BambuStudio/PolyTerra PLA Marble @BBL H2S.json",
+      "filename": "PolyTerra PLA Marble @BBL H2S.json",
+      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "H2S",
+          "fullName": "Bambu Lab H2S 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "PolyTerra PLA Marble",
+      "brand": "BBL",
       "model": "P1P",
       "slicer": "BambuStudio",
       "path": "preset/PolyTerra PLA Marble/BBL/P1P/BambuStudio/PolyTerra PLA Marble @BBL P1P.json",
@@ -12042,6 +12591,38 @@
           "brand": "BBL",
           "model": "X2D",
           "fullName": "Bambu Lab X2D 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "PolyTerra PLA Marble",
+      "brand": "Creality",
+      "model": "I7",
+      "slicer": "CrealityPrint",
+      "path": "preset/PolyTerra PLA Marble/Creality/I7/CrealityPrint/PolyTerra PLA Marble @Creality I7.json",
+      "filename": "PolyTerra PLA Marble @Creality I7.json",
+      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "CreealityPrint",
+          "model": "I7",
+          "fullName": "SPARKX i7 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "PolyTerra PLA Marble",
+      "brand": "Creality",
+      "model": "K2Pro",
+      "slicer": "CrealityPrint",
+      "path": "preset/PolyTerra PLA Marble/Creality/K2Pro/CrealityPrint/PolyTerra PLA Marble @Creality K2Pro.json",
+      "filename": "PolyTerra PLA Marble @Creality K2Pro.json",
+      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "CreealityPrint",
+          "model": "K2Pro",
+          "fullName": "Creality K2 Pro 0.4 nozzle"
         }
       ]
     },
@@ -12374,11 +12955,32 @@
     {
       "material": "Polylite ASA for TYC Americas",
       "brand": "BBL",
+      "model": "A1",
+      "slicer": "BambuStudio",
+      "path": "preset/Polylite ASA for TYC Americas/BBL/A1/BambuStudio/Polylite ASA for TYC Americas @BBL A1.json",
+      "filename": "Polylite ASA for TYC Americas @BBL A1.json",
+      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "A1",
+          "fullName": "Bambu Lab A1 0.4 nozzle"
+        },
+        {
+          "brand": "BBL",
+          "model": "A1M",
+          "fullName": "Bambu Lab A1 mini 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "Polylite ASA for TYC Americas",
+      "brand": "BBL",
       "model": "H2C",
       "slicer": "BambuStudio",
       "path": "preset/Polylite ASA for TYC Americas/BBL/H2C/BambuStudio/Polylite ASA for TYC Americas @BBL H2C.json",
       "filename": "Polylite ASA for TYC Americas @BBL H2C.json",
-      "updatedAt": "2026-08-25T09:37:13+08:00",
+      "updatedAt": "2026-08-26T10:32:04+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -12394,7 +12996,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Polylite ASA for TYC Americas/BBL/H2D/BambuStudio/Polylite ASA for TYC Americas @BBL H2D.json",
       "filename": "Polylite ASA for TYC Americas @BBL H2D.json",
-      "updatedAt": "2026-08-25T09:37:13+08:00",
+      "updatedAt": "2026-08-26T10:32:04+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -12413,7 +13015,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Polylite ASA for TYC Americas/BBL/H2S/BambuStudio/Polylite ASA for TYC Americas @BBL H2S.json",
       "filename": "Polylite ASA for TYC Americas @BBL H2S.json",
-      "updatedAt": "2026-08-25T09:37:13+08:00",
+      "updatedAt": "2026-08-26T10:32:04+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -12432,7 +13034,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Polylite ASA for TYC Americas/BBL/P2S/BambuStudio/Polylite ASA for TYC Americas @BBL P2S.json",
       "filename": "Polylite ASA for TYC Americas @BBL P2S.json",
-      "updatedAt": "2026-08-25T09:37:13+08:00",
+      "updatedAt": "2026-08-26T10:32:04+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -12451,7 +13053,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Polylite ASA for TYC Americas/BBL/X2D/BambuStudio/Polylite ASA for TYC Americas @BBL X2D.json",
       "filename": "Polylite ASA for TYC Americas @BBL X2D.json",
-      "updatedAt": "2026-08-25T09:37:13+08:00",
+      "updatedAt": "2026-08-26T10:32:04+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -13033,11 +13635,32 @@
     {
       "material": "Polymaker ASA",
       "brand": "BBL",
+      "model": "A1",
+      "slicer": "BambuStudio",
+      "path": "preset/Polymaker ASA/BBL/A1/BambuStudio/Polymaker ASA @BBL A1.json",
+      "filename": "Polymaker ASA @BBL A1.json",
+      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "A1",
+          "fullName": "Bambu Lab A1 0.4 nozzle"
+        },
+        {
+          "brand": "BBL",
+          "model": "A1M",
+          "fullName": "Bambu Lab A1 mini 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "Polymaker ASA",
+      "brand": "BBL",
       "model": "H2C",
       "slicer": "BambuStudio",
       "path": "preset/Polymaker ASA/BBL/H2C/BambuStudio/Polymaker ASA @BBL H2C.json",
       "filename": "Polymaker ASA @BBL H2C.json",
-      "updatedAt": "2026-08-25T09:37:13+08:00",
+      "updatedAt": "2026-08-26T10:32:04+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -14108,6 +14731,27 @@
     {
       "material": "Polymaker PLA",
       "brand": "BBL",
+      "model": "A1",
+      "slicer": "BambuStudio",
+      "path": "preset/Polymaker PLA/BBL/A1/BambuStudio/Polymaker PLA @BBL A1.json",
+      "filename": "Polymaker PLA @BBL A1.json",
+      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "A1",
+          "fullName": "Bambu Lab A1 0.4 nozzle"
+        },
+        {
+          "brand": "BBL",
+          "model": "A1M",
+          "fullName": "Bambu Lab A1 mini 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "Polymaker PLA",
+      "brand": "BBL",
       "model": "A2L",
       "slicer": "BambuStudio",
       "path": "preset/Polymaker PLA/BBL/A2L/BambuStudio/Polymaker PLA @BBL A2L.json",
@@ -14229,6 +14873,22 @@
           "brand": "BBL",
           "model": "X2D",
           "fullName": "Bambu Lab X2D 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "Polymaker PLA",
+      "brand": "Creality",
+      "model": "K2Pro",
+      "slicer": "CrealityPrint",
+      "path": "preset/Polymaker PLA/Creality/K2Pro/CrealityPrint/Polymaker PLA @Creality K2Pro.json",
+      "filename": "Polymaker PLA @Creality K2Pro.json",
+      "updatedAt": "2026-10-12T14:42:41+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "CreealityPrint",
+          "model": "K2Pro",
+          "fullName": "Creality K2 Pro 0.4 nozzle"
         }
       ]
     },
