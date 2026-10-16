@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updatedAt": "2026-10-13T09:26:05.679Z",
+  "updatedAt": "2026-10-16T01:38:09.062Z",
   "materials": [
     "Fiberon ASA-CF08",
     "Fiberon PA12-CF10",
@@ -62,6 +62,7 @@
     "Polymaker ABS Pro",
     "Polymaker ABS Pro Galaxy",
     "Polymaker ASA",
+    "Polymaker G-Flex PETG",
     "Polymaker HT-PLA",
     "Polymaker HT-PLA Pro",
     "Polymaker HT-PLA-GF",
@@ -13767,6 +13768,69 @@
           "brand": "CreealityPrint",
           "model": "K2Pro",
           "fullName": "Creality K2 Pro 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "Polymaker G-Flex PETG",
+      "brand": "BBL",
+      "model": "A2L",
+      "slicer": "BambuStudio",
+      "path": "preset/Polymaker G-Flex PETG/BBL/A2L/BambuStudio/Polymaker G-Flex PETG @BBL A2L.json",
+      "filename": "Polymaker G-Flex PETG @BBL A2L.json",
+      "updatedAt": "2026-10-16T09:37:30+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "A2L",
+          "fullName": "Bambu Lab A2L 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "Polymaker G-Flex PETG",
+      "brand": "BBL",
+      "model": "P1S",
+      "slicer": "BambuStudio",
+      "path": "preset/Polymaker G-Flex PETG/BBL/P1S/BambuStudio/Polymaker G-Flex PETG @BBL P1S.json",
+      "filename": "Polymaker G-Flex PETG @BBL P1S.json",
+      "updatedAt": "2026-10-16T09:37:30+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "P1S",
+          "fullName": "Bambu Lab P1S 0.4 nozzle"
+        },
+        {
+          "brand": "BBL",
+          "model": "X1",
+          "fullName": "Bambu Lab X1 0.4 nozzle"
+        },
+        {
+          "brand": "BBL",
+          "model": "X1E",
+          "fullName": "Bambu Lab X1E 0.4 nozzle"
+        },
+        {
+          "brand": "BBL",
+          "model": "X1C",
+          "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "Polymaker G-Flex PETG",
+      "brand": "Snapmaker",
+      "model": "U1",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Polymaker G-Flex PETG/Snapmaker/U1/OrcaSlicer/Polymaker G-Flex PETG @Snapmaker U1.json",
+      "filename": "Polymaker G-Flex PETG @Snapmaker U1.json",
+      "updatedAt": "2026-10-16T09:37:30+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "Snapmaker",
+          "model": "U1",
+          "fullName": "Snapmaker U1 (0.4 nozzle)"
         }
       ]
     },
