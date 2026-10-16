@@ -1,17 +1,24 @@
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
-import { execSync } from 'node:child_process';
+import { execFileSync } from 'node:child_process';
+import { isDeepStrictEqual, parseArgs } from 'node:util';
 import { capture, captureException, shutdown } from './posthog.mjs';
 
 const REPO_ROOT = process.cwd();
 const PRESET_DIR = path.join(REPO_ROOT, 'preset');
-const INDEX_JSON_PATH = path.join(REPO_ROOT, 'index.json');
+const { values: options } = parseArgs({
+  options: {
+    output: { type: 'string', default: 'index.json' },
+    timestamp: { type: 'string' },
+  },
+});
+const INDEX_JSON_PATH = path.resolve(REPO_ROOT, options.output);
 const PRESET_FILE_EXTENSIONS = ['.json', '.ini'];
 
 function getGitLastUpdate(filePath) {
   try {
-    const output = execSync(
-      `git log -1 --format=%cI -- "${filePath}"`,
+    const output = execFileSync(
+      'git', ['log', '-1', '--format=%cI', '--', filePath],
       { encoding: 'utf8', cwd: REPO_ROOT }
     );
     return output.trim() || null;
@@ -147,9 +154,11 @@ async function main() {
 
   /** @type {any | undefined} */
   let existing;
+  let existingContent;
   if (await fileExists(INDEX_JSON_PATH)) {
     try {
-      existing = JSON.parse(await fs.readFile(INDEX_JSON_PATH, 'utf8'));
+      existingContent = await fs.readFile(INDEX_JSON_PATH, 'utf8');
+      existing = JSON.parse(existingContent);
     } catch {
       // ignore and overwrite
     }
@@ -216,7 +225,7 @@ async function main() {
 
   const next = {
     version: (existing && typeof existing.version === 'string' ? existing.version : '1.0'),
-    updatedAt: new Date().toISOString(),
+    updatedAt: new Date(options.timestamp || Date.now()).toISOString(),
     materials: Array.from(materials).sort(cmp),
     brands: Array.from(brands).sort(cmp),
     models: Array.from(models).sort(cmp),
@@ -230,11 +239,25 @@ async function main() {
     )),
   };
 
-  await fs.writeFile(INDEX_JSON_PATH, JSON.stringify(next, null, 2) + '\n', 'utf8');
+  // Preserve the generation time when only the clock has changed.
+  if (existing && typeof existing.updatedAt === 'string' && isDeepStrictEqual(
+    { ...existing, updatedAt: null },
+    { ...next, updatedAt: null }
+  )) {
+    next.updatedAt = existing.updatedAt;
+  }
+  const nextContent = JSON.stringify(next, null, 2) + '\n';
+  const changed = nextContent !== existingContent;
+  if (changed) {
+    await fs.writeFile(INDEX_JSON_PATH, nextContent, 'utf8');
+  }
   // eslint-disable-next-line no-console
-  console.log(`Generated index.json with ${next.presets.length} presets.`);
+  console.log(changed
+    ? `Generated index.json with ${next.presets.length} presets.`
+    : `index.json unchanged (${next.presets.length} presets).`);
 
   capture('index_generated', {
+    changed,
     preset_count: next.presets.length,
     material_count: next.materials.length,
     brand_count: next.brands.length,

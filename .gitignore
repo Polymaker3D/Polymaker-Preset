@@ -9,6 +9,7 @@ worker/subscribe/.dev.vars
 worker/subscribe/node_modules/
 worker/subscribe/.wrangler/
 node_modules/
+/_site/
 .env
 .env.*
 !.env.example

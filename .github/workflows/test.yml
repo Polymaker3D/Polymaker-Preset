@@ -1,60 +1,172 @@
 name: Run Tests
 
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+  workflow_dispatch:
+
 permissions:
   contents: read
 
-on:
-  push:
-    branches: [ main, develop ]
-  pull_request:
-    branches: [ main ]
+concurrency:
+  group: ci-${{ github.event.pull_request.number || github.ref }}
+  # Finish production deployments; newer PR and develop runs replace old ones.
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    
-    strategy:
-      matrix:
-        node-version: ['20.20.0', '22.22.0', '24.x']
-    
-    steps:
-    - uses: actions/checkout@v4
-    
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
-    
-    - name: Install dependencies
-      run: npm ci
-    
-    - name: Run tests
-      run: npm run test:all
-    
-    - name: Run tests with coverage
-      run: npm run test:coverage
-      continue-on-error: true
-
   lint:
     runs-on: ubuntu-latest
-    
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: read
+    outputs:
+      pages-enabled: ${{ steps.pages.outputs.enabled }}
     steps:
-    - uses: actions/checkout@v4
-    
-    - name: Use Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '22.x'
-    
-    - name: Verify preset JSON files
-      run: |
-        while IFS= read -r file; do
-          jq empty "$file" || exit 1
-        done < <(find preset -name "*.json")
-        echo "All preset files are valid JSON"
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
 
-    - name: Verify index.html SEO content is in sync
-      run: |
-        node scripts/generate-seo.mjs
-        git diff --exit-code index.html \
-          || (echo "::error::index.html SEO content is stale. Run 'npm run generate-seo' and commit." && exit 1)
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.22.0'
+
+      - name: Build and verify the public site
+        run: npm run build:site
+
+      - name: Verify the build leaves source files unchanged
+        run: git diff --exit-code
+
+      - name: Check all published assets and downloads over HTTP
+        run: |
+          python3 -m http.server 8000 --bind 127.0.0.1 --directory _site > "$RUNNER_TEMP/site-http.log" 2>&1 &
+          site_server_pid=$!
+          trap 'kill "$site_server_pid"' EXIT
+          for attempt in 1 2 3 4 5; do
+            if curl --fail --silent http://127.0.0.1:8000/build-info.json > /dev/null; then break; fi
+            sleep 1
+          done
+          npm run smoke:site -- http://127.0.0.1:8000 "$GITHUB_SHA" --all-presets
+
+      - name: Upload the site that tests and deployment will use
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+          retention-days: 7
+
+      - name: Check production publishing mode
+        id: pages
+        if: github.repository == 'Polymaker3D/Polymaker-Preset' && github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mode=$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq .build_type)
+          if [ "$mode" = "workflow" ]; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Production still uses branch publishing. After validating this artifact, an administrator can switch Pages Source to GitHub Actions and run this workflow on main."
+          fi
+
+  test:
+    needs: lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: ['20.20.0', '22.22.0', '24.x']
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: github-pages
+          path: ${{ runner.temp }}/site-artifact
+
+      - name: Test the exact generated files that will be deployed
+        run: tar --extract --file="$RUNNER_TEMP/site-artifact/artifact.tar" --directory=.
+
+      - name: Run tests
+        if: matrix.node-version != '22.22.0'
+        run: npm run test:all
+
+      - name: Run tests with coverage
+        if: matrix.node-version == '22.22.0'
+        run: npm run test:coverage
+
+  deploy:
+    needs: [lint, test]
+    if: github.repository == 'Polymaker3D/Polymaker-Preset' && github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && needs.lint.outputs.pages-enabled == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Skip a superseded main commit
+        id: current
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          head_sha=$(gh api "repos/$GITHUB_REPOSITORY/git/ref/heads/main" --jq .object.sha)
+          mode=$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq .build_type)
+          if [ "$head_sha" = "$GITHUB_SHA" ] && [ "$mode" = "workflow" ]; then
+            echo "publish=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "publish=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Main has advanced or Actions publishing is disabled; skipping deployment."
+          fi
+
+      - name: Configure Pages without changing its publishing mode
+        if: steps.current.outputs.publish == 'true'
+        uses: actions/configure-pages@v5
+        with:
+          enablement: false
+
+      - name: Deploy the tested artifact
+        if: steps.current.outputs.publish == 'true'
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - uses: actions/checkout@v4
+        if: steps.current.outputs.publish == 'true'
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        if: steps.current.outputs.publish == 'true'
+        with:
+          node-version: '22.22.0'
+
+      - name: Verify the published commit, assets and downloads
+        if: steps.current.outputs.publish == 'true'
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          for attempt in 1 2 3 4 5 6; do
+            if npm run smoke:site -- "$PAGE_URL" "$GITHUB_SHA"; then
+              exit 0
+            fi
+            if [ "$attempt" -lt 6 ]; then sleep 5; fi
+          done
+          echo "::error::The deployed site failed its HTTP smoke check."
+          exit 1

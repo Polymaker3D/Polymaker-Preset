@@ -119,8 +119,8 @@ Polymaker-Preset/
 │   ├── bbsflmt.test.js     # BBSFLMT format tests
 │   └── bbsflmt-tests.js    # Additional BBSFLMT tests
 ├── .github/workflows/      # CI/CD automation
-│   ├── auto-update-index-json.yml  # Auto-regenerates index.json on PRs
-│   └── test.yml            # Test runner workflow
+│   ├── test.yml            # Build, test the Pages artifact, and deploy main
+│   └── posthog-build-analytics.yml # Optional build analytics
 ├── README.md               # This file
 └── AGENTS.md               # Developer documentation
 ```
@@ -270,7 +270,57 @@ The **PostHog build analytics** GitHub Actions workflow runs after pushes to
 It installs dependencies and runs both generators, sending `index_generated`
 and `seo_injected` events under `github-actions`. Generated files stay in the
 temporary runner; this workflow does not commit changes or publish the site.
-Pull request tests and preset-update jobs continue to run without analytics.
+Site builds and pull request tests run without analytics credentials.
+When the secret is unset, the analytics workflow skips dependency installation
+and generation with a notice.
+
+### CI workflows
+
+The workflow runs on pull requests to `main` and `develop`, pushes to those
+branches, and manual dispatches. The `lint` job builds `_site` from the source
+presets and HTML template without changing tracked files. It generates fresh
+`index.json` and SEO content and verifies every preset, local asset and JSON-LD
+block before uploading a `github-pages` artifact.
+
+The Node.js 20.20, 22.22, and 24 test jobs download and extract that exact
+artifact into their source checkout. Each version runs the full suite once;
+Node.js 22.22 also collects coverage. The deployment job uses the same artifact
+only after all test jobs pass. No workflow commits to PR branches, and fork
+PRs use the same build and validation process. Tracked generated files remain
+convenient snapshots for local development; deployment regenerates them.
+
+PR and develop runs cancel obsolete runs. Main runs finish in order so an
+active deployment is not interrupted, and an outdated main run skips
+publication. Only `main` in `Polymaker3D/Polymaker-Preset` can deploy, using the
+`github-pages` environment. Deployment requires Pages publishing mode to
+already be GitHub Actions; the workflow never enables it automatically.
+After deployment, HTTP checks verify the commit recorded in `build-info.json`,
+local assets, and a preset download from each slicer/format.
+
+### Building and checking the deployment artifact
+
+```bash
+npm run build:site
+npm run verify:site
+python3 -m http.server 8000 --directory _site
+# In another terminal, check every published preset and referenced asset:
+npm run smoke:site -- http://localhost:8000 --all-presets
+```
+
+The build includes the source commit in `build-info.json` and uses its commit
+time when fresh index metadata is needed, making repeated builds of the same
+checkout identical. Full Git history is required to preserve per-preset dates.
+Only public site files, presets, assets, and Google verification files are
+copied; Node dependencies, worker code, scripts, tests, and credentials are
+excluded. `_site` is ignored by Git.
+
+### Production migration and rollback
+
+See [the Pages migration runbook](docs/pages-migration.md) before merging or
+changing production settings. The first main run can validate the entire
+artifact while branch publishing remains active. An administrator switches
+Pages Source to GitHub Actions only after that validation, then manually runs
+**Run Tests** on `main` to build, test, deploy, and verify the published commit.
 
 ### Website usage analytics
 

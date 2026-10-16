@@ -14,27 +14,38 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
+      - name: Check analytics configuration
+        id: analytics
+        env:
+          POSTHOG_API_KEY: ${{ secrets.POSTHOG_API_KEY }}
+        run: |
+          if [ -n "$POSTHOG_API_KEY" ]; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Build analytics skipped: POSTHOG_API_KEY is not configured."
+          fi
+
       - uses: actions/checkout@v4
+        if: steps.analytics.outputs.enabled == 'true'
         with:
           fetch-depth: 0
           persist-credentials: false
 
       - uses: actions/setup-node@v4
+        if: steps.analytics.outputs.enabled == 'true'
         with:
           node-version: '22.x'
           cache: npm
 
       - name: Install dependencies
+        if: steps.analytics.outputs.enabled == 'true'
         run: npm ci --ignore-scripts
 
       - name: Generate presets and send build events
+        if: steps.analytics.outputs.enabled == 'true'
         env:
           POSTHOG_API_KEY: ${{ secrets.POSTHOG_API_KEY }}
           POSTHOG_HOST: ${{ vars.POSTHOG_HOST }}
           CI_COMMIT_AUTHOR: github-actions
-        run: |
-          if [ -z "$POSTHOG_API_KEY" ]; then
-            echo "::error::Set the POSTHOG_API_KEY repository secret before running build analytics."
-            exit 1
-          fi
-          npm run generate
+        run: npm run generate

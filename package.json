@@ -4,10 +4,13 @@
   "description": "Official Polymaker 3D printing filament presets for BambuStudio, OrcaSlicer, and ElegooSlicer",
   "type": "module",
   "scripts": {
-    "test": "node --test scripts/*.test.mjs tests/*.test.js",
-    "test:coverage": "node --test --experimental-test-coverage scripts/*.test.mjs tests/*.test.js",
+    "test": "node --test scripts/*.test.mjs tests/*.test.mjs tests/*.test.js",
+    "test:coverage": "node --test --experimental-test-coverage scripts/*.test.mjs tests/*.test.mjs tests/*.test.js",
     "test:app": "node --test tests/app.test.mjs",
-    "test:all": "node --test scripts/*.test.mjs tests/*.test.mjs tests/*.test.js",
+    "test:all": "npm test",
+    "build:site": "node scripts/build-site.mjs",
+    "verify:site": "node scripts/verify-site.mjs _site",
+    "smoke:site": "node scripts/smoke-site.mjs",
     "generate-index": "node scripts/generate-index-json.mjs",
     "generate-seo": "node scripts/generate-seo.mjs",
     "generate": "node scripts/generate-index-json.mjs && node scripts/generate-seo.mjs"
