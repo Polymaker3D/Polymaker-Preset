@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updatedAt": "2026-10-20T01:03:03.844Z",
+  "updatedAt": "2026-11-02T08:58:56.222Z",
   "materials": [
     "Fiberon ASA-CF08",
     "Fiberon PA12-CF10",
@@ -258,7 +258,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PA12-CF10/BBL/H2C/BambuStudio/Fiberon PA12-CF10 @BBL H2C.json",
       "filename": "Fiberon PA12-CF10 @BBL H2C.json",
-      "updatedAt": "2026-08-14T15:28:59+08:00",
+      "updatedAt": "2026-11-02T16:58:21+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -274,7 +274,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PA12-CF10/BBL/H2D/BambuStudio/Fiberon PA12-CF10 @BBL H2D.json",
       "filename": "Fiberon PA12-CF10 @BBL H2D.json",
-      "updatedAt": "2026-08-14T15:28:59+08:00",
+      "updatedAt": "2026-11-02T16:58:21+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -290,7 +290,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PA12-CF10/BBL/H2S/BambuStudio/Fiberon PA12-CF10 @BBL H2S.json",
       "filename": "Fiberon PA12-CF10 @BBL H2S.json",
-      "updatedAt": "2026-08-14T15:28:59+08:00",
+      "updatedAt": "2026-11-02T16:58:21+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -299,7 +299,8 @@
         }
       ],
       "missingExtruderVariants": [
-        "Direct Drive High Flow"
+        "Direct Drive High Flow",
+        "Direct Drive E3D High Flow"
       ]
     },
     {
@@ -309,7 +310,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PA12-CF10/BBL/P2S/BambuStudio/Fiberon PA12-CF10 @BBL P2S.json",
       "filename": "Fiberon PA12-CF10 @BBL P2S.json",
-      "updatedAt": "2026-08-14T15:28:59+08:00",
+      "updatedAt": "2026-11-02T16:58:21+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -390,7 +391,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PA12-CF10/BBL/X2D/BambuStudio/Fiberon PA12-CF10 @BBL X2D.json",
       "filename": "Fiberon PA12-CF10 @BBL X2D.json",
-      "updatedAt": "2026-08-14T15:28:59+08:00",
+      "updatedAt": "2026-11-02T16:58:21+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -411,7 +412,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/Fiberon PA12-CF10/Elegoo/CC2/ElegooSlicer/Fiberon PA12-CF10 @Elegoo CC2.json",
       "filename": "Fiberon PA12-CF10 @Elegoo CC2.json",
-      "updatedAt": "2026-07-22T09:23:30+08:00",
+      "updatedAt": "2026-11-02T16:58:21+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -427,7 +428,7 @@
       "slicer": "OrcaSlicer",
       "path": "preset/Fiberon PA12-CF10/Snapmaker/U1/OrcaSlicer/Fiberon PA12-CF10 @Snapmaker U1.json",
       "filename": "Fiberon PA12-CF10 @Snapmaker U1.json",
-      "updatedAt": "2026-07-22T09:23:30+08:00",
+      "updatedAt": "2026-11-02T16:58:21+08:00",
       "compatiblePrinters": [
         {
           "brand": "Snapmaker",
@@ -443,7 +444,7 @@
       "slicer": "OrcaSlicer",
       "path": "preset/Fiberon PA6-CF20/Anycubic/Kobra S1/OrcaSlicer/Fiberon PA6-CF20 @Anycubic Kobra S1.json",
       "filename": "Fiberon PA6-CF20 @Anycubic Kobra S1.json",
-      "updatedAt": "2026-07-22T09:23:30+08:00",
+      "updatedAt": "2026-11-02T16:58:21+08:00",
       "compatiblePrinters": [
         {
           "brand": "Anycubic",
@@ -459,7 +460,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PA6-CF20/BBL/H2C/BambuStudio/Fiberon PA6-CF20 @BBL H2C.json",
       "filename": "Fiberon PA6-CF20 @BBL H2C.json",
-      "updatedAt": "2026-08-14T15:28:59+08:00",
+      "updatedAt": "2026-11-02T16:58:21+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -478,7 +479,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PA6-CF20/BBL/H2D/BambuStudio/Fiberon PA6-CF20 @BBL H2D.json",
       "filename": "Fiberon PA6-CF20 @BBL H2D.json",
-      "updatedAt": "2026-08-14T15:28:59+08:00",
+      "updatedAt": "2026-11-02T16:58:21+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -497,7 +498,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PA6-CF20/BBL/H2S/BambuStudio/Fiberon PA6-CF20 @BBL H2S.json",
       "filename": "Fiberon PA6-CF20 @BBL H2S.json",
-      "updatedAt": "2026-08-14T15:28:59+08:00",
+      "updatedAt": "2026-11-02T16:58:21+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -506,7 +507,8 @@
         }
       ],
       "missingExtruderVariants": [
-        "Direct Drive High Flow"
+        "Direct Drive High Flow",
+        "Direct Drive E3D High Flow"
       ]
     },
     {
@@ -516,7 +518,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PA6-CF20/BBL/P2S/BambuStudio/Fiberon PA6-CF20 @BBL P2S.json",
       "filename": "Fiberon PA6-CF20 @BBL P2S.json",
-      "updatedAt": "2026-08-14T15:28:59+08:00",
+      "updatedAt": "2026-11-02T16:58:21+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -597,7 +599,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PA6-CF20/BBL/X2D/BambuStudio/Fiberon PA6-CF20 @BBL X2D.json",
       "filename": "Fiberon PA6-CF20 @BBL X2D.json",
-      "updatedAt": "2026-08-14T15:28:59+08:00",
+      "updatedAt": "2026-11-02T16:58:21+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -613,7 +615,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/Fiberon PA6-CF20/Elegoo/CC2/ElegooSlicer/Fiberon PA6-CF20 @Elegoo CC2.json",
       "filename": "Fiberon PA6-CF20 @Elegoo CC2.json",
-      "updatedAt": "2026-07-22T09:23:30+08:00",
+      "updatedAt": "2026-11-02T16:58:21+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -645,7 +647,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PA6-GF25/BBL/H2C/BambuStudio/Fiberon PA6-GF25 @BBL H2C.json",
       "filename": "Fiberon PA6-GF25 @BBL H2C.json",
-      "updatedAt": "2026-08-14T15:28:59+08:00",
+      "updatedAt": "2026-11-02T16:58:21+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -664,7 +666,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PA6-GF25/BBL/H2D/BambuStudio/Fiberon PA6-GF25 @BBL H2D.json",
       "filename": "Fiberon PA6-GF25 @BBL H2D.json",
-      "updatedAt": "2026-08-14T15:28:59+08:00",
+      "updatedAt": "2026-11-02T16:58:21+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -683,7 +685,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PA6-GF25/BBL/H2S/BambuStudio/Fiberon PA6-GF25 @BBL H2S.json",
       "filename": "Fiberon PA6-GF25 @BBL H2S.json",
-      "updatedAt": "2026-08-14T15:28:59+08:00",
+      "updatedAt": "2026-11-02T16:58:21+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -692,7 +694,8 @@
         }
       ],
       "missingExtruderVariants": [
-        "Direct Drive High Flow"
+        "Direct Drive High Flow",
+        "Direct Drive E3D High Flow"
       ]
     },
     {
@@ -702,7 +705,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PA6-GF25/BBL/P2S/BambuStudio/Fiberon PA6-GF25 @BBL P2S.json",
       "filename": "Fiberon PA6-GF25 @BBL P2S.json",
-      "updatedAt": "2026-08-14T15:28:59+08:00",
+      "updatedAt": "2026-11-02T16:58:21+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -783,7 +786,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PA6-GF25/BBL/X2D/BambuStudio/Fiberon PA6-GF25 @BBL X2D.json",
       "filename": "Fiberon PA6-GF25 @BBL X2D.json",
-      "updatedAt": "2026-08-14T15:28:59+08:00",
+      "updatedAt": "2026-11-02T16:58:21+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -804,7 +807,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/Fiberon PA6-GF25/Elegoo/CC2/ElegooSlicer/Fiberon PA6-GF25 @Elegoo CC2.json",
       "filename": "Fiberon PA6-GF25 @Elegoo CC2.json",
-      "updatedAt": "2026-07-22T09:23:30+08:00",
+      "updatedAt": "2026-11-02T16:58:21+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -836,7 +839,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PA612-CF15/BBL/H2C/BambuStudio/Fiberon PA612-CF15 @BBL H2C.json",
       "filename": "Fiberon PA612-CF15 @BBL H2C.json",
-      "updatedAt": "2026-08-14T15:28:59+08:00",
+      "updatedAt": "2026-11-02T16:58:21+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -852,7 +855,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PA612-CF15/BBL/H2D/BambuStudio/Fiberon PA612-CF15 @BBL H2D.json",
       "filename": "Fiberon PA612-CF15 @BBL H2D.json",
-      "updatedAt": "2026-08-14T15:28:59+08:00",
+      "updatedAt": "2026-11-02T16:58:21+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -868,7 +871,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PA612-CF15/BBL/H2S/BambuStudio/Fiberon PA612-CF15 @BBL H2S.json",
       "filename": "Fiberon PA612-CF15 @BBL H2S.json",
-      "updatedAt": "2026-08-14T15:28:59+08:00",
+      "updatedAt": "2026-11-02T16:58:21+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -877,7 +880,8 @@
         }
       ],
       "missingExtruderVariants": [
-        "Direct Drive High Flow"
+        "Direct Drive High Flow",
+        "Direct Drive E3D High Flow"
       ]
     },
     {
@@ -887,7 +891,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PA612-CF15/BBL/P2S/BambuStudio/Fiberon PA612-CF15 @BBL P2S.json",
       "filename": "Fiberon PA612-CF15 @BBL P2S.json",
-      "updatedAt": "2026-08-14T15:28:59+08:00",
+      "updatedAt": "2026-11-02T16:58:21+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -968,7 +972,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PA612-CF15/BBL/X2D/BambuStudio/Fiberon PA612-CF15 @BBL X2D.json",
       "filename": "Fiberon PA612-CF15 @BBL X2D.json",
-      "updatedAt": "2026-08-14T15:28:59+08:00",
+      "updatedAt": "2026-11-02T16:58:21+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -984,7 +988,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/Fiberon PA612-CF15/Elegoo/CC2/ElegooSlicer/Fiberon PA612-CF15 @Elegoo CC2.json",
       "filename": "Fiberon PA612-CF15 @Elegoo CC2.json",
-      "updatedAt": "2026-07-22T09:23:30+08:00",
+      "updatedAt": "2026-11-02T16:58:21+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -1000,7 +1004,7 @@
       "slicer": "OrcaSlicer",
       "path": "preset/Fiberon PA612-CF15/Snapmaker/U1/OrcaSlicer/Fiberon PA612-CF15 @Snapmaker U1.json",
       "filename": "Fiberon PA612-CF15 @Snapmaker U1.json",
-      "updatedAt": "2026-07-23T23:01:18+08:00",
+      "updatedAt": "2026-11-02T16:58:21+08:00",
       "compatiblePrinters": [
         {
           "brand": "Snapmaker",
@@ -1016,7 +1020,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PA612-ESD/BBL/H2C/BambuStudio/Fiberon PA612-ESD @BBL H2C.json",
       "filename": "Fiberon PA612-ESD @BBL H2C.json",
-      "updatedAt": "2026-08-14T15:28:59+08:00",
+      "updatedAt": "2026-11-02T16:58:21+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -1032,7 +1036,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PA612-ESD/BBL/H2D/BambuStudio/Fiberon PA612-ESD @BBL H2D.json",
       "filename": "Fiberon PA612-ESD @BBL H2D.json",
-      "updatedAt": "2026-08-14T15:28:59+08:00",
+      "updatedAt": "2026-11-02T16:58:21+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -1051,7 +1055,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PA612-ESD/BBL/H2S/BambuStudio/Fiberon PA612-ESD @BBL H2S.json",
       "filename": "Fiberon PA612-ESD @BBL H2S.json",
-      "updatedAt": "2026-08-14T15:28:59+08:00",
+      "updatedAt": "2026-11-02T16:58:21+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -1060,7 +1064,8 @@
         }
       ],
       "missingExtruderVariants": [
-        "Direct Drive High Flow"
+        "Direct Drive High Flow",
+        "Direct Drive E3D High Flow"
       ]
     },
     {
@@ -1070,7 +1075,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PA612-ESD/BBL/P2S/BambuStudio/Fiberon PA612-ESD @BBL P2S.json",
       "filename": "Fiberon PA612-ESD @BBL P2S.json",
-      "updatedAt": "2026-08-14T15:28:59+08:00",
+      "updatedAt": "2026-11-02T16:58:21+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -1089,7 +1094,7 @@
       "slicer": "BambuStudio",
       "path": "preset/Fiberon PA612-ESD/BBL/X2D/BambuStudio/Fiberon PA612-ESD @BBL X2D.json",
       "filename": "Fiberon PA612-ESD @BBL X2D.json",
-      "updatedAt": "2026-08-14T15:28:59+08:00",
+      "updatedAt": "2026-11-02T16:58:21+08:00",
       "compatiblePrinters": [
         {
           "brand": "BBL",
@@ -1105,7 +1110,7 @@
       "slicer": "ElegooSlicer",
       "path": "preset/Fiberon PA612-ESD/Elegoo/CC2/ElegooSlicer/Fiberon PA612-ESD @Elegoo CC2.json",
       "filename": "Fiberon PA612-ESD @Elegoo CC2.json",
-      "updatedAt": "2026-07-22T09:23:30+08:00",
+      "updatedAt": "2026-11-02T16:58:21+08:00",
       "compatiblePrinters": [
         {
           "brand": "Elegoo",
@@ -13774,6 +13779,43 @@
     },
     {
       "material": "Polymaker G-Flex PETG",
+      "brand": "Anycubic",
+      "model": "Kobra S1",
+      "slicer": "OrcaSlicer",
+      "path": "preset/Polymaker G-Flex PETG/Anycubic/Kobra S1/OrcaSlicer/Polymaker G-Flex PETG @Anycubic Kobra S1.json",
+      "filename": "Polymaker G-Flex PETG @Anycubic Kobra S1.json",
+      "updatedAt": "2026-11-02T16:58:21+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "Anycubic",
+          "model": "Kobra S1",
+          "fullName": "Anycubic Kobra S1 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "Polymaker G-Flex PETG",
+      "brand": "BBL",
+      "model": "A1",
+      "slicer": "BambuStudio",
+      "path": "preset/Polymaker G-Flex PETG/BBL/A1/BambuStudio/Polymaker G-Flex PETG @BBL A1.json",
+      "filename": "Polymaker G-Flex PETG @BBL A1.json",
+      "updatedAt": "2026-11-02T16:58:21+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "A1",
+          "fullName": "Bambu Lab A1 0.4 nozzle"
+        },
+        {
+          "brand": "BBL",
+          "model": "A1M",
+          "fullName": "Bambu Lab A1 mini 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "Polymaker G-Flex PETG",
       "brand": "BBL",
       "model": "A2L",
       "slicer": "BambuStudio",
@@ -13785,6 +13827,22 @@
           "brand": "BBL",
           "model": "A2L",
           "fullName": "Bambu Lab A2L 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "Polymaker G-Flex PETG",
+      "brand": "BBL",
+      "model": "H2S",
+      "slicer": "BambuStudio",
+      "path": "preset/Polymaker G-Flex PETG/BBL/H2S/BambuStudio/Polymaker G-Flex PETG @BBL H2S.json",
+      "filename": "Polymaker G-Flex PETG @BBL H2S.json",
+      "updatedAt": "2026-11-02T16:58:21+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "H2S",
+          "fullName": "Bambu Lab H2S 0.4 nozzle"
         }
       ]
     },
@@ -13816,6 +13874,38 @@
           "brand": "BBL",
           "model": "X1C",
           "fullName": "Bambu Lab X1 Carbon 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "Polymaker G-Flex PETG",
+      "brand": "BBL",
+      "model": "X2D",
+      "slicer": "BambuStudio",
+      "path": "preset/Polymaker G-Flex PETG/BBL/X2D/BambuStudio/Polymaker G-Flex PETG @BBL X2D.json",
+      "filename": "Polymaker G-Flex PETG @BBL X2D.json",
+      "updatedAt": "2026-11-02T16:58:21+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "BBL",
+          "model": "X2D",
+          "fullName": "Bambu Lab X2D 0.4 nozzle"
+        }
+      ]
+    },
+    {
+      "material": "Polymaker G-Flex PETG",
+      "brand": "Elegoo",
+      "model": "CC2",
+      "slicer": "ElegooSlicer",
+      "path": "preset/Polymaker G-Flex PETG/Elegoo/CC2/ElegooSlicer/Polymaker G-Flex PETG @Elegoo CC2.json",
+      "filename": "Polymaker G-Flex PETG @Elegoo CC2.json",
+      "updatedAt": "2026-11-02T16:58:21+08:00",
+      "compatiblePrinters": [
+        {
+          "brand": "Elegoo",
+          "model": "CC2",
+          "fullName": "Elegoo Centauri Carbon 2 0.4 nozzle"
         }
       ]
     },
