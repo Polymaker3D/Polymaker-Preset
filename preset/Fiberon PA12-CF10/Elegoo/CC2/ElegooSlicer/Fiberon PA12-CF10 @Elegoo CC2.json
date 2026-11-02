@@ -1,38 +1,14 @@
 {
-    "type": "filament",
-    "name": "Fiberon PA12-CF10 @Elegoo CC2",
     "from": "User",
-    "instantiation": "true",
-    "activate_air_filtration": [
-        "0"
+    "name": "Fiberon PA12-CF10 @Elegoo CC2",
+    "type": "filament",
+    "version": "1.3.2.9",
+    "bed_type": [
+        "Cool Plate"
     ],
-    "chamber_temperatures": [
-        "0"
-    ],
-    "close_fan_the_first_x_layers": [
-        "3"
-    ],
-    "complete_print_exhaust_fan_speed": [
-        "70"
-    ],
-    "cool_plate_temp": [
-        "0"
-    ],
-    "cool_plate_temp_initial_layer": [
-        "0"
-    ],
-    "during_print_exhaust_fan_speed": [
-        "70"
-    ],
-    "eng_plate_temp": [
-        "90"
-    ],
-    "eng_plate_temp_initial_layer": [
-        "90"
-    ],
-    "fan_cooling_layer_time": [
-        "31"
-    ],
+    "inherits": "Generic PC-CF @Elegoo",
+    "setting_id": "GPCCF00",
+    "filament_id": "PMPA01",
     "fan_max_speed": [
         "40"
     ],
@@ -42,108 +18,124 @@
     "filament_cost": [
         "20"
     ],
-    "filament_density": [
-        "1.06"
-    ],
-    "filament_diameter": [
-        "1.75"
-    ],
-    "filament_flow_ratio": [
-        "0.836"
-    ],
-    "filament_is_support": [
-        "0"
-    ],
-    "filament_max_volumetric_speed": [
-        "8"
-    ],
-    "filament_minimal_purge_on_wipe_tower": [
-        "15"
-    ],
-    "filament_settings_id": [
-        "Fiberon PA12-CF10 @Elegoo CC2"
-    ],
-    "filament_soluble": [
-        "0"
-    ],
     "filament_type": [
-        "PA-CF"
+        "PA"
     ],
-    "filament_vendor": [
-        "Polymaker"
-    ],
-    "full_fan_speed_layer": [
-        "0"
+    "instantiation": "true",
+    "eng_plate_temp": [
+        "90"
     ],
     "hot_plate_temp": [
         "90"
     ],
-    "hot_plate_temp_initial_layer": [
-        "90"
+    "cool_plate_temp": [
+        "0"
+    ],
+    "filament_vendor": [
+        "Polymaker"
+    ],
+    "filament_density": [
+        "1.06"
+    ],
+    "filament_soluble": [
+        "0"
+    ],
+    "idle_temperature": [
+        "0"
+    ],
+    "pressure_advance": [
+        "0.1"
+    ],
+    "filament_diameter": [
+        "1.75"
+    ],
+    "is_custom_defined": "0",
+    "pm_method_version": "v1",
+    "filament_end_gcode": [
+        "; filament end gcode \n"
     ],
     "nozzle_temperature": [
-        "280"
-    ],
-    "nozzle_temperature_initial_layer": [
         "280"
     ],
     "overhang_fan_speed": [
         "100"
     ],
-    "overhang_fan_threshold": [
-        "25%"
-    ],
-    "reduce_fan_stop_start_freq": [
-        "1"
-    ],
-    "required_nozzle_HRC": [
-        "3"
-    ],
-    "slow_down_for_layer_cooling": [
-        "1"
-    ],
-    "slow_down_layer_time": [
-        "8"
-    ],
-    "slow_down_min_speed": [
-        "20"
-    ],
-    "temperature_vitrification": [
-        "55"
-    ],
-    "textured_plate_temp": [
-        "50"
-    ],
-    "textured_plate_temp_initial_layer": [
-        "50"
+    "chamber_temperature": [
+        "0"
     ],
     "compatible_printers": [
         "Elegoo Centauri Carbon 2 0.4 nozzle"
     ],
+    "filament_flow_ratio": [
+        "0.836"
+    ],
+    "slow_down_min_speed": [
+        "10"
+    ],
+    "textured_plate_temp": [
+        "50"
+    ],
+    "filament_settings_id": [
+        "Fiberon PA12-CF10 @Elegoo CC2"
+    ],
     "filament_start_gcode": [
-        "; Filament start gcode\n"
+        "; Filament gcode\n"
     ],
-    "filament_end_gcode": [
-        "; filament end gcode \n"
+    "full_fan_speed_layer": [
+        "0"
     ],
-    "inherits": "Generic PC-CF @Elegoo",
+    "slow_down_layer_time": [
+        "8"
+    ],
+    "fan_cooling_layer_time": [
+        "31"
+    ],
+    "overhang_fan_threshold": [
+        "25%"
+    ],
+    "enable_pressure_advance": [
+        "1"
+    ],
+    "temperature_vitrification": [
+        "170"
+    ],
+    "enable_overhang_bridge_fan": [
+        "1"
+    ],
+    "reduce_fan_stop_start_freq": [
+        "1"
+    ],
+    "slow_down_for_layer_cooling": [
+        "1"
+    ],
+    "close_fan_the_first_x_layers": [
+        "3"
+    ],
+    "eng_plate_temp_initial_layer": [
+        "90"
+    ],
+    "hot_plate_temp_initial_layer": [
+        "90"
+    ],
     "nozzle_temperature_range_low": [
         "280"
+    ],
+    "cool_plate_temp_initial_layer": [
+        "0"
+    ],
+    "filament_max_volumetric_speed": [
+        "8"
     ],
     "nozzle_temperature_range_high": [
         "300"
     ],
-    "filament_id": "PMPA01",
-    "setting_id": "GPCCF00",
-    "enable_pressure_advance": [
-        "1"
+    "nozzle_temperature_initial_layer": [
+        "280"
     ],
-    "is_custom_defined": "0",
-    "pressure_advance": [
-        "0.1"
+    "textured_plate_temp_initial_layer": [
+        "50"
     ],
-    "version": "1.3.2.9",
-    "idle_temperature": [
-        "0"
+    "filament_minimal_purge_on_wipe_tower": [
+        "15"
     ]
 }
