@@ -1,0 +1,142 @@
+{
+    "from": "User",
+    "name": "Polymaker G-Flex PETG @Anycubic Kobra S1",
+    "type": "filament",
+    "version": "2.3.0.3",
+    "bed_type": [
+        "Cool Plate"
+    ],
+    "inherits": "Generic PETG @System",
+    "setting_id": "OGFSA04",
+    "filament_id": "PMPE20",
+    "renamed_from": "My Generic PETG",
+    "fan_max_speed": [
+        "100"
+    ],
+    "fan_min_speed": [
+        "0"
+    ],
+    "filament_cost": [
+        "30"
+    ],
+    "filament_type": [
+        "PETG"
+    ],
+    "instantiation": "true",
+    "eng_plate_temp": [
+        "0"
+    ],
+    "hot_plate_temp": [
+        "70"
+    ],
+    "cool_plate_temp": [
+        "60"
+    ],
+    "filament_vendor": [
+        "Polymaker"
+    ],
+    "filament_density": [
+        "1.25"
+    ],
+    "filament_soluble": [
+        "0"
+    ],
+    "filament_diameter": [
+        "1.75"
+    ],
+    "is_custom_defined": "0",
+    "pm_method_version": "v1",
+    "filament_end_gcode": [
+        "; filament end gcode \n"
+    ],
+    "nozzle_temperature": [
+        "220"
+    ],
+    "overhang_fan_speed": [
+        "100"
+    ],
+    "chamber_temperature": [
+        "0"
+    ],
+    "compatible_printers": [
+        "Anycubic Kobra S1 0.4 nozzle"
+    ],
+    "filament_flow_ratio": [
+        "1"
+    ],
+    "slow_down_min_speed": [
+        "30"
+    ],
+    "textured_plate_temp": [
+        "80"
+    ],
+    "filament_settings_id": [
+        "Polymaker G-Flex PETG @Anycubic Kobra S1"
+    ],
+    "filament_start_gcode": [
+        "; filament start gcode\n"
+    ],
+    "full_fan_speed_layer": [
+        "0"
+    ],
+    "slow_down_layer_time": [
+        "6"
+    ],
+    "fan_cooling_layer_time": [
+        "30"
+    ],
+    "overhang_fan_threshold": [
+        "10%"
+    ],
+    "enable_pressure_advance": [
+        "1"
+    ],
+    "temperature_vitrification": [
+        "90"
+    ],
+    "enable_overhang_bridge_fan": [
+        "1"
+    ],
+    "filament_retraction_length": [
+        "1"
+    ],
+    "reduce_fan_stop_start_freq": [
+        "1"
+    ],
+    "slow_down_for_layer_cooling": [
+        "1"
+    ],
+    "additional_cooling_fan_speed": [
+        "70"
+    ],
+    "close_fan_the_first_x_layers": [
+        "3"
+    ],
+    "eng_plate_temp_initial_layer": [
+        "0"
+    ],
+    "hot_plate_temp_initial_layer": [
+        "70"
+    ],
+    "nozzle_temperature_range_low": [
+        "210"
+    ],
+    "cool_plate_temp_initial_layer": [
+        "60"
+    ],
+    "filament_max_volumetric_speed": [
+        "12"
+    ],
+    "nozzle_temperature_range_high": [
+        "240"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "220"
+    ],
+    "textured_plate_temp_initial_layer": [
+        "80"
+    ],
+    "filament_minimal_purge_on_wipe_tower": [
+        "15"
+    ]
+}

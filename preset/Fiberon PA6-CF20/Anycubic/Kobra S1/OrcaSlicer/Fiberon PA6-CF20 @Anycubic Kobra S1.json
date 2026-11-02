@@ -1,38 +1,14 @@
 {
-    "type": "filament",
-    "name": "Fiberon PA6-CF20 @Anycubic Kobra S1",
     "from": "User",
-    "instantiation": "true",
-    "activate_air_filtration": [
-        "0"
+    "name": "Fiberon PA6-CF20 @Anycubic Kobra S1",
+    "type": "filament",
+    "version": "2.3.2.60",
+    "bed_type": [
+        "Cool Plate"
     ],
-    "chamber_temperatures": [
-        "0"
-    ],
-    "close_fan_the_first_x_layers": [
-        "3"
-    ],
-    "complete_print_exhaust_fan_speed": [
-        "70"
-    ],
-    "cool_plate_temp": [
-        "0"
-    ],
-    "cool_plate_temp_initial_layer": [
-        "0"
-    ],
-    "during_print_exhaust_fan_speed": [
-        "70"
-    ],
-    "eng_plate_temp": [
-        "40"
-    ],
-    "eng_plate_temp_initial_layer": [
-        "40"
-    ],
-    "fan_cooling_layer_time": [
-        "15"
-    ],
+    "inherits": "Fiberon PA6-CF @System",
+    "setting_id": "OGFSL50_00",
+    "filament_id": "PMPA02",
     "fan_max_speed": [
         "100"
     ],
@@ -42,125 +18,118 @@
     "filament_cost": [
         "83.99"
     ],
-    "filament_density": [
-        "1.17"
-    ],
-    "filament_diameter": [
-        "1.75"
-    ],
-    "filament_flow_ratio": [
-        "0.95"
-    ],
-    "filament_is_support": [
-        "0"
-    ],
-    "filament_max_volumetric_speed": [
-        "12"
-    ],
-    "filament_minimal_purge_on_wipe_tower": [
-        "15"
-    ],
-    "filament_settings_id": [
-        "Fiberon PA6-CF20 @Anycubic Kobra S1"
-    ],
-    "filament_soluble": [
-        "0"
-    ],
-    "filament_type": [
-        "PA6-CF"
-    ],
-    "filament_vendor": [
-        "Polymaker"
-    ],
-    "full_fan_speed_layer": [
-        "0"
-    ],
-    "filament_scarf_seam_type": [
-        "none"
-    ],
-    "filament_scarf_height": [
-        "10%"
-    ],
-    "filament_scarf_gap": [
-        "0%"
-    ],
-    "filament_scarf_length": [
-        "10"
-    ],
-    "filament_shrink": [
-        "100%"
+    "filament_type": "PA6-CF",
+    "instantiation": "true",
+    "eng_plate_temp": [
+        "40"
     ],
     "hot_plate_temp": [
         "50"
     ],
-    "hot_plate_temp_initial_layer": [
-        "50"
+    "cool_plate_temp": [
+        "0"
+    ],
+    "filament_vendor": [
+        "Polymaker"
+    ],
+    "filament_density": [
+        "1.17"
+    ],
+    "filament_soluble": [
+        "0"
+    ],
+    "idle_temperature": [
+        "0"
+    ],
+    "filament_diameter": [
+        "1.75"
+    ],
+    "pm_method_version": "v1",
+    "filament_end_gcode": [
+        "; filament end gcode \n"
     ],
     "nozzle_temperature": [
-        "300"
-    ],
-    "nozzle_temperature_initial_layer": [
         "300"
     ],
     "overhang_fan_speed": [
         "100"
     ],
-    "overhang_fan_threshold": [
-        "95%"
-    ],
-    "reduce_fan_stop_start_freq": [
-        "1"
-    ],
-    "required_nozzle_HRC": [
-        "40"
-    ],
-    "supertack_plate_temp": [
+    "chamber_temperature": [
         "0"
-    ],
-    "supertack_plate_temp_initial_layer": [
-        "0"
-    ],
-    "slow_down_for_layer_cooling": [
-        "1"
-    ],
-    "slow_down_layer_time": [
-        "2"
-    ],
-    "slow_down_min_speed": [
-        "10"
-    ],
-    "temperature_vitrification": [
-        "74.2"
-    ],
-    "textured_plate_temp": [
-        "40"
-    ],
-    "textured_plate_temp_initial_layer": [
-        "40"
-    ],
-    "filament_start_gcode": [
-        "; Filament gcode\n"
-    ],
-    "filament_end_gcode": [
-        "; filament end gcode\n"
     ],
     "compatible_printers": [
         "Anycubic Kobra S1 0.4 nozzle"
     ],
-    "inherits": "Fiberon PA6-CF @System",
-    "filament_id": "PMPA02",
-    "nozzle_temperature_range_high": [
-        "300"
+    "filament_flow_ratio": [
+        "0.95"
+    ],
+    "slow_down_min_speed": [
+        "10"
+    ],
+    "textured_plate_temp": [
+        "40"
+    ],
+    "filament_settings_id": [
+        "Fiberon PA6-CF20 @Anycubic Kobra S1"
+    ],
+    "filament_start_gcode": [
+        "; Filament gcode\n"
+    ],
+    "full_fan_speed_layer": [
+        "0"
+    ],
+    "slow_down_layer_time": [
+        "2"
+    ],
+    "fan_cooling_layer_time": [
+        "15"
+    ],
+    "overhang_fan_threshold": [
+        "95%"
+    ],
+    "filament_extruder_variant": [
+        "Direct Drive Standard"
+    ],
+    "temperature_vitrification": [
+        "74.2"
+    ],
+    "enable_overhang_bridge_fan": [
+        "1"
+    ],
+    "reduce_fan_stop_start_freq": [
+        "1"
+    ],
+    "slow_down_for_layer_cooling": [
+        "1"
+    ],
+    "close_fan_the_first_x_layers": [
+        "3"
+    ],
+    "eng_plate_temp_initial_layer": [
+        "40"
+    ],
+    "hot_plate_temp_initial_layer": [
+        "50"
     ],
     "nozzle_temperature_range_low": [
         "280"
     ],
-    "setting_id": "OGFSL50_00",
-    "filament_extruder_variant": [
-        "Direct Drive Standard"
-    ],
-    "version": "2.3.2.60",
-    "idle_temperature": [
+    "cool_plate_temp_initial_layer": [
         "0"
+    ],
+    "filament_max_volumetric_speed": [
+        "12"
+    ],
+    "nozzle_temperature_range_high": [
+        "300"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "300"
+    ],
+    "textured_plate_temp_initial_layer": [
+        "40"
+    ],
+    "filament_minimal_purge_on_wipe_tower": [
+        "15"
     ]
 }
