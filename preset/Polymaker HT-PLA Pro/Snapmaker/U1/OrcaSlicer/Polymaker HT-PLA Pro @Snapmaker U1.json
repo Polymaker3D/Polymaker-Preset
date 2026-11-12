@@ -156,7 +156,7 @@
     "textured_plate_temp_initial_layer": [
         "0"
     ],
-    "inherits": "Snapmaker PLA @U1",
+    "inherits": "Generic PLA @System",
     "default_filament_colour": [
         ""
     ],
