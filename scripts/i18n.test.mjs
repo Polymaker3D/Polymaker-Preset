@@ -5,7 +5,7 @@ import vm from 'node:vm';
 
 var source = readFileSync(new URL('../i18n.js', import.meta.url), 'utf8');
 var html = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
-var languages = ['en', 'zh', 'de', 'it', 'fr', 'es'];
+var languages = ['en', 'zh', 'de', 'it', 'fr', 'es', 'ja'];
 
 function translationKeys(language) {
   var start = source.indexOf('    ' + language + ': {');
@@ -42,8 +42,8 @@ describe('i18n', function () {
 
   it('detects supported browser languages and exposes each switcher option', function () {
     assert.deepStrictEqual(
-      ['en-US', 'zh-CN', 'de-DE', 'de_DE', 'it-IT', 'fr-FR', 'es-ES', 'pt-BR'].map(detectLanguage),
-      ['en', 'zh', 'de', 'de', 'it', 'fr', 'es', 'en']
+      ['en-US', 'zh-CN', 'de-DE', 'de_DE', 'it-IT', 'fr-FR', 'es-ES', 'ja-JP', 'pt-BR'].map(detectLanguage),
+      ['en', 'zh', 'de', 'de', 'it', 'fr', 'es', 'ja', 'en']
     );
     languages.forEach(function (language) {
       assert.match(html, new RegExp('class="lang-option" data-lang="' + language + '"'));
