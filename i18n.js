@@ -171,6 +171,7 @@ var I18N = (function () {
       'lang.it': 'Italiano',
       'lang.fr': 'Français',
       'lang.es': 'Español',
+      'lang.ja': '日本語',
 
       // Missing value fallbacks
       'value.unknown': 'Unknown',
@@ -349,6 +350,7 @@ var I18N = (function () {
       'lang.it': 'Italiano',
       'lang.fr': 'Français',
       'lang.es': 'Español',
+      'lang.ja': '日本語',
 
       // Missing value fallbacks
       'value.unknown': '未知',
@@ -530,6 +532,7 @@ var I18N = (function () {
       'lang.it': 'Italiano',
       'lang.fr': 'Français',
       'lang.es': 'Español',
+      'lang.ja': '日本語',
 
       // Missing value fallbacks
       'value.unknown': 'Unbekannt',
@@ -699,6 +702,7 @@ var I18N = (function () {
       'lang.it': 'Italiano',
       'lang.fr': 'Français',
       'lang.es': 'Español',
+      'lang.ja': '日本語',
 
       'value.unknown': 'Sconosciuto',
       'value.unknown.filament': 'Filamento sconosciuto',
@@ -865,6 +869,7 @@ var I18N = (function () {
       'lang.it': 'Italiano',
       'lang.fr': 'Français',
       'lang.es': 'Español',
+      'lang.ja': '日本語',
 
       'value.unknown': 'Inconnu',
       'value.unknown.filament': 'Filament inconnu',
@@ -1043,6 +1048,7 @@ var I18N = (function () {
       'lang.it': 'Italiano',
       'lang.fr': 'Français',
       'lang.es': 'Español',
+      'lang.ja': '日本語',
 
       // Missing value fallbacks
       'value.unknown': 'Desconocido',
@@ -1052,6 +1058,185 @@ var I18N = (function () {
       // Download button titles
       'title.download.json': 'Descargar archivo de preajuste',
       'title.download.bundle': 'Descargar como paquete de BambuStudio',
+
+      // Filename defaults
+      'filename.preset': 'preset.json',
+      'filename.bundle': 'polymaker-bundle.bbsflmt'
+    },
+
+    ja: {
+      // Hero
+      'hero.logo.alt': 'Polymaker',
+      'hero.title': 'フィラメントプリセット',
+      'hero.desc': 'スライサーを選択して、Bambu Studio、OrcaSlicer、ElegooSlicer、PrusaSlicer向けのPolymaker印刷プロファイルとフィラメントプリセットを表示・ダウンロードできます',
+      'hero.howto': '使い方',
+      'product.htPlaPro.title': 'Polymaker™ HT-PLA Proのご紹介',
+      'product.htPlaPro.tagline': '耐熱性と耐衝撃性を備えた、進化したPLA。',
+      'product.htPlaPro.cta': '詳しく見る',
+
+      // LayerHub banner
+      'banner.title': '公式プリセットと世界中のクリエイター',
+      'banner.title.line2': 'すべてLayerHubに集結',
+      'banner.subtitle': 'お探しのフィラメントプリセットが見つかりませんか？<br>LayerHubでは、公式おすすめプリセットや世界中のクリエイターが共有したプリセットを見つけたり、ご自身のプリセットを共有したりできます。',
+      'banner.submit': '今すぐ見る',
+
+      // Filters
+      'filter.slicer.label': 'スライサーを選択',
+      'filter.slicer.placeholder': 'スライサーを選択',
+      'filter.slicer.notice': '各プリセットは、素材、プリンターモデル、スライサーの特定の組み合わせに合わせて調整されています。お使いのスライサー向けのプリセットがなく、別のスライサー向けのものがある場合は、手動で調整できます。',
+      'filter.slicer.guide': '変換ガイドを開く',
+      'filter.series.label': 'シリーズ',
+      'filter.brand.label': 'プリンターブランド',
+      'filter.model.label': 'プリンターモデル',
+      'filter.all': 'すべて',
+      'filter.all.series': 'すべてのシリーズ',
+      'filter.all.brands': 'すべてのブランド',
+      'filter.all.models': 'すべてのモデル',
+      'filter.strict': '厳密モード：このプリンター専用に作成されたプリセットのみ表示',
+
+      // List / table
+      'list.title': 'プリセット',
+      'list.loading': '読み込み中\u2026',
+      'list.count': '{m}種類の素材に{n}件のプリセットがあります。',
+      'list.failed': '読み込みに失敗しました：{msg}',
+      'table.material': '素材',
+      'table.brand': 'プリンターブランド',
+      'table.printer': 'プリンター',
+      'table.compatible': '対応プリンター',
+      'table.modified': '最終更新日',
+      'table.action': 'ダウンロード',
+
+      // Buttons
+      'btn.download.selected': '選択項目をダウンロード',
+      'btn.download.selected.loading': '読み込み中...',
+      'btn.download.bundle': 'バンドルをダウンロード（.bbsflmt）',
+      'btn.download.bundle.loading': '読み込み中...',
+
+      // Folder row
+      'folder.presets': '{n}件のプリセット',
+      'folder.expand': 'クリックして展開',
+
+      // Alerts / errors
+      'alert.no.bambu': 'ダウンロード可能なBambuStudioプリセットがありません。スライサーとしてBambuStudioが選択されていることを確認してください。',
+      'alert.no.presets': 'プリセットがありません',
+      'alert.load.failed': 'プリセットデータを読み込めませんでした。接続を確認して、もう一度お試しください。',
+      'alert.error.loading': 'プリセットの読み込み中にエラーが発生しました：{msg}',
+      'alert.invalid.url': 'プリセットURLが無効です',
+      'alert.error.preset': 'プリセットの読み込み中にエラーが発生しました：{msg}。もう一度お試しください。',
+      'alert.error.download': 'プリセットのダウンロード中にエラーが発生しました：{msg}',
+
+      // Duplicate modal
+      'dup.title': '\u26a0\ufe0f 重複ファイルが検出されました',
+      'dup.intro': '複数のプリセットから同じファイル名が生成されます。重複ごとに残すプリセットを選択してください：',
+      'dup.for.printer': '対象プリンター：{name}',
+      'dup.use.profile': '{name}プロファイルを使用',
+      'dup.compatible': '対応機種：{list}',
+      'dup.cancel': 'キャンセル',
+      'dup.confirm': 'エクスポートを確定',
+
+      // BambuStudio Restart Warning Modal
+      'modal.restart.title': '\u26a0\ufe0f BambuStudioの再起動が必要です',
+      'modal.restart.message': '<strong>重要：</strong> BambuStudioにプリセットをインポートした後は、スライスや印刷を行う前に<strong>必ずスライサーを再起動してください</strong>。再起動しないと、誤った設定が適用される可能性があります。',
+      'modal.restart.link': 'GitHub Issue #10583を見る \u2192',
+      'modal.restart.cancel': 'キャンセル',
+      'modal.restart.confirm': 'ダウンロードを続ける',
+      'modal.missingvariant.title': '⚠️ 一部のノズルオプションにはプリセットがありません',
+      'modal.missingvariant.intro': '選択したプリセットには、このプリンターのすべてのノズル／エクストルーダーオプションが含まれていません。次のバリエーション用プリセットは作成されていません：',
+      'modal.missingvariant.note': 'ダウンロードは続行できますが、該当するノズルオプションには調整済みの値がありません。',
+      'modal.missingvariant.ack': 'ダウンロードを続ける',
+
+      'modal.convert.title': 'Bambu StudioのプリセットをOrca Slicerにインポートする方法',
+      'modal.convert.warning': '警告：Polymakerは手動によるプリセット変換を公式にはサポートしていません。変換によって設定が削除されたり、誤った値が割り当てられたり、その他のパラメーターエラーが発生したりする可能性があります。これらのエラーは予期しない印刷結果につながることがあります。使用前に、インポートしたすべてのパラメーターを確認し、テスト印刷を行ってください。',
+      'modal.convert.intro': 'このガイドでは、Bambu Studioまたは他社製プリンターのスライサーから印刷プロファイルをOrca Slicerへインポートする方法を説明します。',
+      'modal.convert.steps': [
+        '<h3 class="conversion-step-title">プリンターとフィラメントを選択</h3><p>Bambu Studioで、エクスポートする<b>プリンター</b>と<b>フィラメント</b>が正しく選択され、エクスポートしたいパラメーター設定が適用されていることを確認します。</p><img class="conversion-step-image" src="assets/conversion-guide/en-step-1.png" alt="Bambu Studioでのプリンターとフィラメントの選択" width="1915" height="1021" loading="lazy" decoding="async">',
+        '<h3 class="conversion-step-title">プロジェクトを3MFファイルとして保存</h3><p>設定が完了したら、ファイルメニューから<b>名前を付けてプロジェクトを保存</b>を選択し、現在のプロジェクトを<code>.3mf</code>ファイルとして保存します。</p><img class="conversion-step-image" src="assets/conversion-guide/en-step-2.png" alt="Bambu Studioの名前を付けてプロジェクトを保存コマンド" width="1919" height="1011" loading="lazy" decoding="async">',
+        '<h3 class="conversion-step-title">Orca Slicerでプロジェクトを開く</h3><p>Orca Slicerを開き、ファイルメニューの<b>プロジェクトを開く</b>をクリックするか、保存した<code>.3mf</code>ファイルをOrca Slicerのウィンドウにドラッグします。</p><img class="conversion-step-image" src="assets/conversion-guide/en-step-3.png" alt="Orca Slicerのプロジェクトを開くコマンド" width="1911" height="1015" loading="lazy" decoding="async">',
+        '<h3 class="conversion-step-title">インポートエラーを確認</h3><p>Orca Slicerでファイルを開く際、未対応のパラメーターに関するエラーが表示されることがあります。各メッセージを確認し、確定または閉じて続行します。</p><img class="conversion-step-image" src="assets/conversion-guide/en-step-4.png" alt="Orca Slicerの未対応パラメーターに関するメッセージ" width="1918" height="1005" loading="lazy" decoding="async">',
+        '<h3 class="conversion-step-title">フィラメントを編集</h3><p>プロジェクトが読み込まれたら、左パネルでインポートしたフィラメントとプロセス設定を探します。フィラメントの横にある<b>編集</b>ボタンをクリックし、パラメーターを確認してから<b>保存</b>アイコンをクリックします。</p><img class="conversion-step-image" src="assets/conversion-guide/en-step-5.png" alt="Orca Slicerでのフィラメント設定の編集" width="1917" height="1020" loading="lazy" decoding="async">',
+        '<h3 class="conversion-step-title">ユーザープリセットとして保存</h3><p>保存ダイアログで<b>ユーザープリセット</b>を選択し、保存を確定します。Orca Slicerにカスタムプリセットとして設定が保存されます。</p><img class="conversion-step-image" src="assets/conversion-guide/en-step-6.png" alt="Orca Slicerのユーザープリセットとして保存オプション" width="1919" height="1017" loading="lazy" decoding="async">',
+        '<h3 class="conversion-step-title">設定の正しさを確認</h3><p>レイヤー高さ、エクストルーダー温度、ベッド温度、速度など、インポートしたプロセスとフィラメントのパラメーターを確認します。印刷前に元のBambu Studioの設定と比較してください。</p><img class="conversion-step-image" src="assets/conversion-guide/en-step-7.png" alt="Orca Slicerにインポートされたプリセットパラメーター" width="1915" height="1015" loading="lazy" decoding="async">'
+      ],
+      'modal.convert.complete': 'カスタムプリセットを保存すると、Orca Slicerのプリセットメニューから直接選択できます。',
+
+      // Install modal
+      'modal.install.title': '\ud83d\udce6 手動インストール',
+      'modal.bambu.title': 'Bambu Studio',
+      'modal.bambu.method1.title': '方法1：バンドル方式（推奨）',
+      'modal.bambu.method1.steps': [
+        '<a href="https://presets.polymaker.com" target="_blank" rel="noopener noreferrer">ダウンロードページ</a>からプリセットの<strong>.bbsflmt</strong>ファイル（またはバンドルZIP）をダウンロードします。',
+        'ZIPファイルの場合は展開し、.bbsflmtファイルを取り出します。',
+        'Bambu Studioを開きます。',
+        '<strong>ファイル</strong> \u2192 <strong>インポート</strong> \u2192 <strong>プリセットをインポート...</strong>の順に選択します。',
+        '<strong>.bbsflmt</strong>ファイルを選択します。',
+        'プロジェクトの消耗品リストで素材をクリックし、インポートしたカスタムプリセットを選択すると、プリセットリストに表示されます。'
+      ],
+      'modal.bambu.method1.note': '<strong>注：</strong> .bbsflmtバンドルはBambuStudioでのみ使用できます。BambuStudioプリセットを選択すると、バンドルのダウンロードボタンが表示されます。',
+      'modal.bambu.method2.title': '方法2：個別ファイル方式',
+      'modal.bambu.method2.steps': [
+        '<a href="https://presets.polymaker.com" target="_blank" rel="noopener noreferrer">ダウンロードページ</a>からプリセットのJSONファイル（または単一ファイルのZIP）をダウンロードします。',
+        'Bambu Studioを開きます。',
+        '<strong>ファイル</strong> \u2192 <strong>インポート</strong> \u2192 <strong>プリセットをインポート...</strong>の順に選択します。',
+        'JSONまたはZIPファイルを選択します。',
+        'プロジェクトの消耗品リストで素材をクリックし、インポートしたカスタムプリセットを選択すると、プリセットリストに表示されます。'
+      ],
+      'modal.orca.title': 'OrcaSlicer / ElegooSlicer',
+      'modal.orca.steps': [
+        '<a href="https://presets.polymaker.com" target="_blank" rel="noopener noreferrer">ダウンロードページ</a>からプリセットを<strong>JSON</strong>または<strong>単一ファイルのZIP</strong>としてダウンロードします。',
+        'OrcaSlicerまたはElegooSlicerを開きます。',
+        '<strong>ファイル</strong> \u2192 <strong>インポート</strong>の順に選択します：<ul><li><strong>JSON</strong>ファイルの場合：<strong>設定をインポート...</strong>（OrcaSlicer）または<strong>プリセットをインポート...</strong>（ElegooSlicer）を選択し、JSONファイルを指定します。</li><li><strong>ZIP</strong>ファイルの場合：<strong>ZIPアーカイブをインポート...</strong>（またはElegooSlicerの「ZIPアーカイブをインポート\u2026」など同等の項目）を選択し、ZIPファイルを指定します（展開は不要です）。</li></ul>',
+        'プリセットがプリセットリストに表示されます。'
+      ],
+      'modal.prusa.title': 'PrusaSlicer',
+      'modal.prusa.steps': [
+        '<a href="https://presets.polymaker.com" target="_blank" rel="noopener noreferrer">ダウンロードページ</a>からプリセットを<strong>INI</strong>ファイルとしてダウンロードします。',
+        'PrusaSlicerを開きます。',
+        '<strong>ファイル</strong> \u2192 <strong>インポート</strong> \u2192 <strong>設定をインポート...</strong>の順に選択し、INIファイルを指定します。',
+        'フィラメントプリセットがプリセットリストに表示されます。'
+      ],
+
+      // Known Issues
+      'issues.title': '既知の問題',
+      'issues.resolved.title': '解決済みの問題',
+      'issues.import.title': 'BambuStudioプリセットのインポート不一致 - 修正済み',
+      'issues.import.issue': '<strong>問題：</strong> BambuStudioは、プリンターの完全なプリセット名（例：「Bambu Lab X1 Carbon 0.4 nozzle」）がフィラメントプリセットの<code>name</code>フィールドに含まれているかを確認して、両者を対応付けます。Polymakerのソースファイルでは<code>@BBL X1</code>という略称を使用しているため、部分文字列の確認に失敗し、インポートしたフィラメントを割り当ててもAMSスロットの温度／タイプが入力されません。',
+      'issues.import.solution': '<strong>解決策：</strong> このウェブサイトでは、BambuStudioのダウンロードをプリンターごとのファイルに自動分割し、<code>name</code>フィールドにプリンターの完全なプリセット名が含まれるよう書き換えるようになりました。GitHubの生のJSONファイルを直接コピーせず、このページの<strong>JSON</strong>または<strong>.bbsflmt</strong>ボタンからプリセットをダウンロードしてください。',
+      'issues.import.link': 'GitHub Issue #14を見る \u2192',
+      'issues.p2s.title': 'P2Sの過熱問題 - 暫定修正を適用済み',
+      'issues.p2s.issue': '<strong>問題：</strong> P2Sプリンターでは、開始G-codeの問題により、ガラス転移温度が50\u00b0Cを超える素材を印刷すると過熱する可能性があります。',
+      'issues.p2s.solution': '<strong>解決策：</strong> ガラス転移温度が50\u00b0Cを超えるP2Sプリセットに冷却G-codeコマンドを追加する暫定修正を実装しました。Bambu Labがこの問題を修正するまでの一時的な回避策です。',
+      'issues.p2s.link': 'BambuStudio Issue #8801を見る \u2192',
+      'issues.p2s.credits': 'この問題を特定してくださったalexbreinigさんとcapsel22さんに感謝します。',
+      'issues.restart.title': 'インポート後にBambuStudioの再起動が必要',
+      'issues.restart.issue': '<strong>問題：</strong> BambuStudioを再起動するまで、新しくインポートしたフィラメントプリセットが正しく適用されない場合があります。再起動せずにスライスまたは印刷すると、温度、流量、その他のフィラメント設定に誤った値が使用される可能性があります。',
+      'issues.restart.solution': '<strong>解決策：</strong> Polymakerプリセットをインポートした後は、スライスや印刷を始める前に必ずBambuStudioを再起動してください。このページからBambuStudioプリセットをダウンロードする際にも、ポップアップでお知らせします。',
+      'issues.restart.link': 'BambuStudio Issue #10583を見る \u2192',
+      'issues.aux.title': '一部のノズル／エクストルーダーオプション用プリセットがありません',
+      'issues.aux.issue': '<strong>問題：</strong> 複数のエクストルーダー／ノズルオプションを備えたBambu Labプリンター（マルチノズルのX2DやH2シリーズなど）では、1つのフィラメントプリセット内に各オプション（<code>Direct Drive Standard</code>、<code>Direct Drive High Flow</code>、<code>Bowden Standard</code>、<code>Bowden High Flow</code>）用の値が個別に保存されます。一部の素材では主要オプション（通常は<code>Direct Drive Standard</code>）のみを調整しているため、補助（Bowden）ノズルを含む他のノズルオプションは空欄で、調整済みの値がありません。',
+
+      // Footer
+      'footer.links': 'リンク',
+      'footer.social': 'ソーシャルメディア',
+      'footer.readme': '詳しくは',
+      'footer.readme.link': 'READMEをご覧ください',
+
+      // Language switcher
+      'lang.en': 'English',
+      'lang.zh': '中文',
+      'lang.de': 'Deutsch',
+      'lang.it': 'Italiano',
+      'lang.fr': 'Français',
+      'lang.es': 'Español',
+      'lang.ja': '日本語',
+
+      // Missing value fallbacks
+      'value.unknown': '不明',
+      'value.unknown.filament': '不明なフィラメント',
+      'value.none': '-',
+
+      // Download button titles
+      'title.download.json': 'プリセットファイルをダウンロード',
+      'title.download.bundle': 'BambuStudioバンドルとしてダウンロード',
 
       // Filename defaults
       'filename.preset': 'preset.json',
